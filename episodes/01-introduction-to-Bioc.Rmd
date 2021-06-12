@@ -1,0 +1,26 @@
+---
+source: Rmd
+title: "Introduction to Bioconductor"
+teaching: XX
+exercises: XX
+questions:
+- ""
+objectives:
+- "Install required packages."
+keypoints:
+- "Key point 1"
+---
+
+```{r, include=FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("01-")
+```
+
+# Install packages
+
+
+```{r, eval=FALSE}
+install.packages("BiocManager")
+BiocManager::install()
+```
+
