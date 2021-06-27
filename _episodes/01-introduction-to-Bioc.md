@@ -15,13 +15,39 @@ keypoints:
 
 
 
-# Install packages
+# What is Bioconductor
+
+Stress the many different aspects of the project - not just a package repository.
+
+
+# Installing packages
 
 
 
 ~~~
 install.packages("BiocManager")
 BiocManager::install()
+BiocManager::version()
+BiocManager::valid()
 ~~~
 {: .language-r}
+
+* Release cycle - release vs devel
+
+
+# Explore the package universe
+
+
+~~~
+library(BiocPkgTools)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in library(BiocPkgTools): there is no package called 'BiocPkgTools'
+~~~
+{: .error}
+
 
