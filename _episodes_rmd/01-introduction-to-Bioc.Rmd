@@ -16,11 +16,28 @@ source("../bin/chunk-options.R")
 knitr_fig_path("01-")
 ```
 
-# Install packages
+# What is Bioconductor
+
+Stress the many different aspects of the project - not just a package repository.
+
+
+# Installing packages
 
 
 ```{r, eval=FALSE}
 install.packages("BiocManager")
 BiocManager::install()
+BiocManager::version()
+BiocManager::valid()
 ```
+
+* Release cycle - release vs devel
+
+
+# Explore the package universe
+
+```{r}
+library(BiocPkgTools)
+```
+
 
