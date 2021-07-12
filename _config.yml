@@ -7,7 +7,7 @@
 # dc: Data Carpentry
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor traning for instance)
-carpentry: "incubator"
+carpentry: "dc"
 
 # Overall title for pages.
 title: "The Bioconductor project"
