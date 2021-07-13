@@ -1,7 +1,7 @@
 ---
 title: Setup
 ---
-FIXME
 
+- Install R and RStudio.
 
 {% include links.md %}
