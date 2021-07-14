@@ -3,7 +3,28 @@ layout: lesson
 root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
-This lesson provides an introduction to the Bioconductor project
+
+This lesson provides an introduction to the Bioconductor project.
+
+A good understanding of the Bioconductor project is the foundation to efficiently use Bioconductor packages for the analysis and visulization of -omics data using R and RStudio.
+
+We download and install R packages from Bioconductor and other repositories to write workflows and perform analyses.
+In order to do so, we first identify packages that are available and relevant to our analysis, and we learn from their documentation the best practices to use them as their authors intended it.
+For reproducibility, it is also important to identify and track versions of packages used to perform each analysis.
+
+Sometimes, we encounter bugs in packages that we use.
+While it is possible to report bugs to the authors and wait for issue to be fixed,
+packages hosted on public repositories offer the chance to inspect the code and contribute proposed fixes ourselves.
+In addition to being a great opportunity to develop coding skills, community contributors are very often recognized and credited for their contributions!
+
+In this lesson, you will learn:
+
+- How to navigate the Bioconductor website and learn to how to find packages for particular types of -omics data.
+- How to install specific Bioconductor packages in R.
+- How to open a package vignette and practice running through the examples that they contain.
+- To name different types of Bioconductor S4 objects and to identify what kind of data they hold.
+- How to modify code and contribute to existing Bioconductor packages.
+
 
 <!-- this is an html comment -->
 
