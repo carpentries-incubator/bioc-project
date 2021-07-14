@@ -4,7 +4,7 @@ title: Discussion
 
 ## Bioconductor and CRAN
 
-[Bioconductor][bioc-website] and [CRAN][cran-website] are two well-established repositories of R packages that are often compared in terms on practices with regard to package submission, review, and release cycles.
+[Bioconductor][bioc-website] and [CRAN][cran-website] are two well-established repositories of R packages that are often compared in terms of practices with regard to package submission, review, and release cycles.
 
 R packages can be installed from a number of repositories online.
 Repositories often have different guidelines and procedures to manage and check the quality of packages that are distributed on their platforms.
