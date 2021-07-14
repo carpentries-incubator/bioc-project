@@ -11,7 +11,9 @@ This lesson provides an introduction to the Bioconductor project
 
 > ## Prerequisites
 >
-> Prereq1
+> - Learning objectives of the [Introduction to data analyis with R and Bioconductor][lesson-intro-r-bioconductor] workshop.
 {: .prereq}
+
+[lesson-intro-r-bioconductor]: https://carpentries-incubator.github.io/bioc-intro/index.html
 
 {% include links.md %}
