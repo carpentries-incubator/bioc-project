@@ -10,7 +10,7 @@ title: Discussion
 > - Packages from Bioconductor and CRAN can be installed and used side-by-side.
 > - They both involve an initial review of new packages submitted to the repository (though the process is slightly different).
 > - CRAN is more general purpose in the scope of packages.
-> - Bioconductor is more focused on packages related to the bioinformatics analysis and comprehension of 'omics data.
+> - Bioconductor is more focused on packages related to the bioinformatics analysis and comprehension of -omics data.
 > - Bioconductor tests packages regularly, even when the code hasn't changed.
 > - Bioconductor distinguishes types of packages (e.g., software, annotations, experiments, workflows).
 >
