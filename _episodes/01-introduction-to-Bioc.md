@@ -6,27 +6,107 @@ title: "Introduction to Bioconductor"
 teaching: XX
 exercises: XX
 questions:
-- ""
+- "What is Bioconductor?"
 objectives:
 - "Install required packages."
 keypoints:
-- "Key point 1"
+- "Bioconductor is a package repository, but also much more than that."
 ---
 
 
 
-# What is Bioconductor
 
-Stress the many different aspects of the project - not just a package repository.
+
+# What is Bioconductor?
+
+> ## Contribute!
+>
+> - Stress the many different aspects of the project - not just a package repository.
+> - Bullet point below + A short paragraph for details and links.
+>
+{: .callout}
+
+- A scientific project
+- A package repository
+- A support site
+- A Slack workspace
+- A mailing list for developers
+- Conferences, courses and workshops
+- A community
+
+## A scientific project
+
+The original publication describes the aims and methods of the project at its inception .
+
+
+## A package repository
+
+[BiocViews][biocviews-software] are a predefined - and evolving - set of labels used to categorize all the packages available in the Bioconductor project.
+
+
+## A support site
+
+The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
+
+## A Slack workspace
+
+The Bioconductor [Slack workspace][bioc-slack] is an open space that all community members are welcome to join (for free) and use for rapid interactions.
+Currently, the "Pro" pricing plan kindly supported by core funding provides:
+
+- Unlimited message archive
+- Unlimited apps
+- Group video calls with screen sharing
+- Work securely with other organizations using Slack Connect
+
+A wide range of channels have been created to discuss a range of subjects, and community members can freely join the discussion on those channels of create new ones to discuss new subjects.
+
+Important announcements are posted on the `#general` channel.
+
+> ## Note
+>
+> Users are encouraged to use the Bioconductor [support site][bioc-support-site] to raise issues that relevant to the wider community.
+> The Slack workspace is often most useful for live discussions, and widely subscribed channels (e.g. `#general`) should be used with moderation.
+>
+{: .callout}
+
+
+## A mailing list for developers
+
+The <bioc-devel@r-project.org> mailing list is used for communication between package developers, and announcements from the Biocondutor core team.
+
+
+## Conferences, courses and workshops
+
+The Bioconductor community regularly organizes a number of events throughout the year and across the world.
+For example:
+
+- The annual BioC summer conference in North America
+- Regional conference in winter (e.g. BioC Europe, BioC Asia)
+- Summer schools (e.g., CSAMA)
+- Online meetings open to all community members (e.g., Bioconductor Developers Forum)
+
+[Course materials][bioc-course-materials] are regularly uploaded on the Bioconductor website following each of those events.
+
+
+## A community
+
+> ## Contribute!
+>
+> - Add some details to the role of each panel below.
+>
+{: .callout}
+
+- [Scientific Advisory Board][scientific-advisory-board]
+- [Technical Advisory Board][technical-advisory-board]
+- [Community Advisory Board][community-advisory-board]
 
 
 # Installing packages
 
 
-
 ~~~
 install.packages("BiocManager")
-BiocManager::install()
+BiocManager::install("BiocPkgTools")
 BiocManager::version()
 BiocManager::valid()
 ~~~
@@ -51,3 +131,14 @@ Error in library(BiocPkgTools): there is no package called 'BiocPkgTools'
 {: .error}
 
 
+# References
+
+NULL
+
+[biocviews-software]: https://www.bioconductor.org/packages/release/BiocViews.html#___Software
+[bioc-code-of-conduct]: https://www.bioconductor.org/about/code-of-conduct/
+[bioc-slack]: https://bioc-community.herokuapp.com/
+[bioc-course-materials]: https://bioconductor.org/help/course-materials/
+[scientific-advisory-board]: https://bioconductor.org/about/scientific-advisory-board/
+[technical-advisory-board]: https://bioconductor.org/about/technical-advisory-board/
+[community-advisory-board]: https://bioconductor.org/about/community-advisory-board/
