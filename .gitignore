@@ -16,3 +16,6 @@ vendor/
 Gemfile.lock
 .*history
 bioc-project.Rproj
+renv/
+renv.lock
+.Rprofile
