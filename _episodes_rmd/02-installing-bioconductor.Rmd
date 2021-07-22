@@ -28,12 +28,36 @@ This is technically the only Bioconductor package distributed on the CRAN reposi
 install.packages("BiocManager")
 ```
 
+# Bioconductor releases and current version
+
+The Bioconductor project produces two releases each year, typically one around April and another one towards October.
+
+The April release of Bioconductor coincides with the annual release of R.
+This means that the new release of packages was tested for that new version of R, and requires user to install that new version of R to access the new version of those packages.
+
+The October release of Bioconductor will continue to work with the same version of R.
+
+The `BiocManager::version()` function displays the version (i.e., release) of Bioconductor that is currently active in the R session.
+
+```{r}
+BiocManager::version()
+```
+
+# Title
+
+```{r}
+BiocManager::valid()
+```
+
 # Installing packages
+
+The `BiocManager::install()` function is used to install packages.
+The function first searches for the requested package(s) on the Bioconductor repository, but falls back on the CRAN repository and also supports installation from GitHub repositories.
+
+For instance, we can install the `r BiocStyle::Biocpkg("BiocPkgTools")` package:
 
 ```{r, eval=FALSE}
 BiocManager::install("BiocPkgTools")
-BiocManager::version()
-BiocManager::valid()
 ```
 
 * Release cycle - release vs devel
