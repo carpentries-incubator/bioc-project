@@ -135,7 +135,7 @@ library(BiocPkgTools)
 
 > ## Contribute!
 >
-> - Demonstrate relevant functions of the BiocPkgTools package.
+> - Demonstrate relevant functions of the `r BiocStyle::Biocpkg("BiocPkgTools")` package.
 >
 {: .callout}
 
