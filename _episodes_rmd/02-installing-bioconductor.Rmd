@@ -1,0 +1,102 @@
+---
+source: Rmd
+title: "Installing Bioconductor"
+teaching: XX
+exercises: XX
+questions:
+- "How do I install Bioconductor packages?"
+objectives:
+- "Install BiocManager."
+- "Install Bioconductor packages."
+keypoints:
+- "BiocManager is used to install Bioconductor packages (but also from CRAN and GitHub), and check for updates."
+- "BiocManager safely manages packages from the incremental releases of Bioconductor."
+- "The BiocManager package is available from the CRAN repository."
+---
+
+```{r, include=FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("02-")
+```
+
+# Installing BiocManager
+
+The `r BiocStyle::Biocpkg("BiocManager")` is the entry point into Bioconductor.
+This is technically the only Bioconductor package distributed on the CRAN repository.
+As such, the package can be installed using the traditional `install.packages()` function.
+
+```{r, eval=FALSE}
+install.packages("BiocManager")
+```
+
+# Bioconductor releases and current version
+
+The Bioconductor project produces two releases each year, one around April and another one around October.
+
+The April release of Bioconductor coincides with the annual release of R.
+Packages in that Bioconductor release are tested for the upcoming version of R.
+Users must install the new version of R to access the new version of those packages.
+
+The October release of Bioconductor continue to work with the same version of R for that annual cycle.
+
+Once the `r BiocStyle::Biocpkg("BiocManager")` package is installed, the `BiocManager::version()` function displays the version (i.e., release) of Bioconductor that is currently active in the R session.
+
+```{r, message=FALSE}
+BiocManager::version()
+```
+
+It is possible to specify a version of Bioconductor, which in turn will install the latest version of Bioconductor packages for that particular Bioconductor release.
+For instance:
+
+```{r, echo=FALSE, results='asis'}
+version <- BiocManager::version()
+cmd <- sprintf('BiocManager::install(version = "%s")', as.character(version))
+cat(
+    "~~~",
+    cmd,
+    "~~~",
+    "{: .language-r}",
+    sep = "\n")
+```
+
+# Check for updates
+
+The `BiocManager::valid()` function checks the version of currently installed packages, and checks whether a new version is available for any of them on the Bioconductor repository.
+
+Conveniently, if any package can be updated, the function generates and displays the command needed to update those packages.
+Users simply need to copy-paste and run that command in their R console.
+
+If everything is up-to-date, the function will simply print `TRUE`.
+
+```{r}
+BiocManager::valid()
+```
+
+# Installing packages
+
+The `BiocManager::install()` function is used to install packages.
+The function first searches for the requested package(s) on the Bioconductor repository, but falls back on the CRAN repository and also supports installation from GitHub repositories.
+
+For instance, we can install the `r BiocStyle::Biocpkg("BiocPkgTools")` package:
+
+```{r, eval=FALSE}
+BiocManager::install("BiocPkgTools")
+```
+
+* Release cycle - release vs devel
+
+# Explore the package universe
+
+```{r, message=FALSE}
+library(BiocPkgTools)
+```
+
+> ## Contribute!
+>
+> - Demonstrate relevant functions of the `r BiocStyle::Biocpkg("BiocPkgTools")` package.
+>
+{: .callout}
+
+# Finding a suitable package
+
+* biocViews
