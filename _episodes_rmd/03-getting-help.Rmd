@@ -4,9 +4,12 @@ title: "Getting help"
 teaching: XX
 exercises: XX
 questions:
-- ""
+- "Where can I find help online?"
+- "How do I access package documentation?"
+- "Where can I ask questions?"
 objectives:
-- "Install required packages."
+- "Identify online resources."
+- "Access package documentation."
 keypoints:
 - "Key point 1"
 ---

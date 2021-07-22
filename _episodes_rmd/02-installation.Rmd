@@ -4,10 +4,9 @@ title: "Installing Bioconductor"
 teaching: XX
 exercises: XX
 questions:
-- ""
+- "How do I install Bioconductor packages?"
 objectives:
 - "Install Bioconductor."
-- "Install required packages."
 keypoints:
 - "Key point 1"
 ---
