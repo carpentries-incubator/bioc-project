@@ -129,10 +129,15 @@ BiocManager::valid()
 
 # Explore the package universe
 
-```{r}
+```{r, message=FALSE}
 library(BiocPkgTools)
 ```
 
+> ## Contribute!
+>
+> - Demonstrate relevant functions of the BiocPkgTools package.
+>
+{: .callout}
 
 # References
 
