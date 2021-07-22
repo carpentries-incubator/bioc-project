@@ -23,6 +23,7 @@ knitr_fig_path("02-")
 
 The `r BiocStyle::Biocpkg("BiocManager")` is the entry point into Bioconductor.
 This is technically the only Bioconductor package distributed on the CRAN repository.
+As such, the package can be installed using the traditional `install.packages()` function.
 
 ```{r, eval=FALSE}
 install.packages("BiocManager")
