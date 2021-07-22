@@ -9,9 +9,9 @@ objectives:
 - "Install BiocManager."
 - "Install Bioconductor packages."
 keypoints:
-- "The BiocManager package is available from the CRAN repository."
 - "BiocManager is used to install Bioconductor packages (but also from CRAN and GitHub), and check for updates."
 - "BiocManager safely manages packages from the incremental releases of Bioconductor."
+- "The BiocManager package is available from the CRAN repository."
 ---
 
 ```{r, include=FALSE}
