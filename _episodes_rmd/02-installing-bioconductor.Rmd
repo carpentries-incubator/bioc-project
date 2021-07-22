@@ -19,10 +19,18 @@ source("../bin/chunk-options.R")
 knitr_fig_path("02-")
 ```
 
-# Installing packages
+# Installing BiocManager
+
+The `r BiocStyle::Biocpkg("BiocManager")` is the entry point into Bioconductor.
+This is technically the only Bioconductor package distributed on the CRAN repository.
 
 ```{r, eval=FALSE}
 install.packages("BiocManager")
+```
+
+# Installing packages
+
+```{r, eval=FALSE}
 BiocManager::install("BiocPkgTools")
 BiocManager::version()
 BiocManager::valid()
