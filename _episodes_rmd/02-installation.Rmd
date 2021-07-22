@@ -6,9 +6,12 @@ exercises: XX
 questions:
 - "How do I install Bioconductor packages?"
 objectives:
-- "Install Bioconductor."
+- "Install BiocManager."
+- "Install Bioconductor packages."
 keypoints:
-- "Key point 1"
+- "The BiocManager package is available from the CRAN repository."
+- "BiocManager is used to install Bioconductor packages (but also from CRAN and GitHub), and check for updates."
+- "BiocManager safely manages packages from the incremental releases of Bioconductor."
 ---
 
 ```{r, include=FALSE}
@@ -16,24 +19,29 @@ source("../bin/chunk-options.R")
 knitr_fig_path("02-")
 ```
 
-# Install packages
-
+# Installing packages
 
 ```{r, eval=FALSE}
 install.packages("BiocManager")
-BiocManager::install()
+BiocManager::install("BiocPkgTools")
+BiocManager::version()
+BiocManager::valid()
 ```
 
-# Getting help with Bioconductor packages
+* Release cycle - release vs devel
 
-* Landing page
-* Vignettes
-* Support site - searching and posting
-* Workflows
-* Website
+# Explore the package universe
+
+```{r, message=FALSE}
+library(BiocPkgTools)
+```
+
+> ## Contribute!
+>
+> - Demonstrate relevant functions of the `r BiocStyle::Biocpkg("BiocPkgTools")` package.
+>
+{: .callout}
 
 # Finding a suitable package
 
 * biocViews
-
-

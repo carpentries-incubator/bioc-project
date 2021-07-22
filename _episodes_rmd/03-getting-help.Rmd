@@ -4,27 +4,22 @@ title: "Getting help"
 teaching: XX
 exercises: XX
 questions:
-- "Where can I find help online?"
 - "How do I access package documentation?"
-- "Where can I ask questions?"
+- "Where can I find help online?"
+- "Where can I ask questions to package developers and users?"
 objectives:
-- "Identify online resources."
+- "Identify online resources for help."
 - "Access package documentation."
 keypoints:
-- "Key point 1"
+- "The `browseVignettes()` function is recommended to access the vignette(s) installed with each package."
+- "Vignettes can also be accessed on the Bioconductor website, but beware of differences between package versions!"
+- "The Bioconductor main website contains general information, package documentation, and course materials."
+- "The Bioconductor support site is the recommended place to contact developers and ask questions."
 ---
 
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("02-")
-```
-
-# Install packages
-
-
-```{r, eval=FALSE}
-install.packages("BiocManager")
-BiocManager::install()
+knitr_fig_path("03-")
 ```
 
 # Getting help with Bioconductor packages
@@ -38,5 +33,3 @@ BiocManager::install()
 # Finding a suitable package
 
 * biocViews
-
-
