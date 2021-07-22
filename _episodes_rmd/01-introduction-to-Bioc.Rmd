@@ -36,7 +36,7 @@ BibOptions(
 > ## Contribute!
 >
 > - Stress the many different aspects of the project - not just a package repository.
-> - Bullet point below + A short paragraph for details and links.
+> - Add bullet points below, and for each poin add a short paragraph for details and links.
 >
 {: .callout}
 

@@ -19,3 +19,4 @@ bioc-project.Rproj
 renv/
 renv.lock
 .Rprofile
+.Rbuildignore
