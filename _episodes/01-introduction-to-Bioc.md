@@ -22,7 +22,7 @@ keypoints:
 > ## Contribute!
 >
 > - Stress the many different aspects of the project - not just a package repository.
-> - Add bullet points below, and for each poin add a short paragraph for details and links.
+> - Add bullet points below, and for each point add a short paragraph for details and links.
 >
 {: .callout}
 
@@ -47,6 +47,7 @@ The original publication describes the aims and methods of the project at its in
 ## A support site
 
 The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
+
 
 ## A Slack workspace
 
@@ -99,6 +100,7 @@ For example:
 - [Scientific Advisory Board][scientific-advisory-board]
 - [Technical Advisory Board][technical-advisory-board]
 - [Community Advisory Board][community-advisory-board]
+
 
 # References
 

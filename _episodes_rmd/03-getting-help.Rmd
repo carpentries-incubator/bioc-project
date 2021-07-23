@@ -22,13 +22,113 @@ source("../bin/chunk-options.R")
 knitr_fig_path("03-")
 ```
 
+
 # Getting help with Bioconductor packages
 
-* Landing page
-* Vignettes
-* Support site - searching and posting
-* Workflows
-* Website
+Help about Bioconductor packages and best practices is available in several places.
+
+> ## Contribute!
+> 
+> - Add bullet points below, and for each point add a short paragraph for details and links.
+> - It may be beneficial to reorder points and sections by "helpfulness", recommended order of reading for new users, or simply to make the content of the episode flow well.
+>
+{: .callout}
+
+- Package landing pages
+- Package vignettes
+- The Bioconductor support site
+- The Bioconductor website
+- Workflows
+
+
+# Package landing pages
+
+Package landing pages contains useful information to read before and after installing a package.
+
+Before installing a package, as prospective users, we can consult the package description and vignettes, to decide whether the package is relevant to the task that we wish to perform.
+
+After installing the package, we can consult the `BugReports` field for the URL where bugs should be reported, and the "Build Report" link can be checked to verify whether the package passes all daily checks on the build system.
+Sometimes, packages that used to work can cease to pass daily tests due to updates in their own dependencies, until they are updated themselves.
+
+For each package, the landing page links to the reference manual and vignettes for the latest version of the package available on for a given release of Bioconductor.
+However, the safest way is to access the vignettes of locally installed packages.
+
+Each package has a landing page for each release of Bioconductor since the package was added to the repository, e.g.:
+
+- <https://www.bioconductor.org/packages/3.13/bioc/html/BiocPkgTools.html>
+- <https://www.bioconductor.org/packages/3.12/bioc/html/BiocPkgTools.html>
+- ...
+
+> ## Challenge
+> 
+> Which version of Bioconductor was the `r BiocStyle::Biocpkg("BiocPkgTools")` package introduced in?
+>
+> > ## Solution
+> >
+> > The `r BiocStyle::Biocpkg("BiocPkgTools")` package was introduced in Bioconductor release `3.10`.
+> >
+> > The URL <https://www.bioconductor.org/packages/3.10/bioc/html/BiocPkgTools.html> is the earliest version of Bioconductor for which the package has a landing page,
+> > while <https://www.bioconductor.org/packages/3.09/bioc/html/BiocPkgTools.html> leads to a page that displays the message "Page Not Found".
+> >
+> > The package landing page also includes a field called "In Bioconductor since" which indicates... `3.08` ??? (further investigation underway!)
+> >
+> > {: .output}
+> {: .solution}
+{: .challenge}
+
+In the URL of a package landing page, we can replace the version number by the word "release" or "devel" to access the landing page of the latest stable release or development version, respectively.
+For instance:
+
+- <https://www.bioconductor.org/packages/release/bioc/html/BiocPkgTools.html>.
+- <https://www.bioconductor.org/packages/devel/bioc/html/BiocPkgTools.html>.
+
+
+# Package vignettes
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Each Bioconductor package is required to include at least one vignette. Many packages have more.
+> - Vignettes are expected to demonstrate usage of the package in a typical workflow that users would face.
+>
+{: .callout}
+
+
+# The Bioconductor support site
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Creating an account
+> - Searching and posting
+> - Upvoting answers
+> - Accepting answers
+>
+{: .callout}
+
+# The Bioconductor website
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Course materials
+>
+{: .callout}
+
+
+# Workflows
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Workflow packages
+> - <https://www.bioconductor.org/packages/release/BiocViews.html#___Workflow>
+>
+{: .callout}
 
 # Finding a suitable package
 
