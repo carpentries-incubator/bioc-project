@@ -4,11 +4,16 @@ title: "Standard Bioconductor classes"
 teaching: XX
 exercises: XX
 questions:
-- ""
+- "What is the S4 class system?"
+- "How do we access information stored in S4 objects?"
+- "How to we combine methods and classes from different packages into a practical workflow?"
 objectives:
-- "Install required packages."
+- "Describe the S4 class system."
+- "Identify common classes and methods used in the Bioconductor project."
+- "Create objects and process them using methods from differerent packages in a single workflow."
 keypoints:
-- "Key point 1"
+- "Common methods and classes promote interoperability between packages, reduce redundant efforts by package developers, and facilitate the writing of workflows"
+- "S4 classes can represent arbitrarily complex data structures."
 ---
 
 ```{r, include=FALSE}
@@ -17,7 +22,6 @@ knitr_fig_path("02-")
 ```
 
 # Install packages
-
 
 ```{r, eval=FALSE}
 install.packages("BiocManager")
@@ -30,10 +34,93 @@ BiocManager::install()
 
 # Standard classes
 
+> ## Contribute!
+> 
+> - Add bullet points below, and for each point add a short paragraph for details and links.
+>
+{: .callout}
+
 * Biostrings
-* IRanges/GRanges
+* IRanges and GRanges
 * GAlignments
-* SummarizedExperiment, SingleCellExperiment
-* MultiAssayExperiment, QFeatures
+* SummarizedExperiment and SingleCellExperiment
+* MultiAssayExperiment
+* QFeatures
 
 
+# Biostrings
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Which package defines the classes.
+> - What the classes represent.
+> - Examples of packages and methods that can process objects from those classes.
+>
+{: .callout}
+
+
+# IRanges and GRanges
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Which package defines the classes.
+> - What the classes represent.
+> - Examples of packages and methods that can process objects from those classes.
+>
+{: .callout}
+
+
+# GAlignments
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Which package defines the classes.
+> - What the classes represent.
+> - Examples of packages and methods that can process objects from those classes.
+>
+{: .callout}
+
+
+# SummarizedExperiment and SingleCellExperiment
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Which package defines the classes.
+> - What the classes represent.
+> - Examples of packages and methods that can process objects from those classes.
+>
+{: .callout}
+
+
+# MultiAssayExperiment
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Which package defines the classes.
+> - What the classes represent.
+> - Examples of packages and methods that can process objects from those classes.
+>
+{: .callout}
+
+
+# QFeatures
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Which package defines the classes.
+> - What the classes represent.
+> - Examples of packages and methods that can process objects from those classes.
+>
+{: .callout}
