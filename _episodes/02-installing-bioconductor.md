@@ -84,17 +84,6 @@ BiocManager::valid()
 
 
 ~~~
-'getOption("repos")' replaces Bioconductor standard repositories, see
-'?repositories' for details
-
-replacement repositories:
-    CRAN: https://cloud.r-project.org
-~~~
-{: .output}
-
-
-
-~~~
 Warning: 1 packages out-of-date; 0 packages too new
 ~~~
 {: .warning}
