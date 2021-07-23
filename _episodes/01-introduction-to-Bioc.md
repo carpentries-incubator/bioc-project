@@ -8,7 +8,7 @@ exercises: XX
 questions:
 - "What is Bioconductor?"
 objectives:
-- "Install required packages."
+- "Describe the Bioconductor project"
 keypoints:
 - "Bioconductor is a package repository, but also much more than that."
 ---
@@ -22,7 +22,7 @@ keypoints:
 > ## Contribute!
 >
 > - Stress the many different aspects of the project - not just a package repository.
-> - Bullet point below + A short paragraph for details and links.
+> - Add bullet points below, and for each poin add a short paragraph for details and links.
 >
 {: .callout}
 
@@ -99,37 +99,6 @@ For example:
 - [Scientific Advisory Board][scientific-advisory-board]
 - [Technical Advisory Board][technical-advisory-board]
 - [Community Advisory Board][community-advisory-board]
-
-
-# Installing packages
-
-
-~~~
-install.packages("BiocManager")
-BiocManager::install("BiocPkgTools")
-BiocManager::version()
-BiocManager::valid()
-~~~
-{: .language-r}
-
-* Release cycle - release vs devel
-
-
-# Explore the package universe
-
-
-~~~
-library(BiocPkgTools)
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in library(BiocPkgTools): there is no package called 'BiocPkgTools'
-~~~
-{: .error}
-
 
 # References
 
