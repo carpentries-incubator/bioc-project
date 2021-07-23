@@ -72,11 +72,11 @@ Note that `BiocManager::install(version = ...)` can be used to update a library 
 >
 > Bioconductor uses the [Git][git-website] version control system to manage its package repository.
 > For each new Bioconductor release, a new branch is created in the Git repository; those are referred to as _release_ branches.
-> Release branches allow users to install stable versions of packages that were tested together for a given version of Bioconductor, when we specificy `BiocManager::install(version = ...)`
+> Release branches allow users to install stable versions of packages that were tested together for a given version of Bioconductor.
 >
 > Development on the _release_ branches is restricted.
 > Older _release_ branches are entirely frozen, meaning that no further update is allowed on those branches.
-> When users request a package from release branches, they receive the latest version of the package **for that release**.
+> When users request a package for a given version of Bioconductor, they receive the latest version of the package on the correspoding release branch.
 > 
 > Only the latest release branch allows updates from package maintainers, but those are restricted to critical bug fixes.
 > This means that for each 6-month release cycle, users can expect packages on the latest branch to be reasonably stable.
@@ -85,9 +85,9 @@ Note that `BiocManager::install(version = ...)` can be used to update a library 
 >
 > Meanwhile, the main branch of the Git repository (historically called `master`) is referred to as the _devel_ branch.
 >
-> The _devel_ branch allow developers to continue updating the packages frequently, without affecting users or disrupting workflows.
-> Typically, the _devel_ branch is mainly used by other developers and the Bioconductor build system, to run tests using the latest code of every package in the Bioconductor repository.
-> However, users can also access packages on the _devel_ branch using `BiocManager::install(version = ...)` with `version` set to one minor version greater than the latest Bioconductor _release_ version (e.g. if release is `3.13`, then devel is `3.14`).
+> The _devel_ branch allow developers to continue updating the packages as frequently as they wish, without affecting users or disrupting workflows.
+> Typically, packages on the _devel_ branch are mainly used by other developers and the Bioconductor build system, to run tests using the latest code of every package in the Bioconductor repository.
+> However, users can also access packages on the _devel_ branch using `BiocManager::install(version = ...)` with `version` set to one minor version greater than the latest Bioconductor _release_ version (e.g. if the latest release is `3.13`, then devel is `3.14`).
 >
 > ### Transition between devel and release - the release process
 >
