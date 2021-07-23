@@ -40,7 +40,10 @@ Users must install the new version of R to access the new version of those packa
 
 The October release of Bioconductor continue to work with the same version of R for that annual cycle.
 
-Once the `r BiocStyle::Biocpkg("BiocManager")` package is installed, the `BiocManager::version()` function displays the version (i.e., release) of Bioconductor that is currently active in the R session.
+Each time a new release is made, the minor version of all the packages in the Bioconductor repository is incremented by one.
+In particular, the version of the `r BiocStyle::Biocpkg("BiocVersion")` package is used to represent the version of the Bioconductor project.
+
+Once the `r BiocStyle::Biocpkg("BiocManager")` package is installed, the `BiocManager::version()` function displays the version (i.e., release) of the Bioconductor project that is currently active in the R session.
 
 ```{r, message=FALSE}
 BiocManager::version()
