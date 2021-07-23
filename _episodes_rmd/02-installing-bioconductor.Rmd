@@ -72,7 +72,7 @@ Users simply need to copy-paste and run that command in their R console.
 
 If everything is up-to-date, the function will simply print `TRUE`.
 
-```{r}
+```{r, message=FALSE}
 BiocManager::valid()
 ```
 
