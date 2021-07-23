@@ -93,6 +93,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
+          options(repos = BiocManager::repositories())
           source(file.path('bin', 'dependencies.R'))
           install_required_packages()
           install_dependencies(identify_dependencies())
