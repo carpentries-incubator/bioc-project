@@ -20,6 +20,14 @@ knitr_fig_path("02-")
 stopifnot(require(BiocStyle))
 ```
 
+> ## Contribute!
+> 
+> In the following sections:
+>
+> - Propose interactive elements to engage participants in this episode (e.g., challenges).
+>
+{: .callout}
+
 # Installing BiocManager
 
 The `r BiocStyle::Biocpkg("BiocManager")` package is the entry point into Bioconductor.
