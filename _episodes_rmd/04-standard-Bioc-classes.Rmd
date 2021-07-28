@@ -8,12 +8,13 @@ questions:
 - "How do we access information stored in S4 objects?"
 - "How to we combine methods and classes from different packages into a practical workflow?"
 objectives:
-- "Describe the S4 class system."
+- "Explain core S4 concepts: class, object, slots, validity, methods."
 - "Identify common classes and methods used in the Bioconductor project."
 - "Create objects and process them using methods from differerent packages in a single workflow."
 keypoints:
 - "Common methods and classes promote interoperability between packages, reduce redundant efforts by package developers, and facilitate the writing of workflows"
 - "S4 classes can represent arbitrarily complex data structures."
+- "S4 classes perform validity checks and report invalid object states."
 ---
 
 ```{r, include=FALSE}
@@ -21,106 +22,88 @@ source("../bin/chunk-options.R")
 knitr_fig_path("02-")
 ```
 
+> ## Contribute!
+> 
+> This episode is intended to introduce some core Bioconductor classes to illustrate key concepts of S4 classes and methods.
+> Preferably some conceptually simple classes that can be used for intuitive exercises.
+>
+> The exercises should focus on illustrating:
+>
+> - slots
+> - validity checks (and fails)
+> - method dispatch
+> - `show()` method (in contrast to the `str()` function)
+> 
+> For instance, use the `r BiocStyle::Biocpkg("Biostrings")` class to:
+> 
+> - Illustrate how to create a new object
+> - Show that validity checks prevent the creation of invalid objects (e.g. only A-T-C-G in `DNAStringSet` objects).
+>
+{: .callout}
+
 # Install packages
 
 ```{r, eval=FALSE}
-install.packages("BiocManager")
-BiocManager::install()
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("Biostrings")
 ```
 
 # Why standard classes?
 
+> ## Contribute!
+> 
+> This section is a general discussion of the purpose and advantages of having standard classes re-used throughout the community.
+> 
+> Discuss:
+> 
+> - Interoperability.
+> - Re-use and inheritance.
+> - Community effort to discuss, develop, update, and maintain classes and methods.
+>
+{: .callout}
+
+
 # S4 class system
 
-# Standard classes
-
 > ## Contribute!
 > 
-> - Add bullet points below, and for each point add a short paragraph for details and links.
->
-{: .callout}
-
-* Biostrings
-* IRanges and GRanges
-* GAlignments
-* SummarizedExperiment and SingleCellExperiment
-* MultiAssayExperiment
-* QFeatures
-
-
-# Biostrings
-
-> ## Contribute!
+> This section is a general illustration of S4 classes and their organisation.
 > 
-> Add content about:
->
-> - Which package defines the classes.
-> - What the classes represent.
-> - Examples of packages and methods that can process objects from those classes.
+> Illustrate:
+> 
+> - Slots
+> - Re-use and inheritance (be careful about redundancy with the section above).
+> - Methods (e.g. `show()`)
 >
 {: .callout}
 
 
-# IRanges and GRanges
+# The Biostrings package and classes
 
-> ## Contribute!
-> 
-> Add content about:
->
-> - Which package defines the classes.
-> - What the classes represent.
-> - Examples of packages and methods that can process objects from those classes.
->
-{: .callout}
+Many bioinformatics analyses focus on biological sequences that are often represented as strings or characters vectors.
+Examples include nucleic acid sequences (e.g., DNA, RNA), and protein sequences composed of aminoacids.
 
+The `r BiocStyle::Biocpkg("Biostrings")` package implements classes to represent such sequences as S4 classes, e.g. `DNAString`, `AAString`.
+Those S4 classes provide memory-efficient string containers, while other methods implemented in the package provide various string matching algorithms and other utilities for fast manipulation of large biological sequences or sets of sequences.
 
-# GAlignments
+A short presentation of the basic classes defined in the `r BiocStyle::Biocpkg("Biostrings")` package is available in one of the package vignettes.
 
-> ## Contribute!
-> 
-> Add content about:
->
-> - Which package defines the classes.
-> - What the classes represent.
-> - Examples of packages and methods that can process objects from those classes.
->
-{: .callout}
+```{r, eval=FALSE}
+vignette("Biostrings2Classes")
+```
 
+To get started, we load the package.
 
-# SummarizedExperiment and SingleCellExperiment
+```{r, message=FALSE}
+library(Biostrings)
+```
 
-> ## Contribute!
-> 
-> Add content about:
->
-> - Which package defines the classes.
-> - What the classes represent.
-> - Examples of packages and methods that can process objects from those classes.
->
-{: .callout}
+With the package loaded and attached to the session, we have access to the packages functions.
+Those include functions that let us create new objects of the classes defined in the package; those functions are called _constructors_.
+For instance, we can create an object that represents a DNA sequence, using the `DNAString()` constructor function.
 
-
-# MultiAssayExperiment
-
-> ## Contribute!
-> 
-> Add content about:
->
-> - Which package defines the classes.
-> - What the classes represent.
-> - Examples of packages and methods that can process objects from those classes.
->
-{: .callout}
-
-
-# QFeatures
-
-> ## Contribute!
-> 
-> Add content about:
->
-> - Which package defines the classes.
-> - What the classes represent.
-> - Examples of packages and methods that can process objects from those classes.
->
-{: .callout}
+```{r}
+DNAString("ATCG")
+```

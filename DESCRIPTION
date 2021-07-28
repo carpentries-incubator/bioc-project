@@ -15,6 +15,7 @@ Imports:
     BiocManager,
     BiocPkgTools,
     BiocStyle,
+    Biostrings,
     desc,
     knitr,
     RefManageR,
