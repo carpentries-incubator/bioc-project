@@ -155,8 +155,7 @@ Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 69
 {: .error}
 
 That said, the symbols that compose the alphabet DNA sequences are not limited to the characters A, T, C, and G.
-The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide code that represent combinations of nucleotides, in a way similar to regular expressions.
-The `IUPAC_CODE_MAP` 
+The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide code that represent combinations of nucleotides, in a way similar to regular expressions. 
 
 
 ~~~
@@ -171,22 +170,6 @@ IUPAC_CODE_MAP
    "A"    "C"    "G"    "T"   "AC"   "AG"   "AT"   "CG"   "CT"   "GT"  "ACG" 
      H      D      B      N 
  "ACT"  "AGT"  "CGT" "ACGT" 
-~~~
-{: .output}
-
-Any of those nucleotide codes are allowed in the sequence of a `DNAString` object.
-
-
-~~~
-DNAString("ATCGM")
-~~~
-{: .language-r}
-
-
-
-~~~
-5-letter DNAString object
-seq: ATCGM
 ~~~
 {: .output}
 
