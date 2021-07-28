@@ -107,6 +107,7 @@ For instance:
 >
 {: .callout}
 
+
 # The Bioconductor website
 
 > ## Contribute!
@@ -129,6 +130,15 @@ For instance:
 >
 {: .callout}
 
+
 # Finding a suitable package
 
-* biocViews
+> ## Contribute!
+> 
+> Add content about:
+>
+> - biocViews
+> - <https://www.bioconductor.org/packages/release/BiocViews.html>
+>
+{: .callout}
+
