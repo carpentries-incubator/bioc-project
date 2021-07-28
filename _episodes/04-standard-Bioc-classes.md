@@ -40,17 +40,6 @@ keypoints:
 >
 {: .callout}
 
-# Install packages
-
-
-~~~
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("Biostrings")
-~~~
-{: .language-r}
-
 # Why standard classes?
 
 > ## Contribute!
@@ -79,6 +68,18 @@ BiocManager::install("Biostrings")
 > - Methods (e.g. `show()`)
 >
 {: .callout}
+
+
+# Install packages
+
+
+~~~
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("Biostrings")
+~~~
+{: .language-r}
 
 
 # The Biostrings package and classes

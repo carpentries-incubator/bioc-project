@@ -41,15 +41,6 @@ knitr_fig_path("02-")
 >
 {: .callout}
 
-# Install packages
-
-```{r, eval=FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("Biostrings")
-```
-
 # Why standard classes?
 
 > ## Contribute!
@@ -78,6 +69,16 @@ BiocManager::install("Biostrings")
 > - Methods (e.g. `show()`)
 >
 {: .callout}
+
+
+# Install packages
+
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("Biostrings")
+```
 
 
 # The Biostrings package and classes
