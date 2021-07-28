@@ -21,10 +21,15 @@ keypoints:
 
 
 
+> ## Contribute!
+> 
+> In the following sections:
+>
+> - Propose interactive elements to engage participants in this episode (e.g., challenges).
+>
+{: .callout}
 
 # Getting help with Bioconductor packages
-
-Help about Bioconductor packages and best practices is available in several places.
 
 > ## Contribute!
 > 
@@ -32,6 +37,8 @@ Help about Bioconductor packages and best practices is available in several plac
 > - It may be beneficial to reorder points and sections by "helpfulness", recommended order of reading for new users, or simply to make the content of the episode flow well.
 >
 {: .callout}
+
+Help about Bioconductor packages and best practices is available in several places.
 
 - Package landing pages
 - Package vignettes

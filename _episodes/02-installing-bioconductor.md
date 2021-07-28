@@ -18,6 +18,14 @@ keypoints:
 
 
 
+> ## Contribute!
+> 
+> In the following sections:
+>
+> - Propose interactive elements to engage participants in this episode (e.g., challenges).
+>
+{: .callout}
+
 # Installing BiocManager
 
 The *[BiocManager](https://bioconductor.org/packages/3.13/BiocManager)* package is the entry point into Bioconductor.

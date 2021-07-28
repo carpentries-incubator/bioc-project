@@ -17,6 +17,14 @@ keypoints:
 
 
 
+> ## Contribute!
+> 
+> In the following sections:
+>
+> - Propose interactive elements to engage participants in this episode (e.g., challenges).
+>
+{: .callout}
+
 # What is Bioconductor?
 
 > ## Contribute!
