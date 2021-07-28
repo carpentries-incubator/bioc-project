@@ -121,10 +121,17 @@ DNAString("ATCGE")
 ```
 
 That said, the symbols that compose the alphabet DNA sequences are not limited to the characters A, T, C, and G.
-The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide code that represent combinations of nucleotides, in a way similar to regular expressions. 
+The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide code that represent combinations of nucleotides, in a way similar to regular expressions.
+The `IUPAC_CODE_MAP` 
 
 ```{r}
 IUPAC_CODE_MAP
+```
+
+Any of those nucleotide codes are allowed in the sequence of a `DNAString` object.
+
+```{r}
+DNAString("ATCGM")
 ```
 
 
