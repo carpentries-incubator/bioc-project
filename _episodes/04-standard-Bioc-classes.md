@@ -69,6 +69,53 @@ keypoints:
 >
 {: .callout}
 
+The [methods][pkg-methods] R package - included in the set of core packages installed with R - provides functions to define and register [S4 classes][glossary-s4-class].
+
+A new S4 class is defined using the function `setClass`.
+At its simplest, a class can defined from a name and a list of [slots][glossary-s4-slot].
+
+The class name will be used to identify [S4 objects][glossary-s4-object] of that class, allowing [method dispatch][glossary-method-dispatch] to call the appropriate method designed to process objects of that type.
+
+Each _class slot_ identified by its name and the type of data that it will contain.
+
+- a name
+- a name character vector of 
+
+
+~~~
+setClass("Experiment", slots=c(
+    title = "character",
+    matrix = "numeric",
+    metadata = "list"
+    ))
+~~~
+{: .language-r}
+
+Once a class has been defined, new objects of that class can be instantiated (i.e., created) using the `new()` function.
+Those new objects can be assigned to variable name for subsequent use, including display in the console.
+
+
+~~~
+experiment1 <- new("Experiment")
+experiment1
+~~~
+{: .language-r}
+
+
+
+~~~
+An object of class "Experiment"
+Slot "title":
+character(0)
+
+Slot "matrix":
+numeric(0)
+
+Slot "metadata":
+list()
+~~~
+{: .output}
+
 
 # Install packages
 
@@ -155,7 +202,8 @@ Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 69
 {: .error}
 
 That said, the symbols that compose the alphabet DNA sequences are not limited to the characters A, T, C, and G.
-The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide code that represent combinations of nucleotides, in a way similar to regular expressions. 
+The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide code that represent combinations of nucleotides, in a way similar to regular expressions.
+The `IUPAC_CODE_MAP` 
 
 
 ~~~
@@ -173,5 +221,25 @@ IUPAC_CODE_MAP
 ~~~
 {: .output}
 
+Any of those nucleotide codes are allowed in the sequence of a `DNAString` object.
 
+
+~~~
+DNAString("ATCGM")
+~~~
+{: .language-r}
+
+
+
+~~~
+5-letter DNAString object
+seq: ATCGM
+~~~
+{: .output}
+
+[pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
+[glossary-s4-slot]: ../reference.html#s4-class-slot
+[glossary-s4-class]: ../reference.html#s4-class
+[glossary-s4-object]: ../reference.html#s4-object
+[glossary-s4-dispatch]: ../reference.html#s4-method-dispatch
