@@ -86,7 +86,7 @@ Each _class slot_ identified by its name and the type of data that it will conta
 setClass("Experiment", slots=c(
     title = "character",
     matrix = "numeric",
-    metadata = "list"
+    metadata = "data.frame"
     ))
 ```
 
@@ -94,13 +94,24 @@ Once a class has been defined, new objects of that class can be instantiated (i.
 Those new objects can be assigned to variable name for subsequent use, including display in the console.
 For example, we can create a class called "Experiment", that contains:
 
-- a _title_, as a character string
+- a _title_, as a `character` vector
 - a numeric _matrix_
-- some _metadata_, as a list
+- some _metadata_, as a `data.frame` (e.g., one row per sample, one column per attribute)
 
 ```{r}
 experiment1 <- new("Experiment")
 experiment1
+```
+
+Notice that the definition of the slots ensures that we cannot assign data of the wrong type to any of the slots.
+Each value that does not match the type of the slot generates a validity error message.
+
+```{r}
+experiment1 <- new("Experiment", 
+    title = 2,
+    matrix = matrix("A"),
+    metadata = list()
+)
 ```
 
 

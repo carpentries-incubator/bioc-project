@@ -86,7 +86,7 @@ Each _class slot_ identified by its name and the type of data that it will conta
 setClass("Experiment", slots=c(
     title = "character",
     matrix = "numeric",
-    metadata = "list"
+    metadata = "data.frame"
     ))
 ~~~
 {: .language-r}
@@ -95,9 +95,9 @@ Once a class has been defined, new objects of that class can be instantiated (i.
 Those new objects can be assigned to variable name for subsequent use, including display in the console.
 For example, we can create a class called "Experiment", that contains:
 
-- a _title_, as a character string
+- a _title_, as a `character` vector
 - a numeric _matrix_
-- some _metadata_, as a list
+- some _metadata_, as a `data.frame` (e.g., one row per sample, one column per attribute)
 
 
 ~~~
@@ -117,9 +117,31 @@ Slot "matrix":
 numeric(0)
 
 Slot "metadata":
-list()
+data frame with 0 columns and 0 rows
 ~~~
 {: .output}
+
+Notice that the definition of the slots ensures that we cannot assign data of the wrong type to any of the slots.
+Each value that does not match the type of the slot generates a validity error message.
+
+
+~~~
+experiment1 <- new("Experiment", 
+    title = 2,
+    matrix = matrix("A"),
+    metadata = list()
+)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in validObject(.Object): invalid class "Experiment" object: 1: invalid object for slot "title" in class "Experiment": got class "numeric", should be or extend class "character"
+invalid class "Experiment" object: 2: invalid object for slot "matrix" in class "Experiment": got class "matrix", should be or extend class "numeric"
+invalid class "Experiment" object: 3: invalid object for slot "metadata" in class "Experiment": got class "list", should be or extend class "data.frame"
+~~~
+{: .error}
 
 
 # Install packages
