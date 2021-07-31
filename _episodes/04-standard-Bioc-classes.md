@@ -69,6 +69,8 @@ keypoints:
 >
 {: .callout}
 
+## Defining a new class
+
 The [methods][pkg-methods] R package - included in the set of core packages installed with R - provides functions to define and register [S4 classes][glossary-s4-class].
 
 A new S4 class is defined using the function `setClass`.
@@ -79,25 +81,28 @@ The class name will be used to identify [S4 objects][glossary-s4-object] of that
 Each _class slot_ identified by its name and the type of data that it will contain.
 
 - a name
-- a name character vector of 
+- a named character vector of _slots_ and data types that each slot is allowed to contain
 
-
-~~~
-setClass("Experiment", slots=c(
-    title = "character",
-    matrix = "numeric",
-    metadata = "data.frame"
-    ))
-~~~
-{: .language-r}
-
-Once a class has been defined, new objects of that class can be instantiated (i.e., created) using the `new()` function.
-Those new objects can be assigned to variable name for subsequent use, including display in the console.
 For example, we can create a class called "Experiment", that contains:
 
 - a _title_, as a `character` vector
 - a numeric _matrix_
 - some _metadata_, as a `data.frame` (e.g., one row per sample, one column per attribute)
+
+
+~~~
+setClass("Experiment", slots=c(
+    title = "character",
+    matrix = "matrix",
+    metadata = "data.frame"
+    ))
+~~~
+{: .language-r}
+
+## Instantiating objects of a class
+
+Once a class has been defined, new objects of that class can be instantiated (i.e., created) using the `new()` function.
+Those new objects can be assigned to variable name for subsequent use, including display in the console.
 
 
 ~~~
@@ -114,7 +119,7 @@ Slot "title":
 character(0)
 
 Slot "matrix":
-numeric(0)
+<0 x 0 matrix>
 
 Slot "metadata":
 data frame with 0 columns and 0 rows
@@ -138,10 +143,51 @@ experiment1 <- new("Experiment",
 
 ~~~
 Error in validObject(.Object): invalid class "Experiment" object: 1: invalid object for slot "title" in class "Experiment": got class "numeric", should be or extend class "character"
-invalid class "Experiment" object: 2: invalid object for slot "matrix" in class "Experiment": got class "matrix", should be or extend class "numeric"
-invalid class "Experiment" object: 3: invalid object for slot "metadata" in class "Experiment": got class "list", should be or extend class "data.frame"
+invalid class "Experiment" object: 2: invalid object for slot "metadata" in class "Experiment": got class "list", should be or extend class "data.frame"
 ~~~
 {: .error}
+
+However, rather than letting users call the `new()` function, it is generally best practice to implement a _contructor_ function.
+A constructor function typically calls the `new()` function, after potentially performing additional validity checks beyond the type of arguments, and processing arguments into the actual values that will be stored in the various slots of the final object.
+Best practice is to name constructor functions identically to the name of class that they instantiate objects for.
+
+
+~~~
+Experiment <- function(title, matrix, metadata) {
+    title <- as.character(title)
+    matrix <- as.matrix(matrix)
+    storage.mode(matrix) <- "numeric"
+    metadata <- as.data.frame(metadata)
+    new("Experiment", 
+        title = title,
+        matrix = matrix,
+        metadata = metadata
+    )
+}
+Experiment(
+    title = 2,
+    matrix = matrix("1", dimnames = list("A", "a")),
+    metadata = list(A = 1, B = 2))
+~~~
+{: .language-r}
+
+
+
+~~~
+An object of class "Experiment"
+Slot "title":
+[1] "2"
+
+Slot "matrix":
+  a
+A 1
+
+Slot "metadata":
+  A B
+1 1 2
+~~~
+{: .output}
+
 
 
 # Install packages
