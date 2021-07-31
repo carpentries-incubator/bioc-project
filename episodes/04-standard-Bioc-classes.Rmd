@@ -92,6 +92,11 @@ setClass("Experiment", slots=c(
 
 Once a class has been defined, new objects of that class can be instantiated (i.e., created) using the `new()` function.
 Those new objects can be assigned to variable name for subsequent use, including display in the console.
+For example, we can create a class called "Experiment", that contains:
+
+- a _title_, as a character string
+- a numeric _matrix_
+- some _metadata_, as a list
 
 ```{r}
 experiment1 <- new("Experiment")
