@@ -134,14 +134,48 @@ data frame with 0 columns and 0 rows
 ~~~
 {: .output}
 
-Notice that the definition of the slots ensures that we cannot assign data of the wrong type to any of the slots.
+Notice above that when we do not provide values for the various slots of the new object, each slot is automatically populated by an empty value of the correct type.
+Instead, the `new()` function can be given named arguments that are used to populate the corresponding slot.
+
+
+~~~
+exampleCharacter <- c("A", "B", "C")
+exampleNumericMatrix <- matrix(1)
+exampleDataFrame <- data.frame(A = 1, B = 2)
+objectA2 <- new("ClassA", 
+    characterA = exampleCharacter,
+    numericMatrixA = exampleNumericMatrix,
+    dataframeA = exampleDataFrame
+)
+objectA2
+~~~
+{: .language-r}
+
+
+
+~~~
+An object of class "ClassA"
+Slot "characterA":
+[1] "A" "B" "C"
+
+Slot "numericMatrixA":
+     [,1]
+[1,]    1
+
+Slot "dataframeA":
+  A B
+1 1 2
+~~~
+{: .output}
+
+Crucially, the definition of the slots ensures that we cannot assign data of the wrong type to any of the slots.
 Each value that does not match the type of the slot generates a validity error message.
 
 
 ~~~
-invalidObjectA <- new("ClassA", 
+new("ClassA", 
     characterA = 2,
-    matrixA = matrix("A"),
+    numericMatrixA = matrix("A"),
     dataframeA = list(A = 1, B = 2)
 )
 ~~~
@@ -150,7 +184,8 @@ invalidObjectA <- new("ClassA",
 
 
 ~~~
-Error in initialize(value, ...): invalid name for slot of class "ClassA": matrixA
+Error in validObject(.Object): invalid class "ClassA" object: 1: invalid object for slot "characterA" in class "ClassA": got class "numeric", should be or extend class "character"
+invalid class "ClassA" object: 2: invalid object for slot "dataframeA" in class "ClassA": got class "list", should be or extend class "data.frame"
 ~~~
 {: .error}
 
@@ -168,7 +203,7 @@ ClassA <- function(character, matrix, dataframe) {
     dataframe <- as.data.frame(dataframe)
     new("ClassA", 
         characterA = character,
-        matrixA = matrix,
+        numericMatrixA = matrix,
         dataframeA = dataframe
     )
 }
@@ -183,19 +218,6 @@ objectA2 <- ClassA(
     character = 2,
     matrix = matrix("1", dimnames = list("A", "a")),
     dataframe = list(A = 1, B = 2))
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in initialize(value, ...): invalid name for slot of class "ClassA": matrixA
-~~~
-{: .error}
-
-
-
-~~~
 objectA2
 ~~~
 {: .language-r}
@@ -203,9 +225,19 @@ objectA2
 
 
 ~~~
-Error in eval(expr, envir, enclos): object 'objectA2' not found
+An object of class "ClassA"
+Slot "characterA":
+[1] "2"
+
+Slot "numericMatrixA":
+  a
+A 1
+
+Slot "dataframeA":
+  A B
+1 1 2
 ~~~
-{: .error}
+{: .output}
 
 
 # Install packages
