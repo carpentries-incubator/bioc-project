@@ -19,7 +19,6 @@ Obtained from [UniProtKB human proteins (Reviewed (Swiss-Prot) - Manually annota
 
 
 ~~~
-dir.create("data", showWarnings = FALSE)
 download.file(url = "https://github.com/Bioconductor/bioconductor-teaching/raw/master/data/UniProt/uniprot-filtered-reviewed_human_96.fasta.gz", destfile = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
 ~~~
 {: .language-r}
