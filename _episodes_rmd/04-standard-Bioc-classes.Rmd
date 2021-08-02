@@ -164,12 +164,70 @@ ClassA <- function(character, matrix, dataframe) {
 We can then use the _constructor_ function to instantiate new objects.
 
 ```{r}
-objectA2 <- ClassA(
-    character = 2,
-    matrix = matrix("1", dimnames = list("A", "a")),
-    dataframe = list(A = 1, B = 2))
-objectA2
+objectA3 <- ClassA(
+    character = exampleCharacter,
+    matrix = exampleNumericMatrix,
+    dataframe = exampleDataFrame)
+objectA3
 ```
+
+
+## Defining and using class methods
+
+In contrast to regular functions, [S4 generics][TODO] and [S4 methods][TODO] use the class of their argument(s) to alter their behaviour and call the version of the method specifically implemented to handle that particular type of objects.
+
+The generic defines the name of the method, as well as the arguments that will be used to dispatch calls to the appropriate method.
+Instead, the method(s) define practical implementations of the generic for specific classes.
+
+For instance, we define a new generic called "summarizeObject", which will dispatch calls according to the class of the argument `x`.
+
+```{r, results='hide'}
+setGeneric(
+    "summarizeObject",
+    function(x) standardGeneric("summarizeObject")
+)
+```
+
+However, the generic itself does not yet declare how to handle any particular class.
+If we call it now, we see that the generic does not yet have a method capable of handling objects of the class "ClassA".
+
+```{r}
+summarizeObject(objectA3)
+```
+
+We define a new method of the "summarizeObject" generic for the "summarizeObject" class, using the `setMethod()` function.
+The function takes the name of the generic, the _signature_ of the method (i.e., the classes of the arguments for which it is defined), and the function that defines the behaviour of this method for this combination of arguments.
+For example, we define this function to print some basic information about the object and its slots.
+
+```{r}
+setMethod("summarizeObject", "ClassA", function(x) {
+    cat(paste0("This is an object of class: ", class(x), "\n"))
+    cat(paste0("It contains ", length(slotNames(x)), " slots named: ", paste0(slotNames(x), collapse = ", "), "\n"))
+    cat(paste0("Slot characterA contains ", length(x@characterA), " character value(s).\n"))
+    cat(paste0("Slot numericMatrixA contains ", nrow(x@numericMatrixA), " row(s) and ", ncol(x@numericMatrixA), " column(s).\n"))
+    cat(paste0("Slot dataframeA contains ", nrow(x@dataframeA), " row(s) and ", ncol(x@dataframeA), " column(s)."))
+})
+summarizeObject(objectA3)
+```
+
+
+> ## Challenge
+> 
+> Define another class called "ClassB".
+> That class should contain two slots, one slot called "numericB" storing a numeric vector, and one slot called "logicalB" storing a logical vector.
+> 
+> Instantiate an object of class "ClassB".
+> 
+> Define a method of the generic "summarizeObject" for the "ClassB" class, that displays the number of values in slots "numericB" and "logicalB".
+>
+{: .challenge}
+
+
+The [S4 method dispatch][glossary-s4-dispatch] system has several advantages:
+
+- All methods for the same generic share the same name, reducing the cognitive load on users.
+- Methods happily co-exist in the same workspace, with S4 method dispatch choosing the correct method based on the class of input arguments.
+- Individual methods do not need to perform type-checking on arguments that are handled by the method dispatch, making methods easier to write and to read.
 
 
 # Install packages
