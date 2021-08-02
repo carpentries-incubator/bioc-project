@@ -336,6 +336,8 @@ BiocManager::install("Biostrings")
 
 # The Biostrings package and classes
 
+## Types of biological strings
+
 Many bioinformatics analyses focus on biological sequences that are often represented as strings or characters vectors.
 Examples include nucleic acid sequences (e.g., DNA, RNA), and protein sequences composed of aminoacids.
 
@@ -441,6 +443,40 @@ DNAString("ATCGM")
 seq: ATCGM
 ~~~
 {: .output}
+
+## Importing biological strings from files
+
+In practice, we rarely type the strings representing biological sequences ourselves.
+Most of the time, we read those from files that we download from the web, or that we generate as outputs from other programs.
+For instance, we load the set of human protein sequences obtained from the high quality manually annotated and non-redundant protein sequence database of the UniProt knowledge base, that we downloaded during the lesson setup.
+
+
+~~~
+human_proteins <- readAAStringSet(filepath = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in .Call2("new_input_filexp", filepath, PACKAGE = "XVector"): cannot open file 'data/uniprot-filtered-reviewed_human_96.fasta.gz'
+~~~
+{: .error}
+
+
+
+~~~
+human_proteins
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in eval(expr, envir, enclos): object 'human_proteins' not found
+~~~
+{: .error}
+
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
