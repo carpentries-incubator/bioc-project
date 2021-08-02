@@ -58,18 +58,6 @@ knitr_fig_path("02-")
 
 # S4 class system
 
-> ## Contribute!
-> 
-> This section is a general illustration of S4 classes and their organisation.
-> 
-> Illustrate:
-> 
-> - Slots
-> - Re-use and inheritance (be careful about redundancy with the section above).
-> - Methods (e.g. `show()`)
->
-{: .callout}
-
 ## Overview
 
 As users, we generally do not need to create our own S4 classes and methods.
@@ -215,6 +203,11 @@ setMethod("summarizeObject", "ClassA", function(x) {
 summarizeObject(objectA3)
 ```
 
+> ## Contribute!
+> 
+> Illustrate `setValidity()`.
+>
+{: .callout}
 
 > ## Challenge
 > 
