@@ -329,6 +329,8 @@ The [S4 method dispatch][glossary-s4-dispatch] system has several advantages:
 
 # Install packages
 
+Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+
 
 ~~~
 if (!requireNamespace("BiocManager", quietly = TRUE))
