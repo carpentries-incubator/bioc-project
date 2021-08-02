@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: "Introduction to Bioconductor"
+title: "Setup"
 teaching: XX
 exercises: XX
 questions:
@@ -18,6 +18,6 @@ knitr_fig_path("00-")
 
 Obtained from [UniProtKB human proteins (Reviewed (Swiss-Prot) - Manually annotated)](https://www.uniprot.org/uniprot/?query=*&fil=reviewed%3Ayes+AND+organism%3A%22Homo+sapiens+%28Human%29+%5B9606%5D%22+AND+proteome%3Aup000005640)
 
-```{r, eval=FALSE}
-download.file(url = "https://github.com/Bioconductor/bioconductor-teaching/blob/master/data/.../uniprot-filtered-reviewed_human_96.fasta.gz", destfile = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
+```{r}
+download.file(url = "https://github.com/Bioconductor/bioconductor-teaching/raw/master/data/UniProt/uniprot-filtered-reviewed_human_96.fasta.gz", destfile = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
 ```
