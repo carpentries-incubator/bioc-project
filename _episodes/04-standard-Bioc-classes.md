@@ -76,28 +76,36 @@ The [methods][pkg-methods] R package - included in the set of core packages inst
 A new S4 class is defined using the function `setClass`.
 At its simplest, a class can defined from a name and a list of [slots][glossary-s4-slot].
 
-The class name will be used to identify [S4 objects][glossary-s4-object] of that class, allowing [method dispatch][glossary-method-dispatch] to call the appropriate method designed to process objects of that type.
+The class name will be used to identify [S4 objects][glossary-s4-object] of that class, allowing [S4 method dispatch][glossary-method-dispatch] to call the appropriate method designed to process objects of that type.
 
-Each _class slot_ identified by its name and the type of data that it will contain.
+Each [class slot][glossary-s4-slot] identified by its name and the type of data that it will contain.
 
 - a name
-- a named character vector of _slots_ and data types that each slot is allowed to contain
+- a named character vector of slots and data types that each slot is allowed to contain
 
-For example, we can create a class called "Experiment", that contains:
+For example, we can create a class called called "ClassA", that contains:
 
-- a _title_, as a `character` vector
-- a numeric _matrix_
-- some _metadata_, as a `data.frame` (e.g., one row per sample, one column per attribute)
+- a slot called "characterA", that can hold a `character` vector.
+- a slot called "numericMatrixA", that can hold a `numeric` `matrix`.
+- a slot called "dataframeA", that can hold a `data.frame`.
 
 
 ~~~
-setClass("Experiment", slots=c(
-    title = "character",
-    matrix = "matrix",
-    metadata = "data.frame"
+setClass("ClassA", slots=c(
+    characterA = "character",
+    numericMatrixA = "matrix",
+    dataframeA = "data.frame"
     ))
 ~~~
 {: .language-r}
+
+> ## Slot names
+> 
+> The names of class slots are entirely arbitrary and defined by the author of the class.
+> In this simple example, we give names that describe the type of data that they can hold.
+> In practice, slot names tend to describe the conceptual nature of the data that they can contain (e.g., "raw_data", "assays", "metadata").
+>
+{: .callout}
 
 ## Instantiating objects of a class
 
@@ -106,22 +114,22 @@ Those new objects can be assigned to variable name for subsequent use, including
 
 
 ~~~
-experiment1 <- new("Experiment")
-experiment1
+objectA1 <- new("ClassA")
+objectA1
 ~~~
 {: .language-r}
 
 
 
 ~~~
-An object of class "Experiment"
-Slot "title":
+An object of class "ClassA"
+Slot "characterA":
 character(0)
 
-Slot "matrix":
+Slot "numericMatrixA":
 <0 x 0 matrix>
 
-Slot "metadata":
+Slot "dataframeA":
 data frame with 0 columns and 0 rows
 ~~~
 {: .output}
@@ -131,10 +139,10 @@ Each value that does not match the type of the slot generates a validity error m
 
 
 ~~~
-experiment1 <- new("Experiment", 
-    title = 2,
-    matrix = matrix("A"),
-    metadata = list()
+invalidObjectA <- new("ClassA", 
+    characterA = 2,
+    matrixA = matrix("A"),
+    dataframeA = list(A = 1, B = 2)
 )
 ~~~
 {: .language-r}
@@ -142,52 +150,62 @@ experiment1 <- new("Experiment",
 
 
 ~~~
-Error in validObject(.Object): invalid class "Experiment" object: 1: invalid object for slot "title" in class "Experiment": got class "numeric", should be or extend class "character"
-invalid class "Experiment" object: 2: invalid object for slot "metadata" in class "Experiment": got class "list", should be or extend class "data.frame"
+Error in initialize(value, ...): invalid name for slot of class "ClassA": matrixA
 ~~~
 {: .error}
 
 However, rather than letting users call the `new()` function, it is generally best practice to implement a _contructor_ function.
-A constructor function typically calls the `new()` function, after potentially performing additional validity checks beyond the type of arguments, and processing arguments into the actual values that will be stored in the various slots of the final object.
+A constructor function typically calls the `new()` function, after potentially performing additional validity checks beyond the built-in type-checking of values assigned to slots.
+Often, _contructor_ function also process their own arguments into the actual values that will be stored in the various slots of the final object.
 Best practice is to name constructor functions identically to the name of class that they instantiate objects for.
 
 
 ~~~
-Experiment <- function(title, matrix, metadata) {
-    title <- as.character(title)
+ClassA <- function(character, matrix, dataframe) {
+    character <- as.character(character)
     matrix <- as.matrix(matrix)
     storage.mode(matrix) <- "numeric"
-    metadata <- as.data.frame(metadata)
-    new("Experiment", 
-        title = title,
-        matrix = matrix,
-        metadata = metadata
+    dataframe <- as.data.frame(dataframe)
+    new("ClassA", 
+        characterA = character,
+        matrixA = matrix,
+        dataframeA = dataframe
     )
 }
-Experiment(
-    title = 2,
+~~~
+{: .language-r}
+
+We can then use the _constructor_ function to instantiate new objects.
+
+
+~~~
+objectA2 <- ClassA(
+    character = 2,
     matrix = matrix("1", dimnames = list("A", "a")),
-    metadata = list(A = 1, B = 2))
+    dataframe = list(A = 1, B = 2))
 ~~~
 {: .language-r}
 
 
 
 ~~~
-An object of class "Experiment"
-Slot "title":
-[1] "2"
-
-Slot "matrix":
-  a
-A 1
-
-Slot "metadata":
-  A B
-1 1 2
+Error in initialize(value, ...): invalid name for slot of class "ClassA": matrixA
 ~~~
-{: .output}
+{: .error}
 
+
+
+~~~
+objectA2
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in eval(expr, envir, enclos): object 'objectA2' not found
+~~~
+{: .error}
 
 
 # Install packages
