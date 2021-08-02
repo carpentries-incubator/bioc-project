@@ -57,18 +57,6 @@ keypoints:
 
 # S4 class system
 
-> ## Contribute!
-> 
-> This section is a general illustration of S4 classes and their organisation.
-> 
-> Illustrate:
-> 
-> - Slots
-> - Re-use and inheritance (be careful about redundancy with the section above).
-> - Methods (e.g. `show()`)
->
-{: .callout}
-
 ## Overview
 
 As users, we generally do not need to create our own S4 classes and methods.
@@ -307,6 +295,11 @@ Slot dataframeA contains 1 row(s) and 2 column(s).
 ~~~
 {: .output}
 
+> ## Contribute!
+> 
+> Illustrate `setValidity()`.
+>
+{: .callout}
 
 > ## Challenge
 > 
