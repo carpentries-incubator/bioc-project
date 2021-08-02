@@ -70,6 +70,11 @@ knitr_fig_path("02-")
 >
 {: .callout}
 
+## Overview
+
+As users, we generally do not need to create our own S4 classes and methods.
+However, to understand the key concepts of the S4 class system, this section walks us through the process of creating and interacting with a simple S4 class.
+
 ## Defining a new class
 
 The [methods][pkg-methods] R package - included in the set of core packages installed with R - provides functions to define and register [S4 classes][glossary-s4-class].
