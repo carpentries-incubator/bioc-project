@@ -21,6 +21,8 @@ keypoints:
 
 
 
+
+
 > ## Contribute!
 > 
 > This episode is intended to introduce some core Bioconductor classes to illustrate key concepts of S4 classes and methods.
@@ -453,19 +455,6 @@ For instance, we load the set of human protein sequences obtained from the high 
 
 ~~~
 human_proteins <- readAAStringSet(filepath = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in .Call2("new_input_filexp", filepath, PACKAGE = "XVector"): cannot open file 'data/uniprot-filtered-reviewed_human_96.fasta.gz'
-~~~
-{: .error}
-
-
-
-~~~
 human_proteins
 ~~~
 {: .language-r}
@@ -473,9 +462,21 @@ human_proteins
 
 
 ~~~
-Error in eval(expr, envir, enclos): object 'human_proteins' not found
+AAStringSet object of length 20371:
+        width seq                                           names               
+    [1]   395 MNGPVDGLCDHSLSEGVFMFT...ACYGHFGRSEFPWEVPRKLVF sp|Q00266|METK1_H...
+    [2]   471 MENLKHIITLGQVIHKRCEEM...HDPSVRPSVDEILKKLSTFSK sp|Q8NB16|MLKL_HU...
+    [3]  1124 MGENEDEKQAQAGQVFENFVQ...GTLEGSPPVHFSLPVLHPLLG sp|O94851|MICA2_H...
+    [4]  1067 MASPTSTNPAHAHFESFLQAQ...LIRFQEERRLSELALGTGAQG sp|Q8TDZ2|MICA1_H...
+    [5]   270 MAASSSGEKEKERLGGGLGVA...ENEDDVEIMSTDSSSSSSESD sp|Q9NPJ6|MED4_HU...
+    ...   ... ...
+[20367]   348 MPHIDNDVKLDFKDVLLRPKR...SRRTTFIRVTQQVNPIFSEAC sp|Q9P2T1|GMPR2_H...
+[20368]   553 MPLPWSLALPLLLSWVAGGFG...AVDGVLLVSGLCPDSLLSVDD sp|Q8IUX8|EGFL6_H...
+[20369]   352 MASRKEGTGSTATSSSSTAGA...EFTAQNLGKLFMAQALQEYNN sp|O15372|EIF3H_H...
+[20370]   163 MSLLLLVVSALHILILILLFV...WVAFPLALVSGIIYIHLRKRE sp|P54852|EMP3_HU...
+[20371]   254 MDNYADLSDTELTTLLRRYNI...VFVIVLFFIYHFMQAEEGNPF sp|P50402|EMD_HUM...
 ~~~
-{: .error}
+{: .output}
 
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html

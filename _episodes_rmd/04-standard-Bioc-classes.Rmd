@@ -17,6 +17,10 @@ keypoints:
 - "S4 classes perform validity checks and report invalid object states."
 ---
 
+```{r, echo=FALSE, purl=FALSE, message=FALSE}
+source("download_data.R")
+```
+
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
 knitr_fig_path("04-")
