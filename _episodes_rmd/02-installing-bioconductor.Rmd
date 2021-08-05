@@ -145,6 +145,16 @@ library(BiocPkgTools)
 
 # Finding a suitable package
 
-* biocViews
+On the Bioconductor website, the [BiocViews][biocviews-webpage] use a predefined - yet, evolving - set of labels to categorize all the packages available in the Bioconductor project.
+
+At the top level, labels distinguish four major categories of packages by their nature:
+
+- _Software_ packages, that primarily provide classes and methods to process data and perform statistical analyses and implement analytical workflows.
+- _Annotation_ packages, that often provide access to databases of biological information, from biological sequences to location of genomic features and mapping between identifiers from different databases.
+- _Experiment_ packages, that provide data sets often used in the vignette of _Software_ packages, to demonstrate package functionality.
+- _Workflow_ packages, that primarily provide vignettes demonstrating how to combine multiple _Software_, _Annotation_, and _Experiment_ packages into best practices workflows.
+
+Within each category, labels create sub-categories that facilitate efficient searching of packages by prospective users, navigating the hierarchy of labels to iteratively refine the list of package until they identify one or more candidate packages that provide the functionality they are searching for.
 
 [git-website]: https://git-scm.com/
+[biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html#___Software
