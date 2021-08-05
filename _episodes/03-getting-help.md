@@ -137,15 +137,3 @@ For instance:
 >
 {: .callout}
 
-
-# Finding a suitable package
-
-> ## Contribute!
-> 
-> Add content about:
->
-> - biocViews
-> - <https://www.bioconductor.org/packages/release/BiocViews.html>
->
-{: .callout}
-
