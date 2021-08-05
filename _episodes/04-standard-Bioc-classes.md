@@ -23,25 +23,6 @@ keypoints:
 
 
 
-> ## Contribute!
-> 
-> This episode is intended to introduce some core Bioconductor classes to illustrate key concepts of S4 classes and methods.
-> Preferably some conceptually simple classes that can be used for intuitive exercises.
->
-> The exercises should focus on illustrating:
->
-> - slots
-> - validity checks (and fails)
-> - method dispatch
-> - `show()` method (in contrast to the `str()` function)
-> 
-> For instance, use the *[Biostrings](https://bioconductor.org/packages/3.13/Biostrings)* class to:
-> 
-> - Illustrate how to create a new object
-> - Show that validity checks prevent the creation of invalid objects (e.g. only A-T-C-G in `DNAStringSet` objects).
->
-{: .callout}
-
 # Why standard classes?
 
 > ## Contribute!
