@@ -60,6 +60,8 @@ BibOptions(
 
 The original publication describes the aims and methods of the project at its inception `r Citet(bib, "Gentleman2004")`.
 
+`r Citet(bib, "Huber2015")` illustrates the progression of the project, including descriptions of core infrastructure and case studies.
+
 
 ## A package repository
 
