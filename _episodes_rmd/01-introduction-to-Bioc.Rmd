@@ -62,6 +62,8 @@ The original publication describes the aims and methods of the project at its in
 
 `r Citet(bib, "Huber2015")` illustrates the progression of the project, including descriptions of core infrastructure and case studies, from the perspective of both users and developers.
 
+`r Citet(bib, "Amezquita2020")` reviewed further developments of the project in the wake of single-cell genomics technologies.
+
 
 ## A package repository
 
