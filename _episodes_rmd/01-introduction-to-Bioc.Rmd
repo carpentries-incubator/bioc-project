@@ -125,10 +125,13 @@ For example:
 >
 {: .callout}
 
-- [Scientific Advisory Board][bioc-scientific-advisory-board]
-- [Technical Advisory Board][bioc-technical-advisory-board]
-- [Community Advisory Board][bioc-community-advisory-board]
+- [Scientific Advisory Board][bioc-scientific-advisory-board]  Meet Annually, External and Internal leader in the field who act as project advisors. No Term limits. 
 
+- [Technical Advisory Board][bioc-technical-advisory-board]. Meet monthly to consider technical aspects of core infastructure and scientific direction of the project. 15 members, 3 year term. Annual open-to-all elections to rotate members. Current officers are Vince Carey (chair), Levi Waldron (vice Chair) Charlotte Soneson (Secretary).
+
+- [Community Advisory Board][bioc-community-advisory-board]  Meet monthly to consider community outreach, events, education and training. 15 members, 3 year term. Annual open-to-all elections to rotate members. Current officers are Aedin Culhane (chair), Matt Ritchie (co Chair), Lori Kern (Secretary).
+
+At least 1 member of TAB/CAB sits on both to act at the liason to ensure communication of the board. 
 
 # References
 
