@@ -46,6 +46,8 @@ keypoints:
 
 The original publication describes the aims and methods of the project at its inception .
 
+ illustrates the progression of the project, including descriptions of core infrastructure and case studies, from the perspective of both users and developers.
+
 
 ## A package repository
 
