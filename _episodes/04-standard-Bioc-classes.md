@@ -404,10 +404,8 @@ IUPAC_CODE_MAP
 
 
 ~~~
-     A      C      G      T      M      R      W      S      Y      K      V 
-   "A"    "C"    "G"    "T"   "AC"   "AG"   "AT"   "CG"   "CT"   "GT"  "ACG" 
-     H      D      B      N 
- "ACT"  "AGT"  "CGT" "ACGT" 
+     A      C      G      T      M      R      W      S      Y      K      V      H      D      B      N 
+   "A"    "C"    "G"    "T"   "AC"   "AG"   "AT"   "CG"   "CT"   "GT"  "ACG"  "ACT"  "AGT"  "CGT" "ACGT" 
 ~~~
 {: .output}
 
@@ -444,18 +442,80 @@ human_proteins
 
 ~~~
 AAStringSet object of length 20371:
-        width seq                                           names               
-    [1]   395 MNGPVDGLCDHSLSEGVFMFT...ACYGHFGRSEFPWEVPRKLVF sp|Q00266|METK1_H...
-    [2]   471 MENLKHIITLGQVIHKRCEEM...HDPSVRPSVDEILKKLSTFSK sp|Q8NB16|MLKL_HU...
-    [3]  1124 MGENEDEKQAQAGQVFENFVQ...GTLEGSPPVHFSLPVLHPLLG sp|O94851|MICA2_H...
-    [4]  1067 MASPTSTNPAHAHFESFLQAQ...LIRFQEERRLSELALGTGAQG sp|Q8TDZ2|MICA1_H...
-    [5]   270 MAASSSGEKEKERLGGGLGVA...ENEDDVEIMSTDSSSSSSESD sp|Q9NPJ6|MED4_HU...
+        width seq                                                                                   names               
+    [1]   395 MNGPVDGLCDHSLSEGVFMFTSESVGEGHPDKICDQISDAV...LRPGVIVRDLDLKKPIYQKTACYGHFGRSEFPWEVPRKLVF sp|Q00266|METK1_H...
+    [2]   471 MENLKHIITLGQVIHKRCEEMKYCKKQCRRLGHRVLGLIKP...EPLGEDCPSELREIIDECRAHDPSVRPSVDEILKKLSTFSK sp|Q8NB16|MLKL_HU...
+    [3]  1124 MGENEDEKQAQAGQVFENFVQASTCKGTLQAFNILTRHLDL...EQEAPRRDTPTESSCAVAAIGTLEGSPPVHFSLPVLHPLLG sp|O94851|MICA2_H...
+    [4]  1067 MASPTSTNPAHAHFESFLQAQLCQDVLSSFQELCGALGLEP...RQAEDQVLRKLVDLVNQRDALIRFQEERRLSELALGTGAQG sp|Q8TDZ2|MICA1_H...
+    [5]   270 MAASSSGEKEKERLGGGLGVAGGNSTRERLLSALEDLEVLS...NMLPPNHSSDFLLEPPGHNKENEDDVEIMSTDSSSSSSESD sp|Q9NPJ6|MED4_HU...
     ...   ... ...
-[20367]   348 MPHIDNDVKLDFKDVLLRPKR...SRRTTFIRVTQQVNPIFSEAC sp|Q9P2T1|GMPR2_H...
-[20368]   553 MPLPWSLALPLLLSWVAGGFG...AVDGVLLVSGLCPDSLLSVDD sp|Q8IUX8|EGFL6_H...
-[20369]   352 MASRKEGTGSTATSSSSTAGA...EFTAQNLGKLFMAQALQEYNN sp|O15372|EIF3H_H...
-[20370]   163 MSLLLLVVSALHILILILLFV...WVAFPLALVSGIIYIHLRKRE sp|P54852|EMP3_HU...
-[20371]   254 MDNYADLSDTELTTLLRRYNI...VFVIVLFFIYHFMQAEEGNPF sp|P50402|EMD_HUM...
+[20367]   348 MPHIDNDVKLDFKDVLLRPKRSTLKSRSEVDLTRSFSFRNS...ILGGIRSTCTYVGAAKLKELSRRTTFIRVTQQVNPIFSEAC sp|Q9P2T1|GMPR2_H...
+[20368]   553 MPLPWSLALPLLLSWVAGGFGNAASARHHGLLASARQPGVC...DATKSIIFEAERGKGKTGEIAVDGVLLVSGLCPDSLLSVDD sp|Q8IUX8|EGFL6_H...
+[20369]   352 MASRKEGTGSTATSSSSTAGAAGKGKGKGGSGDSAVKQVQI...ARMDSLLIAGQINTYCQNIKEFTAQNLGKLFMAQALQEYNN sp|O15372|EIF3H_H...
+[20370]   163 MSLLLLVVSALHILILILLFVATLDKSWWTLPGKESLNLWY...EEILEKHPRGGSFGYCFALAWVAFPLALVSGIIYIHLRKRE sp|P54852|EMP3_HU...
+[20371]   254 MDNYADLSDTELTTLLRRYNIPHGPVVGSTRRLYEKKIFEY...GAGLGQDRQVPLWGQLLLFLVFVIVLFFIYHFMQAEEGNPF sp|P50402|EMD_HUM...
+~~~
+{: .output}
+## Computing the frequency of symbols
+
+The *[Biostrings](https://bioconductor.org/packages/3.13/Biostrings)* package provides several functions to process and manipulate classes of biological strings.
+For instance, the `Biostrings::letterFrequency()` calculates the frequency of letters in a biological sequence, or the consensus matrix of a set of sequences (see the help page using `?Biostrings::letterFrequency`).
+
+The `methods::showMethods()` function can be used to identify which classes are supported by the method.
+Below, we see that the method does support the class `AAStringSet`.
+In particular, the output indicates that S4 method dispatch will call the method implemented for the class `XStringSet` - a class from which `AAStringSet` inherits - which implicitly indicates that there is no method specifically implemented for the `AAStringSet`.
+
+
+~~~
+showMethods("letterFrequency")
+~~~
+{: .language-r}
+
+
+
+~~~
+Function: letterFrequency (package Biostrings)
+x="MaskedXString"
+x="XString"
+x="XStringSet"
+x="XStringViews"
+~~~
+{: .output}
+
+We now know that we can use the `letterFrequency()` method on our object `human_proteins`, which is of class `AAStringSet`.
+
+The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of amino acids, provided by the *[Biostrings](https://bioconductor.org/packages/3.13/Biostrings)* package in an object called `AA_ALPHABET`.
+
+
+~~~
+human_proteins.freq <- letterFrequency(human_proteins, letters = AA_ALPHABET)
+head(human_proteins.freq)
+~~~
+{: .language-r}
+
+
+
+~~~
+       A  R  N  D  C  Q  E  G  H  I   L  K  M  F  P  S  T  W  Y  V U O B J Z X * - + .
+[1,]  29 22  8 31 10 17 21 34 12 22  31 22 10 12 16 20 21  4 13 40 0 0 0 0 0 0 0 0 0 0
+[2,]  22 35 13 20 10 28 47 22  8 33  50 43 12 16 19 32 21  4 11 25 0 0 0 0 0 0 0 0 0 0
+[3,]  80 72 57 48 26 48 79 66 35 37 111 75 19 55 65 89 60 13 28 61 0 0 0 0 0 0 0 0 0 0
+[4,] 100 66 31 42 19 67 87 79 27 19 133 47 17 35 70 71 54 17 21 65 0 0 0 0 0 0 0 0 0 0
+[5,]  21 13 14 14  1 15 29 19  7 12  33 16 10  2 14 27  6  2  4 11 0 0 0 0 0 0 0 0 0 0
+[6,]  24 21 29 27 13  6 28 20 10 33  38 28  6 19 12 47 34  3 13 31 0 0 0 0 0 0 0 0 0 0
+~~~
+{: .output}
+
+
+~~~
+dim(human_proteins.freq)
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] 20371    30
 ~~~
 {: .output}
 
