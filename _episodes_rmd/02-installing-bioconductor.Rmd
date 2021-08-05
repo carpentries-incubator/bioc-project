@@ -157,4 +157,4 @@ At the top level, labels distinguish four major categories of packages by their 
 Within each category, labels create sub-categories that facilitate efficient searching of packages by prospective users, navigating the hierarchy of labels to iteratively refine the list of package until they identify one or more candidate packages that provide the functionality they are searching for.
 
 [git-website]: https://git-scm.com/
-[biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html#___Software
+[biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html
