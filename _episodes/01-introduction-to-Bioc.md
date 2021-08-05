@@ -50,6 +50,8 @@ The original publication describes the aims and methods of the project at its in
 
  reviewed further developments of the project in the wake of single-cell genomics technologies.
 
+Many more publications and book chapters cite the Bioconductor project, with recent example listed on the [Bioconductor website][bioc-publications].
+
 
 ## A package repository
 
@@ -109,9 +111,9 @@ For example:
 >
 {: .callout}
 
-- [Scientific Advisory Board][scientific-advisory-board]
-- [Technical Advisory Board][technical-advisory-board]
-- [Community Advisory Board][community-advisory-board]
+- [Scientific Advisory Board][bioc-scientific-advisory-board]
+- [Technical Advisory Board][bioc-technical-advisory-board]
+- [Community Advisory Board][bioc-community-advisory-board]
 
 
 # References
@@ -123,6 +125,7 @@ NULL
 [bioc-slack]: https://bioc-community.herokuapp.com/
 [bioc-support-site]: https://support.bioconductor.org/
 [bioc-course-materials]: https://bioconductor.org/help/course-materials/
-[scientific-advisory-board]: https://bioconductor.org/about/scientific-advisory-board/
-[technical-advisory-board]: https://bioconductor.org/about/technical-advisory-board/
-[community-advisory-board]: https://bioconductor.org/about/community-advisory-board/
+[bioc-publications]: https://www.bioconductor.org/help/publications/
+[bioc-scientific-advisory-board]: https://bioconductor.org/about/scientific-advisory-board/
+[bioc-technical-advisory-board]: https://bioconductor.org/about/technical-advisory-board/
+[bioc-community-advisory-board]: https://bioconductor.org/about/community-advisory-board/
