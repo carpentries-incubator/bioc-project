@@ -24,6 +24,7 @@ source("download_data.R")
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
 knitr_fig_path("04-")
+options(width = 120)
 ```
 
 # Why standard classes?
@@ -289,6 +290,31 @@ For instance, we load the set of human protein sequences obtained from the high 
 ```{r}
 human_proteins <- readAAStringSet(filepath = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
 human_proteins
+```
+## Computing the frequency of symbols
+
+The `r BiocStyle::Biocpkg("Biostrings")` package provides several functions to process and manipulate classes of biological strings.
+For instance, the `Biostrings::letterFrequency()` calculates the frequency of letters in a biological sequence, or the consensus matrix of a set of sequences (see the help page using `?Biostrings::letterFrequency`).
+
+The `methods::showMethods()` function can be used to identify which classes are supported by the method.
+Below, we see that the method does support the class `AAStringSet`.
+In particular, the output indicates that S4 method dispatch will call the method implemented for the class `XStringSet` - a class from which `AAStringSet` inherits - which implicitly indicates that there is no method specifically implemented for the `AAStringSet`.
+
+```{r}
+showMethods("letterFrequency")
+```
+
+We now know that we can use the `letterFrequency()` method on our object `human_proteins`, which is of class `AAStringSet`.
+
+The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of amino acids, provided by the `r BiocStyle::Biocpkg("Biostrings")` package in an object called `AA_ALPHABET`.
+
+```{r}
+human_proteins.freq <- letterFrequency(human_proteins, letters = AA_ALPHABET)
+head(human_proteins.freq)
+```
+
+```{r}
+dim(human_proteins.freq)
 ```
 
 
