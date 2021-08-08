@@ -12,9 +12,10 @@ objectives:
 - "Identify common classes and methods used in the Bioconductor project."
 - "Create objects and process them using methods from differerent packages in a single workflow."
 keypoints:
-- "Common methods and classes promote interoperability between packages, reduce redundant efforts by package developers, and facilitate the writing of workflows"
-- "S4 classes can represent arbitrarily complex data structures."
-- "S4 classes perform validity checks and report invalid object states."
+- "The `methods` package provides functions to define new S4 classes and methods."
+- "S4 objects generally display a concise summary of the information that they contain."
+- "Generics and methods allow multiple functions sharing the same name and arguments to behave differently for objects of different classes."
+- "Bioconductor encourages the re-use of common classes before carefully considering whether to implement additional new classes."
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
@@ -25,6 +26,15 @@ source("download_data.R")
 source("../bin/chunk-options.R")
 knitr_fig_path("04-")
 options(width = 120)
+```
+
+# Install packages
+
+Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
 ```
 
 # Why standard classes?
@@ -212,110 +222,6 @@ The [S4 method dispatch][glossary-s4-dispatch] system has several advantages:
 - All methods for the same generic share the same name, reducing the cognitive load on users.
 - Methods happily co-exist in the same workspace, with S4 method dispatch choosing the correct method based on the class of input arguments.
 - Individual methods do not need to perform type-checking on arguments that are handled by the method dispatch, making methods easier to write and to read.
-
-
-# Install packages
-
-Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
-
-```{r, eval=FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("Biostrings")
-```
-
-
-# The Biostrings package and classes
-
-## Types of biological strings
-
-Many bioinformatics analyses focus on biological sequences that are often represented as strings or characters vectors.
-Examples include nucleic acid sequences (e.g., DNA, RNA), and protein sequences composed of aminoacids.
-
-The `r BiocStyle::Biocpkg("Biostrings")` package implements classes to represent such sequences as S4 classes, e.g. `DNAString`, `AAString`.
-Those S4 classes provide memory-efficient string containers, while other methods implemented in the package provide various string matching algorithms and other utilities for fast manipulation of large biological sequences or sets of sequences.
-
-A short presentation of the basic classes defined in the `r BiocStyle::Biocpkg("Biostrings")` package is available in one of the package vignettes.
-
-```{r, eval=FALSE}
-vignette("Biostrings2Classes")
-```
-
-To get started, we load the package.
-
-```{r, message=FALSE}
-library(Biostrings)
-```
-
-With the package loaded and attached to the session, we have access to the packages functions.
-Those include functions that let us create new objects of the classes defined in the package; those functions are called _constructors_.
-For instance, we can create an object that represents a DNA sequence, using the `DNAString()` constructor function.
-
-```{r}
-DNAString("ATCG")
-```
-
-Notably, DNA sequences may only contain the characters A, T, C, and G, to represent the four DNA nucleotide.
-Notice that the constructor function does not let us create objects that contain invalid characters, that do not represent any of those four nucleotide.
-
-```{r}
-DNAString("ATCG")
-```
-
-```{r}
-DNAString("ATCGE")
-```
-
-That said, the symbols that compose the alphabet DNA sequences are not limited to the characters A, T, C, and G.
-The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide code that represent combinations of nucleotides, in a way similar to regular expressions.
-The `IUPAC_CODE_MAP` 
-
-```{r}
-IUPAC_CODE_MAP
-```
-
-Any of those nucleotide codes are allowed in the sequence of a `DNAString` object.
-
-```{r}
-DNAString("ATCGM")
-```
-
-## Importing biological strings from files
-
-In practice, we rarely type the strings representing biological sequences ourselves.
-Most of the time, we read those from files that we download from the web, or that we generate as outputs from other programs.
-For instance, we load the set of human protein sequences obtained from the high quality manually annotated and non-redundant protein sequence database of the UniProt knowledge base, that we downloaded during the lesson setup.
-
-```{r}
-human_proteins <- readAAStringSet(filepath = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
-human_proteins
-```
-## Computing the frequency of symbols
-
-The `r BiocStyle::Biocpkg("Biostrings")` package provides several functions to process and manipulate classes of biological strings.
-For instance, the `Biostrings::letterFrequency()` calculates the frequency of letters in a biological sequence, or the consensus matrix of a set of sequences (see the help page using `?Biostrings::letterFrequency`).
-
-The `methods::showMethods()` function can be used to identify which classes are supported by the method.
-Below, we see that the method does support the class `AAStringSet`.
-In particular, the output indicates that S4 method dispatch will call the method implemented for the class `XStringSet` - a class from which `AAStringSet` inherits - which implicitly indicates that there is no method specifically implemented for the `AAStringSet`.
-
-```{r}
-showMethods("letterFrequency")
-```
-
-We now know that we can use the `letterFrequency()` method on our object `human_proteins`, which is of class `AAStringSet`.
-
-The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of amino acids, provided by the `r BiocStyle::Biocpkg("Biostrings")` package in an object called `AA_ALPHABET`.
-
-```{r}
-human_proteins.freq <- letterFrequency(human_proteins, letters = AA_ALPHABET)
-head(human_proteins.freq)
-```
-
-```{r}
-dim(human_proteins.freq)
-```
 
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
