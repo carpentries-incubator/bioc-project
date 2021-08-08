@@ -1,0 +1,137 @@
+---
+source: Rmd
+title: "Biostrings"
+teaching: XX
+exercises: XX
+questions:
+- "What is the recommended way to represent biological sequences in Bioconductor?"
+- "What packagaes and methods does Bioconductor provide to efficiently process biological sequences?"
+objectives:
+- "Explain how biological sequences are represented in the Bioconductor project."
+- "Identify Bioconductor packages and methods available to process biological sequences."
+- "Create objects and process them using methods from differerent packages in a single workflow."
+keypoints:
+- "The `Biostrings` package defines classes to represent sequences of nucleotides and amino acids."
+- "The `Biostrings` package also defines methods to efficiently process biological sequences."
+---
+
+```{r, echo=FALSE, purl=FALSE, message=FALSE}
+source("download_data.R")
+```
+
+```{r, include=FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("04-")
+options(width = 120)
+```
+
+# Install packages
+
+Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("Biostrings")
+```
+
+
+# The Biostrings package and classes
+
+## Types of biological strings
+
+Many bioinformatics analyses focus on biological sequences that are often represented as strings or characters vectors.
+Examples include nucleic acid sequences (e.g., DNA, RNA), and protein sequences composed of aminoacids.
+
+The `r BiocStyle::Biocpkg("Biostrings")` package implements classes to represent such sequences as S4 classes, e.g. `DNAString`, `AAString`.
+Those S4 classes provide memory-efficient string containers, while other methods implemented in the package provide various string matching algorithms and other utilities for fast manipulation of large biological sequences or sets of sequences.
+
+A short presentation of the basic classes defined in the `r BiocStyle::Biocpkg("Biostrings")` package is available in one of the package vignettes.
+
+```{r, eval=FALSE}
+vignette("Biostrings2Classes")
+```
+
+To get started, we load the package.
+
+```{r, message=FALSE}
+library(Biostrings)
+```
+
+With the package loaded and attached to the session, we have access to the package functions.
+Those include functions that let us create new objects of the classes defined in the package; those functions are called _constructors_.
+For instance, we can create an object that represents a DNA sequence, using the `DNAString()` constructor function.
+
+```{r}
+DNAString("ATCG")
+```
+
+Notably, DNA sequences may only contain the characters A, T, C, and G, to represent the four DNA nucleotide.
+Notice that the constructor function does not let us create objects that contain invalid characters, that do not represent any of those four nucleotide.
+
+```{r}
+DNAString("ATCG")
+```
+
+```{r}
+DNAString("ATCGE")
+```
+
+That said, the symbols that compose the alphabet DNA sequences are not limited to the characters A, T, C, and G.
+The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide code that represent combinations of nucleotides, in a way similar to regular expressions.
+The `IUPAC_CODE_MAP` 
+
+```{r}
+IUPAC_CODE_MAP
+```
+
+Any of those nucleotide codes are allowed in the sequence of a `DNAString` object.
+
+```{r}
+DNAString("ATCGM")
+```
+
+## Importing biological strings from files
+
+In practice, we rarely type the strings representing biological sequences ourselves.
+Most of the time, we read those from files that we download from the web, or that we generate as outputs from other programs.
+For instance, we load the set of human protein sequences obtained from the high quality manually annotated and non-redundant protein sequence database of the UniProt knowledge base, that we downloaded during the lesson setup.
+
+```{r}
+human_proteins <- readAAStringSet(filepath = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
+human_proteins
+```
+## Computing the frequency of symbols
+
+The `r BiocStyle::Biocpkg("Biostrings")` package provides several functions to process and manipulate classes of biological strings.
+For instance, the `Biostrings::letterFrequency()` calculates the frequency of letters in a biological sequence, or the consensus matrix of a set of sequences (see the help page using `?Biostrings::letterFrequency`).
+
+The `methods::showMethods()` function can be used to identify which classes are supported by the method.
+Below, we see that the method does support the class `AAStringSet`.
+In particular, the output indicates that S4 method dispatch will call the method implemented for the class `XStringSet` - a class from which `AAStringSet` inherits - which implicitly indicates that there is no method specifically implemented for the `AAStringSet`.
+
+```{r}
+showMethods("letterFrequency")
+```
+
+We now know that we can use the `letterFrequency()` method on our object `human_proteins`, which is of class `AAStringSet`.
+
+The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of amino acids, provided by the `r BiocStyle::Biocpkg("Biostrings")` package in an object called `AA_ALPHABET`.
+
+```{r}
+human_proteins.freq <- letterFrequency(human_proteins, letters = AA_ALPHABET)
+head(human_proteins.freq)
+```
+
+```{r}
+dim(human_proteins.freq)
+```
+
+
+[pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
+[iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
+[glossary-s4-slot]: ../reference.html#s4-class-slot
+[glossary-s4-class]: ../reference.html#s4-class
+[glossary-s4-object]: ../reference.html#s4-object
+[glossary-s4-dispatch]: ../reference.html#s4-method-dispatch
