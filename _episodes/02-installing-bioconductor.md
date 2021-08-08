@@ -126,7 +126,7 @@ BiocManager::valid()
 
 
 ~~~
-Warning: 1 packages out-of-date; 0 packages too new
+Warning: 3 packages out-of-date; 0 packages too new
 ~~~
 {: .warning}
 
@@ -159,18 +159,20 @@ other attached packages:
 loaded via a namespace (and not attached):
  [1] BiocManager_1.30.16 compiler_4.1.0      magrittr_2.0.1     
  [4] htmltools_0.5.1.1   tools_4.1.0         yaml_2.2.1         
- [7] rmarkdown_2.9       stringi_1.6.2       digest_0.6.27      
+ [7] rmarkdown_2.10      stringi_1.6.2       digest_0.6.27      
 [10] stringr_1.4.0       xfun_0.24           rlang_0.4.11       
 [13] evaluate_0.14      
 
 Bioconductor version '3.13'
 
-  * 1 packages out-of-date
+  * 3 packages out-of-date
   * 0 packages too new
 
 create a valid installation with
 
-  BiocManager::install("stringi", update = TRUE, ask = FALSE)
+  BiocManager::install(c(
+    "stringi", "tinytex", "xfun"
+  ), update = TRUE, ask = FALSE)
 
 more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
 ~~~
