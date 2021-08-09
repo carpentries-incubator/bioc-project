@@ -18,7 +18,6 @@ Imports:
     Biostrings,
     desc,
     knitr,
-    methods,
     RefManageR,
     renv,
     rmarkdown,
