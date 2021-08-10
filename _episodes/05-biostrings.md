@@ -37,10 +37,29 @@ BiocManager::install("Biostrings")
 
 # The Biostrings package and classes
 
-## Types of biological strings
+## Why do we need classes for biological sequences?
 
-Many bioinformatics analyses focus on biological sequences that are often represented as strings or characters vectors.
-Examples include nucleic acid sequences (e.g., DNA, RNA), and protein sequences composed of aminoacids.
+Biological sequences are arguably some of the simplest biological entities to represent computationally.
+Examples include nucleic acid sequences (e.g., DNA, RNA) and protein sequences composed of amino acids.
+
+That is because alphabets have been designed and agreed upon to represent individual monomers using character symbols.
+
+For instance, using the alphabet for amino acids, the protein sequence for the [Actin, alpha skeletal muscle protein sequence](https://www.uniprot.org/uniprot/P68133#sequences) is represented as follows.
+
+
+~~~
+[1] "MCDEDETTALVCDNGSGLVKAGFAGDDAPRAVFPSIVGRPRHQGVMVGMGQKDSYVGDEAQSKRGILTLKYPIEHGIITNWDDMEKIWHHTFYNELRVAPEEHPTLLTEAPLNPKANREKMTQIMFETFNVPAMYVAIQAVLSLYASGRTTGIVLDSGDGVTHNVPIYEGYALPHAIMRLDLAGRDLTDYLMKILTERGYSFVTTAEREIVRDIKEKLCYVALDFENEMATAASSSSLEKSYELPDGQVITIGNERFRCPETLFQPSFIGMESAGIHETTYNSIMKCDIDIRKDLYANNVMSGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWIGGSILASLSTFQQMWITKQEYDEAGPSIVHRKCF"
+~~~
+{: .output}
+
+However, a major limitation of simple character vectors is that they do not check the validity of the sequences that they contain.
+Practically, it is possible to store meaningless sequences of characters symbols in strings, causing programs to run into errors when they unexpectedly encounter invalid character symbols in a sequence.
+
+Classes are a way to label objects as "DNA", "RNA", or "protein" sequence.
+This label is an extremely powerful way to inform programs on what character symbols they can expect in the sequence, but also what operations can be applied to those sequences.
+For instance, a function designed to translate nucleic acid sequences into the corresponding amino acid sequence should not be allowed to run on an amino acid sequence.
+
+## The Biostrings package
 
 The *[Biostrings](https://bioconductor.org/packages/3.13/Biostrings)* package implements classes to represent such sequences as S4 classes, e.g. `DNAString`, `AAString`.
 Those S4 classes provide memory-efficient string containers, while other methods implemented in the package provide various string matching algorithms and other utilities for fast manipulation of large biological sequences or sets of sequences.
@@ -143,6 +162,7 @@ seq: ATCGM
 ~~~
 {: .output}
 
+
 ## Importing biological strings from files
 
 In practice, we rarely type the strings representing biological sequences ourselves.
@@ -174,6 +194,8 @@ AAStringSet object of length 20371:
 [20371]   254 MDNYADLSDTELTTLLRRYNIPHGPVVGSTRRLYEKKIFEY...GAGLGQDRQVPLWGQLLLFLVFVIVLFFIYHFMQAEEGNPF sp|P50402|EMD_HUM...
 ~~~
 {: .output}
+
+
 ## Computing the frequency of symbols
 
 The *[Biostrings](https://bioconductor.org/packages/3.13/Biostrings)* package provides several functions to process and manipulate classes of biological strings.
