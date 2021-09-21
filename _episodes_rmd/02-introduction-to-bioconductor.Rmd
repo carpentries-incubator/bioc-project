@@ -47,16 +47,17 @@ BibOptions(
 
 > ## Contribute!
 >
-> - Stress the many different aspects of the project - not just a package repository.
-> - Add bullet points below, and for each point add a short paragraph for details and links.
+> This episode aims to stress the many different aspects of the project - not just a package repository.
+> 
+> Below, add bullet points for each aspect of the Bioconductor project.
+> Then for each bullet point, create a second-level header further below - ideally, matching the order of bullet points - and expand the point into a short paragraph with details and links to appropriate resources.
 >
 {: .callout}
 
 - A scientific project
 - A package repository
 - A support site
-- A Slack workspace
-- A mailing list for developers
+- Online communication channels
 - Conferences, courses and workshops
 - A community
 
@@ -80,8 +81,9 @@ Many more publications and book chapters cite the Bioconductor project, with rec
 
 The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
 
+## Online communication channels
 
-## A Slack workspace
+### A Slack workspace
 
 The Bioconductor [Slack workspace][bioc-slack] is an open space that all community members are welcome to join (for free) and use for rapid interactions.
 Currently, the "Pro" pricing plan kindly supported by core funding provides:
@@ -103,7 +105,7 @@ Important announcements are posted on the `#general` channel.
 {: .callout}
 
 
-## A mailing list for developers
+### A mailing list for developers
 
 The <bioc-devel@r-project.org> mailing list is used for communication between package developers, and announcements from the Biocondutor core team.
 
@@ -121,7 +123,7 @@ For example:
 [Course materials][bioc-course-materials] are regularly uploaded on the Bioconductor website following each of those events.
 
 
-## A community
+## A scientific and technical community
 
 > ## Contribute!
 >
