@@ -58,7 +58,33 @@ Many more publications and book chapters cite the Bioconductor project, with rec
 
 ## A package repository
 
-[BiocViews][biocviews-software] are a predefined - and evolving - set of labels used to categorize all the packages available in the Bioconductor project.
+Undoubtedly what the Bioconductor project is best known for, the repository has grown over time to host thousands of packages.
+
+Packages are broadly divided in four major categories:
+
+- software
+- annotation data
+- experiment data
+- workflows
+
+Software packages themselves can be subdivided into packages that provide infrastructure (i.e., classes) to store and access data,
+and packages that provide methodological tools to process data stored in those data structures.
+This separation of structure and analysis is at the core of the Bioconductor project,
+encouraging developers of new methodological software packages to thoughtfully re-use existing data containers where possible,
+and reducing the cognitive burden imposed on users who can more easily experiment with alternative workflows without the need to learn and convert between different data structures.
+
+Annotation packages provide self-contained databases of diverse genomic annotations (e.g., gene identifiers, biological pathways).
+Different collections of annotation packages can be found in the Bioconductor project.
+They are identifiable by their respective naming pattern, and the information that they contain.
+For instance, the so-called `OrgDb` packages (e.g., the `r BiocStyle::Biocpkg("org.Hs.eg.db")` package) provide information mapping different types of gene identifiers and pathway databases;
+the so-called `EnsDb` (e.g., `r BiocStyle::Biocpkg("EnsDb.Hsapiens.v86")`) packages encapsulate individual versions of the Ensembl annotations in Bioconductor packages;
+and the so-called `TxDb` packages (e.g., `r BiocStyle::Biocpkg("TxDb.Hsapiens.UCSC.hg38.knownGene")`) encapsulate individual versions UCSC gene annotation tables.
+
+Experiment data package ...
+
+Finally, workflow packages ...
+
+[BiocViews][biocviews-software] are a predefined - yet, evolving - set of labels used to categorize all the packages available in the Bioconductor project.
 
 
 ## Online communication channels
