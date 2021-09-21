@@ -45,22 +45,6 @@ BibOptions(
 
 # What is Bioconductor?
 
-> ## Contribute!
->
-> This episode aims to stress the many different aspects of the project - not just a package repository.
-> 
-> Below, add bullet points for each aspect of the Bioconductor project.
-> Then for each bullet point, create a second-level header further below - ideally, matching the order of bullet points - and expand the point into a short paragraph with details and links to appropriate resources.
->
-{: .callout}
-
-- A scientific project
-- A package repository
-- A support site
-- Online communication channels
-- Conferences, courses and workshops
-- A community
-
 ## A scientific project
 
 The original publication describes the aims and methods of the project at its inception `r Citet(bib, "Gentleman2004")`.
