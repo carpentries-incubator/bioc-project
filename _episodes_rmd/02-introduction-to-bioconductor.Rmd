@@ -80,7 +80,7 @@ For instance, the so-called `OrgDb` packages (e.g., the `r BiocStyle::Biocpkg("o
 the so-called `EnsDb` (e.g., `r BiocStyle::Biocpkg("EnsDb.Hsapiens.v86")`) packages encapsulate individual versions of the Ensembl annotations in Bioconductor packages;
 and the so-called `TxDb` packages (e.g., `r BiocStyle::Biocpkg("TxDb.Hsapiens.UCSC.hg38.knownGene")`) encapsulate individual versions UCSC gene annotation tables.
 
-Experiment data package ...
+Experiment data package provide self-contained datasets that are often used by software package developers to demonstrate the use of their package on well-known standard datasets in their [package vignettes][package-vignette].
 
 Finally, workflow packages ...
 
@@ -162,3 +162,4 @@ PrintBibliography(bib)
 [bioc-scientific-advisory-board]: https://bioconductor.org/about/scientific-advisory-board/
 [bioc-technical-advisory-board]: https://bioconductor.org/about/technical-advisory-board/
 [bioc-community-advisory-board]: https://bioconductor.org/about/community-advisory-board/
+[package-vignette]: ../reference.html#vignette

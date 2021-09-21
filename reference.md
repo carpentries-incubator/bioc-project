@@ -5,6 +5,7 @@ layout: reference
 ## Glossary
 
 {:auto_ids}
+
 S4 class
 :   R has three object oriented (OO) systems: S3, S4 and R5.
     S4 is system that defines formal classes, using an implementation that is stricter than the S3 class system.
@@ -26,6 +27,10 @@ S4 method dispatch
 S4 object
 :   S4 objects are instances of S4 classes, in the same way that an actual car is an instance of the definition of a car that one would find in a dictionary.
 
+Vignette
+:   Document(s) in PDF or HTML format, distributed and installed alongside package code,
+    providing long-form documentation that demonstrates the use of the package functionality in the context of an example workflow.
+    Vignettes typically use standard datasets obtained from an ExperimentData package or the ExperimentHub package.
 
 ## Web resources
 
