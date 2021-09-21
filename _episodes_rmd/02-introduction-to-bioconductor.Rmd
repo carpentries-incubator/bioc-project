@@ -61,11 +61,12 @@ Many more publications and book chapters cite the Bioconductor project, with rec
 [BiocViews][biocviews-software] are a predefined - and evolving - set of labels used to categorize all the packages available in the Bioconductor project.
 
 
-## A support site
+## Online communication channels
+
+### A support site
 
 The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
 
-## Online communication channels
 
 ### A Slack workspace
 
