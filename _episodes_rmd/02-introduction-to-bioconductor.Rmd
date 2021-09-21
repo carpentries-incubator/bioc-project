@@ -4,11 +4,13 @@ title: "Introduction to Bioconductor"
 teaching: XX
 exercises: XX
 questions:
-- "What is Bioconductor?"
+- "What does the Bioconductor project comprise?"
+- "How does the Bioconductor project relate to the CRAN repository?"
 objectives:
-- "Describe the Bioconductor project"
+- "Describe the Bioconductor project globally."
+- 'Gain a global view of the R <i class="fab fa-r-project"></i> ecosystem.'
 keypoints:
-- "Bioconductor is a package repository, but also much more than that."
+- "Bioconductor is a repository of R packages, but also much more than that."
 ---
 
 ```{r, include=FALSE}
@@ -33,9 +35,11 @@ BibOptions(
 
 > ## Contribute!
 > 
-> In the following sections:
->
-> - Propose interactive elements to engage participants in this episode (e.g., challenges).
+> This episode is in particular need of interactive elements.
+> See <https://carpentries.github.io/curriculum-development/designing-challenges.html#different-types-of-challenges> for different types of challenges, e.g.:
+> 
+> - Multiple Choice Questions
+> - Fill-in-the-blank
 >
 {: .callout}
 
