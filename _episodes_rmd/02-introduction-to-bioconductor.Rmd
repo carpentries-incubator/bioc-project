@@ -141,6 +141,8 @@ The Bioconductor community regularly organizes a number of events throughout the
 
 Course materials are regularly uploaded on the [Bioconductor website][bioc-course-materials] following each of those events.
 
+The Bioconductor [YouTube channel][bioc-youtube] is used to publish video recordings of conference presentations including talks and workshops, as well as editions of the regular Bioconductor developers forum (link needed).
+
 
 ### A Slack workspace
 
@@ -198,3 +200,4 @@ PrintBibliography(bib)
 [bioc-technical-advisory-board]: https://bioconductor.org/about/technical-advisory-board/
 [bioc-community-advisory-board]: https://bioconductor.org/about/community-advisory-board/
 [package-vignette]: ../reference.html#vignette
+[bioc-youtube]: https://www.youtube.com/user/bioconductor
