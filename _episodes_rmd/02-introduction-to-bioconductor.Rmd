@@ -117,15 +117,29 @@ The Bioconductor project uses `biocViews`, a set of terms from a controlled voca
 Each Bioconductor package is tagged with a small set of terms chosen from the available controlled vocabulary, to describe the type and functionality of the package.
 Terms are initially selected by the package authors, and subsequently refined during package review or updates to the controlled vocabulary.
 
-The Bioconductor package `r BiocStyle::Biocpkg("biocViews")` is used to support and manage the infrastructure of the controlled vocabulary.
-It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
-
+> ## Going further
+> 
+> The Bioconductor package `r BiocStyle::Biocpkg("biocViews")` is used to support and manage the infrastructure of the controlled vocabulary.
+> It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
+{: .callout}
 
 ## Online communication channels
 
 ### A support site
 
 The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
+
+
+## Conferences, courses and workshops
+
+The Bioconductor community regularly organizes a number of events throughout the year and across the world. For example:
+
+- The annual BioC summer conference in North America
+- Regional conference in winter (e.g. BioC Europe, BioC Asia)
+- Summer schools (e.g., CSAMA)
+- Online meetings open to all community members (e.g., Bioconductor Developers Forum)
+
+Course materials are regularly uploaded on the [Bioconductor website][bioc-course-materials] following each of those events.
 
 
 ### A Slack workspace
@@ -153,19 +167,6 @@ Important announcements are posted on the `#general` channel.
 ### A mailing list for developers
 
 The <bioc-devel@r-project.org> mailing list is used for communication between package developers, and announcements from the Biocondutor core team.
-
-
-## Conferences, courses and workshops
-
-The Bioconductor community regularly organizes a number of events throughout the year and across the world.
-For example:
-
-- The annual BioC summer conference in North America
-- Regional conference in winter (e.g. BioC Europe, BioC Asia)
-- Summer schools (e.g., CSAMA)
-- Online meetings open to all community members (e.g., Bioconductor Developers Forum)
-
-[Course materials][bioc-course-materials] are regularly uploaded on the Bioconductor website following each of those events.
 
 
 ## A scientific and technical community
