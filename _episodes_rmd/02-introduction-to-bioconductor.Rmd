@@ -140,6 +140,7 @@ The Bioconductor community regularly organizes a number of events throughout the
 - Online meetings open to all community members (e.g., Bioconductor Developers Forum)
 
 Course materials are regularly uploaded on the [Bioconductor website][bioc-course-materials] following each of those events.
+In particular, [online books][bioc-books] are being developed and maintained by community members.
 
 The Bioconductor [YouTube channel][bioc-youtube] is used to publish video recordings of conference presentations including talks and workshops, as well as editions of the regular Bioconductor developers forum (link needed).
 
@@ -201,3 +202,4 @@ PrintBibliography(bib)
 [bioc-community-advisory-board]: https://bioconductor.org/about/community-advisory-board/
 [package-vignette]: ../reference.html#vignette
 [bioc-youtube]: https://www.youtube.com/user/bioconductor
+[bioc-books]: http://www.bioconductor.org/books/release/
