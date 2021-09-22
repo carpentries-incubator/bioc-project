@@ -123,13 +123,6 @@ Terms are initially selected by the package authors, and subsequently refined du
 > It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
 {: .callout}
 
-## Online communication channels
-
-### A support site
-
-The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
-
-
 ## Conferences, courses and workshops
 
 The Bioconductor community regularly organizes a number of events throughout the year and across the world. For example:
@@ -143,6 +136,13 @@ Course materials are regularly uploaded on the [Bioconductor website][bioc-cours
 In particular, [online books][bioc-books] are being developed and maintained by community members.
 
 The Bioconductor [YouTube channel][bioc-youtube] is used to publish video recordings of conference presentations including talks and workshops, as well as editions of the regular Bioconductor developers forum (link needed).
+
+
+## Online communication channels
+
+### A support site
+
+The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
 
 
 ### A Slack workspace
