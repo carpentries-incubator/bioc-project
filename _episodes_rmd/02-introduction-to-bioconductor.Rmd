@@ -82,7 +82,7 @@ and the so-called `TxDb` packages (e.g., `r BiocStyle::Biocpkg("TxDb.Hsapiens.UC
 
 Experiment data package provide self-contained datasets that are often used by software package developers to demonstrate the use of their package on well-known standard datasets in their [package vignettes][package-vignette].
 
-Finally, workflow packages ...
+Finally, workflow packages wxclusively provide collections of vignettes that demonstrate the combined usage of several other packages as a coherent workflow, but do not provide any new source code or functionality themselves.
 
 [BiocViews][biocviews-software] are a predefined - yet, evolving - set of labels used to categorize all the packages available in the Bioconductor project.
 
