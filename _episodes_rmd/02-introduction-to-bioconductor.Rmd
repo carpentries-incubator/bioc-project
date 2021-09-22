@@ -58,6 +58,8 @@ Many more publications and book chapters cite the Bioconductor project, with rec
 
 ## A package repository
 
+### Package types
+
 Undoubtedly what the Bioconductor project is best known for, the repository has grown over time to host thousands of packages.
 
 Packages are broadly divided in four major categories:
@@ -83,6 +85,32 @@ and the so-called `TxDb` packages (e.g., `r BiocStyle::Biocpkg("TxDb.Hsapiens.UC
 Experiment data package provide self-contained datasets that are often used by software package developers to demonstrate the use of their package on well-known standard datasets in their [package vignettes][package-vignette].
 
 Finally, workflow packages wxclusively provide collections of vignettes that demonstrate the combined usage of several other packages as a coherent workflow, but do not provide any new source code or functionality themselves.
+
+> ## Challenge: The Bioconductor website
+>
+> The Bioconductor website is accessible at <https://bioconductor.org/>.
+> 
+> Browse the website to find information answering the following questions:
+>
+> 1. How many packages does the current release of the Bioconductor project include?
+> 2. How many packages of each type does this number include?
+>
+> > ## Solution
+> >
+> > The following solution includes numbers that were valid at the time of writing (Bioconductor release 3.13);
+> > numbers will inevitably be different for future releases of the Bioconductor project.
+> >
+> > 1. On the page <https://bioconductor.org/>, in the section "Install", we can read:
+> > > Discover 2042 software packages available in Bioconductor release 3.13.
+> >
+> > 2. On the page <https://bioconductor.org/>, in the section "News", click on the link that reads "Bioconductor Bioc `X.Y` Released" (`X.Y` being the version of the current Bioconductor release when you go through this exercise yourself).
+> >    The linked page provides a more detailed breakdown of the number of packages of each type,
+> >    including the number of new packages added to the Bioconductor project since the previous release.
+> >
+> {: .solution}
+{: .challenge}
+
+### BiocViews
 
 [BiocViews][biocviews-software] are a predefined - yet, evolving - set of labels used to categorize all the packages available in the Bioconductor project.
 
