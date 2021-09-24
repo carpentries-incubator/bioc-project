@@ -48,10 +48,12 @@ BibOptions(
 ## A brief history of Bioconductor
 
 The Bioconductor project was start in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics `r Citep(bib, "Gentleman2004")`.
+From the very start, the core focus of the project was to develop tools for the statistical analysis and comprehension of large datasets and technological artifacts in rigorously and robustly designed experiments.
+Beyond statistical analyses, the interpretation of statistical results is supported by packages providing biological context, visualization, and reproducibility.
 
-Over the years, software packages contributed to the Bioconductor project have reflected the evolution and emergence of high-throughput technologies, from microarrays to single-cell genomics, through many variations of sequencing experiments.
+Over the years, software packages contributed to the Bioconductor project have reflected the evolution and emergence of several high-throughput technologies, from microarrays to single-cell genomics, through many variations of sequencing experiments (e.g., RNA-seq, ChIP-seq, DNA-seq), analyses (e.g., sequence variations, copy number variation, single nucleotide polymorphisms), and data modalities (e.g., flow cytometry, proteomics, microscropy and image analysis).
 
-Crucially, the project has not only released software packages implementing novel methodologies, but also produced a diverse range of packages types granting access to databases of molecular annotations and experimental datasets.
+Crucially, the project has not only released software packages implementing novel statitical tests and methodologies, but also produced a diverse range of packages types granting access to databases of molecular annotations and experimental datasets.
 
 The Bioconductor project culminates at an annual conference in North America in the summer, while regional conferences offer great opportunities for networking in Europe, Asia, and North America.
 The project is commited to promote a diverse and inclusive community, including a [Code of Conduct][bioc-code-of-conduct] enforced by a Code of Conduct committee.
