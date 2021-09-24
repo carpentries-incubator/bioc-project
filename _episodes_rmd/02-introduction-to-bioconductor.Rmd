@@ -115,8 +115,10 @@ Finally, [workflow packages][bioc-workflow-package] exclusively provide collecti
 > > > Discover 2042 software packages available in Bioconductor release 3.13.
 > >
 > > 2. On the page <https://bioconductor.org/>, in the section "News", click on the link that reads "Bioconductor Bioc `X.Y` Released" (`X.Y` being the version of the current Bioconductor release when you go through this exercise yourself).
-> >    The linked page provides a more detailed breakdown of the number of packages of each type,
-> >    including the number of new packages added to the Bioconductor project since the previous release.
+> >    On the linked page, we can read:
+> > > We are pleased to announce Bioconductor 3.13, consisting of 2042 software packages, 406 experiment data packages, 965 annotation packages, and 29 workflows.
+> > > 
+> > > There are 133 new software packages, 22 new data experiment packages, 7 new annotation packages, 1 new workflow, no new books, and many updates and improvements to existing packages; Bioconductor 3.13 is compatible with R 4.1.0, and is supported on Linux, 32- and 64-bit Windows, and macOS 10.14.6 Mojave or higher. This release will include an updated Bioconductor Docker containers.
 > >
 > {: .solution}
 {: .challenge}
