@@ -99,6 +99,8 @@ and the so-called `TxDb` packages (e.g., `r BiocStyle::Biocpkg("TxDb.Hsapiens.UC
 
 Finally, [workflow packages][bioc-workflow-package] exclusively provide collections of vignettes that demonstrate the combined usage of several other packages as a coherent workflow, but do not provide any new source code or functionality themselves.
 
+![Sequencing Ecosystem]({{ page.root }}/fig/bioc-sequencing-ecosystem.png)
+
 > ## Challenge: The Bioconductor website
 >
 > The Bioconductor website is accessible at <https://bioconductor.org/>.
