@@ -4,11 +4,13 @@ title: "Introduction to Bioconductor"
 teaching: XX
 exercises: XX
 questions:
-- "What is Bioconductor?"
+- "What does the Bioconductor project comprise?"
+- "How does the Bioconductor project relate to the CRAN repository?"
 objectives:
-- "Describe the Bioconductor project"
+- "Describe the Bioconductor project globally."
+- 'Gain a global view of the R <i class="fab fa-r-project"></i> ecosystem.'
 keypoints:
-- "Bioconductor is a package repository, but also much more than that."
+- "Bioconductor is a repository of R packages, but also much more than that."
 ---
 
 ```{r, include=FALSE}
@@ -33,28 +35,28 @@ BibOptions(
 
 > ## Contribute!
 > 
-> In the following sections:
->
-> - Propose interactive elements to engage participants in this episode (e.g., challenges).
+> This episode is in particular need of interactive elements.
+> See <https://carpentries.github.io/curriculum-development/designing-challenges.html#different-types-of-challenges> for different types of challenges, e.g.:
+> 
+> - Multiple Choice Questions
+> - Fill-in-the-blank
 >
 {: .callout}
 
 # What is Bioconductor?
 
-> ## Contribute!
->
-> - Stress the many different aspects of the project - not just a package repository.
-> - Add bullet points below, and for each point add a short paragraph for details and links.
->
-{: .callout}
+## A brief history of Bioconductor
 
-- A scientific project
-- A package repository
-- A support site
-- A Slack workspace
-- A mailing list for developers
-- Conferences, courses and workshops
-- A community
+The Bioconductor project was start in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics `r Citep(bib, "Gentleman2004")`.
+From the very start, the core focus of the project was to develop tools for the statistical analysis and comprehension of large datasets and technological artifacts in rigorously and robustly designed experiments.
+Beyond statistical analyses, the interpretation of statistical results is supported by packages providing biological context, visualization, and reproducibility.
+
+Over the years, software packages contributed to the Bioconductor project have reflected the evolution and emergence of several high-throughput technologies, from microarrays to single-cell genomics, through many variations of sequencing experiments (e.g., RNA-seq, ChIP-seq, DNA-seq), analyses (e.g., sequence variations, copy number variation, single nucleotide polymorphisms), and data modalities (e.g., flow cytometry, proteomics, microscropy and image analysis).
+
+Crucially, the project has not only released software packages implementing novel statitical tests and methodologies, but also produced a diverse range of packages types granting access to databases of molecular annotations and experimental datasets.
+
+The Bioconductor project culminates at an annual conference in North America in the summer, while regional conferences offer great opportunities for networking in Europe, Asia, and North America.
+The project is commited to promote a diverse and inclusive community, including a [Code of Conduct][bioc-code-of-conduct] enforced by a Code of Conduct committee.
 
 ## A scientific project
 
@@ -66,18 +68,115 @@ The original publication describes the aims and methods of the project at its in
 
 Many more publications and book chapters cite the Bioconductor project, with recent example listed on the [Bioconductor website][bioc-publications].
 
-
 ## A package repository
 
-[BiocViews][biocviews-software] are a predefined - and evolving - set of labels used to categorize all the packages available in the Bioconductor project.
+### Package types
+
+Undoubtedly, software packages are the best-known aspect of the Bioconductor project.
+Since its inception in 2001, the repository has grown over time to host thousands of packages.
+
+Packages are broadly divided in four major categories:
+
+- software
+- annotation data
+- experiment data
+- workflows
+
+[Software packages][bioc-software-package] themselves can be subdivided into packages that provide infrastructure (i.e., classes) to store and access data,
+and packages that provide methodological tools to process data stored in those data structures.
+This separation of structure and analysis is at the core of the Bioconductor project,
+encouraging developers of new methodological software packages to thoughtfully re-use existing data containers where possible,
+and reducing the cognitive burden imposed on users who can more easily experiment with alternative workflows without the need to learn and convert between different data structures.
+
+[Annotation data packages][bioc-annotation-package] provide self-contained databases of diverse genomic annotations (e.g., gene identifiers, biological pathways).
+Different collections of annotation packages can be found in the Bioconductor project.
+They are identifiable by their respective naming pattern, and the information that they contain.
+For instance, the so-called `OrgDb` packages (e.g., the `r BiocStyle::Biocpkg("org.Hs.eg.db")` package) provide information mapping different types of gene identifiers and pathway databases;
+the so-called `EnsDb` (e.g., `r BiocStyle::Biocpkg("EnsDb.Hsapiens.v86")`) packages encapsulate individual versions of the Ensembl annotations in Bioconductor packages;
+and the so-called `TxDb` packages (e.g., `r BiocStyle::Biocpkg("TxDb.Hsapiens.UCSC.hg38.knownGene")`) encapsulate individual versions UCSC gene annotation tables.
+
+[Experiment data packages][bioc-experiment-package] provide self-contained datasets that are often used by software package developers to demonstrate the use of their package on well-known standard datasets in their [package vignettes][package-vignette].
+
+Finally, [workflow packages][bioc-workflow-package] exclusively provide collections of vignettes that demonstrate the combined usage of several other packages as a coherent workflow, but do not provide any new source code or functionality themselves.
+
+> ## Challenge: The Bioconductor website
+>
+> The Bioconductor website is accessible at <https://bioconductor.org/>.
+> 
+> Browse the website to find information answering the following questions:
+>
+> 1. How many packages does the current release of the Bioconductor project include?
+> 2. How many packages of each type does this number include?
+>
+> > ## Solution
+> >
+> > The following solution includes numbers that were valid at the time of writing (Bioconductor release 3.13);
+> > numbers will inevitably be different for future releases of the Bioconductor project.
+> >
+> > 1. On the page <https://bioconductor.org/>, in the section "Install", we can read:
+> > > Discover 2042 software packages available in Bioconductor release 3.13.
+> >
+> > 2. On the page <https://bioconductor.org/>, in the section "News", click on the link that reads "Bioconductor Bioc `X.Y` Released" (`X.Y` being the version of the current Bioconductor release when you go through this exercise yourself).
+> >    On the linked page, we can read:
+> > > We are pleased to announce Bioconductor 3.13, consisting of 2042 software packages, 406 experiment data packages, 965 annotation packages, and 29 workflows.
+> > > 
+> > > There are 133 new software packages, 22 new data experiment packages, 7 new annotation packages, 1 new workflow, no new books, and many updates and improvements to existing packages; Bioconductor 3.13 is compatible with R 4.1.0, and is supported on Linux, 32- and 64-bit Windows, and macOS 10.14.6 Mojave or higher. This release will include an updated Bioconductor Docker containers.
+> >
+> {: .solution}
+{: .challenge}
+
+### Package classification using biocViews
+
+The Bioconductor project uses `biocViews`, a set of terms from a controlled vocabulary, to classify Bioconductor packages and facilitate their discovery by thematic search on the [Bioconductor website][biocviews-site].
+
+Each Bioconductor package is tagged with a small set of terms chosen from the available controlled vocabulary, to describe the type and functionality of the package.
+Terms are initially selected by the package authors, and subsequently refined during package review or updates to the controlled vocabulary.
+
+> ## Going further
+> 
+> The Bioconductor package `r BiocStyle::Biocpkg("biocViews")` is used to support and manage the infrastructure of the controlled vocabulary.
+> It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
+{: .callout}
+
+### Packages interoperability
+
+At the core of the Bioconductor philosophy is the notion of interoperability.
+Namely, the capacity of packages to operate on the same data structures.
+Importantly, interoperability benefits both users and developers.
+
+Users can more easily write arbitrarily complex workflows that combine multiple packages.
+With packages operating on the same data structure, users can maximize their attention to the practical steps of their workflow, and minimize time spent in often complex and error-prone conversions between different data structures specific to each package.
+Comparative benchmarks are also easier to implement and can be evaluated more fairly
+when competing software packages offering similar functionality operate on input and outputs stored in the same data structures.
+
+Similarly, developers of new packages can focus on the implementation of novel functionality, borrowing existing data structures that offer robust and trusted infrastructure for storage, verification, and indexing of information.
+
+Ultimately, the figure below illustrates how many different Bioconductor packages - as well as base R packages - can be combine for carry out a diverse range of analyses, from importing sequencing data into an R session, to the annotation, integration and visualization of data and results.
+
+![Sequencing Ecosystem](../fig/bioc-sequencing-ecosystem.png)
+
+## Conferences, courses and workshops
+
+The Bioconductor community regularly organizes a number of events throughout the year and across the world. For example:
+
+- The annual BioC summer conference in North America
+- Regional conference in winter (e.g. BioC Europe, BioC Asia)
+- Summer schools (e.g., CSAMA)
+- Online meetings open to all community members (e.g., Bioconductor Developers Forum)
+
+Course materials are regularly uploaded on the [Bioconductor website][bioc-course-materials] following each of those events.
+In particular, [online books][bioc-books] are being developed and maintained by community members.
+
+The Bioconductor [YouTube channel][bioc-youtube] is used to publish video recordings of conference presentations including talks and workshops, as well as editions of the regular Bioconductor developers forum (link needed).
 
 
-## A support site
+## Online communication channels
+
+### A support site
 
 The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
 
-
-## A Slack workspace
+### A Slack workspace
 
 The Bioconductor [Slack workspace][bioc-slack] is an open space that all community members are welcome to join (for free) and use for rapid interactions.
 Currently, the "Pro" pricing plan kindly supported by core funding provides:
@@ -98,26 +197,11 @@ Important announcements are posted on the `#general` channel.
 >
 {: .callout}
 
-
-## A mailing list for developers
+### A mailing list for developers
 
 The <bioc-devel@r-project.org> mailing list is used for communication between package developers, and announcements from the Biocondutor core team.
 
-
-## Conferences, courses and workshops
-
-The Bioconductor community regularly organizes a number of events throughout the year and across the world.
-For example:
-
-- The annual BioC summer conference in North America
-- Regional conference in winter (e.g. BioC Europe, BioC Asia)
-- Summer schools (e.g., CSAMA)
-- Online meetings open to all community members (e.g., Bioconductor Developers Forum)
-
-[Course materials][bioc-course-materials] are regularly uploaded on the Bioconductor website following each of those events.
-
-
-## A community
+## A scientific and technical community
 
 > ## Contribute!
 >
@@ -129,14 +213,13 @@ For example:
 - [Technical Advisory Board][bioc-technical-advisory-board]
 - [Community Advisory Board][bioc-community-advisory-board]
 
-
 # References
 
 ```{r, results='asis', echo=FALSE}
 PrintBibliography(bib)
 ```
 
-[biocviews-software]: https://www.bioconductor.org/packages/release/BiocViews.html#___Software
+[biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
 [bioc-code-of-conduct]: https://www.bioconductor.org/about/code-of-conduct/
 [bioc-slack]: https://bioc-community.herokuapp.com/
 [bioc-support-site]: https://support.bioconductor.org/
@@ -145,3 +228,11 @@ PrintBibliography(bib)
 [bioc-scientific-advisory-board]: https://bioconductor.org/about/scientific-advisory-board/
 [bioc-technical-advisory-board]: https://bioconductor.org/about/technical-advisory-board/
 [bioc-community-advisory-board]: https://bioconductor.org/about/community-advisory-board/
+[package-vignette]: ../reference.html#vignette
+[bioc-youtube]: https://www.youtube.com/user/bioconductor
+[bioc-books]: http://www.bioconductor.org/books/release/
+[bioc-code-of-conduct]: https://www.bioconductor.org/about/code-of-conduct/
+[bioc-software-package]: ../reference.html#software-package
+[bioc-annotation-package]: ../reference.html#annotationdata-package
+[bioc-experiment-package]: ../reference.html#experimentdata-package
+[bioc-workflow-package]: ../reference.html#workflow-package

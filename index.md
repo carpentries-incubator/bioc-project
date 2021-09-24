@@ -19,12 +19,13 @@ In addition to being a great opportunity to develop coding skills, community con
 
 In this lesson, you will learn:
 
-- How to navigate the Bioconductor website and learn to how to find packages for particular types of -omics data.
-- How to install specific Bioconductor packages in R.
+- To describe the Bioconductor project beyond software packages.
+- To navigate the Bioconductor website to find packages for a particular task.
+- To install and update Bioconductor packages.
 - How to open a package vignette and practice running through the examples that they contain.
-- To name different types of Bioconductor S4 objects and to identify what kind of data they hold.
+- To identify standard classes and methods re-used across Bioconductor packages.
 - How to modify code and contribute to existing Bioconductor packages.
-
+- Best practices to get help from packages developers and peers.
 
 <!-- this is an html comment -->
 

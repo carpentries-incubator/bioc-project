@@ -172,6 +172,19 @@ For instance, we load the set of human protein sequences obtained from the high 
 
 ~~~
 human_proteins <- readAAStringSet(filepath = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in .Call2("new_input_filexp", filepath, PACKAGE = "XVector"): cannot open file 'data/uniprot-filtered-reviewed_human_96.fasta.gz'
+~~~
+{: .error}
+
+
+
+~~~
 human_proteins
 ~~~
 {: .language-r}
@@ -179,21 +192,9 @@ human_proteins
 
 
 ~~~
-AAStringSet object of length 20371:
-        width seq                                                                                   names               
-    [1]   395 MNGPVDGLCDHSLSEGVFMFTSESVGEGHPDKICDQISDAV...LRPGVIVRDLDLKKPIYQKTACYGHFGRSEFPWEVPRKLVF sp|Q00266|METK1_H...
-    [2]   471 MENLKHIITLGQVIHKRCEEMKYCKKQCRRLGHRVLGLIKP...EPLGEDCPSELREIIDECRAHDPSVRPSVDEILKKLSTFSK sp|Q8NB16|MLKL_HU...
-    [3]  1124 MGENEDEKQAQAGQVFENFVQASTCKGTLQAFNILTRHLDL...EQEAPRRDTPTESSCAVAAIGTLEGSPPVHFSLPVLHPLLG sp|O94851|MICA2_H...
-    [4]  1067 MASPTSTNPAHAHFESFLQAQLCQDVLSSFQELCGALGLEP...RQAEDQVLRKLVDLVNQRDALIRFQEERRLSELALGTGAQG sp|Q8TDZ2|MICA1_H...
-    [5]   270 MAASSSGEKEKERLGGGLGVAGGNSTRERLLSALEDLEVLS...NMLPPNHSSDFLLEPPGHNKENEDDVEIMSTDSSSSSSESD sp|Q9NPJ6|MED4_HU...
-    ...   ... ...
-[20367]   348 MPHIDNDVKLDFKDVLLRPKRSTLKSRSEVDLTRSFSFRNS...ILGGIRSTCTYVGAAKLKELSRRTTFIRVTQQVNPIFSEAC sp|Q9P2T1|GMPR2_H...
-[20368]   553 MPLPWSLALPLLLSWVAGGFGNAASARHHGLLASARQPGVC...DATKSIIFEAERGKGKTGEIAVDGVLLVSGLCPDSLLSVDD sp|Q8IUX8|EGFL6_H...
-[20369]   352 MASRKEGTGSTATSSSSTAGAAGKGKGKGGSGDSAVKQVQI...ARMDSLLIAGQINTYCQNIKEFTAQNLGKLFMAQALQEYNN sp|O15372|EIF3H_H...
-[20370]   163 MSLLLLVVSALHILILILLFVATLDKSWWTLPGKESLNLWY...EEILEKHPRGGSFGYCFALAWVAFPLALVSGIIYIHLRKRE sp|P54852|EMP3_HU...
-[20371]   254 MDNYADLSDTELTTLLRRYNIPHGPVVGSTRRLYEKKIFEY...GAGLGQDRQVPLWGQLLLFLVFVIVLFFIYHFMQAEEGNPF sp|P50402|EMD_HUM...
+Error in eval(expr, envir, enclos): object 'human_proteins' not found
 ~~~
-{: .output}
+{: .error}
 
 
 ## Computing the frequency of symbols
@@ -229,6 +230,19 @@ The output is a matrix with one row for each sequence, and one column for each s
 
 ~~~
 human_proteins.freq <- letterFrequency(human_proteins, letters = AA_ALPHABET)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'letterFrequency': object 'human_proteins' not found
+~~~
+{: .error}
+
+
+
+~~~
 head(human_proteins.freq)
 ~~~
 {: .language-r}
@@ -236,15 +250,9 @@ head(human_proteins.freq)
 
 
 ~~~
-       A  R  N  D  C  Q  E  G  H  I   L  K  M  F  P  S  T  W  Y  V U O B J Z X * - + .
-[1,]  29 22  8 31 10 17 21 34 12 22  31 22 10 12 16 20 21  4 13 40 0 0 0 0 0 0 0 0 0 0
-[2,]  22 35 13 20 10 28 47 22  8 33  50 43 12 16 19 32 21  4 11 25 0 0 0 0 0 0 0 0 0 0
-[3,]  80 72 57 48 26 48 79 66 35 37 111 75 19 55 65 89 60 13 28 61 0 0 0 0 0 0 0 0 0 0
-[4,] 100 66 31 42 19 67 87 79 27 19 133 47 17 35 70 71 54 17 21 65 0 0 0 0 0 0 0 0 0 0
-[5,]  21 13 14 14  1 15 29 19  7 12  33 16 10  2 14 27  6  2  4 11 0 0 0 0 0 0 0 0 0 0
-[6,]  24 21 29 27 13  6 28 20 10 33  38 28  6 19 12 47 34  3 13 31 0 0 0 0 0 0 0 0 0 0
+Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'head': object 'human_proteins.freq' not found
 ~~~
-{: .output}
+{: .error}
 
 
 ~~~
@@ -255,9 +263,9 @@ dim(human_proteins.freq)
 
 
 ~~~
-[1] 20371    30
+Error in eval(expr, envir, enclos): object 'human_proteins.freq' not found
 ~~~
-{: .output}
+{: .error}
 
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
