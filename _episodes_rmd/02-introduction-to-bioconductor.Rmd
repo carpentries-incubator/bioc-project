@@ -99,8 +99,6 @@ and the so-called `TxDb` packages (e.g., `r BiocStyle::Biocpkg("TxDb.Hsapiens.UC
 
 Finally, [workflow packages][bioc-workflow-package] exclusively provide collections of vignettes that demonstrate the combined usage of several other packages as a coherent workflow, but do not provide any new source code or functionality themselves.
 
-![Sequencing Ecosystem]({{ page.root }}/fig/bioc-sequencing-ecosystem.png)
-
 > ## Challenge: The Bioconductor website
 >
 > The Bioconductor website is accessible at <https://bioconductor.org/>.
@@ -139,6 +137,23 @@ Terms are initially selected by the package authors, and subsequently refined du
 > The Bioconductor package `r BiocStyle::Biocpkg("biocViews")` is used to support and manage the infrastructure of the controlled vocabulary.
 > It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
 {: .callout}
+
+### Packages interoperability
+
+At the core of the Bioconductor philosophy is the notion of interoperability.
+Namely, the capacity of packages to operate on the same data structures.
+Importantly, interoperability benefits both users and developers.
+
+Users can more easily write arbitrarily complex workflows that combine multiple packages.
+With packages operating on the same data structure, users can maximize their attention to the practical steps of their workflow, and minimize time spent in often complex and error-prone conversions between different data structures specific to each package.
+Comparative benchmarks are also easier to implement and can be evaluated more fairly
+when competing software packages offering similar functionality operate on input and outputs stored in the same data structures.
+
+Similarly, developers of new packages can focus on the implementation of novel functionality, borrowing existing data structures that offer robust and trusted infrastructure for storage, verification, and indexing of information.
+
+Ultimately, the figure below illustrates how many different Bioconductor packages - as well as base R packages - can be combine for carry out a diverse range of analyses, from importing sequencing data into an R session, to the annotation, integration and visualization of data and results.
+
+![Sequencing Ecosystem](../fig/bioc-sequencing-ecosystem.png)
 
 ## Conferences, courses and workshops
 
