@@ -66,7 +66,6 @@ The original publication describes the aims and methods of the project at its in
 
 Many more publications and book chapters cite the Bioconductor project, with recent example listed on the [Bioconductor website][bioc-publications].
 
-
 ## A package repository
 
 ### Package types
@@ -155,7 +154,6 @@ The Bioconductor [YouTube channel][bioc-youtube] is used to publish video record
 
 The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
 
-
 ### A Slack workspace
 
 The Bioconductor [Slack workspace][bioc-slack] is an open space that all community members are welcome to join (for free) and use for rapid interactions.
@@ -177,11 +175,9 @@ Important announcements are posted on the `#general` channel.
 >
 {: .callout}
 
-
 ### A mailing list for developers
 
 The <bioc-devel@r-project.org> mailing list is used for communication between package developers, and announcements from the Biocondutor core team.
-
 
 ## A scientific and technical community
 
@@ -194,7 +190,6 @@ The <bioc-devel@r-project.org> mailing list is used for communication between pa
 - [Scientific Advisory Board][bioc-scientific-advisory-board]
 - [Technical Advisory Board][bioc-technical-advisory-board]
 - [Community Advisory Board][bioc-community-advisory-board]
-
 
 # References
 
