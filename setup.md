@@ -2,6 +2,7 @@
 title: Setup
 ---
 
-- Install R and RStudio.
+- Install R (≥4.1.0).
+- Install RStudio.
 
 {% include links.md %}
