@@ -70,7 +70,8 @@ Many more publications and book chapters cite the Bioconductor project, with rec
 
 ### Package types
 
-Undoubtedly what the Bioconductor project is best known for, the repository has grown over time to host thousands of packages.
+Undoubtedly, software packages are the best-known aspect of the Bioconductor project.
+Since its inception in 2001, the repository has grown over time to host thousands of packages.
 
 Packages are broadly divided in four major categories:
 
