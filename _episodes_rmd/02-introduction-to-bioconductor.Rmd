@@ -45,6 +45,17 @@ BibOptions(
 
 # What is Bioconductor?
 
+## A brief history of Bioconductor
+
+The Bioconductor project was start in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics `r Citep(bib, "Gentleman2004")`.
+
+Over the years, software packages contributed to the Bioconductor project have reflected the evolution and emergence of high-throughput technologies, from microarrays to single-cell genomics, through many variations of sequencing experiments.
+
+Crucially, the project has not only released software packages implementing novel methodologies, but also produced a diverse range of packages types granting access to databases of molecular annotations and experimental datasets.
+
+The Bioconductor project culminates at an annual conference in North America in the summer, while regional conferences offer great opportunities for networking in Europe, Asia, and North America.
+The project is commited to promote a diverse and inclusive community, including a [Code of Conduct][bioc-code-of-conduct] enforced by a Code of Conduct committee.
+
 ## A scientific project
 
 The original publication describes the aims and methods of the project at its inception `r Citet(bib, "Gentleman2004")`.
@@ -203,3 +214,4 @@ PrintBibliography(bib)
 [package-vignette]: ../reference.html#vignette
 [bioc-youtube]: https://www.youtube.com/user/bioconductor
 [bioc-books]: http://www.bioconductor.org/books/release/
+[bioc-code-of-conduct]: https://www.bioconductor.org/about/code-of-conduct/
