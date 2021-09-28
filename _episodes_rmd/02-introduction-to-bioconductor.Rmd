@@ -113,6 +113,11 @@ This practice reflects the development cycle of packages of both CRAN and Biocon
 Prior to each Bioconductor release, packages that do not pass the requires suites of automated tests are deprecated and subsequently removed from the repository.
 This ensures that each Bioconductor release provides a suite of packages that are mutually compatible, traceable, and guaranteed to function for the associated version of R.
 
+> ## Contribute!
+> 
+> It would be great to insert an illustration of the Bioconductor release cycle, to accompany this blob of text.
+{: .callout}
+
 ### Package types
 
 Packages are broadly divided in four major categories:
