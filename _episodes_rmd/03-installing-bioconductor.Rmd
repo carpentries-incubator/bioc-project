@@ -69,6 +69,7 @@ In particular, the version of the `r BiocStyle::Biocpkg("BiocVersion")` package 
 >
 > However, the `MAJOR` field should never be directly updated.
 > Instead, developers should set `MINOR` to `99`, and this will trigger the Bioconductor release process to automatically increment `MAJOR` by `1` and reset `MINOR` to `0` in the next release.
+> For instance, a package at version `0.99.15` during the Bioconductor review process will appear at version `1.0.0` when accepted and added to the next release of the Bioconductor package repository.
 >
 > ### Minor version
 >
