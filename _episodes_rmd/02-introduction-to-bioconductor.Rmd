@@ -11,6 +11,7 @@ objectives:
 - 'Gain a global view of the R <i class="fab fa-r-project"></i> ecosystem.'
 keypoints:
 - "Bioconductor is a repository of R packages, but also much more than that."
+- "The Bioconductor project regularly releases versions of the entire package repository, promoting traceability and reproducibility."
 ---
 
 ```{r, include=FALSE}
@@ -90,10 +91,29 @@ Many more publications and book chapters cite the Bioconductor project, with rec
 
 ## A package repository
 
-### Package types
+### Overview and relationship to CRAN
 
-Undoubtedly, software packages are the best-known aspect of the Bioconductor project.
+Undoubtedly, software packages are the best-known aspect of the Bioconductor project,.
 Since its inception in 2001, the repository has grown over time to host thousands of packages.
+
+The Bioconductor project has extended the preexisting CRAN repository -- much larger and general-purpose in scope -- to comprise R packages primarily catering for bioinformatics and computational biology analyses.
+
+### The Bioconductor release cycle
+
+Furthermore, the Bioconductor project also extended the packaging infrastructure of the CRAN repository to better support the deployment and management of packages at the user level `r Citet(bib, "Gentleman2004")`.
+In particular, the Bioconductor projects features a 6-month release cycle (typically around April and October), which sees a snapshot of the current version of all packages in the Bioconductor repository earmarked for a specific version of R.
+R itself is released on an annual basis (typically around April), meaning that for each release of R, two compatible releases of Bioconductor packages are available.
+
+As such, Bioconductor package developers are required to always use the version of R that will be associated with the next release of the Bioconductor project.
+This means using the development version of R between October and April, and the release version of R between April and October.
+
+Crucially, the strict Bioconductor release cycle prevents users from installing temporally distant versions of packages that were very likely never tested together.
+This practice reflects the development cycle of packages of both CRAN and Bioconductor, where contemporaneous packages are regularly tested by automated systems to ensure that the latest software updates in package dependencies do not break downstream packages, or prompts those package maintainers to update their own software as a consequence.
+
+Prior to each Bioconductor release, packages that do not pass the requires suites of automated tests are deprecated and subsequently removed from the repository.
+This ensures that each Bioconductor release provides a suite of packages that are mutually compatible, traceable, and guaranteed to function for the associated version of R.
+
+### Package types
 
 Packages are broadly divided in four major categories:
 
