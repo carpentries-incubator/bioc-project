@@ -45,7 +45,7 @@ The Bioconductor project produces two releases each year, one around April and a
 
 The April release of Bioconductor coincides with the annual release of R.
 In the months leading up to the April release, packages that will feature in that Bioconductor release are tested using the upcoming version of R (i.e., "R-devel").
-To access the newly released version of those packages, users must install the new version of R first.
+To access the newly released version of those packages, users must first install the new version of R.
 
 The October release of Bioconductor continues to use the same version of R for that annual cycle (i.e., until the next release, in April).
 
