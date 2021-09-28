@@ -127,22 +127,22 @@ Packages are broadly divided in four major categories:
 - experiment data
 - workflows
 
-[Software packages][bioc-software-package] themselves can be subdivided into packages that provide infrastructure (i.e., classes) to store and access data,
+[Software packages][glossary-software-package] themselves can be subdivided into packages that provide infrastructure (i.e., classes) to store and access data,
 and packages that provide methodological tools to process data stored in those data structures.
 This separation of structure and analysis is at the core of the Bioconductor project,
 encouraging developers of new methodological software packages to thoughtfully re-use existing data containers where possible,
 and reducing the cognitive burden imposed on users who can more easily experiment with alternative workflows without the need to learn and convert between different data structures.
 
-[Annotation data packages][bioc-annotation-package] provide self-contained databases of diverse genomic annotations (e.g., gene identifiers, biological pathways).
+[Annotation data packages][glossary-annotation-package] provide self-contained databases of diverse genomic annotations (e.g., gene identifiers, biological pathways).
 Different collections of annotation packages can be found in the Bioconductor project.
 They are identifiable by their respective naming pattern, and the information that they contain.
 For instance, the so-called `OrgDb` packages (e.g., the `r BiocStyle::Biocpkg("org.Hs.eg.db")` package) provide information mapping different types of gene identifiers and pathway databases;
 the so-called `EnsDb` (e.g., `r BiocStyle::Biocpkg("EnsDb.Hsapiens.v86")`) packages encapsulate individual versions of the Ensembl annotations in Bioconductor packages;
 and the so-called `TxDb` packages (e.g., `r BiocStyle::Biocpkg("TxDb.Hsapiens.UCSC.hg38.knownGene")`) encapsulate individual versions UCSC gene annotation tables.
 
-[Experiment data packages][bioc-experiment-package] provide self-contained datasets that are often used by software package developers to demonstrate the use of their package on well-known standard datasets in their [package vignettes][package-vignette].
+[Experiment data packages][glossary-experiment-package] provide self-contained datasets that are often used by software package developers to demonstrate the use of their package on well-known standard datasets in their [package vignettes][glossary-vignette].
 
-Finally, [workflow packages][bioc-workflow-package] exclusively provide collections of vignettes that demonstrate the combined usage of several other packages as a coherent workflow, but do not provide any new source code or functionality themselves.
+Finally, [workflow packages][glossary-workflow-package] exclusively provide collections of vignettes that demonstrate the combined usage of several other packages as a coherent workflow, but do not provide any new source code or functionality themselves.
 
 > ## Challenge: The Bioconductor website
 >
@@ -275,12 +275,12 @@ PrintBibliography(bib)
 [bioc-scientific-advisory-board]: https://bioconductor.org/about/scientific-advisory-board/
 [bioc-technical-advisory-board]: https://bioconductor.org/about/technical-advisory-board/
 [bioc-community-advisory-board]: https://bioconductor.org/about/community-advisory-board/
-[package-vignette]: ../reference.html#vignette
 [bioc-youtube]: https://www.youtube.com/user/bioconductor
 [bioc-books]: http://www.bioconductor.org/books/release/
 [bioc-code-of-conduct]: https://www.bioconductor.org/about/code-of-conduct/
-[bioc-software-package]: ../reference.html#software-package
-[bioc-annotation-package]: ../reference.html#annotationdata-package
-[bioc-experiment-package]: ../reference.html#experimentdata-package
-[bioc-workflow-package]: ../reference.html#workflow-package
+[glossary-vignette]: ../reference.html#vignette
+[glossary-software-package]: ../reference.html#software-package
+[glossary-annotation-package]: ../reference.html#annotationdata-package
+[glossary-experiment-package]: ../reference.html#experimentdata-package
+[glossary-workflow-package]: ../reference.html#workflow-package
 [glossary-biocviews]: ../reference.html#biocviews
