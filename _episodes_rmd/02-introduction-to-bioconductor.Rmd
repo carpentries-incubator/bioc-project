@@ -172,10 +172,12 @@ Finally, [workflow packages][bioc-workflow-package] exclusively provide collecti
 
 ### Package classification using biocViews
 
-The Bioconductor project uses `biocViews`, a set of terms from a controlled vocabulary, to classify Bioconductor packages and facilitate their discovery by thematic search on the [Bioconductor website][biocviews-site].
+The Bioconductor project uses [biocViews][glossary-biocviews], a set of terms from a controlled vocabulary, to classify Bioconductor packages and facilitate their discovery by thematic search on the [Bioconductor website][biocviews-site].
 
 Each Bioconductor package is tagged with a small set of terms chosen from the available controlled vocabulary, to describe the type and functionality of the package.
 Terms are initially selected by the package authors, and subsequently refined during package review or updates to the controlled vocabulary.
+
+For instance, the `r BiocStyle::Biocpkg("BiocPkgTools")` package can be used to browse packages under different [biocViews][glossary-biocviews] `r Citep(bib, "BiocPkgTools2019")`.
 
 > ## Going further
 > 
@@ -281,3 +283,4 @@ PrintBibliography(bib)
 [bioc-annotation-package]: ../reference.html#annotationdata-package
 [bioc-experiment-package]: ../reference.html#experimentdata-package
 [bioc-workflow-package]: ../reference.html#workflow-package
+[glossary-biocviews]: ../reference.html#biocviews
