@@ -216,6 +216,13 @@ In particular, [online books][bioc-books] are being developed and maintained by 
 
 The Bioconductor [YouTube channel][bioc-youtube] is used to publish video recordings of conference presentations including talks and workshops, as well as editions of the regular Bioconductor developers forum (link needed).
 
+> ## Contribute!
+>
+> It could be great to illustrate a typical cycle of conferences over a year, e.g.
+> - BioC conference in North America around late July
+> - EuroBioC conference in Europe around December
+> - BioCAsia conference in Asia around November
+{: .callout}
 
 ## Online communication channels
 
