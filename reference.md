@@ -9,6 +9,9 @@ layout: reference
 AnnotationData package
 :   Type of Bioconductor package that provides databases of molecular annotations (e.g., genes, proteins, pathways).
 
+biocViews
+:   Directed acyclic graphs of terms from a controlled vocabulary, used to categorize R packages in the Bioconductor repository.
+
 ExperimentData package
 :   Type of Bioconductor package that provides experimental datasets, immediately available as standard Bioconductor objects.
     This type of package is often used in [pakage vignettes](#vignette), to conveniently import data used to demonstrate the functionality of other packages as well as larger workflows.
