@@ -51,12 +51,32 @@ The Bioconductor project was start in the Fall of 2001, as an initiative for the
 From the very start, the core focus of the project was to develop tools for the statistical analysis and comprehension of large datasets and technological artifacts in rigorously and robustly designed experiments.
 Beyond statistical analyses, the interpretation of statistical results is supported by packages providing biological context, visualization, and reproducibility.
 
-Over the years, software packages contributed to the Bioconductor project have reflected the evolution and emergence of several high-throughput technologies, from microarrays to single-cell genomics, through many variations of sequencing experiments (e.g., RNA-seq, ChIP-seq, DNA-seq), analyses (e.g., sequence variations, copy number variation, single nucleotide polymorphisms), and data modalities (e.g., flow cytometry, proteomics, microscropy and image analysis).
+Over the years, software packages contributed to the Bioconductor project have reflected the evolution and emergence of several high-throughput technologies, from microarrays to single-cell genomics, through many variations of sequencing experiments (e.g., RNA-seq, ChIP-seq, DNA-seq), analyses (e.g., sequence variation, copy number variation, single nucleotide polymorphisms), and data modalities (e.g., flow cytometry, proteomics, microscropy and image analysis).
 
 Crucially, the project has not only released software packages implementing novel statitical tests and methodologies, but also produced a diverse range of packages types granting access to databases of molecular annotations and experimental datasets.
 
 The Bioconductor project culminates at an annual conference in North America in the summer, while regional conferences offer great opportunities for networking in Europe, Asia, and North America.
 The project is commited to promote a diverse and inclusive community, including a [Code of Conduct][bioc-code-of-conduct] enforced by a Code of Conduct committee.
+
+> ## Contribute!
+> 
+> It would be great to insert an illustration of the timeline of the Bioconductor project, including major milestones, e.g.
+> - First commit
+> - First completed package
+> - First official release
+> - First release of the main website
+> - First summer conference
+> - First regional conference (e.g., EuroBioC, BioCAsia)
+> - First conference workshop
+> - First appearance of various standard classes (e.g., `ExpressionSet`, `GRanges`, `DNAString`, `SummarizedExperiment`, `SingleCellExperiment`)
+> - First annotation package
+> - First release of the support website
+> - Creation of the Slack workspace
+> - Creation of each advisory board
+>
+> The timeline should not aim to be comprehensive and overloaded.
+> Rather, it should provide a broad brush overview of major milestones that illustrate the evolution of the project over time.
+{: .callout}
 
 ## A scientific project
 
