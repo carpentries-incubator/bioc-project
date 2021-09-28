@@ -59,25 +59,12 @@ Crucially, the project has not only released software packages implementing nove
 The Bioconductor project culminates at an annual conference in North America in the summer, while regional conferences offer great opportunities for networking in Europe, Asia, and North America.
 The project is commited to promote a diverse and inclusive community, including a [Code of Conduct][bioc-code-of-conduct] enforced by a Code of Conduct committee.
 
-> ## Contribute!
-> 
-> It would be great to insert an illustration of the timeline of the Bioconductor project, including major milestones, e.g.
-> - First commit
-> - First completed package
-> - First official release
-> - First release of the main website
-> - First summer conference
-> - First regional conference (e.g., EuroBioC, BioCAsia)
-> - First conference workshop
-> - First appearance of various standard classes (e.g., `ExpressionSet`, `GRanges`, `DNAString`, `SummarizedExperiment`, `SingleCellExperiment`)
-> - First annotation package
-> - First release of the support website
-> - Creation of the Slack workspace
-> - Creation of each advisory board
->
-> The timeline should not aim to be comprehensive and overloaded.
-> Rather, it should provide a broad brush overview of major milestones that illustrate the evolution of the project over time.
-{: .callout}
+The timeline below illustrates major Bioconductor milestones.
+Above the timeline, the figure marks the first occurence of major events.
+Within the timeline, the name of packages providing core infrastructure indicate the release date.
+Below the timeline, major technological advancements contextualise the evolution of the Bioconductor project over time.
+
+![Timeline of major Bioconductor milestones alongside technological advancements.](../fig/bioc-timeline.svg)
 
 ## A scientific project
 
@@ -198,7 +185,7 @@ when competing software packages offering similar functionality operate on input
 
 Similarly, developers of new packages can focus on the implementation of novel functionality, borrowing existing data structures that offer robust and trusted infrastructure for storage, verification, and indexing of information.
 
-Ultimately, the figure below illustrates how many different Bioconductor packages - as well as base R packages - can be combine for carry out a diverse range of analyses, from importing sequencing data into an R session, to the annotation, integration and visualization of data and results.
+Ultimately, the figure below illustrates how many different Bioconductor packages - as well as base R packages - can be combined to carry out a diverse range of analyses, from importing sequencing data into an R session, to the annotation, integration and visualization of data and results.
 
 ![Sequencing Ecosystem](../fig/bioc-sequencing-ecosystem.png)
 
