@@ -14,6 +14,7 @@ keypoints:
 - "The Bioconductor project extends and complements the CRAN repository."
 - "Different types of packages provide not only software, but also annotations, experimental data, and demonstrate the use of multiple packages in integrated workflows."
 - "Interoperability beteen Bioconductor packages facilitates the writing of integrated workflows and minimizes the cognitive burden on users."
+- "Educational materials from courses and conferences are archived and accessible on the Bioconductor website and YouTube channel."
 ---
 
 ```{r, include=FALSE}
