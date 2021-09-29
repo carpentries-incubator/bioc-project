@@ -253,6 +253,7 @@ The <bioc-devel@r-project.org> mailing list is used for communication between pa
 - [Scientific Advisory Board][bioc-scientific-advisory-board]
 - [Technical Advisory Board][bioc-technical-advisory-board]
 - [Community Advisory Board][bioc-community-advisory-board]
+- [Code of Conduct committee][bioc-code-of-conduct]
 
 # References
 
