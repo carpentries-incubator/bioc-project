@@ -12,6 +12,7 @@ objectives:
 keypoints:
 - "Bioconductor is a repository of R packages, but also much more than that."
 - "The Bioconductor project extends and complements the CRAN repository."
+- "Different types of packages provide not only software, but also annotations, experimental data, and demonstrate the use of multiple packages in integrated workflows."
 ---
 
 ```{r, include=FALSE}
