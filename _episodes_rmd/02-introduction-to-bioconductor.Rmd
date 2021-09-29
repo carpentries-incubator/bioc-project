@@ -16,6 +16,7 @@ keypoints:
 - "Interoperability beteen Bioconductor packages facilitates the writing of integrated workflows and minimizes the cognitive burden on users."
 - "Educational materials from courses and conferences are archived and accessible on the Bioconductor website and YouTube channel."
 - "Different channels of communication enable community members to converse and help each other, both as users and package developers."
+- "The Bioconductor project is governed by scientific, technical, and advisory boards, as well as a Code of Conduct committee."
 
 ---
 
