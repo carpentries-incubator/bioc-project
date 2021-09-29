@@ -10,7 +10,8 @@ questions:
 - "How do I join and communicate with the Bioconductor community?"
 objectives:
 - "Describe the Bioconductor project globally."
-- 'Gain a global view of the Bioconductor project in the R ecosystem.'
+- "Gain a global view of the Bioconductor project in the R ecosystem."
+- "Identify sources of information to watch for future updates about the Bioconductor project."
 keypoints:
 - "R packages are but one aspect of the Bioconductor project."
 - "The Bioconductor project extends and complements the CRAN repository."
