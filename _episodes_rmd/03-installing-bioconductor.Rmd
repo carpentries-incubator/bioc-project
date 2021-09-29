@@ -23,7 +23,7 @@ stopifnot(require(BiocStyle))
 # Installing BiocManager
 
 The `r BiocStyle::Biocpkg("BiocManager")` package is the entry point into the Bioconductor package repository.
-This package is technically the only Bioconductor package distributed on the CRAN repository.
+Technically, this is the only Bioconductor package distributed on the CRAN repository.
 As such, the package can be installed using the traditional `install.packages()` function.
 
 ```{r, eval=FALSE}
