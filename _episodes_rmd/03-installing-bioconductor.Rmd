@@ -74,8 +74,9 @@ cat(
     sep = "\n")
 ```
 
-Note that `BiocManager::install(version = ...)` can be used to update a library of Bioconductor packages to a certain version of Bioconductor, either a more recent or an older release.
+Note that `BiocManager::install(version = ...)` can also be used to update a library of Bioconductor packages to a certain version of Bioconductor, either a more recent or an older release.
 In that case, it is not necessary to specify any package name.
+All the Bioconductor packages installed in the current package library will be replaced by the latest version available for the requested version of Bioconductor.
 
 > ## Release cycle - release and devel branches
 >
