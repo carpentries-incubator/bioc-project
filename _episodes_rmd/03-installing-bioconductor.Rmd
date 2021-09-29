@@ -186,9 +186,19 @@ BiocManager::install(c("BiocPkgTools", "biocViews"))
 
 # Explore the package universe
 
+Attaching a Bioconductor package to the active user session is done using the `library()` function, like any other R package.
+
 ```{r, message=FALSE}
 library(BiocPkgTools)
 ```
+
+> ## Note
+>
+> Attaching a package using the `library()` function makes the user-facing package functions accessible directly by their short name.
+> It is possible to directly access the functions of any package in the user library without attaching the package to the active session, using the explicit full syntax `package::function()`.
+> For instance, the function `BiocPkgTools::biocExplore()` can be called without attaching the `BiocPkgTools` to the session,
+> while it can be called simply as `biocExplore()` once the package is attached.
+{: .callout}
 
 > ## Contribute!
 >
@@ -198,16 +208,16 @@ library(BiocPkgTools)
 
 # Finding a suitable package
 
-On the Bioconductor website, the [BiocViews][biocviews-webpage] use a predefined - yet, evolving - set of labels to categorize all the packages available in the Bioconductor project.
+On the Bioconductor website, the [biocViews][biocviews-webpage] use a predefined - yet, evolving - controlled vocabulary to classify all the packages in the Bioconductor project.
 
 At the top level, labels distinguish four major categories of packages by their nature:
 
 - _Software_ packages, that primarily provide classes and methods to process data and perform statistical analyses and implement analytical workflows.
-- _Annotation_ packages, that often provide access to databases of biological information, from biological sequences to location of genomic features and mapping between identifiers from different databases.
-- _Experiment_ packages, that provide data sets often used in the vignette of _Software_ packages, to demonstrate package functionality.
-- _Workflow_ packages, that primarily provide vignettes demonstrating how to combine multiple _Software_, _Annotation_, and _Experiment_ packages into best practices workflows.
+- _Annotation_ packages, that often provide access to databases of biological information, from biological sequences to the location of genomic features, as well as mapping between identifiers from different databases.
+- _Experiment_ packages, that provide standard data sets often used in the vignette of _Software_ packages, to demonstrate package functionality.
+- _Workflow_ packages, that primarily provide vignettes demonstrating how to combine multiple _Software_, _Annotation_, and _Experiment_ packages into best practices integrated workflows.
 
-Within each category, labels create sub-categories that facilitate efficient searching of packages by prospective users, navigating the hierarchy of labels to iteratively refine the list of package until they identify one or more candidate packages that provide the functionality they are searching for.
+Within each category, [biocViews][biocviews-webpage] create sub-categories that facilitate efficient thematic browsing and filtering by prospective users, navigating the hierarchy of labels to iteratively refine the list of package until they identify candidate packages that provide the functionality they are searching for.
 
 [git-website]: https://git-scm.com/
 [git-bioconductor]: https://git.bioconductor.org/
