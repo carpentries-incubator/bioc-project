@@ -11,7 +11,7 @@ objectives:
 - 'Gain a global view of the R <i class="fab fa-r-project"></i> ecosystem.'
 keypoints:
 - "Bioconductor is a repository of R packages, but also much more than that."
-- "The Bioconductor project regularly releases versions of the entire package repository, promoting traceability and reproducibility."
+- "The Bioconductor project extends and complements the CRAN repository."
 ---
 
 ```{r, include=FALSE}
