@@ -41,23 +41,16 @@ To access the newly released version of those packages, users must first install
 
 The October release of Bioconductor continues to use the same version of R for that annual cycle (i.e., until the next release, in April).
 
-Each time a new release is produced, the minor version (see note below) of all the packages in the Bioconductor repository is incremented by one.
-This is the case for every package, even those which have not been updated since the previous release.
-This version increment is essential to associated a unique version of each Bioconductor package with each release of the Bioconductor project.
+Each time a new release is produced, the version of each the packages in the Bioconductor repository is incremented.
+This is the case for every package, even those which have not been updated at all since the previous release.
+This version increment is essential to associate a unique version of each Bioconductor package with each release of the Bioconductor project.
 
 In particular, the version of the `r BiocStyle::Biocpkg("BiocVersion")` package is used to represent the version of the Bioconductor project.
-In turn, this determines the version of Bioconductor packages to be installed by the `BiocManager::install()` function.
+In turn, the version of the Bioconductor release currently active in a user session determines the version of Bioconductor packages to be installed by the `BiocManager::install()` function.
 
 > ## Going further
 >
 > The [Discussion][discuss-package-versioning] article of this lesson includes a section discussing the format and intepretation of Bioconductor package versions.
->
-{: .callout}
-
-> ## Contribute!
->
-> It would be great to insert here a figure illustrating the timeline of recent releases of Bioconductor and R.
-> Basically, turning the table [here](https://www.bioconductor.org/about/release-announcements/) into a figure.
 >
 {: .callout}
 
@@ -169,3 +162,4 @@ Within each category, labels create sub-categories that facilitate efficient sea
 [git-website]: https://git-scm.com/
 [biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html
 [discuss-package-versioning]: ../discuss/index.html#bioconductor-package-versions
+[bioc-release-dates]: https://www.bioconductor.org/about/release-announcements/

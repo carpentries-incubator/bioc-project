@@ -67,12 +67,12 @@ Crucially, the project has not only released software packages implementing nove
 The Bioconductor project culminates at an annual conference in North America in the summer, while regional conferences offer great opportunities for networking in Europe, Asia, and North America.
 The project is commited to promote a diverse and inclusive community, including a [Code of Conduct][bioc-code-of-conduct] enforced by a Code of Conduct committee.
 
-The timeline below illustrates major Bioconductor milestones.
+![Timeline of major Bioconductor milestones alongside technological advancements.](../fig/bioc-timeline.svg)
+
+**Timeline of major Bioconductor milestones alongside technological advancements.**
 Above the timeline, the figure marks the first occurence of major events.
 Within the timeline, the name of packages providing core infrastructure indicate the release date.
 Below the timeline, major technological advancements contextualise the evolution of the Bioconductor project over time.
-
-![Timeline of major Bioconductor milestones alongside technological advancements.](../fig/bioc-timeline.svg)
 
 ## A scientific project
 
@@ -114,10 +114,12 @@ This practice reflects the development cycle of packages of both CRAN and Biocon
 Prior to each Bioconductor release, packages that do not pass the requires suites of automated tests are deprecated and subsequently removed from the repository.
 This ensures that each Bioconductor release provides a suite of packages that are mutually compatible, traceable, and guaranteed to function for the associated version of R.
 
-> ## Contribute!
-> 
-> It would be great to insert an illustration of the Bioconductor release cycle, to accompany this blob of text.
-{: .callout}
+![Timeline of selected release dates for Bioconductor and R.](../fig/bioc-release-cycle.svg)
+
+**Timeline of selected release dates for Bioconductor and R.**
+The upper section of the timeline indicates versions and approximate release dates for the R project.
+The lower section of the timeline indicates versions and release dates for the Bioconductor project.
+Source: [Bioconductor][bioc-release-dates].
 
 ### Package types
 
@@ -247,7 +249,7 @@ Important announcements are posted on the `#general` channel.
 
 > ## Note
 >
-> Users are encouraged to use the Bioconductor [support site][bioc-support-site] to raise issues that relevant to the wider community.
+> Users are encouraged to use the Bioconductor [support site][bioc-support-site] to raise issues that are relevant to the wider community.
 > The Slack workspace is often most useful for live discussions, and widely subscribed channels (e.g. `#general`) should be used with moderation.
 >
 {: .callout}
