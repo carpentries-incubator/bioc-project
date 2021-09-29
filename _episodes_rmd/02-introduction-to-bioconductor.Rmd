@@ -6,12 +6,21 @@ exercises: XX
 questions:
 - "What does the Bioconductor project comprise?"
 - "How does the Bioconductor project relate to the CRAN repository?"
+- "How can I learn to use Bioconductor packages effectively?"
+- "How do I join and communicate with the Bioconductor community?"
 objectives:
 - "Describe the Bioconductor project globally."
-- 'Gain a global view of the R <i class="fab fa-r-project"></i> ecosystem.'
+- "Gain a global view of the Bioconductor project in the R ecosystem."
+- "Identify sources of information to watch for future updates about the Bioconductor project."
 keypoints:
-- "Bioconductor is a repository of R packages, but also much more than that."
-- "The Bioconductor project regularly releases versions of the entire package repository, promoting traceability and reproducibility."
+- "R packages are but one aspect of the Bioconductor project."
+- "The Bioconductor project extends and complements the CRAN repository."
+- "Different types of packages provide not only software, but also annotations, experimental data, and demonstrate the use of multiple packages in integrated workflows."
+- "Interoperability beteen Bioconductor packages facilitates the writing of integrated workflows and minimizes the cognitive burden on users."
+- "Educational materials from courses and conferences are archived and accessible on the Bioconductor website and YouTube channel."
+- "Different channels of communication enable community members to converse and help each other, both as users and package developers."
+- "The Bioconductor project is governed by scientific, technical, and advisory boards, as well as a Code of Conduct committee."
+
 ---
 
 ```{r, include=FALSE}
@@ -48,23 +57,23 @@ BibOptions(
 
 ## A brief history of Bioconductor
 
-The Bioconductor project was start in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics `r Citep(bib, "Gentleman2004")`.
+The Bioconductor project was started in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics `r Citep(bib, "Gentleman2004")`.
 From the very start, the core focus of the project was to develop tools for the statistical analysis and comprehension of large datasets and technological artifacts in rigorously and robustly designed experiments.
 Beyond statistical analyses, the interpretation of statistical results is supported by packages providing biological context, visualization, and reproducibility.
 
 Over the years, software packages contributed to the Bioconductor project have reflected the evolution and emergence of several high-throughput technologies, from microarrays to single-cell genomics, through many variations of sequencing experiments (e.g., RNA-seq, ChIP-seq, DNA-seq), analyses (e.g., sequence variation, copy number variation, single nucleotide polymorphisms), and data modalities (e.g., flow cytometry, proteomics, microscropy and image analysis).
 
-Crucially, the project has not only released software packages implementing novel statitical tests and methodologies, but also produced a diverse range of packages types granting access to databases of molecular annotations and experimental datasets.
+Crucially, the project has not only released software packages implementing novel statistical tests and methodologies, but also produced a diverse range of packages types granting access to databases of molecular annotations and experimental datasets.
 
 The Bioconductor project culminates at an annual conference in North America in the summer, while regional conferences offer great opportunities for networking in Europe, Asia, and North America.
 The project is commited to promote a diverse and inclusive community, including a [Code of Conduct][bioc-code-of-conduct] enforced by a Code of Conduct committee.
 
-The timeline below illustrates major Bioconductor milestones.
+![Timeline of major Bioconductor milestones alongside technological advancements.](../fig/bioc-timeline.svg)
+
+**Timeline of major Bioconductor milestones alongside technological advancements.**
 Above the timeline, the figure marks the first occurence of major events.
 Within the timeline, the name of packages providing core infrastructure indicate the release date.
 Below the timeline, major technological advancements contextualise the evolution of the Bioconductor project over time.
-
-![Timeline of major Bioconductor milestones alongside technological advancements.](../fig/bioc-timeline.svg)
 
 ## A scientific project
 
@@ -85,9 +94,15 @@ Since its inception in 2001, the repository has grown over time to host thousand
 
 The Bioconductor project has extended the preexisting CRAN repository -- much larger and general-purpose in scope -- to comprise R packages primarily catering for bioinformatics and computational biology analyses.
 
+> ## Going further
+>
+> The [Discussion][discuss-cran] article of this lesson includes a section discussing the relationship of Bioconductor and CRAN in further details.
+>
+{: .callout}
+
 ### The Bioconductor release cycle
 
-Furthermore, the Bioconductor project also extended the packaging infrastructure of the CRAN repository to better support the deployment and management of packages at the user level `r Citet(bib, "Gentleman2004")`.
+Furthermore, the Bioconductor project also extended the packaging infrastructure of the CRAN repository to better support the deployment and management of packages at the user level `r Citep(bib, "Gentleman2004")`.
 In particular, the Bioconductor projects features a 6-month release cycle (typically around April and October), which sees a snapshot of the current version of all packages in the Bioconductor repository earmarked for a specific version of R.
 R itself is released on an annual basis (typically around April), meaning that for each release of R, two compatible releases of Bioconductor packages are available.
 
@@ -100,10 +115,12 @@ This practice reflects the development cycle of packages of both CRAN and Biocon
 Prior to each Bioconductor release, packages that do not pass the requires suites of automated tests are deprecated and subsequently removed from the repository.
 This ensures that each Bioconductor release provides a suite of packages that are mutually compatible, traceable, and guaranteed to function for the associated version of R.
 
-> ## Contribute!
-> 
-> It would be great to insert an illustration of the Bioconductor release cycle, to accompany this blob of text.
-{: .callout}
+![Timeline of selected release dates for Bioconductor and R.](../fig/bioc-release-cycle.svg)
+
+**Timeline of selected release dates for Bioconductor and R.**
+The upper section of the timeline indicates versions and approximate release dates for the R project.
+The lower section of the timeline indicates versions and release dates for the Bioconductor project.
+Source: [Bioconductor][bioc-release-dates].
 
 ### Package types
 
@@ -233,7 +250,7 @@ Important announcements are posted on the `#general` channel.
 
 > ## Note
 >
-> Users are encouraged to use the Bioconductor [support site][bioc-support-site] to raise issues that relevant to the wider community.
+> Users are encouraged to use the Bioconductor [support site][bioc-support-site] to raise issues that are relevant to the wider community.
 > The Slack workspace is often most useful for live discussions, and widely subscribed channels (e.g. `#general`) should be used with moderation.
 >
 {: .callout}
@@ -253,6 +270,7 @@ The <bioc-devel@r-project.org> mailing list is used for communication between pa
 - [Scientific Advisory Board][bioc-scientific-advisory-board]
 - [Technical Advisory Board][bioc-technical-advisory-board]
 - [Community Advisory Board][bioc-community-advisory-board]
+- [Code of Conduct committee][bioc-code-of-conduct]
 
 # References
 
@@ -278,3 +296,4 @@ PrintBibliography(bib)
 [glossary-experiment-package]: ../reference.html#experimentdata-package
 [glossary-workflow-package]: ../reference.html#workflow-package
 [glossary-biocviews]: ../reference.html#biocviews
+[discuss-cran]: ../discuss/index.html#bioconductor-and-CRAN
