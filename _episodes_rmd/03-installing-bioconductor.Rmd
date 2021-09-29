@@ -48,6 +48,13 @@ This version increment is essential to associated a unique version of each Bioco
 In particular, the version of the `r BiocStyle::Biocpkg("BiocVersion")` package is used to represent the version of the Bioconductor project.
 In turn, this determines the version of Bioconductor packages to be installed by the `BiocManager::install()` function.
 
+> ## Contribute!
+>
+> It would be great to insert here a figure illustrating the timeline of recent releases of Bioconductor and R.
+> Basically, turning the table [here](https://www.bioconductor.org/about/release-announcements/) into a figure.
+>
+{: .callout}
+
 > ## Bioconductor package versions
 >
 > ### Format
