@@ -43,7 +43,7 @@ keypoints:
 
 ## A brief history of Bioconductor
 
-The Bioconductor project was started in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics .
+The Bioconductor project was started in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics <a id='cite-Gentleman2004'></a>(<a href='#bib-Gentleman2004'>Gentleman, et al., 2004</a>).
 From the very start, the stated mission of the project was to develop tools for the statistical analysis and comprehension of large datasets and technological artifacts in rigorously and robustly designed experiments.
 Beyond statistical analyses, the interpretation of statistical results is supported by packages providing biological context, visualization, and reproducibility.
 
@@ -63,11 +63,11 @@ Below the timeline, major technological advancements contextualise the evolution
 
 ## A scientific project
 
-The original publication describes the aims and methods of the project at its inception .
+The original publication describes the aims and methods of the project at its inception <a href='#bib-Gentleman2004'>Gentleman, et al. (2004)</a>.
 
- illustrates the progression of the project, including descriptions of core infrastructure and case studies, from the perspective of both users and developers.
+<a id='cite-Huber2015'></a><a href='#bib-Huber2015'>Huber, et al. (2015)</a> illustrates the progression of the project, including descriptions of core infrastructure and case studies, from the perspective of both users and developers.
 
- reviewed further developments of the project in the wake of single-cell genomics technologies.
+<a id='cite-Amezquita2020'></a><a href='#bib-Amezquita2020'>Amezquita, et al. (2020)</a> reviewed further developments of the project in the wake of single-cell genomics technologies.
 
 Many more publications and book chapters cite the Bioconductor project, with recent example listed on the [Bioconductor website][bioc-publications].
 
@@ -88,7 +88,7 @@ The Bioconductor project has extended the preexisting CRAN repository -- much la
 
 ### The Bioconductor release cycle
 
-Furthermore, the Bioconductor project also extended the packaging infrastructure of the CRAN repository to better support the deployment and management of packages at the user level .
+Furthermore, the Bioconductor project also extended the packaging infrastructure of the CRAN repository to better support the deployment and management of packages at the user level (<a href='#bib-Gentleman2004'>Gentleman, et al., 2004</a>).
 In particular, the Bioconductor projects features a 6-month release cycle (typically around April and October), which sees a snapshot of the current version of all packages in the Bioconductor repository earmarked for a specific version of R.
 R itself is released on an annual basis (typically around April), meaning that for each release of R, two compatible releases of Bioconductor packages are available.
 
@@ -167,7 +167,7 @@ The Bioconductor project uses [biocViews][glossary-biocviews], a set of terms fr
 Each Bioconductor package is tagged with a small set of terms chosen from the available controlled vocabulary, to describe the type and functionality of the package.
 Terms are initially selected by the package authors, and subsequently refined during package review or updates to the controlled vocabulary.
 
-For instance, the *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] .
+For instance, the *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] <a id='cite-BiocPkgTools2019'></a>(<a href='#bib-BiocPkgTools2019'> Su, et al., 2019</a>).
 
 > ## Going further
 > 
@@ -260,7 +260,39 @@ The <bioc-devel@r-project.org> mailing list is used for communication between pa
 
 # References
 
-NULL
+<p><cite><a id='bib-BiocPkgTools2019'></a><a href="#cite-BiocPkgTools2019"> Su, S. et al.</a>
+(2019).
+&ldquo;BiocPkgTools: Toolkit for mining the Bioconductor package ecosystem [version 1; peer review: 2 approved, 1 approved with reservations]
+&rdquo;.
+In: <em>F1000Research</em> 8.752.
+DOI: <a href="https://doi.org/10.12688/f1000research.19410.1">10.12688/f1000research.19410.1</a>.</cite></p>
+
+<p><cite><a id='bib-Amezquita2020'></a><a href="#cite-Amezquita2020">Amezquita, R. A. et al.</a>
+(2020).
+&ldquo;Orchestrating single-cell analysis with Bioconductor&rdquo;.
+In: <em>Nat Methods</em> 17.2, pp. 137-145.
+ISSN: 1548-7105 (Electronic)
+1548-7091 (Linking).
+DOI: <a href="https://doi.org/10.1038/s41592-019-0654-x">10.1038/s41592-019-0654-x</a>.
+URL: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31792435">https://www.ncbi.nlm.nih.gov/pubmed/31792435</a>.</cite></p>
+
+<p><cite><a id='bib-Gentleman2004'></a><a href="#cite-Gentleman2004">Gentleman, R. C. et al.</a>
+(2004).
+&ldquo;Bioconductor: open software development for computational biology and bioinformatics&rdquo;.
+In: <em>Genome Biol</em> 5.10, p. R80.
+ISSN: 1474-760X (Electronic)
+1474-7596 (Linking).
+DOI: <a href="https://doi.org/10.1186/gb-2004-5-10-r80">10.1186/gb-2004-5-10-r80</a>.
+URL: <a href="https://www.ncbi.nlm.nih.gov/pubmed/15461798">https://www.ncbi.nlm.nih.gov/pubmed/15461798</a>.</cite></p>
+
+<p><cite><a id='bib-Huber2015'></a><a href="#cite-Huber2015">Huber, W. et al.</a>
+(2015).
+&ldquo;Orchestrating high-throughput genomic analysis with Bioconductor&rdquo;.
+In: <em>Nat Methods</em> 12.2, pp. 115-21.
+ISSN: 1548-7105 (Electronic)
+1548-7091 (Linking).
+DOI: <a href="https://doi.org/10.1038/nmeth.3252">10.1038/nmeth.3252</a>.
+URL: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25633503">https://www.ncbi.nlm.nih.gov/pubmed/25633503</a>.</cite></p>
 
 [biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
 [bioc-code-of-conduct]: https://www.bioconductor.org/about/code-of-conduct/
