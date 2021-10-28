@@ -106,9 +106,9 @@ This practice reflects the development cycle of packages of both CRAN and Biocon
 Prior to each Bioconductor release, packages that do not pass the requires suites of automated tests are deprecated and subsequently removed from the repository.
 This ensures that each Bioconductor release provides a suite of packages that are mutually compatible, traceable, and guaranteed to function for the associated version of R.
 
-![Timeline of selected release dates for Bioconductor and R.](../fig/bioc-release-cycle.svg)
+![Timeline of release dates for selected Bioconductor and R versions.](../fig/bioc-release-cycle.svg)
 
-**Timeline of selected release dates for Bioconductor and R.**
+**Timeline of release dates for selected Bioconductor and R versions.**
 The upper section of the timeline indicates versions and approximate release dates for the R project.
 The lower section of the timeline indicates versions and release dates for the Bioconductor project.
 Source: [Bioconductor][bioc-release-dates].
