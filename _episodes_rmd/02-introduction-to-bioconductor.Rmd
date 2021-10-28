@@ -221,11 +221,11 @@ The Bioconductor [YouTube channel][bioc-youtube] is used to publish video record
 
 ## Online communication channels
 
-### A support site
+### Support site
 
 The Bioconductor [support site][bioc-support-site] provides a platform where users and developers can communicate freely (following the Bioconductor [Code of Conduct][bioc-code-of-conduct]) to discuss issues on a range of subjects, ranging from packages to conceptual questions about best practices.
 
-### A Slack workspace
+### Slack workspace
 
 The Bioconductor [Slack workspace][bioc-slack] is an open space that all community members are welcome to join (for free) and use for rapid interactions.
 Currently, the "Pro" pricing plan kindly supported by core funding provides:
@@ -246,7 +246,7 @@ Important announcements are posted on the `#general` channel.
 >
 {: .callout}
 
-### A mailing list for developers
+### Developer Mailing List
 
 The <bioc-devel@r-project.org> mailing list is used for communication between package developers, and announcements from the Biocondutor core team.
 
