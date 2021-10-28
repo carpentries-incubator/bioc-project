@@ -67,11 +67,11 @@ Each package has a landing page for each release of Bioconductor since the packa
 
 > ## Challenge
 > 
-> Which version of Bioconductor was the *[BiocPkgTools](https://bioconductor.org/packages/3.13/BiocPkgTools)* package introduced in?
+> Which version of Bioconductor was the *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package introduced in?
 >
 > > ## Solution
 > >
-> > The *[BiocPkgTools](https://bioconductor.org/packages/3.13/BiocPkgTools)* package was introduced in Bioconductor release `3.10`.
+> > The *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package was introduced in Bioconductor release `3.10`.
 > >
 > > The URL <https://www.bioconductor.org/packages/3.10/bioc/html/BiocPkgTools.html> is the earliest version of Bioconductor for which the package has a landing page,
 > > while <https://www.bioconductor.org/packages/3.09/bioc/html/BiocPkgTools.html> leads to a page that displays the message "Page Not Found".

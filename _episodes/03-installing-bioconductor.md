@@ -20,7 +20,7 @@ keypoints:
 
 # Installing BiocManager
 
-The *[BiocManager](https://bioconductor.org/packages/3.13/BiocManager)* package is the entry point into the Bioconductor package repository.
+The *[BiocManager](https://bioconductor.org/packages/3.14/BiocManager)* package is the entry point into the Bioconductor package repository.
 Technically, this is the only Bioconductor package distributed on the CRAN repository.
 As such, the package can be installed using the traditional `install.packages()` function.
 
@@ -45,10 +45,10 @@ Each time a new release is produced, the version of each the packages in the Bio
 This is the case for every package, even those which have not been updated at all since the previous release.
 This version increment is essential to associate a unique version of each Bioconductor package with each release of the Bioconductor project.
 
-In particular, the version of the *[BiocVersion](https://bioconductor.org/packages/3.13/BiocVersion)* package is used to represent the version of the Bioconductor project.
+In particular, the version of the *[BiocVersion](https://bioconductor.org/packages/3.14/BiocVersion)* package is used to represent the version of the Bioconductor project.
 In turn, the version of the Bioconductor release currently active in a user session determines the version of Bioconductor packages to be installed by the `BiocManager::install()` function.
 
-Once the *[BiocManager](https://bioconductor.org/packages/3.13/BiocManager)* package is installed, the `BiocManager::version()` function displays the version (i.e., release) of the Bioconductor project that is currently active in the R session.
+Once the *[BiocManager](https://bioconductor.org/packages/3.14/BiocManager)* package is installed, the `BiocManager::version()` function displays the version (i.e., release) of the Bioconductor project that is currently active in the R session.
 
 
 ~~~
@@ -59,7 +59,7 @@ BiocManager::version()
 
 
 ~~~
-[1] '3.13'
+[1] '3.14'
 ~~~
 {: .output}
 
@@ -73,7 +73,7 @@ It is possible to specify a version of Bioconductor, which in turn will install 
 For instance:
 
 ~~~
-BiocManager::install(version = "3.13")
+BiocManager::install(version = "3.14")
 ~~~
 {: .language-r}
 
@@ -107,7 +107,7 @@ All the Bioconductor packages installed in the current package library will be r
 > ### Transition between devel and release - the release process
 >
 > After a new release branch is created, the version of every single package on the _devel_ branch is incremented, to prepare the version of the package that will feature in the next Bioconductor stable release.
-> This includes the *[BiocVersion](https://bioconductor.org/packages/3.13/BiocVersion)* package, which marks the value of the next version of Bioconductor.
+> This includes the *[BiocVersion](https://bioconductor.org/packages/3.14/BiocVersion)* package, which marks the value of the next version of Bioconductor.
 >
 {: .callout}
 
@@ -130,55 +130,7 @@ BiocManager::valid()
 
 
 ~~~
-Warning: 8 packages out-of-date; 0 packages too new
-~~~
-{: .warning}
-
-
-
-~~~
-
-* sessionInfo()
-
-R version 4.1.1 (2021-08-10)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 20.04.3 LTS
-
-Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
-LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
-
-locale:
- [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
- [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
- [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
-[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-other attached packages:
-[1] BiocStyle_2.20.2 knitr_1.36      
-
-loaded via a namespace (and not attached):
- [1] BiocManager_1.30.16 compiler_4.1.1      fastmap_1.1.0      
- [4] magrittr_2.0.1      htmltools_0.5.2     tools_4.1.1        
- [7] yaml_2.2.1          rmarkdown_2.11      stringi_1.7.4      
-[10] digest_0.6.28       stringr_1.4.0       xfun_0.26          
-[13] rlang_0.4.11        evaluate_0.14      
-
-Bioconductor version '3.13'
-
-  * 8 packages out-of-date
-  * 0 packages too new
-
-create a valid installation with
-
-  BiocManager::install(c(
-    "hms", "mime", "pillar", "readr", "remotes", "S4Vectors", "tidyr", "tinytex"
-  ), update = TRUE, ask = FALSE)
-
-more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
+[1] TRUE
 ~~~
 {: .output}
 
@@ -232,7 +184,7 @@ more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
 The `BiocManager::install()` function is used to install or update packages.
 The function first searches for the requested package(s) on the Bioconductor repository, but  automatically falls back on the CRAN repository and also supports installation directly from online repositories (e.g., GitHub).
 
-For instance, we can install the *[BiocPkgTools](https://bioconductor.org/packages/3.13/BiocPkgTools)* package:
+For instance, we can install the *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package:
 
 
 ~~~
@@ -262,7 +214,7 @@ replacement repositories:
 
 
 ~~~
-Bioconductor version 3.13 (BiocManager 1.30.16), R 4.1.1 (2021-08-10)
+Bioconductor version 3.14 (BiocManager 1.30.16), R 4.1.1 (2021-08-10)
 ~~~
 {: .output}
 
@@ -277,8 +229,7 @@ Warning: package(s) not installed when version(s) same as current; use `force = 
 
 
 ~~~
-Old packages: 'hms', 'mime', 'pillar', 'readr', 'remotes', 'S4Vectors',
-  'tidyr', 'tinytex', 'lattice', 'mgcv', 'nlme', 'survival'
+Old packages: 'lattice', 'mgcv', 'nlme', 'survival'
 ~~~
 {: .output}
 
@@ -302,7 +253,7 @@ library(BiocPkgTools)
 
 > ## Contribute!
 >
-> - Demonstrate relevant functions of the *[BiocPkgTools](https://bioconductor.org/packages/3.13/BiocPkgTools)* package.
+> - Demonstrate relevant functions of the *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package.
 >
 {: .callout}
 

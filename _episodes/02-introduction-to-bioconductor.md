@@ -44,7 +44,7 @@ keypoints:
 ## A brief history of Bioconductor
 
 The Bioconductor project was started in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics .
-From the very start, the core focus of the project was to develop tools for the statistical analysis and comprehension of large datasets and technological artifacts in rigorously and robustly designed experiments.
+From the very start, the stated mission of the project was to develop tools for the statistical analysis and comprehension of large datasets and technological artifacts in rigorously and robustly designed experiments.
 Beyond statistical analyses, the interpretation of statistical results is supported by packages providing biological context, visualization, and reproducibility.
 
 Over the years, software packages contributed to the Bioconductor project have reflected the evolution and emergence of several high-throughput technologies, from microarrays to single-cell genomics, through many variations of sequencing experiments (e.g., RNA-seq, ChIP-seq, DNA-seq), analyses (e.g., sequence variation, copy number variation, single nucleotide polymorphisms), and data modalities (e.g., flow cytometry, proteomics, microscropy and image analysis).
@@ -126,9 +126,9 @@ and reducing the cognitive burden imposed on users who can more easily experimen
 [Annotation data packages][glossary-annotation-package] provide self-contained databases of diverse genomic annotations (e.g., gene identifiers, biological pathways).
 Different collections of annotation packages can be found in the Bioconductor project.
 They are identifiable by their respective naming pattern, and the information that they contain.
-For instance, the so-called `OrgDb` packages (e.g., the *[org.Hs.eg.db](https://bioconductor.org/packages/3.13/org.Hs.eg.db)* package) provide information mapping different types of gene identifiers and pathway databases;
-the so-called `EnsDb` (e.g., *[EnsDb.Hsapiens.v86](https://bioconductor.org/packages/3.13/EnsDb.Hsapiens.v86)*) packages encapsulate individual versions of the Ensembl annotations in Bioconductor packages;
-and the so-called `TxDb` packages (e.g., *[TxDb.Hsapiens.UCSC.hg38.knownGene](https://bioconductor.org/packages/3.13/TxDb.Hsapiens.UCSC.hg38.knownGene)*) encapsulate individual versions UCSC gene annotation tables.
+For instance, the so-called `OrgDb` packages (e.g., the *[org.Hs.eg.db](https://bioconductor.org/packages/3.14/org.Hs.eg.db)* package) provide information mapping different types of gene identifiers and pathway databases;
+the so-called `EnsDb` (e.g., *[EnsDb.Hsapiens.v86](https://bioconductor.org/packages/3.14/EnsDb.Hsapiens.v86)*) packages encapsulate individual versions of the Ensembl annotations in Bioconductor packages;
+and the so-called `TxDb` packages (e.g., *[TxDb.Hsapiens.UCSC.hg38.knownGene](https://bioconductor.org/packages/3.14/TxDb.Hsapiens.UCSC.hg38.knownGene)*) encapsulate individual versions UCSC gene annotation tables.
 
 [Experiment data packages][glossary-experiment-package] provide self-contained datasets that are often used by software package developers to demonstrate the use of their package on well-known standard datasets in their [package vignettes][glossary-vignette].
 
@@ -167,11 +167,11 @@ The Bioconductor project uses [biocViews][glossary-biocviews], a set of terms fr
 Each Bioconductor package is tagged with a small set of terms chosen from the available controlled vocabulary, to describe the type and functionality of the package.
 Terms are initially selected by the package authors, and subsequently refined during package review or updates to the controlled vocabulary.
 
-For instance, the *[BiocPkgTools](https://bioconductor.org/packages/3.13/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] .
+For instance, the *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] .
 
 > ## Going further
 > 
-> The Bioconductor package *[biocViews](https://bioconductor.org/packages/3.13/biocViews)* is used to support and manage the infrastructure of the controlled vocabulary.
+> The Bioconductor package *[biocViews](https://bioconductor.org/packages/3.14/biocViews)* is used to support and manage the infrastructure of the controlled vocabulary.
 > It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
 {: .callout}
 

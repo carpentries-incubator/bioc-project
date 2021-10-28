@@ -61,10 +61,10 @@ For instance, a function designed to translate nucleic acid sequences into the c
 
 ## The Biostrings package
 
-The *[Biostrings](https://bioconductor.org/packages/3.13/Biostrings)* package implements classes to represent such sequences as S4 classes, e.g. `DNAString`, `AAString`.
+The *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package implements classes to represent such sequences as S4 classes, e.g. `DNAString`, `AAString`.
 Those S4 classes provide memory-efficient string containers, while other methods implemented in the package provide various string matching algorithms and other utilities for fast manipulation of large biological sequences or sets of sequences.
 
-A short presentation of the basic classes defined in the *[Biostrings](https://bioconductor.org/packages/3.13/Biostrings)* package is available in one of the package vignettes.
+A short presentation of the basic classes defined in the *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package is available in one of the package vignettes.
 
 
 ~~~
@@ -199,7 +199,7 @@ Error in eval(expr, envir, enclos): object 'human_proteins' not found
 
 ## Computing the frequency of symbols
 
-The *[Biostrings](https://bioconductor.org/packages/3.13/Biostrings)* package provides several functions to process and manipulate classes of biological strings.
+The *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package provides several functions to process and manipulate classes of biological strings.
 For instance, the `Biostrings::letterFrequency()` calculates the frequency of letters in a biological sequence, or the consensus matrix of a set of sequences (see the help page using `?Biostrings::letterFrequency`).
 
 The `methods::showMethods()` function can be used to identify which classes are supported by the method.
@@ -225,7 +225,7 @@ x="XStringViews"
 
 We now know that we can use the `letterFrequency()` method on our object `human_proteins`, which is of class `AAStringSet`.
 
-The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of amino acids, provided by the *[Biostrings](https://bioconductor.org/packages/3.13/Biostrings)* package in an object called `AA_ALPHABET`.
+The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of amino acids, provided by the *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package in an object called `AA_ALPHABET`.
 
 
 ~~~
