@@ -18,18 +18,26 @@ keypoints:
 
 
 
-# Installing BiocManager
+# BiocManager
 
 The *[BiocManager](https://bioconductor.org/packages/3.14/BiocManager)* package is the entry point into the Bioconductor package repository.
 Technically, this is the only Bioconductor package distributed on the CRAN repository.
-As such, the package can be installed using the traditional `install.packages()` function.
+
+It provides functions to safely install Bioconductor packages and check for available updates.
+
+![Relationship between repositories, packages and functions required for installing Bioconductor packages.](../fig/bioc-install.svg)
+
+**Relationship between repositories, packages and functions required for installing Bioconductor packages.**
+The function `install.packages()` from the base R package `utils` can be used to install the *[BiocManager](https://bioconductor.org/packages/3.14/BiocManager)* package distributed on the CRAN repository.
+In turn, the function `BiocManager::install()` can be used to install packages available on the Bioconductor repository. 
+
+Install the *[BiocManager](https://bioconductor.org/packages/3.14/BiocManager)* package using the code below.
 
 
 ~~~
 install.packages("BiocManager")
 ~~~
 {: .language-r}
-
 
 # Bioconductor releases and current version
 
@@ -182,7 +190,7 @@ BiocManager::valid()
 # Installing packages
 
 The `BiocManager::install()` function is used to install or update packages.
-The function first searches for the requested package(s) on the Bioconductor repository, but  automatically falls back on the CRAN repository and also supports installation directly from online repositories (e.g., GitHub).
+The function first searches for the requested package(s) on the Bioconductor repository, but automatically falls back on the CRAN repository and also supports installation directly from online repositories (e.g., GitHub).
 
 For instance, we can install the *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package:
 
