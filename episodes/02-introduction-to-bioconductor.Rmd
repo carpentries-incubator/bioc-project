@@ -44,16 +44,6 @@ BibOptions(
   dashed = TRUE)
 ```
 
-> ## Contribute!
-> 
-> This episode is in particular need of interactive elements.
-> See <https://carpentries.github.io/curriculum-development/designing-challenges.html#different-types-of-challenges> for different types of challenges, e.g.:
-> 
-> - Multiple Choice Questions
-> - Fill-in-the-blank
->
-{: .callout}
-
 # What is Bioconductor?
 
 ## A brief history of Bioconductor
@@ -262,16 +252,16 @@ The <bioc-devel@r-project.org> mailing list is used for communication between pa
 
 ## A scientific and technical community
 
-> ## Contribute!
+- [Scientific Advisory Board (SAB)][bioc-scientific-advisory-board] Meet Annually, External and Internal leader in the field who act as project advisors. No Term limits.
+- [Technical Advisory Board (TAB)][bioc-technical-advisory-board]. Meet monthly to consider technical aspects of core infastructure and scientific direction of the project. 15 members, 3 year term. Annual open-to-all elections to rotate members. Current officers are Vince Carey (chair), Levi Waldron (vice Chair) Charlotte Soneson (Secretary).
+- [Community Advisory Board (CAB)][bioc-community-advisory-board] Meet monthly to consider community outreach, events, education and training. 15 members, 3 year term. Annual open-to-all elections to rotate members. Current officers are Aedin Culhane (chair), Matt Ritchie (co Chair), Lori Kern (Secretary).
+- [Code of Conduct committee][bioc-code-of-conduct]
+
+> ## Note
 >
-> - Add some details to the role of each panel below.
+> At least 1 member of TAB/CAB sits on both to act at the liason to ensure communication of the board.
 >
 {: .callout}
-
-- [Scientific Advisory Board][bioc-scientific-advisory-board]
-- [Technical Advisory Board][bioc-technical-advisory-board]
-- [Community Advisory Board][bioc-community-advisory-board]
-- [Code of Conduct committee][bioc-code-of-conduct]
 
 # References
 
