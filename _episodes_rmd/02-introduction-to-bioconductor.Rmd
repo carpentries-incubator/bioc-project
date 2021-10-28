@@ -31,7 +31,7 @@ knitr_fig_path("01-")
 ```{r, include=FALSE}
 options(htmltools.dir.version = FALSE)
 library(RefManageR)
-library(tinytex)
+library(bibtex)
 bib <- ReadBib("../bibliography.bib")
 BibOptions(
   longnamesfirst = FALSE,
