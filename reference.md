@@ -11,6 +11,7 @@ AnnotationData package
 
 biocViews
 :   Directed acyclic graphs of terms from a controlled vocabulary, used to categorize R packages in the Bioconductor repository.
+    The `biocViews` can be browsed on the [Bioconductor website][biocviews-site].
 
 ExperimentData package
 :   Type of Bioconductor package that provides experimental datasets, immediately available as standard Bioconductor objects.
@@ -54,5 +55,6 @@ Workflow package
 :   The official Bioconductor website.
 
 [bioconductor-website]: https://bioconductor.org/
+[biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
 
 {% include links.md %}
