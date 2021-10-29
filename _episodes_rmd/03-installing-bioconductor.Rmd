@@ -27,20 +27,32 @@ Technically, this is the only Bioconductor package distributed on the CRAN repos
 
 It provides functions to safely install Bioconductor packages and check for available updates.
 
-![Relationship between repositories, packages and functions required for installing Bioconductor packages.](../fig/bioc-install.svg)
+![The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.](../fig/bioc-install.svg)
 
-**Relationship between repositories, packages and functions required for installing Bioconductor packages.**
+**The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.**
 The function `install.packages()` from the base R package `utils` can be used to install the `r BiocStyle::Biocpkg("BiocManager")` package distributed on the CRAN repository.
 In turn, the function `BiocManager::install()` can be used to install packages available on the Bioconductor repository.
+Notably, the `BiocManager::install()` function will fall back on the CRAN repository if a package cannot be found in the Bioconductor repository.
 
-> ## Note
+> ## Going further
 >
 > A number of packages that are not part of the base R installation also provide functions to install packages from various repositories.
 > For instance:
-> - `remotes::install_cran()`
+> - `devtools::install()`
 > - `remotes::install_bioc()`
+> - `remotes::install_bitbucket()`
+> - `remotes::install_cran()`
+> - `remotes::install_dev()`
+> - `remotes::install_github()`
+> - `remotes::install_gitlab()`
+> - `remotes::install_git()`
+> - `remotes::install_local()`
+> - `remotes::install_svn()`
+> - `remotes::install_url()`
 > - `renv::install()`
 >
+> Those functions are beyond the scope of this lesson, and should be used with caution and adequate knowledge of their specific behaviors.
+> We recommend reading their respective help page to learn more about each of them.
 {: .callout}
 
 Install the `r BiocStyle::Biocpkg("BiocManager")` package using the code below.
