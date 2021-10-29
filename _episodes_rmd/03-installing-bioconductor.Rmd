@@ -86,58 +86,9 @@ BiocManager::version()
 
 > ## Going further
 >
-> The [Discussion][discuss-package-versioning] article of this lesson includes a section discussing the format and intepretation of Bioconductor package versions.
+> The [Discussion][discuss-release-cycle] article of this lesson includes a section discussing the release cycle of the Bioconductor project.
 >
 {: .callout}
-
-It is possible to specify a version of Bioconductor, which in turn will install the latest version of Bioconductor packages for that particular Bioconductor release.
-For instance:
-
-```{r, echo=FALSE, results='asis'}
-version <- BiocManager::version()
-cmd <- sprintf('BiocManager::install(version = "%s")', as.character(version))
-cat(
-    "~~~",
-    cmd,
-    "~~~",
-    "{: .language-r}",
-    sep = "\n")
-```
-
-Note that `BiocManager::install(version = ...)` can also be used to update a library of Bioconductor packages to a certain version of Bioconductor, either a more recent or an older release.
-In that case, it is not necessary to specify any package name.
-All the Bioconductor packages installed in the current package library will be replaced by the latest version available for the requested version of Bioconductor.
-
-> ## The Bioconductor release cycle - release and devel branches
->
-> ### Release branches
->
-> Bioconductor uses the [Git][git-website] version control system to manage its package repository.
-> For each new Bioconductor release (i.e., version), a new branch is created in the [Bioconductor Git repository][git-bioconductor]; those are referred to as _release_ branches.
-> Release branches allow users to install stable versions of packages that were tested together for a given version of Bioconductor, itself earmarked for a specific version of R.
->
-> Work on the _release_ branches is restricted.
-> Older _release_ branches are entirely frozen, meaning that no further update is allowed on those branches.
-> When users request a package for a given version of Bioconductor, they receive the latest version of the package on the correspoding release branch.
-> 
-> Only the latest release branch allows updates from package maintainers, but those are restricted to critical bug fixes.
-> This means that for each 6-month release cycle, users can expect packages on the latest branch to be reasonably stable.
->
-> ### Devel branches
->
-> Meanwhile, the main branch of the Git repository (historically called `master`) is referred to as the _devel_ branch.
->
-> The _devel_ branch allow developers to continue updating the packages as frequently as they wish, without affecting users or disrupting workflows.
-> Typically, packages on the _devel_ branch are mainly used by other developers and the Bioconductor build system, to run tests using the latest code of every package in the Bioconductor repository, and to prepare the next stable release of the project.
-> However, users can also access packages on the _devel_ branch using `BiocManager::install(version = ...)` with `version` set to one minor version greater than the latest Bioconductor _release_ version (e.g. if the latest release is `3.13`, then devel is `3.14`).
->
-> ### Transition between devel and release - the release process
->
-> After a new release branch is created, the version of every single package on the _devel_ branch is incremented, to prepare the version of the package that will feature in the next Bioconductor stable release.
-> This includes the `r BiocStyle::Biocpkg("BiocVersion")` package, which marks the value of the next version of Bioconductor.
->
-{: .callout}
-
 
 # Check for updates
 
@@ -253,4 +204,5 @@ Within each category, [biocViews][biocviews-webpage] create sub-categories that 
 [git-bioconductor]: https://git.bioconductor.org/
 [biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html
 [discuss-package-versioning]: ../discuss/index.html#bioconductor-package-versions
+[discuss-release-cycle]: ../discuss/index.html#the-bioconductor-release-cycle
 [bioc-release-dates]: https://www.bioconductor.org/about/release-announcements/

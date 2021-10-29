@@ -66,7 +66,34 @@ The `PATCH` field is the field that package developers use most frequently to re
 Importantly, updates to packages are not deployed to users until the package version is incremented.
 This is crucial to ensure that users cannot install different versions of a package that contain different source code.
 For instance, a package at version `1.3.5` would be incremented to version `1.3.6` to deploy a new version of the package available to users on the Bioconductor repository.
-{: .callout}
+
+## The Bioconductor release cycle
+
+### Release branches
+
+Bioconductor uses the [Git][git-website] version control system to manage its package repository.
+For each new Bioconductor release (i.e., version), a new branch is created in the [Bioconductor Git repository][git-bioconductor]; those are referred to as _release_ branches.
+Release branches allow users to install stable versions of packages that were tested together for a given version of Bioconductor, itself earmarked for a specific version of R.
+
+Work on the _release_ branches is restricted.
+Older _release_ branches are entirely frozen, meaning that no further update is allowed on those branches.
+When users request a package for a given version of Bioconductor, they receive the latest version of the package on the correspoding release branch.
+
+Only the latest release branch allows updates from package maintainers, but those are restricted to critical bug fixes.
+This means that for each 6-month release cycle, users can expect packages on the latest branch to be reasonably stable.
+
+### Devel branches
+
+Meanwhile, the main branch of the Git repository (historically called `master`) is referred to as the _devel_ branch.
+
+The _devel_ branch allow developers to continue updating the packages as frequently as they wish, without affecting users or disrupting workflows.
+Typically, packages on the _devel_ branch are mainly used by other developers and the Bioconductor build system, to run tests using the latest code of every package in the Bioconductor repository, and to prepare the next stable release of the project.
+However, users can also access packages on the _devel_ branch using `BiocManager::install(version = ...)` with `version` set to one minor version greater than the latest Bioconductor _release_ version (e.g. if the latest release is `3.13`, then devel is `3.14`).
+
+### Transition between devel and release - the release process
+
+After a new release branch is created, the version of every single package on the _devel_ branch is incremented, to prepare the version of the package that will feature in the next Bioconductor stable release.
+This includes the `r BiocStyle::Biocpkg("BiocVersion")` package, which marks the value of the next version of Bioconductor.
 
 [bioc-website]: https://bioconductor.org
 [cran-website]: https://cran.r-project.org
