@@ -1,69 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 623.6 311.8" style="enable-background:new 0 0 623.6 311.8;" xml:space="preserve">
+	 viewBox="0 0 623.6 255.1" style="enable-background:new 0 0 623.6 255.1;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
 	.st1{font-family:'MyriadPro-Regular';}
 	.st2{font-size:16px;}
 	.st3{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st4{font-size:12px;}
-	.st5{fill:#312783;stroke:#312783;stroke-miterlimit:10;}
-	.st6{font-size:20px;}
 </style>
-<rect x="431.4" y="106.7" class="st0" width="148.3" height="15.8"/>
-<text transform="matrix(1 0 0 1 434.1154 120.3301)" class="st1 st2">BiocManager::install()</text>
-<rect x="434.7" y="206.3" class="st0" width="141.8" height="15.8"/>
-<text transform="matrix(1 0 0 1 448.3869 219.8806)" class="st1 st2">install.packages()</text>
-<text transform="matrix(1 0 0 1 103.5516 118.4713)" class="st1 st2">CRAN</text>
-<text transform="matrix(1 0 0 1 77.4794 31.0175)" class="st1 st2">Bioconductor</text>
-<text transform="matrix(1 0 0 1 264.8771 120.2212)" class="st1 st2">BiocManager</text>
+<rect x="35.2" y="213.1" class="st0" width="166" height="15.8"/>
+<text transform="matrix(1 0 0 1 43.6597 226.7276)" class="st1 st2">utils::install.packages()</text>
+<text transform="matrix(1 0 0 1 99.0589 43.261)" class="st1 st2">CRAN</text>
 <g>
-	<line x1="308.7" y1="188.4" x2="308.7" y2="140.1"/>
 	<g>
-		<line class="st3" x1="308.7" y1="188.4" x2="308.7" y2="147.3"/>
+		<line class="st3" x1="118.6" y1="202.5" x2="118.6" y2="104.7"/>
 		<g>
-			<polygon points="313.7,148.7 308.7,140.1 303.8,148.7 			"/>
+			<polygon points="123.6,106.2 118.6,97.5 113.6,106.2 			"/>
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 101.0719 216.844)" class="st1 st2">base R</text>
-<text transform="matrix(1 0 0 1 294.7565 217.8708)" class="st1 st2">utils</text>
 <g>
 	<g>
+		<line class="st3" x1="118.6" y1="202.5" x2="136.9" y2="121.9"/>
 		<g>
-			<g>
-				<line class="st3" x1="308.7" y1="94.7" x2="308.7" y2="53.6"/>
-				<g>
-					<polygon points="313.6,55.1 308.7,46.4 303.7,55.1 					"/>
-				</g>
-			</g>
-		</g>
-		<g>
-			<g>
-				<line class="st3" x1="308.7" y1="94.7" x2="326.2" y2="53"/>
-				<g>
-					<polygon points="330.2,56.3 329,46.4 321,52.4 					"/>
-				</g>
-			</g>
-		</g>
-		<g>
-			<g>
-				<line class="st3" x1="308.8" y1="94.7" x2="291.3" y2="53"/>
-				<g>
-					<polygon points="296.5,52.4 288.5,46.4 287.3,56.3 					"/>
-				</g>
-			</g>
+			<polygon points="141.4,124.4 138.5,114.9 131.7,122.2 			"/>
 		</g>
 	</g>
-	<text transform="matrix(1 0 0 1 305.0114 32.3983)" class="st1 st4">...</text>
-	<text transform="matrix(1 0 0 1 325.1533 32.3978)" class="st1 st4">...</text>
-	<text transform="matrix(1 0 0 1 284.8756 32.3973)" class="st1 st4">...</text>
 </g>
-<rect x="448.6" y="264.6" class="st0" width="114.1" height="15.8"/>
-<text transform="matrix(1 0 0 1 468.4941 279.6299)" class="st5 st1 st6">Function</text>
-<rect x="251.7" y="262.6" class="st0" width="114.1" height="15.8"/>
-<text transform="matrix(1 0 0 1 274.0104 277.6072)" class="st5 st1 st6">Package</text>
-<rect x="65.6" y="260.6" class="st0" width="114.1" height="15.8"/>
-<text transform="matrix(1 0 0 1 78.0058 275.5845)" class="st5 st1 st6">Repository</text>
+<g>
+	<g>
+		<line class="st3" x1="118.7" y1="202.5" x2="100.4" y2="121.9"/>
+		<g>
+			<polygon points="105.6,122.2 98.8,114.9 95.9,124.4 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 74.2992 89.6788)" class="st1 st2">BiocManager</text>
+<text transform="matrix(1 0 0 1 134.5753 109.2844)" class="st1 st4">...</text>
+<text transform="matrix(1 0 0 1 94.2976 109.2839)" class="st1 st4">...</text>
+<ellipse class="st3" cx="118.2" cy="92" rx="77.1" ry="36.6"/>
+<rect x="354.6" y="213.1" class="st0" width="148.3" height="15.8"/>
+<text transform="matrix(1 0 0 1 357.2952 226.7276)" class="st1 st2">BiocManager::install()</text>
+<text transform="matrix(1 0 0 1 322.1712 48.7297)" class="st1 st2">CRAN</text>
+<text transform="matrix(1 0 0 1 297.4118 95.1475)" class="st1 st2">BiocManager</text>
+<text transform="matrix(1 0 0 1 337.546 114.7535)" class="st1 st4">...</text>
+<text transform="matrix(1 0 0 1 317.4102 114.7525)" class="st1 st4">...</text>
+<ellipse class="st3" cx="341.3" cy="97.5" rx="77.1" ry="36.6"/>
+<text transform="matrix(1 0 0 1 474.6098 50.3058)" class="st1 st2">Bioconductor</text>
+<text transform="matrix(1 0 0 1 493.6023 95.1473)" class="st1 st2">Biobase</text>
+<text transform="matrix(1 0 0 1 516.0563 114.7537)" class="st1 st4">...</text>
+<text transform="matrix(1 0 0 1 536.1983 114.7542)" class="st1 st4">...</text>
+<ellipse class="st3" cx="519.8" cy="99.1" rx="77.1" ry="36.6"/>
+<g>
+	<g>
+		<line class="st3" x1="436" y1="210" x2="352.3" y2="125.4"/>
+		<g>
+			<polygon points="356.9,122.9 347.2,120.3 349.8,130 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st3" x1="436" y1="210" x2="366.2" y2="109.1"/>
+		<g>
+			<polygon points="371.1,107.4 362.1,103.2 362.9,113.1 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st3" x1="436.2" y1="210" x2="330.1" y2="127.3"/>
+		<g>
+			<polygon points="334.3,124.2 324.4,122.9 328.2,132.1 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st3" x1="436" y1="210" x2="495.7" y2="108.1"/>
+		<g>
+			<polygon points="499.3,111.9 499.3,101.9 490.7,106.9 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st3" x1="436" y1="210" x2="531.5" y2="123.2"/>
+		<g>
+			<polygon points="533.8,127.9 536.8,118.4 527.1,120.5 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st3" x1="436" y1="210" x2="509.2" y2="123.9"/>
+		<g>
+			<polygon points="512.1,128.2 513.9,118.4 504.5,121.8 			"/>
+		</g>
+	</g>
+</g>
 </svg>
