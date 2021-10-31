@@ -16,9 +16,8 @@ source("../bin/chunk-options.R")
 knitr_fig_path("00-")
 ```
 
-> ## Contribute!
-> 
-> Add contents as necessary.
-> See <https://carpentries-incubator.github.io/bioc-rnaseq/01-introduction-setup/index.html> for an example.
->
-{: .callout}
+This lesson was developed and tested with `r R.version.string`.
+
+Take a moment to launch RStudio and verify that you are using R version `4.1.x` (`x` being any patch version, for instance `4.1.0`).
+Bioconductor uses the version of R running in the current session to determine the latest version of Bioconductor packages that was tested for compatibility with that version of R.
+Using a different version of R while following this lesson may lead to unexpected results.
