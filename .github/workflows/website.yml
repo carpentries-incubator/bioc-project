@@ -98,6 +98,11 @@ jobs:
           install_dependencies(identify_dependencies())
         shell: Rscript {0}
 
+      - name: Update R dependencies
+        run: |
+          update.packages()
+        shell: Rscript {0}
+
       - name: Render the markdown and confirm that the site can be built
         run: make site
 
