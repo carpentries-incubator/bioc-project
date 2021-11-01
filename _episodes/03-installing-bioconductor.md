@@ -25,6 +25,9 @@ Technically, this is the only Bioconductor package distributed on the CRAN repos
 
 It provides functions to safely install Bioconductor packages and check for available updates.
 
+Once the package is installed, the function `BiocManager::install()` can be used to install packages from the Bioconductor repository.
+The function is also capable of installing packages from other repositories (e.g., CRAN), if those packages are not found in the Bioconductor repository first.
+
 ![The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.](../fig/bioc-install.svg)
 
 **The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.**
@@ -70,6 +73,8 @@ In the months leading up to the April release, packages that will feature in tha
 To access the newly released version of those packages, users must first install the new version of R.
 
 The October release of Bioconductor continues to use the same version of R for that annual cycle (i.e., until the next release, in April).
+
+![Timeline of release dates for selected Bioconductor and R versions.](../fig/bioc-release-cycle.svg)
 
 Each time a new release is produced, the version of each the packages in the Bioconductor repository is incremented.
 This is the case for every package, even those which have not been updated at all since the previous release.
@@ -127,7 +132,7 @@ Warning: 1 packages out-of-date; 0 packages too new
 
 * sessionInfo()
 
-R version 4.1.1 (2021-08-10)
+R version 4.1.2 (2021-11-01)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: Ubuntu 20.04.3 LTS
 
@@ -148,8 +153,8 @@ other attached packages:
 [1] BiocStyle_2.22.0 knitr_1.36      
 
 loaded via a namespace (and not attached):
- [1] BiocManager_1.30.16 compiler_4.1.1      fastmap_1.1.0      
- [4] magrittr_2.0.1      htmltools_0.5.2     tools_4.1.1        
+ [1] BiocManager_1.30.16 compiler_4.1.2      fastmap_1.1.0      
+ [4] magrittr_2.0.1      htmltools_0.5.2     tools_4.1.2        
  [7] yaml_2.2.1          rmarkdown_2.11      stringi_1.7.5      
 [10] digest_0.6.28       stringr_1.4.0       xfun_0.27          
 [13] rlang_0.4.12        evaluate_0.14      
@@ -247,7 +252,7 @@ replacement repositories:
 
 
 ~~~
-Bioconductor version 3.14 (BiocManager 1.30.16), R 4.1.1 (2021-08-10)
+Bioconductor version 3.14 (BiocManager 1.30.16), R 4.1.2 (2021-11-01)
 ~~~
 {: .output}
 
@@ -262,7 +267,7 @@ Warning: package(s) not installed when version(s) same as current; use `force = 
 
 
 ~~~
-Old packages: 'crayon', 'lattice', 'mgcv', 'nlme', 'survival'
+Old packages: 'crayon'
 ~~~
 {: .output}
 

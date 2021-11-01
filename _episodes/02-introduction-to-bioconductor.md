@@ -78,7 +78,7 @@ The Bioconductor project has extended the preexisting CRAN repository -- much la
 
 ### The Bioconductor release cycle
 
-Furthermore, the Bioconductor project also extended the packaging infrastructure of the CRAN repository to better support the deployment and management of packages at the user level (<a href='#bib-Gentleman2004'>Gentleman, et al., 2004</a>).
+The Bioconductor project also extended the packaging infrastructure of the CRAN repository to better support the deployment and management of packages at the user level (<a href='#bib-Gentleman2004'>Gentleman, et al., 2004</a>).
 In particular, the Bioconductor projects features a 6-month release cycle (typically around April and October), which sees a snapshot of the current version of all packages in the Bioconductor repository earmarked for a specific version of R.
 R itself is released on an annual basis (typically around April), meaning that for each release of R, two compatible releases of Bioconductor packages are available.
 
