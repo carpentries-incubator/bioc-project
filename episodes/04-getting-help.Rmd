@@ -35,6 +35,26 @@ Often, the best source of help depends on the situation at hand:
 
 In the next sections, we describe different sources of help available to Bioconductor users, and situations where each of them are most useful.
 
+# The Bioconductor website
+
+The main [Bioconductor website][bioc-website] provides a host of resources, all freely available without even the need to install R or any Bioconductor package.
+
+In particular, the [biocViews][biocviews-site] page is a great way to thematically explore the collection of packages and identify Bioconductor packages providing a certain functionality.
+
+Furthermore, the website also collects materials from [courses and conferences][bioc-courses-conferences-materials], including presentations, video recordings, and teaching materials.
+
+By nature, individual training materials are often tied to a specific version of Bioconductor packages.
+As such, they provide a snapshot of best practices at a particular point in time, may become outdated with respect to subsequent Bioconductor release.
+However, they generally provide high-quality contents designed by experienced package developers and the [Bioconductor Core Team][bioc-core-team] themselves.
+
+> ## Contribute!
+> 
+> Add content about:
+>
+> - Course materials
+>
+{: .callout}
+
 # Package landing pages
 
 Package landing pages contains useful information to read before and after installing a package.
@@ -54,22 +74,6 @@ Each package has a landing page for each release of Bioconductor since the packa
 - <https://www.bioconductor.org/packages/3.12/bioc/html/BiocVersion.html>
 - ...
 
-> ## Challenge
-> 
-> Which version of Bioconductor was the `r BiocStyle::Biocpkg("BiocPkgTools")` package introduced in?
->
-> > ## Solution
-> >
-> > The `r BiocStyle::Biocpkg("BiocPkgTools")` package was introduced in Bioconductor release `3.10`.
-> >
-> > The URL <https://www.bioconductor.org/packages/3.10/bioc/html/BiocPkgTools.html> is the earliest version of Bioconductor for which the package has a landing page,
-> > while <https://www.bioconductor.org/packages/3.09/bioc/html/BiocPkgTools.html> leads to a page that displays the message "Page Not Found".
-> >
-> > The package landing page also includes a field called "In Bioconductor since" which indicates... `3.08` ??? (further investigation underway!)
-> >
-> > {: .output}
-> {: .solution}
-{: .challenge}
 
 In the URL of a package landing page, we can replace the version number by the word "release" or "devel" to access the landing page of the latest stable release or development version, respectively.
 For instance:
@@ -104,17 +108,6 @@ For instance:
 {: .callout}
 
 
-# The Bioconductor website
-
-> ## Contribute!
-> 
-> Add content about:
->
-> - Course materials
->
-{: .callout}
-
-
 # Workflows
 
 > ## Contribute!
@@ -126,3 +119,7 @@ For instance:
 >
 {: .callout}
 
+[bioc-website]: https://www.bioconductor.org/
+[biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
+[bioc-courses-conferences-materials]: https://bioconductor.org/help/course-materials/
+[bioc-core-team]: https://www.bioconductor.org/about/core-team/
