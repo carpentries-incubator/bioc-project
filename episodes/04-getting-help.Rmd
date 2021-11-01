@@ -22,31 +22,18 @@ source("../bin/chunk-options.R")
 knitr_fig_path("03-")
 ```
 
-> ## Contribute!
-> 
-> In the following sections:
->
-> - Propose interactive elements to engage participants in this episode (e.g., challenges).
->
-{: .callout}
-
 # Getting help with Bioconductor packages
 
-> ## Contribute!
-> 
-> - Add bullet points below, and for each point add a short paragraph for details and links.
-> - It may be beneficial to reorder points and sections by "helpfulness", recommended order of reading for new users, or simply to make the content of the episode flow well.
->
-{: .callout}
-
 Help about Bioconductor packages and best practices is available in several places.
+Often, the best source of help depends on the situation at hand:
 
-- Package landing pages
-- Package vignettes
-- The Bioconductor support site
-- The Bioconductor website
-- Workflows
+- Are you trying to identify the best package for a particular task?
+- Are you trying to use a package for the very first time?
+- Are you unsure about best practices to use and combine multiple packages and functions in a sensible workflow?
+- Is a function throwing an error when you apply it to your data?
+- Do you have questions about the theory or methodology implemented in a particular package or function?
 
+In the next sections, we describe different sources of help available to Bioconductor users, and situations where each of them are most useful.
 
 # Package landing pages
 
@@ -62,8 +49,9 @@ However, the safest way is to access the vignettes of locally installed packages
 
 Each package has a landing page for each release of Bioconductor since the package was added to the repository, e.g.:
 
-- <https://www.bioconductor.org/packages/3.13/bioc/html/BiocPkgTools.html>
-- <https://www.bioconductor.org/packages/3.12/bioc/html/BiocPkgTools.html>
+- <https://www.bioconductor.org/packages/3.14/bioc/html/BiocVersion.html>
+- <https://www.bioconductor.org/packages/3.13/bioc/html/BiocVersion.html>
+- <https://www.bioconductor.org/packages/3.12/bioc/html/BiocVersion.html>
 - ...
 
 > ## Challenge
