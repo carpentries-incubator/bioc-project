@@ -109,14 +109,14 @@ This needs to be done only once, as the `r BiocStyle::Biocpkg("BiocVersion")` pa
 
 The `BiocManager::valid()` function inspects the version of packages currently installed in the user library, and checks whether a new version is available for any of them on the Bioconductor repository.
 
-Conveniently, if any package can be updated, the function generates and displays the command needed to update those packages.
-Users simply need to copy-paste and run that command in their R console.
-
 If everything is up-to-date, the function will simply print `TRUE`.
 
 ```{r, message=FALSE}
 BiocManager::valid()
 ```
+
+Conveniently, if any package can be updated, the function generates and displays the command needed to update those packages.
+Users simply need to copy-paste and run that command in their R console.
 
 > ## Example of out-of-date package library
 >
@@ -161,6 +161,14 @@ BiocManager::valid()
 > Warning message:
 > 18 packages out-of-date; 0 packages too new 
 > ```
+> 
+> Specifically, in this example, the message tells the user to run the following command to bring their installation up to date:
+> 
+> ```
+>   BiocManager::install(c(
+>     "cpp11", "data.table", "digest", "hms", "knitr", "lifecycle", "matrixStats", "mime", "pillar", "RCurl",
+>     "readr", "remotes", "S4Vectors", "shiny", "shinyWidgets", "tidyr", "tinytex", "XML"
+>   ), update = TRUE, ask = FALSE)
 {: .callout}
 
 # Installing packages
