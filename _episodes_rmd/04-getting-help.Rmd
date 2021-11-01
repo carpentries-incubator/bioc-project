@@ -68,7 +68,7 @@ That field provides a URL that users can visit to report bugs to the package dev
 > ## Note
 > 
 > It can be difficult to distinguish actual software bugs from user mistakes made when using the package.
-> Later in this episode, we provide advice for reporting bugs and including sufficient information to receive the best and fastest responses.
+> Later in this episode, we provide advice for reporting bugs and including sufficient information to receive the fastest and most helpful responses.
 > 
 > In doubt, the [Biocondutor support site][bioc-support-site] can also be a great place to discuss individual experiences and share knowledge about packages and best practices.
 {: .callout}
