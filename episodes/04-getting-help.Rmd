@@ -62,16 +62,6 @@ In particular, precompiled vignettes available on the Bioconductor website provi
 Instead, prospective users are presented with documents (PDF or HTML) written by developers to demonstrate how the functions available in the package are meant to be used and combined into a complete workflow.
 Often, vignettes use standard data sets preprocessed and freely available from public repositories, including [ExperimentData][glossary-experiment-package] packages or the Bioconductor `r BiocStyle::Biocpkg("ExperimentHub")`.
 
-> ## Note
-> 
-> The landing page only links to the documentation of the most recent version of the package for each version of Bioconductor.
-> This may be a different version from the one that is installed in the user's R library and used in the R session.
-> When Bioconductor packages are installed in the user's R library, the vignettes associated with that particular version of the package are also installed on the user's computer.
-> Those locally installed vignettes are the gold standard reference for the version of the package that is currently installed in the R library and used in the R session.
-> Later in this episode, we will demonstrate how to acces those vignettes (TODO).
->
-{: .callout}
-
 In the "Details" section of the landing page, many packages provide a field labelled "BugReports".
 That field provides a URL that users can visit to report bugs to the package developer(s).
 
@@ -101,15 +91,30 @@ Additionally, the landing page provides many other pieces of information, from d
 
 # Package vignettes
 
-> ## Contribute!
-> 
-> Add content about:
->
-> - Each Bioconductor package is required to include at least one vignette. Many packages have more.
-> - Vignettes are expected to demonstrate usage of the package in a typical workflow that users would face.
->
-{: .callout}
+Each Bioconductor package is required to include at least one vignette.
+Many packages have more than one vignette, often separating core functionality from specific scenarios.
 
+As we noted earlier, vignettes are available from [package landing pages][self-package-landing-page] on the Bioconductor website.
+However, the landing page only links to the documentation of the most recent version of the package for each version of Bioconductor.
+This may be a different version from the one that is installed in the user's R library and used in the R session.
+
+When Bioconductor packages are installed in the user's R library, the vignettes associated with that particular version of the package are also installed on the user's computer.
+Those locally installed vignettes are the gold standard reference for the version of the package that is currently installed in the R library and used in the R session.
+They can be accessed using the function `browseVignettes()`, for instance:
+
+```{r}
+browseVignettes("S4Vectors")
+```
+
+The function `browseVignettes()` opens a local web page in the user's default web browser, listing all the vignettes available for the requested package.
+Each vignette is available in three formats:
+
+- precompiled, in PDF or HTML format
+- source, in Sweave or R markdown format
+- as an R script
+
+The precompiled format is often the most comfortable format to read, as the PDF and HTML formats allow the contents of the documents to be preview in one integrated view.
+This includes plain text explanations, as well as code and their outputs, both figures and console messages.
 
 # The Bioconductor support site
 
@@ -142,3 +147,4 @@ Additionally, the landing page provides many other pieces of information, from d
 [bioc-support-site]: https://support.bioconductor.org/
 [glossary-vignette]: ../reference.html#vignette
 [glossary-experiment-package]: ../reference.html#experimentdata-package
+[self-package-landing-page]: ./index.html#package-landing-pages
