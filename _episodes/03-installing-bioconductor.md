@@ -92,6 +92,20 @@ The October release of Bioconductor continues to use the same version of R for t
 
 During each 6-month cycle of package development, Bioconductor tests packages for compatibility with the version of R that will be available for the next release cycle.
 Then, each time a new Bioconductor release is produced, the version of every package in the Bioconductor repository is incremented, including the package *[BiocVersion](https://bioconductor.org/packages/3.14/BiocVersion)* which determines the version of the Bioconductor project.
+
+
+~~~
+packageVersion("BiocVersion")
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] '3.14.0'
+~~~
+{: .output}
+
 This is the case for every package, even those which have not been updated at all since the previous release.
 That new version of each package is earmarked for the corresponding version of R;
 in other words, that version of the package can only be installed and accessed in an R session that uses the correct version of R.
@@ -109,6 +123,19 @@ BiocManager::install(version = "3.14")
 {: .language-r}
 
 This needs to be done only once, as the *[BiocVersion](https://bioconductor.org/packages/3.14/BiocVersion)* package will be updated to the corresponding version, indicating the version of Bioconductor in use in this R library.
+
+
+~~~
+packageVersion("BiocVersion")
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] '3.14.0'
+~~~
+{: .output}
 
 > ## Going further
 >
