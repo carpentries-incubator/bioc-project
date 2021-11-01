@@ -141,11 +141,11 @@ Those freely available standard data sets allow users to interactively reproduce
 
 Workflow packages can be browsed in a dedicated section of the [biocViews page][biocviews-workflow].
 
+[bioc-courses-conferences-materials]: https://bioconductor.org/help/course-materials/
+[bioc-support-site]: https://support.bioconductor.org/
 [bioc-website]: https://www.bioconductor.org/
 [biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biocviews-workflow]: https://www.bioconductor.org/packages/release/BiocViews.html#___Workflow
-[bioc-courses-conferences-materials]: https://bioconductor.org/help/course-materials/
-[bioc-support-site]: https://support.bioconductor.org/
 [glossary-vignette]: ../reference.html#vignette
 [glossary-experiment-package]: ../reference.html#experimentdata-package
 [self-package-landing-page]: ./index.html#package-landing-pages
