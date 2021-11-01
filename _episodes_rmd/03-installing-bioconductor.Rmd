@@ -175,54 +175,26 @@ Users simply need to copy-paste and run that command in their R console.
 # Installing packages
 
 The `BiocManager::install()` function is used to install or update packages.
-The function first searches for the requested package(s) on the Bioconductor repository, but automatically falls back on the CRAN repository and also supports installation directly from online repositories (e.g., GitHub).
 
-For instance, we can install the `r BiocStyle::Biocpkg("BiocPkgTools")` package:
-
-```{r, eval=FALSE}
-BiocManager::install("BiocPkgTools")
-```
-
-Multiple package names can be given at once, as a character vector of package names, for instance:
-
-```{r}
-BiocManager::install(c("BiocPkgTools", "biocViews"))
-```
-
-# Explore the package universe
-
-Attaching a Bioconductor package to the active user session is done using the `library()` function, like any other R package.
+The function takes a character vector of package names, and attempts to install them from the Bioconductor repository.
+For instance:
 
 ```{r, message=FALSE}
-library(BiocPkgTools)
+BiocManager::install(c("S4Vectors", "BiocGenerics"))
 ```
 
-> ## Note
->
-> Attaching a package using the `library()` function makes the user-facing package functions accessible directly by their short name.
-> It is possible to directly access the functions of any package in the user library without attaching the package to the active session, using the explicit full syntax `package::function()`.
-> For instance, the function `BiocPkgTools::biocExplore()` can be called without attaching the `BiocPkgTools` to the session,
-> while it can be called simply as `biocExplore()` once the package is attached.
+However, if any package cannot be found in the Bioconductor repository, the function also searches for those packages in repositories listed in the global option `repos`.
+This global option an be accessed as follows.
+
+```{r}
+getOption("repos")
+```
+
+> ## Contribute !
+> 
+> Add an example of non-Bioconductor package that can be installed using BioManager.
+> Preferably, a package that will be used later in this lesson.
 {: .callout}
-
-> ## Contribute!
->
-> - Demonstrate relevant functions of the `r BiocStyle::Biocpkg("BiocPkgTools")` package.
->
-{: .callout}
-
-# Finding a suitable package
-
-On the Bioconductor website, the [biocViews][biocviews-webpage] use a predefined - yet, evolving - controlled vocabulary to classify all the packages in the Bioconductor project.
-
-At the top level, labels distinguish four major categories of packages by their nature:
-
-- _Software_ packages, that primarily provide classes and methods to process data and perform statistical analyses and implement analytical workflows.
-- _Annotation_ packages, that often provide access to databases of biological information, from biological sequences to the location of genomic features, as well as mapping between identifiers from different databases.
-- _Experiment_ packages, that provide standard data sets often used in the vignette of _Software_ packages, to demonstrate package functionality.
-- _Workflow_ packages, that primarily provide vignettes demonstrating how to combine multiple _Software_, _Annotation_, and _Experiment_ packages into best practices integrated workflows.
-
-Within each category, [biocViews][biocviews-webpage] create sub-categories that facilitate efficient thematic browsing and filtering by prospective users, navigating the hierarchy of labels to iteratively refine the list of package until they identify candidate packages that provide the functionality they are searching for.
 
 [git-website]: https://git-scm.com/
 [git-bioconductor]: https://git.bioconductor.org/

@@ -13,7 +13,6 @@ Encoding: UTF-8
 Imports: 
     bibtex,
     BiocManager,
-    BiocPkgTools,
     BiocStyle,
     Biostrings,
     desc,
