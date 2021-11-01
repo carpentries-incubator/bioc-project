@@ -15,7 +15,8 @@ biocViews
 
 ExperimentData package
 :   Type of Bioconductor package that provides experimental datasets, immediately available as standard Bioconductor objects.
-    This type of package is often used in [pakage vignettes](#vignette), to conveniently import data used to demonstrate the functionality of other packages as well as larger workflows.
+    This type of package is often used in [package vignettes](#vignette), to conveniently import data used to demonstrate the functionality of other packages as well as larger workflows.
+    Experiment data packages can be explored on the [biocViews page][bioc-experimentdata].
 
 S4 class
 :   R has three object oriented (OO) systems: S3, S4 and R5.
@@ -56,5 +57,6 @@ Workflow package
 
 [bioconductor-website]: https://bioconductor.org/
 [biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
+[bioc-experimentdata]: https://www.bioconductor.org/packages/release/BiocViews.html#___ExperimentData
 
 {% include links.md %}

@@ -48,40 +48,56 @@ As such, they provide a snapshot of best practices at a particular point in time
 Thus, it is important check the version of packages demonstrated in teaching materials matches that in the user's R library.
 Alternatively, when referring to materials that employ package versions different from those in the user's library, it is important to carefully interpret any discrepancy between the expected and actual results.
 
-> ## Contribute!
+# Package landing pages
+
+Each package accepted in the Bioconductor project is granted a landing page on the main Bioconductor website, e.g. `r BiocStyle::Biocpkg("S4Vectors")`.
+
+Package landing pages contains useful information that can be consulted without the need to install a package.
+This is particularly useful while browsing the Bioconductor repository is search of packages suitable for a specific task.
+
+On the landing page, prospective users can find a short description of the package functionality, as well as pre-compiled documentation in the form of links to [package vignettes][glossary-vignette].
+Vignettes represent a particularly powerful form of documentation as they allow package developers to demonstrate the functionality of their package in the context of an example data set and workflow (sometimes more than one).
+
+In particular, precompiled vignettes available on the Bioconductor website provide that information without the need to install the package itself.
+Instead, prospective users are presented with documents (PDF or HTML) written by developers to demonstrate how the functions available in the package are meant to be used and combined into a complete workflow.
+Often, vignettes use standard data sets preprocessed and freely available from public repositories, including [ExperimentData][glossary-experiment-package] packages or the Bioconductor `r BiocStyle::Biocpkg("ExperimentHub")`.
+
+> ## Note
 > 
-> Add content about:
->
-> - Course materials
+> The landing page only links to the documentation of the most recent version of the package for each version of Bioconductor.
+> This may be a different version from the one that is installed in the user's R library and used in the R session.
+> When Bioconductor packages are installed in the user's R library, the vignettes associated with that particular version of the package are also installed on the user's computer.
+> Those locally installed vignettes are the gold standard reference for the version of the package that is currently installed in the R library and used in the R session.
+> Later in this episode, we will demonstrate how to acces those vignettes (TODO).
 >
 {: .callout}
 
-# Package landing pages
+In the "Details" section of the landing page, many packages provide a field labelled "BugReports".
+That field provides a URL that users can visit to report bugs to the package developer(s).
 
-Package landing pages contains useful information to read before and after installing a package.
+> ## Note
+> 
+> It can be difficult to distinguish actual software bugs from user mistakes made when using the package.
+> Later in this episode, we provide advice for reporting bugs and including sufficient information to receive the best and fastest responses.
+> 
+> In doubt, the [Biocondutor support site][bioc-support-site] can also be a great place to discuss individual experiences and share knowledge about packages and best practices.
+{: .callout}
 
-Before installing a package, as prospective users, we can consult the package description and vignettes, to decide whether the package is relevant to the task that we wish to perform.
+Additionally, the landing page provides many other pieces of information, from daily build reports indicating whether the package passed all tests on a range of operating systems, to software dependencies indicating the number of other Bioconductor packages that must be installed before the package itself can be installed and used on the user's system.
 
-After installing the package, we can consult the `BugReports` field for the URL where bugs should be reported, and the "Build Report" link can be checked to verify whether the package passes all daily checks on the build system.
-Sometimes, packages that used to work can cease to pass daily tests due to updates in their own dependencies, until they are updated themselves.
-
-For each package, the landing page links to the reference manual and vignettes for the latest version of the package available on for a given release of Bioconductor.
-However, the safest way is to access the vignettes of locally installed packages.
-
-Each package has a landing page for each release of Bioconductor since the package was added to the repository, e.g.:
-
-- <https://www.bioconductor.org/packages/3.14/bioc/html/BiocVersion.html>
-- <https://www.bioconductor.org/packages/3.13/bioc/html/BiocVersion.html>
-- <https://www.bioconductor.org/packages/3.12/bioc/html/BiocVersion.html>
-- ...
-
-
-In the URL of a package landing page, we can replace the version number by the word "release" or "devel" to access the landing page of the latest stable release or development version, respectively.
-For instance:
-
-- <https://www.bioconductor.org/packages/release/bioc/html/BiocPkgTools.html>.
-- <https://www.bioconductor.org/packages/devel/bioc/html/BiocPkgTools.html>.
-
+> ## Going further
+> 
+> Each package has a landing page for each release of Bioconductor since the package was added to the repository, e.g.:
+> 
+> - <https://www.bioconductor.org/packages/3.14/bioc/html/BiocVersion.html>
+> - <https://www.bioconductor.org/packages/3.13/bioc/html/BiocVersion.html>
+> - <https://www.bioconductor.org/packages/3.12/bioc/html/BiocVersion.html>
+> 
+> In the URL of a package landing page, we can replace the version number by the word "release" or "devel" to access the landing page of the latest stable release or development version, respectively.
+> 
+> - <https://www.bioconductor.org/packages/release/bioc/html/BiocPkgTools.html>
+> - <https://www.bioconductor.org/packages/devel/bioc/html/BiocPkgTools.html>
+{: .callout}
 
 # Package vignettes
 
@@ -123,3 +139,6 @@ For instance:
 [bioc-website]: https://www.bioconductor.org/
 [biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
 [bioc-courses-conferences-materials]: https://bioconductor.org/help/course-materials/
+[bioc-support-site]: https://support.bioconductor.org/
+[glossary-vignette]: ../reference.html#vignette
+[glossary-experiment-package]: ../reference.html#experimentdata-package
