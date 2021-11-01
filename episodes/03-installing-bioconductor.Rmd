@@ -27,6 +27,9 @@ Technically, this is the only Bioconductor package distributed on the CRAN repos
 
 It provides functions to safely install Bioconductor packages and check for available updates.
 
+Once the package is installed, the function `BiocManager::install()` can be used to install packages from the Bioconductor repository.
+The function is also capable of installing packages from other repositories (e.g., CRAN), if those packages are not found in the Bioconductor repository first.
+
 ![The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.](../fig/bioc-install.svg)
 
 **The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.**
