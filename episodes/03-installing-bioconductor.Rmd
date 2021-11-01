@@ -74,6 +74,8 @@ To access the newly released version of those packages, users must first install
 
 The October release of Bioconductor continues to use the same version of R for that annual cycle (i.e., until the next release, in April).
 
+![Timeline of release dates for selected Bioconductor and R versions.](../fig/bioc-release-cycle.svg)
+
 Each time a new release is produced, the version of each the packages in the Bioconductor repository is incremented.
 This is the case for every package, even those which have not been updated at all since the previous release.
 This version increment is essential to associate a each version of a Bioconductor package with a unique release of the Bioconductor project.
