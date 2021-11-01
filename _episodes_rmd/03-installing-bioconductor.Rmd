@@ -188,7 +188,7 @@ The `BiocManager::install()` function is used to install or update packages.
 The function takes a character vector of package names, and attempts to install them from the Bioconductor repository.
 For instance:
 
-```{r, message=FALSE}
+```{r, message=FALSE, warning=FALSE}
 BiocManager::install(c("S4Vectors", "BiocGenerics"))
 ```
 
