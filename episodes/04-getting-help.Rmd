@@ -118,17 +118,18 @@ This includes plain text explanations, as well as code and their outputs, both f
 
 # The Bioconductor support site
 
-> ## Contribute!
-> 
-> Add content about:
->
-> - Creating an account
-> - Searching and posting
-> - Upvoting answers
-> - Accepting answers
->
-{: .callout}
+The [Bioconductor support site][bioc-support-site] provides a platform for the community of users and developers to ask questions, and help each other through the doubts and challenges related to Bioconductor packages and analytical workflows.
 
+The support site can be freely browsed without an account to search and read the many questions that were already asked and answered.
+However, posting a new question does require an account on the platform.
+Signing up to the platform is straightforward using an email address or Open Authorization from a number of trusted providers.
+
+A system of upvoting allows the most popular answers to feature more prominently at the top of each page.
+Furthermore, the original poster retains the right to mark one answer as the one that resolved their issue.
+
+Separately, a system of points granted to each user for providing answers either popular or accepted by the original poster highlights the most active and trusted contributors on the platform.
+
+![The Bioconductor support site.](../fig/bioc-support-site.png)
 
 # Workflows
 
