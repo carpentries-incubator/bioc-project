@@ -4,9 +4,10 @@ title: "Getting help"
 teaching: XX
 exercises: XX
 questions:
-- "How do I access package documentation?"
 - "Where can I find help online?"
-- "Where can I ask questions to package developers and users?"
+- "Where can I ask questions to package developers and other users?"
+- "Where can I find documentation for a specific package?"
+- "Where can I learn best practices to combine multiple package into a coherent workflow?"
 objectives:
 - "Identify online resources for help."
 - "Access package documentation."
@@ -141,7 +142,34 @@ Those freely available standard data sets allow users to interactively reproduce
 
 Workflow packages can be browsed in a dedicated section of the [biocViews page][biocviews-workflow].
 
+# Slack
+
+The [Bioconductor Slack workspace][bioc-slack] was created in 2016.
+
+The workspace can be freely joined using this [Heroku app][bioc-slack-heroku] to generate invitations for individual email addresses.
+
+The Bioconductor Slack workspace is a lively online platform for official announcements by the [Bioconductor Core Team][bioc-core-team] (e.g., Bioconductor release, conferences & events), as well as informal discussions between groups of users subscribed to thematic channels, and direct messages between community members.
+
+The workspace features a large number of channels dedicated to particular topics and areas of interest in the community.
+Those channels range from active fields of research (e.g., single-cell genomics), to time-limited events (e.g., conferences), but also community outreach (e.g., diversity and representation).
+
+Private channels also exist for governance (e.g., event organisation, advisory boards).
+
+> ## Note
+> 
+> The Slack workspace allows for rapid day-to-day communication and discussion with fellow community members through channels and direct messages.
+>
+> However, popular channels can reach up to hundreds of users in many different time zones and should be used with parsimony and respect.
+> Conversely, direct messages and private channels are limited to the users invited in the discussion, and any outcome relevant to the community then needs to be re-posted in a public channel.
+>
+> As a consequence, the [Bioconductor support site][bioc-support-site] remains the preferred way to publicly ask questions of interest to the community, in a way that both the question, discussion, and answers are easily searchable and indexed by major search engines.
+{: .callout}
+
+
+[bioc-core-team]: https://www.bioconductor.org/about/core-team/
 [bioc-courses-conferences-materials]: https://bioconductor.org/help/course-materials/
+[bioc-slack]: https://community-bioc.slack.com/
+[bioc-slack-heroku]: https://bioc-community.herokuapp.com/
 [bioc-support-site]: https://support.bioconductor.org/
 [bioc-website]: https://www.bioconductor.org/
 [biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
