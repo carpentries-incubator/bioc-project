@@ -107,13 +107,6 @@ browseVignettes("S4Vectors")
 ~~~
 {: .language-r}
 
-
-
-~~~
-starting httpd help server ... done
-~~~
-{: .output}
-
 The function `browseVignettes()` opens a local web page in the user's default web browser, listing all the vignettes available for the requested package.
 Each vignette is available in three formats:
 

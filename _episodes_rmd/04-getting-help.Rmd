@@ -102,7 +102,7 @@ When Bioconductor packages are installed in the user's R library, the vignettes 
 Those locally installed vignettes are the gold standard reference for the version of the package that is currently installed in the R library and used in the R session.
 They can be accessed using the function `browseVignettes()`, for instance:
 
-```{r}
+```{r, eval=FALSE}
 browseVignettes("S4Vectors")
 ```
 
