@@ -67,7 +67,7 @@ That field provides a URL that users can visit to report bugs to the package dev
 > ## Note
 > 
 > It can be difficult to distinguish actual software bugs from user mistakes made when using the package.
-> Later in this episode, we provide advice for reporting bugs and including sufficient information to receive the best and fastest responses.
+> Later in this episode, we provide advice for reporting bugs and including sufficient information to receive the fastest and most helpful responses.
 > 
 > In doubt, the [Biocondutor support site][bioc-support-site] can also be a great place to discuss individual experiences and share knowledge about packages and best practices.
 {: .callout}
@@ -91,9 +91,9 @@ Additionally, the landing page provides many other pieces of information, from d
 # Package vignettes
 
 Each Bioconductor package is required to include at least one vignette.
-Many packages have more than one vignette, often separating core functionality from specific scenarios.
+Many packages have more than one vignette, often separating core functionality from specific use cases.
 
-As we noted earlier, vignettes are available from [package landing pages][self-package-landing-page] on the Bioconductor website.
+As we noted earlier in this episode, vignettes are available from [package landing pages][self-package-landing-page] on the Bioconductor website.
 However, the landing page only links to the documentation of the most recent version of the package for each version of Bioconductor.
 This may be a different version from the one that is installed in the user's R library and used in the R session.
 
