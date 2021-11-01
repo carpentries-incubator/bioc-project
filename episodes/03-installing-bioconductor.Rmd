@@ -120,7 +120,7 @@ BiocManager::valid()
 
 > ## Example of out-of-date package library
 >
-> In this example, the `BiocManager::valid()` function did not return `TRUE`.
+> In the example below, the `BiocManager::valid()` function did not return `TRUE`.
 > Instead, it includes information about the active user session, and displays the exact call to `BiocManager::install()` that the user should run to replace all the outdated packages detected in the user library with the latest version available in CRAN or Bioconductor.
 >
 > ```
