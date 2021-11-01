@@ -106,7 +106,7 @@ They can be accessed using the function `browseVignettes()`, for instance:
 browseVignettes("S4Vectors")
 ```
 
-The function `browseVignettes()` opens a local web page in the user's default web browser, listing all the vignettes available for the requested package.
+Specifically, the function `browseVignettes()` opens a local web page in the user's default web browser, listing all the vignettes available for the requested package.
 Each vignette is available in three formats:
 
 - precompiled, in PDF or HTML format
