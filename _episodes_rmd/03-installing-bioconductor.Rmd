@@ -169,6 +169,7 @@ Users simply need to copy-paste and run that command in their R console.
 >     "cpp11", "data.table", "digest", "hms", "knitr", "lifecycle", "matrixStats", "mime", "pillar", "RCurl",
 >     "readr", "remotes", "S4Vectors", "shiny", "shinyWidgets", "tidyr", "tinytex", "XML"
 >   ), update = TRUE, ask = FALSE)
+> ```
 {: .callout}
 
 # Installing packages
