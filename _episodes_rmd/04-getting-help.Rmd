@@ -94,7 +94,7 @@ Additionally, the landing page provides many other pieces of information, from d
 Each Bioconductor package is required to include at least one vignette.
 Many packages have more than one vignette, often separating core functionality from specific use cases.
 
-As we noted earlier, vignettes are available from [package landing pages][self-package-landing-page] on the Bioconductor website.
+As we noted earlier in this episode, vignettes are available from [package landing pages][self-package-landing-page] on the Bioconductor website.
 However, the landing page only links to the documentation of the most recent version of the package for each version of Bioconductor.
 This may be a different version from the one that is installed in the user's R library and used in the R session.
 
@@ -106,7 +106,7 @@ They can be accessed using the function `browseVignettes()`, for instance:
 browseVignettes("S4Vectors")
 ```
 
-The function `browseVignettes()` opens a local web page in the user's default web browser, listing all the vignettes available for the requested package.
+Specifically, the function `browseVignettes()` opens a local web page in the user's default web browser, listing all the vignettes available for the requested package.
 Each vignette is available in three formats:
 
 - precompiled, in PDF or HTML format
