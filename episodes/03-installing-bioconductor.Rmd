@@ -25,7 +25,13 @@ stopifnot(require(BiocStyle))
 The `r BiocStyle::Biocpkg("BiocManager")` package is the entry point into the Bioconductor package repository.
 Technically, this is the only Bioconductor package distributed on the CRAN repository.
 
-It provides functions to safely install Bioconductor packages and check for available updates.
+It can be installed using the code below.
+
+```{r, eval=FALSE}
+install.packages("BiocManager")
+```
+
+The `r BiocStyle::Biocpkg("BiocManager")` package provides functions to safely install Bioconductor packages and check for available updates.
 
 Once the package is installed, the function `BiocManager::install()` can be used to install packages from the Bioconductor repository.
 The function is also capable of installing packages from other repositories (e.g., CRAN), if those packages are not found in the Bioconductor repository first.
@@ -58,36 +64,40 @@ Notably, the `BiocManager::install()` function will fall back on the CRAN reposi
 > We recommend reading their respective help page to learn more about each of them.
 {: .callout}
 
-Install the `r BiocStyle::Biocpkg("BiocManager")` package using the code below.
-
-```{r, eval=FALSE}
-install.packages("BiocManager")
-```
-
 # Bioconductor releases and current version
-
-The Bioconductor project produces two releases each year, one around April and another one around October.
-
-The April release of Bioconductor coincides with the annual release of R.
-In the months leading up to the April release, packages that will feature in that Bioconductor release are tested using the upcoming version of R (i.e., "R-devel").
-To access the newly released version of those packages, users must first install the new version of R.
-
-The October release of Bioconductor continues to use the same version of R for that annual cycle (i.e., until the next release, in April).
-
-![Timeline of release dates for selected Bioconductor and R versions.](../fig/bioc-release-cycle.svg)
-
-Each time a new release is produced, the version of each the packages in the Bioconductor repository is incremented.
-This is the case for every package, even those which have not been updated at all since the previous release.
-This version increment is essential to associate a each version of a Bioconductor package with a unique release of the Bioconductor project.
-
-In particular, the version of the `r BiocStyle::Biocpkg("BiocVersion")` package is used to represent the version of the Bioconductor project.
-In turn, the version of the Bioconductor release currently active in a user session determines the version of Bioconductor packages to be installed by the `BiocManager::install()` function.
 
 Once the `r BiocStyle::Biocpkg("BiocManager")` package is installed, the `BiocManager::version()` function displays the version (i.e., release) of the Bioconductor project that is currently active in the R session.
 
 ```{r, message=FALSE}
 BiocManager::version()
 ```
+
+Using the correct version of R and Bioconductor packages is a key aspect of reproducibility.
+The `r BiocStyle::Biocpkg("BiocManager")` packages uses the version of R running in the current session to determine the version of Biocondutor packages that can be installed in the current R library.
+
+The Bioconductor project produces two releases each year, one around April and another one around October.
+The April release of Bioconductor coincides with the annual release of R.
+The October release of Bioconductor continues to use the same version of R for that annual cycle (i.e., until the next release, in April).
+
+![Timeline of release dates for selected Bioconductor and R versions.](../fig/bioc-release-cycle.svg)
+
+During each 6-month cycle of package development, Bioconductor tests packages for compatibility with the version of R that will be available for the next release cycle.
+Then, each time a new Bioconductor release is produced, the version of every package in the Bioconductor repository is incremented, including the package `r BiocStyle::Biocpkg("BiocVersion")` which determines the version of the Bioconductor project.
+This is the case for every package, even those which have not been updated at all since the previous release.
+That new version of each package is earmarked for the corresponding version of R;
+in other words, that version of the package can only be installed and accessed in an R session that uses the correct version of R.
+This version increment is essential to associate a each version of a Bioconductor package with a unique release of the Bioconductor project.
+
+Following the April release, this means that users must install the new version of R to access the newly released versions of Bioconductor packages.
+
+Instead, in October, users can continue to use the same version of R to access the newly released version of Bioconductor packages.
+However, to update an R library from the April release to the October release of Bioconductor, users need to call the function `BiocManager::install()` specifying the correct version of Bioconductor as the `version` option, for instance:
+
+```{r, eval=FALSE}
+BiocManager::install(version = "3.14")
+```
+
+This needs to be done only once, as the `r BiocStyle::Biocpkg("BiocVersion")` package will be updated to the corresponding version, indicating the version of Bioconductor in use in this R library.
 
 > ## Going further
 >
