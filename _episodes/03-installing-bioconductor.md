@@ -232,14 +232,6 @@ BiocManager::install(c("S4Vectors", "BiocGenerics"))
 ~~~
 {: .language-r}
 
-
-
-~~~
-Warning: package(s) not installed when version(s) same as current; use `force = TRUE` to
-  re-install: 'S4Vectors' 'BiocGenerics'
-~~~
-{: .warning}
-
 However, if any package cannot be found in the Bioconductor repository, the function also searches for those packages in repositories listed in the global option `repos`.
 This global option an be accessed as follows.
 
