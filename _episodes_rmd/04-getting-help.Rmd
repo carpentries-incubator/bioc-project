@@ -92,7 +92,7 @@ Additionally, the landing page provides many other pieces of information, from d
 # Package vignettes
 
 Each Bioconductor package is required to include at least one vignette.
-Many packages have more than one vignette, often separating core functionality from specific scenarios.
+Many packages have more than one vignette, often separating core functionality from specific use cases.
 
 As we noted earlier, vignettes are available from [package landing pages][self-package-landing-page] on the Bioconductor website.
 However, the landing page only links to the documentation of the most recent version of the package for each version of Bioconductor.
