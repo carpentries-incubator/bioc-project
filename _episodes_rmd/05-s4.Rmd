@@ -37,10 +37,10 @@ BiocManager::install("S4Vectors")
 > Illustrate S4 classes, generics, and methods.
 {: .callout}
 
-# S4Vectors
+# The S4Vectors package
 
 The `r BiocStyle::Biocpkg("S4Vectors")` package defines the `Vector` and `List` virtual classes and a set of generic functions that extend the semantic of ordinary vectors and lists in R.
-Through the S4 class system, package developers can easily implement vector-like or list-like objects as concrete subclasses of `Vector` or `List`.
+Using the S4 class system, package developers can easily implement vector-like or list-like objects as concrete subclasses of `Vector` or `List`.
 
 Virtual classes -- such as `Vector` and `List` -- cannot be instantiated into objects themselves.
 Instead, those virtual classes provide core functionality inherited by all the concrete classes that are derived from them.
@@ -62,10 +62,79 @@ library(S4Vectors)
 > Occasionally, it may be necessary to disambiguate calls to masked function using the package name as well as the function name, e.g. `base::anyDuplicated()`.
 {: .callout}
 
-# `DataFrame`
+# The DataFrame class
+
+The `DataFrame` class implemented in the `r BiocStyle::Biocpkg("S4Vectors")` package extends the concept of rectangular data familiar to users of the `data.frame` class in base R, or `tibble` in the tidyverse.
+Specifically, the `DataFrame` supports the storage of any type of object (with `length` and `[` methods) as columns.
+
+On the whole, the `DataFrame` class provides a formal definition of an S4 class that behaves very similarly to `data.frame`, in terms of construction, subsetting, splitting, combining, etc.
 
 ```{r}
-
+x <- DataFrame(
+    integers = c(1L, 2L, 3L),
+    letters = c("A", "B", "C"),
+    floats = c(1.2, 2.3, 3.4)
+)
+x
 ```
+
+The most notable exceptions have to do with handling of the row name.
+First, row names are optional. This means calling `rownames(x)` will return `NULL` if there are no row names.
+
+```{r}
+rownames(x)
+```
+
+This is different from `data.frame`, where `rownames(x)` returns the equivalent of `as.character(seq_len(nrow(x)))`.
+
+```{r}
+x_data.frame <- data.frame(
+    integers = c(1L, 2L, 3L),
+    letters = c("A", "B", "C"),
+    floats = c(1.2, 2.3, 3.4)
+)
+rownames(x_data.frame)
+```
+
+However, returning `NULL` informs, for example, combination functions that no row names are desired (they are often a luxury when dealing with large data).
+
+Furthermore, row names of `DataFrame` objects are not required to be unique, in contrast to the `data.frame` in base R.
+Row names are a frequent source of controversy in R, as they can be used to uniquely identify and index observations in rectangular format, without storing that information explicitly in a dedicated column.
+When set, row names can be used to subset rectangular data using the `[` operator.
+Meanwhile, non-unique row names defeat that purpose and can lead to unexpected results, as only the first occurrence of each selected row name is extracted.
+Instead, the tidyverse `tibble` removed the ability to set row names altogether, forcing users to store every bit of information explicitly in dedicated columns, while providing functions to dedicated to efficiently filtering rows in rectangular data, without the need for the `[` operator.
+
+```{r}
+x_rownames <- DataFrame(
+    integers = c(1L, 2L, 3L),
+    letters = c("A", "B", "C"),
+    floats = c(1.2, 2.3, 3.4),
+    row.names = c("name1", "name1", "name2")
+)
+x_rownames
+```
+
+> ## Challenge
+> 
+> Using the example above, what does `x_rownames["name1", ]` return? Why?
+> 
+> > ## Solution
+> >
+> > ``` 
+> > > x["name1", ]
+> > DataFrame with 1 row and 3 columns
+> >        integers     letters    floats
+> >       <integer> <character> <numeric>
+> > name1         1           A       1.2
+> > ```
+> >
+> > Only the first occurrence of a row matching the row name `name1` is returned.
+> > 
+> > In this case, row names do not have a particular meaning, making it difficult to justify the need for them.
+> > Instead, users could extract all the rows that matching the row name `name1` more explicitly as follows: `x_rownames[rownames(x_rownames) == "name1", ]`.
+> > 
+> > Users should be mindful of the motivation for using row names in any given situation; what they represent, and how they should be used during the analysis.
+{: .callout}
+
 
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
