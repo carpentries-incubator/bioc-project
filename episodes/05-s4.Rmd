@@ -41,6 +41,14 @@ In the following sections, we focus on the essential functionality and user pers
 
 ![S4 classes, generics, and methods.](../fig/bioc-s4.svg)
 
+**S4 classes, generics, and methods.**
+On the left, two example classes named `S4Class1` and `S4Class2` demonstrate the concept of inheritance.
+The class `S4Class1` contains two slots named `SlotName1` and `SlotName2` for storing data.
+The two slots are restricted to store objects of type `SlotType1` and `SlotType2`, respectively.
+The class also defines validity rules that check the integrity of data stored in objects each time they are updated.
+The class `S4Class2` inherits all the slots and validity rules from the class `S4Class2`, in addition to defining a new slot named `SlotName3` and new validity rules.
+Example code illustrates how objects of each class are typically created using constructor functions named identically to the corresponding class.
+
 ## Slots and validity
 
 In contrast to the S3 class system available directly in base R, the S4 class system provides a much stricter definition of classes and methods for object-oriented programming (OOP) in R.
