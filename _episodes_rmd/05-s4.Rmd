@@ -34,8 +34,12 @@ BiocManager::install("S4Vectors")
 
 > ## Contribute!
 > 
-> Illustrate S4 classes, generics, and methods.
+> Add text to introduce the image below.
 {: .callout}
+
+![S4 classes, generics, and methods.](../fig/bioc-s4.svg)
+
+**S4 classes, generics, and methods.**
 
 # The S4Vectors package
 
