@@ -169,6 +169,34 @@ Private channels also exist for governance (e.g., event organisation, advisory b
 > As a consequence, the [Bioconductor support site][bioc-support-site] remains the preferred way to publicly ask questions of interest to the community, in a way that both the question, discussion, and answers are easily searchable and indexed by major search engines.
 {: .callout}
 
+# How to efficiently ask for help
+
+Most community members provide help voluntarily, on their own spare time and without any form of compensation.
+As such, it is important to ask questions as clearly as possible, providing relevant information, to help those volunteers rapidly identify the source of the issue as rapidly as possible, thus saving time for both the helper and the original poster.
+
+Depending on the question, some key information includes:
+
+- Operating system
+- Version of R
+- Version of Bioconductor
+- Version of individual packages installed in the R library
+- Version of individual packages attached to the current session
+- Third-party software, libraries, and compilers installed on the user's system
+- Source of packages installed in the R library (e.g., Bioconductor, CRAN, GitHub)
+- Code executed in the R session leading up to the issue
+- Global options active in the session (accessible using `options()`)
+
+When the issue relates to code being run and producing unexpected outputs, it is paramount to include sufficient information for others to reproduce the issue on their own computer.
+Indeed, many issues require a live R session to properly investigate the source of the issue, test fixes, or provide workaround and advice.
+
+Crucially, when providing code as part of your post, it is important that this code be executable by readers, including data that are processed by the code.
+Often, the code itself may look correct, while the issue relates to the interaction between the code and a particular data set.
+If sharing sensitive data is not an option, then the issue should be reformulated and presented using a data set publicly available on the internet, or including code to generate simulated data randomly generated in a reproducible way (e.g., `set.seed()`).
+
+One option is to use the `r BiocStyle::CRANpkg("reprex")` to collate the code and outputs that describe the issue into formatted text that is easy to post of many online forums, including the [Bioconductor support site][bioc-support-site].
+
+Finally, the [Bioconductor support site][bioc-support-site] is the preferred platform to post questions related to Bioconductor packages.
+This is because questions are visible to the entire community, including many experienced Bioconductor users who regularly answer those questions, and other users who can find answers to questions that were already posted and resolved.
 
 [bioc-core-team]: https://www.bioconductor.org/about/core-team/
 [bioc-courses-conferences-materials]: https://bioconductor.org/help/course-materials/
