@@ -112,7 +112,7 @@ DF1
 In fact, `DataFrame` objects can be easily converted to  equivalent `data.frame` objects.
 
 ```{r}
-df1 <- as.data.frame(df1)
+df1 <- as.data.frame(DF1)
 df1
 ```
 
