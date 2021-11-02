@@ -39,8 +39,6 @@ BiocManager::install("S4Vectors")
 
 ![S4 classes, generics, and methods.](../fig/bioc-s4.svg)
 
-**S4 classes, generics, and methods.**
-
 # The S4Vectors package
 
 The `r BiocStyle::Biocpkg("S4Vectors")` package defines the `Vector` and `List` virtual classes and a set of generic functions that extend the semantic of ordinary vectors and lists in R.
@@ -49,7 +47,7 @@ Using the S4 class system, package developers can easily implement vector-like o
 Virtual classes -- such as `Vector` and `List` -- cannot be instantiated into objects themselves.
 Instead, those virtual classes provide core functionality inherited by all the concrete classes that are derived from them.
 
-For instance, a few low-level concrete subclasses of general interest (e.g. `DataFrame`, `Rle`, and `Hits`) are implemented in the `r BiocStyle::Biocpkg("S4Vectors")` package itself, while many more are implemented in other packages throughout the Bioconductor project (e.g., `r BiocStyle::Biocpkg("IRanges")`).
+Instead, a few low-level concrete subclasses of general interest (e.g. `DataFrame`, `Rle`, and `Hits`) are implemented in the `r BiocStyle::Biocpkg("S4Vectors")` package itself, and many more are implemented in other packages throughout the Bioconductor project (e.g., `r BiocStyle::Biocpkg("IRanges")`).
 
 Attach the package to the current R session as follows.
 
