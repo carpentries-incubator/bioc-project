@@ -167,6 +167,7 @@ DF2
 > > Instead, users could extract all the rows that matching the row name `name1` more explicitly as follows: `DF2[rownames(DF2) == "name1", ]`.
 > > 
 > > Users should be mindful of the motivation for using row names in any given situation; what they represent, and how they should be used during the analysis.
+> {: .solution}
 {: .callout}
 
 Finally, row names in `DataFrame` do not support partial matching during subsetting, in contrast to `data.frame`.
@@ -202,6 +203,7 @@ df3 <- as.data.frame(DF3)
 > >
 > > The `DataFrame` object did not perform partial row name matching, and thus did not match any row and return a `DataFrame` full of `NA` values.
 > > Instead, the `data.frame` object performed partial row name matching, matched the requested `"a"` to the `"alpha"` row name, and returned the corresponding row as a new `data.frame` object.
+> {: .solution}
 {: .callout}
 
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
