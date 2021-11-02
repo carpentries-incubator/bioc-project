@@ -21,4 +21,5 @@ Imports:
     renv,
     rmarkdown,
     rprojroot,
+    S4Vectors,
     stringr

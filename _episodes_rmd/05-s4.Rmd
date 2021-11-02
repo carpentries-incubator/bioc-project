@@ -1,0 +1,71 @@
+---
+source: Rmd
+title: "The S4 class system in Bioconductor"
+teaching: XX
+exercises: XX
+questions:
+- "What is the S4 class system?"
+- "How does Bioconductor use S4 classes?"
+objectives:
+- "Explain what S4 classes, generics, and methods are."
+- "Identify S4 classes at the core of the Bioconductor package infrastructure."
+- "Create S4 objects and apply S4 methods."
+keypoints:
+- "S4 classes store information in slots, and check the validity of the information every time objects are updated."
+- "To ensure the continued integrity of S4 objects, users should not access slots directly, but using dedicated functions."
+- "S4 generics invoke different implementations of the method depending on the class of the object that they are given."
+---
+
+```{r, include=FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("05-")
+options(width = 120)
+```
+
+# Install packages
+
+Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+
+```{r, eval=FALSE}
+BiocManager::install("S4Vectors")
+```
+
+# S4 classes
+
+> ## Contribute!
+> 
+> Illustrate S4 classes, generics, and methods.
+{: .callout}
+
+# S4Vectors
+
+The `r BiocStyle::Biocpkg("S4Vectors")` package defines the `Vector` and `List` virtual classes and a set of generic functions that extend the semantic of ordinary vectors and lists in R.
+Through the S4 class system, package developers can easily implement vector-like or list-like objects as concrete subclasses of `Vector` or `List`.
+
+Virtual classes -- such as `Vector` and `List` -- cannot be instantiated into objects themselves.
+Instead, those virtual classes provide core functionality inherited by all the concrete classes that are derived from them.
+
+For instance, a few low-level concrete subclasses of general interest (e.g. `DataFrame`, `Rle`, and `Hits`) are implemented in the `r BiocStyle::Biocpkg("S4Vectors")` package itself, while many more are implemented in other packages throughout the Bioconductor project (e.g., `r BiocStyle::Biocpkg("IRanges")`).
+
+Attach the package to the current R session as follows.
+
+```{r}
+library(S4Vectors)
+```
+
+> Note 
+>
+> The package startup messages printed in the console are worth noting that the `r BiocStyle::Biocpkg("S4Vectors")` package masks a number of functions from the [base][r-package-base] package when the package is attached to the session.
+> This means that the `r BiocStyle::Biocpkg("S4Vectors")` package includes an implementation of those functions, and that -- being the latest package attached to the R session -- its own implementation of those functions will be found first on the R search path and used instead of their original implementation in the [base][r-package-base] package.
+> 
+> In many cases, masked functions can be used as before without any issue.
+> Occasionally, it may be necessary to disambiguate calls to masked function using the package name as well as the function name, e.g. `base::anyDuplicated()`.
+{: .callout}
+
+# `DataFrame`
+
+```{r}
+
+```
+
+[r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
