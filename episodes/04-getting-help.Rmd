@@ -132,6 +132,10 @@ Separately, a system of points granted to each user for providing answers either
 
 ![The Bioconductor support site.](../fig/bioc-support-site.png)
 
+**The Bioconductor support site.**
+The Bioconductor support site tracks questions and answers posted by registered users.
+The platform can be freely browsed and searched by non-registered users.
+
 # Workflows
 
 Bioconductor workflow packages are special in the way that they are only expected to contain vignettes, without any additional code or functionality of their own.
