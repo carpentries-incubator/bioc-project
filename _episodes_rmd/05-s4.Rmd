@@ -70,30 +70,32 @@ Specifically, the `DataFrame` supports the storage of any type of object (with `
 On the whole, the `DataFrame` class provides a formal definition of an S4 class that behaves very similarly to `data.frame`, in terms of construction, subsetting, splitting, combining, etc.
 
 ```{r}
-x <- DataFrame(
+DF1 <- DataFrame(
     integers = c(1L, 2L, 3L),
     letters = c("A", "B", "C"),
     floats = c(1.2, 2.3, 3.4)
 )
-x
+DF1
+```
+
+In fact, `DataFrame` objects can be easily converted to  equivalent `data.frame` objects.
+
+```{r}
+df1 <- as.data.frame(df1)
+df1
 ```
 
 The most notable exceptions have to do with handling of row names.
 First, row names are optional. This means calling `rownames(x)` will return `NULL` if there are no row names.
 
 ```{r}
-rownames(x)
+rownames(DF1)
 ```
 
 This is different from `data.frame`, where `rownames(x)` returns the equivalent of `as.character(seq_len(nrow(x)))`.
 
 ```{r}
-x_data.frame <- data.frame(
-    integers = c(1L, 2L, 3L),
-    letters = c("A", "B", "C"),
-    floats = c(1.2, 2.3, 3.4)
-)
-rownames(x_data.frame)
+rownames(df1)
 ```
 
 However, returning `NULL` informs, for example, combination functions that no row names are desired (they are often a luxury when dealing with large data).
@@ -105,23 +107,23 @@ Meanwhile, non-unique row names defeat that purpose and can lead to unexpected r
 Instead, the tidyverse `tibble` removed the ability to set row names altogether, forcing users to store every bit of information explicitly in dedicated columns, while providing functions to dedicated to efficiently filtering rows in rectangular data, without the need for the `[` operator.
 
 ```{r}
-x_rownames <- DataFrame(
+DF2 <- DataFrame(
     integers = c(1L, 2L, 3L),
     letters = c("A", "B", "C"),
     floats = c(1.2, 2.3, 3.4),
     row.names = c("name1", "name1", "name2")
 )
-x_rownames
+DF2
 ```
 
 > ## Challenge
 > 
-> Using the example above, what does `x_rownames["name1", ]` return? Why?
+> Using the example above, what does `DF2["name1", ]` return? Why?
 > 
 > > ## Solution
 > >
 > > ``` 
-> > > x["name1", ]
+> > > DF2["name1", ]
 > > DataFrame with 1 row and 3 columns
 > >        integers     letters    floats
 > >       <integer> <character> <numeric>
@@ -131,10 +133,44 @@ x_rownames
 > > Only the first occurrence of a row matching the row name `name1` is returned.
 > > 
 > > In this case, row names do not have a particular meaning, making it difficult to justify the need for them.
-> > Instead, users could extract all the rows that matching the row name `name1` more explicitly as follows: `x_rownames[rownames(x_rownames) == "name1", ]`.
+> > Instead, users could extract all the rows that matching the row name `name1` more explicitly as follows: `DF2[rownames(DF2) == "name1", ]`.
 > > 
 > > Users should be mindful of the motivation for using row names in any given situation; what they represent, and how they should be used during the analysis.
 {: .callout}
 
+Finally, row names in `DataFrame` do not support partial matching during subsetting, in contrast to `data.frame`.
+The stricter behaviour of `DataFrame` prevents often unexpected results faced by unsuspecting users.
+
+```{r}
+DF3 <- DataFrame(
+    integers = c(1L, 2L, 3L),
+    letters = c("A", "B", "C"),
+    floats = c(1.2, 2.3, 3.4),
+    row.names = c("alpha", "beta", "gamma")
+)
+df3 <- as.data.frame(DF3)
+```
+
+> ## Challenge
+> 
+> Using the examples above, what are the outputs of `DF3["a", ]` and `df3["a", ]`?
+> Why are they different?
+> 
+> > ## Solution
+> >
+> > ``` 
+> > > DF3["a", ]
+> > DataFrame with 1 row and 3 columns
+> >       integers     letters    floats
+> >      <integer> <character> <numeric>
+> > <NA>        NA          NA        NA
+> > > df3["a", ]
+> >       integers letters floats
+> > alpha        1       A    1.2
+> > ```
+> >
+> > The `DataFrame` object did not perform partial row name matching, and thus did not match any row and return a `DataFrame` full of `NA` values.
+> > Instead, the `data.frame` object performed partial row name matching, matched the requested `"a"` to the `"alpha"` row name, and returned the corresponding row as a new `data.frame` object.
+{: .callout}
 
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
