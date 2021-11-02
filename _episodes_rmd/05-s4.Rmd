@@ -78,7 +78,7 @@ x <- DataFrame(
 x
 ```
 
-The most notable exceptions have to do with handling of the row name.
+The most notable exceptions have to do with handling of row names.
 First, row names are optional. This means calling `rownames(x)` will return `NULL` if there are no row names.
 
 ```{r}
