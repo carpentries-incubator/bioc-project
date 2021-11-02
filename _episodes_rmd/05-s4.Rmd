@@ -102,9 +102,9 @@ On the whole, the `DataFrame` class provides a formal definition of an S4 class 
 
 ```{r}
 DF1 <- DataFrame(
-    integers = c(1L, 2L, 3L),
-    letters = c("A", "B", "C"),
-    floats = c(1.2, 2.3, 3.4)
+    Integers = c(1L, 2L, 3L),
+    Letters = c("A", "B", "C"),
+    Floats = c(1.2, 2.3, 3.4)
 )
 DF1
 ```
@@ -139,9 +139,9 @@ Instead, the tidyverse `tibble` removed the ability to set row names altogether,
 
 ```{r}
 DF2 <- DataFrame(
-    integers = c(1L, 2L, 3L),
-    letters = c("A", "B", "C"),
-    floats = c(1.2, 2.3, 3.4),
+    Integers = c(1L, 2L, 3L),
+    Letters = c("A", "B", "C"),
+    Floats = c(1.2, 2.3, 3.4),
     row.names = c("name1", "name1", "name2")
 )
 DF2
@@ -156,7 +156,7 @@ DF2
 > > ``` 
 > > > DF2["name1", ]
 > > DataFrame with 1 row and 3 columns
-> >        integers     letters    floats
+> >        Integers     Letters    Floats
 > >       <integer> <character> <numeric>
 > > name1         1           A       1.2
 > > ```
@@ -174,9 +174,9 @@ The stricter behaviour of `DataFrame` prevents often unexpected results faced by
 
 ```{r}
 DF3 <- DataFrame(
-    integers = c(1L, 2L, 3L),
-    letters = c("A", "B", "C"),
-    floats = c(1.2, 2.3, 3.4),
+    Integers = c(1L, 2L, 3L),
+    Letters = c("A", "B", "C"),
+    Floats = c(1.2, 2.3, 3.4),
     row.names = c("alpha", "beta", "gamma")
 )
 df3 <- as.data.frame(DF3)
@@ -192,11 +192,11 @@ df3 <- as.data.frame(DF3)
 > > ``` 
 > > > DF3["a", ]
 > > DataFrame with 1 row and 3 columns
-> >       integers     letters    floats
+> >       Integers     Letters    Floats
 > >      <integer> <character> <numeric>
 > > <NA>        NA          NA        NA
 > > > df3["a", ]
-> >       integers letters floats
+> >       Integers Letters Floats
 > > alpha        1       A    1.2
 > > ```
 > >
