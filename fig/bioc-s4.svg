@@ -40,7 +40,7 @@
 <text transform="matrix(1 0 0 1 100.785 202.6698)" class="st1 st2">Validity rules for S4Class1</text>
 <rect x="88.7" y="448.2" class="st0" width="182" height="66"/>
 <text transform="matrix(1 0 0 1 100.785 470.3212)" class="st1 st2">Validity rules for S4Class1</text>
-<text transform="matrix(1 0 0 1 100.7193 492.6823)" class="st1 st2">Validity rules for S4Class2</text>
+<text transform="matrix(1 0 0 1 100.7193 492.6823)" class="st3 st1 st2">Validity rules for S4Class2</text>
 <rect x="491.2" y="81.1" class="st0" width="182" height="27.8"/>
 <text transform="matrix(1 0 0 1 553.8709 98.3058)" class="st1 st2">S4Generic1</text>
 <text transform="matrix(1 0 0 1 503.398 139.7317)" class="st1 st2">function(x, y, ...)</text>
