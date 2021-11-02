@@ -30,14 +30,43 @@ Before we can proceed into the following sections, we install some Bioconductor 
 BiocManager::install("S4Vectors")
 ```
 
-# S4 classes
+# S4 classes and methods
 
-> ## Contribute!
-> 
-> Add text to introduce the image below.
-{: .callout}
+## The methods package
+
+The S4 class system is implemented in the base package [methods][r-package-methods].
+As such, the concept is not specific to the Bioconductor project and can be found in various independent packages as well.
+The subject is thoroughly documented in the online book [Advanced R by Hadley Wickham][book-advanced-r-s4].
+In the following sections, we focus on the essential functionality and user perspective on S4 classes and methods.
 
 ![S4 classes, generics, and methods.](../fig/bioc-s4.svg)
+
+## Slots and validity
+
+In contrast to the S3 class system available directly in base R, the S4 class system provides a much stricter definition of classes and methods for object-oriented programming (OOP) in R.
+Like many programming languages that implement the OOP model, S4 classes are used to represent real-world entities as computational objects that store information inside one or more internal components called _slots_.
+The class definition declares the type of data that may be stored in each slot; an error will be thrown if one would attempt to store unsuitable data.
+Moreover, the class definition can also include code that checks the validity of data stored in an object, beyond their type.
+For instance, while a slot of type `numeric` could be used to store a person's age, but a validity method could check that the value stored is positive.
+
+## Inheritance
+
+One of the core pillars of the OOP model is the possibility to develop new classes that inherit and extend the functionality of existing classes.
+The S4 class system implements this paradigm.
+
+The definition of a new S4 classes can declare the name of other classes to inherit from.
+The new classes will contain all the slots of the parent class, in addition to any new slot added in the definition of the new class itself.
+
+The new class definition can also define new validity checks, which are added to any validity check implement in each of the parent classes.
+
+## Generics and methods
+
+While classes define the data structures that store information, generics and methods define the functions that can be applied to objects instantiated from those classes.
+
+S4 generic functions are used to declare the name of functions that are expected to behave differently depending on the class of objects that are given as some of their essential arguments.
+Instead, S4 methods are used define the distinct implementations of a generic function for each particular combination of inputs.
+
+When a generic function is called and given an S4 object, a process called method dispatch takes place, whereby the class of the object is used to determine the appropriate method to execute.
 
 # The S4Vectors package
 
@@ -176,3 +205,5 @@ df3 <- as.data.frame(DF3)
 {: .callout}
 
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
+[r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
+[book-advanced-r-s4]: http://adv-r.had.co.nz/S4.html
