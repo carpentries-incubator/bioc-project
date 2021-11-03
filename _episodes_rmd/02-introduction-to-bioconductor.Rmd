@@ -172,12 +172,24 @@ The Bioconductor project uses [biocViews][glossary-biocviews], a set of terms fr
 Each Bioconductor package is tagged with a small set of terms chosen from the available controlled vocabulary, to describe the type and functionality of the package.
 Terms are initially selected by the package authors, and subsequently refined during package review or updates to the controlled vocabulary.
 
-For instance, the `r BiocStyle::Biocpkg("BiocPkgTools")` package can be used to browse packages under different [biocViews][glossary-biocviews] `r Citep(bib, "BiocPkgTools2019")`.
+> ## Challenge
+> 
+> Contribute!
+> 
+> Reformat exercises at <https://www.bioconductor.org/help/course-materials/2019/CSAMA/L1.3-starting-an-analysis.html#finding-packages> for this episode.
+> 
+> > ## Solution
+> > 
+> > Contribute!
+> {: .solution}
+{: .challenge}
 
 > ## Going further
 > 
 > The Bioconductor package `r BiocStyle::Biocpkg("biocViews")` is used to support and manage the infrastructure of the controlled vocabulary.
 > It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
+> 
+> Furthermore, the `r BiocStyle::Biocpkg("BiocPkgTools")` package can be used to browse packages under different [biocViews][glossary-biocviews] `r Citep(bib, "BiocPkgTools2019")`.
 {: .callout}
 
 ### Packages interoperability
