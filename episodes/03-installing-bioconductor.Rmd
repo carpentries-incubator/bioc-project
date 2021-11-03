@@ -181,23 +181,34 @@ Users simply need to copy-paste and run that command in their R console.
 > ```
 {: .callout}
 
+# Exploring the package repository
+
+The Bioconductor [biocViews][glossary-biocviews], demonstrated in the earlier episode [TODO][TODO], are a great way to discover new packages by thematically browsing the hierarchical classification of Bioconductor packages.
+
+In addition, the `BiocManager::available()` function returns the complete list of package names that are available from Bioconductor repositories, as well as any repository listed in the global option `repos`.
+For instance the total number of numbers that could be installed using `r BiocStyle::Biocpkg("BiocManager")` 
+
+```{r}
+length(BiocManager::available())
+```
+
+For inspection, the global option `repos` can be accessed as follows.
+
+```{r}
+getOption("repos")
+```
+
 # Installing packages
 
 The `BiocManager::install()` function is used to install or update packages.
 
 The function takes a character vector of package names, and attempts to install them from the Bioconductor repository.
-For instance:
 
 ```{r, message=FALSE, warning=FALSE}
 BiocManager::install(c("S4Vectors", "BiocGenerics"))
 ```
 
 However, if any package cannot be found in the Bioconductor repository, the function also searches for those packages in repositories listed in the global option `repos`.
-This global option an be accessed as follows.
-
-```{r}
-getOption("repos")
-```
 
 > ## Contribute !
 > 
