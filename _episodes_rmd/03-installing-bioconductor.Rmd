@@ -200,6 +200,14 @@ Specifically, the current Bioconductor and CRAN repositories can be displayed as
 BiocManager::repositories()
 ```
 
+Conveniently, `BiocManager::available()` includes a `pattern=` argument, particularly useful to navigate annotation resources.
+For instance, a range of [Annotation data packages][glossary-annotation-package] available for the mouse model organism can be listed as follows.
+
+```{r, message=FALSE}
+BiocManager::available(pattern = "*Mmusculus")
+```
+
+
 # Installing packages
 
 The `BiocManager::install()` function is used to install or update packages.
@@ -224,5 +232,6 @@ However, if any package cannot be found in the Bioconductor repository, the func
 [biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html
 [discuss-package-versioning]: ../discuss/index.html#bioconductor-package-versions
 [discuss-release-cycle]: ../discuss/index.html#the-bioconductor-release-cycle
+[glossary-annotation-package]: ../reference.html#annotationdata-package
 [glossary-biocviews]: ../reference.html#biocviews
 [bioc-release-dates]: https://www.bioconductor.org/about/release-announcements/
