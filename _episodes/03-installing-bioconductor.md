@@ -291,6 +291,29 @@ replacement repositories:
 ~~~
 {: .output}
 
+Conveniently, `BiocManager::available()` includes a `pattern=` argument, particularly useful to navigate annotation resources.
+For instance, a range of [Annotation data packages][glossary-annotation-package] available for the mouse model organism can be listed as follows.
+
+
+~~~
+BiocManager::available(pattern = "*Mmusculus")
+~~~
+{: .language-r}
+
+
+
+~~~
+ [1] "BSgenome.Mmusculus.UCSC.mm10"        "BSgenome.Mmusculus.UCSC.mm10.masked"
+ [3] "BSgenome.Mmusculus.UCSC.mm39"        "BSgenome.Mmusculus.UCSC.mm8"        
+ [5] "BSgenome.Mmusculus.UCSC.mm8.masked"  "BSgenome.Mmusculus.UCSC.mm9"        
+ [7] "BSgenome.Mmusculus.UCSC.mm9.masked"  "EnsDb.Mmusculus.v75"                
+ [9] "EnsDb.Mmusculus.v79"                 "PWMEnrich.Mmusculus.background"     
+[11] "TxDb.Mmusculus.UCSC.mm10.ensGene"    "TxDb.Mmusculus.UCSC.mm10.knownGene" 
+[13] "TxDb.Mmusculus.UCSC.mm39.refGene"    "TxDb.Mmusculus.UCSC.mm9.knownGene"  
+~~~
+{: .output}
+
+
 # Installing packages
 
 The `BiocManager::install()` function is used to install or update packages.
@@ -317,5 +340,6 @@ However, if any package cannot be found in the Bioconductor repository, the func
 [biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html
 [discuss-package-versioning]: ../discuss/index.html#bioconductor-package-versions
 [discuss-release-cycle]: ../discuss/index.html#the-bioconductor-release-cycle
+[glossary-annotation-package]: ../reference.html#annotationdata-package
 [glossary-biocviews]: ../reference.html#biocviews
 [bioc-release-dates]: https://www.bioconductor.org/about/release-announcements/
