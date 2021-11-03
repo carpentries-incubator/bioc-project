@@ -283,17 +283,6 @@ length(BiocManager::available())
 
 
 ~~~
-'getOption("repos")' replaces Bioconductor standard repositories, see
-'?repositories' for details
-
-replacement repositories:
-    CRAN: https://cloud.r-project.org
-~~~
-{: .output}
-
-
-
-~~~
 [1] 21776
 ~~~
 {: .output}
