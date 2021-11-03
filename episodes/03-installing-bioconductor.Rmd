@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: "Installing Bioconductor"
+title: "Installing Bioconductor packages"
 teaching: XX
 exercises: XX
 questions:
