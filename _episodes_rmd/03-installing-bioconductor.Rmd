@@ -9,9 +9,11 @@ objectives:
 - "Install BiocManager."
 - "Install Bioconductor packages."
 keypoints:
-- "BiocManager is used to install Bioconductor packages (but also from CRAN and GitHub), and check for updates."
-- "BiocManager safely manages packages from the incremental releases of Bioconductor."
 - "The BiocManager package is available from the CRAN repository."
+- "`BiocManager::install()` is used to install and update Bioconductor packages (but also from CRAN and GitHub)."
+- "`BiocManager::valid()` is used to check for available package updates."
+- "`BiocManagerBiocManager::version()` reports the version of Bioconductor currently installed."
+- "`BiocManager::install()` can also be used to update an entire R library to a specific version of Bioconductor."
 ---
 
 ```{r, include=FALSE}
