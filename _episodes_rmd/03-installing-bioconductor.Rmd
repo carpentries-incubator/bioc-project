@@ -190,7 +190,7 @@ The Bioconductor [biocViews][glossary-biocviews], demonstrated in the earlier ep
 In addition, the `BiocManager::available()` function returns the complete list of package names that are can be intsalled from the Bioconductor and CRAN repositories.
 For instance the total number of numbers that could be installed using `r BiocStyle::Biocpkg("BiocManager")` 
 
-```{r}
+```{r, message=FALSE}
 length(BiocManager::available())
 ```
 
