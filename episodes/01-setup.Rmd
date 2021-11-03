@@ -19,5 +19,10 @@ knitr_fig_path("01-")
 This lesson was developed and tested with `r R.version.string`.
 
 Take a moment to launch RStudio and verify that you are using R version `4.1.x`, with `x` being any patch version, e.g. `4.1.2`.
+
+```{r}
+R.version.string
+```
+
 This is important because Bioconductor uses the version of R running in the current session to determine the version of Bioconductor packages that can be installed in the R library associated with the current R session.
 Using a different version of R while following this lesson may lead to unexpected results.
