@@ -157,12 +157,24 @@ The Bioconductor project uses [biocViews][glossary-biocviews], a set of terms fr
 Each Bioconductor package is tagged with a small set of terms chosen from the available controlled vocabulary, to describe the type and functionality of the package.
 Terms are initially selected by the package authors, and subsequently refined during package review or updates to the controlled vocabulary.
 
-For instance, the *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] <a id='cite-BiocPkgTools2019'></a>(<a href='#bib-BiocPkgTools2019'> Su, et al., 2019</a>).
+> ## Challenge
+> 
+> Contribute!
+> 
+> Reformat exercises at <https://www.bioconductor.org/help/course-materials/2019/CSAMA/L1.3-starting-an-analysis.html#finding-packages> for this episode.
+> 
+> > ## Solution
+> > 
+> > Contribute!
+> {: .solution}
+{: .challenge}
 
 > ## Going further
 > 
 > The Bioconductor package *[biocViews](https://bioconductor.org/packages/3.14/biocViews)* is used to support and manage the infrastructure of the controlled vocabulary.
 > It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
+> 
+> Furthermore, the *[BiocPkgTools](https://bioconductor.org/packages/3.14/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] <a id='cite-BiocPkgTools2019'></a>(<a href='#bib-BiocPkgTools2019'> Su, et al., 2019</a>).
 {: .callout}
 
 ### Packages interoperability
