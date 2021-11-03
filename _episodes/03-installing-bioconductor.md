@@ -219,21 +219,38 @@ Users simply need to copy-paste and run that command in their R console.
 > ```
 {: .callout}
 
-# Installing packages
+# Exploring the package repository
 
-The `BiocManager::install()` function is used to install or update packages.
+The Bioconductor [biocViews][glossary-biocviews], demonstrated in the earlier episode [TODO][TODO], are a great way to discover new packages by thematically browsing the hierarchical classification of Bioconductor packages.
 
-The function takes a character vector of package names, and attempts to install them from the Bioconductor repository.
-For instance:
+In addition, the `BiocManager::available()` function returns the complete list of package names that are available from Bioconductor repositories, as well as any repository listed in the global option `repos`.
+For instance the total number of numbers that could be installed using *[BiocManager](https://bioconductor.org/packages/3.14/BiocManager)* 
 
 
 ~~~
-BiocManager::install(c("S4Vectors", "BiocGenerics"))
+length(BiocManager::available())
 ~~~
 {: .language-r}
 
-However, if any package cannot be found in the Bioconductor repository, the function also searches for those packages in repositories listed in the global option `repos`.
-This global option an be accessed as follows.
+
+
+~~~
+'getOption("repos")' replaces Bioconductor standard repositories, see
+'?repositories' for details
+
+replacement repositories:
+    CRAN: https://cloud.r-project.org
+~~~
+{: .output}
+
+
+
+~~~
+[1] 21773
+~~~
+{: .output}
+
+For inspection, the global option `repos` can be accessed as follows.
 
 
 ~~~
@@ -250,6 +267,20 @@ getOption("repos")
                                    "https://cloud.r-project.org" 
 ~~~
 {: .output}
+
+# Installing packages
+
+The `BiocManager::install()` function is used to install or update packages.
+
+The function takes a character vector of package names, and attempts to install them from the Bioconductor repository.
+
+
+~~~
+BiocManager::install(c("S4Vectors", "BiocGenerics"))
+~~~
+{: .language-r}
+
+However, if any package cannot be found in the Bioconductor repository, the function also searches for those packages in repositories listed in the global option `repos`.
 
 > ## Contribute !
 > 
