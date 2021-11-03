@@ -12,7 +12,7 @@ keypoints:
 - "The BiocManager package is available from the CRAN repository."
 - "`BiocManager::install()` is used to install and update Bioconductor packages (but also from CRAN and GitHub)."
 - "`BiocManager::valid()` is used to check for available package updates."
-- "`BiocManagerBiocManager::version()` reports the version of Bioconductor currently installed."
+- "`BiocManager::version()` reports the version of Bioconductor currently installed."
 - "`BiocManager::install()` can also be used to update an entire R library to a specific version of Bioconductor."
 ---
 
@@ -190,13 +190,13 @@ The Bioconductor [biocViews][glossary-biocviews], demonstrated in the earlier ep
 In addition, the `BiocManager::available()` function returns the complete list of package names that are can be intsalled from the Bioconductor and CRAN repositories.
 For instance the total number of numbers that could be installed using `r BiocStyle::Biocpkg("BiocManager")` 
 
-```{r}
+```{r, message=FALSE}
 length(BiocManager::available())
 ```
 
 Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
 
-```{r}
+```{r, message=FALSE}
 BiocManager::repositories()
 ```
 
