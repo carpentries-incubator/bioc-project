@@ -200,6 +200,20 @@ Specifically, the current Bioconductor and CRAN repositories can be displayed as
 BiocManager::repositories()
 ```
 
+> ## Going further
+>
+> The function `BiocManager::repositories()` can be combined with the base function `available.packages()` to query packages available specifically from any package repository, e.g. the Bioconductor [software package][glossary-software-package] repository.
+> 
+> ```
+> > db = available.packages(repos = BiocManager::repositories()["BioCsoft"])
+> > dim(db)
+> [1] 1948   17
+> > head(rownames(db))
+> [1] "a4"          "a4Base"      "a4Classif"   "a4Core"      "a4Preproc"
+> [6] "a4Reporting"
+> ```
+{: .callout}
+
 Conveniently, `BiocManager::available()` includes a `pattern=` argument, particularly useful to navigate annotation resources.
 For instance, a range of [Annotation data packages][glossary-annotation-package] available for the mouse model organism can be listed as follows.
 
@@ -233,5 +247,6 @@ However, if any package cannot be found in the Bioconductor repository, the func
 [discuss-package-versioning]: ../discuss/index.html#bioconductor-package-versions
 [discuss-release-cycle]: ../discuss/index.html#the-bioconductor-release-cycle
 [glossary-annotation-package]: ../reference.html#annotationdata-package
+[glossary-software-package]: ../reference.html#software-package
 [glossary-biocviews]: ../reference.html#biocviews
 [bioc-release-dates]: https://www.bioconductor.org/about/release-announcements/
