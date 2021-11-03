@@ -196,7 +196,7 @@ length(BiocManager::available())
 
 Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
 
-```{r}
+```{r, message=FALSE}
 BiocManager::repositories()
 ```
 
