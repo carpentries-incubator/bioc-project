@@ -185,19 +185,19 @@ Users simply need to copy-paste and run that command in their R console.
 
 # Exploring the package repository
 
-The Bioconductor [biocViews][glossary-biocviews], demonstrated in the earlier episode [TODO][TODO], are a great way to discover new packages by thematically browsing the hierarchical classification of Bioconductor packages.
+The Bioconductor [biocViews][glossary-biocviews], demonstrated in the earlier episode [Introduction to Bioconductor][crossref-intro-biocviews], are a great way to discover new packages by thematically browsing the hierarchical classification of Bioconductor packages.
 
-In addition, the `BiocManager::available()` function returns the complete list of package names that are available from Bioconductor repositories, as well as any repository listed in the global option `repos`.
+In addition, the `BiocManager::available()` function returns the complete list of package names that are can be intsalled from the Bioconductor and CRAN repositories.
 For instance the total number of numbers that could be installed using `r BiocStyle::Biocpkg("BiocManager")` 
 
 ```{r}
 length(BiocManager::available())
 ```
 
-For inspection, the global option `repos` can be accessed as follows.
+Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
 
 ```{r}
-getOption("repos")
+BiocManager::repositories()
 ```
 
 # Installing packages
@@ -218,9 +218,11 @@ However, if any package cannot be found in the Bioconductor repository, the func
 > Preferably, a package that will be used later in this lesson.
 {: .callout}
 
+[crossref-intro-biocviews]: https://carpentries-incubator.github.io/bioc-project/02-introduction-to-bioconductor/index.html#package-classification-using-biocviews
 [git-website]: https://git-scm.com/
 [git-bioconductor]: https://git.bioconductor.org/
 [biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html
 [discuss-package-versioning]: ../discuss/index.html#bioconductor-package-versions
 [discuss-release-cycle]: ../discuss/index.html#the-bioconductor-release-cycle
+[glossary-biocviews]: ../reference.html#biocviews
 [bioc-release-dates]: https://www.bioconductor.org/about/release-announcements/
