@@ -154,7 +154,7 @@ Separately, a system of points granted to each user for providing answers either
 The Bioconductor support site tracks questions and answers posted by registered users.
 The platform can be freely browsed and searched by non-registered users.
 
-# Workflows
+# Workflow packages
 
 Bioconductor workflow packages are special in the way that they are only expected to contain vignettes, without any additional code or functionality of their own.
 Instead, the vignettes of workflow packages exclusively import functionality from other packages, and demonstrate how to combine functions from those packages into an integrated workflow that users are likely to face in their day-to-day work.
