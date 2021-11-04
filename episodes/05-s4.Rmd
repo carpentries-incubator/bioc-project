@@ -42,6 +42,8 @@ In the following sections, we focus on the essential functionality and user expe
 On one side, [S4 classes][glossary-s4-class] provide data structures capable of storing arbitrarily complex information in computational objects that can be assigned to variable names in an R session.
 On the other side, [S4 generics and methods][glossary-s4-method] define functions that may be applied to process those objects.
 
+Over the years, the Bioconductor project has used the S4 class system to develop a number of classes and methods capable of storing and processing data for most biological assays, including raw and processed assay data, experimental metadata for individual features and samples, as well as other assay-specific information as relevant.
+
 ![S4 classes, generics, and methods.](../fig/bioc-s4.svg)
 
 **S4 classes, generics, and methods.**
