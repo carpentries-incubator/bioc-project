@@ -117,6 +117,24 @@ Each vignette is available in three formats:
 The precompiled format is often the most comfortable format to read, as the PDF and HTML formats allow the contents of the documents to be preview in one integrated view.
 This includes plain text explanations, as well as code and their outputs, both figures and console messages.
 
+# Package help pages
+
+Bioconductor requires every user-facing package function to documented in one of the package help pages (often referred to as "man pages", after the name of the package sub-directory where they are stored).
+
+Help pages can be accessed using the `help()` function or the question mark symbol `?`.
+
+```{r, eval=FALSE}
+help(topic = "install", package = "BiocManager")
+?BiocManager::install
+```
+
+Help pages for Bioconductor packages generally follow the same rules as CRAN packages when it comes to formatting and essential contents.
+However, Bioconductor also requires that most of the man pages documenting exported objects must have runnable examples.
+Runnable examples are particularly helpful to demonstrate the usage of individual functions on small data sets immediately available to users - either artificially simulated on the fly or programmatically imported from public data repositories.
+
+In particular, runnable examples demonstrate the usage of functions in ideal cases, showcasing how the inputs inputs of the function should be formatted, and what information will be available to users in the outputs of the function.
+Running those examples and comparing the example inputs and outputs with the user's own data often provide significant insights into the transformations that are needed before applying the function to the user's own data, and how the outputs of the function can be interpreted and interacted with.
+
 # The Bioconductor support site
 
 The [Bioconductor support site][bioc-support-site] provides a platform for the community of users and developers to ask questions, and help each other through the doubts and challenges related to Bioconductor packages and analytical workflows.
