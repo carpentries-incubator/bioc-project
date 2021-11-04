@@ -4,7 +4,7 @@ title: "Introduction and setup"
 teaching: XX
 exercises: XX
 questions:
-- "Is the current R session using the correct version of R for this lesson?"
+- "Am I using the correct version of R for this lesson?"
 objectives:
 - "Ensure that participants are using the correct version of R to reproduce exactly the contents of this lesson."
 keypoints:
