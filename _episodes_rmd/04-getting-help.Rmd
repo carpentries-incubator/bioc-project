@@ -190,7 +190,7 @@ Private channels also exist for governance (e.g., event organisation, advisory b
 # How to efficiently ask for help
 
 Most community members provide help voluntarily, on their own spare time and without any form of compensation.
-As such, it is important to ask questions as clearly as possible, providing relevant information, to help those volunteers rapidly identify the source of the issue as rapidly as possible, thus saving time for both the helper and the original poster.
+As such, it is important to ask questions as clearly as possible, providing relevant information, to help those volunteers identify the source of the issue as rapidly as possible, thus saving time for both the helper and the original poster.
 
 Depending on the question, some key information includes:
 
