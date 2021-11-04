@@ -197,7 +197,7 @@ loaded via a namespace (and not attached):
  [1] BiocManager_1.30.16 compiler_4.1.2      fastmap_1.1.0      
  [4] magrittr_2.0.1      htmltools_0.5.2     tools_4.1.2        
  [7] yaml_2.2.1          rmarkdown_2.11      stringi_1.7.5      
-[10] digest_0.6.28       stringr_1.4.0       xfun_0.27          
+[10] digest_0.6.28       stringr_1.4.0       xfun_0.28          
 [13] rlang_0.4.12        evaluate_0.14      
 
 Bioconductor version '3.14'
@@ -286,7 +286,7 @@ length(BiocManager::available())
 
 
 ~~~
-[1] 21784
+[1] 21779
 ~~~
 {: .output}
 
