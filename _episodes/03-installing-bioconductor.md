@@ -318,6 +318,9 @@ BiocManager::repositories()
 ~~~
 {: .output}
 
+Each repository URL can be accessed in a web browser, displaying the full list of packages available from that repository.
+For instance, navigate to <https://bioconductor.org/packages/3.14/bioc>.
+
 > ## Going further
 >
 > The function `BiocManager::repositories()` can be combined with the base function `available.packages()` to query packages available specifically from any package repository, e.g. the Bioconductor [software package][glossary-software-package] repository.
