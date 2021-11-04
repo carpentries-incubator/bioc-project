@@ -49,10 +49,16 @@ Over the years, the Bioconductor project has used the S4 class system to develop
 **S4 classes, generics, and methods.**
 On the left, two example classes named `S4Class1` and `S4Class2` demonstrate the concept of inheritance.
 The class `S4Class1` contains two slots named `SlotName1` and `SlotName2` for storing data.
-The two slots are restricted to store objects of type `SlotType1` and `SlotType2`, respectively.
-The class also defines validity rules that check the integrity of data stored in objects each time they are updated.
+Those two slots are restricted to store objects of type `SlotType1` and `SlotType2`, respectively.
+The class also defines validity rules that check the integrity of data each time an object is updated.
 The class `S4Class2` inherits all the slots and validity rules from the class `S4Class2`, in addition to defining a new slot named `SlotName3` and new validity rules.
 Example code illustrates how objects of each class are typically created using constructor functions named identically to the corresponding class.
+On the right, one generic function and two methods demonstrate the concept of polymorphism and the process of S4 method dispatch.
+The generic function `S4Generic1()` defines the name of the function, as well as its arguments.
+However, it does not provide any implementation of that function.
+Instead, two methods are defined, each providing a distinct implementation of the generic function for a particular class of input.
+Namely, the first method defines an implementation of `S4Generic1()` if an object of class `S4Class1` is given as argument `x`, while the second method method provides a different implementation of `S4Generic1()` if an object of class `S4Class2` is given as argument `x`.
+When the generic function `S4Generic1()` is called, a process called [method dispatch][glossary-s4-dispatch] takes place, whereby the appropriate implementation of the `S4Generic1()` method is called according to the class of the object passed to the argument `x`.
 
 ## Slots and validity
 
@@ -227,3 +233,4 @@ df3 <- as.data.frame(DF3)
 [book-advanced-r-s4]: http://adv-r.had.co.nz/S4.html
 [glossary-s4-class]: ../reference.html#s4-class
 [glossary-s4-method]: ../reference.html#s4-method
+[glossary-s4-dispatch]: ../reference.html#s4-method-dispatch
