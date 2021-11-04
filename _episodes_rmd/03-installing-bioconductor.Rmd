@@ -66,7 +66,7 @@ install.packages("BiocManager")
 > - `renv::install()`
 >
 > Those functions are beyond the scope of this lesson, and should be used with caution and adequate knowledge of their specific behaviors.
-> We recommend reading their respective help page to learn more about each of them.
+> The general recommendation is to use `BiocManager::install()` over any other installation mechanism because it ensures proper versioning of Bioconductor packages.
 {: .callout}
 
 # Bioconductor releases and current version
@@ -244,6 +244,16 @@ However, if any package cannot be found in the Bioconductor repository, the func
 > Add an example of non-Bioconductor package that can be installed using BioManager.
 > Preferably, a package that will be used later in this lesson.
 {: .callout}
+
+# Uninstalling packages
+
+Bioconductor packages can be removed from the R library like any other R package, using the base R function `remove.packages()`.
+In essence, this function simply removes installed packages and updates index information as necessary.
+As a result, it will not be possible to attach the package to a session or browse the documentation of that package anymore.
+
+```{r}
+remove.packages("S4Vectors")
+```
 
 [crossref-intro-biocviews]: https://carpentries-incubator.github.io/bioc-project/02-introduction-to-bioconductor/index.html#package-classification-using-biocviews
 [git-website]: https://git-scm.com/
