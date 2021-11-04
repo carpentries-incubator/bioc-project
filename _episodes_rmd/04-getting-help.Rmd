@@ -181,7 +181,7 @@ Private channels also exist for governance (e.g., event organisation, advisory b
 > 
 > The Slack workspace allows for rapid day-to-day communication and discussion with fellow community members through channels and direct messages.
 >
-> However, popular channels can reach up to hundreds of users in many different time zones and should be used with parsimony and respect.
+> However, popular channels can reach up to hundreds of users in many different time zones and should be used with parsimony and mindfulness.
 > Conversely, direct messages and private channels are limited to the users invited in the discussion, and any outcome relevant to the community then needs to be re-posted in a public channel.
 >
 > As a consequence, the [Bioconductor support site][bioc-support-site] remains the preferred way to publicly ask questions of interest to the community, in a way that both the question, discussion, and answers are easily searchable and indexed by major search engines.
