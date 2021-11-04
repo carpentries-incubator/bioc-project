@@ -30,7 +30,7 @@ Often, the best source of help depends on the situation at hand:
 
 - Are you trying to identify the best package for a particular task?
 - Are you trying to use a package for the very first time?
-- Are you unsure about best practices to use and combine multiple packages and functions in a sensible workflow?
+- Are you unsure about best practices to use and combine multiple packages and functions in a sensible workflow for a particular type of analysis?
 - Is a function throwing an error when you apply it to your data?
 - Do you have questions about the theory or methodology implemented in a particular package or function?
 
