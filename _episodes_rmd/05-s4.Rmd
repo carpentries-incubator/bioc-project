@@ -39,6 +39,9 @@ As such, the concept is not specific to the Bioconductor project and can be foun
 The subject is thoroughly documented in the online book [Advanced R][book-advanced-r-s4], by Hadley Wickham.
 In the following sections, we focus on the essential functionality and user experience of S4 classes and methods in the context of the Bioconductor project.
 
+On one side, [S4 classes][glossary-s4-class] provide data structures capable of storing arbitrarily complex information in computational objects that can be assigned to variable names in an R session.
+On the other side, [S4 generics and methods][glossary-s4-method] define functions that may be applied to process those objects.
+
 ![S4 classes, generics, and methods.](../fig/bioc-s4.svg)
 
 **S4 classes, generics, and methods.**
@@ -220,3 +223,5 @@ df3 <- as.data.frame(DF3)
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
 [r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [book-advanced-r-s4]: http://adv-r.had.co.nz/S4.html
+[glossary-s4-class]: ../reference.html#s4-class
+[glossary-s4-method]: ../reference.html#s4-method
