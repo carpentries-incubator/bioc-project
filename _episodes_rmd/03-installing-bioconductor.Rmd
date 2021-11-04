@@ -220,7 +220,7 @@ For instance, navigate to <https://bioconductor.org/packages/3.14/bioc>.
 > ```
 {: .callout}
 
-Conveniently, `BiocManager::available()` includes a `pattern=` argument, particularly useful to navigate annotation resources.
+Conveniently, `BiocManager::available()` includes a `pattern=` argument, particularly useful to navigate annotation resources (the original use case motivating it).
 For instance, a range of [Annotation data packages][glossary-annotation-package] available for the mouse model organism can be listed as follows.
 
 ```{r, message=FALSE}
