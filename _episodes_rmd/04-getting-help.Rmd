@@ -53,7 +53,7 @@ Alternatively, when referring to materials that employ package versions differen
 
 Each package accepted in the Bioconductor project is granted a landing page on the main Bioconductor website, e.g. `r BiocStyle::Biocpkg("S4Vectors")`.
 
-Package landing pages contains useful information that can be consulted without the need to install a package.
+Package landing pages contains useful information that can be consulted without the need to install the package itself.
 This is particularly useful while browsing the Bioconductor repository is search of packages suitable for a specific task.
 
 On the landing page, prospective users can find a short description of the package functionality, as well as pre-compiled documentation in the form of links to [package vignettes][glossary-vignette].
