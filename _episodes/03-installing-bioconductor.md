@@ -283,7 +283,7 @@ length(BiocManager::available())
 
 
 ~~~
-[1] 21776
+[1] 21780
 ~~~
 {: .output}
 
