@@ -26,7 +26,7 @@ options(width = 120)
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
 
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE}
 BiocManager::install("S4Vectors")
 ```
 
