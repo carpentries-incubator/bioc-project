@@ -286,15 +286,7 @@ length(BiocManager::available())
 
 
 ~~~
-Warning: unable to access index for repository https://packagemanager.rstudio.com/cran/__linux__/focal/latest/src/contrib:
-  cannot open URL 'https://packagemanager.rstudio.com/cran/__linux__/focal/latest/src/contrib/PACKAGES'
-~~~
-{: .warning}
-
-
-
-~~~
-[1] 21779
+[1] 21784
 ~~~
 {: .output}
 

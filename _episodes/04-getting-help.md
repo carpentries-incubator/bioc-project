@@ -104,7 +104,7 @@ They can be accessed using the function `browseVignettes()`, for instance:
 
 
 ~~~
-browseVignettes("S4Vectors")
+browseVignettes("BiocManager")
 ~~~
 {: .language-r}
 
