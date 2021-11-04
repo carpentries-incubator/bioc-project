@@ -29,7 +29,7 @@ Often, the best source of help depends on the situation at hand:
 
 - Are you trying to identify the best package for a particular task?
 - Are you trying to use a package for the very first time?
-- Are you unsure about best practices to use and combine multiple packages and functions in a sensible workflow?
+- Are you unsure about best practices to use and combine multiple packages and functions in a sensible workflow for a particular type of analysis?
 - Is a function throwing an error when you apply it to your data?
 - Do you have questions about the theory or methodology implemented in a particular package or function?
 
@@ -44,7 +44,7 @@ In particular, the [biocViews][biocviews-site] page is a great way to thematical
 Furthermore, the website also collects materials from [courses and conferences][bioc-courses-conferences-materials], including presentations, video recordings, and teaching materials.
 
 By nature, individual presentations and training materials are often tied to a specific version of Bioconductor packages.
-As such, they provide a snapshot of best practices at a particular point in time, and may become outdated over time with successive Bioconductor release.
+As such, they provide a snapshot of best practices at a particular point in time, and may become outdated over time after successive Bioconductor releases.
 Thus, it is important check the version of packages demonstrated in teaching materials matches that in the user's R library.
 Alternatively, when referring to materials that employ package versions different from those in the user's library, it is important to carefully interpret any discrepancy between the expected and actual results.
 
