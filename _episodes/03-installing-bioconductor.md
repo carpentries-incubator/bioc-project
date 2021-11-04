@@ -7,6 +7,9 @@ teaching: XX
 exercises: XX
 questions:
 - "How do I install Bioconductor packages?"
+- "How do I check if newer versions of my installed packages are available?"
+- "How do I update Bioconductor packages?"
+- "How do I find out the name of packages available from the Bioconductor repositories?"
 objectives:
 - "Install BiocManager."
 - "Install Bioconductor packages."
@@ -350,7 +353,6 @@ BiocManager::available(pattern = "*Mmusculus")
 [13] "TxDb.Mmusculus.UCSC.mm39.refGene"    "TxDb.Mmusculus.UCSC.mm9.knownGene"  
 ~~~
 {: .output}
-
 
 # Installing packages
 
