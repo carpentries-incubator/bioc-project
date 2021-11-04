@@ -5,6 +5,9 @@ teaching: XX
 exercises: XX
 questions:
 - "How do I install Bioconductor packages?"
+- "How do I check if newer versions of my installed packages are available?"
+- "How do I update Bioconductor packages?"
+- "How do I find out the name of packages available from the Bioconductor repositories?"
 objectives:
 - "Install BiocManager."
 - "Install Bioconductor packages."
@@ -220,7 +223,6 @@ For instance, a range of [Annotation data packages][glossary-annotation-package]
 ```{r, message=FALSE}
 BiocManager::available(pattern = "*Mmusculus")
 ```
-
 
 # Installing packages
 
