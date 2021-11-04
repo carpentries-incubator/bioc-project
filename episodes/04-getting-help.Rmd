@@ -214,7 +214,7 @@ If sharing sensitive data is not an option, then the issue should be reformulate
 One option is to use the `r BiocStyle::CRANpkg("reprex")` to collate the code and outputs that describe the issue into formatted text that is easy to post of many online forums, including the [Bioconductor support site][bioc-support-site].
 
 Finally, the [Bioconductor support site][bioc-support-site] is the preferred platform to post questions related to Bioconductor packages.
-This is because questions are visible to the entire community, including many experienced Bioconductor users who regularly answer those questions, and other users who can find answers to questions that were already posted and resolved.
+This is because questions are visible to the entire community, including many experienced Bioconductor users who regularly answer those questions, and other users who can find answers to questions that were already posted and resolved by the time they run into the issue themselves.
 
 [bioc-core-team]: https://www.bioconductor.org/about/core-team/
 [bioc-courses-conferences-materials]: https://bioconductor.org/help/course-materials/
