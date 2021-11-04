@@ -164,7 +164,7 @@ Those freely available standard data sets allow users to interactively reproduce
 
 Workflow packages can be browsed in a dedicated section of the [biocViews page][biocviews-workflow].
 
-# Slack
+# Slack workspace
 
 The [Bioconductor Slack workspace][bioc-slack] was created in 2016.
 
