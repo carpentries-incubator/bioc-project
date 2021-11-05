@@ -292,7 +292,10 @@ mcols(DF4) <- DataFrame(
 mcols(DF4)
 ```
 
-The row names of the metadata columns are automatically set to match the column names of the main `DataFrame`, clearly indicating the pairing between columns and metadata.
+> ## Note
+> 
+> The row names of the metadata columns are automatically set to match the column names of the main `DataFrame`, clearly indicating the pairing between columns and metadata.
+> {: .callout}
 
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
 [r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
