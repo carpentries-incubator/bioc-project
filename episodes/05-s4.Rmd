@@ -105,7 +105,7 @@ Attach the package to the current R session as follows.
 library(S4Vectors)
 ```
 
-> Note 
+> ## Note 
 >
 > The package startup messages printed in the console are worth noting that the `r BiocStyle::Biocpkg("S4Vectors")` package masks a number of functions from the [base][r-package-base] package when the package is attached to the session.
 > This means that the `r BiocStyle::Biocpkg("S4Vectors")` package includes an implementation of those functions, and that -- being the latest package attached to the R session -- its own implementation of those functions will be found first on the R search path and used instead of their original implementation in the [base][r-package-base] package.
@@ -295,7 +295,7 @@ mcols(DF4)
 > ## Note
 > 
 > The row names of the metadata columns are automatically set to match the column names of the main `DataFrame`, clearly indicating the pairing between columns and metadata.
-> {: .callout}
+{: .callout}
 
 # Run-length encoding (RLE)
 
