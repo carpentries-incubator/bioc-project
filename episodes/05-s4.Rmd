@@ -316,7 +316,11 @@ Specifically, the `Rle` class supports the storage of atomic vectors in a run-le
 The concept of run-length encoding is demonstrated here using the example of a sequence of nucleic acids.
 Before encoding, each nucleotide at each position in the sequence is explicitly stored in memory.
 During the encoding, consecutive runs of identical nucleotides are collapsed into two bits of information: the identity of the nucleotide and the length of the run.
-As a result, the memory footprint of sequences that contain frequent runs of identical nucleotides can be dramatically reduced without loss of information.
+
+Run-length encoding can dramatically reduce the memory footprint of vectors that contain frequent runs of identical information.
+For instance, a compelling application of run-length encoding is the representation of genomic coverage in sequencing experiments, where large genomic regions devoid of any mapped reads result in long runs of `0` values.
+Storing each individual value would be highly inefficient from the standpoint of memory usage.
+Instead, the run-length encoding process collapses such runs of redundant information from arbitrarily long runs of identical information to two values: the repeated value itself, and the number of times that it is repeated.
 
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
 [r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
