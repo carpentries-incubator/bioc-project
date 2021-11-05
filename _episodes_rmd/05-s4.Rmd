@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: "The S4 class system in Bioconductor"
+title: "The S4 class system"
 teaching: XX
 exercises: XX
 questions:
