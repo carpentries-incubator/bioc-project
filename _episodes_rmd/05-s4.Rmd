@@ -6,7 +6,7 @@ exercises: XX
 questions:
 - "What is the S4 class system?"
 - "How does Bioconductor use S4 classes?"
-- "How is the S4 class `DataFrame` different from the base `data.frame`?"
+- "How is the Bioconductor `DataFrame` different from the base `data.frame`?"
 objectives:
 - "Explain what S4 classes, generics, and methods are."
 - "Identify S4 classes at the core of the Bioconductor package infrastructure."
