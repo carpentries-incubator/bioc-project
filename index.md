@@ -6,7 +6,7 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 
 This lesson provides an introduction to the Bioconductor project.
 
-A good understanding of the Bioconductor project is the foundation to efficiently use Bioconductor packages for the analysis and visulization of -omics data using R and RStudio.
+A good understanding of the Bioconductor project is the foundation to efficiently use Bioconductor packages for the analysis and visualization of -omics data using R and RStudio.
 
 We download and install R packages from Bioconductor and other repositories to write workflows and perform analyses.
 In order to do so, we first identify packages that are available and relevant to our analysis, and we learn from their documentation the best practices to use them as their authors intended it.
