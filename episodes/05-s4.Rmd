@@ -232,6 +232,33 @@ df3 <- as.data.frame(DF3)
 > {: .solution}
 {: .challenge}
 
+## Indexing
+
+Just like a regular `data.frame`, columns can be accessed using `$`, `[`, and `[[`.
+Each operator has a different purpose, and the most appropriate one will often depend on what you are trying to achieve.
+
+For example, the dollar operator `$` can be used to extract a single column by name.
+That will often be a vector, but it may depend on the nature of the data in that column.
+This operator can be quite convenient in an interactive R session, as it will offer autocompletion among available column names.
+
+```{r}
+DF3$Integers
+```
+
+Similarly, the double bracket operator `[[` can also be used to extract a single column.
+It is more flexible that `$` as it can handle both character names and integer indices.
+
+```{r}
+DF3[["Letters"]]
+DF3[[2]]
+```
+
+The operator `[` is most convenient when it comes to selecting simultaneously on rows and columns, or controlling whether a single-column selection should be returned as a `DataFrame` or a `vector`.
+
+```{r}
+DF3[2:3, c("Letters", "Floats"), drop=FALSE]
+```
+
 ## Metadata columns
 
 One of most notable difference between `DataFrame` and `data.frame` is the capacity to hold metadata on the columns in another `DataFrame`.
