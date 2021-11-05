@@ -328,6 +328,11 @@ rle1 <- Rle(v1)
 rle1
 ```
 
+> ## Going further
+> 
+> A number of standard operations with `Rle` objects are documented in the help page of the `Rle` class, accessible as `?Rle`, and in the vignettes of the `r BiocStyle::Biocpkg("S4Vectors")` package, accessible using `browseVignettes("S4Vectors")`.
+{: .callout}
+
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
 [r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [book-advanced-r-s4]: http://adv-r.had.co.nz/S4.html
