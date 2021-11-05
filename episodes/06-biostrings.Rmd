@@ -5,14 +5,14 @@ teaching: XX
 exercises: XX
 questions:
 - "What is the recommended way to represent biological sequences in Bioconductor?"
-- "What packagaes and methods does Bioconductor provide to efficiently process biological sequences?"
+- "What Bioconductor packages provides methods to efficiently process biological sequences?"
 objectives:
 - "Explain how biological sequences are represented in the Bioconductor project."
 - "Identify Bioconductor packages and methods available to process biological sequences."
-- "Create objects and process them using methods from differerent packages in a single workflow."
 keypoints:
 - "The `Biostrings` package defines classes to represent sequences of nucleotides and amino acids."
 - "The `Biostrings` package also defines methods to efficiently process biological sequences."
+- "The `BSgenome` package provides genome sequences for a range of model organisms immediately available as Bioconductor objects."
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
