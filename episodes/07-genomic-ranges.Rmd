@@ -1,0 +1,52 @@
+---
+source: Rmd
+title: "Working with genomics ranges"
+teaching: XX
+exercises: XX
+questions:
+- "What is the recommended way to represent coordinates on a genomic scale in Bioconductor?"
+- "What Bioconductor packages provides methods to efficiently process genomic ranges?"
+- "How can I import/export sets of genomic coordinates from/to various genomic file formats?"
+objectives:
+- "Explain how genomic coordinates and intervals are represented in the Bioconductor project."
+- "Identify Bioconductor packages and methods available to process ranges of genomic coordinates."
+keypoints:
+- "The `GenomicRanges` package defines classes to represent sequences of coordinates on genomic scales."
+- "The `GenomicRanges` package also defines methods to efficiently process biological sequences."
+- "The `rtracklayer` package provides functions to import and export genomic ranges from and to common genomic file formats."
+---
+
+```{r, echo=FALSE, purl=FALSE, message=FALSE}
+source("download_data.R")
+```
+
+```{r, include=FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("07-")
+options(width = 120)
+```
+
+# Install packages
+
+Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("GenomicRanges")
+```
+
+
+# The GenomicRanges package and classes
+
+## Why do we need classes for genomic ranges?
+
+...
+
+## The GenomicRanges package
+
+...
+
+
+[glossary-s4-class]: ../reference.html#s4-class
