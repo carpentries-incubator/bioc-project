@@ -5,6 +5,7 @@ teaching: XX
 exercises: XX
 questions:
 - "Am I using the correct version of R for this lesson?"
+- "Why does my version of R matter?"
 objectives:
 - "Ensure that participants are using the correct version of R to reproduce exactly the contents of this lesson."
 keypoints:
