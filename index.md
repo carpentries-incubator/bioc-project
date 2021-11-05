@@ -22,9 +22,9 @@ In this lesson, you will learn:
 - To describe the Bioconductor project beyond software packages.
 - To navigate the Bioconductor website to find packages for a particular task.
 - To install and update Bioconductor packages.
-- How to open a package vignette and practice running through the examples that they contain.
+- To open a package vignette and practice running through the examples that they contain.
 - To identify standard classes and methods re-used across Bioconductor packages.
-- How to modify code and contribute to existing Bioconductor packages.
+- To modify code and contribute to existing Bioconductor packages.
 - Best practices to get help from packages developers and peers.
 
 <!-- this is an html comment -->
