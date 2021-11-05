@@ -297,6 +297,14 @@ mcols(DF4)
 > The row names of the metadata columns are automatically set to match the column names of the main `DataFrame`, clearly indicating the pairing between columns and metadata.
 > {: .callout}
 
+# Run-length encoding (RLE)
+
+Similarly to the `DataFrame` class implemented in the `r BiocStyle::Biocpkg("S4Vectors")`,
+the `Rle` class provides an S4 extension to the `rle()` function from the base package.
+Specifically, the `Rle` class supports the storage of atomic vectors in a run-length encoding format.
+
+![Run-length encoding.](../fig/rle.svg)
+
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
 [r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [book-advanced-r-s4]: http://adv-r.had.co.nz/S4.html
