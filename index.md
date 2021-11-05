@@ -14,7 +14,7 @@ For reproducibility, it is also important to identify and track versions of pack
 
 Sometimes, we encounter bugs in packages that we use.
 While it is possible to report bugs to the authors and wait for issue to be fixed,
-packages hosted on public repositories offer the chance to inspect the code and contribute proposed fixes ourselves.
+packages hosted on public repositories offer the chance to inspect the code and contribute or propose fixes ourselves.
 In addition to being a great opportunity to develop coding skills, community contributors are very often recognized and credited for their contributions!
 
 In this lesson, you will learn:
