@@ -265,6 +265,13 @@ One of most notable difference between `DataFrame` and `data.frame` is the capac
 
 ![Metadata columns.](../fig/dataframe-mcols.svg)
 
+**Metadata columns.**
+Metadata columns are illustrated in the context of a `DataFrame` object.
+On the left, a `DataFrame` object called `DF` is created with columns named `A` and `B`.
+On the right, the metadata columns for `DF` are accessed using `mcols(DF)`.
+In this example, two metadata columns are created with names `meta1` and `meta2`.
+Metadata columns are stored as a `DataFrame` that contains one row for each column in the parent `DataFrame`.
+
 The metadata columns are accessed using the function `mcols()`,
 If no metadata column is defined, `mcols()` simply returns `NULL.`
 
@@ -294,7 +301,7 @@ mcols(DF4)
 
 > ## Note
 > 
-> The row names of the metadata columns are automatically set to match the column names of the main `DataFrame`, clearly indicating the pairing between columns and metadata.
+> The row names of the metadata columns are automatically set to match the column names of the parent `DataFrame`, clearly indicating the pairing between columns and metadata.
 {: .callout}
 
 # Run-length encoding (RLE)
@@ -304,6 +311,12 @@ the `Rle` class provides an S4 extension to the `rle()` function from the base p
 Specifically, the `Rle` class supports the storage of atomic vectors in a run-length encoding format.
 
 ![Run-length encoding.](../fig/rle.svg)
+
+**Run-length encoding.**
+The concept of run-length encoding is demonstrated here using the example of a sequence of nucleic acids.
+Before encoding, each nucleotide at each position in the sequence is explicitly stored in memory.
+During the encoding, consecutive runs of identical nucleotides are collapsed into two bits of information: the identity of the nucleotide and the length of the run.
+As a result, the memory footprint of sequences that contain frequent runs of identical nucleotides can be dramatically reduced without loss of information.
 
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
 [r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
