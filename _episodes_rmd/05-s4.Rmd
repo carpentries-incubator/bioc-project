@@ -235,6 +235,12 @@ df3 <- as.data.frame(DF3)
 ## Metadata columns
 
 One of most notable difference between `DataFrame` and `data.frame` is the capacity to hold metadata on the columns in another `DataFrame`.
+
+> ## Contribute!
+> 
+> Illustrate metadata columns here.
+> {: .callout}
+
 The metadata columns are accessed using the function `mcols()`,
 If no metadata column is defined, `mcols()` simply returns `NULL.`
 
