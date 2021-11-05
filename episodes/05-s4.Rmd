@@ -322,6 +322,12 @@ For instance, a compelling application of run-length encoding is the representat
 Storing each individual value would be highly inefficient from the standpoint of memory usage.
 Instead, the run-length encoding process collapses such runs of redundant information from arbitrarily long runs of identical information to two values: the repeated value itself, and the number of times that it is repeated.
 
+```{r}
+v1 <- c(0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0)
+rle1 <- Rle(v1)
+rle1
+```
+
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
 [r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [book-advanced-r-s4]: http://adv-r.had.co.nz/S4.html
