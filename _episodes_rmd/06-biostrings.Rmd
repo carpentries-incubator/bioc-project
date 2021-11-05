@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: "Working with biological sequences"
+title: "Biostrings"
 teaching: XX
 exercises: XX
 questions:
