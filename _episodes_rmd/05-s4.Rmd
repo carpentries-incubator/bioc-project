@@ -261,7 +261,7 @@ DF3[2:3, "Letters", drop=FALSE]
 
 ## Metadata columns
 
-One of most notable difference between `DataFrame` and `data.frame` is the capacity to hold metadata on the columns in another `DataFrame`.
+One of most notable novel functionality in `DataFrame` relative to the base `data.frame` is the capacity to hold metadata on the columns in another `DataFrame`.
 
 ![Metadata columns.](../fig/dataframe-mcols.svg)
 
