@@ -256,7 +256,7 @@ DF3[[2]]
 The operator `[` is most convenient when it comes to selecting simultaneously on rows and columns, or controlling whether a single-column selection should be returned as a `DataFrame` or a `vector`.
 
 ```{r}
-DF3[2:3, c("Letters", "Floats"), drop=FALSE]
+DF3[2:3, "Letters", drop=FALSE]
 ```
 
 ## Metadata columns
