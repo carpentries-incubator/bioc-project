@@ -6,14 +6,16 @@ exercises: XX
 questions:
 - "What is the S4 class system?"
 - "How does Bioconductor use S4 classes?"
+- "How is the S4 class `DataFrame` different from the base `data.frame`?"
 objectives:
 - "Explain what S4 classes, generics, and methods are."
 - "Identify S4 classes at the core of the Bioconductor package infrastructure."
-- "Create S4 objects and apply S4 methods."
+- "Create various S4 objects and apply relevant S4 methods."
 keypoints:
-- "S4 classes store information in slots, and check the validity of the information every time objects are updated."
+- "S4 classes store information in slots, and check the validity of the information every an object is updated."
 - "To ensure the continued integrity of S4 objects, users should not access slots directly, but using dedicated functions."
 - "S4 generics invoke different implementations of the method depending on the class of the object that they are given."
+- "The S4 class `DataFrame` extends the functionality of base `data.frame`, for instance with the capacity to hold information about each column in metadata columns."
 ---
 
 ```{r, include=FALSE}
@@ -113,6 +115,8 @@ library(S4Vectors)
 {: .callout}
 
 # The DataFrame class
+
+## An extension to the concept of rectangular data
 
 The `DataFrame` class implemented in the `r BiocStyle::Biocpkg("S4Vectors")` package extends the concept of rectangular data familiar to users of the `data.frame` class in base R, or `tibble` in the tidyverse.
 Specifically, the `DataFrame` supports the storage of any type of object (with `length` and `[` methods) as columns.
@@ -227,6 +231,38 @@ df3 <- as.data.frame(DF3)
 > > Instead, the `data.frame` object performed partial row name matching, matched the requested `"a"` to the `"alpha"` row name, and returned the corresponding row as a new `data.frame` object.
 > {: .solution}
 {: .challenge}
+
+## Metadata columns
+
+One of most notable difference between `DataFrame` and `data.frame` is the capacity to hold metadata on the columns in another `DataFrame`.
+The metadata columns are accessed using the function `mcols()`,
+If no metadata column is defined, `mcols()` simply returns `NULL.`
+
+```{r}
+DF4 <- DataFrame(
+    Integers = c(1L, 2L, 3L),
+    Letters = c("A", "B", "C"),
+    Floats = c(1.2, 2.3, 3.4),
+    row.names = c("alpha", "beta", "gamma")
+)
+mcols(DF4)
+```
+
+The function `mcols()` can also be used to add, edit, or remove metadata columns.
+For instance, we can initialise metadata columns as a `DataFrame` of two columns:
+
+- one column indicating the type of value stored in the corresponding column
+- one column indicating the number of distinct values observed in the corresponding column
+
+```{r}
+mcols(DF4) <- DataFrame(
+    Type = sapply(DF4, typeof),
+    Distinct = sapply(DF4, function(x) { length(unique(x)) } )
+)
+mcols(DF4)
+```
+
+The row names of the metadata columns are automatically set to match the column names of the main `DataFrame`, clearly indicating the pairing between columns and metadata.
 
 [r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
 [r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
