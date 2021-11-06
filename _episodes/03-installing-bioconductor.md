@@ -163,7 +163,7 @@ BiocManager::valid()
 
 
 ~~~
-Warning: 1 packages out-of-date; 0 packages too new
+Warning: 2 packages out-of-date; 0 packages too new
 ~~~
 {: .warning}
 
@@ -202,12 +202,14 @@ loaded via a namespace (and not attached):
 
 Bioconductor version '3.14'
 
-  * 1 packages out-of-date
+  * 2 packages out-of-date
   * 0 packages too new
 
 create a valid installation with
 
-  BiocManager::install("biocViews", update = TRUE, ask = FALSE)
+  BiocManager::install(c(
+    "BiocPkgTools", "biocViews"
+  ), update = TRUE, ask = FALSE)
 
 more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
 ~~~

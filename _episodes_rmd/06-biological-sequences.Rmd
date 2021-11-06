@@ -46,7 +46,7 @@ Examples include nucleic acid sequences (e.g., DNA, RNA) and protein sequences c
 
 That is because alphabets have been designed and agreed upon to represent individual monomers using character symbols.
 
-For instance, using the alphabet for amino acids, the protein sequence for the [Actin, alpha skeletal muscle protein sequence](https://www.uniprot.org/uniprot/P68133#sequences) is represented as follows.
+For instance, using the alphabet for amino acids, the reference protein sequence for the [Actin, alpha skeletal muscle protein sequence](https://www.uniprot.org/uniprot/P68133#sequences) is represented as follows.
 
 ```{r, echo=FALSE}
 strwrap("MCDEDETTALVCDNGSGLVKAGFAGDDAPRAVFPSIVGRPRHQGVMVGMGQKDSYVGDEAQSKRGILTLKYPIEHGIITNWDDMEKIWHHTFYNELRVAPEEHPTLLTEAPLNPKANREKMTQIMFETFNVPAMYVAIQAVLSLYASGRTTGIVLDSGDGVTHNVPIYEGYALPHAIMRLDLAGRDLTDYLMKILTERGYSFVTTAEREIVRDIKEKLCYVALDFENEMATAASSSSLEKSYELPDGQVITIGNERFRCPETLFQPSFIGMESAGIHETTYNSIMKCDIDIRKDLYANNVMSGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWIGGSILASLSTFQQMWITKQEYDEAGPSIVHRKCF")
