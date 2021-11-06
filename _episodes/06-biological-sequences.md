@@ -90,7 +90,7 @@ library(Biostrings)
 {: .language-r}
 
 With the package loaded and attached to the session, we have access to the package functions.
-Those include functions that let us create new objects of the classes defined in the package; those functions are called _constructors_.
+Those include functions that let us create new objects of the classes defined in the package.
 For instance, we can create an object that represents a DNA sequence, using the `DNAString()` constructor function.
 
 
@@ -107,38 +107,24 @@ seq: ATCG
 ~~~
 {: .output}
 
-Notably, DNA sequences may only contain the characters A, T, C, and G, to represent the four DNA nucleotide.
+Notably, DNA sequences may only contain the characters `A`, `T`, `C`, and `G`, to represent the four DNA nucleotide.
 Notice that the constructor function does not let us create objects that contain invalid characters, that do not represent any of those four nucleotide.
 
 
 ~~~
-DNAString("ATCG")
+DNAString("ATCGZ")
 ~~~
 {: .language-r}
 
 
 
 ~~~
-4-letter DNAString object
-seq: ATCG
-~~~
-{: .output}
-
-
-~~~
-DNAString("ATCGE")
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 69 (char 'E') not in lookup table
+Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 90 (char 'Z') not in lookup table
 ~~~
 {: .error}
 
-That said, the symbols that compose the alphabet DNA sequences are not limited to the characters A, T, C, and G.
-The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide code that represent combinations of nucleotides, in a way similar to regular expressions.
+That said, the symbols that compose the alphabet DNA sequences are not limited to characters representing the individual nucleotides, i.e. `A`, `T`, `C`, and `G`.
+The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide codes that represent sets of nucleotides, in a way similar to regular expressions.
 The `IUPAC_CODE_MAP` 
 
 
