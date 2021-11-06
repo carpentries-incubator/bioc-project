@@ -220,37 +220,37 @@ And again, the option `fixed` controls whether to respect ambiguity codes, or ma
 
 ## Importing biological strings from files
 
-In practice, we rarely type the strings representing biological sequences ourselves.
-Most of the time, we read those from files that we download from the web, or that we generate as outputs from other programs.
-For instance, we load the set of human protein sequences obtained from the high quality manually annotated and non-redundant protein sequence database of the UniProt knowledge base, that we downloaded during the lesson setup.
+In practice, users rarely type the strings representing biological sequences themselves.
+Most of the time, biological strings are imported from files, either downloaded from public repositories or generated locally using bioinformatics programs.
+
+For instance, we load set of adapter sequences for the [TruSeq™ DNA PCR-Free whole-genome sequencing library preparation][external-truseq] kit, from a file that we downloaded the file during the lesson setup.
+Since adapter sequences are nucleic acid sequences, we use the function `readDNAStringSet()`.
 
 
 ~~~
-human_proteins <- readAAStringSet(filepath = "data/uniprot-filtered-reviewed_human_96.fasta.gz")
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in .Call2("new_input_filexp", filepath, PACKAGE = "XVector"): cannot open file 'data/uniprot-filtered-reviewed_human_96.fasta.gz'
-~~~
-{: .error}
-
-
-
-~~~
-human_proteins
+truseq_adapters <- readDNAStringSet(filepath = "data/TruSeq3-PE-2.fa")
+truseq_adapters
 ~~~
 {: .language-r}
 
 
 
 ~~~
-Error in eval(expr, envir, enclos): object 'human_proteins' not found
+DNAStringSet object of length 6:
+    width seq                                                                                       names               
+[1]    34 TACACTCTTTCCCTACACGACGCTCTTCCGATCT                                                        PrefixPE/1
+[2]    34 GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT                                                        PrefixPE/2
+[3]    34 TACACTCTTTCCCTACACGACGCTCTTCCGATCT                                                        PE1
+[4]    34 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA                                                        PE1_rc
+[5]    34 GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT                                                        PE2
+[6]    34 AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC                                                        PE2_rc
 ~~~
-{: .error}
+{: .output}
 
+> ## Note
+> 
+> The help page of the function `readDNAStringSet()` -- accessible using `?readDNAStringSet` -- documents related functions designed to import other types of biological sequences, e.g `readRNAStringSet()`, `readAAStringSet()`.
+{: .callout}
 
 ## Computing the frequency of symbols
 
@@ -326,6 +326,7 @@ Error in eval(expr, envir, enclos): object 'human_proteins.freq' not found
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
 [crossref-s4]: ../05-s4/index.html
+[external-truseq]: https://emea.illumina.com/products/by-type/sequencing-kits/library-prep-kits.html
 [glossary-s4-slot]: ../reference.html#s4-class-slot
 [glossary-s4-class]: ../reference.html#s4-class
 [glossary-s4-object]: ../reference.html#s4-object
