@@ -261,7 +261,7 @@ DNAStringSet object of length 6:
 The *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package provides several functions to process and manipulate classes of biological strings.
 For example, we have come across `matchPattern()` and `countPattern()` earlier in this episode.
 
-Another example of method that can be applied to biological strings is to compute the frequency of letters in a biological sequence, using  the `letterFrequency()`.
+Another example of method that can be applied to biological strings is to compute the frequency of letters in a biological sequence, using  the method `letterFrequency()`.
 
 
 ~~~
