@@ -113,6 +113,43 @@ For instance, the symbol `M` represents either of the two nucleotides `A` or `C`
 DNAString("ATCGM")
 ```
 
+Pattern matching methods implemented in the `r BiocStyle::Biocpkg("Biostrings")` package recognize the meaning of ambiguity codes for each class of biological sequence, allowing them to efficiently match motifs queried by users without the need to design elaborate regular expressions.
+For instance, the method `matchPattern()` takes a `pattern` and a `subject` sequence, and returns a set of `Views` that report and display any match of the pattern in the sequences.
+
+The default option `fixed = TRUE` instructs the method to ignore ambiguity codes -- and thus, match the string `GA` exactly -- which in this case does not report any exact match.
+
+```{r}
+matchPattern("GA", dna1, fixed = TRUE)
+```
+
+Instead, to indicate that the pattern includes some ambiguity code, the argument `fixed` must be set to `FALSE`.
+
+```{r}
+dna1 <- DNAString("ATCGMTTTGA")
+matchPattern("GA", dna1, fixed = FALSE)
+```
+
+In this particular example, two views describes matches of the pattern in the subject sequence.
+Specifically, the pattern `GA` first matched the sequence `GM` spanning positions 4 to 5 in the subject sequence, and then also matched exactly the sequence `GA` from positions 9 to 10.
+
+Similarly to the method `matchPattern()`, the method `countPattern()` can be applied to simply count the number of matches of the `pattern` in the `subject` sequence.
+And again, the option `fixed` controls whether to respect ambiguity codes, or match them exactly.
+
+> ## Challenge
+> 
+> How many hits does the following code return? Why?
+> 
+> ```
+> dna2 <- DNAString("TGATTGCTTGGTT")
+> countPattern("GM", dna1, fixed = FALSE)
+> ```
+> 
+> > ## Solution
+> > 
+> > The method reports 2 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA` and `GC` sequences, due to the use of the ambiguity code `M` in the `pattern`.
+> {: .solution}
+{: .challenge}
+
 ## Importing biological strings from files
 
 In practice, we rarely type the strings representing biological sequences ourselves.
