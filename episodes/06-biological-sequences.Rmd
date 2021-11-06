@@ -52,7 +52,7 @@ For instance, using the alphabet for amino acids, the reference protein sequence
 strwrap("MCDEDETTALVCDNGSGLVKAGFAGDDAPRAVFPSIVGRPRHQGVMVGMGQKDSYVGDEAQSKRGILTLKYPIEHGIITNWDDMEKIWHHTFYNELRVAPEEHPTLLTEAPLNPKANREKMTQIMFETFNVPAMYVAIQAVLSLYASGRTTGIVLDSGDGVTHNVPIYEGYALPHAIMRLDLAGRDLTDYLMKILTERGYSFVTTAEREIVRDIKEKLCYVALDFENEMATAASSSSLEKSYELPDGQVITIGNERFRCPETLFQPSFIGMESAGIHETTYNSIMKCDIDIRKDLYANNVMSGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWIGGSILASLSTFQQMWITKQEYDEAGPSIVHRKCF")
 ```
 
-However, a major limitation of simple character vectors is that they do not check the validity of the sequences that they contain.
+However, a major limitation of regular character vectors is that they do not check the validity of the sequences that they contain.
 Practically, it is possible to store meaningless sequences of characters symbols in strings, causing programs to run into errors when they unexpectedly encounter invalid character symbols in a sequence.
 
 Classes are a way to label objects as "DNA", "RNA", or "protein" sequence.
