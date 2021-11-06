@@ -146,7 +146,7 @@ And again, the option `fixed` controls whether to respect ambiguity codes, or ma
 > 
 > > ## Solution
 > > 
-> > The method reports 2 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA` and `GC` sequences, due to the use of the ambiguity code `M` in the `pattern`.
+> > The method `countPattern()` reports 2 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA` and `GC` sequences, due to the use of the ambiguity code `M` in the `pattern`.
 > {: .solution}
 {: .challenge}
 
