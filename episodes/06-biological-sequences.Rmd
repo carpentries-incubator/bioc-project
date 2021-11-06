@@ -63,7 +63,7 @@ For instance, a function designed to translate nucleic acid sequences into the c
 ## The Biostrings package
 
 The `r BiocStyle::Biocpkg("Biostrings")` package implements S4 classes to represent biological sequences as S4 objects, e.g. `DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, `AAString` for sequences of amino acids in protein polymers.
-Those S4 classes provide memory-efficient string containers, while other methods implemented in the package provide various string matching algorithms and other utilities for fast manipulation of large biological sequences or sets of sequences.
+Those S4 classes provide memory-efficient containers for character strings, while other methods implemented in the package provide various string matching algorithms and other utilities for fast manipulation of large biological sequences or sets of sequences.
 
 A short presentation of the basic classes defined in the `r BiocStyle::Biocpkg("Biostrings")` package is available in one of the package vignettes.
 
