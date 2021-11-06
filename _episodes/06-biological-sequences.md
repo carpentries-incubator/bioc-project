@@ -107,33 +107,19 @@ seq: ATCG
 ~~~
 {: .output}
 
-Notably, DNA sequences may only contain the characters A, T, C, and G, to represent the four DNA nucleotide.
+Notably, DNA sequences may only contain the characters `A`, `T`, `C`, and `G`, to represent the four DNA nucleotide.
 Notice that the constructor function does not let us create objects that contain invalid characters, that do not represent any of those four nucleotide.
 
 
 ~~~
-DNAString("ATCG")
+DNAString("ATCGZ")
 ~~~
 {: .language-r}
 
 
 
 ~~~
-4-letter DNAString object
-seq: ATCG
-~~~
-{: .output}
-
-
-~~~
-DNAString("ATCGE")
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 69 (char 'E') not in lookup table
+Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 90 (char 'Z') not in lookup table
 ~~~
 {: .error}
 

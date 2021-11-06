@@ -91,15 +91,11 @@ For instance, we can create an object that represents a DNA sequence, using the 
 DNAString("ATCG")
 ```
 
-Notably, DNA sequences may only contain the characters A, T, C, and G, to represent the four DNA nucleotide.
+Notably, DNA sequences may only contain the characters `A`, `T`, `C`, and `G`, to represent the four DNA nucleotide.
 Notice that the constructor function does not let us create objects that contain invalid characters, that do not represent any of those four nucleotide.
 
 ```{r}
-DNAString("ATCG")
-```
-
-```{r}
-DNAString("ATCGE")
+DNAString("ATCGZ")
 ```
 
 That said, the symbols that compose the alphabet DNA sequences are not limited to the characters A, T, C, and G.
