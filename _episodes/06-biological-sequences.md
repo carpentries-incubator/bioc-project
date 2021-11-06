@@ -90,7 +90,7 @@ library(Biostrings)
 {: .language-r}
 
 With the package loaded and attached to the session, we have access to the package functions.
-Those include functions that let us create new objects of the classes defined in the package.
+Those include functions that let us create new objects of the classes defined in the package; those functions are called _constructors_.
 For instance, we can create an object that represents a DNA sequence, using the `DNAString()` constructor function.
 
 
@@ -107,19 +107,33 @@ seq: ATCG
 ~~~
 {: .output}
 
-Notably, DNA sequences may only contain the characters `A`, `T`, `C`, and `G`, to represent the four DNA nucleotide.
+Notably, DNA sequences may only contain the characters A, T, C, and G, to represent the four DNA nucleotide.
 Notice that the constructor function does not let us create objects that contain invalid characters, that do not represent any of those four nucleotide.
 
 
 ~~~
-DNAString("ATCGZ")
+DNAString("ATCG")
 ~~~
 {: .language-r}
 
 
 
 ~~~
-Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 90 (char 'Z') not in lookup table
+4-letter DNAString object
+seq: ATCG
+~~~
+{: .output}
+
+
+~~~
+DNAString("ATCGE")
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 69 (char 'E') not in lookup table
 ~~~
 {: .error}
 
