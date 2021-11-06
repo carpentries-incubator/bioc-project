@@ -158,6 +158,66 @@ seq: ATCGM
 ~~~
 {: .output}
 
+Pattern matching methods implemented in the *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package recognize the meaning of ambiguity codes for each class of biological sequence, allowing them to efficiently match motifs queried by users without the need to design elaborate regular expressions.
+For instance, the method `matchPattern()` takes a `pattern` and a `subject` sequence, and returns a set of `Views` that report and display any match of the pattern in the sequences.
+
+The default option `fixed = TRUE` instructs the method to ignore ambiguity codes -- and thus, match the string `GA` exactly -- which in this case does not report any exact match.
+
+
+~~~
+matchPattern("GA", dna1, fixed = TRUE)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in h(simpleError(msg, call)): error in evaluating the argument 'subject' in selecting a method for function 'matchPattern': object 'dna1' not found
+~~~
+{: .error}
+
+Instead, to indicate that the pattern includes some ambiguity code, the argument `fixed` must be set to `FALSE`.
+
+
+~~~
+dna1 <- DNAString("ATCGMTTTGA")
+matchPattern("GA", dna1, fixed = FALSE)
+~~~
+{: .language-r}
+
+
+
+~~~
+Views on a 10-letter DNAString subject
+subject: ATCGMTTTGA
+views:
+      start end width
+  [1]     4   5     2 [GM]
+  [2]     9  10     2 [GA]
+~~~
+{: .output}
+
+In this particular example, two views describes matches of the pattern in the subject sequence.
+Specifically, the pattern `GA` first matched the sequence `GM` spanning positions 4 to 5 in the subject sequence, and then also matched exactly the sequence `GA` from positions 9 to 10.
+
+Similarly to the method `matchPattern()`, the method `countPattern()` can be applied to simply count the number of matches of the `pattern` in the `subject` sequence.
+And again, the option `fixed` controls whether to respect ambiguity codes, or match them exactly.
+
+> ## Challenge
+> 
+> How many hits does the following code return? Why?
+> 
+> ```
+> dna2 <- DNAString("TGATTGCTTGGTT")
+> countPattern("GM", dna1, fixed = FALSE)
+> ```
+> 
+> > ## Solution
+> > 
+> > The method reports 2 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA` and `GC` sequences, due to the use of the ambiguity code `M` in the `pattern`.
+> {: .solution}
+{: .challenge}
+
 ## Importing biological strings from files
 
 In practice, we rarely type the strings representing biological sequences ourselves.
