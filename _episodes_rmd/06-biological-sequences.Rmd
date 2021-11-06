@@ -57,8 +57,8 @@ Practically, it is possible to store meaningless sequences of symbols in charact
 In those cases, the burden of checking the validity of sequences falls on the programs that process them, or causing those programs to run into errors when they unexpectedly encounter invalid character symbols in a sequence.
 
 Instead, [S4 classes][glossary-s4-class] -- demonstrated in the earlier episode [The S4 class system][crossref-s4] -- provide a way to label objects as distinct "DNA", "RNA", or "protein" varieties of biological sequences.
-This label is an extremely powerful way to inform programs on what character symbols they can expect in the sequence, but also what operations can be applied to those sequences.
-For instance, a function designed to translate nucleic acid sequences into the corresponding amino acid sequence should not be allowed to run on an amino acid sequence.
+This label is an extremely powerful way to inform programs on the set of character symbols they can expect in the sequence, but also the range of computational operations that can be applied to those sequences.
+For instance, a function designed to translate nucleic acid sequences into the corresponding amino acid sequence should only be allowed to run on sequences that represent nucleic acids.
 
 ## The Biostrings package
 
