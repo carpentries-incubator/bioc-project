@@ -56,7 +56,7 @@ However, a major limitation of regular character vectors is that they do not che
 Practically, it is possible to store meaningless sequences of symbols in character strings.
 In those cases, the burden of checking the validity of sequences falls on the programs that process them, or causing those programs to run into errors when they unexpectedly encounter invalid character symbols in a sequence.
 
-Classes are a way to label objects as "DNA", "RNA", or "protein" sequence.
+Instead, classes -- demonstrated in the earlier episode [The S4 class system][crossref-s4] -- provide a way to label objects as "DNA", "RNA", or "protein" sequence.
 This label is an extremely powerful way to inform programs on what character symbols they can expect in the sequence, but also what operations can be applied to those sequences.
 For instance, a function designed to translate nucleic acid sequences into the corresponding amino acid sequence should not be allowed to run on an amino acid sequence.
 
@@ -152,6 +152,7 @@ dim(human_proteins.freq)
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
+[crossref-s4]: ../05-s4/index.html
 [glossary-s4-slot]: ../reference.html#s4-class-slot
 [glossary-s4-class]: ../reference.html#s4-class
 [glossary-s4-object]: ../reference.html#s4-object
