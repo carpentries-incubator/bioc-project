@@ -211,7 +211,11 @@ Similarly, developers of new packages can focus on the implementation of novel f
 
 Ultimately, the figure below illustrates how many different Bioconductor packages - as well as base R packages - can be combined to carry out a diverse range of analyses, from importing sequencing data into an R session, to the annotation, integration and visualization of data and results.
 
-![Sequencing Ecosystem](../fig/bioc-sequencing-ecosystem.png)
+![Sequencing Ecosystem.](../fig/bioc-sequencing-ecosystem.png)
+
+**Sequencing Ecosystem**
+Major data processing steps (blue) and relevant software packages (pink) are listed in the context  of archetypal workflows for various types of genomics analyses.
+The sequential relation of workflow steps and software package illustrates the importance of interoperability between software package in order to assemble complete end-to-end workflows.
 
 ## Conferences, courses and workshops
 
