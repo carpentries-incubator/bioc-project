@@ -86,6 +86,11 @@ The October release of Bioconductor continues to use the same version of R for t
 
 ![Timeline of release dates for selected Bioconductor and R versions.](../fig/bioc-release-cycle.svg)
 
+**Timeline of release dates for selected Bioconductor and R versions.**
+The upper section of the timeline indicates versions and approximate release dates for the R project.
+The lower section of the timeline indicates versions and release dates for the Bioconductor project.
+Source: [Bioconductor][bioc-release-dates].
+
 During each 6-month cycle of package development, Bioconductor tests packages for compatibility with the version of R that will be available for the next release cycle.
 Then, each time a new Bioconductor release is produced, the version of every package in the Bioconductor repository is incremented, including the package `r BiocStyle::Biocpkg("BiocVersion")` which determines the version of the Bioconductor project.
 
@@ -258,6 +263,7 @@ remove.packages("S4Vectors")
 [crossref-intro-biocviews]: https://carpentries-incubator.github.io/bioc-project/02-introduction-to-bioconductor/index.html#package-classification-using-biocviews
 [git-website]: https://git-scm.com/
 [git-bioconductor]: https://git.bioconductor.org/
+[bioc-release-dates]: https://bioconductor.org/about/release-announcements/
 [biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html
 [discuss-package-versioning]: ../discuss/index.html#bioconductor-package-versions
 [discuss-release-cycle]: ../discuss/index.html#the-bioconductor-release-cycle
