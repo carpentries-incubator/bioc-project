@@ -211,7 +211,7 @@ Crucially, when providing code as part of your post, it is important that this c
 Often, the code itself may look correct, while the issue relates to the interaction between the code and a particular data set.
 If sharing sensitive data is not an option, then the issue should be reformulated and presented using a data set publicly available on the internet, or including code to generate simulated data randomly generated in a reproducible way (e.g., `set.seed()`).
 
-One option is to use the `r BiocStyle::CRANpkg("reprex")` to collate the code and outputs that describe the issue into formatted text that is easy to post of many online forums, including the [Bioconductor support site][bioc-support-site].
+One option is to use the package `r BiocStyle::CRANpkg("reprex")` to collate the code and outputs that describe the issue into formatted text that is easy to post of many online forums, including the [Bioconductor support site][bioc-support-site].
 
 Finally, the [Bioconductor support site][bioc-support-site] is the preferred platform to post questions related to Bioconductor packages.
 This is because questions are visible to the entire community, including many experienced Bioconductor users who regularly answer those questions, and other users who can find answers to questions that were already posted and resolved by the time they run into the issue themselves.
