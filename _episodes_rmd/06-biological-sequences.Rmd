@@ -53,7 +53,8 @@ strwrap("MCDEDETTALVCDNGSGLVKAGFAGDDAPRAVFPSIVGRPRHQGVMVGMGQKDSYVGDEAQSKRGILTLKY
 ```
 
 However, a major limitation of regular character vectors is that they do not check the validity of the sequences that they contain.
-Practically, it is possible to store meaningless sequences of characters symbols in strings, causing programs to run into errors when they unexpectedly encounter invalid character symbols in a sequence.
+Practically, it is possible to store meaningless sequences of symbols in character strings.
+In those cases, the burden of checking the validity of sequences falls on the programs that process them, or causing those programs to run into errors when they unexpectedly encounter invalid character symbols in a sequence.
 
 Classes are a way to label objects as "DNA", "RNA", or "protein" sequence.
 This label is an extremely powerful way to inform programs on what character symbols they can expect in the sequence, but also what operations can be applied to those sequences.
