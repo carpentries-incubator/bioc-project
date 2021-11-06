@@ -255,73 +255,30 @@ DNAStringSet object of length 6:
 ## Computing the frequency of symbols
 
 The *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package provides several functions to process and manipulate classes of biological strings.
-For instance, the `Biostrings::letterFrequency()` calculates the frequency of letters in a biological sequence, or the consensus matrix of a set of sequences (see the help page using `?Biostrings::letterFrequency`).
+For example, we have come across `matchPattern()` and `countPattern()` earlier in this episode.
 
-The `methods::showMethods()` function can be used to identify which classes are supported by the method.
-Below, we see that the method does support the class `AAStringSet`.
-In particular, the output indicates that S4 method dispatch will call the method implemented for the class `XStringSet` - a class from which `AAStringSet` inherits - which implicitly indicates that there is no method specifically implemented for the `AAStringSet`.
+Another example of method that can be applied to biological strings is to compute the frequency of letters in a biological sequence, using  the `letterFrequency()`.
 
 
 ~~~
-showMethods("letterFrequency")
+letterFrequency(truseq_adapters, letters = DNA_ALPHABET)
 ~~~
 {: .language-r}
 
 
 
 ~~~
-Function: letterFrequency (package Biostrings)
-x="MaskedXString"
-x="XString"
-x="XStringSet"
-x="XStringViews"
+      A  C  G  T M R W S Y K V H D B N - + .
+[1,]  6 14  3 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[2,]  5  8 10 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[3,]  6 14  3 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[4,] 11  3 14  6 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[5,]  5  8 10 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[6,] 11 10  8  5 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 ~~~
 {: .output}
 
-We now know that we can use the `letterFrequency()` method on our object `human_proteins`, which is of class `AAStringSet`.
-
-The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of amino acids, provided by the *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package in an object called `AA_ALPHABET`.
-
-
-~~~
-human_proteins.freq <- letterFrequency(human_proteins, letters = AA_ALPHABET)
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'letterFrequency': object 'human_proteins' not found
-~~~
-{: .error}
-
-
-
-~~~
-head(human_proteins.freq)
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'head': object 'human_proteins.freq' not found
-~~~
-{: .error}
-
-
-~~~
-dim(human_proteins.freq)
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in eval(expr, envir, enclos): object 'human_proteins.freq' not found
-~~~
-{: .error}
-
+The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of deoxyribonucleic acids, provided by the *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package in an object called `DNA_ALPHABET`.
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
