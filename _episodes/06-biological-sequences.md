@@ -124,8 +124,8 @@ Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 90
 {: .error}
 
 That said, the symbols that compose the alphabet DNA sequences are not limited to characters representing the individual nucleotides, i.e. `A`, `T`, `C`, and `G`.
-The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide codes that represent combinations of nucleotides, in a way similar to regular expressions.
-The `IUPAC_CODE_MAP` 
+The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide codes that represent sets of nucleotides, in a way similar to regular expressions.
+The `IUPAC_CODE_MAP` named character vector contains the mapping from the IUPAC nucleotide ambiguity codes to their meaning.
 
 
 ~~~
