@@ -142,6 +142,8 @@ df1 <- as.data.frame(DF1)
 df1
 ```
 
+## Differences with the base data.frame
+
 The most notable exceptions have to do with handling of row names.
 First, row names are optional. This means calling `rownames(x)` will return `NULL` if there are no row names.
 
