@@ -142,6 +142,7 @@ IUPAC_CODE_MAP
 {: .output}
 
 Any of those nucleotide codes are allowed in the sequence of a `DNAString` object.
+For instance, the symbol `M` represents either of the two nucleotides `A` or `C` at a given position in a nucleic acid sequence.
 
 
 ~~~
@@ -156,7 +157,6 @@ DNAString("ATCGM")
 seq: ATCGM
 ~~~
 {: .output}
-
 
 ## Importing biological strings from files
 
