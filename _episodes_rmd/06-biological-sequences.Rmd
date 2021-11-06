@@ -71,6 +71,12 @@ A short presentation of the basic classes defined in the `r BiocStyle::Biocpkg("
 vignette("Biostrings2Classes")
 ```
 
+More detailed information is provided in the other package vignettes.
+
+```{r, eval=FALSE}
+browseVignettes("Biostrings")
+```
+
 To get started, we load the package.
 
 ```{r, message=FALSE}
