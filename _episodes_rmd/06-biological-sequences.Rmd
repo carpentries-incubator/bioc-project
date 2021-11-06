@@ -119,13 +119,13 @@ For instance, the method `matchPattern()` takes a `pattern` and a `subject` sequ
 The default option `fixed = TRUE` instructs the method to ignore ambiguity codes -- and thus, match the string `GA` exactly -- which in this case does not report any exact match.
 
 ```{r}
+dna1 <- DNAString("ATCGMTTTGA")
 matchPattern("GA", dna1, fixed = TRUE)
 ```
 
 Instead, to indicate that the pattern includes some ambiguity code, the argument `fixed` must be set to `FALSE`.
 
 ```{r}
-dna1 <- DNAString("ATCGMTTTGA")
 matchPattern("GA", dna1, fixed = FALSE)
 ```
 
@@ -146,7 +146,7 @@ And again, the option `fixed` controls whether to respect ambiguity codes, or ma
 > 
 > > ## Solution
 > > 
-> > The method reports 2 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA` and `GC` sequences, due to the use of the ambiguity code `M` in the `pattern`.
+> > The method `countPattern()` reports 2 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA` and `GC` sequences, due to the use of the ambiguity code `M` in the `pattern`.
 > {: .solution}
 {: .challenge}
 
