@@ -73,6 +73,14 @@ vignette("Biostrings2Classes")
 ~~~
 {: .language-r}
 
+More detailed information is provided in the other package vignettes.
+
+
+~~~
+browseVignettes("Biostrings")
+~~~
+{: .language-r}
+
 To get started, we load the package.
 
 
@@ -82,7 +90,7 @@ library(Biostrings)
 {: .language-r}
 
 With the package loaded and attached to the session, we have access to the package functions.
-Those include functions that let us create new objects of the classes defined in the package; those functions are called _constructors_.
+Those include functions that let us create new objects of the classes defined in the package.
 For instance, we can create an object that represents a DNA sequence, using the `DNAString()` constructor function.
 
 
