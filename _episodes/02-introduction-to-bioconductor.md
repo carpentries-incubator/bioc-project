@@ -161,7 +161,6 @@ Terms are initially selected by the package authors, and subsequently refined du
 > 
 > Visit the listing of all packages on the Bioconductor [biocViews][biocviews-site] web page.
 > Use the "Autocomplete biocViews search" box in the upper left to filter packages by category and explore the graph of software packages by expanding and contracting individual terms.
-
 > 1. What biocView terms can be used to identify packages that have been tagged for RNA sequencing analysis? ChIP-seq? Epigenetics? Variant annotation? Proteomics? Single-cell genomics?
 > 2. In the `RNASeq` category, two very popular packages are *[DESeq2](https://bioconductor.org/packages/3.14/DESeq2)* and *[edgeR](https://bioconductor.org/packages/3.14/edgeR)*.
 >    Which one is more popular in terms of download statistics (i.e., lower rank)?
