@@ -309,6 +309,8 @@ mcols(DF4)
 
 # Run-length encoding (RLE)
 
+## An extension to the concept of vector
+
 Similarly to the `DataFrame` class implemented in the `r BiocStyle::Biocpkg("S4Vectors")`,
 the `Rle` class provides an S4 extension to the `rle()` function from the base package.
 Specifically, the `Rle` class supports the storage of atomic vectors in a run-length encoding format.
@@ -329,6 +331,29 @@ Instead, the run-length encoding process collapses such runs of redundant inform
 v1 <- c(0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0)
 rle1 <- Rle(v1)
 rle1
+```
+
+## Indexing
+
+Just like a regular `vector`, `Rle` objects can be indexed using `[`.
+
+```{r}
+rle1[2:4]
+```
+
+## Usage
+
+As vector-like objects, `Rle` objects can also be stored as columns of `DataFrame` objects, alongside other vector-like objects.
+
+```{r}
+v2 <- c(rep(1, 5), rep(2, 5))
+rle2 <- Rle(v2)
+DF5 <- DataFrame(
+    vector = v2,
+    rle = rle2,
+    equal = v2 == rle2
+)
+DF5
 ```
 
 > ## Going further
