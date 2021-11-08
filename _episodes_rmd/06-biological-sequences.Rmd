@@ -77,10 +77,14 @@ For instance, a function designed to translate nucleic acid sequences into the c
 
 ## The Biostrings package
 
+## Overview
+
 The `r BiocStyle::Biocpkg("Biostrings")` package implements S4 classes to represent biological sequences as S4 objects, e.g. `DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, and `AAString` for sequences of amino acids in protein polymers.
 Those S4 classes provide memory-efficient containers for character strings, automatic validity-checking functionality for each class of biological molecules, and methods imeplementing various string matching algorithms and other utilities for fast manipulation and processing of large biological sequences or sets of sequences.
 
 A short presentation of the basic classes defined in the `r BiocStyle::Biocpkg("Biostrings")` package is available in one of the package vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed information is provided in the other package vignettes, accessible as `browseVignettes("Biostrings")`.
+
+## First steps
 
 To get started, we load the package.
 
@@ -96,15 +100,14 @@ For instance, we can create an object that represents a DNA sequence, using the 
 DNAString("ATCG")
 ```
 
-Notably, DNA sequences may only contain the characters `A`, `T`, `C`, and `G`, to represent the four DNA nucleotide.
-Notice that the constructor function does not let us create objects that contain invalid characters, that do not represent any of those four nucleotide.
+Notably, DNA sequences may only contain the symbols `A`, `T`, `C`, and `G`, to represent the four DNA nucleotide bases, the symbol `N` as a placeholder for an unknown or unspecified base, and a small number of other symbols defined in the [IUPAC Extended Genetic Alphabet][iupac-alphabet].
+Notice that the constructor function does not let us create objects that contain invalid characters, e.g. `Z`.
 
 ```{r}
 DNAString("ATCGZ")
 ```
 
-That said, the symbols that compose the alphabet DNA sequences are not limited to characters representing the individual nucleotides, i.e. `A`, `T`, `C`, and `G`.
-The [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines additional nucleotide codes that represent sets of nucleotides, in a way similar to regular expressions.
+Specifically, the [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines ambiguity codes that represent sets of nucleotides, in a way similar to regular expressions.
 The `IUPAC_CODE_MAP` named character vector contains the mapping from the IUPAC nucleotide ambiguity codes to their meaning.
 
 ```{r}
