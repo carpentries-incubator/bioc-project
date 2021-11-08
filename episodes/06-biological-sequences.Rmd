@@ -72,6 +72,7 @@ For instance, a function designed to translate nucleic acid sequences into the c
 > > 
 > > Yes, this is a valid DNA sequence using ambiguity codes defined in the [IUPAC][external-iupac] notation.
 > > In this case, the `R` symbol represents either of the two purine nucleotide bases, `A` and `G`.
+> > 
 > {: .solution}
 {: .challenge}
 
@@ -155,6 +156,7 @@ And again, the option `fixed` controls whether to respect ambiguity codes, or ma
 > > ## Solution
 > > 
 > > The method `countPattern()` reports 3 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA`, `GC`, and `GM` sequences, due to the use of the ambiguity code `M` in the `pattern`.
+> > 
 > {: .solution}
 {: .challenge}
 
@@ -188,6 +190,39 @@ letterFrequency(truseq_adapters, letters = DNA_ALPHABET)
 ```
 
 The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of deoxyribonucleic acids, provided by the `r BiocStyle::Biocpkg("Biostrings")` package in an object called `DNA_ALPHABET`.
+
+## Amino acid sequences
+
+Similarly to the `DNAString` and `DNAStringSet` classes, the `AAString` and `AAStringSet` allows efficient storage and manipulation of a long amino acid sequence, or a set thereof.
+
+Similarly to built-in objects for the DNA alphabet, the built-in objects `AA_ALPHABET`, `AA_STANDARD` and `AA_PROTEINOGENIC` describe different subsets of the alphabet of valid symbols for amino acid sequences.
+
+> ## Challenge
+>
+> What are the two symbols present in `AA_PROTEINOGENIC` that are absent from `AA_STANDARD`?
+> What do those two symbols represent?
+>
+> > ## Solution
+> > 
+> > ```
+> > > setdiff(AA_PROTEINOGENIC, AA_STANDARD)
+> > [1] "U" "O"
+> > ```
+> > 
+> > The symbols `U` and `O` represent selenocysteine and pyrrolysine, respectively.
+> > Those two amino acids are in some species coded for by codons that are usually interpreted as stop codons.
+> > As such, they are not included in the alphabet of "standard" amino acids, and a alphabet of "proteinogenic" amino acids was defined to acknowledge the special biology of those amino acids.
+> > Either of those alphabets may be used to determine the validity of an amino acid sequence, depending on its biological nature.
+> > 
+> {: .solution}
+{: .challenge}
+
+## Translating nucleotide sequences
+
+```{r}
+showMethods("translate")
+```
+
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
