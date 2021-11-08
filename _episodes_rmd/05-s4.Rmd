@@ -16,6 +16,7 @@ keypoints:
 - "To ensure the continued integrity of S4 objects, users should not access slots directly, but using dedicated functions."
 - "S4 generics invoke different implementations of the method depending on the class of the object that they are given."
 - "The S4 class `DataFrame` extends the functionality of base `data.frame`, for instance with the capacity to hold information about each column in metadata columns."
+- "The S4 class `Rle` extends the functionality of the base `vector`, for instance with the capacity to encode repetitive vectors in a memory-efficient format."
 ---
 
 ```{r, include=FALSE}
