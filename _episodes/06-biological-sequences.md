@@ -165,12 +165,12 @@ seq: ATCGM
 Pattern matching methods implemented in the *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package recognize the meaning of ambiguity codes for each class of biological sequence, allowing them to efficiently match motifs queried by users without the need to design elaborate regular expressions.
 For instance, the method `matchPattern()` takes a `pattern` and a `subject` sequence, and returns a set of `Views` that report and display any match of the pattern in the sequences.
 
-The default option `fixed = TRUE` instructs the method to ignore ambiguity codes -- and thus, match the string `GA` exactly -- which in this case does not report any exact match.
+The default option `fixed = TRUE` instructs the method to match the query exactly -- i.e., ignore ambiguity codes -- which in this case does report any exact match.
 
 
 ~~~
-dna1 <- DNAString("ATCGMTTTGA")
-matchPattern("GA", dna1, fixed = TRUE)
+dna1 <- DNAString("ATCGCTTTGA")
+matchPattern("GM", dna1, fixed = TRUE)
 ~~~
 {: .language-r}
 
@@ -178,10 +178,8 @@ matchPattern("GA", dna1, fixed = TRUE)
 
 ~~~
 Views on a 10-letter DNAString subject
-subject: ATCGMTTTGA
-views:
-      start end width
-  [1]     9  10     2 [GA]
+subject: ATCGCTTTGA
+views: NONE
 ~~~
 {: .output}
 
@@ -189,7 +187,7 @@ Instead, to indicate that the pattern includes some ambiguity code, the argument
 
 
 ~~~
-matchPattern("GA", dna1, fixed = FALSE)
+matchPattern("GM", dna1, fixed = FALSE)
 ~~~
 {: .language-r}
 
@@ -197,10 +195,10 @@ matchPattern("GA", dna1, fixed = FALSE)
 
 ~~~
 Views on a 10-letter DNAString subject
-subject: ATCGMTTTGA
+subject: ATCGCTTTGA
 views:
       start end width
-  [1]     4   5     2 [GM]
+  [1]     4   5     2 [GC]
   [2]     9  10     2 [GA]
 ~~~
 {: .output}
