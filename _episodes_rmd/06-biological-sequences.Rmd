@@ -148,13 +148,13 @@ And again, the option `fixed` controls whether to respect ambiguity codes, or ma
 > How many hits does the following code return? Why?
 > 
 > ```
-> dna2 <- DNAString("TGATTGCTTGGTT")
-> countPattern("GM", dna1, fixed = FALSE)
+> dna2 <- DNAString("TGATTGCTTGGTTGMTT")
+> countPattern("GM", dna2, fixed = FALSE)
 > ```
 > 
 > > ## Solution
 > > 
-> > The method `countPattern()` reports 2 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA` and `GC` sequences, due to the use of the ambiguity code `M` in the `pattern`.
+> > The method `countPattern()` reports 3 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA`, `GC`, and `GM` sequences, due to the use of the ambiguity code `M` in the `pattern`.
 > {: .solution}
 {: .challenge}
 
