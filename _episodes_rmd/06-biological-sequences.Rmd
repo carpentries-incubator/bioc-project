@@ -138,7 +138,7 @@ matchPattern("GM", dna1, fixed = FALSE)
 ```
 
 In this particular example, two views describes matches of the pattern in the subject sequence.
-Specifically, the pattern `GA` first matched the sequence `GM` spanning positions 4 to 5 in the subject sequence, and then also matched exactly the sequence `GA` from positions 9 to 10.
+Specifically, the pattern `GM` first matched the sequence `GC` spanning positions 4 to 5 in the subject sequence, and then also matched exactly the sequence `GA` from positions 9 to 10.
 
 Similarly to the method `matchPattern()`, the method `countPattern()` can be applied to simply count the number of matches of the `pattern` in the `subject` sequence.
 And again, the option `fixed` controls whether to respect ambiguity codes, or match them exactly.
@@ -163,8 +163,8 @@ And again, the option `fixed` controls whether to respect ambiguity codes, or ma
 In practice, users rarely type the strings representing biological sequences themselves.
 Most of the time, biological strings are imported from files, either downloaded from public repositories or generated locally using bioinformatics programs.
 
-For instance, we load set of adapter sequences for the [TruSeq™ DNA PCR-Free whole-genome sequencing library preparation][external-truseq] kit, from a file that we downloaded the file during the lesson setup.
-Since adapter sequences are nucleic acid sequences, we use the function `readDNAStringSet()`.
+For instance, we can load the set of adapter sequences for the [TruSeq™ DNA PCR-Free whole-genome sequencing library preparation][external-truseq] kit from a file that we downloaded the file during the lesson setup.
+Since adapter sequences are nucleic acid sequences, we must use the function `readDNAStringSet()`.
 
 ```{r}
 truseq_adapters <- readDNAStringSet(filepath = "data/TruSeq3-PE-2.fa")
