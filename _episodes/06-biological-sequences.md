@@ -80,21 +80,7 @@ For instance, a function designed to translate nucleic acid sequences into the c
 The *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package implements S4 classes to represent biological sequences as S4 objects, e.g. `DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, and `AAString` for sequences of amino acids in protein polymers.
 Those S4 classes provide memory-efficient containers for character strings, automatic validity-checking functionality for each class of biological molecules, and methods imeplementing various string matching algorithms and other utilities for fast manipulation and processing of large biological sequences or sets of sequences.
 
-A short presentation of the basic classes defined in the *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package is available in one of the package vignettes.
-
-
-~~~
-vignette("Biostrings2Classes")
-~~~
-{: .language-r}
-
-More detailed information is provided in the other package vignettes.
-
-
-~~~
-browseVignettes("Biostrings")
-~~~
-{: .language-r}
+A short presentation of the basic classes defined in the *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package is available in one of the package vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed information is provided in the other package vignettes, accessible as `browseVignettes("Biostrings")`.
 
 To get started, we load the package.
 
