@@ -335,6 +335,7 @@ x="RNAStringSet"
 ~~~
 {: .output}
 
+
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
 [crossref-s4]: ../05-s4/index.html
