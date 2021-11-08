@@ -197,6 +197,12 @@ Similarly to the `DNAString` and `DNAStringSet` classes, the classes `AAString` 
 
 Similarly to built-in objects for the DNA alphabet, the built-in objects `AA_ALPHABET`, `AA_STANDARD` and `AA_PROTEINOGENIC` describe different subsets of the alphabet of valid symbols for amino acid sequences.
 
+For instance, the `AA_ALPHABET` object describes the set of symbols in the full amino acid alphabet.
+
+```{r}
+AA_ALPHABET
+```
+
 > ## Challenge
 >
 > What are the two symbols present in `AA_PROTEINOGENIC` that are absent from `AA_STANDARD`?
