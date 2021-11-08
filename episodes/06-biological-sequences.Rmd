@@ -223,7 +223,6 @@ Similarly to built-in objects for the DNA alphabet, the built-in objects `AA_ALP
 showMethods("translate")
 ```
 
-
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
 [crossref-s4]: ../05-s4/index.html
