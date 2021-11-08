@@ -56,6 +56,21 @@ However, a major limitation of regular character vectors is that they do not che
 Practically, it is possible to store meaningless sequences of symbols in character strings.
 In those cases, the burden of checking the validity of sequences falls on the programs that process them, or causing those programs to run into errors when they unexpectedly encounter invalid character symbols in a sequence.
 
+> ## Challenge
+> 
+> Can you tell whether this character string is a valid DNA sequence?
+> 
+> ```
+> AATTGGCCRGGCCAATT
+> ```
+> 
+> > ## Solution
+> > 
+> > Yes, this is a valid DNA sequence using ambiguity codes defined in the [IUPAC][external-iupac] notation.
+> > In this case, the `R` symbol represents either of the two purine nucleotide bases, `A` and `G`.
+> {: .solution}
+{: .challenge}
+
 Instead, [S4 classes][glossary-s4-class] -- demonstrated in the earlier episode [The S4 class system][crossref-s4] -- provide a way to label objects as distinct "DNA", "RNA", or "protein" varieties of biological sequences.
 This label is an extremely powerful way to inform programs on the set of character symbols they can expect in the sequence, but also the range of computational operations that can be applied to those sequences.
 For instance, a function designed to translate nucleic acid sequences into the corresponding amino acid sequence should only be allowed to run on sequences that represent nucleic acids.
@@ -185,6 +200,7 @@ The output is a matrix with one row for each sequence, and one column for each s
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
 [crossref-s4]: ../05-s4/index.html
 [external-truseq]: https://emea.illumina.com/products/by-type/sequencing-kits/library-prep-kits.html
+[external-iupac]: https://en.wikipedia.org/wiki/Nucleic_acid_notation#IUPAC_notation
 [glossary-s4-slot]: ../reference.html#s4-class-slot
 [glossary-s4-class]: ../reference.html#s4-class
 [glossary-s4-object]: ../reference.html#s4-object
