@@ -290,7 +290,7 @@ The output is a matrix with one row for each sequence, and one column for each s
 
 ## Amino acid sequences
 
-Similarly to the `DNAString` and `DNAStringSet` classes, the `AAString` and `AAStringSet` allows efficient storage and manipulation of a long amino acid sequence, or a set thereof.
+Similarly to the `DNAString` and `DNAStringSet` classes, the classes `AAString` and `AAStringSet` allow efficient storage and manipulation of a long amino acid sequence, or a set thereof.
 
 Similarly to built-in objects for the DNA alphabet, the built-in objects `AA_ALPHABET`, `AA_STANDARD` and `AA_PROTEINOGENIC` describe different subsets of the alphabet of valid symbols for amino acid sequences.
 
@@ -334,7 +334,6 @@ x="RNAString"
 x="RNAStringSet"
 ~~~
 {: .output}
-
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
