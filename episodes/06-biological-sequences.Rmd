@@ -124,7 +124,7 @@ DNAString("ATCGM")
 Pattern matching methods implemented in the `r BiocStyle::Biocpkg("Biostrings")` package recognize the meaning of ambiguity codes for each class of biological sequence, allowing them to efficiently match motifs queried by users without the need to design elaborate regular expressions.
 For instance, the method `matchPattern()` takes a `pattern` and a `subject` sequence, and returns a set of `Views` that report and display any match of the pattern in the sequences.
 
-The default option `fixed = TRUE` instructs the method to ignore ambiguity codes -- and thus, match the string `GA` exactly -- which in this case does not report any exact match.
+The default option `fixed = TRUE` instructs the method to match the query exactly -- i.e., ignore ambiguity codes -- which in this case does not report any exact match.
 
 ```{r}
 dna1 <- DNAString("ATCGMTTTGA")
