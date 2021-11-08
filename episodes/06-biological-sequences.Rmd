@@ -238,6 +238,21 @@ showMethods("translate")
 In the output above, we see that that the generic `translate()` includes methods capable of handling objects representing DNA and RNA sequences in the `DNAString` and `RNAString` classes, respectively;
 but also lists of DNA and RNA sequences in objects of class `DNAStringSet` and `RNAStringSet`, as well as other classes capable of storing DNA and RNA sequences.
 
+> ## Contribute!
+> 
+> Design an example that demonstrate how to translate an open reading frame.
+> 
+> Note that the "Examples" section of the `?translate` help page requires additional preprocessing steps that are not directly relevant to the point being made here:
+> - importing multiple sequences from a FASTA file
+> - trimming a range of nucleotides from both ends of each sequence
+> - taking only the first nucleotide sequence forward
+> - masking introns
+> - ... before eventually applying the `translate()` function to the preprocessed sequence
+> 
+> Ideally, this section should only focus on demonstrating the `translate()` function.
+> That said, there may be some value in thinking about how the other preprocessing functions can be demonstrated in this episode as well.
+{: .callout}
+
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
 [crossref-s4]: ../05-s4/index.html
