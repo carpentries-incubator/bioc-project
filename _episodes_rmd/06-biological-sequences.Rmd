@@ -235,7 +235,7 @@ The set of input objects supported by the generic `translate()` can be listed us
 showMethods("translate")
 ```
 
-In the output above, we see that that the generic `translate()` includes methods capable of handling objects representing DNA and RNA sequences in the `DNAString` and `RNAString` classes, respectively;
+In the output above, we see that that the generic function `translate()` includes methods capable of handling objects representing DNA and RNA sequences in the `DNAString` and `RNAString` classes, respectively;
 but also lists of DNA and RNA sequences in objects of class `DNAStringSet` and `RNAStringSet`, as well as other classes capable of storing DNA and RNA sequences.
 
 > ## Contribute!
