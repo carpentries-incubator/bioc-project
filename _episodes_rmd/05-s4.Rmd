@@ -33,6 +33,13 @@ Before we can proceed into the following sections, we install some Bioconductor 
 BiocManager::install("S4Vectors")
 ```
 
+> ## For Instructors
+> 
+> The first part of this episode may look somewhat heavy on the theory.
+> Do not be tempted to go into excessive details about the inner workings of the S4 class system (e.g., no need to mention the function `new()`, or to demonstrate a concrete example of code creating a class).
+> Instead, the caption of the first figure demonstrates how to progressively talk through the figure, introducing technical terms in simple sentences, building up to the method dispatch concept that is core to the S4 class system, and the source of much confusion in novice users.
+{: .prereq}
+
 # S4 classes and methods
 
 ## The methods package
@@ -48,6 +55,7 @@ On one side, [S4 classes][glossary-s4-class] provide data structures capable of 
 On the other side, [S4 generics and methods][glossary-s4-method] define functions that may be applied to process those objects.
 
 Over the years, the Bioconductor project has used the S4 class system to develop a number of classes and methods capable of storing and processing data for most biological assays, including raw and processed assay data, experimental metadata for individual features and samples, as well as other assay-specific information as relevant.
+Gaining familiarity with the standard S4 classes commonly used throughout Bioconductor packages is a key step in building up confidence in users wishing to follow best practices while developing analytical workflows.
 
 ![S4 classes, generics, and methods.](../fig/bioc-s4.svg)
 
@@ -67,7 +75,7 @@ When the generic function `S4Generic1()` is called, a process called [method dis
 
 ## Slots and validity
 
-In contrast to the S3 class system available directly in base R, the S4 class system provides a much stricter definition of classes and methods for object-oriented programming (OOP) in R.
+In contrast to the S3 class system available directly in base R (not described in this lesson), the S4 class system provides a much stricter definition of classes and methods for object-oriented programming (OOP) in R.
 Like many programming languages that implement the OOP model, S4 classes are used to represent real-world entities as computational objects that store information inside one or more internal components called _slots_.
 The class definition declares the type of data that may be stored in each slot; an error will be thrown if one would attempt to store unsuitable data.
 Moreover, the class definition can also include code that checks the validity of data stored in an object, beyond their type.
