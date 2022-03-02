@@ -63,7 +63,7 @@ binding sites, or peaks from next-generation sequencing assays such as ChIP-seq
 or ATAC-seq.
 
 Genomic intervals tie those observations of assayed values (e.g., gene
-expression) to a physical location in the genetic material or an organism.
+expression) to a physical location in the genome or an organism.
 For instance, those intervals can be used to query physical proximity or overlap
 between assayed features and databases of known regulatory regions.
 
