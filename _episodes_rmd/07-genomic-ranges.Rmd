@@ -102,9 +102,15 @@ included in at least one exon of one transcript.
 
 The `r BiocStyle::Biocpkg("GenomicRanges")` package implements
 [S4 classes][glossary-s4-class] to represent genomic ranges as S4 objects.
-Specifically, the `GRanges` class is designed to store sets of intervals
+
+Specifically, the `GRanges` class is designed to store a set of intervals
 including the name of the sequence where features are located as well as the
 range of integer coordinates spanned by the feature in that sequence.
+
+More generally, the `IRanges` class is designed to store a set of intervals
+over a range of integer coordinates, without the notion of sequence names.
+As such, a `GRanges` object is merely the combination of an `IRanges` object and
+a vector of sequence names.
 
 Those S4 classes provide automatic validity-checking functionality,
 and a range of methods implementing common operations on genomic ranges,
