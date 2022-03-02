@@ -240,4 +240,50 @@ both ranges in the subject set.
 > ```
 {: .callout}
 
+## The GRanges class
+
+Having defined integer ranges, the only additional information necessary to
+define genomic ranges is the name the genomic sequence on which each range is
+located.
+
+For instance, let us define two genomic ranges, as follows:
+
+- one genomic range on chromosome 1 (abbreviated "chr1"), from position 10 to 25
+- one genomic range on chromosome 2 (abbreviated "chr2"), from position 20 to 35
+
+To do so, we use the `GRanges()` constructor function.
+We provide the sequence names as a character vector to the argument `seqnames=`,
+and we provide both the start and end position to the argument `ranges=`...
+as an `IRanges`!
+
+```{r}
+demo_granges <- GRanges(
+  seqnames = c("chr1", "chr2"),
+  ranges = IRanges(
+    start = c(10, 20),
+    end   = c(25, 35))
+)
+demo_granges
+```
+
+Let us note how the object displays the sequence names in the `seqnames`
+component, and the ranges in the form `start-end` in the `ranges` component.
+Furthermore, the view above also demonstrate `GRanges` objects possess a
+component called `strand`; the symbol `*` indicates unstranded genomic ranges,
+as we have not provided that information.
+
+The strand information can be supplied to the `strand=` argument, for instance:
+
+```{r}
+demo_granges2 <- GRanges(
+  seqnames = c("chr1", "chr2"),
+  ranges = IRanges(
+    start = c(10, 20),
+    end   = c(25, 35)),
+  strand  = c("+", "-")
+)
+demo_granges2
+```
+
+
 [glossary-s4-class]: ../reference.html#s4-class
