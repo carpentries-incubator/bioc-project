@@ -86,17 +86,17 @@ nucleic acid molecules (e.g., chromosomes, plasmids).
 In such cases, genomic intervals must be described both by the name of the
 sequence and the numeric interval of coordinates on that sequence.
 
-The figure below illustrates the example of a gene model that comprises two
+![Example uses of the GenomicRanges algebra.](../fig/bioc-genomicranges.svg)
+
+**Example uses of the GenomicRanges algebra.**
+Adapted from `r Citet(bib, "Huber2015")`.
+The figure illustrates the example of a gene model that comprises two
 transcripts, and the definition of various genomic ranges relative to that
 gene model.
 For instance - in this specific illustration - unspliced transcripts summarise
 the entire range of coordinates from the start of the first exon to the end of
 the last exon; while the gene region is defined as the set of coordinates
 included in at least one exon of one transcript.
-
-![Genomic ranges.](../fig/bioc-genomicranges.svg)
-
-Adapted from `r Citet(bib, "Huber2015")`.
 
 ## The GenomicRanges package
 
