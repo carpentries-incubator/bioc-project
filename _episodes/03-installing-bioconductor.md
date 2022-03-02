@@ -48,6 +48,20 @@ install.packages("BiocManager")
 ~~~
 {: .language-r}
 
+
+
+~~~
+trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.1/BiocManager_1.30.16.tgz'
+Content type 'application/x-gzip' length 322920 bytes (315 KB)
+==================================================
+downloaded 315 KB
+
+
+The downloaded binary packages are in
+	/var/folders/51/nz__2dx10yzd75rylr5cg2zc0000gq/T//RtmpeS8MHV/downloaded_packages
+~~~
+{: .output}
+
 > ## Going further
 >
 > A number of packages that are not part of the base R installation also provide functions to install packages from various repositories.
@@ -133,19 +147,6 @@ BiocManager::install(version = "3.14")
 {: .language-r}
 
 This needs to be done only once, as the *[BiocVersion](https://bioconductor.org/packages/3.14/BiocVersion)* package will be updated to the corresponding version, indicating the version of Bioconductor in use in this R library.
-
-
-~~~
-packageVersion("BiocVersion")
-~~~
-{: .language-r}
-
-
-
-~~~
-[1] '3.14.0'
-~~~
-{: .output}
 
 > ## Going further
 >
@@ -245,7 +246,7 @@ length(BiocManager::available())
 
 
 ~~~
-[1] 21895
+[1] 22412
 ~~~
 {: .output}
 

@@ -28,8 +28,13 @@ options(width = 120)
 # Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is installed before trying to use it; otherwise we install it.
+Then we use the `BiocManager::install()` function to install the necessary packages.
 
-```{r, message=FALSE}
+```{r, message=FALSE, warning=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
 BiocManager::install("S4Vectors")
 ```
 

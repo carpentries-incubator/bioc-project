@@ -24,6 +24,8 @@ keypoints:
 # Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+First, we check that the *[BiocManager](https://bioconductor.org/packages/3.14/BiocManager)* package is installed before trying to use it; otherwise we install it.
+Then we use the `BiocManager::install()` function to install the necessary packages.
 
 
 ~~~
@@ -76,12 +78,12 @@ For instance, a function designed to translate nucleic acid sequences into the c
 > {: .solution}
 {: .challenge}
 
-## The Biostrings package
+# The Biostrings package
 
 ## Overview
 
 The *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package implements S4 classes to represent biological sequences as S4 objects, e.g. `DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, and `AAString` for sequences of amino acids in protein polymers.
-Those S4 classes provide memory-efficient containers for character strings, automatic validity-checking functionality for each class of biological molecules, and methods imeplementing various string matching algorithms and other utilities for fast manipulation and processing of large biological sequences or sets of sequences.
+Those S4 classes provide memory-efficient containers for character strings, automatic validity-checking functionality for each class of biological molecules, and methods implementing various string matching algorithms and other utilities for fast manipulation and processing of large biological sequences or sets of sequences.
 
 A short presentation of the basic classes defined in the *[Biostrings](https://bioconductor.org/packages/3.14/Biostrings)* package is available in one of the package vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed information is provided in the other package vignettes, accessible as `browseVignettes("Biostrings")`.
 
