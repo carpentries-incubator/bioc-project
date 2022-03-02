@@ -26,11 +26,29 @@ knitr_fig_path("07-")
 options(width = 120)
 ```
 
+```{r, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(RefManageR)
+library(bibtex)
+bib <- ReadBib("../bibliography.bib")
+BibOptions(
+  longnamesfirst = FALSE,
+  check.entries = FALSE,
+  bib.style = "authoryear",
+  cite.style = "authoryear",
+  max.names = 1,
+  style = "html",
+  hyperlink = "to.bib",
+  dashed = TRUE)
+```
+
 # Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is installed before trying to use it; otherwise we install it.
+Then we use the `BiocManager::install()` function to install the necessary packages.
 
-```{r, eval=FALSE}
+```{r, message=FALSE, warning=FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
@@ -42,11 +60,248 @@ BiocManager::install("GenomicRanges")
 
 ## Why do we need classes for genomic ranges?
 
-...
+In the era of genomics, many observations are reported as intervals on a genomic
+scale.
+Depending on the nature of the assay, those intervals may represent genes,
+transcripts, exons, single nucleotide polymorphisms (SNPs), transcription factor
+binding sites, or peaks from next-generation sequencing assays such as ChIP-seq
+or ATAC-seq.
 
-## The GenomicRanges package
+Genomic intervals tie those observations of assayed values (e.g., gene
+expression) to a physical location in the genome or an organism.
+For instance, those intervals can be used to query physical proximity or overlap
+between assayed features and databases of known regulatory regions.
 
-...
+Often, the final intervals used for reporting measurements are the result
+of combinations and operations on sets of known intervals.
+For instance, in RNA-sequencing, next-generation sequencing reads are often
+counted within individual exons, and those counts are subsequently aggregated
+across all the exons of each gene.
+Separately, promoters are frequently defined as region of arbitrary width,
+partly upstream and/or downstream of known transcription start sites (TSS).
+
+Importantly, genomic intervals do not necessarily need to span multiple
+coordinates.
+The notion of interval is meant in the mathematical way, and single-nucleotide
+intervals (e.g., SNPs) can be described as opening and closing at the same
+coordinate (or at the next coordinate, in the case of a right-open interval).
+
+For many organisms, the genetic material is split into a number of separate
+nucleic acid molecules (e.g., chromosomes, plasmids).
+In such cases, genomic intervals must be described both by the name of the
+sequence and the numeric interval of coordinates on that sequence.
+
+![Example uses of the GenomicRanges algebra.](../fig/bioc-genomicranges.svg)
+
+**Example uses of the GenomicRanges algebra.**
+Adapted from `r Citet(bib, "Huber2015")`.
+The figure illustrates the example of a gene model that comprises two
+transcripts, and the definition of various genomic ranges relative to that
+gene model.
+For instance - in this specific illustration - unspliced transcripts summarise
+the entire range of coordinates from the start of the first exon to the end of
+the last exon; while the gene region is defined as the set of coordinates
+included in at least one exon of one transcript.
+
+# The GenomicRanges package
+
+## Overview
+
+The `r BiocStyle::Biocpkg("GenomicRanges")` package implements
+[S4 classes][glossary-s4-class] to represent genomic ranges as S4 objects.
+
+Specifically, the `GRanges` class is designed to store a set of intervals
+including the name of the sequence where features are located as well as the
+range of integer coordinates spanned by the feature in that sequence.
+
+More generally, the `IRanges` class is designed to store a set of intervals
+over a range of integer coordinates, without the notion of sequence names.
+As such, a `GRanges` object is merely the combination of an `IRanges` object and
+a vector of sequence names.
+
+Those S4 classes provide automatic validity-checking functionality,
+and a range of methods implementing common operations on genomic ranges,
+from the calculation of distance between genomic ranges to the identification
+of overlapping genomic ranges.
+
+A short presentation of the basic classes defined in the
+`r BiocStyle::Biocpkg("GenomicRanges")` package is available in one of the
+package vignettes, accessible as `vignette("GenomicRangesIntroduction")`,
+while more detailed information is provided in the other package vignettes,
+accessible as `browseVignettes("GenomicRanges")`.
+
+## First steps
+
+To get started, we load the package.
+
+```{r, message=FALSE, warning=FALSE}
+library(GenomicRanges)
+```
+
+## The IRanges class
+
+While the genomic space of many organisms is subdivided into multiple sequences
+(e.g., chromosomes), many operations on genomic ranges take place within
+individual sequences, where only integer positions matter.
+The `IRanges` class provides a container for such "simple" ranges that are
+defined by two pieces of information:
+
+- the start position of the range
+- the width of the range
+
+The `IRanges()` constructor function take those two pieces of information
+in the arguments `start=` and `width=`.
+For instance, let us create two integer ranges:
+
+- one range starts at position 10 and has width 10
+- one range starts at position 15 and has width 5
+
+```{r}
+IRanges(start = c(10, 15), width = c(10, 5))
+```
+
+Let us note how the object displays not only the _start_ and _width_ information
+that we requested for each range, but also the _end_ position that was naturally
+computed from the other two pieces of information.
+
+A corollary of the above, is that the `IRanges()` constructor function also
+accepts the argument `end=`.
+
+> ## Challenge
+> 
+> Create the same two ranges as above, using the arguments `start=` and `end=`
+> of the `IRanges()` constructor function.
+> 
+> > ## Solution
+> > 
+> > IRanges(start = c(10, 15), end = c(19, 19))
+> > 
+> {: .solution}
+{: .challenge}
+
+## Metadata on IRanges
+
+The `IRanges` class can accommodate metadata information on each range,
+including names - passed to the `names=` argument - and miscellaneous metadata
+passed as named vectors.
+For instance, let us create two ranges named "A" and "B".
+Furthermore, we define metadata fields to store an example of character
+values and numeric values, respectively.
+Both the names and the values of the metadata fields are completely arbitrary
+in this example.
+
+```{r}
+demo_iranges <- IRanges(
+  start = c(10,  15),
+  end   = c(19,  19),
+  names = c("A", "B"),
+  character_metadata = c("control", "target"),
+  numeric_metadata = c(100, 200)
+)
+demo_iranges
+```
+
+## Operations on IRanges
+
+`IRanges` provide the basis for most operations on ranges.
+
+For instance, given two set of ranges - a query set and a subject set - we can
+use the `findOVerlaps()` function to find out which pairs of ranges in the two
+sets overlap with each other.
+
+```{r}
+query_iranges <- IRanges(
+  start = c(8, 16),
+  end   = c(14, 18)
+)
+overlaps_iranges <- findOverlaps(query = query_iranges, subject = demo_iranges)
+overlaps_iranges
+```
+
+The results are returned in the form of a `Hits` object, which we had not
+introduced yet.
+Visibly, the object comprises two integer columns named `queryHits` and
+`subjectHits`.
+Each row in the object reports an overlap between a range in the query set
+and a range in the subject set, with the integer value in each column indicating
+the index of the range in each set involved in the overlap.
+
+In this example, we confirm that the first range in the query set overlaps the
+first range in the subject set; while the second range in the query set overlaps
+both ranges in the subject set.
+
+> ## Going further
+> 
+> For downstream use, the two components can be extracted from `Hits` objects
+> using their names, respectively:
+> ```{r}
+> queryHits(overlaps_iranges)
+> subjectHits(overlaps_iranges)
+> ```
+{: .callout}
+
+## The GRanges class
+
+Having defined integer ranges, the only additional information necessary to
+define genomic ranges is the name the genomic sequence on which each range is
+located.
+
+For instance, let us define two genomic ranges, as follows:
+
+- one genomic range on chromosome 1 (abbreviated "chr1"), from position 10 to 25
+- one genomic range on chromosome 2 (abbreviated "chr2"), from position 20 to 35
+
+To do so, we use the `GRanges()` constructor function.
+We provide the sequence names as a character vector to the argument `seqnames=`,
+and we provide both the start and end position to the argument `ranges=`...
+as an `IRanges`!
+
+```{r}
+demo_granges <- GRanges(
+  seqnames = c("chr1", "chr2"),
+  ranges = IRanges(
+    start = c(10, 20),
+    end   = c(25, 35))
+)
+demo_granges
+```
+
+Let us note how the object displays the sequence names in the `seqnames`
+component, and the ranges in the form `start-end` in the `ranges` component.
+Furthermore, the view above also demonstrate `GRanges` objects possess a
+component called `strand`; the symbol `*` indicates unstranded genomic ranges,
+as we have not provided that information.
+
+The strand information can be supplied to the `strand=` argument, for instance:
+
+```{r}
+demo_granges2 <- GRanges(
+  seqnames = c("chr1", "chr2"),
+  ranges = IRanges(
+    start = c(10, 20),
+    end   = c(25, 35)),
+  strand  = c("+", "-")
+)
+demo_granges2
+```
+
+## Metadata on GRanges
+
+Similarly to `IRanges`, metadata can be passed directly to the `GRanges`
+constructor function.
+For instance:
+
+```{r}
+demo_granges3 <- GRanges(
+  seqnames = c("chr1", "chr2"),
+  ranges = IRanges(
+    start = c(10, 20),
+    end = c(25, 35)),
+  metadata1 = c("control", "target"),
+  metadata2 = c(1, 2)
+)
+demo_granges3
+```
 
 
 [glossary-s4-class]: ../reference.html#s4-class
