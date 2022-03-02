@@ -26,14 +26,27 @@ knitr_fig_path("07-")
 options(width = 120)
 ```
 
+```{r, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(RefManageR)
+library(bibtex)
+bib <- ReadBib("../bibliography.bib")
+BibOptions(
+  longnamesfirst = FALSE,
+  check.entries = FALSE,
+  bib.style = "authoryear",
+  cite.style = "authoryear",
+  max.names = 1,
+  style = "html",
+  hyperlink = "to.bib",
+  dashed = TRUE)
+```
+
 # Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
 
 ```{r, eval=FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
 BiocManager::install("GenomicRanges")
 ```
 
@@ -42,11 +55,66 @@ BiocManager::install("GenomicRanges")
 
 ## Why do we need classes for genomic ranges?
 
-...
+In the era of genomics, many observations are reported as intervals on a genomic
+scale.
+Depending on the nature of the assay, those intervals may represent genes,
+transcripts, exons, single nucleotide polymorphisms (SNPs), transcription factor
+binding sites, or peaks from next-generation sequencing assays such as ChIP-seq
+or ATAC-seq.
+
+Genomic intervals tie those observations of assayed values (e.g., gene
+expression) to a physical location in the genetic material or an organism.
+For instance, those intervals can be used to query physical proximity or overlap
+between assayed features and databases of known regulatory regions.
+
+Often, the final intervals used for reporting measurements are the result
+of combinations and operations on sets of known intervals.
+For instance, in RNA-sequencing, next-generation sequencing reads are often
+counted within individual exons, and those counts are subsequently aggregated
+across all the exons of each gene.
+Separately, promoters are frequently defined as region of arbitrary width,
+partly upstream and/or downstream of known transcription start sites.
+
+Importantly, genomic intervals do not necessarily need to span multiple
+coordinates.
+The notion of interval is meant in the mathematical way, and single-nucleotide
+intervals (e.g., SNPs) can be described as opening and closing at the same
+coordinate (or at the next coordinate, in the case of a right-open interval).
+
+For many organisms, the genetic material is split into a number of separate
+nucleic acid molecules (e.g., chromosomes, plasmids).
+In such cases, genomic intervals must be described both by the name of the
+sequence and the numeric interval of coordinates on that sequence.
+
+The figure below illustrates the example of a gene model that comprises two
+transcripts, and the definition of various genomic ranges relative to that
+gene model.
+For instance - in this specific illustration - unspliced transcripts summarise
+the entire range of coordinates from the start of the first exon to the end of
+the last exon; while the gene region is defined as the set of coordinates
+included in at least one exon of one transcript.
+
+![Genomic ranges.](../fig/bioc-genomicranges.svg)
+
+Adapted from `r Citet(bib, "Huber2015")`.
 
 ## The GenomicRanges package
 
-...
+The `r BiocStyle::Biocpkg("GenomicRanges")` package implements
+[S4 classes][glossary-s4-class] to represent genomic ranges as S4 objects.
+Specifically, the `GRanges` class is designed to store sets of intervals
+including the name of the sequence where features are located as well as the
+range of integer coordinates spanned by the feature in that sequence.
 
+Those S4 classes provide automatic validity-checking functionality,
+and a range of methods implementing common operations on genomic ranges,
+from the calculation of distance between genomic ranges to the identification
+of overlapping genomic ranges.
+
+A short presentation of the basic classes defined in the
+`r BiocStyle::Biocpkg("GenomicRanges")` package is available in one of the
+package vignettes, accessible as `vignette("GenomicRangesIntroduction")`,
+while more detailed information is provided in the other package vignettes,
+accessible as `browseVignettes("GenomicRanges")`.
 
 [glossary-s4-class]: ../reference.html#s4-class
