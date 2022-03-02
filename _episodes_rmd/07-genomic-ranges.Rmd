@@ -230,13 +230,14 @@ In this example, we confirm that the first range in the query set overlaps the
 first range in the subject set; while the second range in the query set overlaps
 both ranges in the subject set.
 
-For downstream use, the two pieces of information can be extracted from the
-object using the names of the components, respectively:
-
-```{r}
-queryHits(overlaps_iranges)
-subjectHits(overlaps_iranges)
-```
-
+> ## Going further
+> 
+> For downstream use, the two components can be extracted from `Hits` objects
+> using their names, respectively:
+> ```{r}
+> queryHits(overlaps_iranges)
+> subjectHits(overlaps_iranges)
+> ```
+{: .callout}
 
 [glossary-s4-class]: ../reference.html#s4-class
