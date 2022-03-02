@@ -285,5 +285,23 @@ demo_granges2 <- GRanges(
 demo_granges2
 ```
 
+## Metadata on GRanges
+
+Similarly to `IRanges`, metadata can be passed directly to the `GRanges`
+constructor function.
+For instance:
+
+```{r}
+demo_granges3 <- GRanges(
+  seqnames = c("chr1", "chr2"),
+  ranges = IRanges(
+    start = c(10, 20),
+    end = c(25, 35)),
+  metadata1 = c("control", "target"),
+  metadata2 = c(1, 2)
+)
+demo_granges3
+```
+
 
 [glossary-s4-class]: ../reference.html#s4-class
