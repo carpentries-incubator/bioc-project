@@ -201,4 +201,42 @@ demo_iranges <- IRanges(
 demo_iranges
 ```
 
+## Operations on IRanges
+
+`IRanges` provide the basis for most operations on ranges.
+
+For instance, given two set of ranges - a query set and a subject set - we can
+use the `findOVerlaps()` function to find out which pairs of ranges in the two
+sets overlap with each other.
+
+```{r}
+query_iranges <- IRanges(
+  start = c(8, 16),
+  end   = c(14, 18)
+)
+overlaps_iranges <- findOverlaps(query = query_iranges, subject = demo_iranges)
+overlaps_iranges
+```
+
+The results are returned in the form of a `Hits` object, which we had not
+introduced yet.
+Visibly, the object comprises two integer columns named `queryHits` and
+`subjectHits`.
+Each row in the object reports an overlap between a range in the query set
+and a range in the subject set, with the integer value in each column indicating
+the index of the range in each set involved in the overlap.
+
+In this example, we confirm that the first range in the query set overlaps the
+first range in the subject set; while the second range in the query set overlaps
+both ranges in the subject set.
+
+For downstream use, the two pieces of information can be extracted from the
+object using the names of the components, respectively:
+
+```{r}
+queryHits(overlaps_iranges)
+subjectHits(overlaps_iranges)
+```
+
+
 [glossary-s4-class]: ../reference.html#s4-class
