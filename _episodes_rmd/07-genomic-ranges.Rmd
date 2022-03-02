@@ -179,5 +179,26 @@ accepts the argument `end=`.
 > {: .solution}
 {: .challenge}
 
+## Metadata on IRanges
+
+The `IRanges` class can accommodate metadata information on each range,
+including names - passed to the `names=` argument - and miscellaneous metadata
+passed as named vectors.
+For instance, let us create two ranges named "A" and "B".
+Furthermore, we define metadata fields to store an example of character
+values and numeric values, respectively.
+Both the names and the values of the metadata fields are completely arbitrary
+in this example.
+
+```{r}
+demo_iranges <- IRanges(
+  start = c(10,  15),
+  end   = c(19,  19),
+  names = c("A", "B"),
+  character_metadata = c("control", "target"),
+  numeric_metadata = c(100, 200)
+)
+demo_iranges
+```
 
 [glossary-s4-class]: ../reference.html#s4-class
