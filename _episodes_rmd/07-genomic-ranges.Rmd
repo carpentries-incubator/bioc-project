@@ -73,7 +73,7 @@ For instance, in RNA-sequencing, next-generation sequencing reads are often
 counted within individual exons, and those counts are subsequently aggregated
 across all the exons of each gene.
 Separately, promoters are frequently defined as region of arbitrary width,
-partly upstream and/or downstream of known transcription start sites.
+partly upstream and/or downstream of known transcription start sites (TSS).
 
 Importantly, genomic intervals do not necessarily need to span multiple
 coordinates.
