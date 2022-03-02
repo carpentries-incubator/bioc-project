@@ -78,7 +78,7 @@ For instance, a function designed to translate nucleic acid sequences into the c
 > {: .solution}
 {: .challenge}
 
-## The Biostrings package
+# The Biostrings package
 
 ## Overview
 

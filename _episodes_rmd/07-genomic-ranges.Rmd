@@ -103,7 +103,9 @@ the entire range of coordinates from the start of the first exon to the end of
 the last exon; while the gene region is defined as the set of coordinates
 included in at least one exon of one transcript.
 
-## The GenomicRanges package
+# The GenomicRanges package
+
+## Overview
 
 The `r BiocStyle::Biocpkg("GenomicRanges")` package implements
 [S4 classes][glossary-s4-class] to represent genomic ranges as S4 objects.
@@ -128,6 +130,54 @@ package vignettes, accessible as `vignette("GenomicRangesIntroduction")`,
 while more detailed information is provided in the other package vignettes,
 accessible as `browseVignettes("GenomicRanges")`.
 
+## First steps
+
+To get started, we load the package.
+
+```{r, message=FALSE, warning=FALSE}
+library(GenomicRanges)
+```
+
 ## The IRanges class
+
+While the genomic space of many organisms is subdivided into multiple sequences
+(e.g., chromosomes), many operations on genomic ranges take place within
+individual sequences, where only integer positions matter.
+The `IRanges` class provides a container for such "simple" ranges that are
+defined by two pieces of information:
+
+- the start position of the range
+- the width of the range
+
+The `IRanges()` constructor function take those two pieces of information
+in the arguments `start=` and `width=`.
+For instance, let us create two integer ranges:
+
+- one range starts at position 10 and has width 10
+- one range starts at position 15 and has width 5
+
+```{r}
+IRanges(start = c(10, 15), width = c(10, 5))
+```
+
+Let us note how the object displays not only the _start_ and _width_ information
+that we requested for each range, but also the _end_ position that was naturally
+computed from the other two pieces of information.
+
+A corollary of the above, is that the `IRanges()` constructor function also
+accepts the argument `end=`.
+
+> ## Challenge
+> 
+> Create the same two ranges as above, using the arguments `start=` and `end=`
+> of the `IRanges()` constructor function.
+> 
+> > ## Solution
+> > 
+> > IRanges(start = c(10, 15), end = c(19, 19))
+> > 
+> {: .solution}
+{: .challenge}
+
 
 [glossary-s4-class]: ../reference.html#s4-class
