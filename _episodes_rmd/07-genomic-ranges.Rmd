@@ -45,8 +45,13 @@ BibOptions(
 # Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is installed before trying to use it; otherwise we install it.
+Then we use the `BiocManager::install()` function to install the necessary packages.
 
-```{r, eval=FALSE}
+```{r, message=FALSE, warning=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
 BiocManager::install("GenomicRanges")
 ```
 
@@ -122,5 +127,7 @@ A short presentation of the basic classes defined in the
 package vignettes, accessible as `vignette("GenomicRangesIntroduction")`,
 while more detailed information is provided in the other package vignettes,
 accessible as `browseVignettes("GenomicRanges")`.
+
+## The IRanges class
 
 [glossary-s4-class]: ../reference.html#s4-class
