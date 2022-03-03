@@ -217,14 +217,16 @@ While the genomic space of many organisms is subdivided into multiple sequences
 (e.g., chromosomes), many operations on genomic ranges take place within
 individual sequences, where only integer positions matter.
 The `IRanges` class provides a container for such "simple" ranges that are
-defined by two pieces of information:
+defined by two out of three pieces of information:
 
 - the start position of the range
 - the width of the range
+- the end position of the range
 
-The `IRanges()` constructor function take those two pieces of information
-in the arguments `start=` and `width=`.
-For instance, let us create two integer ranges:
+The `IRanges()` constructor function accepts those three pieces of information
+in the arguments `start=`, `width=`, and `end=`.
+For instance, let us create two integer ranges from their start position and
+width:
 
 - one range starts at position 10 and has width 10
 - one range starts at position 15 and has width 5
@@ -234,11 +236,8 @@ IRanges(start = c(10, 15), width = c(10, 5))
 ```
 
 Let us note how the object displays not only the _start_ and _width_ information
-that we requested for each range, but also the _end_ position that was naturally
+that we requested for each range, but also the _end_ position that is naturally
 computed from the other two pieces of information.
-
-A corollary of the above, is that the `IRanges()` constructor function also
-accepts the argument `end=`.
 
 > ## Challenge
 > 
@@ -247,7 +246,7 @@ accepts the argument `end=`.
 > 
 > > ## Solution
 > > 
-> > IRanges(start = c(10, 15), end = c(19, 19))
+> > 
 > > 
 > {: .solution}
 {: .challenge}
