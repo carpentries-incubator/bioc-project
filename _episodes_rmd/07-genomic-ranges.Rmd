@@ -117,6 +117,14 @@ However, in genomics, integer coordinates are typically used to represent the
 location of monomers (e.g., nucleotide, amino acid) in the sequence of polymers
 (e.g., nucleic acid, protein).
 
+You may come across packages, databases, and programming languages that use
+different rules to define intervals.
+In R, indexing is 1-based - meaning that the first position in a sequence is
+1 -, which contrasts with Python that is 0-based - the index of the first
+position in a sequence is 0.
+Similarly, references files in the UCSC Genome Browser are 0-based, while
+those of the Ensembl Genome Browser are 1-based.
+
 The definition of intervals in a shared coordinate system allows calculations
 such as the distance between two intervals - generally calculated as the
 distance between the two closest edges of those intervals -, and the
