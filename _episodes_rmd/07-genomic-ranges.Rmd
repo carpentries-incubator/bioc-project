@@ -161,7 +161,7 @@ strands of the same DNA sequence may not be considered to overlap for the
 purpose of strand-specific next-generation sequencing (NGS) assays.
 
 Genomic ranges are closed intervals - the start and end positions are included
-in the interval -; in the example of nucleic acids, the start position indicates
+in the interval; in the example of nucleic acids, the start position indicates
 the first nucleotide in the interval, and the end position indicates the last
 nucleotide in the interval.
 
@@ -173,6 +173,8 @@ are located (here, "chr1"), and the positions of start and end in that sequence.
 Here, numeric positions are not explicitly shown, but implied by the sequence of
 nucleic acids and the arrow indicating coordinates increasing from the left to
 the right.
+In this example, genomic ranges can be used to describe individual exons,
+with metadata grouping those exons into transcripts and genes.
 
 # The GenomicRanges package
 
