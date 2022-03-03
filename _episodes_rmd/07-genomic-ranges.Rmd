@@ -305,10 +305,12 @@ both ranges in the subject set.
 > 
 > For downstream use, the two components can be extracted from `Hits` objects
 > using their names, respectively:
+> 
 > ```{r}
 > queryHits(overlaps_iranges)
 > subjectHits(overlaps_iranges)
 > ```
+> 
 {: .callout}
 
 ## The GRanges class
