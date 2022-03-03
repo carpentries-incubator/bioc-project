@@ -103,6 +103,36 @@ the entire range of coordinates from the start of the first exon to the end of
 the last exon; while the gene region is defined as the set of coordinates
 included in at least one exon of one transcript.
 
+## A brief introduction to intervals
+
+Intervals are described in mathematical terms using a start and an end position
+on an axis of continuous coordinates.
+The interval then comprises all the real numbers between those two numbers,
+and the width of each interval can be computed from the difference between the
+coordinates of the start and end positions.
+
+Generally speaking, the start and end position can be any rational number,
+including floating-point numbers.
+However, in genomics, integer coordinates are typically used to represent the
+location of monomers (e.g., nucleotide, amino acid) in the sequence of polymers
+(e.g., nucleic acid, protein).
+
+The definition of intervals in a shared coordinate system allows calculations
+such as the distance between two intervals - generally calculated as the
+distance between the two closest edges of those intervals -, and the
+identification of overlapping intervals.
+
+![Example of intervals.](../fig/intervals.svg)
+
+**Example of intervals.**
+Three intervals named A, B, and C, are represented.
+Interval A starts at position 5 and ends at position 9, for a width of 4 units;
+interval B starts at position 1 and ends at position 3, for a width of 2 units;
+interval C starts at position 3 and ends at position 6, for a width of 3 units.
+Intervals A and C overlap, from coordinates 5 to 6;
+while intervals B and C meet at coordinate 3, but do not strictly overlap each
+other.
+
 # The GenomicRanges package
 
 ## Overview
