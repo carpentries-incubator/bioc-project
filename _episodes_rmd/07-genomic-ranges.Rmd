@@ -103,6 +103,79 @@ the entire range of coordinates from the start of the first exon to the end of
 the last exon; while the gene region is defined as the set of coordinates
 included in at least one exon of one transcript.
 
+## A brief introduction to intervals
+
+Intervals are described in mathematical terms using a start and an end position
+on an axis of continuous coordinates.
+The interval then comprises all the real numbers between those two numbers,
+and the width of each interval can be computed from the difference between the
+coordinates of the start and end positions.
+
+Generally speaking, the start and end position can be any rational number,
+including floating-point numbers.
+However, in genomics, integer coordinates are typically used to represent the
+location of monomers (e.g., nucleotide, amino acid) in the sequence of polymers
+(e.g., nucleic acid, protein).
+
+You may come across packages, databases, and programming languages that use
+different rules to define intervals.
+In R, indexing is 1-based - meaning that the first position in a sequence is
+1 -, which contrasts with Python that is 0-based - the index of the first
+position in a sequence is 0.
+Similarly, references files in the UCSC Genome Browser are 0-based, while
+those of the Ensembl Genome Browser are 1-based.
+
+The definition of intervals in a shared coordinate system allows calculations
+such as the distance between two intervals - generally calculated as the
+distance between the two closest edges of those intervals -, and the
+identification of overlapping intervals.
+
+![Example of intervals.](../fig/intervals.svg)
+
+**Example of intervals.**
+Three intervals named A, B, and C, are represented.
+Interval A starts at position 5 and ends at position 9, for a width of 4 units;
+interval B starts at position 1 and ends at position 3, for a width of 2 units;
+interval C starts at position 3 and ends at position 6, for a width of 3 units.
+Intervals A and C overlap, from coordinates 5 to 6;
+while intervals B and C meet at coordinate 3, but do not strictly overlap each
+other.
+
+## Genomic intervals
+
+Genomic intervals essentially extend the notion of mathematical intervals on
+sets of biological sequences (e.g., chromosomes).
+In other words, genomic ranges combine the name of the biological sequence on
+which they are located with the mathematical range of coordinates that the
+intervals span in that sequence.
+This is key to distinguish genomic features that span comparable intervals
+on different biological sequences.
+
+Furthermore, the double-stranded nature of DNA sequences also adds the notion of
+strandedness to genomic ranges.
+If known, the strand information of genomic features is a key piece of
+information that should be tracked, so that it may be used for downstream
+analyses.
+For instance, genomic ranges spanning a common range of coordinates on opposite
+strands of the same DNA sequence may not be considered to overlap for the
+purpose of strand-specific next-generation sequencing (NGS) assays.
+
+Genomic ranges are closed intervals - the start and end positions are included
+in the interval; in the example of nucleic acids, the start position indicates
+the first nucleotide in the interval, and the end position indicates the last
+nucleotide in the interval.
+
+![Example of genomic intervals.](../fig/genomic-intervals.svg)
+
+**Example of genomic ranges.**
+Genomic ranges are defined by the name of the biological sequence in which they
+are located (here, "chr1"), and the positions of start and end in that sequence.
+Here, numeric positions are not explicitly shown, but implied by the sequence of
+nucleic acids and the arrow indicating coordinates increasing from the left to
+the right.
+In this example, genomic ranges can be used to describe individual exons,
+with metadata grouping those exons into transcripts and genes.
+
 # The GenomicRanges package
 
 ## Overview
@@ -144,14 +217,16 @@ While the genomic space of many organisms is subdivided into multiple sequences
 (e.g., chromosomes), many operations on genomic ranges take place within
 individual sequences, where only integer positions matter.
 The `IRanges` class provides a container for such "simple" ranges that are
-defined by two pieces of information:
+defined by two out of three pieces of information:
 
 - the start position of the range
 - the width of the range
+- the end position of the range
 
-The `IRanges()` constructor function take those two pieces of information
-in the arguments `start=` and `width=`.
-For instance, let us create two integer ranges:
+The `IRanges()` constructor function accepts those three pieces of information
+in the arguments `start=`, `width=`, and `end=`.
+For instance, let us create two integer ranges from their start position and
+width:
 
 - one range starts at position 10 and has width 10
 - one range starts at position 15 and has width 5
@@ -161,11 +236,8 @@ IRanges(start = c(10, 15), width = c(10, 5))
 ```
 
 Let us note how the object displays not only the _start_ and _width_ information
-that we requested for each range, but also the _end_ position that was naturally
+that we requested for each range, but also the _end_ position that is naturally
 computed from the other two pieces of information.
-
-A corollary of the above, is that the `IRanges()` constructor function also
-accepts the argument `end=`.
 
 > ## Challenge
 > 
@@ -174,7 +246,7 @@ accepts the argument `end=`.
 > 
 > > ## Solution
 > > 
-> > IRanges(start = c(10, 15), end = c(19, 19))
+> > 
 > > 
 > {: .solution}
 {: .challenge}
@@ -234,10 +306,12 @@ both ranges in the subject set.
 > 
 > For downstream use, the two components can be extracted from `Hits` objects
 > using their names, respectively:
+> 
 > ```{r}
 > queryHits(overlaps_iranges)
 > subjectHits(overlaps_iranges)
 > ```
+> 
 {: .callout}
 
 ## The GRanges class
