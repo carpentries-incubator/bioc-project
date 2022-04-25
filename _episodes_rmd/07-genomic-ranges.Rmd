@@ -193,9 +193,10 @@ As such, a `GRanges` object is merely the combination of an `IRanges` object and
 a vector of sequence names.
 
 Those S4 classes provide automatic validity-checking functionality,
-and a range of methods implementing common operations on genomic ranges,
-from the calculation of distance between genomic ranges to the identification
-of overlapping genomic ranges.
+and a range of methods implementing common operations on integer intervals
+and genomic ranges,
+from the calculation of distance between pairs of intervals to the
+identification of overlapping genomic ranges.
 
 A short presentation of the basic classes defined in the
 `r BiocStyle::Biocpkg("GenomicRanges")` package is available in one of the
@@ -246,7 +247,9 @@ computed from the other two pieces of information.
 > 
 > > ## Solution
 > > 
-> > 
+> > ```{r}
+> > IRanges(start = c(10, 15), end = c(19, 19))
+> > ```
 > > 
 > {: .solution}
 {: .challenge}
