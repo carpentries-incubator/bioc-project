@@ -276,6 +276,18 @@ demo_iranges <- IRanges(
 demo_iranges
 ```
 
+The metadata columns can be extracted as a `DataFrame` using the function `mcols()`, as is "metadata columns".
+
+```{r}
+mcols(demo_iranges)
+```
+
+The character vector of names can be extracted using the function `names()`.
+
+```{r}
+names(demo_iranges)
+```
+
 ## Operations on IRanges
 
 `IRanges` provide the basis for most operations on ranges.
