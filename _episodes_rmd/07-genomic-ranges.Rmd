@@ -277,26 +277,26 @@ Both the names and the values of the metadata fields are completely arbitrary
 in this example.
 
 ```{r}
-demo_iranges <- IRanges(
+demo_with_metadata <- IRanges(
   start = c(10,  15),
   end   = c(19,  19),
   names = c("A", "B"),
   character_metadata = c("control", "target"),
   numeric_metadata = c(100, 200)
 )
-demo_iranges
+demo_with_metadata
 ```
 
 The metadata columns can be extracted as a `DataFrame` using the function `mcols()`, as is "metadata columns".
 
 ```{r}
-mcols(demo_iranges)
+mcols(demo_with_metadata)
 ```
 
 The character vector of names can be extracted using the function `names()`.
 
 ```{r}
-names(demo_iranges)
+names(demo_with_metadata)
 ```
 
 ## Operations on IRanges
