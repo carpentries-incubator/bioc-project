@@ -60,36 +60,37 @@ BiocManager::install("GenomicRanges")
 
 ## Why do we need classes for genomic ranges?
 
-In the era of genomics, many observations are reported as intervals on a genomic
-scale.
-Depending on the nature of the assay, those intervals may represent genes,
+In the era of genomics, many observations are reported as ranges of coordinates
+- i.e., intervals - on a genomic scale.
+Depending on the nature of the assay, those genomic ranges may represent genes,
 transcripts, exons, single nucleotide polymorphisms (SNPs), transcription factor
 binding sites, or peaks from next-generation sequencing assays such as ChIP-seq
 or ATAC-seq.
 
-Genomic intervals tie those observations of assayed values (e.g., gene
+Genomic ranges tie those observations of assayed values (e.g., gene
 expression) to a physical location in the genome or an organism.
-For instance, those intervals can be used to query physical proximity or overlap
-between assayed features and databases of known regulatory regions.
+For instance, those genomic ranges can be used to query physical proximity or
+overlap between assayed features and databases of known regulatory regions.
 
-Often, the final intervals used for reporting measurements are the result
-of combinations and operations on sets of known intervals.
+Often, the final genomic ranges used for reporting measurements are the result
+of combinations and operations on sets of genomic ranges in databases of
+known genomic features.
 For instance, in RNA-sequencing, next-generation sequencing reads are often
 counted within individual exons, and those counts are subsequently aggregated
 across all the exons of each gene.
 Separately, promoters are frequently defined as region of arbitrary width,
 partly upstream and/or downstream of known transcription start sites (TSS).
 
-Importantly, genomic intervals do not necessarily need to span multiple
+Importantly, genomic ranges do not necessarily need to span multiple
 coordinates.
-The notion of interval is meant in the mathematical way, and single-nucleotide
-intervals (e.g., SNPs) can be described as opening and closing at the same
+The notion of range is meant in the mathematical way, and single-nucleotide
+genomic ranges (e.g., SNPs) can be described as opening and closing at the same
 coordinate (or at the next coordinate, in the case of a right-open interval).
 
 For many organisms, the genetic material is split into a number of separate
 nucleic acid molecules (e.g., chromosomes, plasmids).
-In such cases, genomic intervals must be described both by the name of the
-sequence and the numeric interval of coordinates on that sequence.
+As such, genomic ranges are described by the name of the sequence and
+the numeric interval of coordinates on that sequence.
 
 ![Example uses of the GenomicRanges algebra.](../fig/bioc-genomicranges.svg)
 
