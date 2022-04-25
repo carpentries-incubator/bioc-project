@@ -233,7 +233,8 @@ width:
 - one range starts at position 15 and has width 5
 
 ```{r}
-IRanges(start = c(10, 15), width = c(10, 5))
+demo_iranges <- IRanges(start = c(10, 15), width = c(10, 5))
+demo_iranges
 ```
 
 Let us note how the object displays not only the _start_ and _width_ information
@@ -253,6 +254,16 @@ computed from the other two pieces of information.
 > > 
 > {: .solution}
 {: .challenge}
+
+The start and end positions as well as the width of every interval can be
+extracted as numeric vector using the functions `start()`, `end()` and
+`width()`, respectively.
+
+```{r}
+start(demo_iranges)
+end(demo_iranges)
+width(demo_iranges)
+```
 
 ## Metadata on IRanges
 
