@@ -247,7 +247,9 @@ computed from the other two pieces of information.
 > 
 > > ## Solution
 > > 
-> > 
+> > ```{r}
+> > IRanges(start = c(10, 15), end = c(19, 19))
+> > ```
 > > 
 > {: .solution}
 {: .challenge}
