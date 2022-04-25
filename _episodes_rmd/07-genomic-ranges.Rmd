@@ -318,8 +318,8 @@ overlaps_iranges
 
 The results are returned in the form of a `Hits` object, which we had not
 introduced yet.
-Visibly, the object comprises two integer columns named `queryHits` and
-`subjectHits`.
+Visibly, the object can b visualised as a table that comprises two integer
+columns named `queryHits` and `subjectHits`.
 Each row in the object reports an overlap between one range in the query set
 and one range in the subject set, with the integer value in each column
 indicating the index of the range in each set involved in the overlap.
