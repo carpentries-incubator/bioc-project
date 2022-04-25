@@ -27,7 +27,7 @@ keypoints:
 # Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
-First, we check that the *[BiocManager](https://bioconductor.org/packages/3.14/BiocManager)* package is installed before trying to use it; otherwise we install it.
+First, we check that the *[BiocManager](https://bioconductor.org/packages/3.15/BiocManager)* package is installed before trying to use it; otherwise we install it.
 Then we use the `BiocManager::install()` function to install the necessary packages.
 
 
@@ -164,7 +164,7 @@ with metadata grouping those exons into transcripts and genes.
 
 ## Overview
 
-The *[GenomicRanges](https://bioconductor.org/packages/3.14/GenomicRanges)* package implements
+The *[GenomicRanges](https://bioconductor.org/packages/3.15/GenomicRanges)* package implements
 [S4 classes][glossary-s4-class] to represent genomic ranges as S4 objects.
 
 Specifically, the `GRanges` class is designed to store a set of intervals
@@ -177,12 +177,13 @@ As such, a `GRanges` object is merely the combination of an `IRanges` object and
 a vector of sequence names.
 
 Those S4 classes provide automatic validity-checking functionality,
-and a range of methods implementing common operations on genomic ranges,
-from the calculation of distance between genomic ranges to the identification
-of overlapping genomic ranges.
+and a range of methods implementing common operations on integer intervals
+and genomic ranges,
+from the calculation of distance between pairs of intervals to the
+identification of overlapping genomic ranges.
 
 A short presentation of the basic classes defined in the
-*[GenomicRanges](https://bioconductor.org/packages/3.14/GenomicRanges)* package is available in one of the
+*[GenomicRanges](https://bioconductor.org/packages/3.15/GenomicRanges)* package is available in one of the
 package vignettes, accessible as `vignette("GenomicRangesIntroduction")`,
 while more detailed information is provided in the other package vignettes,
 accessible as `browseVignettes("GenomicRanges")`.
@@ -246,6 +247,21 @@ computed from the other two pieces of information.
 > > ## Solution
 > > 
 > > 
+> > ~~~
+> > IRanges(start = c(10, 15), end = c(19, 19))
+> > ~~~
+> > {: .language-r}
+> > 
+> > 
+> > 
+> > ~~~
+> > IRanges object with 2 ranges and 0 metadata columns:
+> >           start       end     width
+> >       <integer> <integer> <integer>
+> >   [1]        10        19        10
+> >   [2]        15        19         5
+> > ~~~
+> > {: .output}
 > > 
 > {: .solution}
 {: .challenge}
