@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 841.9 595.3" style="enable-background:new 0 0 841.9 595.3;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#EDEDED;stroke:#575756;stroke-miterlimit:10;}
 	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st2{font-family:'MyriadPro-Regular';}
+	.st2{font-family:'ArialMT';}
 	.st3{font-size:12px;}
 	.st4{fill:#009640;}
 </style>
@@ -15,23 +15,23 @@
 <rect x="332.1" y="199.3" class="st0" width="176.3" height="24.7"/>
 <rect x="67.5" y="498.3" class="st0" width="182" height="52.8"/>
 <rect x="67.5" y="47.2" class="st1" width="182" height="27.8"/>
-<text transform="matrix(1 0 0 1 136.8233 64.4008)" class="st2 st3">S4Class1</text>
-<text transform="matrix(1 0 0 1 79.0014 105.8268)" class="st2 st3">SlotName1</text>
-<text transform="matrix(1 0 0 1 79.001 127.1003)" class="st2 st3">SlotName2</text>
-<text transform="matrix(1 0 0 1 176.5562 105.8272)" class="st2 st3">SlotType1</text>
-<text transform="matrix(1 0 0 1 176.5561 127.2323)" class="st2 st3">SlotType2</text>
+<text transform="matrix(1 0 0 1 132.7984 64.4008)" class="st2 st3">S4Class1</text>
+<text transform="matrix(1 0 0 1 76.9023 105.8268)" class="st2 st3">SlotName1</text>
+<text transform="matrix(1 0 0 1 76.9019 127.1003)" class="st2 st3">SlotName2</text>
+<text transform="matrix(1 0 0 1 174.501 105.8272)" class="st2 st3">SlotType1</text>
+<text transform="matrix(1 0 0 1 174.5009 127.2323)" class="st2 st3">SlotType2</text>
 <rect x="67.5" y="75.1" class="st1" width="182" height="71.6"/>
 <rect x="67.5" y="265.2" class="st1" width="182" height="27.8"/>
-<text transform="matrix(1 0 0 1 136.8233 282.4209)" class="st2 st3">S4Class2</text>
-<text transform="matrix(1 0 0 1 79.0014 351.3167)" class="st2 st3">SlotName1</text>
-<text transform="matrix(1 0 0 1 79.001 372.5903)" class="st2 st3">SlotName2</text>
-<text transform="matrix(1 0 0 1 176.5562 351.3171)" class="st2 st3">SlotType1</text>
-<text transform="matrix(1 0 0 1 176.5561 372.7222)" class="st2 st3">SlotType2</text>
+<text transform="matrix(1 0 0 1 132.7984 282.4209)" class="st2 st3">S4Class2</text>
+<text transform="matrix(1 0 0 1 76.9023 351.3167)" class="st2 st3">SlotName1</text>
+<text transform="matrix(1 0 0 1 76.9019 372.5903)" class="st2 st3">SlotName2</text>
+<text transform="matrix(1 0 0 1 174.501 351.3171)" class="st2 st3">SlotType1</text>
+<text transform="matrix(1 0 0 1 174.5009 372.7222)" class="st2 st3">SlotType2</text>
 <rect x="67.5" y="320.5" class="st1" width="182" height="93.7"/>
 <rect x="67.5" y="293.1" class="st1" width="182" height="27.8"/>
-<text transform="matrix(1 0 0 1 113.0098 310.2621)" class="st2 st3">contains: S4Class1</text>
-<text transform="matrix(1 0 0 1 79.0663 394.7279)" class="st4 st2 st3">SlotName3</text>
-<text transform="matrix(1 0 0 1 176.6214 394.8599)" class="st4 st2 st3">SlotType3</text>
+<text transform="matrix(1 0 0 1 107.1168 310.2621)" class="st2 st3">contains: S4Class1</text>
+<text transform="matrix(1 0 0 1 76.9672 394.7279)" class="st4 st2 st3">SlotName3</text>
+<text transform="matrix(1 0 0 1 174.5662 394.8599)" class="st4 st2 st3">SlotType3</text>
 <g>
 	<g>
 		<line class="st1" x1="158.5" y1="188.5" x2="158.5" y2="258.1"/>
@@ -40,14 +40,14 @@
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 171.3128 230.3845)" class="st2 st3">inheritance</text>
+<text transform="matrix(1 0 0 1 170.2976 230.3845)" class="st2 st3">inheritance</text>
 <rect x="67.5" y="146.6" class="st1" width="182" height="41.9"/>
 <text transform="matrix(1 0 0 1 79.5704 168.7648)" class="st2 st3">Validity rules for S4Class1</text>
 <rect x="67.5" y="414.3" class="st1" width="182" height="66"/>
 <text transform="matrix(1 0 0 1 79.5704 436.4163)" class="st2 st3">Validity rules for S4Class1</text>
 <text transform="matrix(1 0 0 1 79.5048 458.7774)" class="st4 st2 st3">Validity rules for S4Class2</text>
 <rect x="470" y="47.2" class="st1" width="182" height="27.8"/>
-<text transform="matrix(1 0 0 1 529.2487 64.4008)" class="st2 st3">S4Generic1()</text>
+<text transform="matrix(1 0 0 1 525.3615 64.4008)" class="st2 st3">S4Generic1()</text>
 <g>
 	<g>
 		<path d="M483.6,94.7l1.6-0.1h3.1v0.7h-4.7V94.7z M485.2,94.2c0-1.3,0.7-2.2,2.2-2.2c0.5,0,1,0.1,1.5,0.3l-0.2,0.7
@@ -94,9 +94,9 @@
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 563.6584 185.1443)" class="st2 st3">method dispatch</text>
+<text transform="matrix(1 0 0 1 562.3806 185.1443)" class="st2 st3">method dispatch</text>
 <rect x="329.2" y="264.2" class="st1" width="182" height="27.8"/>
-<text transform="matrix(1 0 0 1 396.0148 281.4209)" class="st2 st3">Method 1</text>
+<text transform="matrix(1 0 0 1 395.172 281.4209)" class="st2 st3">Method 1</text>
 <g>
 	<g>
 		<path d="M342.5,367.9l1.6-0.1h3.1v0.7h-4.7V367.9z M344,367.3c0-1.3,0.7-2.2,2.2-2.2c0.5,0,1,0.1,1.5,0.3l-0.2,0.7
@@ -156,7 +156,7 @@
 </g>
 <rect x="329.2" y="342.4" class="st1" width="182" height="79.4"/>
 <rect x="606.4" y="264.2" class="st1" width="182" height="27.8"/>
-<text transform="matrix(1 0 0 1 673.2415 281.4209)" class="st2 st3">Method 2</text>
+<text transform="matrix(1 0 0 1 672.3987 281.4209)" class="st2 st3">Method 2</text>
 <g>
 	<g>
 		<line class="st1" x1="697.4" y1="230.9" x2="697.4" y2="256.6"/>
@@ -218,7 +218,7 @@
 	</g>
 </g>
 <rect x="329.2" y="292.1" class="st1" width="182" height="50.1"/>
-<text transform="matrix(1 0 0 1 341.2819 314.2284)"><tspan x="0" y="0" class="st2 st3">signature:</tspan><tspan x="0" y="14.4" class="st2 st3">- x: </tspan><tspan x="16.8" y="14.4" class="st4 st2 st3">S4Class1</tspan></text>
+<text transform="matrix(1 0 0 1 341.2819 314.2284)"><tspan x="0" y="0" class="st2 st3">signature:</tspan><tspan x="0" y="14.4" class="st2 st3">- x: </tspan><tspan x="20" y="14.4" class="st4 st2 st3">S4Class1</tspan></text>
 <g>
 	<g>
 		<path d="M619.7,368.4l1.6-0.1h3.1v0.7h-4.7V368.4z M621.2,367.9c0-1.3,0.7-2.2,2.2-2.2c0.5,0,1,0.1,1.5,0.3l-0.2,0.7
@@ -279,7 +279,7 @@
 </g>
 <rect x="606.4" y="342.9" class="st1" width="182" height="79.4"/>
 <rect x="606.4" y="292.6" class="st1" width="182" height="50.1"/>
-<text transform="matrix(1 0 0 1 618.5087 314.733)"><tspan x="0" y="0" class="st2 st3">signature:</tspan><tspan x="0" y="14.4" class="st2 st3">- x: </tspan><tspan x="16.8" y="14.4" class="st4 st2 st3">S4Class2</tspan></text>
+<text transform="matrix(1 0 0 1 618.5087 314.733)"><tspan x="0" y="0" class="st2 st3">signature:</tspan><tspan x="0" y="14.4" class="st2 st3">- x: </tspan><tspan x="20" y="14.4" class="st4 st2 st3">S4Class2</tspan></text>
 <g>
 	<g>
 		<path d="M74.2,514l3.3-2.2v0l-3.3-2.2v-0.9l4.1,2.8v0.7l-4.1,2.8V514z"/>

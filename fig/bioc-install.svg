@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 623.6 255.1" style="enable-background:new 0 0 623.6 255.1;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
-	.st1{font-family:'MyriadPro-Regular';}
+	.st1{font-family:'ArialMT';}
 	.st2{font-size:16px;}
 	.st3{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st4{font-size:12px;}
 </style>
 <rect x="35.2" y="213.1" class="st0" width="166" height="15.8"/>
-<text transform="matrix(1 0 0 1 43.6597 226.7276)" class="st1 st2">utils::install.packages()</text>
-<text transform="matrix(1 0 0 1 99.0589 43.261)" class="st1 st2">CRAN</text>
+<text transform="matrix(1 0 0 1 37.2403 226.7754)" class="st1 st2">utils::install.packages()</text>
+<text transform="matrix(1 0 0 1 95.4944 43.261)" class="st1 st2">CRAN</text>
 <g>
 	<g>
 		<line class="st3" x1="118.6" y1="202.5" x2="118.6" y2="104.7"/>
@@ -36,21 +36,21 @@
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 74.2992 89.6788)" class="st1 st2">BiocManager</text>
-<text transform="matrix(1 0 0 1 134.5753 109.2844)" class="st1 st4">...</text>
-<text transform="matrix(1 0 0 1 94.2976 109.2839)" class="st1 st4">...</text>
+<text transform="matrix(1 0 0 1 71.0257 89.6788)" class="st1 st2">BiocManager</text>
+<text transform="matrix(1 0 0 1 133.2999 109.2844)" class="st1 st4">...</text>
+<text transform="matrix(1 0 0 1 93.0222 109.2839)" class="st1 st4">...</text>
 <ellipse class="st3" cx="118.2" cy="92" rx="77.1" ry="36.6"/>
-<rect x="354.6" y="213.1" class="st0" width="148.3" height="15.8"/>
-<text transform="matrix(1 0 0 1 357.2952 226.7276)" class="st1 st2">BiocManager::install()</text>
-<text transform="matrix(1 0 0 1 322.1712 48.7297)" class="st1 st2">CRAN</text>
-<text transform="matrix(1 0 0 1 297.4118 95.1475)" class="st1 st2">BiocManager</text>
-<text transform="matrix(1 0 0 1 337.546 114.7535)" class="st1 st4">...</text>
-<text transform="matrix(1 0 0 1 317.4102 114.7525)" class="st1 st4">...</text>
+<rect x="354.6" y="213.1" class="st0" width="161.3" height="15.8"/>
+<text transform="matrix(1 0 0 1 357.8772 226.7754)" class="st1 st2">BiocManager::install()</text>
+<text transform="matrix(1 0 0 1 318.6068 48.7297)" class="st1 st2">CRAN</text>
+<text transform="matrix(1 0 0 1 294.1383 95.1475)" class="st1 st2">BiocManager</text>
+<text transform="matrix(1 0 0 1 336.2706 114.7535)" class="st1 st4">...</text>
+<text transform="matrix(1 0 0 1 316.1348 114.7525)" class="st1 st4">...</text>
 <ellipse class="st3" cx="341.3" cy="97.5" rx="77.1" ry="36.6"/>
-<text transform="matrix(1 0 0 1 474.6098 50.3058)" class="st1 st2">Bioconductor</text>
-<text transform="matrix(1 0 0 1 493.6023 95.1473)" class="st1 st2">Biobase</text>
-<text transform="matrix(1 0 0 1 516.0563 114.7537)" class="st1 st4">...</text>
-<text transform="matrix(1 0 0 1 536.1983 114.7542)" class="st1 st4">...</text>
+<text transform="matrix(1 0 0 1 473.0902 50.3058)" class="st1 st2">Bioconductor</text>
+<text transform="matrix(1 0 0 1 490.8757 95.1473)" class="st1 st2">Biobase</text>
+<text transform="matrix(1 0 0 1 514.7809 114.7537)" class="st1 st4">...</text>
+<text transform="matrix(1 0 0 1 534.9229 114.7542)" class="st1 st4">...</text>
 <ellipse class="st3" cx="519.8" cy="99.1" rx="77.1" ry="36.6"/>
 <g>
 	<g>
