@@ -300,6 +300,16 @@ The character vector of names can be extracted using the function `names()`.
 names(demo_with_metadata)
 ```
 
+Objects of the `IRanges` family extend the `Vector` class, and are handled as
+unidimensional vectors in terms of indexing.
+As such, individual ranges can be extracted by integer index or name like any
+regular vector.
+
+```{r}
+demo_with_metadata[1]
+demo_with_metadata["B"]
+```
+
 ## Operations on IRanges
 
 `IRanges` provide the basis for most operations on ranges.
