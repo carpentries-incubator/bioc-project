@@ -381,8 +381,8 @@ For instance, let us define two genomic ranges, as follows:
 
 To do so, we use the `GRanges()` constructor function.
 We provide the sequence names as a character vector to the argument `seqnames=`,
-and we provide both the start and end position to the argument `ranges=`...
-as an `IRanges`!
+and we provide both the start and end position to the argument `ranges=`
+as an `IRanges` object.
 
 ```{r}
 demo_granges <- GRanges(
