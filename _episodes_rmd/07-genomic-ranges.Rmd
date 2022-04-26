@@ -413,6 +413,37 @@ demo_granges2 <- GRanges(
 demo_granges2
 ```
 
+Finally, the examples above also demonstrate that `GRanges` objects include a
+component called `seqinfo`, which is used to store information about each
+sequence that may be represented in the `seqnames` component.
+In the latest example above, we have not provide any information about any
+sequence.
+As such, the `seqinfo` component was automatically populated with the names
+of the sequences that we used to create the object, while the remaining
+pieces of information were left unspecified, as `NA`.
+
+```{r}
+seqinfo(demo_granges2)
+```
+
+The example above reveals that information about sequences include not only
+their respective name and length, but also whether they represent a circular
+polymer (e.g., plasmid), and the name of the genome that they are part of.
+
+This information can be provided directly to the constructor when the object
+is created, or edited on an existing object using the `seqinfo()` accessor and
+the `Seqinfo()` constructor:
+
+```{r}
+seqinfo(demo_granges2) <-  Seqinfo(
+    seqnames = c("chr1", "chr2"),
+    seqlengths = c(1234, 5678),
+    isCircular = c(FALSE, TRUE),
+    genome = c("homo_sapiens", "homo_sapiens")
+)
+demo_granges2
+```
+
 ## Metadata on GRanges
 
 Similarly to `IRanges`, metadata can be passed directly to the `GRanges`
