@@ -108,7 +108,7 @@ included in at least one exon of one transcript.
 
 Intervals are described in mathematical terms using a start and an end position
 on an axis of continuous coordinates.
-The interval then comprises all the real numbers between those two numbers,
+The interval then comprises all the real numbers between those two coordinates,
 and the width of each interval can be computed from the difference between the
 coordinates of the start and end positions.
 
