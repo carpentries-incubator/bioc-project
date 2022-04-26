@@ -60,8 +60,8 @@ BiocManager::install("GenomicRanges")
 
 ## Why do we need classes for genomic ranges?
 
-In the era of genomics, many observations are reported as ranges of coordinates
-- i.e., intervals - on a genomic scale.
+In the era of genomics, many observations are reported as ranges of
+coordinates - i.e., intervals - on a genomic scale.
 Depending on the nature of the assay, those genomic ranges may represent genes,
 transcripts, exons, single nucleotide polymorphisms (SNPs), transcription factor
 binding sites, or peaks from next-generation sequencing assays such as ChIP-seq
@@ -312,7 +312,7 @@ demo_with_metadata["B"]
 
 ## Operations on IRanges
 
-`IRanges` provide the basis for most operations on ranges.
+`IRanges` provide the basis for most operations on ranges of numerical coordinates.
 
 For instance, given two set of ranges - a query set and a subject set - we can
 use the `findOVerlaps()` function to find out which pairs of ranges in the two
