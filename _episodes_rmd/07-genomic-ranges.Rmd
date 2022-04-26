@@ -323,9 +323,9 @@ demo_with_metadata["A"]
 
 `IRanges` provide the basis for most operations on ranges of numerical coordinates.
 
-For instance, given two set of ranges - a query set and a subject set - we can
-use the `findOVerlaps()` function to find out which pairs of ranges in the two
-sets overlap with each other.
+For instance, given two set of ranges - a query set and a subject set - the
+`findOVerlaps()` function can be used to find out which pairs of ranges in the
+two sets overlap with each other.
 
 ```{r}
 query_iranges <- IRanges(
