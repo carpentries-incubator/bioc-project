@@ -357,6 +357,14 @@ both ranges in the subject set.
 > queryHits(overlaps_iranges)
 > subjectHits(overlaps_iranges)
 > ```
+>
+> While displayed as a table, `Hits` objects are actually handled like vectors.
+> Individual hits between one query range and one subject range can be extracted
+> their index:
+> 
+> ```{r}
+> overlaps_iranges[1]
+> ```
 > 
 {: .callout}
 
