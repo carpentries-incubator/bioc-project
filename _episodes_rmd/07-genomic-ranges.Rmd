@@ -142,15 +142,15 @@ Intervals A and C overlap, from coordinates 5 to 6;
 while intervals B and C meet at coordinate 3, but do not strictly overlap each
 other.
 
-## Genomic intervals
+## Genomic ranges
 
-Genomic intervals essentially extend the notion of mathematical intervals on
+Genomic ranges essentially extend the notion of mathematical intervals on
 sets of biological sequences (e.g., chromosomes).
 In other words, genomic ranges combine the name of the biological sequence on
-which they are located with the mathematical range of coordinates that the
-intervals span in that sequence.
-This is key to distinguish genomic features that span comparable intervals
-on different biological sequences.
+which they are located with the integer range of coordinates that the
+genomic ranges span in that sequence.
+This is key to distinguish genomic features that span an overlapping range of
+coordinates on different biological sequences.
 
 Furthermore, the double-stranded nature of DNA sequences also adds the notion of
 strandedness to genomic ranges.
@@ -158,10 +158,10 @@ If known, the strand information of genomic features is a key piece of
 information that should be tracked, so that it may be used for downstream
 analyses.
 For instance, genomic ranges spanning a common range of coordinates on opposite
-strands of the same DNA sequence may not be considered to overlap for the
-purpose of strand-specific next-generation sequencing (NGS) assays.
+strands of the same DNA sequence may not be considered to overlap (e.g., for the
+purpose of strand-specific next-generation sequencing assays).
 
-Genomic ranges are closed intervals - the start and end positions are included
+Genomic ranges are _closed_ intervals - the start and end positions are included
 in the interval; in the example of nucleic acids, the start position indicates
 the first nucleotide in the interval, and the end position indicates the last
 nucleotide in the interval.
