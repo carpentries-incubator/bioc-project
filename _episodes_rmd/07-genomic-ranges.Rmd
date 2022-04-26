@@ -396,7 +396,7 @@ demo_granges
 
 In the console, the object displays the sequence names in the `seqnames`
 component, and the ranges in the form `start-end` in the `ranges` component.
-Furthermore, the view above also demonstrate `GRanges` objects possess a
+Furthermore, the example above also demonstrate that `GRanges` objects possess a
 component called `strand`; the symbol `*` indicates unstranded genomic ranges,
 as we have not provided that information.
 
