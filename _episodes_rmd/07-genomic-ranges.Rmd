@@ -336,7 +336,7 @@ overlaps_iranges <- findOverlaps(query = query_iranges, subject = demo_iranges)
 overlaps_iranges
 ```
 
-The results are returned in the form of a `Hits` object, which we had not
+The results are returned in the form of a `Hits` object, which we has not
 introduced yet.
 A `Hits` object is visualised as a table that comprises two integer
 columns named `queryHits` and `subjectHits`.
