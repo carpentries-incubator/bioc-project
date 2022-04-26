@@ -176,6 +176,9 @@ nucleic acids and the arrow indicating coordinates increasing from the left to
 the right.
 In this example, genomic ranges can be used to describe individual exons,
 with metadata grouping those exons into transcripts and genes.
+Furthermore, the strandedness of exons, transcripts, and genes is an important
+piece of information to precisely describe the location of each genomic range
+in the double-stranded DNA polymer.
 
 # The GenomicRanges package
 
