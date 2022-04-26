@@ -269,6 +269,15 @@ end(demo_iranges)
 width(demo_iranges)
 ```
 
+Objects of the `IRanges` family extend the `Vector` class, and are handled as
+unidimensional vectors in terms of indexing.
+As such, individual ranges can be extracted by integer index like any
+regular vector.
+
+```{r}
+demo_with_metadata[1]
+```
+
 ## Metadata on IRanges
 
 The `IRanges` class can accommodate metadata information on each range,
@@ -303,14 +312,11 @@ The character vector of names can be extracted using the function `names()`.
 names(demo_with_metadata)
 ```
 
-Objects of the `IRanges` family extend the `Vector` class, and are handled as
-unidimensional vectors in terms of indexing.
-As such, individual ranges can be extracted by integer index or name like any
-regular vector.
+Similarly to named vector of base data types, individual ranges can be extracted
+by name.
 
 ```{r}
-demo_with_metadata[1]
-demo_with_metadata["B"]
+demo_with_metadata["A"]
 ```
 
 ## Operations on IRanges
