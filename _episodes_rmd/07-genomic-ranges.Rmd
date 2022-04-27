@@ -474,21 +474,41 @@ Chromatin Immunoprecipitation Sequencing (ChIP-Seq), while GTF
 (Gene Transfer Format, GTF2.2) is the _de facto_ standard file format to
 describe genomic features such as exons, transcripts, and genes.
 
-In the following example, we import the gene model for Actin Beta (ACTB) from a small GTF file as a set of genomic ranges.
+In the following example, we import the gene model for Actin Beta (ACTB) from
+a small GTF file as a set of genomic ranges.
+The example file represents a subset of a GTF file for the _Homo sapiens_ 
+species, downloaded from the [Ensembl FTP][ensembl-ftp] site.
+The original file contains more than 3 millions lines and 22 metadata fields,
+from which a subset was extracted into a smaller file for this lesson.
+
+In particular, we use the `import()` generic defined in the
+`r BiocStyle::Biocpkg("BiocIO")` package and implemented in the
+`r BiocStyle::Biocpkg("rtracklayer")` package as a versatile function that is
+capable of recognising common file extensions and associating them with the
+appropriate method for parsing each particular file format.
 
 ```{r}
 library(rtracklayer)
-actb_gtf_data <- import("data/actb.gtf")
+actb_gtf_data <- rtracklayer::import("data/actb.gtf")
 actb_gtf_data
 ```
 
 > ## Going further
 > 
-> The example file represents a subset of a GTF file for the _Homo sapiens_ 
-> species, downloaded from the [Ensembl FTP site][ensembl-ftp].
-> The original file contains more than 3 millions lines and 22 metadata fields,
-> from which a subset was extracted for convenience and brevity.
+> Individual methods for parsing specific file formats can be invoked directly.
+> For instance, in this case, the GTF file format being identical to the GFF
+> version 2 file format, we could have directly invoked the function
+> `rtracklayer::import.gff2()` with the exact same effect.
+>
+> Refer to the `r BiocStyle::Biocpkg("rtracklayer")` package documentation
+> for the full list of methods available.
 {: .callout}
+
+In the example above, the contents of the GTF file were imported into a
+`GRanges` object. For each entry in the file, the sequence name, start and end
+position, and strand information were used to populated the dedicated components
+of the object, while all other pieces of information are stored as separate
+columns of metadata.
 
 [glossary-s4-class]: ../reference.html#s4-class
 [ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
