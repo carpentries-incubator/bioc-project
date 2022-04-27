@@ -11,8 +11,8 @@ objectives:
 - "Explain how genomic coordinates and intervals are represented in the Bioconductor project."
 - "Identify Bioconductor packages and methods available to process ranges of genomic coordinates."
 keypoints:
-- "The `GenomicRanges` package defines classes to represent sequences of coordinates on genomic scales."
-- "The `GenomicRanges` package also defines methods to efficiently process biological sequences."
+- "The `GenomicRanges` package defines classes to represent ranges of coordinates on a genomic scale."
+- "The `GenomicRanges` package also defines methods to efficiently process genomic ranges."
 - "The `rtracklayer` package provides functions to import and export genomic ranges from and to common genomic file formats."
 ---
 
@@ -509,6 +509,28 @@ In the example above, the contents of the GTF file were imported into a
 position, and strand information were used to populated the dedicated components
 of the object, while all other pieces of information are stored as separate
 columns of metadata.
+
+From here on, this `GRanges` object can be manipulated just like any of the
+other `GRanges` objects that we have created earlier in this episode.
+
+## Operations on GRanges
+
+As we have demonstrated so far, `GRanges` objects can be manually defined
+or imported from files.
+Those often represent genomic regions of interest, and databases of known
+genomic features, respectively.
+Either way, a number of operations are commonly applied to `GRanges` objects
+throughout bioinformatics workflows.
+
+For instance, the `subset()` method is extremely convenient to extract a set
+of genomic ranges matching a condition on any component, including sequence
+name, start and end position, strand, or any metadata field.
+In the example below, we extract all the transcript records that start at
+position 5527147.
+
+```{r}
+subset(actb_gtf_data, type == "transcript" & start == 5527147)
+```
 
 [glossary-s4-class]: ../reference.html#s4-class
 [ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
