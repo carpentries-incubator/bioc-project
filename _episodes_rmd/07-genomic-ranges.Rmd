@@ -462,5 +462,33 @@ demo_granges3 <- GRanges(
 demo_granges3
 ```
 
+## Importing genomic ranges from files
+
+Frequently, genomic ranges are imported from files rather than described in
+manually written code.
+
+Various file formats are commonly used to store genomic ranges in bioinformatics
+workflows.
+For instance, the BED (Browser Extensible Data) format is commonly found in
+Chromatin Immunoprecipitation Sequencing (ChIP-Seq), while GTF
+(Gene Transfer Format, GTF2.2) is the _de facto_ standard file format to
+describe genomic features such as exons, transcripts, and genes.
+
+In the following example, we import the gene model for Actin Beta (ACTB) from a small GTF file as a set of genomic ranges.
+
+```{r}
+library(rtracklayer)
+actb_gtf_data <- import("data/actb.gtf")
+actb_gtf_data
+```
+
+> ## Going further
+> 
+> The example file represents a subset of a GTF file for the _Homo sapiens_ 
+> species, downloaded from the [Ensembl FTP site][ensembl-ftp].
+> The original file contains more than 3 millions lines and 22 metadata fields,
+> from which a subset was extracted for convenience and brevity.
+{: .callout}
 
 [glossary-s4-class]: ../reference.html#s4-class
+[ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
