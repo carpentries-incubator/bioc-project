@@ -513,7 +513,7 @@ columns of metadata.
 From here on, this `GRanges` object can be manipulated just like any of the
 other `GRanges` objects that we have created earlier in this episode.
 
-## Operations on GRanges
+## Operations on GRanges and the GRangesList class
 
 As we have demonstrated so far, `GRanges` objects can be manually defined
 or imported from files.
@@ -530,6 +530,35 @@ position 5527147.
 
 ```{r}
 subset(actb_gtf_data, type == "transcript" & start == 5527147)
+```
+
+Separately, the `split()` method is useful to divide a set of genomic ranges
+stored in a single `GRanges` object into groups that are stored in a named list
+of `GRanges` objects.
+Conveniently, the `GRangesList` class provides a container for efficiently
+displaying and processing lists of `GRanges` objects.
+
+In the example below, we first extract the subset of entries that represent
+exons, then separate those exons by transcript identifier, before finally
+coercing the list of `GRanges` objects into a `GRangesList` object.
+
+```{r}
+actb_exons <- subset(actb_gtf_data, type == "exon")
+actb_exons_by_transcript <- split(actb_exons, actb_exons$transcript_id)
+class(actb_exons_by_transcript)
+actb_exons_by_transcript <- as(actb_exons_by_transcript, "GRangesList")
+actb_exons_by_transcript
+```
+
+By nature, many of the methods applicable to `list` objects can be directly
+applied to `GRangesList` objects.
+For instance, the `lengths()` function can be used on `GRangesList` to display
+the length of each `GRanges` object in the list.
+
+In the latest example above, we can show the number of exons in each transcript:
+
+```{r}
+lengths(actb_exons_by_transcript)
 ```
 
 [glossary-s4-class]: ../reference.html#s4-class
