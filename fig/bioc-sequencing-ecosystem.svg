@@ -1,1 +1,210 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 595.28"><defs><style>.cls-1{fill:#f4d6e9;}.cls-1,.cls-10,.cls-12,.cls-2{stroke:#1d1d1b;}.cls-1,.cls-10,.cls-2{stroke-linejoin:round;}.cls-2{fill:#c9e5f9;}.cls-3{font-size:11px;font-family:ArialMT, Arial;}.cls-11,.cls-3{fill:#1d1d1b;}.cls-4{letter-spacing:-0.06em;}.cls-5{letter-spacing:-0.02em;}.cls-6{letter-spacing:-0.07em;}.cls-7{letter-spacing:-0.11em;}.cls-8{letter-spacing:-0.02em;}.cls-9{letter-spacing:-0.04em;}.cls-10,.cls-12{fill:none;}.cls-12{stroke-miterlimit:10;}</style></defs><rect class="cls-1" x="186.33" y="342.89" width="129.37" height="21.35" rx="3.48"/><rect class="cls-1" x="186.33" y="428.57" width="129.37" height="41.98" rx="3.48"/><rect class="cls-1" x="186.33" y="537.89" width="129.37" height="21.35" rx="3.48"/><rect class="cls-2" x="179.54" y="507.17" width="68.14" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(32.21 51.94)">Sequencing</text><text class="cls-3" transform="translate(36.81 106.18)">Alignment</text><text class="cls-3" transform="translate(35.9 162.09)">Reduction</text><rect class="cls-2" x="111.4" y="66.91" width="68.14" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(127.44 81.1)"><tspan class="cls-4">F</tspan><tspan x="6.11" y="0">ASTQ</tspan></text><rect class="cls-2" x="111.4" y="117.06" width="68.14" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(133.55 131.25)">BAM</text><rect class="cls-1" x="188.75" y="66.91" width="178.64" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(200.43 81.1)">ShortReads, Biostrings, qrqc, ...</text><rect class="cls-1" x="188.75" y="117.06" width="181.19" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(194.38 131.33)">Rsamtools, GenomicAlignments, ...</text><rect class="cls-2" x="370.74" y="195.72" width="151.29" height="42.91" rx="3.48"/><text class="cls-3" transform="translate(392.07 213.5)">Di<tspan class="cls-5" x="10.39" y="0">f</tspan><tspan x="13.25" y="0">ferential expression</tspan><tspan x="7.24" y="13.2">(genes, transcripts)</tspan></text><rect class="cls-1" x="186.33" y="235.14" width="129.37" height="51.27" rx="3.48"/><text class="cls-3" transform="translate(231.45 249.9)">Base R,<tspan x="-31.18" y="13.2">GenomicAlignments,</tspan><tspan x="-11.92" y="26.4">Rsubread, ...</tspan></text><rect class="cls-1" x="377.14" y="246.64" width="157.98" height="35.32" rx="3.48"/><text class="cls-3" transform="translate(414.86 260.62)">edgeR, DESeq2,<tspan x="-8.25" y="13.2">DEXSeq, SGSeq, ...</tspan></text><rect class="cls-2" x="179.89" y="313.08" width="99.23" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(185.49 327.27)">Peaks (.bed, .wig)</text><text class="cls-3" transform="translate(225.34 357.7)">rtracklayer</text><rect class="cls-2" x="369.95" y="304.54" width="152.08" height="39.87" rx="3.48"/><text class="cls-3" transform="translate(418.16 320.8)">Annotation;<tspan x="-17.63" y="13.2">Di</tspan><tspan class="cls-5" x="-7.24" y="13.2">f</tspan><tspan x="-4.38" y="13.2">ferential binding</tspan></text><rect class="cls-1" x="377.14" y="352.29" width="157.98" height="35.32" rx="3.48"/><text class="cls-3" transform="translate(395.39 366.27)">ChIPpeakAnno, Di<tspan class="cls-5" x="90.5" y="0">f</tspan><tspan x="93.35" y="0">fBind,</tspan><tspan x="9.39" y="13.2">ChIPseeke</tspan><tspan class="cls-4" x="63.19" y="13.2">r</tspan><tspan x="66.25" y="13.2">, csa</tspan><tspan class="cls-4" x="89.48" y="13.2">w</tspan><tspan x="96.82" y="13.2">, ...</tspan></text><rect class="cls-2" x="179.89" y="397.48" width="99.46" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(196.1 411.68)"><tspan class="cls-6">V</tspan><tspan x="6.52" y="0">ariants (.vcf)</tspan></text><text class="cls-3" transform="translate(206.17 445.88)"><tspan class="cls-6">V</tspan><tspan x="6.52" y="0">ariantAnnotation,</tspan><tspan class="cls-6" x="-7.33" y="13.2">V</tspan><tspan x="-0.81" y="13.2">ariant</tspan><tspan class="cls-7" x="26.71" y="13.2">T</tspan><tspan x="32.21" y="13.2">ools, h5vc, ...</tspan></text><rect class="cls-2" x="371.29" y="397.88" width="150.74" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(383.2 412.08) scale(1.03 1)">E<tspan class="cls-8" x="7.34" y="0">f</tspan><tspan x="10.19" y="0">fect predictions; G</tspan><tspan class="cls-9" x="98.84" y="0">W</tspan><tspan x="108.82" y="0">AS</tspan></text><rect class="cls-1" x="377.14" y="427.11" width="157.98" height="42.09" rx="3.48"/><text class="cls-3" transform="translate(395.39 444.47)">ChIPpeakAnno, Di<tspan class="cls-5" x="90.5" y="0">f</tspan><tspan x="93.35" y="0">fBind,</tspan><tspan x="9.39" y="13.2">ChIPseeke</tspan><tspan class="cls-4" x="63.19" y="13.2">r</tspan><tspan x="66.25" y="13.2">, csa</tspan><tspan class="cls-4" x="89.48" y="13.2">w</tspan><tspan x="96.82" y="13.2">, ...</tspan></text><text class="cls-3" transform="translate(206.76 523.33)">...</text><text class="cls-3" transform="translate(246.43 552.08)">...</text><rect class="cls-1" x="646.84" y="231.31" width="157.98" height="72.2" rx="3.48"/><text class="cls-3" transform="translate(703.82 249.33)">IRanges,<tspan x="-20.48" y="13.2">GenomicRanges,</tspan><tspan x="-28.73" y="26.4">GenomicAlignments,</tspan><tspan x="17.43" y="39.6">...</tspan></text><rect class="cls-1" x="648.49" y="323.33" width="157.98" height="89.28" rx="3.48"/><text class="cls-3" transform="translate(691.4 342.69)">AnnotationDbi,<tspan x="-9.16" y="13.2">GenomicFeatures,</tspan><tspan x="4.7" y="26.4">org.*,</tspan><tspan class="cls-5" x="30.99" y="26.4"> </tspan><tspan x="33.85" y="26.4">TxDb*,</tspan><tspan x="-15.57" y="39.6">biomaRt, PSICQUIC,</tspan><tspan x="-1.51" y="52.8">KEGGRES</tspan><tspan class="cls-7" x="52.89" y="52.8">T</tspan><tspan x="58.39" y="52.8">, ...</tspan></text><rect class="cls-1" x="648.49" y="435.42" width="157.98" height="48.68" rx="3.48"/><text class="cls-3" transform="translate(679.79 456.08)">Gviz, ggbio, epivis<tspan class="cls-4" x="89.26" y="0">r</tspan><tspan x="92.32" y="0">,</tspan><tspan x="-5.8" y="13.2">rtracklaye</tspan><tspan class="cls-4" x="41.88" y="13.2">r</tspan><tspan x="44.93" y="13.2">, SRAdb, ...</tspan></text><line class="cls-10" x1="145.47" y1="88.26" x2="145.47" y2="111.68"/><polygon class="cls-11" points="141.73 110.58 145.47 117.06 149.21 110.58 141.73 110.58"/><line class="cls-10" x1="145.47" y1="138.41" x2="145.47" y2="517.85"/><line class="cls-10" x1="145.47" y1="517.85" x2="174.51" y2="517.85"/><polygon class="cls-11" points="173.41 521.59 179.89 517.85 173.41 514.11 173.41 521.59"/><text class="cls-3" transform="translate(336.91 167.21)">Analysis</text><text class="cls-3" transform="translate(658.14 167.88)">Integration &amp; <tspan class="cls-5" x="65.43" y="0">V</tspan><tspan x="72.57" y="0">isualization</tspan></text><line class="cls-10" x1="145.47" y1="216.57" x2="174.51" y2="216.57"/><polygon class="cls-11" points="173.41 220.31 179.89 216.57 173.41 212.83 173.41 220.31"/><line class="cls-10" x1="145.47" y1="323.75" x2="174.51" y2="323.75"/><polygon class="cls-11" points="173.41 327.49 179.89 323.75 173.41 320.01 173.41 327.49"/><rect class="cls-2" x="179.75" y="205.9" width="99.23" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(196.97 220.09)">Counts (.csv)</text><line class="cls-10" x1="145.47" y1="408.15" x2="174.51" y2="408.15"/><polygon class="cls-11" points="173.41 411.89 179.89 408.15 173.41 404.41 173.41 411.89"/><rect class="cls-1" x="404.63" y="537.89" width="129.37" height="21.35" rx="3.48"/><rect class="cls-2" x="397.85" y="507.17" width="68.14" height="21.35" rx="3.48"/><text class="cls-3" transform="translate(425.07 523.33)">...</text><text class="cls-3" transform="translate(464.73 552.08)">...</text><line class="cls-10" x1="246.85" y1="517.85" x2="390.32" y2="517.85"/><polygon class="cls-11" points="389.22 521.59 395.7 517.85 389.22 514.11 389.22 521.59"/><line class="cls-10" x1="278.85" y1="217.18" x2="364.57" y2="217.18"/><polygon class="cls-11" points="363.47 220.92 369.95 217.18 363.47 213.44 363.47 220.92"/><line class="cls-10" x1="278.85" y1="324.48" x2="364.57" y2="324.48"/><polygon class="cls-11" points="363.47 328.22 369.95 324.48 363.47 320.74 363.47 328.22"/><line class="cls-10" x1="280.27" y1="408.15" x2="365.99" y2="408.15"/><polygon class="cls-11" points="364.89 411.89 371.37 408.15 364.89 404.41 364.89 411.89"/><path class="cls-12" d="M564.26,207c6.16-.89,12.12,3.51,15,9s3.48,11.91,4,18.13l9.12,114.61c.44,5.46.91,11.06,3.18,16.05s6.76,9.34,12.22,9.87"/><path class="cls-12" d="M564.26,542.73c6.16.89,12.12-3.51,15-9s3.48-11.92,4-18.13L592.39,401c.44-5.47.91-11.06,3.18-16.05s6.76-9.34,12.22-9.88"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 841.9 595.3" style="enable-background:new 0 0 841.9 595.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F4D6E9;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#C9E5F9;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{font-family:'ArialMT';}
+	.st3{font-size:11px;}
+	.st4{font-family:'FiraCode-Regular';}
+	.st5{font-size:9px;}
+	.st6{fill:none;stroke:#000000;stroke-linejoin:round;}
+	.st7{fill:none;stroke:#000000;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#000000;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M312.2,559.2H189.8c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h122.4c1.9,0,3.5,1.6,3.5,3.5v14.4
+	C315.7,557.7,314.1,559.2,312.2,559.2z"/>
+<path class="st1" d="M244.2,528.5H183c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h61.2c1.9,0,3.5,1.6,3.5,3.5V525
+	C247.7,527,246.1,528.5,244.2,528.5z"/>
+<text transform="matrix(1 0 0 1 32.2107 51.9407)" class="st2 st3">Sequencing</text>
+<text transform="matrix(1 0 0 1 36.8061 106.1793)" class="st2 st3">Alignment</text>
+<text transform="matrix(1 0 0 1 35.8963 162.092)" class="st2 st3">Reduction</text>
+<g>
+	<path class="st1" d="M176.1,88.3h-61.2c-1.9,0-3.5-1.6-3.5-3.5V70.4c0-1.9,1.6-3.5,3.5-3.5h61.2c1.9,0,3.5,1.6,3.5,3.5v14.4
+		C179.5,86.7,178,88.3,176.1,88.3z"/>
+	<text transform="matrix(1 0 0 1 127.1371 81.1045)" class="st2 st3">FASTQ</text>
+</g>
+<g>
+	<path class="st1" d="M176.1,138.4h-61.2c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h61.2c1.9,0,3.5,1.6,3.5,3.5v14.4
+		C179.5,136.8,178,138.4,176.1,138.4z"/>
+	<text transform="matrix(1 0 0 1 133.5523 131.2536)" class="st2 st3">BAM</text>
+</g>
+<g>
+	<path class="st0" d="M380.6,88.3H192.2c-1.9,0-3.5-1.6-3.5-3.5V70.4c0-1.9,1.6-3.5,3.5-3.5h188.4c1.9,0,3.5,1.6,3.5,3.5v14.4
+		C384.1,86.7,382.5,88.3,380.6,88.3z"/>
+	<text transform="matrix(1 0 0 1 195.0423 81.1046)" class="st4 st5">ShortReads, Biostrings, qrqc, ...</text>
+</g>
+<g>
+	<path class="st0" d="M380.6,138.4H192.2c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h188.4c1.9,0,3.5,1.6,3.5,3.5v14.4
+		C384.1,136.8,382.5,138.4,380.6,138.4z"/>
+	<text transform="matrix(1 0 0 1 195.0423 131.3255)" class="st4 st5">Rsamtools, GenomicAlignments, ...</text>
+</g>
+<g>
+	<path class="st1" d="M518.5,238.6H374.2c-1.9,0-3.5-1.6-3.5-3.5v-36c0-1.9,1.6-3.5,3.5-3.5h144.3c1.9,0,3.5,1.6,3.5,3.5v36
+		C522,237.1,520.5,238.6,518.5,238.6z"/>
+	<text transform="matrix(1 0 0 1 391.969 213.4986)"><tspan x="0" y="0" class="st2 st3">Differential expression</tspan><tspan x="7.3" y="13.2" class="st2 st3">(genes, transcripts)</tspan></text>
+</g>
+<g>
+	<path class="st0" d="M531.6,282h-151c-1.9,0-3.5-1.6-3.5-3.5v-28.4c0-1.9,1.6-3.5,3.5-3.5h151c1.9,0,3.5,1.6,3.5,3.5v28.4
+		C535.1,280.4,533.6,282,531.6,282z"/>
+	<text transform="matrix(1 0 0 1 417.3644 260.6204)"><tspan x="0" y="0" class="st4 st5">edgeR, DESeq2,</tspan><tspan x="-11.1" y="13" class="st4 st5">DEXSeq, SGSeq, ...</tspan></text>
+</g>
+<g>
+	<path class="st1" d="M275.6,334.4h-92.3c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h92.3c1.9,0,3.5,1.6,3.5,3.5v14.4
+		C279.1,332.9,277.6,334.4,275.6,334.4z"/>
+	<text transform="matrix(1 0 0 1 185.4851 327.2723)" class="st2 st3">Peaks (.bed, .wig)</text>
+</g>
+<g>
+	<path class="st0" d="M312.2,364.2H189.8c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h122.4c1.9,0,3.5,1.6,3.5,3.5v14.4
+		C315.7,362.7,314.1,364.2,312.2,364.2z"/>
+	<text transform="matrix(1 0 0 1 220.5512 357.7029)" class="st4 st5">rtracklayer</text>
+</g>
+<g>
+	<path class="st1" d="M518.5,344.4H373.4c-1.9,0-3.5-1.6-3.5-3.5V308c0-1.9,1.6-3.5,3.5-3.5h145.1c1.9,0,3.5,1.6,3.5,3.5v32.9
+		C522,342.9,520.5,344.4,518.5,344.4z"/>
+	<text transform="matrix(1 0 0 1 418.1618 320.799)"><tspan x="0" y="0" class="st2 st3">Annotation;</tspan><tspan x="-17.7" y="13.2" class="st2 st3">Differential binding</tspan></text>
+</g>
+<g>
+	<path class="st0" d="M531.6,387.6h-151c-1.9,0-3.5-1.6-3.5-3.5v-28.4c0-1.9,1.6-3.5,3.5-3.5h151c1.9,0,3.5,1.6,3.5,3.5v28.4
+		C535.1,386,533.6,387.6,531.6,387.6z"/>
+	<text transform="matrix(1 0 0 1 392.4415 366.2667)"><tspan x="0" y="0" class="st4 st5">ChIPpeakAnno, DiffBind,</tspan><tspan x="5.5" y="13" class="st4 st5">ChIPseeker, csaw, ...</tspan></text>
+</g>
+<g>
+	<path class="st1" d="M275.9,418.8h-92.5c-1.9,0-3.5-1.6-3.5-3.5V401c0-1.9,1.6-3.5,3.5-3.5h92.5c1.9,0,3.5,1.6,3.5,3.5v14.4
+		C279.4,417.3,277.8,418.8,275.9,418.8z"/>
+	<text transform="matrix(1 0 0 1 195.6956 411.6751)" class="st2 st3">Variants (.vcf)</text>
+</g>
+<g>
+	<path class="st0" d="M312.2,470.6H189.8c-1.9,0-3.5-1.6-3.5-3.5v-35c0-1.9,1.6-3.5,3.5-3.5h122.4c1.9,0,3.5,1.6,3.5,3.5v35
+		C315.7,469,314.1,470.6,312.2,470.6z"/>
+	<text transform="matrix(1 0 0 1 201.1666 440.2917)"><tspan x="0" y="0" class="st4 st5">VariantAnnotation,</tspan><tspan x="-2.8" y="13" class="st4 st5">VariantTools, h5vc,</tspan><tspan x="41.5" y="26" class="st4 st5">...</tspan></text>
+</g>
+<g>
+	<path class="st1" d="M518.5,419.2H374.8c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h143.8c1.9,0,3.5,1.6,3.5,3.5v14.4
+		C522,417.7,520.5,419.2,518.5,419.2z"/>
+	<text transform="matrix(1.0277 0 0 1 382.8927 412.0805)" class="st2 st3">Effect predictions; GWAS</text>
+</g>
+<g>
+	<path class="st0" d="M531.6,469.2h-151c-1.9,0-3.5-1.6-3.5-3.5v-35.1c0-1.9,1.6-3.5,3.5-3.5h151c1.9,0,3.5,1.6,3.5,3.5v35.1
+		C535.1,467.6,533.6,469.2,531.6,469.2z"/>
+	<text transform="matrix(1 0 0 1 392.4418 444.4743)"><tspan x="0" y="0" class="st4 st5">ChIPpeakAnno, DiffBind,</tspan><tspan x="5.5" y="13" class="st4 st5">ChIPseeker, csaw, ...</tspan></text>
+</g>
+<text transform="matrix(1 0 0 1 206.7591 523.3331)" class="st2 st3">...</text>
+<text transform="matrix(1 0 0 1 246.4276 552.0831)" class="st2 st3">...</text>
+<g>
+	<path class="st0" d="M801.3,303.5h-151c-1.9,0-3.5-1.6-3.5-3.5v-65.2c0-1.9,1.6-3.5,3.5-3.5h151c1.9,0,3.5,1.6,3.5,3.5V300
+		C804.8,301.9,803.3,303.5,801.3,303.5z"/>
+	<text transform="matrix(1 0 0 1 703.676 252.7394)"><tspan x="0" y="0" class="st4 st5">IRanges,</tspan><tspan x="-16.6" y="13" class="st4 st5">GenomicRanges,</tspan><tspan x="-27.7" y="26" class="st4 st5">GenomicAlignments,</tspan><tspan x="13.8" y="39" class="st4 st5">...</tspan></text>
+</g>
+<g>
+	<path class="st0" d="M803,412.6H652c-1.9,0-3.5-1.6-3.5-3.5v-82.3c0-1.9,1.6-3.5,3.5-3.5h151c1.9,0,3.5,1.6,3.5,3.5v82.3
+		C806.5,411,804.9,412.6,803,412.6z"/>
+	<text transform="matrix(1 0 0 1 688.7079 342.6917)"><tspan x="0" y="0" class="st4 st5">AnnotationDbi,</tspan><tspan x="-5.5" y="13" class="st4 st5">GenomicFeatures,</tspan><tspan x="2.8" y="26" class="st4 st5">org.*, TxDb*,</tspan><tspan x="-11.1" y="39" class="st4 st5">biomaRt, PSICQUIC,</tspan><tspan x="2.8" y="52" class="st4 st5">KEGGREST, ...</tspan></text>
+</g>
+<g>
+	<path class="st0" d="M803,484.1H652c-1.9,0-3.5-1.6-3.5-3.5v-41.7c0-1.9,1.6-3.5,3.5-3.5h151c1.9,0,3.5,1.6,3.5,3.5v41.7
+		C806.5,482.5,804.9,484.1,803,484.1z"/>
+	<text transform="matrix(1 0 0 1 669.3235 456.0804)"><tspan x="0" y="0" class="st4 st5">Gviz, ggbio, epivisr,</tspan><tspan x="-5.5" y="13" class="st4 st5">rtracklayer, SRAdb, ...</tspan></text>
+</g>
+<g>
+	<g>
+		<line class="st6" x1="145.5" y1="88.3" x2="145.5" y2="111.7"/>
+		<g>
+			<polygon points="141.7,110.6 145.5,117.1 149.2,110.6 			"/>
+		</g>
+	</g>
+</g>
+<line class="st7" x1="145.5" y1="138.4" x2="145.5" y2="517.8"/>
+<g>
+	<g>
+		<line class="st6" x1="145.5" y1="517.8" x2="174.5" y2="517.8"/>
+		<g>
+			<polygon points="173.4,521.6 179.9,517.8 173.4,514.1 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 336.9055 167.2061)" class="st2 st3">Analysis</text>
+<text transform="matrix(1 0 0 1 658.0435 167.8777)" class="st2 st3">Integration &amp; Visualization</text>
+<g>
+	<g>
+		<line class="st6" x1="145.5" y1="216.6" x2="174.5" y2="216.6"/>
+		<g>
+			<polygon points="173.4,220.3 179.9,216.6 173.4,212.8 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st6" x1="145.5" y1="323.8" x2="174.5" y2="323.8"/>
+		<g>
+			<polygon points="173.4,327.5 179.9,323.8 173.4,320 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<path class="st1" d="M275.5,227.2h-92.3c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h92.3c1.9,0,3.5,1.6,3.5,3.5v14.4
+		C279,225.7,277.4,227.2,275.5,227.2z"/>
+	<text transform="matrix(1 0 0 1 196.9728 220.0939)" class="st2 st3">Counts (.csv)</text>
+</g>
+<g>
+	<g>
+		<line class="st6" x1="145.5" y1="408.2" x2="174.5" y2="408.2"/>
+		<g>
+			<polygon points="173.4,411.9 179.9,408.2 173.4,404.4 			"/>
+		</g>
+	</g>
+</g>
+<path class="st0" d="M530.5,559.2H408.1c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h122.4c1.9,0,3.5,1.6,3.5,3.5v14.4
+	C534,557.7,532.4,559.2,530.5,559.2z"/>
+<path class="st1" d="M462.5,528.5h-61.2c-1.9,0-3.5-1.6-3.5-3.5v-14.4c0-1.9,1.6-3.5,3.5-3.5h61.2c1.9,0,3.5,1.6,3.5,3.5V525
+	C466,527,464.4,528.5,462.5,528.5z"/>
+<text transform="matrix(1 0 0 1 425.0653 523.3331)" class="st2 st3">...</text>
+<text transform="matrix(1 0 0 1 464.7337 552.0831)" class="st2 st3">...</text>
+<g>
+	<g>
+		<line class="st6" x1="246.8" y1="517.8" x2="390.3" y2="517.8"/>
+		<g>
+			<polygon points="389.2,521.6 395.7,517.8 389.2,514.1 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st6" x1="278.8" y1="217.2" x2="364.6" y2="217.2"/>
+		<g>
+			<polygon points="363.5,220.9 369.9,217.2 363.5,213.4 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st6" x1="278.8" y1="324.5" x2="364.6" y2="324.5"/>
+		<g>
+			<polygon points="363.5,328.2 369.9,324.5 363.5,320.7 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st6" x1="280.3" y1="408.2" x2="366" y2="408.2"/>
+		<g>
+			<polygon points="364.9,411.9 371.4,408.2 364.9,404.4 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<path class="st8" d="M564.3,207c6.2-0.9,12.1,3.5,15,9s3.5,11.9,4,18.1c3,38.2,6.1,76.4,9.1,114.6c0.4,5.5,0.9,11.1,3.2,16.1
+		s6.8,9.3,12.2,9.9"/>
+	<path class="st8" d="M564.3,542.7c6.2,0.9,12.1-3.5,15-9c2.9-5.5,3.5-11.9,4-18.1c3-38.2,6.1-76.4,9.1-114.6
+		c0.4-5.5,0.9-11.1,3.2-16.1s6.8-9.3,12.2-9.9"/>
+</g>
+<g>
+	<g>
+		<path class="st0" d="M312.2,286.4H189.8c-1.9,0-3.5-1.6-3.5-3.5v-44.3c0-1.9,1.6-3.5,3.5-3.5h122.4c1.9,0,3.5,1.6,3.5,3.5v44.3
+			C315.7,284.9,314.1,286.4,312.2,286.4z"/>
+		<text transform="matrix(1 0 0 1 232.9759 251.8985)" class="st2 st3">Base R</text>
+	</g>
+	<text transform="matrix(1 0 0 1 205.083 265.722)"><tspan x="0" y="0" class="st4 st5">GenomicAlignments,</tspan><tspan x="13.8" y="13" class="st4 st5">Rsubread, ...</tspan></text>
+</g>
+</svg>
