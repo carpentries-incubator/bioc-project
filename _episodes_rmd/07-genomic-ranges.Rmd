@@ -548,6 +548,11 @@ actb_exons_by_transcript <- split(actb_exons, actb_exons$transcript_id)
 actb_exons_by_transcript
 ```
 
+When printing the object above in the console, the first line confirms the
+class of the object as `GRrangesList`, while each named `GRanges` in that list
+is introduced by the dollar sign and the name of that item, just like regular
+named lists in base R.
+
 By nature, many of the methods applicable to `list` objects can be directly
 applied to `GRangesList` objects.
 For instance, the `lengths()` function can be used on `GRangesList` to display
