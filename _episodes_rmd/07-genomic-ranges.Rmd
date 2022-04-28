@@ -464,8 +464,11 @@ demo_granges3
 
 ## Importing genomic ranges from files
 
-Frequently, genomic ranges are imported from files rather than described in
-manually written code.
+Frequently, large collections of genomic ranges are imported from files rather
+than described in manually written code.
+In particular, genome-wide annotations of known gene features are distributed
+as files on websites such as the [Ensembl FTP][ensembl-ftp] and the
+[UCSC Genome Data][ucsc-genome-data] sites.
 
 Various file formats are commonly used to store genomic ranges in bioinformatics
 workflows.
@@ -569,3 +572,4 @@ lengths(actb_exons_by_transcript)
 
 [glossary-s4-class]: ../reference.html#s4-class
 [ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
+[ucsc-genome-data]: https://hgdownload.soe.ucsc.edu/downloads.html
