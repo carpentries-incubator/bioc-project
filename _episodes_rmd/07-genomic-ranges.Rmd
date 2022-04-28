@@ -526,6 +526,8 @@ genomic features, respectively.
 Either way, a number of operations are commonly applied to `GRanges` objects
 throughout bioinformatics workflows.
 
+### Subset
+
 For instance, the `subset()` method is extremely convenient to extract a set
 of genomic ranges matching a condition on any component, including sequence
 name, start and end position, strand, or any metadata field.
@@ -535,6 +537,8 @@ at position `5527147`.
 ```{r}
 subset(actb_gtf_data, type == "transcript" & start == 5527147)
 ```
+
+### Split
 
 Separately, the `split()` method is useful to divide a set of genomic ranges
 initially stored in a single `GRanges` object into groups that are stored
@@ -557,6 +561,8 @@ class of the object as `GRrangesList`, while each named `GRanges` in that list
 is introduced by the dollar sign and the name of that item, just like regular
 named lists in base R.
 
+### Length
+
 By nature, many of the methods applicable to `list` objects can be directly
 applied to `GRangesList` objects.
 For instance, the `lengths()` function can be used on `GRangesList` to display
@@ -569,7 +575,27 @@ as the length of each `GRanges` object within the `GRangesList`:
 lengths(actb_exons_by_transcript)
 ```
 
-
+> ## Challenge
+> 
+> Importantly, the function `lengths()` (with a final `s`) demonstrated above
+> is different from the function `length()` (without `s`).
+> The former is meant to be used on list objects, while the latter is meant
+> to be used on vectors.
+> 
+> What does `length(actb_exons_by_transcript)` return, and why?
+> 
+> > ## Solution
+> > 
+> > ```{r}
+> > length(actb_exons_by_transcript)
+> > ```
+> > 
+> > This code returns the single integer value `23`, which is the number
+> > of `GRanges` in the `GRangesList` object and the number of transcripts for
+> > the gene ACTB.
+> > 
+> {: .solution}
+{: .challenge}
 
 [glossary-s4-class]: ../reference.html#s4-class
 [ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
