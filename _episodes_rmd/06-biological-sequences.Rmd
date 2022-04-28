@@ -256,7 +256,10 @@ compute the frequency of letters in a biological sequence, using  the method
 letterFrequency(truseq_adapters, letters = DNA_ALPHABET)
 ```
 
-The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of deoxyribonucleic acids, provided by the `r BiocStyle::Biocpkg("Biostrings")` package in an object called `DNA_ALPHABET`.
+The output is a matrix with one row for each sequence in the `DNAStringSet`
+object, and one column for each symbol in the alphabet of deoxyribonucleic
+acids, provided by the `r BiocStyle::Biocpkg("Biostrings")` package in a
+built-in object called `DNA_ALPHABET`.
 
 ## Amino acid sequences
 
