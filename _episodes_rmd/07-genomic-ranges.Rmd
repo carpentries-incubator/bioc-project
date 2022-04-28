@@ -597,6 +597,42 @@ lengths(actb_exons_by_transcript)
 > {: .solution}
 {: .challenge}
 
+## Subset by overlap
+
+Possibly one of the most common operations when working with genomic ranges
+is to subset arbitrarily large collections of genomic ranges to those located
+in a specific region of the genome; for instance, when visualising information
+as tracks in a genome browser.
+
+To demonstrate, we manually define a new `GRanges` representing a region of
+interest that we will use to extract all of the genomic ranges imported earlier
+from the GTF file which overlap that region of interest.
+
+```{r}
+region_of_interest <- GRanges(
+    seqnames = "7",
+    ranges = IRanges(start = 5525830, end = 5531239)
+)
+actb_in_region <- subsetByOverlaps(x = actb_gtf_data, ranges = region_of_interest)
+actb_in_region
+```
+
+Like the `subset()` method, the `subsetByOverlaps()` method returns a new
+`GRanges` object.
+We can visually compare the information printed in the object
+(256 ranges in the new subsetted object, relative to 267 ranges in the original
+object), or we can programmatically compare the length of the two objects
+to check whether the new `GRanges` object is any smaller than the original
+`GRanges` object:
+
+```{r}
+length(actb_in_region) - length(actb_gtf_data)
+```
+
+In the example above, we learn that the new `GRanges` object has 11 records less
+than the original `GRanges` object.
+
+
 [glossary-s4-class]: ../reference.html#s4-class
 [ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
 [ucsc-genome-data]: https://hgdownload.soe.ucsc.edu/downloads.html
