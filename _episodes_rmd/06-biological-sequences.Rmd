@@ -131,8 +131,13 @@ printed in the console.
 DNAString("ATCG")
 ```
 
-Notably, DNA sequences may only contain the symbols `A`, `T`, `C`, and `G`, to represent the four DNA nucleotide bases, the symbol `N` as a placeholder for an unknown or unspecified base, and a small number of other symbols defined in the [IUPAC Extended Genetic Alphabet][iupac-alphabet].
-Notice that the constructor function does not let us create objects that contain invalid characters, e.g. `Z`.
+Notably, DNA sequences may only contain the symbols `A`, `T`, `C`, and `G`, to
+represent the four DNA nucleotide bases, the symbol `N` as a placeholder for an
+unknown or unspecified base, and a restricted set of additional symbols with
+special meaning defined in the
+[IUPAC Extended Genetic Alphabet][iupac-alphabet].
+Notice that the constructor function does not let us create objects that contain
+invalid characters, e.g. `Z`.
 
 ```{r}
 DNAString("ATCGZ")
