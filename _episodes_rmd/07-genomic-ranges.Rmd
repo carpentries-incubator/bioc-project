@@ -414,8 +414,8 @@ demo_granges2
 ```
 
 Finally, the examples above also demonstrate that `GRanges` objects include a
-component called `seqinfo`, which is used to store information about each
-sequence that may be represented in the `seqnames` component.
+component called `seqinfo`, which is occasionally used to store information
+about each sequence that may be represented in the `seqnames` component.
 In the latest example above, we have not provide any information about any
 sequence.
 As such, the `seqinfo` component was automatically populated with the names
