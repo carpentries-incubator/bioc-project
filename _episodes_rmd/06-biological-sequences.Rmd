@@ -43,20 +43,30 @@ BiocManager::install("Biostrings")
 
 ## Why do we need classes for biological sequences?
 
-Biological sequences are arguably some of the simplest biological entities to represent computationally.
-Examples include nucleic acid sequences (e.g., DNA, RNA) and protein sequences composed of amino acids.
+Biological sequences are arguably some of the simplest biological entities to
+represent computationally.
+Examples include nucleic acid sequences (e.g., DNA, RNA) and protein sequences
+composed of amino acids.
 
-That is because alphabets have been designed and agreed upon to represent individual monomers using character symbols.
+That is because alphabets have been designed and agreed upon to represent
+individual monomers using character symbols.
 
-For instance, using the alphabet for amino acids, the reference protein sequence for the [Actin, alpha skeletal muscle protein sequence](https://www.uniprot.org/uniprot/P68133#sequences) is represented as follows.
+For instance, using the alphabet for amino acids, the reference protein sequence
+for the [Actin, alpha skeletal muscle protein sequence](https://www.uniprot.org/uniprot/P68133#sequences) is represented as
+follows.
 
 ```{r, echo=FALSE}
 strwrap("MCDEDETTALVCDNGSGLVKAGFAGDDAPRAVFPSIVGRPRHQGVMVGMGQKDSYVGDEAQSKRGILTLKYPIEHGIITNWDDMEKIWHHTFYNELRVAPEEHPTLLTEAPLNPKANREKMTQIMFETFNVPAMYVAIQAVLSLYASGRTTGIVLDSGDGVTHNVPIYEGYALPHAIMRLDLAGRDLTDYLMKILTERGYSFVTTAEREIVRDIKEKLCYVALDFENEMATAASSSSLEKSYELPDGQVITIGNERFRCPETLFQPSFIGMESAGIHETTYNSIMKCDIDIRKDLYANNVMSGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWIGGSILASLSTFQQMWITKQEYDEAGPSIVHRKCF")
 ```
 
-However, a major limitation of regular character vectors is that they do not check the validity of the sequences that they contain.
-Practically, it is possible to store meaningless sequences of symbols in character strings.
-In those cases, the burden of checking the validity of sequences falls on the programs that process them, or causing those programs to run into errors when they unexpectedly encounter invalid character symbols in a sequence.
+However, a major limitation of regular character vectors is that they do not
+check the validity of the sequences that they contain.
+Practically, it is possible to store meaningless sequences of symbols in
+character strings, including symbols that are not part of the official alphabet
+the relevant type of polymer.
+In those cases, the burden of checking the validity of sequences falls on the
+programs that process them, or causing those programs to run into errors when
+they unexpectedly encounter invalid symbols in a sequence.
 
 Instead, [S4 classes][glossary-s4-class] -- demonstrated in the earlier episode [The S4 class system][crossref-s4] -- provide a way to label objects as distinct "DNA", "RNA", or "protein" varieties of biological sequences.
 This label is an extremely powerful way to inform programs on the set of character symbols they can expect in the sequence, but also the range of computational operations that can be applied to those sequences.
