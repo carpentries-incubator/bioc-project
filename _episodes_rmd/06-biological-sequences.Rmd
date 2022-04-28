@@ -43,20 +43,30 @@ BiocManager::install("Biostrings")
 
 ## Why do we need classes for biological sequences?
 
-Biological sequences are arguably some of the simplest biological entities to represent computationally.
-Examples include nucleic acid sequences (e.g., DNA, RNA) and protein sequences composed of amino acids.
+Biological sequences are arguably some of the simplest biological entities to
+represent computationally.
+Examples include nucleic acid sequences (e.g., DNA, RNA) and protein sequences
+composed of amino acids.
 
-That is because alphabets have been designed and agreed upon to represent individual monomers using character symbols.
+That is because alphabets have been designed and agreed upon to represent
+individual monomers using character symbols.
 
-For instance, using the alphabet for amino acids, the reference protein sequence for the [Actin, alpha skeletal muscle protein sequence](https://www.uniprot.org/uniprot/P68133#sequences) is represented as follows.
+For instance, using the alphabet for amino acids, the reference protein sequence
+for the [Actin, alpha skeletal muscle protein sequence](https://www.uniprot.org/uniprot/P68133#sequences) is represented as
+follows.
 
 ```{r, echo=FALSE}
 strwrap("MCDEDETTALVCDNGSGLVKAGFAGDDAPRAVFPSIVGRPRHQGVMVGMGQKDSYVGDEAQSKRGILTLKYPIEHGIITNWDDMEKIWHHTFYNELRVAPEEHPTLLTEAPLNPKANREKMTQIMFETFNVPAMYVAIQAVLSLYASGRTTGIVLDSGDGVTHNVPIYEGYALPHAIMRLDLAGRDLTDYLMKILTERGYSFVTTAEREIVRDIKEKLCYVALDFENEMATAASSSSLEKSYELPDGQVITIGNERFRCPETLFQPSFIGMESAGIHETTYNSIMKCDIDIRKDLYANNVMSGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWIGGSILASLSTFQQMWITKQEYDEAGPSIVHRKCF")
 ```
 
-However, a major limitation of regular character vectors is that they do not check the validity of the sequences that they contain.
-Practically, it is possible to store meaningless sequences of symbols in character strings.
-In those cases, the burden of checking the validity of sequences falls on the programs that process them, or causing those programs to run into errors when they unexpectedly encounter invalid character symbols in a sequence.
+However, a major limitation of regular character vectors is that they do not
+check the validity of the sequences that they contain.
+Practically, it is possible to store meaningless sequences of symbols in
+character strings, including symbols that are not part of the official alphabet
+the relevant type of polymer.
+In those cases, the burden of checking the validity of sequences falls on the
+programs that process them, or causing those programs to run into errors when
+they unexpectedly encounter invalid symbols in a sequence.
 
 Instead, [S4 classes][glossary-s4-class] -- demonstrated in the earlier episode [The S4 class system][crossref-s4] -- provide a way to label objects as distinct "DNA", "RNA", or "protein" varieties of biological sequences.
 This label is an extremely powerful way to inform programs on the set of character symbols they can expect in the sequence, but also the range of computational operations that can be applied to those sequences.
@@ -73,7 +83,9 @@ For instance, a function designed to translate nucleic acid sequences into the c
 > > ## Solution
 > > 
 > > Yes, this is a valid DNA sequence using ambiguity codes defined in the [IUPAC][external-iupac] notation.
-> > In this case, the `R` symbol represents either of the two purine nucleotide bases, `A` and `G`.
+> > In this case, `A`, `T`, `C`, and `G` represents the four standard types of
+> > nucleotides, while the `R` symbol acts as a regular expression representing
+> > either of the two purine nucleotide bases, `A` and `G`.
 > > 
 > {: .solution}
 {: .challenge}
@@ -82,10 +94,21 @@ For instance, a function designed to translate nucleic acid sequences into the c
 
 ## Overview
 
-The `r BiocStyle::Biocpkg("Biostrings")` package implements S4 classes to represent biological sequences as S4 objects, e.g. `DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, and `AAString` for sequences of amino acids in protein polymers.
-Those S4 classes provide memory-efficient containers for character strings, automatic validity-checking functionality for each class of biological molecules, and methods implementing various string matching algorithms and other utilities for fast manipulation and processing of large biological sequences or sets of sequences.
+In the Bioconductor project, the `r BiocStyle::Biocpkg("Biostrings")` package
+implements S4 classes to represent biological sequences as S4 objects, e.g.
+`DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, and
+`AAString` for sequences of amino acids in protein polymers.
+Those S4 classes provide memory-efficient containers for character strings,
+automatic validity-checking functionality for each class of biological
+molecules, and methods implementing various string matching algorithms and other
+utilities for fast manipulation and processing of large biological sequences or
+sets of sequences.
 
-A short presentation of the basic classes defined in the `r BiocStyle::Biocpkg("Biostrings")` package is available in one of the package vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed information is provided in the other package vignettes, accessible as `browseVignettes("Biostrings")`.
+A short presentation of the basic classes defined in the
+`r BiocStyle::Biocpkg("Biostrings")` package is available in one of the package
+vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed
+information is provided in the other package vignettes, accessible as
+`browseVignettes("Biostrings")`.
 
 ## First steps
 
@@ -95,56 +118,86 @@ To get started, we load the package.
 library(Biostrings)
 ```
 
-With the package loaded and attached to the session, we have access to the package functions.
-Those include functions that let us create new objects of the classes defined in the package.
-For instance, we can create an object that represents a DNA sequence, using the `DNAString()` constructor function.
+With the package loaded and attached to the session, we have access to the
+package functions.
+Those include functions that let us create new objects of the classes defined
+in the package.
+For instance, we can create an object that represents a DNA sequence, using the
+`DNAString()` constructor function.
+Without assigning the output to an object, we let the resulting object be
+printed in the console.
 
 ```{r}
 DNAString("ATCG")
 ```
 
-Notably, DNA sequences may only contain the symbols `A`, `T`, `C`, and `G`, to represent the four DNA nucleotide bases, the symbol `N` as a placeholder for an unknown or unspecified base, and a small number of other symbols defined in the [IUPAC Extended Genetic Alphabet][iupac-alphabet].
-Notice that the constructor function does not let us create objects that contain invalid characters, e.g. `Z`.
+Notably, DNA sequences may only contain the symbols `A`, `T`, `C`, and `G`, to
+represent the four DNA nucleotide bases, the symbol `N` as a placeholder for an
+unknown or unspecified base, and a restricted set of additional symbols with
+special meaning defined in the
+[IUPAC Extended Genetic Alphabet][iupac-alphabet].
+Notice that the constructor function does not let us create objects that contain
+invalid characters, e.g. `Z`.
 
 ```{r}
 DNAString("ATCGZ")
 ```
 
-Specifically, the [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines ambiguity codes that represent sets of nucleotides, in a way similar to regular expressions.
-The `IUPAC_CODE_MAP` named character vector contains the mapping from the IUPAC nucleotide ambiguity codes to their meaning.
+Specifically, the [IUPAC Extended Genetic Alphabet][iupac-alphabet] defines
+ambiguity codes that represent sets of nucleotides, in a way similar to regular
+expressions.
+The `IUPAC_CODE_MAP` named character vector contains the mapping from the IUPAC
+nucleotide ambiguity codes to their meaning.
 
 ```{r}
 IUPAC_CODE_MAP
 ```
 
-Any of those nucleotide codes are allowed in the sequence of a `DNAString` object.
-For instance, the symbol `M` represents either of the two nucleotides `A` or `C` at a given position in a nucleic acid sequence.
+Any of those nucleotide codes are allowed in the sequence of a `DNAString`
+object.
+For instance, the symbol `M` represents either of the two nucleotides `A` or `C`
+at a given position in a nucleic acid sequence.
 
 ```{r}
 DNAString("ATCGM")
 ```
 
-Pattern matching methods implemented in the `r BiocStyle::Biocpkg("Biostrings")` package recognize the meaning of ambiguity codes for each class of biological sequence, allowing them to efficiently match motifs queried by users without the need to design elaborate regular expressions.
-For instance, the method `matchPattern()` takes a `pattern` and a `subject` sequence, and returns a set of `Views` that report and display any match of the pattern in the sequences.
+In particular, pattern matching methods implemented in the
+`r BiocStyle::Biocpkg("Biostrings")` package recognize the meaning of ambiguity
+codes for each class of biological sequence, allowing them to efficiently match
+motifs queried by users without the need to design elaborate regular
+expressions.
+For instance, the method `matchPattern()` takes a `pattern=` and a `subject=`
+argument, and returns a `Views` object that reports and displays any match of
+the `pattern` expression at any position in the `subject` sequence.
 
-The default option `fixed = TRUE` instructs the method to match the query exactly -- i.e., ignore ambiguity codes -- which in this case does report any exact match.
+Note that the default option `fixed = TRUE` instructs the method to match the
+query exactly -- i.e., ignore ambiguity codes -- which in this case does report
+any exact match.
 
 ```{r}
 dna1 <- DNAString("ATCGCTTTGA")
 matchPattern("GM", dna1, fixed = TRUE)
 ```
 
-Instead, to indicate that the pattern includes some ambiguity code, the argument `fixed` must be set to `FALSE`.
+Instead, to indicate that the pattern includes some ambiguity code, the argument
+`fixed` must be set to `FALSE`.
 
 ```{r}
 matchPattern("GM", dna1, fixed = FALSE)
 ```
 
-In this particular example, two views describes matches of the pattern in the subject sequence.
-Specifically, the pattern `GM` first matched the sequence `GC` spanning positions 4 to 5 in the subject sequence, and then also matched exactly the sequence `GA` from positions 9 to 10.
+In this particular example, two views describes matches of the pattern in the
+subject sequence.
+Specifically, the pattern `GM` first matched the sequence `GC` spanning
+positions 4 to 5 in the subject sequence, and then also matched the sequence
+`GA` from positions 9 to 10.
 
-Similarly to the method `matchPattern()`, the method `countPattern()` can be applied to simply count the number of matches of the `pattern` in the `subject` sequence.
-And again, the option `fixed` controls whether to respect ambiguity codes, or match them exactly.
+Similarly to the method `matchPattern()`, the method `countPattern()` can be
+applied to simply count the number of matches of the `pattern` in the `subject`
+sequence.
+And again, the option `fixed` controls whether to respect ambiguity codes, or
+match them exactly.
 
 > ## Challenge
 > 
@@ -157,7 +210,9 @@ And again, the option `fixed` controls whether to respect ambiguity codes, or ma
 > 
 > > ## Solution
 > > 
-> > The method `countPattern()` reports 3 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA`, `GC`, and `GM` sequences, due to the use of the ambiguity code `M` in the `pattern`.
+> > The method `countPattern()` reports 3 hits, because the option
+> > `fixed = FALSE` allow the pattern `GM` to match `GA`, `GC`, and `GM`
+> > sequences, due to the use of the ambiguity code `M` in the `pattern`.
 > > 
 > {: .solution}
 {: .challenge}
@@ -175,23 +230,36 @@ truseq_adapters <- readDNAStringSet(filepath = "data/TruSeq3-PE-2.fa")
 truseq_adapters
 ```
 
-> ## Note
+> ## Going further
 > 
-> The help page of the function `readDNAStringSet()` -- accessible using `?readDNAStringSet` -- documents related functions designed to import other types of biological sequences, e.g `readRNAStringSet()`, `readAAStringSet()`.
+> The help page of the function `readDNAStringSet()` -- accessible using
+> `help(readDNAStringSet)` -- documents related functions designed to import
+> other types of biological sequences, e.g `readRNAStringSet()`,
+> `readAAStringSet()`.
+> 
 {: .callout}
 
-## Computing the frequency of symbols
+## Operations on biological strings
 
-The `r BiocStyle::Biocpkg("Biostrings")` package provides several functions to process and manipulate classes of biological strings.
-For example, we have come across `matchPattern()` and `countPattern()` earlier in this episode.
+### Computing the frequency of symbols
 
-Another example of method that can be applied to biological strings is to compute the frequency of letters in a biological sequence, using  the method `letterFrequency()`.
+The `r BiocStyle::Biocpkg("Biostrings")` package provides several functions to
+process and manipulate classes of biological strings.
+For example, we have come across `matchPattern()` and `countPattern()` earlier
+in this episode.
+
+Another example of method that can be applied to biological strings is to
+compute the frequency of letters in a biological sequence, using  the method
+`letterFrequency()`.
 
 ```{r}
 letterFrequency(truseq_adapters, letters = DNA_ALPHABET)
 ```
 
-The output is a matrix with one row for each sequence, and one column for each symbol in the alphabet of deoxyribonucleic acids, provided by the `r BiocStyle::Biocpkg("Biostrings")` package in an object called `DNA_ALPHABET`.
+The output is a matrix with one row for each sequence in the `DNAStringSet`
+object, and one column for each symbol in the alphabet of deoxyribonucleic
+acids, provided by the `r BiocStyle::Biocpkg("Biostrings")` package in a
+built-in object called `DNA_ALPHABET`.
 
 ## Amino acid sequences
 
@@ -207,7 +275,8 @@ AA_ALPHABET
 
 > ## Challenge
 >
-> What are the two symbols present in `AA_PROTEINOGENIC` that are absent from `AA_STANDARD`?
+> Use base R code to identify the two symbols present in the `AA_PROTEINOGENIC` 
+> alphabet object that are absent from the `AA_STANDARD` alphabet object.
 > What do those two symbols represent?
 >
 > > ## Solution
@@ -240,20 +309,63 @@ showMethods("translate")
 In the output above, we see that that the generic function `translate()` includes methods capable of handling objects representing DNA and RNA sequences in the `DNAString` and `RNAString` classes, respectively;
 but also lists of DNA and RNA sequences in objects of class `DNAStringSet` and `RNAStringSet`, as well as other classes capable of storing DNA and RNA sequences.
 
-> ## Contribute!
+To demonstrate the use of the `translate()` method, we first load a set of open
+reading frame (ORFs) identified by the
+[NIH Open Reading Frame Finder][orf-finder]
+for the _Homo sapiens_ actin beta (ACTB) mRNA (RefSeq: NM_001101),
+using the standard genetic code, a minimal ORF length of 75 nucleotide,
+and starting with the "ATG" start codon only.
+
+```{r}
+actb_orf_nih <- readDNAStringSet("data/actb_orfs.fasta")
+actb_orf_nih
+```
+
+Having imported the nucleotide sequences as a `DNAStringSet` object, we can
+apply the `translate()` method to that object, to produce the amino acid
+sequence that results from the translation process for each nucleotide sequence.
+
+```{r}
+actb_aa <- translate(actb_orf_nih)
+actb_aa
+```
+In the example above, all amino acid sequences visible start with the typical
+methionin amino acid encoded by the "ATG" start codon.
+We also see that all but one of the amini acid sequences visible end with the
+`*` symbol, which indicates that the translation process ended on a stop codon.
+In contrast, the first open reading frame above reached the end of the
+nucleotide sequence without encoutering a stop codon.
+
+Conveniently, the number of amino acids in each sequence is stated under the
+header `width`.
+
+> ## Challenge
 > 
-> Design an example that demonstrate how to translate an open reading frame.
+> Extract the length of each amino acid sequence above as an integer vector.
+> What is the length of the longest amino acid sequence translated from any of
+> those open reading frame?
+>
+> Compare your result with the sequence information on the UniPro page for
+> ACTB (https://www.uniprot.org/uniprot/P60709#sequences).
 > 
-> Note that the "Examples" section of the `?translate` help page requires additional preprocessing steps that are not directly relevant to the point being made here:
-> - importing multiple sequences from a FASTA file
-> - trimming a range of nucleotides from both ends of each sequence
-> - taking only the first nucleotide sequence forward
-> - masking introns
-> - ... before eventually applying the `translate()` function to the preprocessed sequence
-> 
-> Ideally, this section should only focus on demonstrating the `translate()` function.
-> That said, there may be some value in thinking about how the other preprocessing functions can be demonstrated in this episode as well.
-{: .callout}
+> > ## Solution
+> > 
+> > ```
+> > width(actb_aa)
+> > # or
+> > max(width(actb_aa))
+> > ```
+> > 
+> > The longest translated sequence contains 376 amino acids.
+> > 
+> > The Uniprot page reports a sequence of 375 amino acids.
+> > However, the UniProt amino acid sequence does not comprise any symbol to
+> > represent the stop codon.
+> > That difference aside, the UniPro amino acid sequence is identical to the
+> > sequence that we was produced by the `translate()` method.
+> > 
+> {: .solution}
+{: .challenge}
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
@@ -264,3 +376,4 @@ but also lists of DNA and RNA sequences in objects of class `DNAStringSet` and `
 [glossary-s4-class]: ../reference.html#s4-class
 [glossary-s4-object]: ../reference.html#s4-object
 [glossary-s4-dispatch]: ../reference.html#s4-method-dispatch
+[orf-finder]: https://www.ncbi.nlm.nih.gov/orffinder/
