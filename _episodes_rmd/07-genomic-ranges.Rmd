@@ -275,7 +275,7 @@ As such, individual ranges can be extracted by integer index like any
 regular vector.
 
 ```{r}
-demo_with_metadata[1]
+demo_iranges[1]
 ```
 
 ## Metadata on IRanges
