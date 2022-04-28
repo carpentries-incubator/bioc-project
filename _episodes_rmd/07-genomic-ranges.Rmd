@@ -632,6 +632,19 @@ length(actb_in_region) - length(actb_gtf_data)
 In the example above, we learn that the new `GRanges` object has 11 records less
 than the original `GRanges` object.
 
+> ## Going further
+> 
+> Many more methods exist to operate on `GRanges` and `GRangesList` objects 
+> that could be demonstrated here.
+> 
+> You can find the full list of functions defined in the `GenomicRanges` package
+> on the index page of the package documentation, accessible using
+> `help(package="GenomicRanges")`.
+> You can also find more examples and use cases in the package vignettes, accessible using
+> `browseVignettes("GenomicRanges")`.
+>
+{: .callout}
+
 
 [glossary-s4-class]: ../reference.html#s4-class
 [ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
