@@ -645,7 +645,6 @@ than the original `GRanges` object.
 >
 {: .callout}
 
-
 [glossary-s4-class]: ../reference.html#s4-class
 [ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
 [ucsc-genome-data]: https://hgdownload.soe.ucsc.edu/downloads.html
