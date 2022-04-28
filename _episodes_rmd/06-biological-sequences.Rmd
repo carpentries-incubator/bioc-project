@@ -275,7 +275,8 @@ AA_ALPHABET
 
 > ## Challenge
 >
-> What are the two symbols present in `AA_PROTEINOGENIC` that are absent from `AA_STANDARD`?
+> Use base R code to identify the two symbols present in the `AA_PROTEINOGENIC` 
+> alphabet object that are absent from the `AA_STANDARD` alphabet object.
 > What do those two symbols represent?
 >
 > > ## Solution
