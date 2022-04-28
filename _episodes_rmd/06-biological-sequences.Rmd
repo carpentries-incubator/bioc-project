@@ -189,10 +189,15 @@ matchPattern("GM", dna1, fixed = FALSE)
 
 In this particular example, two views describes matches of the pattern in the
 subject sequence.
-Specifically, the pattern `GM` first matched the sequence `GC` spanning positions 4 to 5 in the subject sequence, and then also matched the sequence `GA` from positions 9 to 10.
+Specifically, the pattern `GM` first matched the sequence `GC` spanning
+positions 4 to 5 in the subject sequence, and then also matched the sequence
+`GA` from positions 9 to 10.
 
-Similarly to the method `matchPattern()`, the method `countPattern()` can be applied to simply count the number of matches of the `pattern` in the `subject` sequence.
-And again, the option `fixed` controls whether to respect ambiguity codes, or match them exactly.
+Similarly to the method `matchPattern()`, the method `countPattern()` can be
+applied to simply count the number of matches of the `pattern` in the `subject`
+sequence.
+And again, the option `fixed` controls whether to respect ambiguity codes, or
+match them exactly.
 
 > ## Challenge
 > 
@@ -205,7 +210,9 @@ And again, the option `fixed` controls whether to respect ambiguity codes, or ma
 > 
 > > ## Solution
 > > 
-> > The method `countPattern()` reports 3 hits, because the option `fixed = FALSE` allow the pattern `GM` to match `GA`, `GC`, and `GM` sequences, due to the use of the ambiguity code `M` in the `pattern`.
+> > The method `countPattern()` reports 3 hits, because the option
+> > `fixed = FALSE` allow the pattern `GM` to match `GA`, `GC`, and `GM`
+> > sequences, due to the use of the ambiguity code `M` in the `pattern`.
 > > 
 > {: .solution}
 {: .challenge}
@@ -225,7 +232,11 @@ truseq_adapters
 
 > ## Note
 > 
-> The help page of the function `readDNAStringSet()` -- accessible using `?readDNAStringSet` -- documents related functions designed to import other types of biological sequences, e.g `readRNAStringSet()`, `readAAStringSet()`.
+> The help page of the function `readDNAStringSet()` -- accessible using
+> `help(readDNAStringSet)` -- documents related functions designed to import
+> other types of biological sequences, e.g `readRNAStringSet()`,
+> `readAAStringSet()`.
+> 
 {: .callout}
 
 ## Computing the frequency of symbols
