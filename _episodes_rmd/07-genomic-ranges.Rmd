@@ -484,11 +484,12 @@ species, downloaded from the [Ensembl FTP][ensembl-ftp] site.
 The original file contains more than 3 millions lines and 22 metadata fields,
 from which a subset was extracted into a smaller file for this lesson.
 
-In particular, we use the `import()` generic defined in the
-`r BiocStyle::Biocpkg("BiocIO")` package and implemented in the
-`r BiocStyle::Biocpkg("rtracklayer")` package as a versatile function that is
-capable of recognising common file extensions and associating them with the
-appropriate method for parsing each particular file format.
+In particular, we use the `import()` generic
+defined in the `r BiocStyle::Biocpkg("BiocIO")` package - with methods
+implemented in the `r BiocStyle::Biocpkg("rtracklayer")` package - as a
+versatile function that is capable of recognising common file extensions and
+associating them with the appropriate method for parsing each particular file
+format.
 
 ```{r}
 library(rtracklayer)
