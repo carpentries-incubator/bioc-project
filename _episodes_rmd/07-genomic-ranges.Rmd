@@ -142,7 +142,7 @@ Intervals A and C overlap, from coordinates 5 to 6;
 while intervals B and C meet at coordinate 3, but do not strictly overlap each
 other.
 
-## Genomic ranges
+## A brief introduction to genomic ranges
 
 Genomic ranges essentially extend the notion of mathematical intervals on
 sets of biological sequences (e.g., chromosomes).
@@ -564,6 +564,8 @@ as the length of each `GRanges` object within the `GRangesList`:
 ```{r}
 lengths(actb_exons_by_transcript)
 ```
+
+
 
 [glossary-s4-class]: ../reference.html#s4-class
 [ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
