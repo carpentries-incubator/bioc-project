@@ -732,35 +732,11 @@ actb_gtf_data
 
 
 ~~~
-GRanges object with 267 ranges and 7 metadata columns:
-        seqnames          ranges strand |      source           type     score     phase         gene_id   gene_name
-           <Rle>       <IRanges>  <Rle> |    <factor>       <factor> <numeric> <integer>     <character> <character>
-    [1]        7 5526409-5563902      - | rtracklayer     gene              NA      <NA> ENSG00000075624        ACTB
-    [2]        7 5526409-5530601      - | rtracklayer     transcript        NA      <NA> ENSG00000075624        ACTB
-    [3]        7 5530542-5530601      - | rtracklayer     exon              NA      <NA> ENSG00000075624        ACTB
-    [4]        7 5529535-5529684      - | rtracklayer     exon              NA      <NA> ENSG00000075624        ACTB
-    [5]        7 5529535-5529657      - | rtracklayer     CDS               NA      <NA> ENSG00000075624        ACTB
-    ...      ...             ...    ... .         ...            ...       ...       ...             ...         ...
-  [263]        7 5540676-5540771      - | rtracklayer five_prime_utr        NA      <NA> ENSG00000075624        ACTB
-  [264]        7 5529658-5529663      - | rtracklayer five_prime_utr        NA      <NA> ENSG00000075624        ACTB
-  [265]        7 5561852-5562716      - | rtracklayer transcript            NA      <NA> ENSG00000075624        ACTB
-  [266]        7 5562390-5562716      - | rtracklayer exon                  NA      <NA> ENSG00000075624        ACTB
-  [267]        7 5561852-5561949      - | rtracklayer exon                  NA      <NA> ENSG00000075624        ACTB
-          transcript_id
-            <character>
-    [1]            <NA>
-    [2] ENST00000674681
-    [3] ENST00000674681
-    [4] ENST00000674681
-    [5] ENST00000674681
-    ...             ...
-  [263] ENST00000414620
-  [264] ENST00000414620
-  [265] ENST00000646584
-  [266] ENST00000646584
-  [267] ENST00000646584
+GRanges object with 0 ranges and 4 metadata columns:
+   seqnames    ranges strand |   source     type     score     phase
+      <Rle> <IRanges>  <Rle> | <factor> <factor> <numeric> <integer>
   -------
-  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+  seqinfo: no sequences
 ~~~
 {: .output}
 
@@ -810,23 +786,11 @@ subset(actb_gtf_data, type == "transcript" & start == 5527147)
 
 
 ~~~
-GRanges object with 5 ranges and 7 metadata columns:
-      seqnames          ranges strand |      source       type     score     phase         gene_id   gene_name
-         <Rle>       <IRanges>  <Rle> |    <factor>   <factor> <numeric> <integer>     <character> <character>
-  [1]        7 5527147-5529949      - | rtracklayer transcript        NA      <NA> ENSG00000075624        ACTB
-  [2]        7 5527147-5530581      - | rtracklayer transcript        NA      <NA> ENSG00000075624        ACTB
-  [3]        7 5527147-5530604      - | rtracklayer transcript        NA      <NA> ENSG00000075624        ACTB
-  [4]        7 5527147-5530604      - | rtracklayer transcript        NA      <NA> ENSG00000075624        ACTB
-  [5]        7 5527147-5530604      - | rtracklayer transcript        NA      <NA> ENSG00000075624        ACTB
-        transcript_id
-          <character>
-  [1] ENST00000642480
-  [2] ENST00000676397
-  [3] ENST00000676319
-  [4] ENST00000676189
-  [5] ENST00000473257
+GRanges object with 0 ranges and 4 metadata columns:
+   seqnames    ranges strand |   source     type     score     phase
+      <Rle> <IRanges>  <Rle> | <factor> <factor> <numeric> <integer>
   -------
-  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+  seqinfo: no sequences
 ~~~
 {: .output}
 
@@ -853,64 +817,8 @@ actb_exons_by_transcript
 
 
 ~~~
-GRangesList object of length 23:
-$ENST00000414620
-GRanges object with 4 ranges and 7 metadata columns:
-      seqnames          ranges strand |      source     type     score     phase         gene_id   gene_name
-         <Rle>       <IRanges>  <Rle> |    <factor> <factor> <numeric> <integer>     <character> <character>
-  [1]        7 5562574-5562790      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [2]        7 5540676-5540771      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [3]        7 5529535-5529663      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [4]        7 5529282-5529400      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-        transcript_id
-          <character>
-  [1] ENST00000414620
-  [2] ENST00000414620
-  [3] ENST00000414620
-  [4] ENST00000414620
-  -------
-  seqinfo: 1 sequence from an unspecified genome; no seqlengths
-
-$ENST00000417101
-GRanges object with 3 ranges and 7 metadata columns:
-      seqnames          ranges strand |      source     type     score     phase         gene_id   gene_name
-         <Rle>       <IRanges>  <Rle> |    <factor> <factor> <numeric> <integer>     <character> <character>
-  [1]        7 5529806-5529982      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [2]        7 5529535-5529663      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [3]        7 5529235-5529400      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-        transcript_id
-          <character>
-  [1] ENST00000417101
-  [2] ENST00000417101
-  [3] ENST00000417101
-  -------
-  seqinfo: 1 sequence from an unspecified genome; no seqlengths
-
-$ENST00000425660
-GRanges object with 7 ranges and 7 metadata columns:
-      seqnames          ranges strand |      source     type     score     phase         gene_id   gene_name
-         <Rle>       <IRanges>  <Rle> |    <factor> <factor> <numeric> <integer>     <character> <character>
-  [1]        7 5530524-5530601      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [2]        7 5529535-5529663      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [3]        7 5529161-5529400      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [4]        7 5529019-5529059      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [5]        7 5528281-5528719      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [6]        7 5528004-5528185      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-  [7]        7 5527156-5527891      - | rtracklayer     exon        NA      <NA> ENSG00000075624        ACTB
-        transcript_id
-          <character>
-  [1] ENST00000425660
-  [2] ENST00000425660
-  [3] ENST00000425660
-  [4] ENST00000425660
-  [5] ENST00000425660
-  [6] ENST00000425660
-  [7] ENST00000425660
-  -------
-  seqinfo: 1 sequence from an unspecified genome; no seqlengths
-
-...
-<20 more elements>
+GRangesList object of length 0:
+<0 elements>
 ~~~
 {: .output}
 
@@ -938,14 +846,7 @@ lengths(actb_exons_by_transcript)
 
 
 ~~~
-ENST00000414620 ENST00000417101 ENST00000425660 ENST00000432588 ENST00000443528 ENST00000462494 ENST00000464611 
-              4               3               7               5               3               5               3 
-ENST00000473257 ENST00000477812 ENST00000480301 ENST00000484841 ENST00000493945 ENST00000642480 ENST00000645025 
-              5               5               2               5               6               5               4 
-ENST00000645576 ENST00000646584 ENST00000646664 ENST00000647275 ENST00000674681 ENST00000675515 ENST00000676189 
-              5               2               6               3               6               6               6 
-ENST00000676319 ENST00000676397 
-              3               6 
+named integer(0)
 ~~~
 {: .output}
 
@@ -969,7 +870,7 @@ ENST00000676319 ENST00000676397
 > > 
 > > 
 > > ~~~
-> > [1] 23
+> > [1] 0
 > > ~~~
 > > {: .output}
 > > 
@@ -1005,35 +906,11 @@ actb_in_region
 
 
 ~~~
-GRanges object with 256 ranges and 7 metadata columns:
-        seqnames          ranges strand |      source           type     score     phase         gene_id   gene_name
-           <Rle>       <IRanges>  <Rle> |    <factor>       <factor> <numeric> <integer>     <character> <character>
-    [1]        7 5526409-5563902      - | rtracklayer     gene              NA      <NA> ENSG00000075624        ACTB
-    [2]        7 5526409-5530601      - | rtracklayer     transcript        NA      <NA> ENSG00000075624        ACTB
-    [3]        7 5530542-5530601      - | rtracklayer     exon              NA      <NA> ENSG00000075624        ACTB
-    [4]        7 5529535-5529684      - | rtracklayer     exon              NA      <NA> ENSG00000075624        ACTB
-    [5]        7 5529535-5529657      - | rtracklayer     CDS               NA      <NA> ENSG00000075624        ACTB
-    ...      ...             ...    ... .         ...            ...       ...       ...             ...         ...
-  [252]        7 5529535-5529657      - | rtracklayer CDS                   NA      <NA> ENSG00000075624        ACTB
-  [253]        7 5529655-5529657      - | rtracklayer start_codon           NA      <NA> ENSG00000075624        ACTB
-  [254]        7 5529282-5529400      - | rtracklayer exon                  NA      <NA> ENSG00000075624        ACTB
-  [255]        7 5529282-5529400      - | rtracklayer CDS                   NA      <NA> ENSG00000075624        ACTB
-  [256]        7 5529658-5529663      - | rtracklayer five_prime_utr        NA      <NA> ENSG00000075624        ACTB
-          transcript_id
-            <character>
-    [1]            <NA>
-    [2] ENST00000674681
-    [3] ENST00000674681
-    [4] ENST00000674681
-    [5] ENST00000674681
-    ...             ...
-  [252] ENST00000414620
-  [253] ENST00000414620
-  [254] ENST00000414620
-  [255] ENST00000414620
-  [256] ENST00000414620
+GRanges object with 0 ranges and 4 metadata columns:
+   seqnames    ranges strand |   source     type     score     phase
+      <Rle> <IRanges>  <Rle> | <factor> <factor> <numeric> <integer>
   -------
-  seqinfo: 1 sequence from an unspecified genome; no seqlengths
+  seqinfo: no sequences
 ~~~
 {: .output}
 
@@ -1054,7 +931,7 @@ length(actb_in_region) - length(actb_gtf_data)
 
 
 ~~~
-[1] -11
+[1] 0
 ~~~
 {: .output}
 
