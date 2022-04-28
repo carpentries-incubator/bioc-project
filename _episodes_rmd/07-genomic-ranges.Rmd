@@ -500,8 +500,8 @@ actb_gtf_data
 > version 2 file format, we could have directly invoked the function
 > `rtracklayer::import.gff2()` with the exact same effect.
 >
-> Refer to the `r BiocStyle::Biocpkg("rtracklayer")` package documentation
-> for the full list of methods available.
+> Refer to the documentation of the `r BiocStyle::Biocpkg("rtracklayer")`
+> package for the full list of methods available.
 {: .callout}
 
 In the example above, the contents of the GTF file were imported into a
@@ -555,7 +555,8 @@ applied to `GRangesList` objects.
 For instance, the `lengths()` function can be used on `GRangesList` to display
 the length of each `GRanges` object in the list.
 
-In the latest example above, we can show the number of exons in each transcript:
+In the latest example above, we can compute the number of exons in each transcript
+as the length of each `GRanges` object within the `GRangesList`:
 
 ```{r}
 lengths(actb_exons_by_transcript)
