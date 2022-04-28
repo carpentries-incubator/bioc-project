@@ -230,8 +230,7 @@ defined by two out of three pieces of information:
 
 The `IRanges()` constructor function accepts those three pieces of information
 in the arguments `start=`, `width=`, and `end=`.
-For instance, let us create two integer ranges from their start position and
-width:
+For instance, we create two integer ranges from their start position and width:
 
 - one range starts at position 10 and has width 10
 - one range starts at position 15 and has width 5
@@ -241,7 +240,7 @@ demo_iranges <- IRanges(start = c(10, 15), width = c(10, 5))
 demo_iranges
 ```
 
-Let us note how the object displays not only the _start_ and _width_ information
+We note how the object displays not only the _start_ and _width_ information
 that we requested for each range, but also the _end_ position that is naturally
 computed from the other two pieces of information.
 
@@ -283,7 +282,8 @@ demo_iranges[1]
 The `IRanges` class can accommodate metadata information on each range,
 including names - passed to the `names=` argument - and miscellaneous metadata
 passed as named vectors.
-For instance, let us create two ranges named "A" and "B".
+
+For instance, we create two ranges named "A" and "B".
 Furthermore, we define metadata fields to store an example of character
 values and numeric values, respectively.
 Both the names and the values of the metadata fields are completely arbitrary
@@ -374,7 +374,7 @@ Having defined integer ranges, the only additional information necessary to
 define genomic ranges is the name the genomic sequence on which each range is
 located.
 
-For instance, let us define two genomic ranges, as follows:
+For instance, we define two genomic ranges, as follows:
 
 - one genomic range on chromosome 1 (abbreviated "chr1"), from position 10 to 25
 - one genomic range on chromosome 2 (abbreviated "chr2"), from position 20 to 35
