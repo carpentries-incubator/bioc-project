@@ -529,8 +529,8 @@ throughout bioinformatics workflows.
 For instance, the `subset()` method is extremely convenient to extract a set
 of genomic ranges matching a condition on any component, including sequence
 name, start and end position, strand, or any metadata field.
-In the example below, we extract all the `transcript` records that start at
-position `5527147`.
+In the example below, we extract all the records of type `transcript` that start
+at position `5527147`.
 
 ```{r}
 subset(actb_gtf_data, type == "transcript" & start == 5527147)
