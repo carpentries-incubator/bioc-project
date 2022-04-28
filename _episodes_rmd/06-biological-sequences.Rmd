@@ -230,7 +230,7 @@ truseq_adapters <- readDNAStringSet(filepath = "data/TruSeq3-PE-2.fa")
 truseq_adapters
 ```
 
-> ## Note
+> ## Going further
 > 
 > The help page of the function `readDNAStringSet()` -- accessible using
 > `help(readDNAStringSet)` -- documents related functions designed to import
