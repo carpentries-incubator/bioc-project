@@ -556,7 +556,7 @@ named lists in base R.
 By nature, many of the methods applicable to `list` objects can be directly
 applied to `GRangesList` objects.
 For instance, the `lengths()` function can be used on `GRangesList` to display
-the length of each `GRanges` object in the list.
+the length of each `GRanges` object in the list as an integer vector.
 
 In the latest example above, we can compute the number of exons in each transcript
 as the length of each `GRanges` object within the `GRangesList`:
