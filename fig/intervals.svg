@@ -3,9 +3,9 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 595.3 149.3" style="enable-background:new 0 0 595.3 149.3;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
 	.st1{font-family:'ArialMT';}
-	.st2{font-size:12px;}
+	.st2{font-size:10px;}
 	.st3{fill:#EDEDED;stroke:#000000;stroke-miterlimit:10;}
 	.st4{font-size:8px;}
 </style>
@@ -23,30 +23,30 @@
 	<line class="st0" x1="351.3" y1="101.4" x2="351.2" y2="95.7"/>
 	<line class="st0" x1="366.8" y1="101.4" x2="366.7" y2="95.7"/>
 	<line class="st0" x1="382.2" y1="101.4" x2="382.1" y2="95.7"/>
-	<text transform="matrix(1 0 0 1 209.0482 116.1729)" class="st1 st2">1</text>
-	<text transform="matrix(1 0 0 1 224.4811 116.1731)" class="st1 st2">2</text>
-	<text transform="matrix(1 0 0 1 239.914 116.1729)" class="st1 st2">3</text>
-	<text transform="matrix(1 0 0 1 255.3465 116.1731)" class="st1 st2">4</text>
-	<text transform="matrix(1 0 0 1 270.7794 116.1729)" class="st1 st2">5</text>
-	<text transform="matrix(1 0 0 1 286.2119 116.1731)" class="st1 st2">6</text>
-	<text transform="matrix(1 0 0 1 301.6447 116.1733)" class="st1 st2">7</text>
-	<text transform="matrix(1 0 0 1 344.6064 116.1731)" class="st1 st2">10</text>
-	<text transform="matrix(1 0 0 1 317.0778 116.1731)" class="st1 st2">8</text>
-	<text transform="matrix(1 0 0 1 332.5111 116.1731)" class="st1 st2">9</text>
-	<text transform="matrix(1 0 0 1 344.6064 116.1731)" class="st1 st2">10</text>
+	<text transform="matrix(1 0 0 1 209.6044 114.1729)" class="st1 st2">1</text>
+	<text transform="matrix(1 0 0 1 225.0373 114.1731)" class="st1 st2">2</text>
+	<text transform="matrix(1 0 0 1 240.4701 114.1729)" class="st1 st2">3</text>
+	<text transform="matrix(1 0 0 1 255.9026 114.1731)" class="st1 st2">4</text>
+	<text transform="matrix(1 0 0 1 271.3355 114.1729)" class="st1 st2">5</text>
+	<text transform="matrix(1 0 0 1 286.7681 114.1731)" class="st1 st2">6</text>
+	<text transform="matrix(1 0 0 1 302.2009 114.1733)" class="st1 st2">7</text>
+	<text transform="matrix(1 0 0 1 345.7187 114.1731)" class="st1 st2">10</text>
+	<text transform="matrix(1 0 0 1 317.6339 114.1731)" class="st1 st2">8</text>
+	<text transform="matrix(1 0 0 1 333.0673 114.1731)" class="st1 st2">9</text>
+	<text transform="matrix(1 0 0 1 345.7187 114.1731)" class="st1 st2">10</text>
 	<g>
 		<rect x="274.1" y="68.1" class="st3" width="61.7" height="12.9"/>
-		<text transform="matrix(1 0 0 1 300.9801 78.5297)" class="st1 st2">A</text>
+		<text transform="matrix(1 0 0 1 301.6471 78.5297)" class="st1 st2">A</text>
 	</g>
 	<g>
 		<rect x="211.8" y="50" class="st3" width="30.9" height="12.9"/>
-		<text transform="matrix(1 0 0 1 223.2621 60.1109)" class="st1 st2">B</text>
+		<text transform="matrix(1 0 0 1 223.9291 60.1109)" class="st1 st2">B</text>
 	</g>
 	<g>
 		<rect x="243.3" y="31.8" class="st3" width="46.3" height="12.9"/>
-		<text transform="matrix(1 0 0 1 262.0668 41.8764)" class="st1 st2">C</text>
+		<text transform="matrix(1 0 0 1 262.7889 41.8764)" class="st1 st2">C</text>
 	</g>
-	<text transform="matrix(1 0 0 1 361.7123 116.173)" class="st1 st2">...</text>
+	<text transform="matrix(1 0 0 1 362.5458 114.173)" class="st1 st2">...</text>
 	<text transform="matrix(1 0 0 1 249.279 58.9234)" class="st1 st4">width = 2</text>
 	<text transform="matrix(1 0 0 1 295.5167 40.6887)" class="st1 st4">width = 3</text>
 	<text transform="matrix(1 0 0 1 340.8834 77.1579)" class="st1 st4">width = 4</text>
