@@ -83,7 +83,9 @@ For instance, a function designed to translate nucleic acid sequences into the c
 > > ## Solution
 > > 
 > > Yes, this is a valid DNA sequence using ambiguity codes defined in the [IUPAC][external-iupac] notation.
-> > In this case, the `R` symbol represents either of the two purine nucleotide bases, `A` and `G`.
+> > In this case, `A`, `T`, `C`, and `G` represents the four standard types of
+> > nucleotides, while the `R` symbol acts as a regular expression representing
+> > either of the two purine nucleotide bases, `A` and `G`.
 > > 
 > {: .solution}
 {: .challenge}
