@@ -309,20 +309,63 @@ showMethods("translate")
 In the output above, we see that that the generic function `translate()` includes methods capable of handling objects representing DNA and RNA sequences in the `DNAString` and `RNAString` classes, respectively;
 but also lists of DNA and RNA sequences in objects of class `DNAStringSet` and `RNAStringSet`, as well as other classes capable of storing DNA and RNA sequences.
 
-> ## Contribute!
+To demonstrate the use of the `translate()` method, we first load a set of open
+reading frame (ORFs) identified by the
+[NIH Open Reading Frame Finder][orf-finder]
+for the _Homo sapiens_ actin beta (ACTB) mRNA (RefSeq: NM_001101),
+using the standard genetic code, a minimal ORF length of 75 nucleotide,
+and starting with the "ATG" start codon only.
+
+```{r}
+actb_orf_nih <- readDNAStringSet("data/actb_orfs.fasta")
+actb_orf_nih
+```
+
+Having imported the nucleotide sequences as a `DNAStringSet` object, we can
+apply the `translate()` method to that object, to produce the amino acid
+sequence that results from the translation process for each nucleotide sequence.
+
+```{r}
+actb_aa <- translate(actb_orf_nih)
+actb_aa
+```
+In the example above, all amino acid sequences visible start with the typical
+methionin amino acid encoded by the "ATG" start codon.
+We also see that all but one of the amini acid sequences visible end with the
+`*` symbol, which indicates that the translation process ended on a stop codon.
+In contrast, the first open reading frame above reached the end of the
+nucleotide sequence without encoutering a stop codon.
+
+Conveniently, the number of amino acids in each sequence is stated under the
+header `width`.
+
+> ## Challenge
 > 
-> Design an example that demonstrate how to translate an open reading frame.
+> Extract the length of each amino acid sequence above as an integer vector.
+> What is the length of the longest amino acid sequence translated from any of
+> those open reading frame?
+>
+> Compare your result with the sequence information on the UniPro page for
+> ACTB (https://www.uniprot.org/uniprot/P60709#sequences).
 > 
-> Note that the "Examples" section of the `?translate` help page requires additional preprocessing steps that are not directly relevant to the point being made here:
-> - importing multiple sequences from a FASTA file
-> - trimming a range of nucleotides from both ends of each sequence
-> - taking only the first nucleotide sequence forward
-> - masking introns
-> - ... before eventually applying the `translate()` function to the preprocessed sequence
-> 
-> Ideally, this section should only focus on demonstrating the `translate()` function.
-> That said, there may be some value in thinking about how the other preprocessing functions can be demonstrated in this episode as well.
-{: .callout}
+> > ## Solution
+> > 
+> > ```
+> > width(actb_aa)
+> > # or
+> > max(width(actb_aa))
+> > ```
+> > 
+> > The longest translated sequence contains 376 amino acids.
+> > 
+> > The Uniprot page reports a sequence of 375 amino acids.
+> > However, the UniProt amino acid sequence does not comprise any symbol to
+> > represent the stop codon.
+> > That difference aside, the UniPro amino acid sequence is identical to the
+> > sequence that we was produced by the `translate()` method.
+> > 
+> {: .solution}
+{: .challenge}
 
 [pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
@@ -333,3 +376,4 @@ but also lists of DNA and RNA sequences in objects of class `DNAStringSet` and `
 [glossary-s4-class]: ../reference.html#s4-class
 [glossary-s4-object]: ../reference.html#s4-object
 [glossary-s4-dispatch]: ../reference.html#s4-method-dispatch
+[orf-finder]: https://www.ncbi.nlm.nih.gov/orffinder/
