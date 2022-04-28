@@ -94,10 +94,21 @@ For instance, a function designed to translate nucleic acid sequences into the c
 
 ## Overview
 
-The `r BiocStyle::Biocpkg("Biostrings")` package implements S4 classes to represent biological sequences as S4 objects, e.g. `DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, and `AAString` for sequences of amino acids in protein polymers.
-Those S4 classes provide memory-efficient containers for character strings, automatic validity-checking functionality for each class of biological molecules, and methods implementing various string matching algorithms and other utilities for fast manipulation and processing of large biological sequences or sets of sequences.
+In the Bioconductor project, the `r BiocStyle::Biocpkg("Biostrings")` package
+implements S4 classes to represent biological sequences as S4 objects, e.g.
+`DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, and
+`AAString` for sequences of amino acids in protein polymers.
+Those S4 classes provide memory-efficient containers for character strings,
+automatic validity-checking functionality for each class of biological
+molecules, and methods implementing various string matching algorithms and other
+utilities for fast manipulation and processing of large biological sequences or
+sets of sequences.
 
-A short presentation of the basic classes defined in the `r BiocStyle::Biocpkg("Biostrings")` package is available in one of the package vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed information is provided in the other package vignettes, accessible as `browseVignettes("Biostrings")`.
+A short presentation of the basic classes defined in the
+`r BiocStyle::Biocpkg("Biostrings")` package is available in one of the package
+vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed
+information is provided in the other package vignettes, accessible as
+`browseVignettes("Biostrings")`.
 
 ## First steps
 
@@ -107,9 +118,14 @@ To get started, we load the package.
 library(Biostrings)
 ```
 
-With the package loaded and attached to the session, we have access to the package functions.
-Those include functions that let us create new objects of the classes defined in the package.
-For instance, we can create an object that represents a DNA sequence, using the `DNAString()` constructor function.
+With the package loaded and attached to the session, we have access to the
+package functions.
+Those include functions that let us create new objects of the classes defined
+in the package.
+For instance, we can create an object that represents a DNA sequence, using the
+`DNAString()` constructor function.
+Without assigning the output to an object, we let the resulting object be
+printed in the console.
 
 ```{r}
 DNAString("ATCG")
