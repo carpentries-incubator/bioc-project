@@ -19,7 +19,7 @@ ExperimentData package
     Experiment data packages can be explored on the [biocViews page][bioc-experimentdata].
 
 S4 class
-:   R has three object oriented (OO) systems: S3, S4 and R5.
+:   R has three object-oriented programming (OOP) systems: S3, S4 and R6 (or Reference Classes).
     S4 is system that defines formal classes, using an implementation that is stricter than the S3 class system.
     Classes define the conceptual structure of S4 objects, while S4 objects represent practical instances of their class. See [S4 object](#s4-object).
     

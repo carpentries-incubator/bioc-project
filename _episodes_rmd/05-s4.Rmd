@@ -140,7 +140,7 @@ Specifically, the `DataFrame` supports the storage of any type of object (with `
 On the whole, the `DataFrame` class provides a formal definition of an S4 class that behaves very similarly to `data.frame`, in terms of construction, subsetting, splitting, combining, etc.
 
 The `DataFrame()` constructor function should be used to create new objects, comparably to the `data.frame()` equivalent in base R.
-The help page for the function, accessible as `?DataFrame`, ca be consulted for more information.
+The help page for the function, accessible as `?DataFrame`, can be consulted for more information.
 
 ```{r}
 DF1 <- DataFrame(
@@ -156,6 +156,12 @@ In fact, `DataFrame` objects can be easily converted to  equivalent `data.frame`
 ```{r}
 df1 <- as.data.frame(DF1)
 df1
+```
+
+Vice versa, we can also convert `data.frame` objects to `DataFrame` using the `as()` function.
+
+```{r}
+as(df1, "DataFrame")
 ```
 
 ## Differences with the base data.frame
