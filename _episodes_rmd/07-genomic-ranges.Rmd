@@ -371,7 +371,7 @@ both ranges in the subject set.
 ## The GRanges class
 
 Having defined integer ranges, the only additional information necessary to
-define genomic ranges, is the name of the genomic sequence on which each range is
+define genomic ranges is the name of the genomic sequence on which each range is
 located.
 
 For instance, we define two genomic ranges, as follows:
