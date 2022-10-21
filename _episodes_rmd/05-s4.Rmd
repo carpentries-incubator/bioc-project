@@ -158,6 +158,14 @@ df1 <- as.data.frame(DF1)
 df1
 ```
 
+Vice versa, we can also convert `data.frame` objects to `DataFrame` using the `as()` function.
+
+```{r}
+as(df1, "DataFrame")
+```
+
+and vice versa
+
 ## Differences with the base data.frame
 
 The most notable exceptions have to do with handling of row names.
