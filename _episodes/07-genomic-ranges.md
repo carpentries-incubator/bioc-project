@@ -372,7 +372,7 @@ IRanges object with 2 ranges and 2 metadata columns:
 ~~~
 {: .output}
 
-The metadata columns can be extracted as a `DataFrame` using the function `mcols()`, as is "metadata columns".
+The metadata columns can be extracted as a `DataFrame` using the function `mcols()` (short for "metadata columns").
 
 
 ~~~
@@ -429,7 +429,7 @@ IRanges object with 1 range and 2 metadata columns:
 
 `IRanges` provide the basis for most operations on ranges of numerical coordinates.
 
-For instance, given two set of ranges - a query set and a subject set - the
+For instance, given two sets of ranges - a query set and a subject set - the
 `findOVerlaps()` function can be used to find out which pairs of ranges in the
 two sets overlap with each other.
 
@@ -458,7 +458,7 @@ Hits object with 3 hits and 0 metadata columns:
 ~~~
 {: .output}
 
-The results are returned in the form of a `Hits` object, which we has not
+The results are returned in the form of a `Hits` object, which we have not
 introduced yet.
 A `Hits` object is visualised as a table that comprises two integer
 columns named `queryHits` and `subjectHits`.
@@ -529,7 +529,7 @@ both ranges in the subject set.
 ## The GRanges class
 
 Having defined integer ranges, the only additional information necessary to
-define genomic ranges is the name the genomic sequence on which each range is
+define genomic ranges is the name of the genomic sequence on which each range is
 located.
 
 For instance, we define two genomic ranges, as follows:
@@ -777,7 +777,7 @@ GRanges object with 267 ranges and 7 metadata columns:
 
 In the example above, the contents of the GTF file were imported into a
 `GRanges` object. For each entry in the file, the sequence name, start and end
-position, and strand information were used to populated the dedicated components
+position, and strand information were used to populate the dedicated components
 of the object, while all other pieces of information are stored as separate
 columns of metadata.
 
@@ -1064,7 +1064,7 @@ than the original `GRanges` object.
 > ## Going further
 > 
 > Many more methods exist to operate on `GRanges` and `GRangesList` objects 
-> that could be demonstrated here.
+> than what could be demonstrated here.
 > 
 > You can find the full list of functions defined in the `GenomicRanges` package
 > on the index page of the package documentation, accessible using
