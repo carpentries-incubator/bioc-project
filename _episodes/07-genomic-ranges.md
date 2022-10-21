@@ -79,7 +79,7 @@ the numeric interval of coordinates on that sequence.
 ![Example uses of the GenomicRanges algebra.](../fig/bioc-genomicranges.svg)
 
 **Example uses of the GenomicRanges algebra.**
-Adapted from <a id='cite-Huber2015'></a><a href='#bib-Huber2015'>Huber, et al. (2015)</a>.
+Adapted from <a id='cite-Huber2015'></a><a href='#bib-Huber2015'>Huber et al. (2015)</a>.
 The figure illustrates the example of a gene model that comprises two
 transcripts, and the definition of various genomic ranges relative to that
 gene model.

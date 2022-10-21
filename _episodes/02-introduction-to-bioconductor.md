@@ -33,7 +33,7 @@ keypoints:
 
 ## A brief history of Bioconductor
 
-The Bioconductor project was started in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics <a id='cite-Gentleman2004'></a>(<a href='#bib-Gentleman2004'>Gentleman, et al., 2004</a>).
+The Bioconductor project was started in the Fall of 2001, as an initiative for the collaborative creation of extensible software for computational biology and bioinformatics <a id='cite-Gentleman2004'></a>(<a href='#bib-Gentleman2004'>Gentleman et al., 2004</a>).
 From the very start, the stated mission of the project was to develop tools for the statistical analysis and comprehension of large datasets and technological artifacts in rigorously and robustly designed experiments.
 Beyond statistical analyses, the interpretation of statistical results is supported by packages providing biological context, visualization, and reproducibility.
 
@@ -53,11 +53,11 @@ Below the timeline, major technological advancements contextualise the evolution
 
 ## A scientific project
 
-The original publication describes the aims and methods of the project at its inception <a href='#bib-Gentleman2004'>Gentleman, et al. (2004)</a>.
+The original publication describes the aims and methods of the project at its inception <a href='#bib-Gentleman2004'>Gentleman et al. (2004)</a>.
 
-<a id='cite-Huber2015'></a><a href='#bib-Huber2015'>Huber, et al. (2015)</a> illustrates the progression of the project, including descriptions of core infrastructure and case studies, from the perspective of both users and developers.
+<a id='cite-Huber2015'></a><a href='#bib-Huber2015'>Huber et al. (2015)</a> illustrates the progression of the project, including descriptions of core infrastructure and case studies, from the perspective of both users and developers.
 
-<a id='cite-Amezquita2020'></a><a href='#bib-Amezquita2020'>Amezquita, et al. (2020)</a> reviewed further developments of the project in the wake of single-cell genomics technologies.
+<a id='cite-Amezquita2020'></a><a href='#bib-Amezquita2020'>Amezquita et al. (2020)</a> reviewed further developments of the project in the wake of single-cell genomics technologies.
 
 Many more publications and book chapters cite the Bioconductor project, with recent example listed on the [Bioconductor website][bioc-publications].
 
@@ -78,7 +78,7 @@ The Bioconductor project has extended the preexisting CRAN repository -- much la
 
 ### The Bioconductor release cycle
 
-The Bioconductor project also extended the packaging infrastructure of the CRAN repository to better support the deployment and management of packages at the user level (<a href='#bib-Gentleman2004'>Gentleman, et al., 2004</a>).
+The Bioconductor project also extended the packaging infrastructure of the CRAN repository to better support the deployment and management of packages at the user level (<a href='#bib-Gentleman2004'>Gentleman et al., 2004</a>).
 In particular, the Bioconductor projects features a 6-month release cycle (typically around April and October), which sees a snapshot of the current version of all packages in the Bioconductor repository earmarked for a specific version of R.
 R itself is released on an annual basis (typically around April), meaning that for each release of R, two compatible releases of Bioconductor packages are available.
 
@@ -178,7 +178,7 @@ Terms are initially selected by the package authors, and subsequently refined du
 > The Bioconductor package *[biocViews](https://bioconductor.org/packages/3.15/biocViews)* is used to support and manage the infrastructure of the controlled vocabulary.
 > It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
 > 
-> Furthermore, the *[BiocPkgTools](https://bioconductor.org/packages/3.15/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] <a id='cite-BiocPkgTools2019'></a>(<a href='#bib-BiocPkgTools2019'> Su, et al., 2019</a>).
+> Furthermore, the *[BiocPkgTools](https://bioconductor.org/packages/3.15/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] <a id='cite-BiocPkgTools2019'></a>(<a href='#bib-BiocPkgTools2019'> Su et al., 2019</a>).
 {: .callout}
 
 ### Packages interoperability

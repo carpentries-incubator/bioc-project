@@ -63,7 +63,7 @@ However, a major limitation of regular character vectors is that they do not
 check the validity of the sequences that they contain.
 Practically, it is possible to store meaningless sequences of symbols in
 character strings, including symbols that are not part of the official alphabet
-the relevant type of polymer.
+for the relevant type of polymer.
 In those cases, the burden of checking the validity of sequences falls on the
 programs that process them, or causing those programs to run into errors when
 they unexpectedly encounter invalid symbols in a sequence.
@@ -213,7 +213,7 @@ argument, and returns a `Views` object that reports and displays any match of
 the `pattern` expression at any position in the `subject` sequence.
 
 Note that the default option `fixed = TRUE` instructs the method to match the
-query exactly -- i.e., ignore ambiguity codes -- which in this case does report
+query exactly -- i.e., ignore ambiguity codes -- which in this case does not report
 any exact match.
 
 
@@ -253,7 +253,7 @@ views:
 ~~~
 {: .output}
 
-In this particular example, two views describes matches of the pattern in the
+In this particular example, two views describe matches of the pattern in the
 subject sequence.
 Specifically, the pattern `GM` first matched the sequence `GC` spanning
 positions 4 to 5 in the subject sequence, and then also matched the sequence
@@ -277,7 +277,7 @@ match them exactly.
 > > ## Solution
 > > 
 > > The method `countPattern()` reports 3 hits, because the option
-> > `fixed = FALSE` allow the pattern `GM` to match `GA`, `GC`, and `GM`
+> > `fixed = FALSE` allows the pattern `GM` to match `GA`, `GC`, and `GM`
 > > sequences, due to the use of the ambiguity code `M` in the `pattern`.
 > > 
 > {: .solution}
@@ -288,7 +288,7 @@ match them exactly.
 In practice, users rarely type the strings representing biological sequences themselves.
 Most of the time, biological strings are imported from files, either downloaded from public repositories or generated locally using bioinformatics programs.
 
-For instance, we can load the set of adapter sequences for the [TruSeq™ DNA PCR-Free whole-genome sequencing library preparation][external-truseq] kit from a file that we downloaded the file during the lesson setup.
+For instance, we can load the set of adapter sequences for the [TruSeq™ DNA PCR-Free whole-genome sequencing library preparation][external-truseq] kit from a file that we downloaded during the lesson setup.
 Since adapter sequences are nucleic acid sequences, we must use the function `readDNAStringSet()`.
 
 
@@ -330,9 +330,9 @@ process and manipulate classes of biological strings.
 For example, we have come across `matchPattern()` and `countPattern()` earlier
 in this episode.
 
-Another example of method that can be applied to biological strings is to
-compute the frequency of letters in a biological sequence, using  the method
-`letterFrequency()`.
+Another example of a method that can be applied to biological strings is
+`letterFrequency()`, to compute the frequency of letters in a biological
+sequence.
 
 
 ~~~
@@ -395,7 +395,7 @@ AA_ALPHABET
 > > 
 > > The symbols `U` and `O` represent selenocysteine and pyrrolysine, respectively.
 > > Those two amino acids are in some species coded for by codons that are usually interpreted as stop codons.
-> > As such, they are not included in the alphabet of "standard" amino acids, and a alphabet of "proteinogenic" amino acids was defined to acknowledge the special biology of those amino acids.
+> > As such, they are not included in the alphabet of "standard" amino acids, and an alphabet of "proteinogenic" amino acids was defined to acknowledge the special biology of those amino acids.
 > > Either of those alphabets may be used to determine the validity of an amino acid sequence, depending on its biological nature.
 > > 
 > {: .solution}
@@ -406,7 +406,7 @@ AA_ALPHABET
 One of the key motivations for the use of [S4 classes][glossary-s4-class] and the object-oriented programming (OOP) model relies on the infrastructure of S4 generics and methods.
 As described in the earlier episode [The S4 class system][crossref-s4], generics provide a mechanism for defining and applying distinct implementations of the same generic function name, according to the nature of the input object(s) provided to the function call.
 
-For instance, the *[Biostrings](https://bioconductor.org/packages/3.15/Biostrings)* package provide multiple implementations of a generic called `translate()`,  for translating DNA or RNA sequences into amino acid sequences.
+For instance, the *[Biostrings](https://bioconductor.org/packages/3.15/Biostrings)* package provides multiple implementations of a generic called `translate()`,  for translating DNA or RNA sequences into amino acid sequences.
 The set of input objects supported by the generic `translate()` can be listed using the function `showMethods()`, from the CRAN package *[methods](https://CRAN.R-project.org/package=methods)*.
 
 
@@ -432,10 +432,10 @@ In the output above, we see that that the generic function `translate()` include
 but also lists of DNA and RNA sequences in objects of class `DNAStringSet` and `RNAStringSet`, as well as other classes capable of storing DNA and RNA sequences.
 
 To demonstrate the use of the `translate()` method, we first load a set of open
-reading frame (ORFs) identified by the
+reading frames (ORFs) identified by the
 [NIH Open Reading Frame Finder][orf-finder]
 for the _Homo sapiens_ actin beta (ACTB) mRNA (RefSeq: NM_001101),
-using the standard genetic code, a minimal ORF length of 75 nucleotide,
+using the standard genetic code, a minimal ORF length of 75 nucleotides,
 and starting with the "ATG" start codon only.
 
 
@@ -466,7 +466,7 @@ Error in eval(expr, envir, enclos): object 'actb_orf_nih' not found
 {: .error}
 
 Having imported the nucleotide sequences as a `DNAStringSet` object, we can
-apply the `translate()` method to that object, to produce the amino acid
+apply the `translate()` method to that object to produce the amino acid
 sequence that results from the translation process for each nucleotide sequence.
 
 
@@ -497,7 +497,7 @@ Error in eval(expr, envir, enclos): object 'actb_aa' not found
 {: .error}
 In the example above, all amino acid sequences visible start with the typical
 methionin amino acid encoded by the "ATG" start codon.
-We also see that all but one of the amini acid sequences visible end with the
+We also see that all but one of the amino acid sequences visible end with the
 `*` symbol, which indicates that the translation process ended on a stop codon.
 In contrast, the first open reading frame above reached the end of the
 nucleotide sequence without encoutering a stop codon.
@@ -509,7 +509,7 @@ header `width`.
 > 
 > Extract the length of each amino acid sequence above as an integer vector.
 > What is the length of the longest amino acid sequence translated from any of
-> those open reading frame?
+> those open reading frames?
 >
 > Compare your result with the sequence information on the UniPro page for
 > ACTB (https://www.uniprot.org/uniprot/P60709#sequences).
@@ -528,7 +528,7 @@ header `width`.
 > > However, the UniProt amino acid sequence does not comprise any symbol to
 > > represent the stop codon.
 > > That difference aside, the UniPro amino acid sequence is identical to the
-> > sequence that we was produced by the `translate()` method.
+> > sequence that was produced by the `translate()` method.
 > > 
 > {: .solution}
 {: .challenge}
