@@ -441,19 +441,6 @@ and starting with the "ATG" start codon only.
 
 ~~~
 actb_orf_nih <- readDNAStringSet("data/actb_orfs.fasta")
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in .Call2("new_input_filexp", filepath, PACKAGE = "XVector"): cannot open file 'data/actb_orfs.fasta'
-~~~
-{: .error}
-
-
-
-~~~
 actb_orf_nih
 ~~~
 {: .language-r}
@@ -461,9 +448,21 @@ actb_orf_nih
 
 
 ~~~
-Error in eval(expr, envir, enclos): object 'actb_orf_nih' not found
+DNAStringSet object of length 13:
+     width seq                                                                                      names               
+ [1]   222 ATGCCCACCATCACGCCCTGGTGCCTGGGGCGCCCCACGATGG...AAGGCGAGGCTCTGTGCTCGCGGGGCGGACGCGGTCTCGGCG gi|1519311456|ref...
+ [2]  1128 ATGGATGATGATATCGCCGCGCTCGTCGTCGACAACGGCTCCG...GACGAGTCCGGCCCCTCCATCGTCCACCGCAAATGCTTCTAG gi|1519311456|ref...
+ [3]   126 ATGATGATATCGCCGCGCTCGTCGTCGACAACGGCTCCGGCAT...TCTTCCCCTCCATCGTGGGGCGCCCCAGGCACCAGGGCGTGA gi|1519311456|ref...
+ [4]    90 ATGTCGTCCCAGTTGGTGACGATGCCGTGCTCGATGGGGTACT...GTGAGGATGCCTCTCTTGCTCTGGGCCTCGTCGCCCACATAG gi|1519311456|ref...
+ [5]   225 ATGGGCACAGTGTGGGTGACCCCGTCACCGGAGTCCATCACGA...AGCACGGGGTGCTCCTCGGGAGCCACACGCAGCTCATTGTAG gi|1519311456|ref...
+ ...   ... ...
+ [9]   342 ATGAGATTGGCATGGCTTTATTTGTTTTTTTTGTTTTGTTTTG...GCATTGCTTTCGTGTAAATTATGTAATGCAAAATTTTTTTAA gi|1519311456|ref...
+[10]   168 ATGGCTTTATTTGTTTTTTTTGTTTTGTTTTGGTTTTTTTTTT...AATGTGGCCGAGGACTTTGATTGCACATTGTTGTTTTTTTAA gi|1519311456|ref...
+[11]   111 ATGACTATTAAAAAAACAACAATGTGCAATCAAAGTCCTCGGC...GCTCCAACCGACTGCTGTCACCTTCACCGTTCCAGTTTTTAA gi|1519311456|ref...
+[12]   105 ATGCAAAATTTTTTTAATCTTCGCCTTAATACTTTTTTATTTT...CCTTCGTGCCCCCCCTTCCCCCTTTTTTGTCCCCCAACTTGA gi|1519311456|ref...
+[13]   135 ATGATGAGCCTTCGTGCCCCCCCTTCCCCCTTTTTTGTCCCCC...GCCAGGGCTTACCTGTACACTGACTTGAGACCAGTTGAATAA gi|1519311456|ref...
 ~~~
-{: .error}
+{: .output}
 
 Having imported the nucleotide sequences as a `DNAStringSet` object, we can
 apply the `translate()` method to that object to produce the amino acid
@@ -472,19 +471,6 @@ sequence that results from the translation process for each nucleotide sequence.
 
 ~~~
 actb_aa <- translate(actb_orf_nih)
-~~~
-{: .language-r}
-
-
-
-~~~
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'translate': object 'actb_orf_nih' not found
-~~~
-{: .error}
-
-
-
-~~~
 actb_aa
 ~~~
 {: .language-r}
@@ -492,9 +478,21 @@ actb_aa
 
 
 ~~~
-Error in eval(expr, envir, enclos): object 'actb_aa' not found
+AAStringSet object of length 13:
+     width seq                                                                                      names               
+ [1]    74 MPTITPWCLGRPTMEGKTARGASSPAKPALHMPEPLSTTSAAISSSMVSWRRVWTGGGSAKARLCARGADAVSA               gi|1519311456|ref...
+ [2]   376 MDDDIAALVVDNGSGMCKAGFAGDDAPRAVFPSIVGRPRHQGV...RKYSVWIGGSILASLSTFQQMWISKQEYDESGPSIVHRKCF* gi|1519311456|ref...
+ [3]    42 MMISPRSSSTTAPACARPASRATMPPGPSSPPSWGAPGTRA*                                               gi|1519311456|ref...
+ [4]    30 MSSQLVTMPCSMGYFRVRMPLLLWASSPT*                                                           gi|1519311456|ref...
+ [5]    75 MGTVWVTPSPESITMPVVRPEAYRDSTAWIATYMAGVLKVSNMIWVIFSRLALGFRGASVSSTGCSSGATRSSL*              gi|1519311456|ref...
+ ...   ... ...
+ [9]   114 MRLAWLYLFFLFCFGFFFFFGLTQDLKTGTVKVTAVGWSEHPP...SLAILKATPLLSKENGPVLSQVHTGEVIALLSCKLCNAKFF* gi|1519311456|ref...
+[10]    56 MALFVFFVLFWFFFFFWLDSGFKNWNGEGDSSRLERASPKVHNVAEDFDCTLLFF*                                 gi|1519311456|ref...
+[11]    37 MTIKKTTMCNQSPRPHCELWGMLAPTDCCHLHRSSF*                                                    gi|1519311456|ref...
+[12]    35 MQNFFNLRLNTFLFCFILNDEPSCPPFPLFCPPT*                                                      gi|1519311456|ref...
+[13]    45 MMSLRAPPSPFFVPQLEMYEGFWSPWEWVEAARAYLYTDLRPVE*                                            gi|1519311456|ref...
 ~~~
-{: .error}
+{: .output}
 In the example above, all amino acid sequences visible start with the typical
 methionin amino acid encoded by the "ATG" start codon.
 We also see that all but one of the amino acid sequences visible end with the

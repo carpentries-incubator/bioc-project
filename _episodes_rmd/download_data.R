@@ -9,6 +9,6 @@ download.file(
     destfile = "data/actb.gtf"
 )
 download.file(
-    url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/master/data/ActbOrf/actb_orfs.fasta", 
-    destfile = "data/actb.gtf"
+    url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/master/data/ActbOrf/actb_orfs.fasta",
+    destfile = "data/actb_orfs.fasta"
 )
