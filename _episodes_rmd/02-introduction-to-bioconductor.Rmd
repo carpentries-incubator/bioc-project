@@ -80,7 +80,7 @@ Many more publications and book chapters cite the Bioconductor project, with rec
 
 ### Overview and relationship to CRAN
 
-Undoubtedly, software packages are the best-known aspect of the Bioconductor project,.
+Undoubtedly, software packages are the best-known aspect of the Bioconductor project.
 Since its inception in 2001, the repository has grown over time to host thousands of packages.
 
 The Bioconductor project has extended the preexisting CRAN repository -- much larger and general-purpose in scope -- to comprise R packages primarily catering for bioinformatics and computational biology analyses.
