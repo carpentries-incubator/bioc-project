@@ -57,7 +57,7 @@ Over the years, software packages contributed to the Bioconductor project have r
 Crucially, the project has not only released software packages implementing novel statistical tests and methodologies, but also produced a diverse range of packages types granting access to databases of molecular annotations and experimental datasets.
 
 The Bioconductor project culminates at an annual conference in North America in the summer, while regional conferences offer great opportunities for networking in Europe, Asia, and North America.
-The project is commited to promote a diverse and inclusive community, including a [Code of Conduct][bioc-code-of-conduct] enforced by a Code of Conduct committee.
+The project is committed to promote a diverse and inclusive community, including a [Code of Conduct][bioc-code-of-conduct] enforced by a Code of Conduct committee.
 
 ![Timeline of major Bioconductor milestones alongside technological advancements.](../fig/bioc-timeline.svg)
 
