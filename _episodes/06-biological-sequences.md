@@ -24,7 +24,7 @@ keypoints:
 # Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
-First, we check that the *[BiocManager](https://bioconductor.org/packages/3.15/BiocManager)* package is installed before trying to use it; otherwise we install it.
+First, we check that the *[BiocManager](https://bioconductor.org/packages/3.16/BiocManager)* package is installed before trying to use it; otherwise we install it.
 Then we use the `BiocManager::install()` function to install the necessary packages.
 
 
@@ -94,7 +94,7 @@ For instance, a function designed to translate nucleic acid sequences into the c
 
 ## Overview
 
-In the Bioconductor project, the *[Biostrings](https://bioconductor.org/packages/3.15/Biostrings)* package
+In the Bioconductor project, the *[Biostrings](https://bioconductor.org/packages/3.16/Biostrings)* package
 implements S4 classes to represent biological sequences as S4 objects, e.g.
 `DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, and
 `AAString` for sequences of amino acids in protein polymers.
@@ -105,7 +105,7 @@ utilities for fast manipulation and processing of large biological sequences or
 sets of sequences.
 
 A short presentation of the basic classes defined in the
-*[Biostrings](https://bioconductor.org/packages/3.15/Biostrings)* package is available in one of the package
+*[Biostrings](https://bioconductor.org/packages/3.16/Biostrings)* package is available in one of the package
 vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed
 information is provided in the other package vignettes, accessible as
 `browseVignettes("Biostrings")`.
@@ -204,7 +204,7 @@ seq: ATCGM
 {: .output}
 
 In particular, pattern matching methods implemented in the
-*[Biostrings](https://bioconductor.org/packages/3.15/Biostrings)* package recognize the meaning of ambiguity
+*[Biostrings](https://bioconductor.org/packages/3.16/Biostrings)* package recognize the meaning of ambiguity
 codes for each class of biological sequence, allowing them to efficiently match
 motifs queried by users without the need to design elaborate regular
 expressions.
@@ -325,7 +325,7 @@ DNAStringSet object of length 6:
 
 ### Computing the frequency of symbols
 
-The *[Biostrings](https://bioconductor.org/packages/3.15/Biostrings)* package provides several functions to
+The *[Biostrings](https://bioconductor.org/packages/3.16/Biostrings)* package provides several functions to
 process and manipulate classes of biological strings.
 For example, we have come across `matchPattern()` and `countPattern()` earlier
 in this episode.
@@ -355,7 +355,7 @@ letterFrequency(truseq_adapters, letters = DNA_ALPHABET)
 
 The output is a matrix with one row for each sequence in the `DNAStringSet`
 object, and one column for each symbol in the alphabet of deoxyribonucleic
-acids, provided by the *[Biostrings](https://bioconductor.org/packages/3.15/Biostrings)* package in a
+acids, provided by the *[Biostrings](https://bioconductor.org/packages/3.16/Biostrings)* package in a
 built-in object called `DNA_ALPHABET`.
 
 ## Amino acid sequences
@@ -406,7 +406,7 @@ AA_ALPHABET
 One of the key motivations for the use of [S4 classes][glossary-s4-class] and the object-oriented programming (OOP) model relies on the infrastructure of S4 generics and methods.
 As described in the earlier episode [The S4 class system][crossref-s4], generics provide a mechanism for defining and applying distinct implementations of the same generic function name, according to the nature of the input object(s) provided to the function call.
 
-For instance, the *[Biostrings](https://bioconductor.org/packages/3.15/Biostrings)* package provides multiple implementations of a generic called `translate()`,  for translating DNA or RNA sequences into amino acid sequences.
+For instance, the *[Biostrings](https://bioconductor.org/packages/3.16/Biostrings)* package provides multiple implementations of a generic called `translate()`,  for translating DNA or RNA sequences into amino acid sequences.
 The set of input objects supported by the generic `translate()` can be listed using the function `showMethods()`, from the CRAN package *[methods](https://CRAN.R-project.org/package=methods)*.
 
 

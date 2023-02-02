@@ -21,7 +21,7 @@ keypoints:
 
 ## Version of R
 
-This lesson was developed and tested with R version 4.2.1 (2022-06-23).
+This lesson was developed and tested with R version 4.2.2 Patched (2022-11-10 r83330).
 
 Take a moment to launch RStudio and verify that you are using R version `4.1.x`, with `x` being any patch version, e.g. `4.1.2`.
 
@@ -34,7 +34,7 @@ R.version.string
 
 
 ~~~
-[1] "R version 4.2.1 (2022-06-23)"
+[1] "R version 4.2.2 Patched (2022-11-10 r83330)"
 ~~~
 {: .output}
 
