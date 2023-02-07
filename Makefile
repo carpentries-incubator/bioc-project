@@ -124,7 +124,7 @@ install-rmd-deps:
 	@${SHELL} bin/install_r_deps.sh
 
 ## * lesson-md        : convert Rmarkdown files to markdown
-lesson-md : ${RMD_DST}
+lesson-md : ${RMD_DST} _episodes_rmd/data/actb.gtf
 
 _episodes/%.md: _episodes_rmd/%.Rmd install-rmd-deps
 	@mkdir -p _episodes
@@ -160,3 +160,6 @@ lesson-fixme :
 ## * commands         : show all commands.
 commands :
 	@sed -n -e '/^##/s|^##[[:space:]]*||p' $(MAKEFILE_LIST)
+
+_episodes_rmd/data/actb.gtf: _episodes_rmd/download_data.R
+	Rscript $<
