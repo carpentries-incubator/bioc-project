@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 841.9 595.3" style="enable-background:new 0 0 841.9 595.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EDEDED;stroke:#575756;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st2{font-family:'ArialMT';}
+	.st3{font-size:12px;}
+	.st4{fill:#009640;}
+	.st5{font-family:'FiraCode-Regular';}
+	.st6{font-size:10px;}
+	.st7{font-family:'Arial-ItalicMT';}
+</style>
+<rect x="475.6" y="82.1" class="st0" width="170.8" height="30.8"/>
+<rect x="612" y="352.8" class="st0" width="170.8" height="61.5"/>
+<rect x="334.9" y="352.8" class="st0" width="170.8" height="61.5"/>
+<rect x="332.1" y="199.3" class="st0" width="176.3" height="24.7"/>
+<rect x="67.5" y="498.3" class="st0" width="182" height="52.8"/>
+<rect x="67.5" y="47.2" class="st1" width="182" height="27.8"/>
+<text transform="matrix(1 0 0 1 132.7984 64.4008)" class="st2 st3">S4Class1</text>
+<text transform="matrix(1 0 0 1 76.9023 105.8268)" class="st2 st3">SlotName1</text>
+<text transform="matrix(1 0 0 1 76.9019 127.1003)" class="st2 st3">SlotName2</text>
+<text transform="matrix(1 0 0 1 174.501 105.8272)" class="st2 st3">SlotType1</text>
+<text transform="matrix(1 0 0 1 174.5009 127.2323)" class="st2 st3">SlotType2</text>
+<rect x="67.5" y="75.1" class="st1" width="182" height="71.6"/>
+<rect x="67.5" y="265.2" class="st1" width="182" height="27.8"/>
+<text transform="matrix(1 0 0 1 132.7984 282.4209)" class="st2 st3">S4Class2</text>
+<text transform="matrix(1 0 0 1 76.9023 351.3167)" class="st2 st3">SlotName1</text>
+<text transform="matrix(1 0 0 1 76.9019 372.5903)" class="st2 st3">SlotName2</text>
+<text transform="matrix(1 0 0 1 174.501 351.3171)" class="st2 st3">SlotType1</text>
+<text transform="matrix(1 0 0 1 174.5009 372.7222)" class="st2 st3">SlotType2</text>
+<rect x="67.5" y="320.5" class="st1" width="182" height="93.7"/>
+<rect x="67.5" y="293.1" class="st1" width="182" height="27.8"/>
+<text transform="matrix(1 0 0 1 107.1168 310.2621)" class="st2 st3">contains: S4Class1</text>
+<text transform="matrix(1 0 0 1 76.9672 394.7279)" class="st4 st2 st3">SlotName3</text>
+<text transform="matrix(1 0 0 1 174.5662 394.8599)" class="st4 st2 st3">SlotType3</text>
+<g>
+	<g>
+		<line class="st1" x1="158.5" y1="188.5" x2="158.5" y2="258.1"/>
+		<g>
+			<polygon points="153.5,256.6 158.5,265.2 163.5,256.6 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 170.2976 230.3845)" class="st2 st3">inheritance</text>
+<rect x="67.5" y="146.6" class="st1" width="182" height="41.9"/>
+<text transform="matrix(1 0 0 1 79.5704 168.7648)" class="st2 st3">Validity rules for S4Class1</text>
+<rect x="67.5" y="414.3" class="st1" width="182" height="66"/>
+<text transform="matrix(1 0 0 1 79.5704 436.4163)" class="st2 st3">Validity rules for S4Class1</text>
+<text transform="matrix(1 0 0 1 79.5048 458.7774)" class="st4 st2 st3">Validity rules for S4Class2</text>
+<rect x="470" y="47.2" class="st1" width="182" height="27.8"/>
+<text transform="matrix(1 0 0 1 525.3615 64.4008)" class="st2 st3">S4Generic1()</text>
+<text transform="matrix(1 0 0 1 482.4948 100.0188)" class="st5 st6">function(x, y, ...)</text>
+<rect x="470" y="75.1" class="st1" width="182" height="43.7"/>
+<rect x="470" y="118.7" class="st1" width="182" height="50.1"/>
+<text transform="matrix(1 0 0 1 482.1354 140.862)"><tspan x="0" y="0" class="st2 st3">signature:</tspan><tspan x="0" y="14.4" class="st2 st3">- x</tspan></text>
+<g>
+	<g>
+		<line class="st1" x1="420.2" y1="230.9" x2="420.2" y2="256.6"/>
+		<g>
+			<polygon points="415.2,255.1 420.2,263.7 425.2,255.1 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 562.3806 185.1443)" class="st2 st3">method dispatch</text>
+<rect x="329.2" y="264.2" class="st1" width="182" height="27.8"/>
+<text transform="matrix(1 0 0 1 395.172 281.4209)" class="st7 st3">Method 1</text>
+<text transform="matrix(1 0 0 1 341.3299 373.1435)"><tspan x="0" y="0" class="st5 st6">function(x, y, ...) {</tspan><tspan x="0" y="12" class="st4 st5 st6">    # action 1</tspan><tspan x="0" y="24" class="st5 st6">}</tspan></text>
+<rect x="329.2" y="342.4" class="st1" width="182" height="79.4"/>
+<rect x="606.4" y="264.2" class="st1" width="182" height="27.8"/>
+<text transform="matrix(1 0 0 1 672.3987 281.4209)" class="st7 st3">Method 2</text>
+<g>
+	<g>
+		<line class="st1" x1="697.4" y1="230.9" x2="697.4" y2="256.6"/>
+		<g>
+			<polygon points="692.4,255.1 697.4,263.7 702.4,255.1 			"/>
+		</g>
+	</g>
+</g>
+<line class="st1" x1="420.2" y1="230.9" x2="697.4" y2="230.9"/>
+<line class="st1" x1="558.8" y1="169.1" x2="558.8" y2="230.9"/>
+<text transform="matrix(1 0 0 1 343.2669 213.6105)"><tspan x="0" y="0" class="st5 st6">&gt; S4Generic1(x = </tspan><tspan x="104.6" y="0" class="st4 st5 st6">object1</tspan><tspan x="147.7" y="0" class="st5 st6">)</tspan></text>
+<rect x="329.2" y="292.1" class="st1" width="182" height="50.1"/>
+<text transform="matrix(1 0 0 1 341.2819 314.2284)"><tspan x="0" y="0" class="st2 st3">signature:</tspan><tspan x="0" y="14.4" class="st2 st3">- x: </tspan><tspan x="20" y="14.4" class="st4 st2 st3">S4Class1</tspan></text>
+<text transform="matrix(1 0 0 1 618.5566 373.648)"><tspan x="0" y="0" class="st5 st6">function(x, y, ...) {</tspan><tspan x="0" y="12" class="st4 st5 st6">    # action 2</tspan><tspan x="0" y="24" class="st5 st6">}</tspan></text>
+<rect x="606.4" y="342.9" class="st1" width="182" height="79.4"/>
+<rect x="606.4" y="292.6" class="st1" width="182" height="50.1"/>
+<text transform="matrix(1 0 0 1 618.5087 314.733)"><tspan x="0" y="0" class="st2 st3">signature:</tspan><tspan x="0" y="14.4" class="st2 st3">- x: </tspan><tspan x="20" y="14.4" class="st4 st2 st3">S4Class2</tspan></text>
+<text transform="matrix(1 0 0 1 73.0366 515.3734)" class="st5 st6">&gt; object1 &lt;- S4Class1(...)</text>
+<text transform="matrix(1 0 0 1 73.4927 536.7979)" class="st5 st6">&gt; object2 &lt;- S4Class2(...)</text>
+<rect x="606.4" y="199.3" class="st0" width="176.3" height="24.7"/>
+<text transform="matrix(1 0 0 1 617.5492 213.6105)"><tspan x="0" y="0" class="st5 st6">&gt; S4Generic1(x = </tspan><tspan x="104.6" y="0" class="st4 st5 st6">object2</tspan><tspan x="147.7" y="0" class="st5 st6">)</tspan></text>
+</svg>

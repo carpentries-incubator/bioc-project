@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 351.2 107.9" style="enable-background:new 0 0 351.2 107.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#31AD68;}
+	.st1{fill:#00A19A;}
+	.st2{fill:#CA9E67;}
+	.st3{fill:#020203;}
+	.st4{font-family:'ArialMT';}
+	.st5{font-size:4px;}
+	.st6{fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;}
+	.st7{font-family:'Arial-ItalicMT';}
+	.st8{font-size:3px;}
+</style>
+<rect x="18" y="44.7" class="st0" width="100" height="20"/>
+<rect x="118" y="44.7" class="st1" width="100" height="20"/>
+<rect x="218" y="44.7" class="st2" width="100" height="20"/>
+<g>
+	<text transform="matrix(1 0 0 1 13.5369 70.0438)" class="st3 st4 st5">2000</text>
+	<polygon class="st3" points="18,64.7 17,66.4 19,66.4 	"/>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 213.6449 70.2939)" class="st3 st4 st5">2020</text>
+	<polygon class="st3" points="218.1,65 217.1,66.7 219.1,66.7 	"/>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 113.7241 70.3801)" class="st3 st4 st5">2010</text>
+	<polygon class="st3" points="118.2,65 117.2,66.7 119.2,66.7 	"/>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 313.6449 70.2939)" class="st3 st4 st5">2030</text>
+	<polygon class="st3" points="318.1,65 317.1,66.7 319.1,66.7 	"/>
+</g>
+<rect x="320" y="44.7" class="st2" width="2" height="20"/>
+<rect x="324" y="44.7" class="st2" width="2" height="20"/>
+<rect x="328" y="44.7" class="st2" width="2" height="20"/>
+<line class="st6" x1="28" y1="43.7" x2="28" y2="44.7"/>
+<line class="st6" x1="64" y1="43.7" x2="64" y2="44.7"/>
+<line class="st6" x1="55" y1="43.7" x2="55" y2="44.7"/>
+<line class="st6" x1="73" y1="43.7" x2="73" y2="44.7"/>
+<line class="st6" x1="46" y1="43.7" x2="46" y2="44.7"/>
+<line class="st6" x1="37" y1="43.7" x2="37" y2="44.7"/>
+<line class="st6" x1="82" y1="43.7" x2="82" y2="44.7"/>
+<line class="st6" x1="91" y1="43.7" x2="91" y2="44.7"/>
+<line class="st6" x1="100" y1="43.7" x2="100" y2="44.7"/>
+<line class="st6" x1="109" y1="43.7" x2="109" y2="44.7"/>
+<line class="st6" x1="128" y1="43.7" x2="128" y2="44.7"/>
+<line class="st6" x1="164" y1="43.7" x2="164" y2="44.7"/>
+<line class="st6" x1="155" y1="43.7" x2="155" y2="44.7"/>
+<line class="st6" x1="173" y1="43.7" x2="173" y2="44.7"/>
+<line class="st6" x1="146" y1="43.7" x2="146" y2="44.7"/>
+<line class="st6" x1="137" y1="43.7" x2="137" y2="44.7"/>
+<line class="st6" x1="182" y1="43.7" x2="182" y2="44.7"/>
+<line class="st6" x1="191" y1="43.7" x2="191" y2="44.7"/>
+<line class="st6" x1="200" y1="43.7" x2="200" y2="44.7"/>
+<line class="st6" x1="209" y1="43.7" x2="209" y2="44.7"/>
+<line class="st6" x1="228" y1="43.7" x2="228" y2="44.7"/>
+<line class="st6" x1="264" y1="43.7" x2="264" y2="44.7"/>
+<line class="st6" x1="255" y1="43.7" x2="255" y2="44.7"/>
+<line class="st6" x1="273" y1="43.7" x2="273" y2="44.7"/>
+<line class="st6" x1="246" y1="43.7" x2="246" y2="44.7"/>
+<line class="st6" x1="237" y1="43.7" x2="237" y2="44.7"/>
+<line class="st6" x1="282" y1="43.7" x2="282" y2="44.7"/>
+<line class="st6" x1="291" y1="43.7" x2="291" y2="44.7"/>
+<line class="st6" x1="300" y1="43.7" x2="300" y2="44.7"/>
+<line class="st6" x1="309" y1="43.7" x2="309" y2="44.7"/>
+<text transform="matrix(1 0 0 1 19.8658 38.1898)"><tspan x="0" y="0" class="st7 st8">First commit</tspan><tspan x="4.8" y="3.6" class="st7 st8">2001</tspan></text>
+<text transform="matrix(1 0 0 1 24.4053 81.7252)" class="st4 st8">Microarrays</text>
+<text transform="matrix(1 0 0 1 50.215 90.347)" class="st4 st8">RNA-sequencing</text>
+<text transform="matrix(1 0 0 1 38.7871 96.8923)" class="st4 st8">DNA-sequencing</text>
+<text transform="matrix(1 0 0 1 109.0317 93.9212)" class="st4 st8">Single-cell RNA-sequencing</text>
+<text transform="matrix(1 0 0 1 202.2569 84.1385)" class="st4 st8">Single-cell multimodal omics</text>
+<text transform="matrix(1 0 0 1 100.0319 50.0122)" class="st4 st8">GenomicRanges</text>
+<text transform="matrix(1 0 0 1 23.5833 50.0121)" class="st4 st8">Biobase</text>
+<text transform="matrix(1 0 0 1 114.244 54.7333)" class="st4 st8">BiocGenerics</text>
+<text transform="matrix(1 0 0 1 82.0318 60.6782)" class="st4 st8">rtracklayer</text>
+<text transform="matrix(1 0 0 1 120.4221 63.1158)" class="st4 st8">VariantAnnotation</text>
+<text transform="matrix(1 0 0 1 103.4521 63.1158)" class="st4 st8">Rsamtools</text>
+<text transform="matrix(1 0 0 1 24.6305 54.7332)" class="st4 st8">Biostrings</text>
+<text transform="matrix(1 0 0 1 92.3369 55.363)" class="st4 st8">ShortRead</text>
+<text transform="matrix(1 0 0 1 212.7046 48.4247)" class="st4 st8">Spectra</text>
+<text transform="matrix(1 0 0 1 114.2503 59.1212)" class="st4 st8">MSnbase</text>
+<text transform="matrix(1 0 0 1 150.7173 48.8446)" class="st4 st8">SummarizedExperiment</text>
+<text transform="matrix(1 0 0 1 166.0262 52.5854)" class="st4 st8">SingleCellExperiment</text>
+<text transform="matrix(1 0 0 1 179.6954 56.9371)" class="st4 st8">RaggedExperiment</text>
+<text transform="matrix(1 0 0 1 78.4908 50.6089)" class="st4 st8">GSEABase</text>
+<text transform="matrix(1 0 0 1 168.0322 61.3079)" class="st4 st8">MultiAssayExperiment</text>
+<text transform="matrix(1 0 0 1 204.3336 52.5492)" class="st4 st8">BiocSet</text>
+<text transform="matrix(1 0 0 1 57.2779 19.9813)"><tspan x="0" y="0" class="st7 st8">First conference</tspan><tspan x="9.9" y="3.6" class="st7 st8">?</tspan></text>
+<text transform="matrix(1 0 0 1 69.6269 30.779)"><tspan x="0" y="0" class="st7 st8">First workshop</tspan><tspan x="8.9" y="3.6" class="st7 st8">?</tspan></text>
+<text transform="matrix(1 0 0 1 27.3227 25.0179)"><tspan x="0" y="0" class="st7 st8">First package</tspan><tspan x="8.2" y="3.6" class="st7 st8">?</tspan></text>
+<text transform="matrix(1 0 0 1 38.1628 15.6166)"><tspan x="0" y="0" class="st7 st8">Website</tspan><tspan x="4.6" y="3.6" class="st7 st8">?</tspan></text>
+<text transform="matrix(1 0 0 1 92.9326 20.0146)"><tspan x="0" y="0" class="st7 st8">Support website</tspan><tspan x="9.9" y="3.6" class="st7 st8">?</tspan></text>
+<text transform="matrix(1 0 0 1 168.6777 25.0178)"><tspan x="0" y="0" class="st7 st8">Slack workspace</tspan><tspan x="10.4" y="3.6" class="st7 st8">?</tspan></text>
+<text transform="matrix(1 0 0 1 121.3927 23.6148)"><tspan x="0" y="0" class="st7 st8">Scientific Advisory Board</tspan><tspan x="15.8" y="3.6" class="st7 st8">?</tspan></text>
+<text transform="matrix(1 0 0 1 131.7889 33.9769)"><tspan x="0" y="0" class="st7 st8">Technical Advisory Board</tspan><tspan x="16.2" y="3.6" class="st7 st8">?</tspan></text>
+<text transform="matrix(1 0 0 1 199.9673 34.3794)"><tspan x="0" y="0" class="st7 st8">Community Advisory Board</tspan><tspan x="14.8" y="3.6" class="st7 st8">2020</tspan></text>
+<line class="st6" x1="118" y1="43.7" x2="118" y2="44.7"/>
+<line class="st6" x1="218" y1="43.7" x2="218" y2="44.7"/>
+<line class="st6" x1="18" y1="43.7" x2="18" y2="44.7"/>
+<line class="st6" x1="318" y1="43.7" x2="318" y2="44.7"/>
+<text transform="matrix(1 0 0 1 110.6854 32.1948)" class="st7 st8">First sticker?</text>
+</svg>

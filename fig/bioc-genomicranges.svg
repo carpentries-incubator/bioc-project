@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 908.5 555.6" style="enable-background:new 0 0 908.5 555.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'ArialMT';}
+	.st1{font-size:12px;}
+	.st2{fill:#98D6F2;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+	.st4{fill:#FAD6E8;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;stroke-dasharray:3.3308,3.3308;}
+	.st6{fill:#F6F6F6;}
+	.st7{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;stroke-dasharray:6.2002,6.2002;}
+	.st8{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;stroke-dasharray:6.7719,6.7719;}
+	.st9{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;stroke-dasharray:5.7917,5.7917;}
+</style>
+<g>
+	<text transform="matrix(1 0 0 1 274.5174 61.6876)" class="st0 st1">Gene model</text>
+	<g>
+		<g>
+			<rect x="366.1" y="49" class="st2" width="111.4" height="26.3"/>
+			<g>
+				<g>
+					<line class="st3" x1="477.5" y1="62.2" x2="538.8" y2="62.2"/>
+					<g>
+						<polygon points="537.7,65.9 544.1,62.2 537.7,58.4 						"/>
+					</g>
+				</g>
+			</g>
+			<rect x="544.1" y="49" class="st2" width="111.4" height="26.3"/>
+		</g>
+		<g>
+			<g>
+				<g>
+					<line class="st3" x1="477.5" y1="99.3" x2="538.8" y2="99.3"/>
+					<g>
+						<polygon points="537.7,103 544.1,99.3 537.7,95.6 						"/>
+					</g>
+				</g>
+			</g>
+			<rect x="396.2" y="86.1" class="st2" width="81.3" height="26.3"/>
+			<rect x="544.1" y="86.1" class="st2" width="111.4" height="26.3"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 287.1972 159.1657)"><tspan x="0" y="0" class="st0 st1">Unspliced</tspan><tspan x="-2.7" y="14.4" class="st0 st1">transcripts</tspan></text>
+	<g>
+		<g>
+			<rect x="366.1" y="147.3" class="st4" width="289.5" height="26.3"/>
+			<g>
+				<g>
+					<line class="st3" x1="477.5" y1="147.3" x2="477.5" y2="148.8"/>
+					<line class="st5" x1="477.5" y1="152.1" x2="477.5" y2="170.4"/>
+					<line class="st3" x1="477.5" y1="172.1" x2="477.5" y2="173.6"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st3" x1="544.1" y1="147.3" x2="544.1" y2="148.8"/>
+					<line class="st5" x1="544.1" y1="152.1" x2="544.1" y2="170.4"/>
+					<line class="st3" x1="544.1" y1="172.1" x2="544.1" y2="173.6"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<rect x="396.2" y="188.4" class="st4" width="259.4" height="26.3"/>
+			<g>
+				<g>
+					<line class="st3" x1="477.5" y1="188.4" x2="477.5" y2="189.9"/>
+					<line class="st5" x1="477.5" y1="193.3" x2="477.5" y2="211.6"/>
+					<line class="st3" x1="477.5" y1="213.2" x2="477.5" y2="214.7"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<line class="st3" x1="544.1" y1="188.4" x2="544.1" y2="189.9"/>
+					<line class="st5" x1="544.1" y1="193.3" x2="544.1" y2="211.6"/>
+					<line class="st3" x1="544.1" y1="213.2" x2="544.1" y2="214.7"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 273.8435 258.2421)" class="st0 st1">Gene region</text>
+	<g>
+		<rect x="366.1" y="241.6" class="st4" width="111.4" height="26.3"/>
+		<g>
+			<g>
+				<line class="st3" x1="477.5" y1="254.7" x2="538.8" y2="254.7"/>
+				<g>
+					<polygon points="537.7,258.5 544.1,254.7 537.7,251 					"/>
+				</g>
+			</g>
+		</g>
+		<rect x="544.1" y="241.6" class="st4" width="111.4" height="26.3"/>
+	</g>
+	<text transform="matrix(1 0 0 1 275.1975 308.3804)" class="st0 st1">Disjoint bins</text>
+	<g>
+		<g>
+			<g>
+				<line class="st3" x1="476.5" y1="304.9" x2="537.8" y2="304.9"/>
+				<g>
+					<polygon points="536.7,308.6 543.1,304.9 536.7,301.1 					"/>
+				</g>
+			</g>
+		</g>
+		<rect x="365.1" y="291.7" class="st4" width="111.4" height="26.3"/>
+		<rect x="543.1" y="291.7" class="st4" width="111.4" height="26.3"/>
+		<line class="st3" x1="396.2" y1="291.7" x2="396.2" y2="318"/>
+	</g>
+	<text transform="matrix(1 0 0 1 252.9425 360.7241)" class="st0 st1">Promoter</text>
+	<g>
+		<rect x="366" y="343.8" class="st2" width="111.4" height="26.3"/>
+		<g>
+			<g>
+				<line class="st3" x1="477.4" y1="357" x2="538.7" y2="357"/>
+				<g>
+					<polygon points="537.6,360.7 544.1,357 537.6,353.3 					"/>
+				</g>
+			</g>
+		</g>
+		<rect x="544.1" y="343.8" class="st2" width="111.4" height="26.3"/>
+		<rect x="318.4" y="353" class="st4" width="47.6" height="8"/>
+	</g>
+	<g>
+		<rect x="396.2" y="383" class="st2" width="81.3" height="26.3"/>
+		<g>
+			<g>
+				<line class="st3" x1="477.5" y1="396.1" x2="538.8" y2="396.1"/>
+				<g>
+					<polygon points="537.7,399.9 544.1,396.1 537.7,392.4 					"/>
+				</g>
+			</g>
+		</g>
+		<rect x="544.1" y="383" class="st2" width="111.4" height="26.3"/>
+		<rect x="348.5" y="392.1" class="st4" width="47.6" height="8"/>
+	</g>
+	<text transform="matrix(1 0 0 1 303.205 458.9003)" class="st0 st1">Introns</text>
+	<g>
+		<g>
+			<rect x="366.1" y="438.1" class="st6" width="111.4" height="26.3"/>
+			<g>
+				<polyline class="st3" points="477.5,461.4 477.5,464.4 474.5,464.4 				"/>
+				<line class="st7" x1="468.3" y1="464.4" x2="372.2" y2="464.4"/>
+				<polyline class="st3" points="369.1,464.4 366.1,464.4 366.1,461.4 				"/>
+				<line class="st8" x1="366.1" y1="454.7" x2="366.1" y2="444.5"/>
+				<polyline class="st3" points="366.1,441.1 366.1,438.1 369.1,438.1 				"/>
+				<line class="st7" x1="375.3" y1="438.1" x2="471.4" y2="438.1"/>
+				<polyline class="st3" points="474.5,438.1 477.5,438.1 477.5,441.1 				"/>
+				<line class="st8" x1="477.5" y1="447.9" x2="477.5" y2="458"/>
+			</g>
+		</g>
+		<g>
+			<rect x="544.1" y="438.1" class="st6" width="111.4" height="26.3"/>
+			<g>
+				<polyline class="st3" points="655.6,461.4 655.6,464.4 652.6,464.4 				"/>
+				<line class="st7" x1="646.4" y1="464.4" x2="550.2" y2="464.4"/>
+				<polyline class="st3" points="547.1,464.4 544.1,464.4 544.1,461.4 				"/>
+				<line class="st8" x1="544.1" y1="454.7" x2="544.1" y2="444.5"/>
+				<polyline class="st3" points="544.1,441.1 544.1,438.1 547.1,438.1 				"/>
+				<line class="st7" x1="553.3" y1="438.1" x2="649.5" y2="438.1"/>
+				<polyline class="st3" points="652.6,438.1 655.6,438.1 655.6,441.1 				"/>
+				<line class="st8" x1="655.6" y1="447.9" x2="655.6" y2="458"/>
+			</g>
+		</g>
+		<rect x="477.5" y="438.1" class="st4" width="65.7" height="26.3"/>
+	</g>
+	<g>
+		<g>
+			<rect x="396.2" y="480.3" class="st6" width="81.3" height="26.3"/>
+			<g>
+				<polyline class="st3" points="477.5,503.6 477.5,506.6 474.5,506.6 				"/>
+				<line class="st9" x1="468.7" y1="506.6" x2="402.1" y2="506.6"/>
+				<polyline class="st3" points="399.2,506.6 396.2,506.6 396.2,503.6 				"/>
+				<line class="st8" x1="396.2" y1="496.8" x2="396.2" y2="486.6"/>
+				<polyline class="st3" points="396.2,483.3 396.2,480.3 399.2,480.3 				"/>
+				<line class="st9" x1="405" y1="480.3" x2="471.6" y2="480.3"/>
+				<polyline class="st3" points="474.5,480.3 477.5,480.3 477.5,483.3 				"/>
+				<line class="st8" x1="477.5" y1="490" x2="477.5" y2="500.2"/>
+			</g>
+		</g>
+		<g>
+			<rect x="544.1" y="480.3" class="st6" width="111.4" height="26.3"/>
+			<g>
+				<polyline class="st3" points="655.6,503.6 655.6,506.6 652.6,506.6 				"/>
+				<line class="st7" x1="646.4" y1="506.6" x2="550.2" y2="506.6"/>
+				<polyline class="st3" points="547.1,506.6 544.1,506.6 544.1,503.6 				"/>
+				<line class="st8" x1="544.1" y1="496.8" x2="544.1" y2="486.6"/>
+				<polyline class="st3" points="544.1,483.3 544.1,480.3 547.1,480.3 				"/>
+				<line class="st7" x1="553.3" y1="480.3" x2="649.5" y2="480.3"/>
+				<polyline class="st3" points="652.6,480.3 655.6,480.3 655.6,483.3 				"/>
+				<line class="st8" x1="655.6" y1="490" x2="655.6" y2="500.2"/>
+			</g>
+		</g>
+		<rect x="477" y="480.3" class="st4" width="65.7" height="26.3"/>
+	</g>
+</g>
+</svg>
