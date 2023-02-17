@@ -1,29 +1,30 @@
 ---
 source: Rmd
-title: "Getting help"
+title: Getting help
 teaching: XX
 exercises: XX
-questions:
-- "Where can I find help online?"
-- "Where can I ask questions to package developers and other users?"
-- "Where can I find documentation for a specific package?"
-- "Where can I learn best practices to combine multiple package into a coherent workflow?"
-objectives:
-- "Identify online resources for help."
-- "Access package documentation."
-keypoints:
-- "The `browseVignettes()` function is recommended to access the vignette(s) installed with each package."
-- "Vignettes can also be accessed on the Bioconductor website, but beware of differences between package versions!"
-- "The Bioconductor main website contains general information, package documentation, and course materials."
-- "The Bioconductor support site is the recommended place to contact developers and ask questions."
 ---
 
 ```{r, include=FALSE}
-source("../bin/chunk-options.R")
-knitr_fig_path("04-")
 ```
 
-# Getting help with Bioconductor packages
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Identify online resources for help.
+- Access package documentation.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- Where can I find help online?
+- Where can I ask questions to package developers and other users?
+- Where can I find documentation for a specific package?
+- Where can I learn best practices to combine multiple package into a coherent workflow?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Getting help with Bioconductor packages
 
 Help about Bioconductor packages and best practices is available in several places.
 Often, the best source of help depends on the situation at hand:
@@ -36,7 +37,7 @@ Often, the best source of help depends on the situation at hand:
 
 In the next sections, we describe different sources of help available to Bioconductor users, and situations where each of them are most useful.
 
-# The Bioconductor website
+## The Bioconductor website
 
 The main [Bioconductor website][bioc-website] provides a host of resources, all freely available without even the need to install R or any Bioconductor package.
 
@@ -49,7 +50,7 @@ As such, they provide a snapshot of best practices at a particular point in time
 Thus, it is important check the version of packages demonstrated in teaching materials matches that in the user's R library.
 Alternatively, when referring to materials that employ package versions different from those in the user's library, it is important to carefully interpret any discrepancy between the expected and actual results.
 
-# Package landing pages
+## Package landing pages
 
 Each package accepted in the Bioconductor project is granted a landing page on the main Bioconductor website, e.g. `r BiocStyle::Biocpkg("S4Vectors")`.
 
@@ -66,31 +67,39 @@ Often, vignettes use standard data sets preprocessed and freely available from p
 In the "Details" section of the landing page, many packages provide a field labelled "BugReports".
 That field provides a URL that users can visit to report bugs to the package developer(s).
 
-> ## Note
-> 
-> It can be difficult to distinguish actual software bugs from unwitting mistakes made by users not fully familiar with the package yet.
-> Later in this episode, we provide advice for reporting bugs and including sufficient information to receive the fastest and most helpful responses.
-> 
-> In doubt, the [Biocondutor support site][bioc-support-site] can also be a great place to discuss individual experiences and share knowledge about packages and best practices.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+### Note
+
+It can be difficult to distinguish actual software bugs from unwitting mistakes made by users not fully familiar with the package yet.
+Later in this episode, we provide advice for reporting bugs and including sufficient information to receive the fastest and most helpful responses.
+
+In doubt, the [Biocondutor support site][bioc-support-site] can also be a great place to discuss individual experiences and share knowledge about packages and best practices.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Additionally, the landing page provides many other pieces of information, from daily build reports indicating whether the package passed all tests on a range of operating systems, to software dependencies indicating the number of other Bioconductor packages that must be installed before the package itself can be installed and used on the user's system.
 
-> ## Going further
-> 
-> Each package has a landing page for each release of Bioconductor since the package was added to the repository, e.g.:
-> 
-> - <https://www.bioconductor.org/packages/3.14/bioc/html/BiocVersion.html>
-> - <https://www.bioconductor.org/packages/3.13/bioc/html/BiocVersion.html>
-> - <https://www.bioconductor.org/packages/3.12/bioc/html/BiocVersion.html>
-> 
-> In the URL of a package landing page, we can replace the version number by the word "release" or "devel" to access the landing page of the latest stable release or development version, respectively.
-> 
-> - <https://www.bioconductor.org/packages/release/bioc/html/BiocPkgTools.html>
-> - <https://www.bioconductor.org/packages/devel/bioc/html/BiocPkgTools.html>
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-# Package vignettes
+### Going further
+
+Each package has a landing page for each release of Bioconductor since the package was added to the repository, e.g.:
+
+- [https://www.bioconductor.org/packages/3.14/bioc/html/BiocVersion.html](https://www.bioconductor.org/packages/3.14/bioc/html/BiocVersion.html)
+- [https://www.bioconductor.org/packages/3.13/bioc/html/BiocVersion.html](https://www.bioconductor.org/packages/3.13/bioc/html/BiocVersion.html)
+- [https://www.bioconductor.org/packages/3.12/bioc/html/BiocVersion.html](https://www.bioconductor.org/packages/3.12/bioc/html/BiocVersion.html)
+
+In the URL of a package landing page, we can replace the version number by the word "release" or "devel" to access the landing page of the latest stable release or development version, respectively.
+
+- [https://www.bioconductor.org/packages/release/bioc/html/BiocPkgTools.html](https://www.bioconductor.org/packages/release/bioc/html/BiocPkgTools.html)
+- [https://www.bioconductor.org/packages/devel/bioc/html/BiocPkgTools.html](https://www.bioconductor.org/packages/devel/bioc/html/BiocPkgTools.html)
+  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Package vignettes
 
 Each Bioconductor package is required to include at least one vignette.
 Many packages have more than one vignette, often separating core functionality from specific use cases.
@@ -117,7 +126,7 @@ Each vignette is available in three formats:
 The precompiled format is often the most comfortable format to read, as the PDF and HTML formats allow the contents of the documents to be preview in one integrated view.
 This includes plain text explanations, as well as code and their outputs, both figures and console messages.
 
-# Package help pages
+## Package help pages
 
 Bioconductor requires every user-facing package function to documented in one of the package help pages (often referred to as "man pages", after the name of the package sub-directory where they are stored).
 
@@ -135,7 +144,7 @@ Runnable examples are particularly helpful to demonstrate the usage of individua
 In particular, runnable examples demonstrate the usage of functions in ideal cases, showcasing how the inputs inputs of the function should be formatted, and what information will be available to users in the outputs of the function.
 Running those examples and comparing the example inputs and outputs with the user's own data often provide significant insights into the transformations that are needed before applying the function to the user's own data, and how the outputs of the function can be interpreted and interacted with.
 
-# The Bioconductor support site
+## The Bioconductor support site
 
 The [Bioconductor support site][bioc-support-site] provides a platform for the community of users and developers to ask questions, and help each other through the doubts and challenges related to Bioconductor packages and analytical workflows.
 
@@ -148,13 +157,13 @@ Furthermore, the original poster retains the right to mark one answer as the one
 
 Separately, a system of points granted to each user for providing answers either popular or accepted by the original poster highlights the most active and trusted contributors on the platform.
 
-![The Bioconductor support site.](../fig/bioc-support-site.png)
+![](fig/bioc-support-site.png){alt='The Bioconductor support site.'}
 
 **The Bioconductor support site.**
 The Bioconductor support site tracks questions and answers posted by registered users.
 The platform can be freely browsed and searched by non-registered users.
 
-# Workflow packages
+## Workflow packages
 
 Bioconductor workflow packages are special in the way that they are only expected to contain vignettes, without any additional code or functionality of their own.
 Instead, the vignettes of workflow packages exclusively import functionality from other packages, and demonstrate how to combine functions from those packages into an integrated workflow that users are likely to face in their day-to-day work.
@@ -164,30 +173,34 @@ Those freely available standard data sets allow users to interactively reproduce
 
 Workflow packages can be browsed in a dedicated section of the [biocViews page][biocviews-workflow].
 
-# Slack workspace
+## Slack workspace
 
 The [Bioconductor Slack workspace][bioc-slack] was created in 2016.
 
 The workspace can be freely joined using this [Heroku app][bioc-slack-heroku] to generate invitations for individual email addresses.
 
-The Bioconductor Slack workspace is a lively online platform for official announcements by the [Bioconductor Core Team][bioc-core-team] (e.g., Bioconductor release, conferences & events), as well as informal discussions between groups of users subscribed to thematic channels, and direct messages between community members.
+The Bioconductor Slack workspace is a lively online platform for official announcements by the [Bioconductor Core Team][bioc-core-team] (e.g., Bioconductor release, conferences \& events), as well as informal discussions between groups of users subscribed to thematic channels, and direct messages between community members.
 
 The workspace features a large number of channels dedicated to particular topics and areas of interest in the community.
 Those channels range from active fields of research (e.g., single-cell genomics), to time-limited events (e.g., conferences), but also community outreach (e.g., diversity and representation).
 
 Private channels also exist for governance (e.g., event organisation, advisory boards).
 
-> ## Note
-> 
-> The Slack workspace allows for rapid day-to-day communication and discussion with fellow community members through channels and direct messages.
->
-> However, popular channels can reach up to hundreds of users in many different time zones and should be used with parsimony and mindfulness.
-> Conversely, direct messages and private channels are limited to the users invited in the discussion, and any outcome relevant to the community then needs to be re-posted in a public channel.
->
-> As a consequence, the [Bioconductor support site][bioc-support-site] remains the preferred way to publicly ask questions of interest to the community, in a way that both the question, discussion, and answers are easily searchable and indexed by major search engines.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-# How to efficiently ask for help
+### Note
+
+The Slack workspace allows for rapid day-to-day communication and discussion with fellow community members through channels and direct messages.
+
+However, popular channels can reach up to hundreds of users in many different time zones and should be used with parsimony and mindfulness.
+Conversely, direct messages and private channels are limited to the users invited in the discussion, and any outcome relevant to the community then needs to be re-posted in a public channel.
+
+As a consequence, the [Bioconductor support site][bioc-support-site] remains the preferred way to publicly ask questions of interest to the community, in a way that both the question, discussion, and answers are easily searchable and indexed by major search engines.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## How to efficiently ask for help
 
 Most community members provide help voluntarily, on their own spare time and without any form of compensation.
 As such, it is important to ask questions as clearly as possible, providing relevant information, to help those volunteers identify the source of the issue as rapidly as possible, thus saving time for both the helper and the original poster.
@@ -216,14 +229,26 @@ One option is to use the package `r BiocStyle::CRANpkg("reprex")` to collate the
 Finally, the [Bioconductor support site][bioc-support-site] is the preferred platform to post questions related to Bioconductor packages.
 This is because questions are visible to the entire community, including many experienced Bioconductor users who regularly answer those questions, and other users who can find answers to questions that were already posted and resolved by the time they run into the issue themselves.
 
-[bioc-core-team]: https://www.bioconductor.org/about/core-team/
-[bioc-courses-conferences-materials]: https://bioconductor.org/help/course-materials/
-[bioc-slack]: https://community-bioc.slack.com/
-[bioc-slack-heroku]: https://bioc-community.herokuapp.com/
-[bioc-support-site]: https://support.bioconductor.org/
 [bioc-website]: https://www.bioconductor.org/
 [biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
-[biocviews-workflow]: https://www.bioconductor.org/packages/release/BiocViews.html#___Workflow
-[glossary-vignette]: ../reference.html#vignette
-[glossary-experiment-package]: ../reference.html#experimentdata-package
+[bioc-courses-conferences-materials]: https://bioconductor.org/help/course-materials/
+[glossary-vignette]: reference.html#vignette
+[glossary-experiment-package]: reference.html#experimentdata-package
+[bioc-support-site]: https://support.bioconductor.org/
 [self-package-landing-page]: ./index.html#package-landing-pages
+[biocviews-workflow]: https://www.bioconductor.org/packages/release/BiocViews.html#___Workflow
+[bioc-slack]: https://community-bioc.slack.com/
+[bioc-slack-heroku]: https://bioc-community.herokuapp.com/
+[bioc-core-team]: https://www.bioconductor.org/about/core-team/
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- The `browseVignettes()` function is recommended to access the vignette(s) installed with each package.
+- Vignettes can also be accessed on the Bioconductor website, but beware of differences between package versions!
+- The Bioconductor main website contains general information, package documentation, and course materials.
+- The Bioconductor support site is the recommended place to contact developers and ask questions.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

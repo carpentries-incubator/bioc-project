@@ -1,24 +1,28 @@
 ---
 source: Rmd
-title: "Working with genomics ranges"
+title: Working with genomics ranges
 teaching: XX
 exercises: XX
-questions:
-- "What is the recommended way to represent coordinates on a genomic scale in Bioconductor?"
-- "What Bioconductor packages provides methods to efficiently process genomic ranges?"
-- "How can I import/export sets of genomic coordinates from/to various genomic file formats?"
-objectives:
-- "Explain how genomic coordinates and intervals are represented in the Bioconductor project."
-- "Identify Bioconductor packages and methods available to process ranges of genomic coordinates."
-keypoints:
-- "The `GenomicRanges` package defines classes to represent ranges of coordinates on a genomic scale."
-- "The `GenomicRanges` package also defines methods to efficiently process genomic ranges."
-- "The `rtracklayer` package provides functions to import and export genomic ranges from and to common genomic file formats."
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
 source("download_data.R")
 ```
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain how genomic coordinates and intervals are represented in the Bioconductor project.
+- Identify Bioconductor packages and methods available to process ranges of genomic coordinates.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What is the recommended way to represent coordinates on a genomic scale in Bioconductor?
+- What Bioconductor packages provides methods to efficiently process genomic ranges?
+- How can I import/export sets of genomic coordinates from/to various genomic file formats?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
@@ -42,7 +46,7 @@ BibOptions(
   dashed = TRUE)
 ```
 
-# Install packages
+## Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
 First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is installed before trying to use it; otherwise we install it.
@@ -55,10 +59,9 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("GenomicRanges")
 ```
 
+## The GenomicRanges package and classes
 
-# The GenomicRanges package and classes
-
-## Why do we need classes for genomic ranges?
+### Why do we need classes for genomic ranges?
 
 In the era of genomics, many observations are reported as ranges of
 coordinates - i.e., intervals - on a genomic scale.
@@ -92,7 +95,7 @@ nucleic acid molecules (e.g., chromosomes, plasmids).
 As such, genomic ranges are described by the name of the sequence and
 the numeric interval of coordinates on that sequence.
 
-![Example uses of the GenomicRanges algebra.](../fig/bioc-genomicranges.svg)
+![](fig/bioc-genomicranges.svg){alt='Example uses of the GenomicRanges algebra.'}
 
 **Example uses of the GenomicRanges algebra.**
 Adapted from `r Citet(bib, "Huber2015")`.
@@ -104,7 +107,7 @@ the entire range of coordinates from the start of the first exon to the end of
 the last exon; while the gene region is defined as the set of coordinates
 included in at least one exon of one transcript.
 
-## A brief introduction to intervals
+### A brief introduction to intervals
 
 Intervals are described in mathematical terms using a start and an end position
 on an axis of continuous coordinates.
@@ -121,7 +124,7 @@ location of monomers (e.g., nucleotide, amino acid) in the sequence of polymers
 You may come across packages, databases, and programming languages that use
 different rules to define intervals.
 In R, indexing is 1-based (meaning that the first position in a sequence is
-1), which contrasts with Python that is 0-based (the index of the first
+1\), which contrasts with Python that is 0-based (the index of the first
 position in a sequence is 0).
 Similarly, references files in the UCSC Genome Browser are 0-based, while
 those of the Ensembl Genome Browser are 1-based.
@@ -131,7 +134,7 @@ such as the distance between two intervals - generally calculated as the
 distance between the two closest edges of those intervals -, and the
 identification of overlapping intervals.
 
-![Example of intervals.](../fig/intervals.svg)
+![](fig/intervals.svg){alt='Example of intervals.'}
 
 **Example of intervals.**
 Three intervals named A, B, and C, are represented.
@@ -142,7 +145,7 @@ Intervals A and C overlap, from coordinates 5 to 6;
 while intervals B and C meet at coordinate 3, but do not strictly overlap each
 other.
 
-## A brief introduction to genomic ranges
+### A brief introduction to genomic ranges
 
 Genomic ranges essentially extend the notion of mathematical intervals on
 sets of biological sequences (e.g., chromosomes).
@@ -161,12 +164,12 @@ For instance, genomic ranges spanning a common range of coordinates on opposite
 strands of the same DNA sequence may not be considered to overlap (e.g., for the
 purpose of strand-specific next-generation sequencing assays).
 
-Genomic ranges are _closed_ intervals - the start and end positions are included
+Genomic ranges are *closed* intervals - the start and end positions are included
 in the interval; in the example of nucleic acids, the start position indicates
 the first nucleotide in the interval, and the end position indicates the last
 nucleotide in the interval.
 
-![Example of genomic intervals.](../fig/genomic-intervals.svg)
+![](fig/genomic-intervals.svg){alt='Example of genomic intervals.'}
 
 **Example of genomic ranges.**
 Genomic ranges are defined by the name of the biological sequence in which they
@@ -180,9 +183,9 @@ Furthermore, the strandedness of exons, transcripts, and genes is an important
 piece of information to precisely describe the location of each genomic range
 in the double-stranded DNA polymer.
 
-# The GenomicRanges package
+## The GenomicRanges package
 
-## Overview
+### Overview
 
 The `r BiocStyle::Biocpkg("GenomicRanges")` package implements
 [S4 classes][glossary-s4-class] to represent genomic ranges as S4 objects.
@@ -208,7 +211,7 @@ package vignettes, accessible as `vignette("GenomicRangesIntroduction")`,
 while more detailed information is provided in the other package vignettes,
 accessible as `browseVignettes("GenomicRanges")`.
 
-## First steps
+### First steps
 
 To get started, we load the package.
 
@@ -216,7 +219,7 @@ To get started, we load the package.
 library(GenomicRanges)
 ```
 
-## The IRanges class
+### The IRanges class
 
 While the genomic space of many organisms is subdivided into multiple sequences
 (e.g., chromosomes), many operations on genomic ranges take place within
@@ -240,23 +243,28 @@ demo_iranges <- IRanges(start = c(10, 15), width = c(10, 5))
 demo_iranges
 ```
 
-We note how the object displays not only the _start_ and _width_ information
-that we requested for each range, but also the _end_ position that is naturally
+We note how the object displays not only the *start* and *width* information
+that we requested for each range, but also the *end* position that is naturally
 computed from the other two pieces of information.
 
-> ## Challenge
-> 
-> Create the same two ranges as above, using the arguments `start=` and `end=`
-> of the `IRanges()` constructor function.
-> 
-> > ## Solution
-> > 
-> > ```{r}
-> > IRanges(start = c(10, 15), end = c(19, 19))
-> > ```
-> > 
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+### Challenge
+
+Create the same two ranges as above, using the arguments `start=` and `end=`
+of the `IRanges()` constructor function.
+
+:::::::::::::::  solution
+
+### Solution
+
+```{r}
+IRanges(start = c(10, 15), end = c(19, 19))
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 The start and end positions as well as the width of every interval can be
 extracted as numeric vector using the functions `start()`, `end()` and
@@ -277,7 +285,7 @@ regular vector.
 demo_iranges[1]
 ```
 
-## Metadata on IRanges
+### Metadata on IRanges
 
 The `IRanges` class can accommodate metadata information on each range,
 including names - passed to the `names=` argument - and miscellaneous metadata
@@ -319,7 +327,7 @@ by name.
 demo_with_metadata["A"]
 ```
 
-## Operations on IRanges
+### Operations on IRanges
 
 `IRanges` provide the basis for most operations on ranges of numerical coordinates.
 
@@ -348,27 +356,29 @@ In this example, we confirm that the first range in the query set overlaps the
 first range in the subject set; while the second range in the query set overlaps
 both ranges in the subject set.
 
-> ## Going further
-> 
-> For downstream use, the two components can be extracted from `Hits` objects
-> using their names, respectively:
-> 
-> ```{r}
-> queryHits(overlaps_iranges)
-> subjectHits(overlaps_iranges)
-> ```
->
-> While displayed as a table, `Hits` objects are actually handled like vectors.
-> Individual hits between one query range and one subject range can be extracted
-> their index:
-> 
-> ```{r}
-> overlaps_iranges[1]
-> ```
-> 
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-## The GRanges class
+### Going further
+
+For downstream use, the two components can be extracted from `Hits` objects
+using their names, respectively:
+
+```{r}
+queryHits(overlaps_iranges)
+subjectHits(overlaps_iranges)
+```
+
+While displayed as a table, `Hits` objects are actually handled like vectors.
+Individual hits between one query range and one subject range can be extracted
+their index:
+
+```{r}
+overlaps_iranges[1]
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+### The GRanges class
 
 Having defined integer ranges, the only additional information necessary to
 define genomic ranges is the name of the genomic sequence on which each range is
@@ -444,7 +454,7 @@ seqinfo(demo_granges2) <-  Seqinfo(
 demo_granges2
 ```
 
-## Metadata on GRanges
+### Metadata on GRanges
 
 Similarly to `IRanges`, metadata can be passed directly to the `GRanges`
 constructor function.
@@ -462,7 +472,7 @@ demo_granges3 <- GRanges(
 demo_granges3
 ```
 
-## Importing genomic ranges from files
+### Importing genomic ranges from files
 
 Frequently, large collections of genomic ranges are imported from files rather
 than described in manually written code.
@@ -474,12 +484,12 @@ Various file formats are commonly used to store genomic ranges in bioinformatics
 workflows.
 For instance, the BED (Browser Extensible Data) format is commonly found in
 Chromatin Immunoprecipitation Sequencing (ChIP-Seq), while GTF
-(Gene Transfer Format, GTF2.2) is the _de facto_ standard file format to
+(Gene Transfer Format, GTF2.2) is the *de facto* standard file format to
 describe genomic features such as exons, transcripts, and genes.
 
 In the following example, we import the gene model for Actin Beta (ACTB) from
 a small GTF file as a set of genomic ranges.
-The example file represents a subset of a GTF file for the _Homo sapiens_ 
+The example file represents a subset of a GTF file for the *Homo sapiens*
 species, downloaded from the [Ensembl FTP][ensembl-ftp] site.
 The original file contains more than 3 millions lines and 22 metadata fields,
 from which a subset was extracted into a smaller file for this lesson.
@@ -497,16 +507,20 @@ actb_gtf_data <- rtracklayer::import("data/actb.gtf")
 actb_gtf_data
 ```
 
-> ## Going further
-> 
-> Individual methods for parsing specific file formats can be invoked directly.
-> For instance, in this case, the GTF file format being identical to the GFF
-> version 2 file format, we could have directly invoked the function
-> `rtracklayer::import.gff2()` with the exact same effect.
->
-> Refer to the documentation of the `r BiocStyle::Biocpkg("rtracklayer")`
-> package for the full list of methods available.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+### Going further
+
+Individual methods for parsing specific file formats can be invoked directly.
+For instance, in this case, the GTF file format being identical to the GFF
+version 2 file format, we could have directly invoked the function
+`rtracklayer::import.gff2()` with the exact same effect.
+
+Refer to the documentation of the `r BiocStyle::Biocpkg("rtracklayer")`
+package for the full list of methods available.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 In the example above, the contents of the GTF file were imported into a
 `GRanges` object. For each entry in the file, the sequence name, start and end
@@ -517,7 +531,7 @@ columns of metadata.
 From here on, this `GRanges` object can be manipulated just like any of the
 other `GRanges` objects that we have created earlier in this episode.
 
-## Operations on GRanges and the GRangesList class
+### Operations on GRanges and the GRangesList class
 
 As we have demonstrated so far, `GRanges` objects can be manually defined
 or imported from files.
@@ -526,7 +540,7 @@ genomic features, respectively.
 Either way, a number of operations are commonly applied to `GRanges` objects
 throughout bioinformatics workflows.
 
-### Subset
+#### Subset
 
 For instance, the `subset()` method is extremely convenient to extract a set
 of genomic ranges matching a condition on any component, including sequence
@@ -538,7 +552,7 @@ at position `5527147`.
 subset(actb_gtf_data, type == "transcript" & start == 5527147)
 ```
 
-### Split
+#### Split
 
 Separately, the `split()` method is useful to divide a set of genomic ranges
 initially stored in a single `GRanges` object into groups that are stored
@@ -561,7 +575,7 @@ class of the object as `GRrangesList`, while each named `GRanges` in that list
 is introduced by the dollar sign and the name of that item, just like regular
 named lists in base R.
 
-### Length
+#### Length
 
 By nature, many of the methods applicable to `list` objects can be directly
 applied to `GRangesList` objects.
@@ -575,29 +589,34 @@ as the length of each `GRanges` object within the `GRangesList`:
 lengths(actb_exons_by_transcript)
 ```
 
-> ## Challenge
-> 
-> Importantly, the function `lengths()` (with a final `s`) demonstrated above
-> is different from the function `length()` (without `s`).
-> The former is meant to be used on list objects, while the latter is meant
-> to be used on vectors.
-> 
-> What does `length(actb_exons_by_transcript)` return, and why?
-> 
-> > ## Solution
-> > 
-> > ```{r}
-> > length(actb_exons_by_transcript)
-> > ```
-> > 
-> > This code returns the single integer value `23`, which is the number
-> > of `GRanges` in the `GRangesList` object and the number of transcripts for
-> > the gene ACTB.
-> > 
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Subset by overlap
+### Challenge
+
+Importantly, the function `lengths()` (with a final `s`) demonstrated above
+is different from the function `length()` (without `s`).
+The former is meant to be used on list objects, while the latter is meant
+to be used on vectors.
+
+What does `length(actb_exons_by_transcript)` return, and why?
+
+:::::::::::::::  solution
+
+### Solution
+
+```{r}
+length(actb_exons_by_transcript)
+```
+
+This code returns the single integer value `23`, which is the number
+of `GRanges` in the `GRangesList` object and the number of transcripts for
+the gene ACTB.
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Subset by overlap
 
 Possibly one of the most common operations when working with genomic ranges
 is to subset arbitrarily large collections of genomic ranges to those located
@@ -632,19 +651,32 @@ length(actb_in_region) - length(actb_gtf_data)
 In the example above, we learn that the new `GRanges` object has 11 records less
 than the original `GRanges` object.
 
-> ## Going further
-> 
-> Many more methods exist to operate on `GRanges` and `GRangesList` objects 
-> than what could be demonstrated here.
-> 
-> You can find the full list of functions defined in the `GenomicRanges` package
-> on the index page of the package documentation, accessible using
-> `help(package="GenomicRanges")`.
-> You can also find more examples and use cases in the package vignettes, accessible using
-> `browseVignettes("GenomicRanges")`.
->
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-[glossary-s4-class]: ../reference.html#s4-class
+### Going further
+
+Many more methods exist to operate on `GRanges` and `GRangesList` objects
+than what could be demonstrated here.
+
+You can find the full list of functions defined in the `GenomicRanges` package
+on the index page of the package documentation, accessible using
+`help(package="GenomicRanges")`.
+You can also find more examples and use cases in the package vignettes, accessible using
+`browseVignettes("GenomicRanges")`.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+[glossary-s4-class]: reference.html#s4-class
 [ensembl-ftp]: https://www.ensembl.org/info/data/ftp/
 [ucsc-genome-data]: https://hgdownload.soe.ucsc.edu/downloads.html
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- The `GenomicRanges` package defines classes to represent ranges of coordinates on a genomic scale.
+- The `GenomicRanges` package also defines methods to efficiently process genomic ranges.
+- The `rtracklayer` package provides functions to import and export genomic ranges from and to common genomic file formats.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

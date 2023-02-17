@@ -1,31 +1,31 @@
 ---
 source: Rmd
-title: "Installing Bioconductor packages"
+title: Installing Bioconductor packages
 teaching: XX
 exercises: XX
-questions:
-- "How do I install Bioconductor packages?"
-- "How do I check if newer versions of my installed packages are available?"
-- "How do I update Bioconductor packages?"
-- "How do I find out the name of packages available from the Bioconductor repositories?"
-objectives:
-- "Install BiocManager."
-- "Install Bioconductor packages."
-keypoints:
-- "The BiocManager package is available from the CRAN repository."
-- "`BiocManager::install()` is used to install and update Bioconductor packages (but also from CRAN and GitHub)."
-- "`BiocManager::valid()` is used to check for available package updates."
-- "`BiocManager::version()` reports the version of Bioconductor currently installed."
-- "`BiocManager::install()` can also be used to update an entire R library to a specific version of Bioconductor."
 ---
 
 ```{r, include=FALSE}
-source("../bin/chunk-options.R")
-knitr_fig_path("03-")
 stopifnot(require(BiocStyle))
 ```
 
-# BiocManager
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Install BiocManager.
+- Install Bioconductor packages.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How do I install Bioconductor packages?
+- How do I check if newer versions of my installed packages are available?
+- How do I update Bioconductor packages?
+- How do I find out the name of packages available from the Bioconductor repositories?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## BiocManager
 
 The `r BiocStyle::Biocpkg("BiocManager")` package is the entry point into the Bioconductor package repository.
 Technically, this is the only Bioconductor package distributed on the CRAN repository.
@@ -35,7 +35,7 @@ It provides functions to safely install Bioconductor packages and check for avai
 Once the package is installed, the function `BiocManager::install()` can be used to install packages from the Bioconductor repository.
 The function is also capable of installing packages from other repositories (e.g., CRAN), if those packages are not found in the Bioconductor repository first.
 
-![The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.](../fig/bioc-install.svg)
+![](fig/bioc-install.svg){alt='The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.'}
 
 **The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.**
 The function `install.packages()` from the base R package `utils` can be used to install the `r BiocStyle::Biocpkg("BiocManager")` package distributed on the CRAN repository.
@@ -48,9 +48,7 @@ Install the package using the code below.
 install.packages("BiocManager")
 ```
 
-
-
-~~~
+```output
 trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.1/BiocManager_1.30.16.tgz'
 Content type 'application/x-gzip' length 322920 bytes (315 KB)
 ==================================================
@@ -59,31 +57,35 @@ downloaded 315 KB
 
 The downloaded binary packages are in
 	/var/folders/51/nz__2dx10yzd75rylr5cg2zc0000gq/T//RtmpeS8MHV/downloaded_packages
-~~~
-{: .output}
+```
 
-> ## Going further
->
-> A number of packages that are not part of the base R installation also provide functions to install packages from various repositories.
-> For instance:
-> - `devtools::install()`
-> - `remotes::install_bioc()`
-> - `remotes::install_bitbucket()`
-> - `remotes::install_cran()`
-> - `remotes::install_dev()`
-> - `remotes::install_github()`
-> - `remotes::install_gitlab()`
-> - `remotes::install_git()`
-> - `remotes::install_local()`
-> - `remotes::install_svn()`
-> - `remotes::install_url()`
-> - `renv::install()`
->
-> Those functions are beyond the scope of this lesson, and should be used with caution and adequate knowledge of their specific behaviors.
-> The general recommendation is to use `BiocManager::install()` over any other installation mechanism because it ensures proper versioning of Bioconductor packages.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-# Bioconductor releases and current version
+### Going further
+
+A number of packages that are not part of the base R installation also provide functions to install packages from various repositories.
+For instance:
+
+- `devtools::install()`
+- `remotes::install_bioc()`
+- `remotes::install_bitbucket()`
+- `remotes::install_cran()`
+- `remotes::install_dev()`
+- `remotes::install_github()`
+- `remotes::install_gitlab()`
+- `remotes::install_git()`
+- `remotes::install_local()`
+- `remotes::install_svn()`
+- `remotes::install_url()`
+- `renv::install()`
+
+Those functions are beyond the scope of this lesson, and should be used with caution and adequate knowledge of their specific behaviors.
+The general recommendation is to use `BiocManager::install()` over any other installation mechanism because it ensures proper versioning of Bioconductor packages.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Bioconductor releases and current version
 
 Once the `r BiocStyle::Biocpkg("BiocManager")` package is installed, the `BiocManager::version()` function displays the version (i.e., release) of the Bioconductor project that is currently active in the R session.
 
@@ -98,7 +100,7 @@ The Bioconductor project produces two releases each year, one around April and a
 The April release of Bioconductor coincides with the annual release of R.
 The October release of Bioconductor continues to use the same version of R for that annual cycle (i.e., until the next release, in April).
 
-![Timeline of release dates for selected Bioconductor and R versions.](../fig/bioc-release-cycle.svg)
+![](fig/bioc-release-cycle.svg){alt='Timeline of release dates for selected Bioconductor and R versions.'}
 
 **Timeline of release dates for selected Bioconductor and R versions.**
 The upper section of the timeline indicates versions and approximate release dates for the R project.
@@ -128,13 +130,15 @@ BiocManager::install(version = "3.14")
 
 This needs to be done only once, as the `r BiocStyle::Biocpkg("BiocVersion")` package will be updated to the corresponding version, indicating the version of Bioconductor in use in this R library.
 
-> ## Going further
->
-> The [Discussion][discuss-release-cycle] article of this lesson includes a section discussing the release cycle of the Bioconductor project.
->
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-# Check for updates
+### Going further
+
+The [Discussion][discuss-release-cycle] article of this lesson includes a section discussing the release cycle of the Bioconductor project.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Check for updates
 
 The `BiocManager::valid()` function inspects the version of packages currently installed in the user library, and checks whether a new version is available for any of them on the Bioconductor repository.
 
@@ -147,66 +151,69 @@ BiocManager::valid()
 Conveniently, if any package can be updated, the function generates and displays the command needed to update those packages.
 Users simply need to copy-paste and run that command in their R console.
 
-> ## Example of out-of-date package library
->
-> In the example below, the `BiocManager::valid()` function did not return `TRUE`.
-> Instead, it includes information about the active user session, and displays the exact call to `BiocManager::install()` that the user should run to replace all the outdated packages detected in the user library with the latest version available in CRAN or Bioconductor.
->
-> ```
-> > BiocManager::valid()
-> 
-> * sessionInfo()
-> 
-> R version 4.1.0 (2021-05-18)
-> Platform: x86_64-apple-darwin17.0 (64-bit)
-> Running under: macOS Big Sur 11.6
-> 
-> Matrix products: default
-> LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
-> 
-> locale:
-> [1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
-> 
-> attached base packages:
-> [1] stats     graphics  grDevices datasets  utils     methods   base     
-> 
-> loaded via a namespace (and not attached):
-> [1] BiocManager_1.30.16 compiler_4.1.0      tools_4.1.0         renv_0.14.0        
-> 
-> Bioconductor version '3.13'
-> 
->   * 18 packages out-of-date
->   * 0 packages too new
-> 
-> create a valid installation with
-> 
->   BiocManager::install(c(
->     "cpp11", "data.table", "digest", "hms", "knitr", "lifecycle", "matrixStats", "mime", "pillar", "RCurl",
->     "readr", "remotes", "S4Vectors", "shiny", "shinyWidgets", "tidyr", "tinytex", "XML"
->   ), update = TRUE, ask = FALSE)
-> 
-> more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
-> 
-> Warning message:
-> 18 packages out-of-date; 0 packages too new 
-> ```
-> 
-> Specifically, in this example, the message tells the user to run the following command to bring their installation up to date:
-> 
-> ```
->   BiocManager::install(c(
->     "cpp11", "data.table", "digest", "hms", "knitr", "lifecycle", "matrixStats", "mime", "pillar", "RCurl",
->     "readr", "remotes", "S4Vectors", "shiny", "shinyWidgets", "tidyr", "tinytex", "XML"
->   ), update = TRUE, ask = FALSE)
-> ```
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-# Exploring the package repository
+### Example of out-of-date package library
+
+In the example below, the `BiocManager::valid()` function did not return `TRUE`.
+Instead, it includes information about the active user session, and displays the exact call to `BiocManager::install()` that the user should run to replace all the outdated packages detected in the user library with the latest version available in CRAN or Bioconductor.
+
+```
+> BiocManager::valid()
+
+* sessionInfo()
+
+R version 4.1.0 (2021-05-18)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur 11.6
+
+Matrix products: default
+LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices datasets  utils     methods   base     
+
+loaded via a namespace (and not attached):
+[1] BiocManager_1.30.16 compiler_4.1.0      tools_4.1.0         renv_0.14.0        
+
+Bioconductor version '3.13'
+
+  * 18 packages out-of-date
+  * 0 packages too new
+
+create a valid installation with
+
+  BiocManager::install(c(
+    "cpp11", "data.table", "digest", "hms", "knitr", "lifecycle", "matrixStats", "mime", "pillar", "RCurl",
+    "readr", "remotes", "S4Vectors", "shiny", "shinyWidgets", "tidyr", "tinytex", "XML"
+  ), update = TRUE, ask = FALSE)
+
+more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
+
+Warning message:
+18 packages out-of-date; 0 packages too new 
+```
+
+Specifically, in this example, the message tells the user to run the following command to bring their installation up to date:
+
+```
+  BiocManager::install(c(
+    "cpp11", "data.table", "digest", "hms", "knitr", "lifecycle", "matrixStats", "mime", "pillar", "RCurl",
+    "readr", "remotes", "S4Vectors", "shiny", "shinyWidgets", "tidyr", "tinytex", "XML"
+  ), update = TRUE, ask = FALSE)
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Exploring the package repository
 
 The Bioconductor [biocViews][glossary-biocviews], demonstrated in the earlier episode [Introduction to Bioconductor][crossref-intro-biocviews], are a great way to discover new packages by thematically browsing the hierarchical classification of Bioconductor packages.
 
 In addition, the `BiocManager::available()` function returns the complete list of package names that are can be intsalled from the Bioconductor and CRAN repositories.
-For instance the total number of numbers that could be installed using `r BiocStyle::Biocpkg("BiocManager")` 
+For instance the total number of numbers that could be installed using `r BiocStyle::Biocpkg("BiocManager")`
 
 ```{r, message=FALSE}
 length(BiocManager::available())
@@ -219,21 +226,24 @@ BiocManager::repositories()
 ```
 
 Each repository URL can be accessed in a web browser, displaying the full list of packages available from that repository.
-For instance, navigate to <https://bioconductor.org/packages/3.14/bioc>.
+For instance, navigate to [https://bioconductor.org/packages/3.14/bioc](https://bioconductor.org/packages/3.14/bioc).
 
-> ## Going further
->
-> The function `BiocManager::repositories()` can be combined with the base function `available.packages()` to query packages available specifically from any package repository, e.g. the Bioconductor [software package][glossary-software-package] repository.
-> 
-> ```
-> > db = available.packages(repos = BiocManager::repositories()["BioCsoft"])
-> > dim(db)
-> [1] 1948   17
-> > head(rownames(db))
-> [1] "a4"          "a4Base"      "a4Classif"   "a4Core"      "a4Preproc"
-> [6] "a4Reporting"
-> ```
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+### Going further
+
+The function `BiocManager::repositories()` can be combined with the base function `available.packages()` to query packages available specifically from any package repository, e.g. the Bioconductor [software package][glossary-software-package] repository.
+
+```
+> db = available.packages(repos = BiocManager::repositories()["BioCsoft"])
+> dim(db)
+[1] 1948   17
+> head(rownames(db))
+[1] "a4"          "a4Base"      "a4Classif"   "a4Core"      "a4Preproc"
+[6] "a4Reporting"
+```
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Conveniently, `BiocManager::available()` includes a `pattern=` argument, particularly useful to navigate annotation resources (the original use case motivating it).
 For instance, a range of [Annotation data packages][glossary-annotation-package] available for the mouse model organism can be listed as follows.
@@ -242,7 +252,7 @@ For instance, a range of [Annotation data packages][glossary-annotation-package]
 BiocManager::available(pattern = "*Mmusculus")
 ```
 
-# Installing packages
+## Installing packages
 
 The `BiocManager::install()` function is used to install or update packages.
 
@@ -254,13 +264,17 @@ BiocManager::install(c("S4Vectors", "BiocGenerics"))
 
 However, if any package cannot be found in the Bioconductor repository, the function also searches for those packages in repositories listed in the global option `repos`.
 
-> ## Contribute !
-> 
-> Add an example of non-Bioconductor package that can be installed using BioManager.
-> Preferably, a package that will be used later in this lesson.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-# Uninstalling packages
+### Contribute !
+
+Add an example of non-Bioconductor package that can be installed using BioManager.
+Preferably, a package that will be used later in this lesson.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Uninstalling packages
 
 Bioconductor packages can be removed from the R library like any other R package, using the base R function `remove.packages()`.
 In essence, this function simply removes installed packages and updates index information as necessary.
@@ -270,14 +284,22 @@ As a result, it will not be possible to attach the package to a session or brows
 remove.packages("S4Vectors")
 ```
 
-[crossref-intro-biocviews]: https://carpentries-incubator.github.io/bioc-project/02-introduction-to-bioconductor/index.html#package-classification-using-biocviews
-[git-website]: https://git-scm.com/
-[git-bioconductor]: https://git.bioconductor.org/
 [bioc-release-dates]: https://bioconductor.org/about/release-announcements/
-[biocviews-webpage]: https://www.bioconductor.org/packages/release/BiocViews.html
-[discuss-package-versioning]: ../discuss/index.html#bioconductor-package-versions
-[discuss-release-cycle]: ../discuss/index.html#the-bioconductor-release-cycle
-[glossary-annotation-package]: ../reference.html#annotationdata-package
-[glossary-software-package]: ../reference.html#software-package
-[glossary-biocviews]: ../reference.html#biocviews
-[bioc-release-dates]: https://www.bioconductor.org/about/release-announcements/
+[discuss-release-cycle]: discuss/index.html#the-bioconductor-release-cycle
+[glossary-biocviews]: reference.html#biocviews
+[crossref-intro-biocviews]: https://carpentries-incubator.github.io/bioc-project/02-introduction-to-bioconductor/index.html#package-classification-using-biocviews
+[glossary-software-package]: reference.html#software-package
+[glossary-annotation-package]: reference.html#annotationdata-package
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- The BiocManager package is available from the CRAN repository.
+- `BiocManager::install()` is used to install and update Bioconductor packages (but also from CRAN and GitHub).
+- `BiocManager::valid()` is used to check for available package updates.
+- `BiocManager::version()` reports the version of Bioconductor currently installed.
+- `BiocManager::install()` can also be used to update an entire R library to a specific version of Bioconductor.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

@@ -1,5 +1,5 @@
 ---
-title: "Instructor Notes"
+title: Instructor Notes
 ---
 
 ## Workshop Structure
@@ -14,4 +14,6 @@ title: "Instructor Notes"
 
 [Instructors, please add notes on your experience with common problems here.]
 
-{% include links.md %}
+
+
+

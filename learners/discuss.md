@@ -72,11 +72,11 @@ For instance, a package at version `1.3.5` would be incremented to version `1.3.
 ### Release branches
 
 Bioconductor uses the [Git][git-website] version control system to manage its package repository.
-For each new Bioconductor release (i.e., version), a new branch is created in the [Bioconductor Git repository][git-bioconductor]; those are referred to as _release_ branches.
+For each new Bioconductor release (i.e., version), a new branch is created in the [Bioconductor Git repository][git-bioconductor]; those are referred to as *release* branches.
 Release branches allow users to install stable versions of packages that were tested together for a given version of Bioconductor, itself earmarked for a specific version of R.
 
-Work on the _release_ branches is restricted.
-Older _release_ branches are entirely frozen, meaning that no further update is allowed on those branches.
+Work on the *release* branches is restricted.
+Older *release* branches are entirely frozen, meaning that no further update is allowed on those branches.
 When users request a package for a given version of Bioconductor, they receive the latest version of the package on the correspoding release branch.
 
 Only the latest release branch allows updates from package maintainers, but those are restricted to critical bug fixes.
@@ -84,22 +84,25 @@ This means that for each 6-month release cycle, users can expect packages on the
 
 ### Devel branches
 
-Meanwhile, the main branch of the Git repository (historically called `master`) is referred to as the _devel_ branch.
+Meanwhile, the main branch of the Git repository (historically called `master`) is referred to as the *devel* branch.
 
-The _devel_ branch allow developers to continue updating the packages as frequently as they wish, without affecting users or disrupting workflows.
-Typically, packages on the _devel_ branch are mainly used by other developers and the Bioconductor build system, to run tests using the latest code of every package in the Bioconductor repository, and to prepare the next stable release of the project.
-However, users can also access packages on the _devel_ branch using `BiocManager::install(version = ...)` with `version` set to one minor version greater than the latest Bioconductor _release_ version (e.g. if the latest release is `3.13`, then devel is `3.14`).
+The *devel* branch allow developers to continue updating the packages as frequently as they wish, without affecting users or disrupting workflows.
+Typically, packages on the *devel* branch are mainly used by other developers and the Bioconductor build system, to run tests using the latest code of every package in the Bioconductor repository, and to prepare the next stable release of the project.
+However, users can also access packages on the *devel* branch using `BiocManager::install(version = ...)` with `version` set to one minor version greater than the latest Bioconductor *release* version (e.g. if the latest release is `3.13`, then devel is `3.14`).
 
 ### Transition between devel and release - the release process
 
-After a new release branch is created, the version of every single package on the _devel_ branch is incremented, to prepare the version of the package that will feature in the next Bioconductor stable release.
+After a new release branch is created, the version of every single package on the *devel* branch is incremented, to prepare the version of the package that will feature in the next Bioconductor stable release.
 This includes the `r BiocStyle::Biocpkg("BiocVersion")` package, which marks the value of the next version of Bioconductor.
+
+
 
 [bioc-website]: https://bioconductor.org
 [cran-website]: https://cran.r-project.org
 [cran-packages]: https://cran.r-project.org/web/packages/index.html
-[bioc-packages]: https://bioconductor.org/news/bioc_3_13_release/
 [cran-first-release]: https://stat.ethz.ch/pipermail/r-announce/1997/000001.html
+[bioc-packages]: https://bioconductor.org/news/bioc_3_13_release/
 [biocviews-site]: https://www.bioconductor.org/packages/release/BiocViews.html
 
-{% include links.md %}
+
+

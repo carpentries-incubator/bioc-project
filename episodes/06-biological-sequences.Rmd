@@ -1,23 +1,27 @@
 ---
 source: Rmd
-title: "Working with biological sequences"
+title: Working with biological sequences
 teaching: XX
 exercises: XX
-questions:
-- "What is the recommended way to represent biological sequences in Bioconductor?"
-- "What Bioconductor packages provides methods to efficiently process biological sequences?"
-objectives:
-- "Explain how biological sequences are represented in the Bioconductor project."
-- "Identify Bioconductor packages and methods available to process biological sequences."
-keypoints:
-- "The `Biostrings` package defines classes to represent sequences of nucleotides and amino acids."
-- "The `Biostrings` package also defines methods to efficiently process biological sequences."
-- "The `BSgenome` package provides genome sequences for a range of model organisms immediately available as Bioconductor objects."
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
 source("download_data.R")
 ```
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain how biological sequences are represented in the Bioconductor project.
+- Identify Bioconductor packages and methods available to process biological sequences.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What is the recommended way to represent biological sequences in Bioconductor?
+- What Bioconductor packages provides methods to efficiently process biological sequences?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
@@ -25,7 +29,7 @@ knitr_fig_path("06-")
 options(width = 120)
 ```
 
-# Install packages
+## Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
 First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is installed before trying to use it; otherwise we install it.
@@ -38,10 +42,9 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("Biostrings")
 ```
 
+## The Biostrings package and classes
 
-# The Biostrings package and classes
-
-## Why do we need classes for biological sequences?
+### Why do we need classes for biological sequences?
 
 Biological sequences are arguably some of the simplest biological entities to
 represent computationally.
@@ -72,27 +75,32 @@ Instead, [S4 classes][glossary-s4-class] -- demonstrated in the earlier episode 
 This label is an extremely powerful way to inform programs on the set of character symbols they can expect in the sequence, but also the range of computational operations that can be applied to those sequences.
 For instance, a function designed to translate nucleic acid sequences into the corresponding amino acid sequence should only be allowed to run on sequences that represent nucleic acids.
 
-> ## Challenge
-> 
-> Can you tell whether this character string is a valid DNA sequence?
-> 
-> ```
-> AATTGGCCRGGCCAATT
-> ```
-> 
-> > ## Solution
-> > 
-> > Yes, this is a valid DNA sequence using ambiguity codes defined in the [IUPAC][external-iupac] notation.
-> > In this case, `A`, `T`, `C`, and `G` represents the four standard types of
-> > nucleotides, while the `R` symbol acts as a regular expression representing
-> > either of the two purine nucleotide bases, `A` and `G`.
-> > 
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-# The Biostrings package
+### Challenge
 
-## Overview
+Can you tell whether this character string is a valid DNA sequence?
+
+```
+AATTGGCCRGGCCAATT
+```
+
+:::::::::::::::  solution
+
+### Solution
+
+Yes, this is a valid DNA sequence using ambiguity codes defined in the [IUPAC][external-iupac] notation.
+In this case, `A`, `T`, `C`, and `G` represents the four standard types of
+nucleotides, while the `R` symbol acts as a regular expression representing
+either of the two purine nucleotide bases, `A` and `G`.
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## The Biostrings package
+
+### Overview
 
 In the Bioconductor project, the `r BiocStyle::Biocpkg("Biostrings")` package
 implements S4 classes to represent biological sequences as S4 objects, e.g.
@@ -110,7 +118,7 @@ vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed
 information is provided in the other package vignettes, accessible as
 `browseVignettes("Biostrings")`.
 
-## First steps
+### First steps
 
 To get started, we load the package.
 
@@ -199,25 +207,30 @@ sequence.
 And again, the option `fixed` controls whether to respect ambiguity codes, or
 match them exactly.
 
-> ## Challenge
-> 
-> How many hits does the following code return? Why?
-> 
-> ```
-> dna2 <- DNAString("TGATTGCTTGGTTGMTT")
-> countPattern("GM", dna2, fixed = FALSE)
-> ```
-> 
-> > ## Solution
-> > 
-> > The method `countPattern()` reports 3 hits, because the option
-> > `fixed = FALSE` allows the pattern `GM` to match `GA`, `GC`, and `GM`
-> > sequences, due to the use of the ambiguity code `M` in the `pattern`.
-> > 
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Importing biological strings from files
+### Challenge
+
+How many hits does the following code return? Why?
+
+```
+dna2 <- DNAString("TGATTGCTTGGTTGMTT")
+countPattern("GM", dna2, fixed = FALSE)
+```
+
+:::::::::::::::  solution
+
+### Solution
+
+The method `countPattern()` reports 3 hits, because the option
+`fixed = FALSE` allows the pattern `GM` to match `GA`, `GC`, and `GM`
+sequences, due to the use of the ambiguity code `M` in the `pattern`.
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Importing biological strings from files
 
 In practice, users rarely type the strings representing biological sequences themselves.
 Most of the time, biological strings are imported from files, either downloaded from public repositories or generated locally using bioinformatics programs.
@@ -230,18 +243,20 @@ truseq_adapters <- readDNAStringSet(filepath = "data/TruSeq3-PE-2.fa")
 truseq_adapters
 ```
 
-> ## Going further
-> 
-> The help page of the function `readDNAStringSet()` -- accessible using
-> `help(readDNAStringSet)` -- documents related functions designed to import
-> other types of biological sequences, e.g `readRNAStringSet()`,
-> `readAAStringSet()`.
-> 
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-## Operations on biological strings
+### Going further
 
-### Computing the frequency of symbols
+The help page of the function `readDNAStringSet()` -- accessible using
+`help(readDNAStringSet)` -- documents related functions designed to import
+other types of biological sequences, e.g `readRNAStringSet()`,
+`readAAStringSet()`.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Operations on biological strings
+
+#### Computing the frequency of symbols
 
 The `r BiocStyle::Biocpkg("Biostrings")` package provides several functions to
 process and manipulate classes of biological strings.
@@ -261,7 +276,7 @@ object, and one column for each symbol in the alphabet of deoxyribonucleic
 acids, provided by the `r BiocStyle::Biocpkg("Biostrings")` package in a
 built-in object called `DNA_ALPHABET`.
 
-## Amino acid sequences
+### Amino acid sequences
 
 Similarly to the `DNAString` and `DNAStringSet` classes, the classes `AAString` and `AAStringSet` allow efficient storage and manipulation of a long amino acid sequence, or a set thereof.
 
@@ -273,28 +288,33 @@ For instance, the `AA_ALPHABET` object describes the set of symbols in the full 
 AA_ALPHABET
 ```
 
-> ## Challenge
->
-> Use base R code to identify the two symbols present in the `AA_PROTEINOGENIC` 
-> alphabet object that are absent from the `AA_STANDARD` alphabet object.
-> What do those two symbols represent?
->
-> > ## Solution
-> > 
-> > ```
-> > > setdiff(AA_PROTEINOGENIC, AA_STANDARD)
-> > [1] "U" "O"
-> > ```
-> > 
-> > The symbols `U` and `O` represent selenocysteine and pyrrolysine, respectively.
-> > Those two amino acids are in some species coded for by codons that are usually interpreted as stop codons.
-> > As such, they are not included in the alphabet of "standard" amino acids, and an alphabet of "proteinogenic" amino acids was defined to acknowledge the special biology of those amino acids.
-> > Either of those alphabets may be used to determine the validity of an amino acid sequence, depending on its biological nature.
-> > 
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Translating nucleotide sequences
+### Challenge
+
+Use base R code to identify the two symbols present in the `AA_PROTEINOGENIC`
+alphabet object that are absent from the `AA_STANDARD` alphabet object.
+What do those two symbols represent?
+
+:::::::::::::::  solution
+
+### Solution
+
+```
+> setdiff(AA_PROTEINOGENIC, AA_STANDARD)
+[1] "U" "O"
+```
+
+The symbols `U` and `O` represent selenocysteine and pyrrolysine, respectively.
+Those two amino acids are in some species coded for by codons that are usually interpreted as stop codons.
+As such, they are not included in the alphabet of "standard" amino acids, and an alphabet of "proteinogenic" amino acids was defined to acknowledge the special biology of those amino acids.
+Either of those alphabets may be used to determine the validity of an amino acid sequence, depending on its biological nature.
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Translating nucleotide sequences
 
 One of the key motivations for the use of [S4 classes][glossary-s4-class] and the object-oriented programming (OOP) model relies on the infrastructure of S4 generics and methods.
 As described in the earlier episode [The S4 class system][crossref-s4], generics provide a mechanism for defining and applying distinct implementations of the same generic function name, according to the nature of the input object(s) provided to the function call.
@@ -312,7 +332,7 @@ but also lists of DNA and RNA sequences in objects of class `DNAStringSet` and `
 To demonstrate the use of the `translate()` method, we first load a set of open
 reading frames (ORFs) identified by the
 [NIH Open Reading Frame Finder][orf-finder]
-for the _Homo sapiens_ actin beta (ACTB) mRNA (RefSeq: NM_001101),
+for the *Homo sapiens* actin beta (ACTB) mRNA (RefSeq: NM\_001101),
 using the standard genetic code, a minimal ORF length of 75 nucleotides,
 and starting with the "ATG" start codon only.
 
@@ -329,6 +349,7 @@ sequence that results from the translation process for each nucleotide sequence.
 actb_aa <- translate(actb_orf_nih)
 actb_aa
 ```
+
 In the example above, all amino acid sequences visible start with the typical
 methionin amino acid encoded by the "ATG" start codon.
 We also see that all but one of the amino acid sequences visible end with the
@@ -339,41 +360,53 @@ nucleotide sequence without encoutering a stop codon.
 Conveniently, the number of amino acids in each sequence is stated under the
 header `width`.
 
-> ## Challenge
-> 
-> Extract the length of each amino acid sequence above as an integer vector.
-> What is the length of the longest amino acid sequence translated from any of
-> those open reading frames?
->
-> Compare your result with the sequence information on the UniPro page for
-> ACTB (https://www.uniprot.org/uniprot/P60709#sequences).
-> 
-> > ## Solution
-> > 
-> > ```
-> > width(actb_aa)
-> > # or
-> > max(width(actb_aa))
-> > ```
-> > 
-> > The longest translated sequence contains 376 amino acids.
-> > 
-> > The Uniprot page reports a sequence of 375 amino acids.
-> > However, the UniProt amino acid sequence does not comprise any symbol to
-> > represent the stop codon.
-> > That difference aside, the UniPro amino acid sequence is identical to the
-> > sequence that was produced by the `translate()` method.
-> > 
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-[pkg-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
-[iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
-[crossref-s4]: ../05-s4/index.html
-[external-truseq]: https://emea.illumina.com/products/by-type/sequencing-kits/library-prep-kits.html
+### Challenge
+
+Extract the length of each amino acid sequence above as an integer vector.
+What is the length of the longest amino acid sequence translated from any of
+those open reading frames?
+
+Compare your result with the sequence information on the UniPro page for
+ACTB ([https://www.uniprot.org/uniprot/P60709#sequences](https://www.uniprot.org/uniprot/P60709#sequences)).
+
+:::::::::::::::  solution
+
+### Solution
+
+```
+width(actb_aa)
+# or
+max(width(actb_aa))
+```
+
+The longest translated sequence contains 376 amino acids.
+
+The Uniprot page reports a sequence of 375 amino acids.
+However, the UniProt amino acid sequence does not comprise any symbol to
+represent the stop codon.
+That difference aside, the UniPro amino acid sequence is identical to the
+sequence that was produced by the `translate()` method.
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+[glossary-s4-class]: reference.html#s4-class
+[crossref-s4]: 05-s4/index.html
 [external-iupac]: https://en.wikipedia.org/wiki/Nucleic_acid_notation#IUPAC_notation
-[glossary-s4-slot]: ../reference.html#s4-class-slot
-[glossary-s4-class]: ../reference.html#s4-class
-[glossary-s4-object]: ../reference.html#s4-object
-[glossary-s4-dispatch]: ../reference.html#s4-method-dispatch
+[iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
+[external-truseq]: https://emea.illumina.com/products/by-type/sequencing-kits/library-prep-kits.html
 [orf-finder]: https://www.ncbi.nlm.nih.gov/orffinder/
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- The `Biostrings` package defines classes to represent sequences of nucleotides and amino acids.
+- The `Biostrings` package also defines methods to efficiently process biological sequences.
+- The `BSgenome` package provides genome sequences for a range of model organisms immediately available as Bioconductor objects.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

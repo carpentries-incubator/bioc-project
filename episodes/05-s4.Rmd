@@ -1,31 +1,31 @@
 ---
 source: Rmd
-title: "S4 classes in Bioconductor"
+title: S4 classes in Bioconductor
 teaching: XX
 exercises: XX
-questions:
-- "What is the S4 class system?"
-- "How does Bioconductor use S4 classes?"
-- "How is the Bioconductor `DataFrame` different from the base `data.frame`?"
-objectives:
-- "Explain what S4 classes, generics, and methods are."
-- "Identify S4 classes at the core of the Bioconductor package infrastructure."
-- "Create various S4 objects and apply relevant S4 methods."
-keypoints:
-- "S4 classes store information in slots, and check the validity of the information every an object is updated."
-- "To ensure the continued integrity of S4 objects, users should not access slots directly, but using dedicated functions."
-- "S4 generics invoke different implementations of the method depending on the class of the object that they are given."
-- "The S4 class `DataFrame` extends the functionality of base `data.frame`, for instance with the capacity to hold information about each column in metadata columns."
-- "The S4 class `Rle` extends the functionality of the base `vector`, for instance with the capacity to encode repetitive vectors in a memory-efficient format."
 ---
 
 ```{r, include=FALSE}
-source("../bin/chunk-options.R")
-knitr_fig_path("05-")
 options(width = 120)
 ```
 
-# Install packages
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain what S4 classes, generics, and methods are.
+- Identify S4 classes at the core of the Bioconductor package infrastructure.
+- Create various S4 objects and apply relevant S4 methods.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What is the S4 class system?
+- How does Bioconductor use S4 classes?
+- How is the Bioconductor `DataFrame` different from the base `data.frame`?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
 First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is installed before trying to use it; otherwise we install it.
@@ -38,16 +38,20 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("S4Vectors")
 ```
 
-> ## For Instructors
-> 
-> The first part of this episode may look somewhat heavy on the theory.
-> Do not be tempted to go into excessive details about the inner workings of the S4 class system (e.g., no need to mention the function `new()`, or to demonstrate a concrete example of code creating a class).
-> Instead, the caption of the first figure demonstrates how to progressively talk through the figure, introducing technical terms in simple sentences, building up to the method dispatch concept that is core to the S4 class system, and the source of much confusion in novice users.
-{: .prereq}
+::::::::::::::::::::::::::::::::::::::::::  prereq
 
-# S4 classes and methods
+### For Instructors
 
-## The methods package
+The first part of this episode may look somewhat heavy on the theory.
+Do not be tempted to go into excessive details about the inner workings of the S4 class system (e.g., no need to mention the function `new()`, or to demonstrate a concrete example of code creating a class).
+Instead, the caption of the first figure demonstrates how to progressively talk through the figure, introducing technical terms in simple sentences, building up to the method dispatch concept that is core to the S4 class system, and the source of much confusion in novice users.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## S4 classes and methods
+
+### The methods package
 
 The S4 class system is implemented in the base package [methods][r-package-methods].
 As such, the concept is not specific to the Bioconductor project and can be found in various independent packages as well.
@@ -62,7 +66,7 @@ On the other side, [S4 generics and methods][glossary-s4-method] define function
 Over the years, the Bioconductor project has used the S4 class system to develop a number of classes and methods capable of storing and processing data for most biological assays, including raw and processed assay data, experimental metadata for individual features and samples, as well as other assay-specific information as relevant.
 Gaining familiarity with the standard S4 classes commonly used throughout Bioconductor packages is a key step in building up confidence in users wishing to follow best practices while developing analytical workflows.
 
-![S4 classes, generics, and methods.](../fig/bioc-s4.svg)
+![](fig/bioc-s4.svg){alt='S4 classes, generics, and methods.'}
 
 **S4 classes, generics, and methods.**
 On the left, two example classes named `S4Class1` and `S4Class2` demonstrate the concept of inheritance.
@@ -78,15 +82,15 @@ Instead, two methods are defined, each providing a distinct implementation of th
 Namely, the first method defines an implementation of `S4Generic1()` if an object of class `S4Class1` is given as argument `x`, while the second method method provides a different implementation of `S4Generic1()` if an object of class `S4Class2` is given as argument `x`.
 When the generic function `S4Generic1()` is called, a process called [method dispatch][glossary-s4-dispatch] takes place, whereby the appropriate implementation of the `S4Generic1()` method is called according to the class of the object passed to the argument `x`.
 
-## Slots and validity
+### Slots and validity
 
 In contrast to the S3 class system available directly in base R (not described in this lesson), the S4 class system provides a much stricter definition of classes and methods for object-oriented programming (OOP) in R.
-Like many programming languages that implement the OOP model, S4 classes are used to represent real-world entities as computational objects that store information inside one or more internal components called _slots_.
+Like many programming languages that implement the OOP model, S4 classes are used to represent real-world entities as computational objects that store information inside one or more internal components called *slots*.
 The class definition declares the type of data that may be stored in each slot; an error will be thrown if one would attempt to store unsuitable data.
 Moreover, the class definition can also include code that checks the validity of data stored in an object, beyond their type.
 For instance, while a slot of type `numeric` could be used to store a person's age, but a validity method could check that the value stored is, in fact, positive.
 
-## Inheritance
+### Inheritance
 
 One of the core pillars of the OOP model is the possibility to develop new classes that inherit and extend the functionality of existing classes.
 The S4 class system implements this paradigm.
@@ -96,7 +100,7 @@ The new classes will contain all the slots of the parent class, in addition to a
 
 The new class definition can also define new validity checks, which are added to any validity check implement in each of the parent classes.
 
-## Generics and methods
+### Generics and methods
 
 While classes define the data structures that store information, generics and methods define the functions that can be applied to objects instantiated from those classes.
 
@@ -105,7 +109,7 @@ Instead, S4 methods are used define the distinct implementations of a generic fu
 
 When a generic function is called and given an S4 object, a process called [method dispatch][glossary-s4-dispatch] takes place, whereby the class of the object is used to determine the appropriate method to execute.
 
-# The S4Vectors package
+## The S4Vectors package
 
 The `r BiocStyle::Biocpkg("S4Vectors")` package defines the `Vector` and `List` virtual classes and a set of generic functions that extend the semantic of ordinary vectors and lists in R.
 Using the S4 class system, package developers can easily implement vector-like or list-like objects as concrete subclasses of `Vector` or `List`.
@@ -121,18 +125,22 @@ Attach the package to the current R session as follows.
 library(S4Vectors)
 ```
 
-> ## Note 
->
-> The package startup messages printed in the console are worth noting that the `r BiocStyle::Biocpkg("S4Vectors")` package masks a number of functions from the [base][r-package-base] package when the package is attached to the session.
-> This means that the `r BiocStyle::Biocpkg("S4Vectors")` package includes an implementation of those functions, and that -- being the latest package attached to the R session -- its own implementation of those functions will be found first on the R search path and used instead of their original implementation in the [base][r-package-base] package.
-> 
-> In many cases, masked functions can be used as before without any issue.
-> Occasionally, it may be necessary to disambiguate calls to masked function using the package name as well as the function name, e.g. `base::anyDuplicated()`.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-# The DataFrame class
+### Note
 
-## An extension to the concept of rectangular data
+The package startup messages printed in the console are worth noting that the `r BiocStyle::Biocpkg("S4Vectors")` package masks a number of functions from the [base][r-package-base] package when the package is attached to the session.
+This means that the `r BiocStyle::Biocpkg("S4Vectors")` package includes an implementation of those functions, and that -- being the latest package attached to the R session -- its own implementation of those functions will be found first on the R search path and used instead of their original implementation in the [base][r-package-base] package.
+
+In many cases, masked functions can be used as before without any issue.
+Occasionally, it may be necessary to disambiguate calls to masked function using the package name as well as the function name, e.g. `base::anyDuplicated()`.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## The DataFrame class
+
+### An extension to the concept of rectangular data
 
 The `DataFrame` class implemented in the `r BiocStyle::Biocpkg("S4Vectors")` package extends the concept of rectangular data familiar to users of the `data.frame` class in base R, or `tibble` in the tidyverse.
 Specifically, the `DataFrame` supports the storage of any type of object (with `length` and `[` methods) as columns.
@@ -164,7 +172,7 @@ Vice versa, we can also convert `data.frame` objects to `DataFrame` using the `a
 as(df1, "DataFrame")
 ```
 
-## Differences with the base data.frame
+### Differences with the base data.frame
 
 The most notable exceptions have to do with handling of row names.
 First, row names are optional. This means calling `rownames(x)` will return `NULL` if there are no row names.
@@ -197,28 +205,36 @@ DF2 <- DataFrame(
 DF2
 ```
 
-> ## Challenge
-> 
-> Using the example above, what does `DF2["name1", ]` return? Why?
-> 
-> > ## Solution
-> >
-> > ``` 
-> > > DF2["name1", ]
-> > DataFrame with 1 row and 3 columns
-> >        Integers     Letters    Floats
-> >       <integer> <character> <numeric>
-> > name1         1           A       1.2
-> > ```
-> >
-> > Only the first occurrence of a row matching the row name `name1` is returned.
-> > 
-> > In this case, row names do not have a particular meaning, making it difficult to justify the need for them.
-> > Instead, users could extract all the rows that matching the row name `name1` more explicitly as follows: `DF2[rownames(DF2) == "name1", ]`.
-> > 
-> > Users should be mindful of the motivation for using row names in any given situation; what they represent, and how they should be used during the analysis.
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+### Challenge
+
+Using the example above, what does `DF2["name1", ]` return? Why?
+
+:::::::::::::::  solution
+
+### Solution
+
+```
+> DF2["name1", ]
+DataFrame with 1 row and 3 columns
+       Integers     Letters    Floats
+      <integer> <character> <numeric>
+name1         1           A       1.2
+```
+
+Only the first occurrence of a row matching the row name `name1` is returned.
+
+In this case, row names do not have a particular meaning, making it difficult to justify the need for them.
+Instead, users could extract all the rows that matching the row name `name1` more explicitly as follows: `DF2[rownames(DF2) == "name1", ]`.
+
+Users should be mindful of the motivation for using row names in any given situation; what they represent, and how they should be used during the analysis.
+
+
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Finally, row names in `DataFrame` do not support partial matching during subsetting, in contrast to `data.frame`.
 The stricter behaviour of `DataFrame` prevents often unexpected results faced by unsuspecting users.
@@ -233,30 +249,38 @@ DF3 <- DataFrame(
 df3 <- as.data.frame(DF3)
 ```
 
-> ## Challenge
-> 
-> Using the examples above, what are the outputs of `DF3["a", ]` and `df3["a", ]`?
-> Why are they different?
-> 
-> > ## Solution
-> >
-> > ``` 
-> > > DF3["a", ]
-> > DataFrame with 1 row and 3 columns
-> >       Integers     Letters    Floats
-> >      <integer> <character> <numeric>
-> > <NA>        NA          NA        NA
-> > > df3["a", ]
-> >       Integers Letters Floats
-> > alpha        1       A    1.2
-> > ```
-> >
-> > The `DataFrame` object did not perform partial row name matching, and thus did not match any row and return a `DataFrame` full of `NA` values.
-> > Instead, the `data.frame` object performed partial row name matching, matched the requested `"a"` to the `"alpha"` row name, and returned the corresponding row as a new `data.frame` object.
-> {: .solution}
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
 
-## Indexing
+### Challenge
+
+Using the examples above, what are the outputs of `DF3["a", ]` and `df3["a", ]`?
+Why are they different?
+
+:::::::::::::::  solution
+
+### Solution
+
+```
+> DF3["a", ]
+DataFrame with 1 row and 3 columns
+      Integers     Letters    Floats
+     <integer> <character> <numeric>
+<NA>        NA          NA        NA
+> df3["a", ]
+      Integers Letters Floats
+alpha        1       A    1.2
+```
+
+The `DataFrame` object did not perform partial row name matching, and thus did not match any row and return a `DataFrame` full of `NA` values.
+Instead, the `data.frame` object performed partial row name matching, matched the requested `"a"` to the `"alpha"` row name, and returned the corresponding row as a new `data.frame` object.
+
+
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+### Indexing
 
 Just like a regular `data.frame`, columns can be accessed using `$`, `[`, and `[[`.
 Each operator has a different purpose, and the most appropriate one will often depend on what you are trying to achieve.
@@ -283,11 +307,11 @@ The operator `[` is most convenient when it comes to selecting simultaneously on
 DF3[2:3, "Letters", drop=FALSE]
 ```
 
-## Metadata columns
+### Metadata columns
 
 One of most notable novel functionality in `DataFrame` relative to the base `data.frame` is the capacity to hold metadata on the columns in another `DataFrame`.
 
-![Metadata columns.](../fig/dataframe-mcols.svg)
+![](fig/dataframe-mcols.svg){alt='Metadata columns.'}
 
 **Metadata columns.**
 Metadata columns are illustrated in the context of a `DataFrame` object.
@@ -323,20 +347,24 @@ mcols(DF4) <- DataFrame(
 mcols(DF4)
 ```
 
-> ## Note
-> 
-> The row names of the metadata columns are automatically set to match the column names of the parent `DataFrame`, clearly indicating the pairing between columns and metadata.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-# Run-length encoding (RLE)
+### Note
 
-## An extension to the concept of vector
+The row names of the metadata columns are automatically set to match the column names of the parent `DataFrame`, clearly indicating the pairing between columns and metadata.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Run-length encoding (RLE)
+
+### An extension to the concept of vector
 
 Similarly to the `DataFrame` class implemented in the `r BiocStyle::Biocpkg("S4Vectors")`,
 the `Rle` class provides an S4 extension to the `rle()` function from the base package.
 Specifically, the `Rle` class supports the storage of atomic vectors in a run-length encoding format.
 
-![Run-length encoding.](../fig/rle.svg)
+![](fig/rle.svg){alt='Run-length encoding.'}
 
 **Run-length encoding.**
 The concept of run-length encoding is demonstrated here using the example of a sequence of nucleic acids.
@@ -354,7 +382,7 @@ rle1 <- Rle(v1)
 rle1
 ```
 
-## Indexing
+### Indexing
 
 Just like a regular `vector`, `Rle` objects can be indexed using `[`.
 
@@ -362,7 +390,7 @@ Just like a regular `vector`, `Rle` objects can be indexed using `[`.
 rle1[2:4]
 ```
 
-## Usage
+### Usage
 
 As vector-like objects, `Rle` objects can also be stored as columns of `DataFrame` objects, alongside other vector-like objects.
 
@@ -377,14 +405,31 @@ DF5 <- DataFrame(
 DF5
 ```
 
-> ## Going further
-> 
-> A number of standard operations with `Rle` objects are documented in the help page of the `Rle` class, accessible as `?Rle`, and in the vignettes of the `r BiocStyle::Biocpkg("S4Vectors")` package, accessible using `browseVignettes("S4Vectors")`.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
 
-[r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
+### Going further
+
+A number of standard operations with `Rle` objects are documented in the help page of the `Rle` class, accessible as `?Rle`, and in the vignettes of the `r BiocStyle::Biocpkg("S4Vectors")` package, accessible using `browseVignettes("S4Vectors")`.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 [r-package-methods]: https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html
-[book-advanced-r-s4]: http://adv-r.had.co.nz/S4.html
-[glossary-s4-class]: ../reference.html#s4-class
-[glossary-s4-method]: ../reference.html#s4-method
-[glossary-s4-dispatch]: ../reference.html#s4-method-dispatch
+[book-advanced-r-s4]: https://adv-r.had.co.nz/S4.html
+[glossary-s4-class]: reference.html#s4-class
+[glossary-s4-method]: reference.html#s4-method
+[glossary-s4-dispatch]: reference.html#s4-method-dispatch
+[r-package-base]: https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html
+
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- S4 classes store information in slots, and check the validity of the information every an object is updated.
+- To ensure the continued integrity of S4 objects, users should not access slots directly, but using dedicated functions.
+- S4 generics invoke different implementations of the method depending on the class of the object that they are given.
+- The S4 class `DataFrame` extends the functionality of base `data.frame`, for instance with the capacity to hold information about each column in metadata columns.
+- The S4 class `Rle` extends the functionality of the base `vector`, for instance with the capacity to encode repetitive vectors in a memory-efficient format.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
