@@ -31,7 +31,7 @@ Before we can proceed into the following sections, we install some Bioconductor 
 First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is installed before trying to use it; otherwise we install it.
 Then we use the `BiocManager::install()` function to install the necessary packages.
 
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 

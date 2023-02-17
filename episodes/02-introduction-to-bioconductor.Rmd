@@ -29,16 +29,7 @@ exercises: XX
 options(htmltools.dir.version = FALSE)
 library(RefManageR)
 library(bibtex)
-bib <- ReadBib("../bibliography.bib")
-BibOptions(
-  longnamesfirst = FALSE,
-  check.entries = FALSE,
-  bib.style = "authoryear",
-  cite.style = "authoryear",
-  max.names = 1,
-  style = "html",
-  hyperlink = "to.bib",
-  dashed = TRUE)
+bib <- ReadBib("files/bibliography.bib")
 ```
 
 ## What is Bioconductor?
@@ -319,7 +310,7 @@ PrintBibliography(bib)
 
 [bioc-code-of-conduct]: https://www.bioconductor.org/about/code-of-conduct/
 [bioc-publications]: https://www.bioconductor.org/help/publications/
-[discuss-cran]: discuss/index.html#bioconductor-and-CRAN
+[discuss-cran]: discuss.html#bioconductor-and-CRAN
 [bioc-release-dates]: https://bioconductor.org/about/release-announcements/
 [glossary-software-package]: reference.html#software-package
 [glossary-annotation-package]: reference.html#annotationdata-package

@@ -235,7 +235,7 @@ This is because questions are visible to the entire community, including many ex
 [glossary-vignette]: reference.html#vignette
 [glossary-experiment-package]: reference.html#experimentdata-package
 [bioc-support-site]: https://support.bioconductor.org/
-[self-package-landing-page]: ./index.html#package-landing-pages
+[self-package-landing-page]: ..html#package-landing-pages
 [biocviews-workflow]: https://www.bioconductor.org/packages/release/BiocViews.html#___Workflow
 [bioc-slack]: https://community-bioc.slack.com/
 [bioc-slack-heroku]: https://bioc-community.herokuapp.com/

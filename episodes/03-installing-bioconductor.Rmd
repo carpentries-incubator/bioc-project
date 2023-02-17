@@ -258,7 +258,7 @@ The `BiocManager::install()` function is used to install or update packages.
 
 The function takes a character vector of package names, and attempts to install them from the Bioconductor repository.
 
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
 BiocManager::install(c("S4Vectors", "BiocGenerics"))
 ```
 
@@ -280,12 +280,12 @@ Bioconductor packages can be removed from the R library like any other R package
 In essence, this function simply removes installed packages and updates index information as necessary.
 As a result, it will not be possible to attach the package to a session or browse the documentation of that package anymore.
 
-```{r}
+```{r, eval=FALSE}
 remove.packages("S4Vectors")
 ```
 
 [bioc-release-dates]: https://bioconductor.org/about/release-announcements/
-[discuss-release-cycle]: discuss/index.html#the-bioconductor-release-cycle
+[discuss-release-cycle]: discuss.html#the-bioconductor-release-cycle
 [glossary-biocviews]: reference.html#biocviews
 [crossref-intro-biocviews]: https://carpentries-incubator.github.io/bioc-project/02-introduction-to-bioconductor/index.html#package-classification-using-biocviews
 [glossary-software-package]: reference.html#software-package

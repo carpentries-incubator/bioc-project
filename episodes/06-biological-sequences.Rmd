@@ -24,9 +24,6 @@ source("download_data.R")
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, include=FALSE}
-source("../bin/chunk-options.R")
-knitr_fig_path("06-")
-options(width = 120)
 ```
 
 ## Install packages
@@ -35,7 +32,7 @@ Before we can proceed into the following sections, we install some Bioconductor 
 First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is installed before trying to use it; otherwise we install it.
 Then we use the `BiocManager::install()` function to install the necessary packages.
 
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
@@ -394,7 +391,7 @@ sequence that was produced by the `translate()` method.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [glossary-s4-class]: reference.html#s4-class
-[crossref-s4]: 05-s4/index.html
+[crossref-s4]: 05-s4.html
 [external-iupac]: https://en.wikipedia.org/wiki/Nucleic_acid_notation#IUPAC_notation
 [iupac-alphabet]: https://www.bioinformatics.org/sms/iupac.html
 [external-truseq]: https://emea.illumina.com/products/by-type/sequencing-kits/library-prep-kits.html
