@@ -281,3 +281,32 @@ remove.packages("S4Vectors")
 [glossary-software-package]: ../reference.html#software-package
 [glossary-biocviews]: ../reference.html#biocviews
 [bioc-release-dates]: https://www.bioconductor.org/about/release-announcements/
+
+# The install.packages() function
+
+It is very common that R users who are new to Bioconductor try to install
+Bioconductor packages with the function `install.packages()`. By default
+`install.packages()` only looks for packages on CRAN, so they will end up with an
+error of "package is not available for this version of R". To also look for
+Bioconductor packages with `install.packages()`, the Bioconductor repositories
+must be added to the repository list in the R session in advance (The internal
+repository list can be obtained by the command `getOption("repos")`). To do
+this, users first need to execute the function `setRepositories()`. This
+function either pops up a small graphic window (Left panel in the figure
+below) or a block of text (right panel in the figure below), depending whether
+user's R session supports graphic output, where users can select the
+repository list interactively.
+
+<p><img src="../fig/setRepositories.png" width="1000" /></p>
+
+As shown in the figure, there are three Bioconductor repositories in the list:
+"BioC software", "BioC annotation" and "BioC experiment". They correspond to
+repositories for software packages (e.g. **GenomicRanges**), annotation
+packages (e.g. **org.Hs.eg.db**) and experiment data packages (e.g.
+**airway**). Normally, all the three Bioconductor repositories should be
+selected in order to install all Bioconductor packages (Do not forget to also
+include the original CRAN repository!).
+
+`setRepositories()` always adds the Bioconductor repositories with the version
+corresponding to user's R version.
+
