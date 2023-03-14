@@ -160,7 +160,7 @@ BiocManager::valid()
 ```
 
 ```{.warning}
-Warning: 1 packages out-of-date; 0 packages too new
+Warning: 10 packages out-of-date; 0 packages too new
 ```
 
 ```{.output}
@@ -169,7 +169,7 @@ Warning: 1 packages out-of-date; 0 packages too new
 
 R version 4.2.2 Patched (2022-11-10 r83330)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 22.04.1 LTS
+Running under: Ubuntu 22.04.2 LTS
 
 Matrix products: default
 BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0
@@ -192,16 +192,19 @@ loaded via a namespace (and not attached):
  [4] cli_3.6.0           htmltools_0.5.4     tools_4.2.2        
  [7] yaml_2.3.7          rmarkdown_2.20      knitr_1.42         
 [10] digest_0.6.31       xfun_0.37           rlang_1.0.6        
-[13] renv_0.16.0         evaluate_0.20      
+[13] renv_0.17.0-38      evaluate_0.20      
 
 Bioconductor version '3.16'
 
-  * 1 packages out-of-date
+  * 10 packages out-of-date
   * 0 packages too new
 
 create a valid installation with
 
-  BiocManager::install("fs", update = TRUE, ask = FALSE, force = TRUE)
+  BiocManager::install(c(
+    "BiocManager", "bookdown", "cachem", "fastmap", "fs", "GenomicAlignments",
+    "httr", "openssl", "renv", "S4Vectors"
+  ), update = TRUE, ask = FALSE, force = TRUE)
 
 more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
 ```
@@ -279,7 +282,7 @@ length(BiocManager::available())
 ```
 
 ```{.output}
-[1] 22743
+[1] 22810
 ```
 
 Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
