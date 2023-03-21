@@ -160,7 +160,7 @@ BiocManager::valid()
 ```
 
 ```{.warning}
-Warning: 10 packages out-of-date; 0 packages too new
+Warning: 14 packages out-of-date; 0 packages too new
 ```
 
 ```{.output}
@@ -192,18 +192,19 @@ loaded via a namespace (and not attached):
  [4] cli_3.6.0           htmltools_0.5.4     tools_4.2.2        
  [7] yaml_2.3.7          rmarkdown_2.20      knitr_1.42         
 [10] digest_0.6.31       xfun_0.37           rlang_1.0.6        
-[13] renv_0.17.0-38      evaluate_0.20      
+[13] renv_0.17.2         evaluate_0.20      
 
 Bioconductor version '3.16'
 
-  * 10 packages out-of-date
+  * 14 packages out-of-date
   * 0 packages too new
 
 create a valid installation with
 
   BiocManager::install(c(
-    "BiocManager", "bookdown", "cachem", "fastmap", "fs", "GenomicAlignments",
-    "httr", "openssl", "renv", "S4Vectors"
+    "BiocManager", "BiocParallel", "bookdown", "cachem", "fastmap", "fs",
+    "GenomicAlignments", "httr", "openssl", "renv", "rlang", "S4Vectors",
+    "vctrs", "XML"
   ), update = TRUE, ask = FALSE, force = TRUE)
 
 more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
@@ -282,7 +283,7 @@ length(BiocManager::available())
 ```
 
 ```{.output}
-[1] 22810
+[1] 22836
 ```
 
 Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
