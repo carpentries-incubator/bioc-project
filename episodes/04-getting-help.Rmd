@@ -128,7 +128,7 @@ This includes plain text explanations, as well as code and their outputs, both f
 
 ## Package help pages
 
-Bioconductor requires every user-facing package function to documented in one of the package help pages (often referred to as "man pages", after the name of the package sub-directory where they are stored).
+Bioconductor requires every user-facing package function to be documented in one of the package help pages (often referred to as "man pages", after the name of the package sub-directory where they are stored).
 
 Help pages can be accessed using the `help()` function or the question mark symbol `?`.
 
