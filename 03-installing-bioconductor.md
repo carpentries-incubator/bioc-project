@@ -167,7 +167,7 @@ Warning: 19 packages out-of-date; 0 packages too new
 
 * sessionInfo()
 
-R version 4.2.2 Patched (2022-11-10 r83330)
+R version 4.2.3 (2023-03-15)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: Ubuntu 22.04.2 LTS
 
@@ -188,8 +188,8 @@ other attached packages:
 [1] BiocStyle_2.26.0
 
 loaded via a namespace (and not attached):
- [1] BiocManager_1.30.19 compiler_4.2.2      fastmap_1.1.0      
- [4] cli_3.6.0           htmltools_0.5.4     tools_4.2.2        
+ [1] BiocManager_1.30.19 compiler_4.2.3      fastmap_1.1.0      
+ [4] cli_3.6.0           htmltools_0.5.4     tools_4.2.3        
  [7] yaml_2.3.7          rmarkdown_2.20      knitr_1.42         
 [10] digest_0.6.31       xfun_0.37           rlang_1.0.6        
 [13] renv_0.17.2         evaluate_0.20      
