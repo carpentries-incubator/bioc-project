@@ -41,17 +41,5 @@ In this lesson, you will learn:
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## For Instructors
-
-If you are teaching this lesson in a workshop, please see the
-[Instructor notes](guide/).
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
 
 [lesson-intro-r-bioconductor]: https://carpentries-incubator.github.io/bioc-intro/index.html
-
-
-
