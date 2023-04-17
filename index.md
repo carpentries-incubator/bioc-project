@@ -39,7 +39,4 @@ In this lesson, you will learn:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
-
-
 [lesson-intro-r-bioconductor]: https://carpentries-incubator.github.io/bioc-intro/index.html
