@@ -283,7 +283,7 @@ length(BiocManager::available())
 ```
 
 ```{.output}
-[1] 22849
+[1] 22885
 ```
 
 Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
