@@ -16,9 +16,6 @@ keypoints:
 - "The `rtracklayer` package provides functions to import and export genomic ranges from and to common genomic file formats."
 ---
 
-```{r, echo=FALSE, purl=FALSE, message=FALSE}
-source("download_data.R")
-```
 
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
