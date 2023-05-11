@@ -294,7 +294,7 @@ DF3$Integers
 ```
 
 Similarly, the double bracket operator `[[` can also be used to extract a single column.
-It is more flexible that `$` as it can handle both character names and integer indices.
+It is more flexible than `$` as it can handle both character names and integer indices.
 
 ```{r}
 DF3[["Letters"]]
