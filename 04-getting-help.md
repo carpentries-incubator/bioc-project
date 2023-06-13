@@ -51,7 +51,7 @@ Alternatively, when referring to materials that employ package versions differen
 
 ## Package landing pages
 
-Each package accepted in the Bioconductor project is granted a landing page on the main Bioconductor website, e.g. *[S4Vectors](https://bioconductor.org/packages/3.16/S4Vectors)*.
+Each package accepted in the Bioconductor project is granted a landing page on the main Bioconductor website, e.g. *[S4Vectors](https://bioconductor.org/packages/3.17/S4Vectors)*.
 
 Package landing pages contains useful information that can be consulted without the need to install the package itself.
 This is particularly useful while browsing the Bioconductor repository is search of packages suitable for a specific task.
@@ -61,7 +61,7 @@ Vignettes represent a particularly powerful form of documentation as they allow 
 
 In particular, precompiled vignettes available on the Bioconductor website provide that information without the need to install the package itself.
 Instead, prospective users are presented with documents (PDF or HTML) written by developers to demonstrate how the functions available in the package are meant to be used and combined into a complete workflow.
-Often, vignettes use standard data sets preprocessed and freely available from public repositories, including [ExperimentData][glossary-experiment-package] packages or the Bioconductor *[ExperimentHub](https://bioconductor.org/packages/3.16/ExperimentHub)*.
+Often, vignettes use standard data sets preprocessed and freely available from public repositories, including [ExperimentData][glossary-experiment-package] packages or the Bioconductor *[ExperimentHub](https://bioconductor.org/packages/3.17/ExperimentHub)*.
 
 In the "Details" section of the landing page, many packages provide a field labelled "BugReports".
 That field provides a URL that users can visit to report bugs to the package developer(s).
@@ -169,7 +169,7 @@ The platform can be freely browsed and searched by non-registered users.
 Bioconductor workflow packages are special in the way that they are only expected to contain vignettes, without any additional code or functionality of their own.
 Instead, the vignettes of workflow packages exclusively import functionality from other packages, and demonstrate how to combine functions from those packages into an integrated workflow that users are likely to face in their day-to-day work.
 
-Like regular vignettes, data is typically fetched from publicly available sources, including Bioconductor [ExperimentData][glossary-experiment-package] packages or the Bioconductor *[ExperimentHub](https://bioconductor.org/packages/3.16/ExperimentHub)*.
+Like regular vignettes, data is typically fetched from publicly available sources, including Bioconductor [ExperimentData][glossary-experiment-package] packages or the Bioconductor *[ExperimentHub](https://bioconductor.org/packages/3.17/ExperimentHub)*.
 Those freely available standard data sets allow users to interactively reproduce outputs while they read and follow along the vignette.
 
 Workflow packages can be browsed in a dedicated section of the [biocViews page][biocviews-workflow].

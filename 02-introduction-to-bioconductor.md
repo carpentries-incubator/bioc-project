@@ -115,9 +115,9 @@ and reducing the cognitive burden imposed on users who can more easily experimen
 [Annotation data packages][glossary-annotation-package] provide self-contained databases of diverse genomic annotations (e.g., gene identifiers, biological pathways).
 Different collections of annotation packages can be found in the Bioconductor project.
 They are identifiable by their respective naming pattern, and the information that they contain.
-For instance, the so-called `OrgDb` packages (e.g., the *[org.Hs.eg.db](https://bioconductor.org/packages/3.16/org.Hs.eg.db)* package) provide information mapping different types of gene identifiers and pathway databases;
-the so-called `EnsDb` (e.g., *[EnsDb.Hsapiens.v86](https://bioconductor.org/packages/3.16/EnsDb.Hsapiens.v86)*) packages encapsulate individual versions of the Ensembl annotations in Bioconductor packages;
-and the so-called `TxDb` packages (e.g., *[TxDb.Hsapiens.UCSC.hg38.knownGene](https://bioconductor.org/packages/3.16/TxDb.Hsapiens.UCSC.hg38.knownGene)*) encapsulate individual versions UCSC gene annotation tables.
+For instance, the so-called `OrgDb` packages (e.g., the *[org.Hs.eg.db](https://bioconductor.org/packages/3.17/org.Hs.eg.db)* package) provide information mapping different types of gene identifiers and pathway databases;
+the so-called `EnsDb` (e.g., *[EnsDb.Hsapiens.v86](https://bioconductor.org/packages/3.17/EnsDb.Hsapiens.v86)*) packages encapsulate individual versions of the Ensembl annotations in Bioconductor packages;
+and the so-called `TxDb` packages (e.g., *[TxDb.Hsapiens.UCSC.hg38.knownGene](https://bioconductor.org/packages/3.17/TxDb.Hsapiens.UCSC.hg38.knownGene)*) encapsulate individual versions UCSC gene annotation tables.
 
 [Experiment data packages][glossary-experiment-package] provide self-contained datasets that are often used by software package developers to demonstrate the use of their package on well-known standard datasets in their [package vignettes][glossary-vignette].
 
@@ -171,7 +171,7 @@ Visit the listing of all packages on the Bioconductor [biocViews][biocviews-site
 Use the "Autocomplete biocViews search" box in the upper left to filter packages by category and explore the graph of software packages by expanding and contracting individual terms.
 
 1. What biocView terms can be used to identify packages that have been tagged for RNA sequencing analysis? ChIP-seq? Epigenetics? Variant annotation? Proteomics? Single-cell genomics?
-2. In the `RNASeq` category, two very popular packages are *[DESeq2](https://bioconductor.org/packages/3.16/DESeq2)* and *[edgeR](https://bioconductor.org/packages/3.16/edgeR)*.
+2. In the `RNASeq` category, two very popular packages are *[DESeq2](https://bioconductor.org/packages/3.17/DESeq2)* and *[edgeR](https://bioconductor.org/packages/3.17/edgeR)*.
   Which one is more popular in terms of download statistics (i.e., lower rank)?
 
 :::::::::::::::  solution
@@ -179,8 +179,8 @@ Use the "Autocomplete biocViews search" box in the upper left to filter packages
 ### Solution
 
 1. `RNAseq`, `ChIPSeq`, `Epigenetics`, `VariantAnnotation`, `Proteomics`, `SingleCell`.
-2. For Bioconductor release `3.14`, *[DESeq2](https://bioconductor.org/packages/3.16/DESeq2)* and *[edgeR](https://bioconductor.org/packages/3.16/edgeR)* are listed at ranks 23 and 28 respectively.
-  In other words, the two packages are among the most frequently downloaded packages in the Bioconductor project, in this instance with a small advantage in favour of *[edgeR](https://bioconductor.org/packages/3.16/edgeR)*.
+2. For Bioconductor release `3.14`, *[DESeq2](https://bioconductor.org/packages/3.17/DESeq2)* and *[edgeR](https://bioconductor.org/packages/3.17/edgeR)* are listed at ranks 23 and 28 respectively.
+  In other words, the two packages are among the most frequently downloaded packages in the Bioconductor project, in this instance with a small advantage in favour of *[edgeR](https://bioconductor.org/packages/3.17/edgeR)*.
   
   
 
@@ -192,10 +192,10 @@ Use the "Autocomplete biocViews search" box in the upper left to filter packages
 
 ### Going further
 
-The Bioconductor package *[biocViews](https://bioconductor.org/packages/3.16/biocViews)* is used to support and manage the infrastructure of the controlled vocabulary.
+The Bioconductor package *[biocViews](https://bioconductor.org/packages/3.17/biocViews)* is used to support and manage the infrastructure of the controlled vocabulary.
 It can also be used to programmatically inspect and subset the list of terms available using their relationship as a graph.
 
-Furthermore, the *[BiocPkgTools](https://bioconductor.org/packages/3.16/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] ( Su, Carey, Shepherd, Ritchie, Morgan, and Davis, 2019).
+Furthermore, the *[BiocPkgTools](https://bioconductor.org/packages/3.17/BiocPkgTools)* package can be used to browse packages under different [biocViews][glossary-biocviews] ( Su, Carey, Shepherd, Ritchie, Morgan, and Davis, 2019).
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
