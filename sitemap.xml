@@ -1,111 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-project01-setup.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/01-setup.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-project02-introduction-to-bioconductor.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/02-introduction-to-bioconductor.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-project03-installing-bioconductor.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/03-installing-bioconductor.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-project04-getting-help.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/04-getting-help.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-project05-s4.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/05-s4.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-project06-biological-sequences.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/06-biological-sequences.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-project07-genomic-ranges.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/07-genomic-ranges.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-project404.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectCODE_OF_CONDUCT.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectLICENSE.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectaio.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectdiscuss.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/discuss.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectimages.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectindex.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/01-setup.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/01-setup.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/02-introduction-to-bioconductor.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/02-introduction-to-bioconductor.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/03-installing-bioconductor.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/03-installing-bioconductor.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/04-getting-help.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/04-getting-help.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/05-s4.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/05-s4.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/06-biological-sequences.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/06-biological-sequences.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/07-genomic-ranges.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/07-genomic-ranges.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/404.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/LICENSE.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/aio.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/discuss.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/discuss.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/images.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/index.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/instructor-notes.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/key-points.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/key-points.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/profiles.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/profiles.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor/reference.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor/reference.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectinstructor-notes.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectkey-points.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/key-points.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectprofiles.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/profiles.html</loc>
   </url>
   <url>
-    <loc>https://carpentries-incubator.github.io/bioc-projectreference.html</loc>
+    <loc>https://carpentries-incubator.github.io/bioc-project/reference.html</loc>
   </url>
 </urlset>

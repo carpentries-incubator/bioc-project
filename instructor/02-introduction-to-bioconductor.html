@@ -156,7 +156,7 @@
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        Introduction to Bioconductor
+        2. Introduction to Bioconductor
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -267,7 +267,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to Bioconductor</h1>
-        <p> Last updated on 2023-04-25 | 
+        <p> Last updated on 2023-06-13 | 
         
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/02-introduction-to-bioconductor.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -379,12 +379,12 @@ grown over time to host thousands of packages.</p>
 – much larger and general-purpose in scope – to comprise R packages
 primarily catering for bioinformatics and computational biology
 analyses.</p>
-<div id="callout1" class="callout callout">
+<div id="going-further" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="going-further" class="callout-inner">
-<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#going-further"></a>
 </h3>
 <div class="callout-content">
 <p>The <a href="discuss.html#bioconductor-and-CRAN">Discussion</a>
@@ -452,12 +452,12 @@ annotations (e.g., gene identifiers, biological pathways). Different
 collections of annotation packages can be found in the Bioconductor
 project. They are identifiable by their respective naming pattern, and
 the information that they contain. For instance, the so-called
-<code>OrgDb</code> packages (e.g., the <em><a href="https://bioconductor.org/packages/3.16/org.Hs.eg.db" class="external-link">org.Hs.eg.db</a></em>
+<code>OrgDb</code> packages (e.g., the <em><a href="https://bioconductor.org/packages/3.17/org.Hs.eg.db" class="external-link">org.Hs.eg.db</a></em>
 package) provide information mapping different types of gene identifiers
-and pathway databases; the so-called <code>EnsDb</code> (e.g., <em><a href="https://bioconductor.org/packages/3.16/EnsDb.Hsapiens.v86" class="external-link">EnsDb.Hsapiens.v86</a></em>)
+and pathway databases; the so-called <code>EnsDb</code> (e.g., <em><a href="https://bioconductor.org/packages/3.17/EnsDb.Hsapiens.v86" class="external-link">EnsDb.Hsapiens.v86</a></em>)
 packages encapsulate individual versions of the Ensembl annotations in
 Bioconductor packages; and the so-called <code>TxDb</code> packages
-(e.g., <em><a href="https://bioconductor.org/packages/3.16/TxDb.Hsapiens.UCSC.hg38.knownGene" class="external-link">TxDb.Hsapiens.UCSC.hg38.knownGene</a></em>)
+(e.g., <em><a href="https://bioconductor.org/packages/3.17/TxDb.Hsapiens.UCSC.hg38.knownGene" class="external-link">TxDb.Hsapiens.UCSC.hg38.knownGene</a></em>)
 encapsulate individual versions UCSC gene annotation tables.</p>
 <p><a href="reference.html#experimentdata-package">Experiment data
 packages</a> provide self-contained datasets that are often used by
@@ -468,12 +468,12 @@ packages</a> exclusively provide collections of vignettes that
 demonstrate the combined usage of several other packages as a coherent
 workflow, but do not provide any new source code or functionality
 themselves.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge-the-bioconductor-website" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-the-bioconductor-website" class="callout-inner">
-<h3 class="callout-title">Challenge: The Bioconductor website<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge: The Bioconductor website<a class="anchor" aria-label="anchor" href="#challenge-the-bioconductor-website"></a>
 </h3>
 <div class="callout-content">
 <p>The Bioconductor website is accessible at <a href="https://bioconductor.org/" class="external-link">https://bioconductor.org/</a>.</p>
@@ -492,7 +492,7 @@ project include?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The following solution includes numbers that were valid at the time
 of writing (Bioconductor release 3.13); numbers will inevitably be
@@ -535,12 +535,12 @@ from the available controlled vocabulary, to describe the type and
 functionality of the package. Terms are initially selected by the
 package authors, and subsequently refined during package review or
 updates to the controlled vocabulary.</p>
-<div id="challenge2" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Visit the listing of all packages on the Bioconductor <a href="https://www.bioconductor.org/packages/release/BiocViews.html" class="external-link">biocViews</a>
@@ -551,8 +551,8 @@ packages by expanding and contracting individual terms.</p>
 tagged for RNA sequencing analysis? ChIP-seq? Epigenetics? Variant
 annotation? Proteomics? Single-cell genomics?</li>
 <li>In the <code>RNASeq</code> category, two very popular packages are
-<em><a href="https://bioconductor.org/packages/3.16/DESeq2" class="external-link">DESeq2</a></em> and
-<em><a href="https://bioconductor.org/packages/3.16/edgeR" class="external-link">edgeR</a></em>.
+<em><a href="https://bioconductor.org/packages/3.17/DESeq2" class="external-link">DESeq2</a></em> and
+<em><a href="https://bioconductor.org/packages/3.17/edgeR" class="external-link">edgeR</a></em>.
 Which one is more popular in terms of download statistics (i.e., lower
 rank)?</li>
 </ol></div>
@@ -565,34 +565,34 @@ rank)?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <code>RNAseq</code>, <code>ChIPSeq</code>, <code>Epigenetics</code>,
 <code>VariantAnnotation</code>, <code>Proteomics</code>,
 <code>SingleCell</code>.</li>
-<li>For Bioconductor release <code>3.14</code>, <em><a href="https://bioconductor.org/packages/3.16/DESeq2" class="external-link">DESeq2</a></em> and
-<em><a href="https://bioconductor.org/packages/3.16/edgeR" class="external-link">edgeR</a></em> are
+<li>For Bioconductor release <code>3.14</code>, <em><a href="https://bioconductor.org/packages/3.17/DESeq2" class="external-link">DESeq2</a></em> and
+<em><a href="https://bioconductor.org/packages/3.17/edgeR" class="external-link">edgeR</a></em> are
 listed at ranks 23 and 28 respectively. In other words, the two packages
 are among the most frequently downloaded packages in the Bioconductor
-project, in this instance with a small advantage in favour of <em><a href="https://bioconductor.org/packages/3.16/edgeR" class="external-link">edgeR</a></em>.</li>
+project, in this instance with a small advantage in favour of <em><a href="https://bioconductor.org/packages/3.17/edgeR" class="external-link">edgeR</a></em>.</li>
 </ol></div>
 </div>
 </div>
 </div>
-<div id="callout2" class="callout callout">
+<div id="going-further-1" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="going-further-1" class="callout-inner">
-<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#going-further-1"></a>
 </h3>
 <div class="callout-content">
-<p>The Bioconductor package <em><a href="https://bioconductor.org/packages/3.16/biocViews" class="external-link">biocViews</a></em>
+<p>The Bioconductor package <em><a href="https://bioconductor.org/packages/3.17/biocViews" class="external-link">biocViews</a></em>
 is used to support and manage the infrastructure of the controlled
 vocabulary. It can also be used to programmatically inspect and subset
 the list of terms available using their relationship as a graph.</p>
-<p>Furthermore, the <em><a href="https://bioconductor.org/packages/3.16/BiocPkgTools" class="external-link">BiocPkgTools</a></em>
+<p>Furthermore, the <em><a href="https://bioconductor.org/packages/3.17/BiocPkgTools" class="external-link">BiocPkgTools</a></em>
 package can be used to browse packages under different <a href="reference.html#biocviews">biocViews</a> ( Su, Carey, Shepherd,
 Ritchie, Morgan, and Davis, 2019).</p>
 </div>
@@ -647,12 +647,12 @@ being developed and maintained by community members.</p>
 used to publish video recordings of conference presentations including
 talks and workshops, as well as editions of the regular Bioconductor
 developers forum (link needed).</p>
-<div id="callout3" class="callout callout">
+<div id="contribute" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="contribute" class="callout-inner">
-<h3 class="callout-title">Contribute!<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">Contribute!<a class="anchor" aria-label="anchor" href="#contribute"></a>
 </h3>
 <div class="callout-content">
 <p>It could be great to illustrate a typical cycle of conferences over a
@@ -689,12 +689,12 @@ subjects, and community members can freely join the discussion on those
 channels of create new ones to discuss new subjects.</p>
 <p>Important announcements are posted on the <code>#general</code>
 channel.</p>
-<div id="callout4" class="callout callout">
+<div id="note" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="note" class="callout-inner">
-<h3 class="callout-title">Note<a class="anchor" aria-label="anchor" href="#callout4"></a>
+<h3 class="callout-title">Note<a class="anchor" aria-label="anchor" href="#note"></a>
 </h3>
 <div class="callout-content">
 <p>Users are encouraged to use the Bioconductor <a href="https://support.bioconductor.org/" class="external-link">support site</a> to raise
@@ -733,12 +733,12 @@ open-to-all elections to rotate members. Current officers are Aedin
 Culhane (chair), Matt Ritchie (co Chair), Lori Kern (Secretary).</li>
 <li><a href="https://www.bioconductor.org/about/code-of-conduct/" class="external-link">Code
 of Conduct committee</a></li>
-</ul><div id="callout5" class="callout callout">
+</ul><div id="note-1" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="note-1" class="callout-inner">
-<h3 class="callout-title">Note<a class="anchor" aria-label="anchor" href="#callout5"></a>
+<h3 class="callout-title">Note<a class="anchor" aria-label="anchor" href="#note-1"></a>
 </h3>
 <div class="callout-content">
 <p>At least 1 member of TAB/CAB sits on both to act at the liason to
@@ -821,9 +821,9 @@ advisory boards, as well as a Code of Conduct committee.</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.15" class="external-link">sandpaper (0.11.15)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.3" class="external-link">sandpaper (0.12.3)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.17" class="external-link">varnish (0.2.17)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -835,17 +835,17 @@ advisory boards, as well as a Code of Conduct committee.</li>
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://carpentries-incubator.github.io/bioc-projectinstructor/02-introduction-to-bioconductor.html",
+  "@id": "https://carpentries-incubator.github.io/bioc-project/instructor/02-introduction-to-bioconductor.html",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Introduction to Bioconductor",
   "creativeWorkStatus": "active",
-  "url": "https://carpentries-incubator.github.io/bioc-projectinstructor/02-introduction-to-bioconductor.html",
-  "identifier": "https://carpentries-incubator.github.io/bioc-projectinstructor/02-introduction-to-bioconductor.html",
+  "url": "https://carpentries-incubator.github.io/bioc-project/instructor/02-introduction-to-bioconductor.html",
+  "identifier": "https://carpentries-incubator.github.io/bioc-project/instructor/02-introduction-to-bioconductor.html",
   "dateCreated": "2020-09-14",
-  "dateModified": "2023-04-25",
-  "datePublished": "2023-04-25"
+  "dateModified": "2023-06-13",
+  "datePublished": "2023-06-13"
 }
 
   </script><script>

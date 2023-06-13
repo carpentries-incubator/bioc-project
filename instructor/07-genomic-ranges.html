@@ -201,7 +201,7 @@
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        Working with genomics ranges
+        7. Working with genomics ranges
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -268,7 +268,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Working with genomics ranges</h1>
-        <p> Last updated on 2023-04-25 | 
+        <p> Last updated on 2023-06-13 | 
         
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/07-genomic-ranges.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -314,7 +314,7 @@ ranges of genomic coordinates.</li>
 <section id="install-packages"><h2 class="section-heading">Install packages<a class="anchor" aria-label="anchor" href="#install-packages"></a>
 </h2>
 <hr class="half-width"><p>Before we can proceed into the following sections, we install some
-Bioconductor packages that we will need. First, we check that the <em><a href="https://bioconductor.org/packages/3.16/BiocManager" class="external-link">BiocManager</a></em>
+Bioconductor packages that we will need. First, we check that the <em><a href="https://bioconductor.org/packages/3.17/BiocManager" class="external-link">BiocManager</a></em>
 package is installed before trying to use it; otherwise we install it.
 Then we use the <code>BiocManager::install()</code> function to install
 the necessary packages.</p>
@@ -438,7 +438,7 @@ double-stranded DNA polymer.</p>
 </h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a></h3>
-<p>The <em><a href="https://bioconductor.org/packages/3.16/GenomicRanges" class="external-link">GenomicRanges</a></em>
+<p>The <em><a href="https://bioconductor.org/packages/3.17/GenomicRanges" class="external-link">GenomicRanges</a></em>
 package implements <a href="reference.html#s4-class">S4 classes</a> to
 represent genomic ranges as S4 objects.</p>
 <p>Specifically, the <code>GRanges</code> class is designed to store a
@@ -455,7 +455,7 @@ and a range of methods implementing common operations on integer
 intervals and genomic ranges, from the calculation of distance between
 pairs of intervals to the identification of overlapping genomic
 ranges.</p>
-<p>A short presentation of the basic classes defined in the <em><a href="https://bioconductor.org/packages/3.16/GenomicRanges" class="external-link">GenomicRanges</a></em>
+<p>A short presentation of the basic classes defined in the <em><a href="https://bioconductor.org/packages/3.17/GenomicRanges" class="external-link">GenomicRanges</a></em>
 package is available in one of the package vignettes, accessible as
 <code>vignette("GenomicRangesIntroduction")</code>, while more detailed
 information is provided in the other package vignettes, accessible as
@@ -507,12 +507,12 @@ integer ranges from their start position and width:</p>
 <em>width</em> information that we requested for each range, but also
 the <em>end</em> position that is naturally computed from the other two
 pieces of information.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Create the same two ranges as above, using the arguments
@@ -725,12 +725,12 @@ overlap.</p>
 <p>In this example, we confirm that the first range in the query set
 overlaps the first range in the subject set; while the second range in
 the query set overlaps both ranges in the subject set.</p>
-<div id="callout1" class="callout callout">
+<div id="going-further" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="going-further" class="callout-inner">
-<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#going-further"></a>
 </h3>
 <div class="callout-content">
 <p>For downstream use, the two components can be extracted from
@@ -957,8 +957,8 @@ original file contains more than 3 millions lines and 22 metadata
 fields, from which a subset was extracted into a smaller file for this
 lesson.</p>
 <p>In particular, we use the <code>import()</code> generic defined in
-the <em><a href="https://bioconductor.org/packages/3.16/BiocIO" class="external-link">BiocIO</a></em>
-package - with methods implemented in the <em><a href="https://bioconductor.org/packages/3.16/rtracklayer" class="external-link">rtracklayer</a></em>
+the <em><a href="https://bioconductor.org/packages/3.17/BiocIO" class="external-link">BiocIO</a></em>
+package - with methods implemented in the <em><a href="https://bioconductor.org/packages/3.17/rtracklayer" class="external-link">rtracklayer</a></em>
 package - as a versatile function that is capable of recognising common
 file extensions and associating them with the appropriate method for
 parsing each particular file format.</p>
@@ -1003,12 +1003,12 @@ parsing each particular file format.</p>
   -------
   seqinfo: 1 sequence from an unspecified genome; no seqlengths</code></pre>
 </div>
-<div id="callout2" class="callout callout">
+<div id="going-further-1" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="going-further-1" class="callout-inner">
-<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#going-further-1"></a>
 </h3>
 <div class="callout-content">
 <p>Individual methods for parsing specific file formats can be invoked
@@ -1016,7 +1016,7 @@ directly. For instance, in this case, the GTF file format being
 identical to the GFF version 2 file format, we could have directly
 invoked the function <code>rtracklayer::import.gff2()</code> with the
 exact same effect.</p>
-<p>Refer to the documentation of the <em><a href="https://bioconductor.org/packages/3.16/rtracklayer" class="external-link">rtracklayer</a></em>
+<p>Refer to the documentation of the <em><a href="https://bioconductor.org/packages/3.17/rtracklayer" class="external-link">rtracklayer</a></em>
 package for the full list of methods available.</p>
 </div>
 </div>
@@ -1190,12 +1190,12 @@ ENST00000646584 ENST00000646664 ENST00000647275 ENST00000674681 ENST00000675515
 ENST00000676189 ENST00000676319 ENST00000676397 
               6               3               6 </code></pre>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>Importantly, the function <code>lengths()</code> (with a final
@@ -1313,12 +1313,12 @@ compare the length of the two objects to check whether the new
 <p>In the example above, we learn that the new <code>GRanges</code>
 object has 11 records less than the original <code>GRanges</code>
 object.</p>
-<div id="callout3" class="callout callout">
+<div id="going-further-2" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="going-further-2" class="callout-inner">
-<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#going-further-2"></a>
 </h3>
 <div class="callout-content">
 <p>Many more methods exist to operate on <code>GRanges</code> and
@@ -1381,9 +1381,9 @@ and export genomic ranges from and to common genomic file formats.</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.15" class="external-link">sandpaper (0.11.15)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.3" class="external-link">sandpaper (0.12.3)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.17" class="external-link">varnish (0.2.17)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1395,17 +1395,17 @@ and export genomic ranges from and to common genomic file formats.</li>
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://carpentries-incubator.github.io/bioc-projectinstructor/07-genomic-ranges.html",
+  "@id": "https://carpentries-incubator.github.io/bioc-project/instructor/07-genomic-ranges.html",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Working with genomics ranges",
   "creativeWorkStatus": "active",
-  "url": "https://carpentries-incubator.github.io/bioc-projectinstructor/07-genomic-ranges.html",
-  "identifier": "https://carpentries-incubator.github.io/bioc-projectinstructor/07-genomic-ranges.html",
+  "url": "https://carpentries-incubator.github.io/bioc-project/instructor/07-genomic-ranges.html",
+  "identifier": "https://carpentries-incubator.github.io/bioc-project/instructor/07-genomic-ranges.html",
   "dateCreated": "2020-09-14",
-  "dateModified": "2023-04-25",
-  "datePublished": "2023-04-25"
+  "dateModified": "2023-06-13",
+  "datePublished": "2023-06-13"
 }
 
   </script><script>

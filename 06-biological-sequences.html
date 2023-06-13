@@ -193,7 +193,7 @@
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        Working with biological sequences
+        6. Working with biological sequences
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -269,7 +269,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Working with biological sequences</h1>
-        <p> Last updated on 2023-04-25 | 
+        <p> Last updated on 2023-06-13 | 
         
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/06-biological-sequences.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -311,7 +311,7 @@ biological sequences.</li>
 <section id="install-packages"><h2 class="section-heading">Install packages<a class="anchor" aria-label="anchor" href="#install-packages"></a>
 </h2>
 <hr class="half-width"><p>Before we can proceed into the following sections, we install some
-Bioconductor packages that we will need. First, we check that the <em><a href="https://bioconductor.org/packages/3.16/BiocManager" class="external-link">BiocManager</a></em>
+Bioconductor packages that we will need. First, we check that the <em><a href="https://bioconductor.org/packages/3.17/BiocManager" class="external-link">BiocManager</a></em>
 package is installed before trying to use it; otherwise we install it.
 Then we use the <code>BiocManager::install()</code> function to install
 the necessary packages.</p>
@@ -360,12 +360,12 @@ that can be applied to those sequences. For instance, a function
 designed to translate nucleic acid sequences into the corresponding
 amino acid sequence should only be allowed to run on sequences that
 represent nucleic acids.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Can you tell whether this character string is a valid DNA
@@ -399,7 +399,7 @@ and <code>G</code>.</p>
 </h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a></h3>
-<p>In the Bioconductor project, the <em><a href="https://bioconductor.org/packages/3.16/Biostrings" class="external-link">Biostrings</a></em>
+<p>In the Bioconductor project, the <em><a href="https://bioconductor.org/packages/3.17/Biostrings" class="external-link">Biostrings</a></em>
 package implements S4 classes to represent biological sequences as S4
 objects, e.g. <code>DNAString</code> for sequences of nucleotides in
 deoxyribonucleic acid polymers, and <code>AAString</code> for sequences
@@ -409,7 +409,7 @@ validity-checking functionality for each class of biological molecules,
 and methods implementing various string matching algorithms and other
 utilities for fast manipulation and processing of large biological
 sequences or sets of sequences.</p>
-<p>A short presentation of the basic classes defined in the <em><a href="https://bioconductor.org/packages/3.16/Biostrings" class="external-link">Biostrings</a></em>
+<p>A short presentation of the basic classes defined in the <em><a href="https://bioconductor.org/packages/3.17/Biostrings" class="external-link">Biostrings</a></em>
 package is available in one of the package vignettes, accessible as
 <code>vignette("Biostrings2Classes")</code>, while more detailed
 information is provided in the other package vignettes, accessible as
@@ -497,7 +497,7 @@ represents either of the two nucleotides <code>A</code> or
 <pre class="output" tabindex="0"><code>5-letter DNAString object
 seq: ATCGM</code></pre>
 </div>
-<p>In particular, pattern matching methods implemented in the <em><a href="https://bioconductor.org/packages/3.16/Biostrings" class="external-link">Biostrings</a></em>
+<p>In particular, pattern matching methods implemented in the <em><a href="https://bioconductor.org/packages/3.17/Biostrings" class="external-link">Biostrings</a></em>
 package recognize the meaning of ambiguity codes for each class of
 biological sequence, allowing them to efficiently match motifs queried
 by users without the need to design elaborate regular expressions. For
@@ -551,12 +551,12 @@ from positions 9 to 10.</p>
 matches of the <code>pattern</code> in the <code>subject</code>
 sequence. And again, the option <code>fixed</code> controls whether to
 respect ambiguity codes, or match them exactly.</p>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>How many hits does the following code return? Why?</p>
@@ -614,12 +614,12 @@ are nucleic acid sequences, we must use the function
 [5]    34 GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT                PE2
 [6]    34 AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC                PE2_rc</code></pre>
 </div>
-<div id="callout1" class="callout callout">
+<div id="going-further" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="going-further" class="callout-inner">
-<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#going-further"></a>
 </h3>
 <div class="callout-content">
 <p>The help page of the function <code>readDNAStringSet()</code> –
@@ -634,7 +634,7 @@ functions designed to import other types of biological sequences, e.g
 <h3 id="operations-on-biological-strings">Operations on biological strings<a class="anchor" aria-label="anchor" href="#operations-on-biological-strings"></a></h3>
 <div class="section level4">
 <h4 id="computing-the-frequency-of-symbols">Computing the frequency of symbols<a class="anchor" aria-label="anchor" href="#computing-the-frequency-of-symbols"></a></h4>
-<p>The <em><a href="https://bioconductor.org/packages/3.16/Biostrings" class="external-link">Biostrings</a></em>
+<p>The <em><a href="https://bioconductor.org/packages/3.17/Biostrings" class="external-link">Biostrings</a></em>
 package provides several functions to process and manipulate classes of
 biological strings. For example, we have come across
 <code>matchPattern()</code> and <code>countPattern()</code> earlier in
@@ -661,7 +661,7 @@ in a biological sequence.</p>
 </div>
 <p>The output is a matrix with one row for each sequence in the
 <code>DNAStringSet</code> object, and one column for each symbol in the
-alphabet of deoxyribonucleic acids, provided by the <em><a href="https://bioconductor.org/packages/3.16/Biostrings" class="external-link">Biostrings</a></em>
+alphabet of deoxyribonucleic acids, provided by the <em><a href="https://bioconductor.org/packages/3.17/Biostrings" class="external-link">Biostrings</a></em>
 package in a built-in object called <code>DNA_ALPHABET</code>.</p>
 </div>
 </div>
@@ -689,12 +689,12 @@ of symbols in the full amino acid alphabet.</p>
 <pre class="output" tabindex="0"><code> [1] "A" "R" "N" "D" "C" "Q" "E" "G" "H" "I" "L" "K" "M" "F" "P" "S" "T" "W" "Y"
 [20] "V" "U" "O" "B" "J" "Z" "X" "*" "-" "+" "."</code></pre>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <p>Use base R code to identify the two symbols present in the
@@ -736,7 +736,7 @@ methods. As described in the earlier episode <a href="05-s4.html">The S4
 class system</a>, generics provide a mechanism for defining and applying
 distinct implementations of the same generic function name, according to
 the nature of the input object(s) provided to the function call.</p>
-<p>For instance, the <em><a href="https://bioconductor.org/packages/3.16/Biostrings" class="external-link">Biostrings</a></em>
+<p>For instance, the <em><a href="https://bioconductor.org/packages/3.17/Biostrings" class="external-link">Biostrings</a></em>
 package provides multiple implementations of a generic called
 <code>translate()</code>, for translating DNA or RNA sequences into
 amino acid sequences. The set of input objects supported by the generic
@@ -833,12 +833,12 @@ reached the end of the nucleotide sequence without encoutering a stop
 codon.</p>
 <p>Conveniently, the number of amino acids in each sequence is stated
 under the header <code>width</code>.</p>
-<div id="challenge4" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <p>Extract the length of each amino acid sequence above as an integer
@@ -920,9 +920,9 @@ objects.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.15" class="external-link">sandpaper (0.11.15)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.3" class="external-link">sandpaper (0.12.3)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.17" class="external-link">varnish (0.2.17)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -934,17 +934,17 @@ objects.</li>
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://carpentries-incubator.github.io/bioc-project06-biological-sequences.html",
+  "@id": "https://carpentries-incubator.github.io/bioc-project/06-biological-sequences.html",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Working with biological sequences",
   "creativeWorkStatus": "active",
-  "url": "https://carpentries-incubator.github.io/bioc-project06-biological-sequences.html",
-  "identifier": "https://carpentries-incubator.github.io/bioc-project06-biological-sequences.html",
+  "url": "https://carpentries-incubator.github.io/bioc-project/06-biological-sequences.html",
+  "identifier": "https://carpentries-incubator.github.io/bioc-project/06-biological-sequences.html",
   "dateCreated": "2020-09-14",
-  "dateModified": "2023-04-25",
-  "datePublished": "2023-04-25"
+  "dateModified": "2023-06-13",
+  "datePublished": "2023-06-13"
 }
 
   </script><script>
