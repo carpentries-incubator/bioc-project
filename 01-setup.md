@@ -24,7 +24,7 @@ exercises: XX
 
 ## Version of R
 
-This lesson was developed and tested with R version 4.3.0 (2023-04-21).
+This lesson was developed and tested with R version 4.3.1 (2023-06-16).
 
 Take a moment to launch RStudio and verify that you are using R version `4.1.x`, with `x` being any patch version, e.g. `4.1.2`.
 
@@ -34,7 +34,7 @@ R.version.string
 ```
 
 ```{.output}
-[1] "R version 4.3.0 (2023-04-21)"
+[1] "R version 4.3.1 (2023-06-16)"
 ```
 
 This is important because Bioconductor uses the version of R running in the current session to determine the version of Bioconductor packages that can be installed in the R library associated with the current R session.
