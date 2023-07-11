@@ -119,8 +119,8 @@ Then, each time a new Bioconductor release is produced, the version of every pac
 packageVersion("BiocVersion")
 ```
 
-```{.error}
-Error in packageVersion("BiocVersion"): there is no package called 'BiocVersion'
+```{.output}
+[1] '3.17.1'
 ```
 
 This is the case for every package, even those which have not been updated at all since the previous release.
@@ -236,7 +236,7 @@ length(BiocManager::available())
 ```
 
 ```{.output}
-[1] 23370
+[1] 23372
 ```
 
 Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
