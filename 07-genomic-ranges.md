@@ -648,6 +648,14 @@ format.
 
 ```r
 library(rtracklayer)
+```
+
+```{.warning}
+Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
+'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
+```
+
+```r
 actb_gtf_data <- rtracklayer::import("data/actb.gtf")
 actb_gtf_data
 ```
