@@ -159,8 +159,56 @@ If everything is up-to-date, the function will simply print `TRUE`.
 BiocManager::valid()
 ```
 
+```{.warning}
+Warning: 2 packages out-of-date; 1 packages too new
+```
+
 ```{.output}
-[1] TRUE
+
+* sessionInfo()
+
+R version 4.3.1 (2023-06-16)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.3 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] BiocStyle_2.28.1
+
+loaded via a namespace (and not attached):
+ [1] BiocManager_1.30.22 compiler_4.3.1      fastmap_1.1.1      
+ [4] cli_3.6.1           htmltools_0.5.7     tools_4.3.1        
+ [7] yaml_2.3.7          rmarkdown_2.25      knitr_1.45         
+[10] digest_0.6.33       xfun_0.41           rlang_1.1.2        
+[13] renv_1.0.3          evaluate_0.23      
+
+Bioconductor version '3.17'
+
+  * 2 packages out-of-date
+  * 1 packages too new
+
+create a valid installation with
+
+  BiocManager::install(c(
+    "lifecycle", "matrixStats", "SparseArray"
+  ), update = TRUE, ask = FALSE, force = TRUE)
+
+more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
 ```
 
 Conveniently, if any package can be updated, the function generates and displays the command needed to update those packages.
@@ -236,7 +284,7 @@ length(BiocManager::available())
 ```
 
 ```{.output}
-[1] 23382
+[1] 23524
 ```
 
 Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
