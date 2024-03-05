@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 623.6 255.1" style="enable-background:new 0 0 623.6 255.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{font-family:'FiraCode-Regular';}
+	.st2{font-size:12px;}
+	.st3{font-family:'ArialMT';}
+	.st4{font-size:16px;}
+	.st5{fill:none;stroke:#000000;stroke-miterlimit:10;}
+</style>
+<rect x="11.8" y="213.1" class="st0" width="212.8" height="15.8"/>
+<text transform="matrix(1 0 0 1 25.8567 225.6563)" class="st1 st2">utils::install.packages()</text>
+<text transform="matrix(1 0 0 1 95.4944 43.261)" class="st3 st4">CRAN</text>
+<g>
+	<g>
+		<line class="st5" x1="118.6" y1="202.5" x2="118.6" y2="104.7"/>
+		<g>
+			<polygon points="123.6,106.2 118.6,97.5 113.6,106.2 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st5" x1="118.6" y1="202.5" x2="136.9" y2="121.9"/>
+		<g>
+			<polygon points="141.4,124.4 138.5,114.9 131.7,122.2 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st5" x1="118.7" y1="202.5" x2="100.4" y2="121.9"/>
+		<g>
+			<polygon points="105.6,122.2 98.8,114.9 95.9,124.4 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 71.0257 89.6788)" class="st3 st4">BiocManager</text>
+<text transform="matrix(1 0 0 1 133.2999 109.2844)" class="st3 st2">...</text>
+<text transform="matrix(1 0 0 1 93.0222 109.2839)" class="st3 st2">...</text>
+<ellipse class="st5" cx="118.2" cy="92" rx="77.1" ry="36.6"/>
+<rect x="341.4" y="213.1" class="st0" width="178.5" height="15.8"/>
+<text transform="matrix(1 0 0 1 349.45 225.6563)" class="st1 st2">BiocManager::install()</text>
+<text transform="matrix(1 0 0 1 318.6068 48.7297)" class="st3 st4">CRAN</text>
+<text transform="matrix(1 0 0 1 294.1383 95.1475)" class="st3 st4">BiocManager</text>
+<text transform="matrix(1 0 0 1 336.2706 114.7535)" class="st3 st2">...</text>
+<text transform="matrix(1 0 0 1 316.1348 114.7525)" class="st3 st2">...</text>
+<ellipse class="st5" cx="341.3" cy="97.5" rx="77.1" ry="36.6"/>
+<text transform="matrix(1 0 0 1 473.0902 50.3058)" class="st3 st4">Bioconductor</text>
+<text transform="matrix(1 0 0 1 490.8757 95.1473)" class="st3 st4">Biobase</text>
+<text transform="matrix(1 0 0 1 514.7809 114.7537)" class="st3 st2">...</text>
+<text transform="matrix(1 0 0 1 534.9229 114.7542)" class="st3 st2">...</text>
+<ellipse class="st5" cx="519.8" cy="99.1" rx="77.1" ry="36.6"/>
+<g>
+	<g>
+		<line class="st5" x1="436" y1="210" x2="352.3" y2="125.4"/>
+		<g>
+			<polygon points="356.9,122.9 347.2,120.3 349.8,130 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st5" x1="436" y1="210" x2="366.2" y2="109.1"/>
+		<g>
+			<polygon points="371.1,107.4 362.1,103.2 362.9,113.1 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st5" x1="436.2" y1="210" x2="330.1" y2="127.3"/>
+		<g>
+			<polygon points="334.3,124.2 324.4,122.9 328.2,132.1 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st5" x1="436" y1="210" x2="495.7" y2="108.1"/>
+		<g>
+			<polygon points="499.3,111.9 499.3,101.9 490.7,106.9 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st5" x1="436" y1="210" x2="531.5" y2="123.2"/>
+		<g>
+			<polygon points="533.8,127.9 536.8,118.4 527.1,120.5 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st5" x1="436" y1="210" x2="509.2" y2="123.9"/>
+		<g>
+			<polygon points="512.1,128.2 513.9,118.4 504.5,121.8 			"/>
+		</g>
+	</g>
+</g>
+</svg>
