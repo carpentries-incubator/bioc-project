@@ -160,16 +160,16 @@ BiocManager::valid()
 ```
 
 ```{.warning}
-Warning: 4 packages out-of-date; 1 packages too new
+Warning: 26 packages out-of-date; 1 packages too new
 ```
 
 ```{.output}
 
 * sessionInfo()
 
-R version 4.3.2 (2023-10-31)
+R version 4.3.3 (2024-02-29)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 22.04.3 LTS
+Running under: Ubuntu 22.04.4 LTS
 
 Matrix products: default
 BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
@@ -191,21 +191,24 @@ other attached packages:
 [1] BiocStyle_2.28.1
 
 loaded via a namespace (and not attached):
- [1] BiocManager_1.30.22 compiler_4.3.2      fastmap_1.1.1      
- [4] cli_3.6.1           htmltools_0.5.7     tools_4.3.2        
+ [1] BiocManager_1.30.22 compiler_4.3.3      fastmap_1.1.1      
+ [4] cli_3.6.1           htmltools_0.5.7     tools_4.3.3        
  [7] yaml_2.3.7          rmarkdown_2.25      knitr_1.45         
 [10] digest_0.6.33       xfun_0.41           rlang_1.1.2        
-[13] renv_1.0.3          evaluate_0.23      
+[13] renv_1.0.5          evaluate_0.23      
 
 Bioconductor version '3.17'
 
-  * 4 packages out-of-date
+  * 26 packages out-of-date
   * 1 packages too new
 
 create a valid installation with
 
   BiocManager::install(c(
-    "lifecycle", "matrixStats", "SparseArray", "stringi", "stringr"
+    "BH", "bookdown", "bslib", "cli", "cpp11", "curl", "digest", "glue",
+    "jsonlite", "lifecycle", "matrixStats", "Rcpp", "RCurl", "renv", "rlang",
+    "rmarkdown", "sass", "SparseArray", "stringi", "stringr", "timechange",
+    "tinytex", "vctrs", "xfun", "XML", "xml2", "yaml"
   ), update = TRUE, ask = FALSE, force = TRUE)
 
 more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
@@ -284,7 +287,7 @@ length(BiocManager::available())
 ```
 
 ```{.output}
-[1] 23609
+[1] 24114
 ```
 
 Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
