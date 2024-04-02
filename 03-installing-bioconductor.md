@@ -160,7 +160,7 @@ BiocManager::valid()
 ```
 
 ```{.warning}
-Warning: 26 packages out-of-date; 1 packages too new
+Warning: 0 packages out-of-date; 1 packages too new
 ```
 
 ```{.output}
@@ -192,24 +192,19 @@ other attached packages:
 
 loaded via a namespace (and not attached):
  [1] BiocManager_1.30.22 compiler_4.3.3      fastmap_1.1.1      
- [4] cli_3.6.1           htmltools_0.5.7     tools_4.3.3        
- [7] yaml_2.3.7          rmarkdown_2.25      knitr_1.45         
-[10] digest_0.6.33       xfun_0.41           rlang_1.1.2        
+ [4] cli_3.6.2           htmltools_0.5.8     tools_4.3.3        
+ [7] yaml_2.3.8          rmarkdown_2.26      knitr_1.45         
+[10] digest_0.6.35       xfun_0.43           rlang_1.1.3        
 [13] renv_1.0.5          evaluate_0.23      
 
 Bioconductor version '3.17'
 
-  * 26 packages out-of-date
+  * 0 packages out-of-date
   * 1 packages too new
 
 create a valid installation with
 
-  BiocManager::install(c(
-    "BH", "bookdown", "bslib", "cli", "cpp11", "curl", "digest", "glue",
-    "jsonlite", "lifecycle", "matrixStats", "Rcpp", "RCurl", "renv", "rlang",
-    "rmarkdown", "sass", "SparseArray", "stringi", "stringr", "timechange",
-    "tinytex", "vctrs", "xfun", "XML", "xml2", "yaml"
-  ), update = TRUE, ask = FALSE, force = TRUE)
+  BiocManager::install("SparseArray", update = TRUE, ask = FALSE, force = TRUE)
 
 more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
 ```
@@ -287,7 +282,7 @@ length(BiocManager::available())
 ```
 
 ```{.output}
-[1] 24114
+[1] 24198
 ```
 
 Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
