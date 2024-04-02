@@ -212,7 +212,7 @@ Specifically, in this example, the message tells the user to run the following c
 
 The Bioconductor [biocViews][glossary-biocviews], demonstrated in the earlier episode [Introduction to Bioconductor][crossref-intro-biocviews], are a great way to discover new packages by thematically browsing the hierarchical classification of Bioconductor packages.
 
-In addition, the `BiocManager::available()` function returns the complete list of package names that are can be intsalled from the Bioconductor and CRAN repositories.
+In addition, the `BiocManager::available()` function returns the complete list of package names that are can be installed from the Bioconductor and CRAN repositories.
 For instance the total number of numbers that could be installed using `r BiocStyle::Biocpkg("BiocManager")`
 
 ```{r, message=FALSE}
