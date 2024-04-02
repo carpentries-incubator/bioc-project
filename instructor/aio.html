@@ -677,7 +677,7 @@ project include?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The following solution includes numbers that were valid at the time
 of writing (Bioconductor release 3.13); numbers will inevitably be
@@ -755,7 +755,7 @@ rank)?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -1344,7 +1344,7 @@ to Bioconductor</a>, are a great way to discover new packages by
 thematically browsing the hierarchical classification of Bioconductor
 packages.</p>
 <p>In addition, the <code>BiocManager::available()</code> function
-returns the complete list of package names that are can be intsalled
+returns the complete list of package names that are can be installed
 from the Bioconductor and CRAN repositories. For instance the total
 number of numbers that could be installed using <em><a href="https://bioconductor.org/packages/3.17/BiocManager" class="external-link">BiocManager</a></em></p>
 <div class="codewrapper sourceCode" id="cb13">
@@ -1598,19 +1598,12 @@ consulted without the need to install the package itself. This is
 particularly useful while browsing the Bioconductor repository is search
 of packages suitable for a specific task.</p>
 <p>On the landing page, prospective users can find a short description
-of the package functionality, as well as pre-compiled documentation in
-the form of links to <a href="reference.html#vignette">package
-vignettes</a>. Vignettes represent a particularly powerful form of
-documentation as they allow package developers to demonstrate the
-functionality of their package in the context of an example data set and
-workflow (sometimes more than one).</p>
-<p>In particular, precompiled vignettes available on the Bioconductor
-website provide that information without the need to install the package
-itself. Instead, prospective users are presented with documents (PDF or
-HTML) written by developers to demonstrate how the functions available
-in the package are meant to be used and combined into a complete
-workflow. Often, vignettes use standard data sets preprocessed and
-freely available from public repositories, including <a href="reference.html#experimentdata-package">ExperimentData</a> packages
+of the package functionality, and links to <a href="reference.html#vignette">package vignettes</a>. Package vignettes
+available on the Bioconductor website are written by developers to
+demonstrate how the functions available in the package are meant to be
+used and combined into a complete workflow. Often, vignettes use
+standard data sets preprocessed and freely available from public
+repositories, including <a href="reference.html#experimentdata-package">ExperimentData</a> packages
 or the Bioconductor <em><a href="https://bioconductor.org/packages/3.17/ExperimentHub" class="external-link">ExperimentHub</a></em>.</p>
 <p>In the “Details” section of the landing page, many packages provide a
 field labelled “BugReports”. That field provides a URL that users can
@@ -1706,7 +1699,7 @@ messages.</p>
 </section><section id="package-help-pages"><h2 class="section-heading">Package help pages<a class="anchor" aria-label="anchor" href="#package-help-pages"></a>
 </h2>
 <hr class="half-width">
-<p>Bioconductor requires every user-facing package function to
+<p>Bioconductor requires every user-facing package function to be
 documented in one of the package help pages (often referred to as “man
 pages”, after the name of the package sub-directory where they are
 stored).</p>
@@ -2343,7 +2336,7 @@ return? Why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code>&gt; DF2["name1", ]
 DataFrame with 1 row and 3 columns
@@ -2398,7 +2391,7 @@ different?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre><code>&gt; DF3["a", ]
 DataFrame with 1 row and 3 columns
@@ -3604,7 +3597,7 @@ constructor function.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4311,7 +4304,7 @@ why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
