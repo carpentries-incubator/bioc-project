@@ -57,11 +57,8 @@ Each package accepted in the Bioconductor project is granted a landing page on t
 Package landing pages contains useful information that can be consulted without the need to install the package itself.
 This is particularly useful while browsing the Bioconductor repository is search of packages suitable for a specific task.
 
-On the landing page, prospective users can find a short description of the package functionality, as well as pre-compiled documentation in the form of links to [package vignettes][glossary-vignette].
-Vignettes represent a particularly powerful form of documentation as they allow package developers to demonstrate the functionality of their package in the context of an example data set and workflow (sometimes more than one).
-
-In particular, precompiled vignettes available on the Bioconductor website provide that information without the need to install the package itself.
-Instead, prospective users are presented with documents (PDF or HTML) written by developers to demonstrate how the functions available in the package are meant to be used and combined into a complete workflow.
+On the landing page, prospective users can find a short description of the package functionality, and links to [package vignettes][glossary-vignette].
+Package vignettes available on the Bioconductor website are written by developers to demonstrate how the functions available in the package are meant to be used and combined into a complete workflow.
 Often, vignettes use standard data sets preprocessed and freely available from public repositories, including [ExperimentData][glossary-experiment-package] packages or the Bioconductor `r BiocStyle::Biocpkg("ExperimentHub")`.
 
 In the "Details" section of the landing page, many packages provide a field labelled "BugReports".
@@ -128,7 +125,7 @@ This includes plain text explanations, as well as code and their outputs, both f
 
 ## Package help pages
 
-Bioconductor requires every user-facing package function to documented in one of the package help pages (often referred to as "man pages", after the name of the package sub-directory where they are stored).
+Bioconductor requires every user-facing package function to be documented in one of the package help pages (often referred to as "man pages", after the name of the package sub-directory where they are stored).
 
 Help pages can be accessed using the `help()` function or the question mark symbol `?`.
 
