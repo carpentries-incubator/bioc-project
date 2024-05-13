@@ -54,7 +54,7 @@ for the [Actin, alpha skeletal muscle protein sequence](https://www.uniprot.org/
 follows.
 
 
-```{.output}
+```output
 [1] "MCDEDETTALVCDNGSGLVKAGFAGDDAPRAVFPSIVGRPRHQGVMVGMGQKDSYVGDEAQSKRGILTLKYPIEHGIITNWDDMEKIWHHTFYNELRVAPEEHPTLLTEAPLNPKANREKMTQIMFETFNVPAMYVAIQAVLSLYASGRTTGIVLDSGDGVTHNVPIYEGYALPHAIMRLDLAGRDLTDYLMKILTERGYSFVTTAEREIVRDIKEKLCYVALDFENEMATAASSSSLEKSYELPDGQVITIGNERFRCPETLFQPSFIGMESAGIHETTYNSIMKCDIDIRKDLYANNVMSGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWIGGSILASLSTFQQMWITKQEYDEAGPSIVHRKCF"
 ```
 
@@ -137,7 +137,7 @@ printed in the console.
 DNAString("ATCG")
 ```
 
-```{.output}
+```output
 4-letter DNAString object
 seq: ATCG
 ```
@@ -155,7 +155,7 @@ invalid characters, e.g. `Z`.
 DNAString("ATCGZ")
 ```
 
-```{.error}
+```error
 Error in .Call2("new_XString_from_CHARACTER", class(x0), string, start, : key 90 (char 'Z') not in lookup table
 ```
 
@@ -170,7 +170,7 @@ nucleotide ambiguity codes to their meaning.
 IUPAC_CODE_MAP
 ```
 
-```{.output}
+```output
      A      C      G      T      M      R      W      S      Y      K      V 
    "A"    "C"    "G"    "T"   "AC"   "AG"   "AT"   "CG"   "CT"   "GT"  "ACG" 
      H      D      B      N 
@@ -187,7 +187,7 @@ at a given position in a nucleic acid sequence.
 DNAString("ATCGM")
 ```
 
-```{.output}
+```output
 5-letter DNAString object
 seq: ATCGM
 ```
@@ -211,7 +211,7 @@ dna1 <- DNAString("ATCGCTTTGA")
 matchPattern("GM", dna1, fixed = TRUE)
 ```
 
-```{.output}
+```output
 Views on a 10-letter DNAString subject
 subject: ATCGCTTTGA
 views: NONE
@@ -225,7 +225,7 @@ Instead, to indicate that the pattern includes some ambiguity code, the argument
 matchPattern("GM", dna1, fixed = FALSE)
 ```
 
-```{.output}
+```output
 Views on a 10-letter DNAString subject
 subject: ATCGCTTTGA
 views:
@@ -283,7 +283,7 @@ truseq_adapters <- readDNAStringSet(filepath = "data/TruSeq3-PE-2.fa")
 truseq_adapters
 ```
 
-```{.output}
+```output
 DNAStringSet object of length 6:
     width seq                                               names               
 [1]    34 TACACTCTTTCCCTACACGACGCTCTTCCGATCT                PrefixPE/1
@@ -323,7 +323,7 @@ sequence.
 letterFrequency(truseq_adapters, letters = DNA_ALPHABET)
 ```
 
-```{.output}
+```output
       A  C  G  T M R W S Y K V H D B N - + .
 [1,]  6 14  3 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 [2,]  5  8 10 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -351,7 +351,7 @@ For instance, the `AA_ALPHABET` object describes the set of symbols in the full 
 AA_ALPHABET
 ```
 
-```{.output}
+```output
  [1] "A" "R" "N" "D" "C" "Q" "E" "G" "H" "I" "L" "K" "M" "F" "P" "S" "T" "W" "Y"
 [20] "V" "U" "O" "B" "J" "Z" "X" "*" "-" "+" "."
 ```
@@ -395,7 +395,7 @@ The set of input objects supported by the generic `translate()` can be listed us
 showMethods("translate")
 ```
 
-```{.output}
+```output
 Function: translate (package Biostrings)
 x="DNAString"
 x="DNAStringSet"
@@ -421,7 +421,7 @@ actb_orf_nih <- readDNAStringSet("data/actb_orfs.fasta")
 actb_orf_nih
 ```
 
-```{.output}
+```output
 DNAStringSet object of length 13:
      width seq                                              names               
  [1]   222 ATGCCCACCATCACGCCCTGGTG...CGGGGCGGACGCGGTCTCGGCG gi|1519311456|ref...
@@ -447,7 +447,7 @@ actb_aa <- translate(actb_orf_nih)
 actb_aa
 ```
 
-```{.output}
+```output
 AAStringSet object of length 13:
      width seq                                              names               
  [1]    74 MPTITPWCLGRPTMEGKTARGAS...VWTGGGSAKARLCARGADAVSA gi|1519311456|ref...

@@ -33,7 +33,7 @@ Take a moment to launch RStudio and verify that you are using R version `4.1.x`,
 R.version.string
 ```
 
-```{.output}
+```output
 [1] "R version 4.3.3 (2024-02-29)"
 ```
 

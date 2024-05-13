@@ -47,17 +47,6 @@ Install the package using the code below.
 install.packages("BiocManager")
 ```
 
-```output
-trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.1/BiocManager_1.30.16.tgz'
-Content type 'application/x-gzip' length 322920 bytes (315 KB)
-==================================================
-downloaded 315 KB
-
-
-The downloaded binary packages are in
-	/var/folders/51/nz__2dx10yzd75rylr5cg2zc0000gq/T//RtmpeS8MHV/downloaded_packages
-```
-
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ### Going further
@@ -93,7 +82,7 @@ Once the *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)* pac
 BiocManager::version()
 ```
 
-```{.output}
+```output
 [1] '3.17'
 ```
 
@@ -119,7 +108,7 @@ Then, each time a new Bioconductor release is produced, the version of every pac
 packageVersion("BiocVersion")
 ```
 
-```{.output}
+```output
 [1] '3.17.1'
 ```
 
@@ -159,11 +148,11 @@ If everything is up-to-date, the function will simply print `TRUE`.
 BiocManager::valid()
 ```
 
-```{.warning}
+```warning
 Warning: 0 packages out-of-date; 1 packages too new
 ```
 
-```{.output}
+```output
 
 * sessionInfo()
 
@@ -191,11 +180,11 @@ other attached packages:
 [1] BiocStyle_2.28.1
 
 loaded via a namespace (and not attached):
- [1] BiocManager_1.30.22 compiler_4.3.3      fastmap_1.1.1      
- [4] cli_3.6.2           htmltools_0.5.8     tools_4.3.3        
- [7] yaml_2.3.8          rmarkdown_2.26      knitr_1.45         
+ [1] BiocManager_1.30.23 compiler_4.3.3      fastmap_1.1.1      
+ [4] cli_3.6.2           htmltools_0.5.8.1   tools_4.3.3        
+ [7] yaml_2.3.8          rmarkdown_2.26      knitr_1.46         
 [10] digest_0.6.35       xfun_0.43           rlang_1.1.3        
-[13] renv_1.0.5          evaluate_0.23      
+[13] renv_1.0.7          evaluate_0.23      
 
 Bioconductor version '3.17'
 
@@ -281,18 +270,18 @@ For instance the total number of numbers that could be installed using *[BiocMan
 length(BiocManager::available())
 ```
 
-```{.output}
-[1] 24198
+```output
+[1] 24248
 ```
 
-Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
+Specifically, the union of current Bioconductor repositories and other repositories on the search path can be displayed as follows.
 
 
 ```r
 BiocManager::repositories()
 ```
 
-```{.output}
+```output
                                                 BioCsoft 
            "https://bioconductor.org/packages/3.17/bioc" 
                                                  BioCann 
@@ -339,7 +328,7 @@ For instance, a range of [Annotation data packages][glossary-annotation-package]
 BiocManager::available(pattern = "*Mmusculus")
 ```
 
-```{.output}
+```output
  [1] "BSgenome.Mmusculus.UCSC.mm10"        "BSgenome.Mmusculus.UCSC.mm10.masked"
  [3] "BSgenome.Mmusculus.UCSC.mm39"        "BSgenome.Mmusculus.UCSC.mm8"        
  [5] "BSgenome.Mmusculus.UCSC.mm8.masked"  "BSgenome.Mmusculus.UCSC.mm9"        

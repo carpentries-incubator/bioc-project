@@ -226,7 +226,7 @@ demo_iranges <- IRanges(start = c(10, 15), width = c(10, 5))
 demo_iranges
 ```
 
-```{.output}
+```output
 IRanges object with 2 ranges and 0 metadata columns:
           start       end     width
       <integer> <integer> <integer>
@@ -254,7 +254,7 @@ of the `IRanges()` constructor function.
 IRanges(start = c(10, 15), end = c(19, 19))
 ```
 
-```{.output}
+```output
 IRanges object with 2 ranges and 0 metadata columns:
           start       end     width
       <integer> <integer> <integer>
@@ -275,7 +275,7 @@ extracted as numeric vector using the functions `start()`, `end()` and
 start(demo_iranges)
 ```
 
-```{.output}
+```output
 [1] 10 15
 ```
 
@@ -283,7 +283,7 @@ start(demo_iranges)
 end(demo_iranges)
 ```
 
-```{.output}
+```output
 [1] 19 19
 ```
 
@@ -291,7 +291,7 @@ end(demo_iranges)
 width(demo_iranges)
 ```
 
-```{.output}
+```output
 [1] 10  5
 ```
 
@@ -305,7 +305,7 @@ regular vector.
 demo_iranges[1]
 ```
 
-```{.output}
+```output
 IRanges object with 1 range and 0 metadata columns:
           start       end     width
       <integer> <integer> <integer>
@@ -336,7 +336,7 @@ demo_with_metadata <- IRanges(
 demo_with_metadata
 ```
 
-```{.output}
+```output
 IRanges object with 2 ranges and 2 metadata columns:
         start       end     width | character_metadata numeric_metadata
     <integer> <integer> <integer> |        <character>        <numeric>
@@ -351,7 +351,7 @@ The metadata columns can be extracted as a `DataFrame` using the function `mcols
 mcols(demo_with_metadata)
 ```
 
-```{.output}
+```output
 DataFrame with 2 rows and 2 columns
   character_metadata numeric_metadata
          <character>        <numeric>
@@ -366,7 +366,7 @@ The character vector of names can be extracted using the function `names()`.
 names(demo_with_metadata)
 ```
 
-```{.output}
+```output
 [1] "A" "B"
 ```
 
@@ -378,7 +378,7 @@ by name.
 demo_with_metadata["A"]
 ```
 
-```{.output}
+```output
 IRanges object with 1 range and 2 metadata columns:
         start       end     width | character_metadata numeric_metadata
     <integer> <integer> <integer> |        <character>        <numeric>
@@ -403,7 +403,7 @@ overlaps_iranges <- findOverlaps(query = query_iranges, subject = demo_iranges)
 overlaps_iranges
 ```
 
-```{.output}
+```output
 Hits object with 3 hits and 0 metadata columns:
       queryHits subjectHits
       <integer>   <integer>
@@ -438,7 +438,7 @@ using their names, respectively:
 queryHits(overlaps_iranges)
 ```
 
-```{.output}
+```output
 [1] 1 2 2
 ```
 
@@ -446,7 +446,7 @@ queryHits(overlaps_iranges)
 subjectHits(overlaps_iranges)
 ```
 
-```{.output}
+```output
 [1] 1 1 2
 ```
 
@@ -459,7 +459,7 @@ their index:
 overlaps_iranges[1]
 ```
 
-```{.output}
+```output
 Hits object with 1 hit and 0 metadata columns:
       queryHits subjectHits
       <integer>   <integer>
@@ -497,7 +497,7 @@ demo_granges <- GRanges(
 demo_granges
 ```
 
-```{.output}
+```output
 GRanges object with 2 ranges and 0 metadata columns:
       seqnames    ranges strand
          <Rle> <IRanges>  <Rle>
@@ -527,7 +527,7 @@ demo_granges2 <- GRanges(
 demo_granges2
 ```
 
-```{.output}
+```output
 GRanges object with 2 ranges and 0 metadata columns:
       seqnames    ranges strand
          <Rle> <IRanges>  <Rle>
@@ -551,7 +551,7 @@ pieces of information were left unspecified, as `NA`.
 seqinfo(demo_granges2)
 ```
 
-```{.output}
+```output
 Seqinfo object with 2 sequences from an unspecified genome; no seqlengths:
   seqnames seqlengths isCircular genome
   chr1             NA         NA   <NA>
@@ -577,7 +577,7 @@ seqinfo(demo_granges2) <-  Seqinfo(
 demo_granges2
 ```
 
-```{.output}
+```output
 GRanges object with 2 ranges and 0 metadata columns:
       seqnames    ranges strand
          <Rle> <IRanges>  <Rle>
@@ -606,7 +606,7 @@ demo_granges3 <- GRanges(
 demo_granges3
 ```
 
-```{.output}
+```output
 GRanges object with 2 ranges and 2 metadata columns:
       seqnames    ranges strand |   metadata1 metadata2
          <Rle> <IRanges>  <Rle> | <character> <numeric>
@@ -650,7 +650,7 @@ format.
 library(rtracklayer)
 ```
 
-```{.warning}
+```warning
 Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
 'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
 ```
@@ -660,7 +660,7 @@ actb_gtf_data <- rtracklayer::import("data/actb.gtf")
 actb_gtf_data
 ```
 
-```{.output}
+```output
 GRanges object with 267 ranges and 7 metadata columns:
         seqnames          ranges strand |      source           type     score
            <Rle>       <IRanges>  <Rle> |    <factor>       <factor> <numeric>
@@ -738,7 +738,7 @@ at position `5527147`.
 subset(actb_gtf_data, type == "transcript" & start == 5527147)
 ```
 
-```{.output}
+```output
 GRanges object with 5 ranges and 7 metadata columns:
       seqnames          ranges strand |      source       type     score
          <Rle>       <IRanges>  <Rle> |    <factor>   <factor> <numeric>
@@ -777,7 +777,7 @@ actb_exons_by_transcript <- split(actb_exons, actb_exons$transcript_id)
 actb_exons_by_transcript
 ```
 
-```{.output}
+```output
 GRangesList object of length 23:
 $ENST00000414620
 GRanges object with 4 ranges and 7 metadata columns:
@@ -858,7 +858,7 @@ as the length of each `GRanges` object within the `GRangesList`:
 lengths(actb_exons_by_transcript)
 ```
 
-```{.output}
+```output
 ENST00000414620 ENST00000417101 ENST00000425660 ENST00000432588 ENST00000443528 
               4               3               7               5               3 
 ENST00000462494 ENST00000464611 ENST00000473257 ENST00000477812 ENST00000480301 
@@ -891,7 +891,7 @@ What does `length(actb_exons_by_transcript)` return, and why?
 length(actb_exons_by_transcript)
 ```
 
-```{.output}
+```output
 [1] 23
 ```
 
@@ -924,7 +924,7 @@ actb_in_region <- subsetByOverlaps(x = actb_gtf_data, ranges = region_of_interes
 actb_in_region
 ```
 
-```{.output}
+```output
 GRanges object with 256 ranges and 7 metadata columns:
         seqnames          ranges strand |      source           type     score
            <Rle>       <IRanges>  <Rle> |    <factor>       <factor> <numeric>
@@ -969,7 +969,7 @@ to check whether the new `GRanges` object is any smaller than the original
 length(actb_in_region) - length(actb_gtf_data)
 ```
 
-```{.output}
+```output
 [1] -11
 ```
 
