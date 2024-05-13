@@ -48,17 +48,6 @@ Install the package using the code below.
 install.packages("BiocManager")
 ```
 
-```output
-trying URL 'https://cran.rstudio.com/bin/macosx/contrib/4.1/BiocManager_1.30.16.tgz'
-Content type 'application/x-gzip' length 322920 bytes (315 KB)
-==================================================
-downloaded 315 KB
-
-
-The downloaded binary packages are in
-	/var/folders/51/nz__2dx10yzd75rylr5cg2zc0000gq/T//RtmpeS8MHV/downloaded_packages
-```
-
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ### Going further
@@ -219,7 +208,7 @@ For instance the total number of numbers that could be installed using `r BiocSt
 length(BiocManager::available())
 ```
 
-Specifically, the current Bioconductor and CRAN repositories can be displayed as follows.
+Specifically, the union of current Bioconductor repositories and other repositories on the search path can be displayed as follows.
 
 ```{r, message=FALSE}
 BiocManager::repositories()
