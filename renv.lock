@@ -87,13 +87,13 @@
     },
     "BiocManager": {
       "Package": "BiocManager",
-      "Version": "1.30.22",
+      "Version": "1.30.23",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "utils"
       ],
-      "Hash": "d57e43105a1aa9cb54fdb4629725acb1"
+      "Hash": "47e968dfe563c1b22c2e20a067ec21d5"
     },
     "BiocParallel": {
       "Package": "BiocParallel",
@@ -513,7 +513,7 @@
     },
     "bookdown": {
       "Package": "bookdown",
-      "Version": "0.38",
+      "Version": "0.39",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -526,7 +526,7 @@
         "xfun",
         "yaml"
       ],
-      "Hash": "388b27ab03b34a5c9704fb8cd1dae880"
+      "Hash": "cb4f7066855b6f936e8d25edc9a9cff9"
     },
     "bslib": {
       "Package": "bslib",
@@ -667,14 +667,14 @@
     },
     "fs": {
       "Package": "fs",
-      "Version": "1.6.3",
+      "Version": "1.6.4",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R",
         "methods"
       ],
-      "Hash": "47b5f30c720c23999b913a1a635cf0bb"
+      "Hash": "15aeb8c27f5ea5161f9f6a641fafd93a"
     },
     "futile.logger": {
       "Package": "futile.logger",
@@ -734,7 +734,7 @@
     },
     "htmltools": {
       "Package": "htmltools",
-      "Version": "0.5.8",
+      "Version": "0.5.8.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -746,7 +746,7 @@
         "rlang",
         "utils"
       ],
-      "Hash": "149431ee39aba5bdc264112c8ff94444"
+      "Hash": "81d371a9cc60640e74e4ab6ac46dcedc"
     },
     "httr": {
       "Package": "httr",
@@ -785,7 +785,7 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.45",
+      "Version": "1.46",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -797,7 +797,7 @@
         "xfun",
         "yaml"
       ],
-      "Hash": "1ec462871063897135c1bcbe0fc8f07d"
+      "Hash": "6e008ab1d696a5283c79765fa7b56b47"
     },
     "lambda.r": {
       "Package": "lambda.r",
@@ -814,7 +814,7 @@
       "Package": "lattice",
       "Version": "0.22-6",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Requirements": [
         "R",
         "grDevices",
@@ -863,13 +863,13 @@
     },
     "matrixStats": {
       "Package": "matrixStats",
-      "Version": "1.2.0",
+      "Version": "1.3.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "R"
       ],
-      "Hash": "33a3ca9e732b57244d14f5d732ffc9eb"
+      "Hash": "4b3ea27a19d669c0405b38134d89a9d1"
     },
     "memoise": {
       "Package": "memoise",
@@ -894,13 +894,13 @@
     },
     "openssl": {
       "Package": "openssl",
-      "Version": "2.1.1",
+      "Version": "2.1.2",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "askpass"
       ],
-      "Hash": "2a0dc8c6adfb6f032e4d4af82d258ab5"
+      "Hash": "ea2475b073243d9d338aa8f086ce973e"
     },
     "plyr": {
       "Package": "plyr",
@@ -925,13 +925,13 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "1.0.5",
+      "Version": "1.0.7",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "utils"
       ],
-      "Hash": "32c3f93e8360f667ca5863272ec8ba6a"
+      "Hash": "397b7b2a265bc5a7a06852524dabae20"
     },
     "restfulr": {
       "Package": "restfulr",
@@ -1045,16 +1045,16 @@
     },
     "stringi": {
       "Package": "stringi",
-      "Version": "1.8.3",
+      "Version": "1.8.4",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "https://carpentries.r-universe.dev",
       "Requirements": [
         "R",
         "stats",
         "tools",
         "utils"
       ],
-      "Hash": "058aebddea264f4c99401515182e656a"
+      "Hash": "39e1144fd75428983dc3f63aa53dfa91"
     },
     "stringr": {
       "Package": "stringr",
@@ -1093,13 +1093,13 @@
     },
     "tinytex": {
       "Package": "tinytex",
-      "Version": "0.50",
+      "Version": "0.51",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "xfun"
       ],
-      "Hash": "be7a76845222ad20adb761f462eed3ea"
+      "Hash": "d44e2fcd2e4e076f0aac540208559d1d"
     },
     "vctrs": {
       "Package": "vctrs",
