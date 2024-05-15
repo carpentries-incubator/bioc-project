@@ -479,6 +479,13 @@ information stored in the object.
 seqinfo(genome)
 ```
 
+Finally, the nature of BSgenome objects being akin to a list of sequences,
+the operators `$` and `[[]]` can both be used to extract individual sequences
+from the BSgenome object.
+
+```{r}
+genome$chr1
+```
 
 [glossary-s4-class]: reference.html#s4-class
 [crossref-s4]: 05-s4.html
