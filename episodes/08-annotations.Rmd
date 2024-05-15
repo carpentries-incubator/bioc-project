@@ -1,0 +1,70 @@
+---
+source: Rmd
+title: Working with genomics ranges
+teaching: XX
+exercises: XX
+---
+
+---
+
+```{r, echo=FALSE, purl=FALSE, message=FALSE}
+source("download_data.R")
+```
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain how annotations are organised in the Bioconductor project.
+- Identify Bioconductor packages and methods available to fetch and use annotations.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What Bioconductor packages provides methods to efficiently fetch and use annotations?
+- How can I use annotation packages to convert between different gene identifiers?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+```{r, include=FALSE}
+```
+
+```{r, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(RefManageR)
+library(bibtex)
+bib <- ReadBib("files/bibliography.bib")
+```
+
+## Install packages
+
+Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
+First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is installed before trying to use it; otherwise we install it.
+Then we use the `BiocManager::install()` function to install the necessary packages.
+
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install(c("biomaRt", "org.Hs.eg.db", ""))
+```
+
+## Overview
+
+Packages dedicated to query annotations exist in the 'Software' and 'Annotation'
+categories of the Bioconductor [biocViews][biocviews], according to their
+nature.
+
+In the 'Software' section, we find packages that do not _contain_ annotations,
+but rather dynamically _query_ them from online resources
+(e.g.,[Ensembl BioMart][biomart-ensembl]).
+One such Bioconductor package is `r BiocStyle::Biocpkg("biomaRt")`.
+
+Instead, in the 'Annotation' section, we find packages that _contain_
+annotations.
+Examples include `r BiocStyle::Biocpkg("org.Hs.eg.db")`,
+`r BiocStyle::Biocpkg("EnsDb.Hsapiens.v86")`,
+and `r BiocStyle::Biocpkg("TxDb.Hsapiens.UCSC.hg38.knownGene")`.
+
+
+[biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
+[biomart-ensembl]: https://www.ensembl.org/biomart/martview
