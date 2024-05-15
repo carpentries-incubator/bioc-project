@@ -485,6 +485,8 @@ from the BSgenome object.
 
 ```{r}
 genome$chr1
+## equivalent to:
+## genome[["chr1]]
 ```
 
 [glossary-s4-class]: reference.html#s4-class
