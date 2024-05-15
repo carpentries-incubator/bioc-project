@@ -434,11 +434,22 @@ BiocManager::install("BSgenome.Hsapiens.UCSC.hg38.masked")
 
 ### Using genome packages
 
-Once installed, genome packages can be loaded like any other R package,
+Once installed, BSgenome packages can be loaded like any other R package,
 using the `library()` function.
 
 ```{r}
 library(BSgenome.Hsapiens.UCSC.hg38.masked)
+```
+
+Each BSgenome package contains an object that is named identically to the
+package and contains the genome sequence.
+
+Having loaded the package
+`r BiocStyle::Biocpkg("BSgenome.Hsapiens.UCSC.hg38.masked")` above, we can
+display the BSgenome object as follows.
+
+```{r}
+BSgenome.Hsapiens.UCSC.hg38.masked
 ```
 
 [glossary-s4-class]: reference.html#s4-class
