@@ -537,8 +537,8 @@ GRanges object with 2 ranges and 0 metadata columns:
   seqinfo: 2 sequences from an unspecified genome; no seqlengths
 ```
 
-Finally, the examples above also demonstrate that `GRanges` objects include a
-component called `seqinfo`, which is occasionally used to store information
+Finally, the example above also demonstrate that `GRanges` objects include a
+component called `seqinfo`, which can be used to store information
 about each sequence that may be represented in the `seqnames` component.
 In the latest example above, we have not provide any information about any
 sequence.
@@ -585,6 +585,61 @@ GRanges object with 2 ranges and 0 metadata columns:
   [2]     chr2     20-35      -
   -------
   seqinfo: 2 sequences (1 circular) from homo_sapiens genome
+```
+
+The start and end positions of the individual ranges as well as the width of
+every interval can be extracted as numeric vector using the functions `start()`,
+`end()` and `width()`, respectively.
+
+
+``` r
+start(demo_granges2)
+```
+
+``` output
+[1] 10 20
+```
+
+``` r
+end(demo_granges2)
+```
+
+``` output
+[1] 25 35
+```
+
+``` r
+width(demo_granges2)
+```
+
+``` output
+[1] 16 16
+```
+
+The sequence names and strand information can be extracted using the functions
+`seqnames()` and `strand()`, respectively.
+
+
+``` r
+seqnames(demo_granges2)
+```
+
+``` output
+factor-Rle of length 2 with 2 runs
+  Lengths:    1    1
+  Values : chr1 chr2
+Levels(2): chr1 chr2
+```
+
+``` r
+strand(demo_granges2)
+```
+
+``` output
+factor-Rle of length 2 with 2 runs
+  Lengths: 1 1
+  Values : + -
+Levels(3): + - *
 ```
 
 ### Metadata on GRanges
@@ -877,10 +932,13 @@ ENST00000676189 ENST00000676319 ENST00000676397
 
 Importantly, the function `lengths()` (with a final `s`) demonstrated above
 is different from the function `length()` (without `s`).
-The former is meant to be used on list objects, while the latter is meant
-to be used on vectors.
+The former is meant to be used on list objects, returning a vector giving the
+length of each element in the list; while the latter returns a single numeric
+scalar giving the length of the list itself (i.e., the number of elements
+in the list).
 
-What does `length(actb_exons_by_transcript)` return, and why?
+What does `length(actb_exons_by_transcript)` return, and what does this
+number represent biologically?
 
 :::::::::::::::  solution
 
