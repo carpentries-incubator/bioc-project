@@ -485,9 +485,36 @@ from the BSgenome object.
 
 ```{r}
 genome$chr1
-## equivalent to:
-## genome[["chr1]]
 ```
+
+For instance, we can extract the sequence of the Y chromosome and assign it
+to a new object `chrY`.
+
+```{r}
+chrY <- genome[["chrY"]]
+```
+
+### Using genome sequences
+
+From this point, genome sequences can be treated very much like biological
+strings (e.g. `DNAString`) described earlier, in the
+`r BiocStyle::Biocpkg("Biostrings")` package.
+
+For instance, the function `countPattern()` can be used to count the number of
+occurences of a given pattern in a given genome sequence.
+
+```{r}
+countPattern(pattern = "CANNTG", subject = chrY, fixed = FALSE)
+```
+
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+### Note
+
+In the example above, the argument `fixed = FALSE` is used to indicate that the
+pattern contain [IUPAC ambiguity codes][external-iupac].
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [glossary-s4-class]: reference.html#s4-class
 [crossref-s4]: 05-s4.html
