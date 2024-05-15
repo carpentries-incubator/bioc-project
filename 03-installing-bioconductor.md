@@ -43,7 +43,7 @@ Notably, the `BiocManager::install()` function will fall back on the CRAN reposi
 Install the package using the code below.
 
 
-```r
+``` r
 install.packages("BiocManager")
 ```
 
@@ -78,11 +78,11 @@ The general recommendation is to use `BiocManager::install()` over any other ins
 Once the *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)* package is installed, the `BiocManager::version()` function displays the version (i.e., release) of the Bioconductor project that is currently active in the R session.
 
 
-```r
+``` r
 BiocManager::version()
 ```
 
-```output
+``` output
 [1] '3.17'
 ```
 
@@ -104,11 +104,11 @@ During each 6-month cycle of package development, Bioconductor tests packages fo
 Then, each time a new Bioconductor release is produced, the version of every package in the Bioconductor repository is incremented, including the package *[BiocVersion](https://bioconductor.org/packages/3.17/BiocVersion)* which determines the version of the Bioconductor project.
 
 
-```r
+``` r
 packageVersion("BiocVersion")
 ```
 
-```output
+``` output
 [1] '3.17.1'
 ```
 
@@ -123,7 +123,7 @@ Instead, in October, users can continue to use the same version of R to access t
 However, to update an R library from the April release to the October release of Bioconductor, users need to call the function `BiocManager::install()` specifying the correct version of Bioconductor as the `version` option, for instance:
 
 
-```r
+``` r
 BiocManager::install(version = "3.14")
 ```
 
@@ -144,15 +144,15 @@ The `BiocManager::valid()` function inspects the version of packages currently i
 If everything is up-to-date, the function will simply print `TRUE`.
 
 
-```r
+``` r
 BiocManager::valid()
 ```
 
-```warning
-Warning: 0 packages out-of-date; 1 packages too new
+``` warning
+Warning: 1 packages out-of-date; 1 packages too new
 ```
 
-```output
+``` output
 
 * sessionInfo()
 
@@ -183,17 +183,19 @@ loaded via a namespace (and not attached):
  [1] BiocManager_1.30.23 compiler_4.3.3      fastmap_1.1.1      
  [4] cli_3.6.2           htmltools_0.5.8.1   tools_4.3.3        
  [7] yaml_2.3.8          rmarkdown_2.26      knitr_1.46         
-[10] digest_0.6.35       xfun_0.43           rlang_1.1.3        
+[10] digest_0.6.35       xfun_0.44           rlang_1.1.3        
 [13] renv_1.0.7          evaluate_0.23      
 
 Bioconductor version '3.17'
 
-  * 0 packages out-of-date
+  * 1 packages out-of-date
   * 1 packages too new
 
 create a valid installation with
 
-  BiocManager::install("SparseArray", update = TRUE, ask = FALSE, force = TRUE)
+  BiocManager::install(c(
+    "fastmap", "SparseArray"
+  ), update = TRUE, ask = FALSE, force = TRUE)
 
 more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
 ```
@@ -266,22 +268,22 @@ In addition, the `BiocManager::available()` function returns the complete list o
 For instance the total number of numbers that could be installed using *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)*
 
 
-```r
+``` r
 length(BiocManager::available())
 ```
 
-```output
-[1] 24248
+``` output
+[1] 24247
 ```
 
 Specifically, the union of current Bioconductor repositories and other repositories on the search path can be displayed as follows.
 
 
-```r
+``` r
 BiocManager::repositories()
 ```
 
-```output
+``` output
                                                 BioCsoft 
            "https://bioconductor.org/packages/3.17/bioc" 
                                                  BioCann 
@@ -324,11 +326,11 @@ Conveniently, `BiocManager::available()` includes a `pattern=` argument, particu
 For instance, a range of [Annotation data packages][glossary-annotation-package] available for the mouse model organism can be listed as follows.
 
 
-```r
+``` r
 BiocManager::available(pattern = "*Mmusculus")
 ```
 
-```output
+``` output
  [1] "BSgenome.Mmusculus.UCSC.mm10"        "BSgenome.Mmusculus.UCSC.mm10.masked"
  [3] "BSgenome.Mmusculus.UCSC.mm39"        "BSgenome.Mmusculus.UCSC.mm8"        
  [5] "BSgenome.Mmusculus.UCSC.mm8.masked"  "BSgenome.Mmusculus.UCSC.mm9"        
@@ -346,7 +348,7 @@ The `BiocManager::install()` function is used to install or update packages.
 The function takes a character vector of package names, and attempts to install them from the Bioconductor repository.
 
 
-```r
+``` r
 BiocManager::install(c("S4Vectors", "BiocGenerics"))
 ```
 
@@ -369,7 +371,7 @@ In essence, this function simply removes installed packages and updates index in
 As a result, it will not be possible to attach the package to a session or browse the documentation of that package anymore.
 
 
-```r
+``` r
 remove.packages("S4Vectors")
 ```
 

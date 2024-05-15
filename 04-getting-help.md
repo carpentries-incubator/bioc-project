@@ -109,7 +109,7 @@ Those locally installed vignettes are the gold standard reference for the versio
 They can be accessed using the function `browseVignettes()`, for instance:
 
 
-```r
+``` r
 browseVignettes("BiocManager")
 ```
 
@@ -130,7 +130,7 @@ Bioconductor requires every user-facing package function to be documented in one
 Help pages can be accessed using the `help()` function or the question mark symbol `?`.
 
 
-```r
+``` r
 help(topic = "install", package = "BiocManager")
 ?BiocManager::install
 ```

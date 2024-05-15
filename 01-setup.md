@@ -29,11 +29,11 @@ This lesson was developed and tested with R version 4.3.3 (2024-02-29).
 Take a moment to launch RStudio and verify that you are using R version `4.1.x`, with `x` being any patch version, e.g. `4.1.2`.
 
 
-```r
+``` r
 R.version.string
 ```
 
-```output
+``` output
 [1] "R version 4.3.3 (2024-02-29)"
 ```
 
@@ -47,7 +47,7 @@ Several episodes in this lesson rely on example files that participants need to 
 Run the code below programmatically create a folder called `data` in the current working directory, and download the lesson files in that folder.
 
 
-```r
+``` r
 dir.create("data", showWarnings = FALSE)
 download.file(
     url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/master/data/TrimmomaticAdapters/TruSeq3-PE-2.fa", 

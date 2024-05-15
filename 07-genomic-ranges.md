@@ -33,7 +33,7 @@ First, we check that the *[BiocManager](https://bioconductor.org/packages/3.17/B
 Then we use the `BiocManager::install()` function to install the necessary packages.
 
 
-```r
+``` r
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
@@ -197,7 +197,7 @@ accessible as `browseVignettes("GenomicRanges")`.
 To get started, we load the package.
 
 
-```r
+``` r
 library(GenomicRanges)
 ```
 
@@ -221,12 +221,12 @@ For instance, we create two integer ranges from their start position and width:
 - one range starts at position 15 and has width 5
 
 
-```r
+``` r
 demo_iranges <- IRanges(start = c(10, 15), width = c(10, 5))
 demo_iranges
 ```
 
-```output
+``` output
 IRanges object with 2 ranges and 0 metadata columns:
           start       end     width
       <integer> <integer> <integer>
@@ -250,11 +250,11 @@ of the `IRanges()` constructor function.
 ### Solution
 
 
-```r
+``` r
 IRanges(start = c(10, 15), end = c(19, 19))
 ```
 
-```output
+``` output
 IRanges object with 2 ranges and 0 metadata columns:
           start       end     width
       <integer> <integer> <integer>
@@ -271,27 +271,27 @@ extracted as numeric vector using the functions `start()`, `end()` and
 `width()`, respectively.
 
 
-```r
+``` r
 start(demo_iranges)
 ```
 
-```output
+``` output
 [1] 10 15
 ```
 
-```r
+``` r
 end(demo_iranges)
 ```
 
-```output
+``` output
 [1] 19 19
 ```
 
-```r
+``` r
 width(demo_iranges)
 ```
 
-```output
+``` output
 [1] 10  5
 ```
 
@@ -301,11 +301,11 @@ As such, individual ranges can be extracted by integer index like any
 regular vector.
 
 
-```r
+``` r
 demo_iranges[1]
 ```
 
-```output
+``` output
 IRanges object with 1 range and 0 metadata columns:
           start       end     width
       <integer> <integer> <integer>
@@ -325,7 +325,7 @@ Both the names and the values of the metadata fields are completely arbitrary
 in this example.
 
 
-```r
+``` r
 demo_with_metadata <- IRanges(
   start = c(10,  15),
   end   = c(19,  19),
@@ -336,7 +336,7 @@ demo_with_metadata <- IRanges(
 demo_with_metadata
 ```
 
-```output
+``` output
 IRanges object with 2 ranges and 2 metadata columns:
         start       end     width | character_metadata numeric_metadata
     <integer> <integer> <integer> |        <character>        <numeric>
@@ -347,11 +347,11 @@ IRanges object with 2 ranges and 2 metadata columns:
 The metadata columns can be extracted as a `DataFrame` using the function `mcols()` (short for "metadata columns").
 
 
-```r
+``` r
 mcols(demo_with_metadata)
 ```
 
-```output
+``` output
 DataFrame with 2 rows and 2 columns
   character_metadata numeric_metadata
          <character>        <numeric>
@@ -362,11 +362,11 @@ B             target              200
 The character vector of names can be extracted using the function `names()`.
 
 
-```r
+``` r
 names(demo_with_metadata)
 ```
 
-```output
+``` output
 [1] "A" "B"
 ```
 
@@ -374,11 +374,11 @@ Similarly to named vector of base data types, individual ranges can be extracted
 by name.
 
 
-```r
+``` r
 demo_with_metadata["A"]
 ```
 
-```output
+``` output
 IRanges object with 1 range and 2 metadata columns:
         start       end     width | character_metadata numeric_metadata
     <integer> <integer> <integer> |        <character>        <numeric>
@@ -394,7 +394,7 @@ For instance, given two sets of ranges - a query set and a subject set - the
 two sets overlap with each other.
 
 
-```r
+``` r
 query_iranges <- IRanges(
   start = c(8, 16),
   end   = c(14, 18)
@@ -403,7 +403,7 @@ overlaps_iranges <- findOverlaps(query = query_iranges, subject = demo_iranges)
 overlaps_iranges
 ```
 
-```output
+``` output
 Hits object with 3 hits and 0 metadata columns:
       queryHits subjectHits
       <integer>   <integer>
@@ -434,19 +434,19 @@ For downstream use, the two components can be extracted from `Hits` objects
 using their names, respectively:
 
 
-```r
+``` r
 queryHits(overlaps_iranges)
 ```
 
-```output
+``` output
 [1] 1 2 2
 ```
 
-```r
+``` r
 subjectHits(overlaps_iranges)
 ```
 
-```output
+``` output
 [1] 1 1 2
 ```
 
@@ -455,11 +455,11 @@ Individual hits between one query range and one subject range can be extracted
 their index:
 
 
-```r
+``` r
 overlaps_iranges[1]
 ```
 
-```output
+``` output
 Hits object with 1 hit and 0 metadata columns:
       queryHits subjectHits
       <integer>   <integer>
@@ -487,7 +487,7 @@ and we provide both the start and end position to the argument `ranges=`
 as an `IRanges` object.
 
 
-```r
+``` r
 demo_granges <- GRanges(
   seqnames = c("chr1", "chr2"),
   ranges = IRanges(
@@ -497,7 +497,7 @@ demo_granges <- GRanges(
 demo_granges
 ```
 
-```output
+``` output
 GRanges object with 2 ranges and 0 metadata columns:
       seqnames    ranges strand
          <Rle> <IRanges>  <Rle>
@@ -516,7 +516,7 @@ as we have not provided that information.
 The strand information can be supplied to the `strand=` argument, for instance:
 
 
-```r
+``` r
 demo_granges2 <- GRanges(
   seqnames = c("chr1", "chr2"),
   ranges = IRanges(
@@ -527,7 +527,7 @@ demo_granges2 <- GRanges(
 demo_granges2
 ```
 
-```output
+``` output
 GRanges object with 2 ranges and 0 metadata columns:
       seqnames    ranges strand
          <Rle> <IRanges>  <Rle>
@@ -547,11 +547,11 @@ of the sequences that we used to create the object, while the remaining
 pieces of information were left unspecified, as `NA`.
 
 
-```r
+``` r
 seqinfo(demo_granges2)
 ```
 
-```output
+``` output
 Seqinfo object with 2 sequences from an unspecified genome; no seqlengths:
   seqnames seqlengths isCircular genome
   chr1             NA         NA   <NA>
@@ -567,7 +567,7 @@ is created, or edited on an existing object using the `seqinfo()` accessor and
 the `Seqinfo()` constructor:
 
 
-```r
+``` r
 seqinfo(demo_granges2) <-  Seqinfo(
     seqnames = c("chr1", "chr2"),
     seqlengths = c(1234, 5678),
@@ -577,7 +577,7 @@ seqinfo(demo_granges2) <-  Seqinfo(
 demo_granges2
 ```
 
-```output
+``` output
 GRanges object with 2 ranges and 0 metadata columns:
       seqnames    ranges strand
          <Rle> <IRanges>  <Rle>
@@ -594,7 +594,7 @@ constructor function.
 For instance:
 
 
-```r
+``` r
 demo_granges3 <- GRanges(
   seqnames = c("chr1", "chr2"),
   ranges = IRanges(
@@ -606,7 +606,7 @@ demo_granges3 <- GRanges(
 demo_granges3
 ```
 
-```output
+``` output
 GRanges object with 2 ranges and 2 metadata columns:
       seqnames    ranges strand |   metadata1 metadata2
          <Rle> <IRanges>  <Rle> | <character> <numeric>
@@ -646,21 +646,21 @@ associating them with the appropriate method for parsing each particular file
 format.
 
 
-```r
+``` r
 library(rtracklayer)
 ```
 
-```warning
+``` warning
 Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
 'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
 ```
 
-```r
+``` r
 actb_gtf_data <- rtracklayer::import("data/actb.gtf")
 actb_gtf_data
 ```
 
-```output
+``` output
 GRanges object with 267 ranges and 7 metadata columns:
         seqnames          ranges strand |      source           type     score
            <Rle>       <IRanges>  <Rle> |    <factor>       <factor> <numeric>
@@ -734,11 +734,11 @@ In the example below, we extract all the records of type `transcript` that start
 at position `5527147`.
 
 
-```r
+``` r
 subset(actb_gtf_data, type == "transcript" & start == 5527147)
 ```
 
-```output
+``` output
 GRanges object with 5 ranges and 7 metadata columns:
       seqnames          ranges strand |      source       type     score
          <Rle>       <IRanges>  <Rle> |    <factor>   <factor> <numeric>
@@ -771,13 +771,13 @@ exons, before separating those exons by transcript identifier, yielding
 the result as a `GRangesList` object.
 
 
-```r
+``` r
 actb_exons <- subset(actb_gtf_data, type == "exon")
 actb_exons_by_transcript <- split(actb_exons, actb_exons$transcript_id)
 actb_exons_by_transcript
 ```
 
-```output
+``` output
 GRangesList object of length 23:
 $ENST00000414620
 GRanges object with 4 ranges and 7 metadata columns:
@@ -854,11 +854,11 @@ In the latest example above, we can compute the number of exons in each transcri
 as the length of each `GRanges` object within the `GRangesList`:
 
 
-```r
+``` r
 lengths(actb_exons_by_transcript)
 ```
 
-```output
+``` output
 ENST00000414620 ENST00000417101 ENST00000425660 ENST00000432588 ENST00000443528 
               4               3               7               5               3 
 ENST00000462494 ENST00000464611 ENST00000473257 ENST00000477812 ENST00000480301 
@@ -887,11 +887,11 @@ What does `length(actb_exons_by_transcript)` return, and why?
 ### Solution
 
 
-```r
+``` r
 length(actb_exons_by_transcript)
 ```
 
-```output
+``` output
 [1] 23
 ```
 
@@ -915,7 +915,7 @@ interest that we will use to extract all of the genomic ranges imported earlier
 from the GTF file which overlap that region of interest.
 
 
-```r
+``` r
 region_of_interest <- GRanges(
     seqnames = "7",
     ranges = IRanges(start = 5525830, end = 5531239)
@@ -924,7 +924,7 @@ actb_in_region <- subsetByOverlaps(x = actb_gtf_data, ranges = region_of_interes
 actb_in_region
 ```
 
-```output
+``` output
 GRanges object with 256 ranges and 7 metadata columns:
         seqnames          ranges strand |      source           type     score
            <Rle>       <IRanges>  <Rle> |    <factor>       <factor> <numeric>
@@ -965,11 +965,11 @@ to check whether the new `GRanges` object is any smaller than the original
 `GRanges` object:
 
 
-```r
+``` r
 length(actb_in_region) - length(actb_gtf_data)
 ```
 
-```output
+``` output
 [1] -11
 ```
 
