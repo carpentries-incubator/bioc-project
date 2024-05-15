@@ -460,7 +460,6 @@ seqnames(demo_granges2)
 strand(demo_granges2)
 ```
 
-
 ### Metadata on GRanges
 
 Similarly to `IRanges`, metadata can be passed directly to the `GRanges`
@@ -602,10 +601,13 @@ lengths(actb_exons_by_transcript)
 
 Importantly, the function `lengths()` (with a final `s`) demonstrated above
 is different from the function `length()` (without `s`).
-The former is meant to be used on list objects, while the latter is meant
-to be used on vectors.
+The former is meant to be used on list objects, returning a vector giving the
+length of each element in the list; while the latter returns a single numeric
+scalar giving the length of the list itself (i.e., the number of elements
+in the list).
 
-What does `length(actb_exons_by_transcript)` return, and why?
+What does `length(actb_exons_by_transcript)` return, and what does this
+number represent biologically?
 
 :::::::::::::::  solution
 
