@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: Working with genomics ranges
+title: Working with annotations
 teaching: XX
 exercises: XX
 ---
