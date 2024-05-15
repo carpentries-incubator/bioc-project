@@ -47,6 +47,28 @@
       "Repository": "CRAN",
       "Hash": "a8235afbcd6316e6e91433ea47661013"
     },
+    "BSgenome": {
+      "Package": "BSgenome",
+      "Version": "1.68.0",
+      "Source": "Bioconductor",
+      "Requirements": [
+        "BiocGenerics",
+        "Biostrings",
+        "GenomeInfoDb",
+        "GenomicRanges",
+        "IRanges",
+        "R",
+        "Rsamtools",
+        "S4Vectors",
+        "XVector",
+        "matrixStats",
+        "methods",
+        "rtracklayer",
+        "stats",
+        "utils"
+      ],
+      "Hash": "9d7c3c9b904c28bc971ed29d3f3b445e"
+    },
     "Biobase": {
       "Package": "Biobase",
       "Version": "2.60.0",
@@ -1117,7 +1139,7 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.43",
+      "Version": "0.44",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
@@ -1125,7 +1147,7 @@
         "stats",
         "tools"
       ],
-      "Hash": "ab6371d8653ce5f2f9290f4ec7b42a8e"
+      "Hash": "317a0538d32f4a009658bcedb7923f4b"
     },
     "xml2": {
       "Package": "xml2",
