@@ -442,6 +442,25 @@ seqinfo(demo_granges2) <-  Seqinfo(
 demo_granges2
 ```
 
+The start and end positions of the individual ranges as well as the width of
+every interval can be extracted as numeric vector using the functions `start()`,
+`end()` and `width()`, respectively.
+
+```{r}
+start(demo_granges2)
+end(demo_granges2)
+width(demo_granges2)
+```
+
+The sequence names and strand information can be extracted using the functions
+`seqnames()` and `strand()`, respectively.
+
+```{r}
+seqnames(demo_granges2)
+strand(demo_granges2)
+```
+
+
 ### Metadata on GRanges
 
 Similarly to `IRanges`, metadata can be passed directly to the `GRanges`
