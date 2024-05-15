@@ -48,7 +48,7 @@ packages.
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
-BiocManager::install(c("biomaRt", "org.Hs.eg.db", ""))
+BiocManager::install(c("biomaRt", "org.Hs.eg.db"))
 ```
 
 ## Overview
