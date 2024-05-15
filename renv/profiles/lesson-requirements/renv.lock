@@ -69,6 +69,29 @@
       ],
       "Hash": "9d7c3c9b904c28bc971ed29d3f3b445e"
     },
+    "BSgenome.Hsapiens.UCSC.hg38": {
+      "Package": "BSgenome.Hsapiens.UCSC.hg38",
+      "Version": "1.4.5",
+      "Source": "Bioconductor",
+      "Requirements": [
+        "BSgenome",
+        "GenomeInfoDb",
+        "R"
+      ],
+      "Hash": "0ba28cc20a4f8629fbb30d0bf1a133ac"
+    },
+    "BSgenome.Hsapiens.UCSC.hg38.masked": {
+      "Package": "BSgenome.Hsapiens.UCSC.hg38.masked",
+      "Version": "1.4.5",
+      "Source": "Bioconductor",
+      "Requirements": [
+        "BSgenome",
+        "BSgenome.Hsapiens.UCSC.hg38",
+        "GenomeInfoDb",
+        "R"
+      ],
+      "Hash": "f165a75d7b8ad3c36692070e50d43a09"
+    },
     "Biobase": {
       "Package": "Biobase",
       "Version": "2.60.0",

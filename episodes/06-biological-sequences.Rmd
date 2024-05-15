@@ -420,6 +420,27 @@ display the names of Bioconductor packages that contain genome sequences.
 available.genomes()
 ```
 
+### Installing genome packages
+
+To use one of the available genomes, the corresponding package must be installed
+first.
+For instance, the example below demonstrates how the data package
+`r BiocStyle::Biocpkg("BSgenome.Hsapiens.UCSC.hg38.masked")` can be installed
+using the function `BiocManager::install()` that we have seen before.
+
+```{r, eval=FALSE}
+BiocManager::install("BSgenome.Hsapiens.UCSC.hg38.masked")
+```
+
+### Using genome packages
+
+Once installed, genome packages can be loaded like any other R package,
+using the `library()` function.
+
+```{r}
+library(BSgenome.Hsapiens.UCSC.hg38.masked)
+```
+
 [glossary-s4-class]: reference.html#s4-class
 [crossref-s4]: 05-s4.html
 [external-iupac]: https://en.wikipedia.org/wiki/Nucleic_acid_notation#IUPAC_notation
