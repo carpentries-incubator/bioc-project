@@ -411,8 +411,8 @@ demo_granges2 <- GRanges(
 demo_granges2
 ```
 
-Finally, the examples above also demonstrate that `GRanges` objects include a
-component called `seqinfo`, which is occasionally used to store information
+Finally, the example above also demonstrate that `GRanges` objects include a
+component called `seqinfo`, which can be used to store information
 about each sequence that may be represented in the `seqnames` component.
 In the latest example above, we have not provide any information about any
 sequence.
@@ -440,6 +440,24 @@ seqinfo(demo_granges2) <-  Seqinfo(
     genome = c("homo_sapiens", "homo_sapiens")
 )
 demo_granges2
+```
+
+The start and end positions of the individual ranges as well as the width of
+every interval can be extracted as numeric vector using the functions `start()`,
+`end()` and `width()`, respectively.
+
+```{r}
+start(demo_granges2)
+end(demo_granges2)
+width(demo_granges2)
+```
+
+The sequence names and strand information can be extracted using the functions
+`seqnames()` and `strand()`, respectively.
+
+```{r}
+seqnames(demo_granges2)
+strand(demo_granges2)
 ```
 
 ### Metadata on GRanges
@@ -583,10 +601,13 @@ lengths(actb_exons_by_transcript)
 
 Importantly, the function `lengths()` (with a final `s`) demonstrated above
 is different from the function `length()` (without `s`).
-The former is meant to be used on list objects, while the latter is meant
-to be used on vectors.
+The former is meant to be used on list objects, returning a vector giving the
+length of each element in the list; while the latter returns a single numeric
+scalar giving the length of the list itself (i.e., the number of elements
+in the list).
 
-What does `length(actb_exons_by_transcript)` return, and why?
+What does `length(actb_exons_by_transcript)` return, and what does this
+number represent biologically?
 
 :::::::::::::::  solution
 
