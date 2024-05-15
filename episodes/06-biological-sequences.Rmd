@@ -420,7 +420,7 @@ display the names of Bioconductor packages that contain genome sequences.
 available.genomes()
 ```
 
-### Installing genome packages
+### Installing BSgenome packages
 
 To use one of the available genomes, the corresponding package must be installed
 first.
@@ -432,12 +432,12 @@ using the function `BiocManager::install()` that we have seen before.
 BiocManager::install("BSgenome.Hsapiens.UCSC.hg38.masked")
 ```
 
-### Using genome packages
+### Using BSgenome packages
 
 Once installed, BSgenome packages can be loaded like any other R package,
 using the `library()` function.
 
-```{r}
+```{r, message=FALSE}
 library(BSgenome.Hsapiens.UCSC.hg38.masked)
 ```
 
@@ -451,6 +451,34 @@ display the BSgenome object as follows.
 ```{r}
 BSgenome.Hsapiens.UCSC.hg38.masked
 ```
+
+Given the length and the complexity of the object name, it is common practice
+to assign a copy of BSgenome objects to a new object simply called `genome`.
+
+```{r}
+genome <- BSgenome.Hsapiens.UCSC.hg38.masked
+```
+
+### Using BSgenome objects
+
+When printing BSgenome objects in the console (see above), some helpful tips
+are displayed under the object itself, hinting at functions commonly used to
+access information in the object.
+
+For instance, the function `seqnames()` can be used get the list of sequence
+names (i.e., chromosomes and contigs) present in the object.
+
+```{r}
+seqnames(genome)
+```
+
+Similarly, the function `seqinfo()` can be used to get the full sequence
+information stored in the object.
+
+```{r}
+seqinfo(genome)
+```
+
 
 [glossary-s4-class]: reference.html#s4-class
 [crossref-s4]: 05-s4.html
