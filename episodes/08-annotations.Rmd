@@ -57,17 +57,64 @@ Packages dedicated to query gene annotations exist in the 'Software' and
 'Annotation' categories of the Bioconductor [biocViews][biocviews], according to
 their nature.
 
-In the 'Software' section, we find packages that do not _contain_ gene
-annotations,
-but rather dynamically _query_ them from online resources
+In the 'Software' section, we find packages that do not actually contain gene
+annotations, but rather dynamically _query_ them from online resources
 (e.g.,[Ensembl BioMart][biomart-ensembl]).
 One such Bioconductor package is `r BiocStyle::Biocpkg("biomaRt")`.
 
-Instead, in the 'Annotation' section, we find packages that _contain_
+Instead, in the 'Annotation' section, we find packages that do contain
 annotations.
 Examples include `r BiocStyle::Biocpkg("org.Hs.eg.db")`,
 `r BiocStyle::Biocpkg("EnsDb.Hsapiens.v86")`,
 and `r BiocStyle::Biocpkg("TxDb.Hsapiens.UCSC.hg38.knownGene")`.
+
+In this episode, we will demonstrate the two approaches:
+
+* Querying annotations from the Ensembl Biomart API using the `r BiocStyle::Biocpkg("biomaRt")` package.
+* Querying annotations from the `r BiocStyle::Biocpkg("org.Hs.eg.db")` annotation package.
+
+## Querying annotations from online resources
+
+### Pros and cons
+
+Pros:
+
+* Automatically access the latest information
+
+Cons:
+
+* Requires a live and stable internet connection.
+* Reproducibility may not be possible if the resource is updated without access
+  to archives.
+* Data may be organised differently in each resource.
+* Custom code may be needed to access and retrieve data from each resource.
+
+### The Ensembl BioMart
+
+[Ensembl BioMart][biomart-ensembl] is a robust data mining tool designed to
+facilitate access to the vast array of biological data available through the
+Ensembl project.
+
+The [BioMart web interface][biomart-ensembl] enables researchers to efficiently
+query and retrieve data on genes, proteins, and other genomic features
+across multiple species.
+It allows users to filter, sort, and export data based on various attributes
+such as gene IDs, chromosomal locations, and functional annotations.
+
+### The Bioconductor `biomaRt` package
+
+`r BiocStyle::Biocpkg("biomaRt")` is a Bioconductor software package that
+enables retrieval of large amounts of data from Ensembl BioMart tables
+directly from an R session where those annotations can be used.
+
+Let us first load the package:
+
+```{r}
+library(biomaRt)
+```
+
+
+
 
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
