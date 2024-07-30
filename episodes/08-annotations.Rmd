@@ -73,17 +73,18 @@ In this episode, we will demonstrate the two approaches:
 * Querying annotations from the Ensembl Biomart API using the `r BiocStyle::Biocpkg("biomaRt")` package.
 * Querying annotations from the `r BiocStyle::Biocpkg("org.Hs.eg.db")` annotation package.
 
-## Querying annotations from online resources
+## Querying annotations from Ensembl BioMart
 
 ### Pros and cons
 
 Pros:
 
 * Automatically access the latest information
+* Minimal storage footprint on the user's computer
 
 Cons:
 
-* Requires a live and stable internet connection.
+* Requires a live and stable internet connection throughout the analysis.
 * Reproducibility may not be possible if the resource is updated without access
   to archives.
 * Data may be organised differently in each resource.
@@ -109,8 +110,62 @@ directly from an R session where those annotations can be used.
 
 Let us first load the package:
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 library(biomaRt)
+```
+
+### Available marts
+
+Ensembl BioMart organises its diverse biological information into four databases
+also known as *marts* or *biomarts*.
+Each mart focuses on a different type of data.
+
+Users must select the mart corresponds to the type of data they are interested
+in before they can query any information from it.
+
+The function `listMarts()` can be used to display the names of those marts.
+This is convenient as users do not need to memorise the name of the marts,
+and the function will also return an updated list of names if any mart is
+renamed, added, or removed.
+
+```{r}
+listMarts()
+```
+
+In this demonstration, we will use the biomart called `ENSEMBL_MART_ENSEMBL`,
+which contains the Ensembl gene set.
+
+Notably, the `version` columns also indicates the version of the biomart.
+The Ensembl BioMart is updated regularly (multiple times per year).
+By default, `r BiocStyle::Biocpkg("biomaRt")` functions access the latest
+version of each biomart.
+This is not ideal for reproducibility.
+
+Thankfully, Ensembl BioMart archives past versions of its mars in a way that
+is accessible both programmatically, and on its website.
+
+The function `listEnsemblArchives()` can be used to display all the versions of
+Ensembl Biomart accessible.
+
+```{r}
+listEnsemblArchives()
+```
+
+In the output above, the key piece of information is the `url` column, which
+provides the URL that `r BiocStyle::Biocpkg("biomaRt")` functions will need to
+access data from the corresponding snapshot of the Ensembl BioMart.
+
+### Connecting to a biomart
+
+The two pieces of information collected above -- the name of a biomart
+and the URL of a snapshot -- is all that is needed to connect to a BioMart
+database reproducibly.
+
+The function `useMart()` can then be used to create a connection.
+The connection is traditionally stored in an object called `mart`.
+
+```{r}
+mart <- useMart(biomart = , host = "https://may2024.archive.ensembl.org")
 ```
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
