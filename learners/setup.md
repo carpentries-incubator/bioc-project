@@ -12,7 +12,8 @@ Additionally, you will also need to install the following packages that will be 
 ```r
 install.packages(c("BiocManager", "remotes"))
 BiocManager::install(c(
-  "S4Vectors", "Biostrings", "BSgenome", "BSgenome.Hsapiens.UCSC.hg38.masked",
+  "S4Vectors", "Biostrings", "BSgenome",
+  "BSgenome.Hsapiens.UCSC.hg38.masked",
   "GenomicRanges", "rtracklayer", "biomaRt"))
 ```
 
