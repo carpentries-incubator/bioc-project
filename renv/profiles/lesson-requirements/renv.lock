@@ -149,7 +149,7 @@
     },
     "BiocGenerics": {
       "Package": "BiocGenerics",
-      "Version": "0.49.1",
+      "Version": "0.50.0",
       "Source": "Bioconductor",
       "Repository": "Bioconductor 3.19",
       "Requirements": [
@@ -159,7 +159,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "bb0e8378090c72c1fe8721fc34a4f7cb"
+      "Hash": "ef32d07aafdd12f24c5827374ae3590d"
     },
     "BiocIO": {
       "Package": "BiocIO",
@@ -232,7 +232,7 @@
     },
     "Biostrings": {
       "Package": "Biostrings",
-      "Version": "2.71.5",
+      "Version": "2.72.1",
       "Source": "Bioconductor",
       "Repository": "Bioconductor 3.19",
       "Requirements": [
@@ -244,12 +244,11 @@
         "XVector",
         "crayon",
         "grDevices",
-        "graphics",
         "methods",
         "stats",
         "utils"
       ],
-      "Hash": "da1575dfeace212da5adae444704d212"
+      "Hash": "886ff0ed958d6f839ed2e0d01f6853b3"
     },
     "DBI": {
       "Package": "DBI",
@@ -284,7 +283,7 @@
     },
     "GenomeInfoDb": {
       "Package": "GenomeInfoDb",
-      "Version": "1.39.10",
+      "Version": "1.40.1",
       "Source": "Bioconductor",
       "Repository": "Bioconductor 3.19",
       "Requirements": [
@@ -293,12 +292,13 @@
         "IRanges",
         "R",
         "S4Vectors",
+        "UCSC.utils",
         "methods",
         "stats",
         "stats4",
         "utils"
       ],
-      "Hash": "86cc7f0a5b83be019673ef3a508dda2c"
+      "Hash": "171e9becd9bb948b9e64eb3759208c94"
     },
     "GenomeInfoDbData": {
       "Package": "GenomeInfoDbData",
@@ -333,7 +333,7 @@
     },
     "GenomicRanges": {
       "Package": "GenomicRanges",
-      "Version": "1.55.4",
+      "Version": "1.56.1",
       "Source": "Bioconductor",
       "Repository": "Bioconductor 3.19",
       "Requirements": [
@@ -348,11 +348,11 @@
         "stats4",
         "utils"
       ],
-      "Hash": "f0957f9dcf1bdf2d301d82e5bea6e7ca"
+      "Hash": "a3c822ef3c124828e25e7a9611beeb50"
     },
     "IRanges": {
       "Package": "IRanges",
-      "Version": "2.37.1",
+      "Version": "2.38.1",
       "Source": "Bioconductor",
       "Repository": "Bioconductor 3.19",
       "Requirements": [
@@ -364,7 +364,7 @@
         "stats4",
         "utils"
       ],
-      "Hash": "4adff00e89fd9b182216f800f61a8943"
+      "Hash": "066f3c5d6b022ed62c91ce49e4d8f619"
     },
     "KEGGREST": {
       "Package": "KEGGREST",
@@ -535,7 +535,7 @@
     },
     "S4Vectors": {
       "Package": "S4Vectors",
-      "Version": "0.41.5",
+      "Version": "0.42.1",
       "Source": "Bioconductor",
       "Repository": "Bioconductor 3.19",
       "Requirements": [
@@ -546,7 +546,7 @@
         "stats4",
         "utils"
       ],
-      "Hash": "9912dc4d5ed3e8d92d15573b57e9a6c8"
+      "Hash": "86398fc7c5f6be4ba29fe23ed08c2da6"
     },
     "SparseArray": {
       "Package": "SparseArray",
@@ -593,6 +593,20 @@
       ],
       "Hash": "2f6c8cc972ed6aee07c96e3dff729d15"
     },
+    "UCSC.utils": {
+      "Package": "UCSC.utils",
+      "Version": "1.0.0",
+      "Source": "Bioconductor",
+      "Repository": "Bioconductor 3.19",
+      "Requirements": [
+        "S4Vectors",
+        "httr",
+        "jsonlite",
+        "methods",
+        "stats"
+      ],
+      "Hash": "83d45b690bffd09d1980c224ef329f5b"
+    },
     "XML": {
       "Package": "XML",
       "Version": "3.99-0.17",
@@ -607,7 +621,7 @@
     },
     "XVector": {
       "Package": "XVector",
-      "Version": "0.43.1",
+      "Version": "0.44.0",
       "Source": "Bioconductor",
       "Repository": "Bioconductor 3.19",
       "Requirements": [
@@ -620,7 +634,7 @@
         "utils",
         "zlibbioc"
       ],
-      "Hash": "24224fef455e6f52ab17348e95fbea72"
+      "Hash": "4245b9938ac74c0dbddbebbec6036ab4"
     },
     "abind": {
       "Package": "abind",
@@ -821,15 +835,15 @@
     },
     "crayon": {
       "Package": "crayon",
-      "Version": "1.5.2",
+      "Version": "1.5.3",
       "Source": "Repository",
-      "Repository": "RSPM",
+      "Repository": "CRAN",
       "Requirements": [
         "grDevices",
         "methods",
         "utils"
       ],
-      "Hash": "e8a1e41acf02548751f45c718d55aa6a"
+      "Hash": "859d96e65ef198fd43e82b9628d593ef"
     },
     "curl": {
       "Package": "curl",
@@ -1649,10 +1663,10 @@
     },
     "zlibbioc": {
       "Package": "zlibbioc",
-      "Version": "1.49.3",
+      "Version": "1.50.0",
       "Source": "Bioconductor",
       "Repository": "Bioconductor 3.19",
-      "Hash": "6dd05467a4736905623634dc1f145da6"
+      "Hash": "3db02e3c460e1c852365df117a2b441b"
     }
   }
 }

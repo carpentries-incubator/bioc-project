@@ -113,9 +113,5 @@ Let us first load the package:
 library(biomaRt)
 ```
 
-
-
-
-
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
