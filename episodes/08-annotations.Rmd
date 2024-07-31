@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: Working with gene annotations
+title: Working with annotations
 teaching: XX
 exercises: XX
 ---
@@ -72,22 +72,79 @@ In this episode, we will demonstrate the two approaches:
 * Querying annotations from the Ensembl Biomart API using the `r BiocStyle::Biocpkg("biomaRt")` package.
 * Querying annotations from the `r BiocStyle::Biocpkg("org.Hs.eg.db")` annotation package.
 
+## Online resources or Bioconductor annotation packages?
+
+### Accessing the latest information
+
+Bioconductor's 6-month release cycle implies that packages available from the
+latest stable release branch will not be updated for six months
+(only bugfixes are allowed, not functional updates).
+As a result, annotation packages may contain information that is out-of-date
+by up to six months.
+
+Instead, independent online resources often have different policies driving
+the release of updated information.
+Some databases are frequently updated, while others may not have been updated
+in years.
+
+Accessing up-to-date information must also be balanced with reproducibility.
+Having downloaded the 'latest' information at one point is time is no good if
+one hasn't recorded at least *when* that information was downloaded.
+
+### Storage requirements
+
+By nature, Bioconductor annotation packages are larger than software packages.
+Just like any other R package, annotation packages must be installed on the
+user's computer before they can be used.
+This can rapidly use add up to using an amount of disk space that is not
+negligible.
+
+Conversely, online resources are generally accessed programmatically, and
+generally only require users to record code to replicate analyses reproducibly.
+
+### Internet connectivity
+
+When using online resources, it is often a good idea to write annotations
+ownloaded from online resources to a local file,
+and refer to that local file during analyses.
+
+If online resources were to become unavailable for any reason
+(e.g., downtime, loss of internet connection), analyses that use local files
+can carry on while those that rely on those online resources cannot.
+
+In contrast, Bioconductor annotation packages only require internet connectivity
+at the time of installation.
+Once installed, they do not require internet connectivity, as they rely on
+information stored locally.
+
+### Reproducibility
+
+Bioconductor annotation packages are naturally versioned, meaning that users
+can confidently report the version of the package used in their analysis.
+Just like software packages, users control if and when annotation packages
+should be updated on their computer.
+
+Online resources have different policies to facilitate reproducible analyses.
+Some online resources keep archived versions of their annotations, allowing
+users to consistently access the same information over time.
+When this is not the case, it may be necessary to download a copy of the
+annotation at one point in time, and preciously keep that copy throughout
+the lifetime of the project to ensure the use of a consistent set of
+annotations.
+
+### Consistency
+
+As we will see in the practical examples of this episode,
+Bioconductor annotation packages generally re-use a consistent set of data
+structures.
+This allows users familiar with one annotation package to rapidly get started
+with others.
+
+Independent online resources often organise their data in different ways,
+which requires users to write custom code to access, retrieve, and process
+their respective data.
+
 ## Querying annotations from Ensembl BioMart
-
-### Pros and cons
-
-Pros:
-
-* Automatically access the latest information
-* Minimal storage footprint on the user's computer
-
-Cons:
-
-* Requires a live and stable internet connection throughout the analysis.
-* Reproducibility may not be possible if the resource is updated without access
-  to archives.
-* Data may be organised differently in each resource.
-* Custom code may be needed to access and retrieve data from each resource.
 
 ### The Ensembl BioMart
 
@@ -113,7 +170,7 @@ Let us first load the package:
 library(biomaRt)
 ```
 
-### Available marts
+### Listing available marts
 
 Ensembl BioMart organises its diverse biological information into four databases
 also known as 'marts' or 'biomarts'.
@@ -176,7 +233,7 @@ mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", host = "https://may2024.archiv
 
 Each biomart contains a number of data sets.
 
-The function `listDatasets()` can be used to display the information about those
+The function `listDatasets()` can be used to display information about those
 data sets.
 This is convenient as users do not need to memorise the name of the data sets,
 and the information returned by the function includes a short description of
@@ -229,7 +286,7 @@ BioMart tables contain many pieces of information also known as 'attributes'.
 So many, in fact, that they have been grouped into categories also known as
 'pages'.
 
-The function `listAttributes()` can be used to display the information about
+The function `listAttributes()` can be used to display information about
 those attributes.
 This is convenient as users do not need to memorise the name of the attributes,
 and the information returned by the function includes a short description of
@@ -277,7 +334,7 @@ function.
 Given a set of filters and corresponding values, it retrieves the attributes
 requested by the user from the BioMart data set it is connected to.
 
-In the example below, we manually create a vector or arbitrary gene identifiers
+In the example below, we manually create a vector of arbitrary gene identifiers
 for our query.
 In practice, the query will often originate from an earlier analysis
 (e.g., differential gene expression).
@@ -313,6 +370,216 @@ Note that we also included the filtering attribute `ensembl_gene_id` to the
 attributes retrieved from the data set.
 This is key to reliably match the newly retrieved attributes to those used
 in the query.
+
+## Querying annotations from annotation packages
+
+### Families of annotation packages
+
+To balance the need for comprehensive information
+while maintaining reasonable package sizes,
+Bioconductor annotation packages are organised by release, data type, and
+species.
+
+The major families of Bioconductor annotation packages are:
+
+* `OrgDb` packages provide mapping between various types of gene identifiers
+  and pathway information.
+* `EnsDb` packages provide individual releases of Ensembl annotations.
+* `TxDb` packages provide individual releases of UCSC annotations.
+
+All those families of annotations derive from the `AnnotationDb` base class
+defined in the `r BiocStyle::Biocpkg("AnnotationDbi")` package.
+As a result, any of those annotation packages can be accessed using the same set
+of R functions, as demonstrated in the following sections.
+
+### Using an OrgDb package
+
+In this example, we will use the `r BiocStyle::Biocannopkg("org.Hs.eg.db")`
+package to demonstrate the use of gene annotations for the human species.
+
+Let us first load the package:
+
+```{r, message=FALSE, warning=FALSE}
+library(org.Hs.eg.db)
+```
+
+Each `OrgDb` package contains an object named identically to the package itself.
+That object contains the annotations that the package is meant to disseminate.
+
+Aside from querying information, the whole object can be called to print
+information about the annotations it contains, including the date at which
+the snapshots of annotations that it contains were made.
+
+```{r}
+org.Hs.eg.db
+```
+
+That same object is the one that needs to be supplied to
+`r BiocStyle::Biocpkg("AnnotationDbi")` functions for running queries and
+retrieving annotations.
+
+### Listing information available in an annotation package
+
+The function `columns()` can be used to display the annotations available
+in the object.
+
+Here, the word 'column' refers to columns of tables used to store information in
+database, the very same concept as 'attributes' in BioMart.
+In other words, columns represent all the types of annotations that may be
+retrieved from the object.
+
+This is convenient as users do not need to memorise the names of the columns of
+annotations available in the package.
+
+```{r}
+columns(org.Hs.eg.db)
+```
+
+### Listing keys and key types
+
+In database terminology, *keys* are the values by which information may be
+queried from a database table.
+
+Information being organised in columns, *key types* are the names of the columns
+in which the key values are stored.
+
+Given the variable number of columns in database tables, some tables may allow
+information to be queried by more than one key.
+As a result, it is crucial to specify both the keys and the type of key as part
+of the query.
+
+The function `keytypes()` can be used to display the names of the columns that
+may be used to query information from the object.
+
+```{r}
+keytypes(org.Hs.eg.db)
+```
+
+The function `keys()` can be used to display all the possible values for a given
+key type.
+
+It is generally better practice to specify the type of key being queried
+(to avoid ambiguity), although database tables typically have a 'primary key'
+used if users do not specify a type themselves.
+
+In the example below, we restrict the list of gene symbol keys to the first few
+values,
+as the full set comprises `r length(keys(org.Hs.eg.db, keytype = "SYMBOL"))`
+values.
+
+```{r}
+head(keys(org.Hs.eg.db, keytype = "SYMBOL"))
+```
+
+### Querying information from an annotation package
+
+The function `select()` is the main `r BiocStyle::Biocpkg("AnnotationDbi")`
+query function.
+Given an `AnnotationDb` object, key values, and columns
+(and optionally the type of key supplied if not the primary key),
+it retrieves the columns requested by the user from the annotation object.
+
+In the example below, we re-use the vector of arbitrary gene identifiers
+used in the BioMart example a few sections above.
+
+As you can see from the output of the `columns()` function, the annotation
+object does not contain some of the attributes that we queried in the Biomart
+example.
+In this case, let us query:
+
+* the gene symbol
+* the gene name
+* the gene type
+
+```{r}
+select(
+  x = org.Hs.eg.db,
+  keys = query_gene_ids,
+  columns = c(
+    "SYMBOL",
+    "GENENAME",
+    "GENETYPE"
+  ),
+  keytype = "ENSEMBL"
+)
+```
+
+One small but notable difference with `r BiocStyle::Biocpkg("biomaRt")` is that
+the output of `select()` automatically contains the column that correspond to
+the key type used in the query.
+In other words, there is no need to specify the key type(s) again in the
+column(s) to retrieve.
+
+### Vectorized 1:1 mapping
+
+It is sometimes possible for annotations to display 1-to-many relationships.
+For instance, individual genes typically have a unique Ensembl gene identifier,
+while they may be known under multiple gene name aliases.
+
+The `select()` function demonstrated in the previous section automatically
+returns *all* values in the columns requested, for the key specified.
+This is possible thanks to the tabular format in which annotations are returned;
+rows are added, repeating values as necessary to display them on the same row
+as every other values they are associated with.
+
+In some cases, that behaviour is not desirable.
+Instead, users may wish to retrieve a single value for each key that they input.
+One common scenario arises during differential gene expression (DGE),
+where gene identifiers are used to uniquely identify genes throughout the
+analysis, while gene symbols are added to the final table of DGE statistics,
+to provide more readable human-friendly gene identifiers.
+However, it is not desirable to duplicate rows of DGE statistics, and thus
+only a single gene symbol is required to annotate each gene.
+
+The function `mapIds()` can be used for this purpose.
+A major difference between the functions `mapIds()` and `select()`
+are their arguments `column` (singular) and `columns` (plural), respectively.
+The function `mapIds()` accepts a single column name and returns a named
+character vector where names are the input query values, and values are the
+corresponding values in the requested column.
+
+To deal with 1-to-many relationships, the function `mapIds()` has an argument
+`multiVals` which can be used to specify how the function should handle multiple
+values.
+The default is to take the first value and ignore any other value.
+
+In the example below, we query the gene symbol for a set of Ensembl gene
+identifiers.
+
+```{r}
+mapIds(
+  x = org.Hs.eg.db,
+  keys = query_gene_ids,
+  column = "SYMBOL",
+  keytype = "ENSEMBL"
+)
+```
+
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+### Challenge
+
+Load the packages `r BiocStyle::Biocannopkg("EnsDb.Hsapiens.v86")` and
+`r BiocStyle::Biocannopkg("TxDb.Hsapiens.UCSC.hg38.knownGene")`.
+Then, display the columns of annotations available in those packages.
+
+:::::::::::::::  solution
+
+### Solution
+
+```{r, message=FALSE, warning=FALSE}
+library(EnsDb.Hsapiens.v86)
+columns(EnsDb.Hsapiens.v86)
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+columns(TxDb.Hsapiens.UCSC.hg38.knownGene)
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
