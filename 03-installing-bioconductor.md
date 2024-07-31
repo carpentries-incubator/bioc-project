@@ -148,8 +148,54 @@ If everything is up-to-date, the function will simply print `TRUE`.
 BiocManager::valid()
 ```
 
+``` warning
+Warning: 1 packages out-of-date; 0 packages too new
+```
+
 ``` output
-[1] TRUE
+
+* sessionInfo()
+
+R version 4.4.1 (2024-06-14)
+Platform: x86_64-pc-linux-gnu
+Running under: Ubuntu 22.04.4 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] BiocStyle_2.32.1
+
+loaded via a namespace (and not attached):
+ [1] BiocManager_1.30.23 compiler_4.4.1      fastmap_1.2.0      
+ [4] cli_3.6.3           htmltools_0.5.8.1   tools_4.4.1        
+ [7] yaml_2.3.10         rmarkdown_2.27      knitr_1.48         
+[10] digest_0.6.36       xfun_0.46           rlang_1.1.4        
+[13] renv_1.0.7          evaluate_0.24.0    
+
+Bioconductor version '3.19'
+
+  * 1 packages out-of-date
+  * 0 packages too new
+
+create a valid installation with
+
+  BiocManager::install("withr", update = TRUE, ask = FALSE, force = TRUE)
+
+more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
 ```
 
 Conveniently, if any package can be updated, the function generates and displays the command needed to update those packages.
@@ -225,7 +271,7 @@ length(BiocManager::available())
 ```
 
 ``` output
-[1] 24729
+[1] 24742
 ```
 
 Specifically, the union of current Bioconductor repositories and other repositories on the search path can be displayed as follows.
