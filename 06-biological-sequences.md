@@ -26,7 +26,7 @@ exercises: XX
 ## Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
-First, we check that the *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)* package is installed before trying to use it; otherwise we install it.
+First, we check that the *[BiocManager](https://bioconductor.org/packages/3.19/BiocManager)* package is installed before trying to use it; otherwise we install it.
 Then we use the `BiocManager::install()` function to install the necessary packages.
 
 
@@ -98,7 +98,7 @@ either of the two purine nucleotide bases, `A` and `G`.
 
 ### Overview
 
-In the Bioconductor project, the *[Biostrings](https://bioconductor.org/packages/3.17/Biostrings)* package
+In the Bioconductor project, the *[Biostrings](https://bioconductor.org/packages/3.19/Biostrings)* package
 implements S4 classes to represent biological sequences as S4 objects, e.g.
 `DNAString` for sequences of nucleotides in deoxyribonucleic acid polymers, and
 `AAString` for sequences of amino acids in protein polymers.
@@ -109,7 +109,7 @@ utilities for fast manipulation and processing of large biological sequences or
 sets of sequences.
 
 A short presentation of the basic classes defined in the
-*[Biostrings](https://bioconductor.org/packages/3.17/Biostrings)* package is available in one of the package
+*[Biostrings](https://bioconductor.org/packages/3.19/Biostrings)* package is available in one of the package
 vignettes, accessible as `vignette("Biostrings2Classes")`, while more detailed
 information is provided in the other package vignettes, accessible as
 `browseVignettes("Biostrings")`.
@@ -193,7 +193,7 @@ seq: ATCGM
 ```
 
 In particular, pattern matching methods implemented in the
-*[Biostrings](https://bioconductor.org/packages/3.17/Biostrings)* package recognize the meaning of ambiguity
+*[Biostrings](https://bioconductor.org/packages/3.19/Biostrings)* package recognize the meaning of ambiguity
 codes for each class of biological sequence, allowing them to efficiently match
 motifs queried by users without the need to design elaborate regular
 expressions.
@@ -309,7 +309,7 @@ other types of biological sequences, e.g `readRNAStringSet()`,
 
 #### Computing the frequency of symbols
 
-The *[Biostrings](https://bioconductor.org/packages/3.17/Biostrings)* package provides several functions to
+The *[Biostrings](https://bioconductor.org/packages/3.19/Biostrings)* package provides several functions to
 process and manipulate classes of biological strings.
 For example, we have come across `matchPattern()` and `countPattern()` earlier
 in this episode.
@@ -335,7 +335,7 @@ letterFrequency(truseq_adapters, letters = DNA_ALPHABET)
 
 The output is a matrix with one row for each sequence in the `DNAStringSet`
 object, and one column for each symbol in the alphabet of deoxyribonucleic
-acids, provided by the *[Biostrings](https://bioconductor.org/packages/3.17/Biostrings)* package in a
+acids, provided by the *[Biostrings](https://bioconductor.org/packages/3.19/Biostrings)* package in a
 built-in object called `DNA_ALPHABET`.
 
 ### Amino acid sequences
@@ -387,7 +387,7 @@ Either of those alphabets may be used to determine the validity of an amino acid
 One of the key motivations for the use of [S4 classes][glossary-s4-class] and the object-oriented programming (OOP) model relies on the infrastructure of S4 generics and methods.
 As described in the earlier episode [The S4 class system][crossref-s4], generics provide a mechanism for defining and applying distinct implementations of the same generic function name, according to the nature of the input object(s) provided to the function call.
 
-For instance, the *[Biostrings](https://bioconductor.org/packages/3.17/Biostrings)* package provides multiple implementations of a generic called `translate()`,  for translating DNA or RNA sequences into amino acid sequences.
+For instance, the *[Biostrings](https://bioconductor.org/packages/3.19/Biostrings)* package provides multiple implementations of a generic called `translate()`,  for translating DNA or RNA sequences into amino acid sequences.
 The set of input objects supported by the generic `translate()` can be listed using the function `showMethods()`, from the CRAN package *[methods](https://CRAN.R-project.org/package=methods)*.
 
 
@@ -510,11 +510,11 @@ sequence that was produced by the `translate()` method.
 
 ### Overview
 
-In the Bioconductor project, the *[BSgenome](https://bioconductor.org/packages/3.17/BSgenome)* package
+In the Bioconductor project, the *[BSgenome](https://bioconductor.org/packages/3.19/BSgenome)* package
 provides software infrastructure for efficient representation of full genome
 and their single-nucleotide polymorphisms.
 
-The *[BSgenome](https://bioconductor.org/packages/3.17/BSgenome)* package itself does not contain any
+The *[BSgenome](https://bioconductor.org/packages/3.19/BSgenome)* package itself does not contain any
 genome sequence itself, but provides functionality to access genome sequences
 available in other Bioconductor packages, as we demonstrate in the next section.
 
@@ -547,11 +547,11 @@ available.genomes()
 'getOption("repos")' replaces Bioconductor standard repositories, see
 'help("repositories", package = "BiocManager")' for details.
 Replacement repositories:
-    BioCsoft: https://bioconductor.org/packages/3.17/bioc
-    BioCann: https://bioconductor.org/packages/3.17/data/annotation
-    BioCexp: https://bioconductor.org/packages/3.17/data/experiment
-    BioCworkflows: https://bioconductor.org/packages/3.17/workflows
-    BioCbooks: https://bioconductor.org/packages/3.17/books
+    BioCsoft: https://bioconductor.org/packages/3.19/bioc
+    BioCann: https://bioconductor.org/packages/3.19/data/annotation
+    BioCexp: https://bioconductor.org/packages/3.19/data/experiment
+    BioCworkflows: https://bioconductor.org/packages/3.19/workflows
+    BioCbooks: https://bioconductor.org/packages/3.19/books
     CRAN: https://cran.rstudio.com
 ```
 
@@ -676,7 +676,7 @@ Replacement repositories:
 To use one of the available genomes, the corresponding package must be installed
 first.
 For instance, the example below demonstrates how the data package
-*[BSgenome.Hsapiens.UCSC.hg38.masked](https://bioconductor.org/packages/3.17/BSgenome.Hsapiens.UCSC.hg38.masked)* can be installed
+*[BSgenome.Hsapiens.UCSC.hg38.masked](https://bioconductor.org/packages/3.19/BSgenome.Hsapiens.UCSC.hg38.masked)* can be installed
 using the function `BiocManager::install()` that we have seen before.
 
 
@@ -698,7 +698,7 @@ Each BSgenome package contains an object that is named identically to the
 package and contains the genome sequence.
 
 Having loaded the package
-*[BSgenome.Hsapiens.UCSC.hg38.masked](https://bioconductor.org/packages/3.17/BSgenome.Hsapiens.UCSC.hg38.masked)* above, we can
+*[BSgenome.Hsapiens.UCSC.hg38.masked](https://bioconductor.org/packages/3.19/BSgenome.Hsapiens.UCSC.hg38.masked)* above, we can
 display the BSgenome object as follows.
 
 
@@ -1173,7 +1173,7 @@ chrY <- genome[["chrY"]]
 
 From this point, genome sequences can be treated very much like biological
 strings (e.g. `DNAString`) described earlier, in the
-*[Biostrings](https://bioconductor.org/packages/3.17/Biostrings)* package.
+*[Biostrings](https://bioconductor.org/packages/3.19/Biostrings)* package.
 
 For instance, the function `countPattern()` can be used to count the number of
 occurences of a given pattern in a given genome sequence.

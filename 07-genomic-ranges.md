@@ -29,7 +29,7 @@ exercises: XX
 ## Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor packages that we will need.
-First, we check that the *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)* package is installed before trying to use it; otherwise we install it.
+First, we check that the *[BiocManager](https://bioconductor.org/packages/3.19/BiocManager)* package is installed before trying to use it; otherwise we install it.
 Then we use the `BiocManager::install()` function to install the necessary packages.
 
 
@@ -168,7 +168,7 @@ in the double-stranded DNA polymer.
 
 ### Overview
 
-The *[GenomicRanges](https://bioconductor.org/packages/3.17/GenomicRanges)* package implements
+The *[GenomicRanges](https://bioconductor.org/packages/3.19/GenomicRanges)* package implements
 [S4 classes][glossary-s4-class] to represent genomic ranges as S4 objects.
 
 Specifically, the `GRanges` class is designed to store a set of intervals
@@ -187,7 +187,7 @@ from the calculation of distance between pairs of intervals to the
 identification of overlapping genomic ranges.
 
 A short presentation of the basic classes defined in the
-*[GenomicRanges](https://bioconductor.org/packages/3.17/GenomicRanges)* package is available in one of the
+*[GenomicRanges](https://bioconductor.org/packages/3.19/GenomicRanges)* package is available in one of the
 package vignettes, accessible as `vignette("GenomicRangesIntroduction")`,
 while more detailed information is provided in the other package vignettes,
 accessible as `browseVignettes("GenomicRanges")`.
@@ -694,8 +694,8 @@ The original file contains more than 3 millions lines and 22 metadata fields,
 from which a subset was extracted into a smaller file for this lesson.
 
 In particular, we use the `import()` generic
-defined in the *[BiocIO](https://bioconductor.org/packages/3.17/BiocIO)* package - with methods
-implemented in the *[rtracklayer](https://bioconductor.org/packages/3.17/rtracklayer)* package - as a
+defined in the *[BiocIO](https://bioconductor.org/packages/3.19/BiocIO)* package - with methods
+implemented in the *[rtracklayer](https://bioconductor.org/packages/3.19/rtracklayer)* package - as a
 versatile function that is capable of recognising common file extensions and
 associating them with the appropriate method for parsing each particular file
 format.
@@ -756,7 +756,7 @@ For instance, in this case, the GTF file format being identical to the GFF
 version 2 file format, we could have directly invoked the function
 `rtracklayer::import.gff2()` with the exact same effect.
 
-Refer to the documentation of the *[rtracklayer](https://bioconductor.org/packages/3.17/rtracklayer)*
+Refer to the documentation of the *[rtracklayer](https://bioconductor.org/packages/3.19/rtracklayer)*
 package for the full list of methods available.
 
 

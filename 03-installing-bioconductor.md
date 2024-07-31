@@ -25,7 +25,7 @@ exercises: XX
 
 ## BiocManager
 
-The *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)* package is the entry point into the Bioconductor package repository.
+The *[BiocManager](https://bioconductor.org/packages/3.19/BiocManager)* package is the entry point into the Bioconductor package repository.
 Technically, this is the only Bioconductor package distributed on the CRAN repository.
 
 It provides functions to safely install Bioconductor packages and check for available updates.
@@ -36,7 +36,7 @@ The function is also capable of installing packages from other repositories (e.g
 ![](fig/bioc-install.svg){alt='The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.'}
 
 **The package BiocManager is available from the CRAN repository and used to install packages from the Bioconductor repository.**
-The function `install.packages()` from the base R package `utils` can be used to install the *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)* package distributed on the CRAN repository.
+The function `install.packages()` from the base R package `utils` can be used to install the *[BiocManager](https://bioconductor.org/packages/3.19/BiocManager)* package distributed on the CRAN repository.
 In turn, the function `BiocManager::install()` can be used to install packages available on the Bioconductor repository.
 Notably, the `BiocManager::install()` function will fall back on the CRAN repository if a package cannot be found in the Bioconductor repository.
 
@@ -75,7 +75,7 @@ The general recommendation is to use `BiocManager::install()` over any other ins
 
 ## Bioconductor releases and current version
 
-Once the *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)* package is installed, the `BiocManager::version()` function displays the version (i.e., release) of the Bioconductor project that is currently active in the R session.
+Once the *[BiocManager](https://bioconductor.org/packages/3.19/BiocManager)* package is installed, the `BiocManager::version()` function displays the version (i.e., release) of the Bioconductor project that is currently active in the R session.
 
 
 ``` r
@@ -83,11 +83,11 @@ BiocManager::version()
 ```
 
 ``` output
-[1] '3.17'
+[1] '3.19'
 ```
 
 Using the correct version of R and Bioconductor packages is a key aspect of reproducibility.
-The *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)* packages uses the version of R running in the current session to determine the version of Biocondutor packages that can be installed in the current R library.
+The *[BiocManager](https://bioconductor.org/packages/3.19/BiocManager)* packages uses the version of R running in the current session to determine the version of Biocondutor packages that can be installed in the current R library.
 
 The Bioconductor project produces two releases each year, one around April and another one around October.
 The April release of Bioconductor coincides with the annual release of R.
@@ -101,7 +101,7 @@ The lower section of the timeline indicates versions and release dates for the B
 Source: [Bioconductor][bioc-release-dates].
 
 During each 6-month cycle of package development, Bioconductor tests packages for compatibility with the version of R that will be available for the next release cycle.
-Then, each time a new Bioconductor release is produced, the version of every package in the Bioconductor repository is incremented, including the package *[BiocVersion](https://bioconductor.org/packages/3.17/BiocVersion)* which determines the version of the Bioconductor project.
+Then, each time a new Bioconductor release is produced, the version of every package in the Bioconductor repository is incremented, including the package *[BiocVersion](https://bioconductor.org/packages/3.19/BiocVersion)* which determines the version of the Bioconductor project.
 
 
 ``` r
@@ -109,7 +109,7 @@ packageVersion("BiocVersion")
 ```
 
 ``` output
-[1] '3.17.1'
+[1] '3.19.1'
 ```
 
 This is the case for every package, even those which have not been updated at all since the previous release.
@@ -127,7 +127,7 @@ However, to update an R library from the April release to the October release of
 BiocManager::install(version = "3.14")
 ```
 
-This needs to be done only once, as the *[BiocVersion](https://bioconductor.org/packages/3.17/BiocVersion)* package will be updated to the corresponding version, indicating the version of Bioconductor in use in this R library.
+This needs to be done only once, as the *[BiocVersion](https://bioconductor.org/packages/3.19/BiocVersion)* package will be updated to the corresponding version, indicating the version of Bioconductor in use in this R library.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -148,56 +148,8 @@ If everything is up-to-date, the function will simply print `TRUE`.
 BiocManager::valid()
 ```
 
-``` warning
-Warning: 1 packages out-of-date; 1 packages too new
-```
-
 ``` output
-
-* sessionInfo()
-
-R version 4.3.3 (2024-02-29)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 22.04.4 LTS
-
-Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
-LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
-
-locale:
- [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
- [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
- [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
-[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
-
-time zone: UTC
-tzcode source: system (glibc)
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-other attached packages:
-[1] BiocStyle_2.28.1
-
-loaded via a namespace (and not attached):
- [1] BiocManager_1.30.23 compiler_4.3.3      fastmap_1.1.1      
- [4] cli_3.6.2           htmltools_0.5.8.1   tools_4.3.3        
- [7] yaml_2.3.8          rmarkdown_2.26      knitr_1.46         
-[10] digest_0.6.35       xfun_0.44           rlang_1.1.3        
-[13] renv_1.0.7          evaluate_0.23      
-
-Bioconductor version '3.17'
-
-  * 1 packages out-of-date
-  * 1 packages too new
-
-create a valid installation with
-
-  BiocManager::install(c(
-    "fastmap", "SparseArray"
-  ), update = TRUE, ask = FALSE, force = TRUE)
-
-more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
+[1] TRUE
 ```
 
 Conveniently, if any package can be updated, the function generates and displays the command needed to update those packages.
@@ -265,7 +217,7 @@ Specifically, in this example, the message tells the user to run the following c
 The Bioconductor [biocViews][glossary-biocviews], demonstrated in the earlier episode [Introduction to Bioconductor][crossref-intro-biocviews], are a great way to discover new packages by thematically browsing the hierarchical classification of Bioconductor packages.
 
 In addition, the `BiocManager::available()` function returns the complete list of package names that are can be installed from the Bioconductor and CRAN repositories.
-For instance the total number of numbers that could be installed using *[BiocManager](https://bioconductor.org/packages/3.17/BiocManager)*
+For instance the total number of numbers that could be installed using *[BiocManager](https://bioconductor.org/packages/3.19/BiocManager)*
 
 
 ``` r
@@ -273,7 +225,7 @@ length(BiocManager::available())
 ```
 
 ``` output
-[1] 24247
+[1] 24729
 ```
 
 Specifically, the union of current Bioconductor repositories and other repositories on the search path can be displayed as follows.
@@ -285,15 +237,15 @@ BiocManager::repositories()
 
 ``` output
                                                 BioCsoft 
-           "https://bioconductor.org/packages/3.17/bioc" 
+           "https://bioconductor.org/packages/3.19/bioc" 
                                                  BioCann 
-"https://bioconductor.org/packages/3.17/data/annotation" 
+"https://bioconductor.org/packages/3.19/data/annotation" 
                                                  BioCexp 
-"https://bioconductor.org/packages/3.17/data/experiment" 
+"https://bioconductor.org/packages/3.19/data/experiment" 
                                            BioCworkflows 
-      "https://bioconductor.org/packages/3.17/workflows" 
+      "https://bioconductor.org/packages/3.19/workflows" 
                                                BioCbooks 
-          "https://bioconductor.org/packages/3.17/books" 
+          "https://bioconductor.org/packages/3.19/books" 
                                              carpentries 
                     "https://carpentries.r-universe.dev" 
                                      carpentries_archive 
