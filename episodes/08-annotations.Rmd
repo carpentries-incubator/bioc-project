@@ -420,10 +420,13 @@ retrieving annotations.
 
 ### Listing information available in a data set
 
-The function `columns()` can be used to display information available in the
-annotations.
-The word 'column' refers to columns of tables used to store information in
+The function `columns()` can be used to display the annotations available
+in the object.
+
+Here, the word 'column' refers to columns of tables used to store information in
 database, the very same concept as 'attributes' in BioMart.
+In other words, columns represent all the types of annotations that may be
+retrieved from the object.
 
 This is convenient as users do not need to memorise the names of the columns of
 annotations available in the package.
@@ -432,7 +435,41 @@ annotations available in the package.
 columns(org.Hs.eg.db)
 ```
 
+### Listing keys and key types
 
+In database terminology, *keys* are the values by which information may be
+queried from a database table.
+
+Information being organised in columns, *key types* are the names of the columns
+in which the key values are stored.
+
+Given the variable number of columns in database tables, some tables may allow
+information to be queried by more than one key.
+As a result, it is crucial to specify both the keys and the type of key as part
+of the query.
+
+The function `keytypes()` can be used to display the names of the columns that
+may be used to query information from the object.
+
+```{r}
+keytypes(org.Hs.eg.db)
+```
+
+The function `keys()` can be used to display all the possible values for a given
+key type.
+
+It is generally better practice to specify the type of key being queried
+(to avoid ambiguity), although database tables typically have a 'primary key'
+used if users do not specify a type themselves.
+
+In the example below, we restrict the list of gene symbol keys to the first few
+values,
+as the full set comprises `r length(keys(org.Hs.eg.db, keytype = "SYMBOL"))`
+values.
+
+```{r}
+head(keys(org.Hs.eg.db, keytype = "SYMBOL"))
+```
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
