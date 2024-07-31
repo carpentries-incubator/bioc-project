@@ -170,7 +170,7 @@ Let us first load the package:
 library(biomaRt)
 ```
 
-### Available marts
+### Listing available marts
 
 Ensembl BioMart organises its diverse biological information into four databases
 also known as 'marts' or 'biomarts'.
@@ -233,7 +233,7 @@ mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", host = "https://may2024.archiv
 
 Each biomart contains a number of data sets.
 
-The function `listDatasets()` can be used to display the information about those
+The function `listDatasets()` can be used to display information about those
 data sets.
 This is convenient as users do not need to memorise the name of the data sets,
 and the information returned by the function includes a short description of
@@ -286,7 +286,7 @@ BioMart tables contain many pieces of information also known as 'attributes'.
 So many, in fact, that they have been grouped into categories also known as
 'pages'.
 
-The function `listAttributes()` can be used to display the information about
+The function `listAttributes()` can be used to display information about
 those attributes.
 This is convenient as users do not need to memorise the name of the attributes,
 and the information returned by the function includes a short description of
@@ -373,7 +373,64 @@ in the query.
 
 ## Querying annotations from annotation packages
 
-### Pros and cons
+### Families of annotation packages
+
+To balance the need for comprehensive information
+while maintaining reasonable package sizes,
+Bioconductor annotation packages are organised by release, data type, and
+species.
+
+The major families of Bioconductor annotation packages are:
+
+* `OrgDb` packages provide mapping between various types of gene identifiers
+  and pathway information.
+* `EnsDb` packages provide individual releases of Ensembl annotations.
+* `TxDb` packages provide individual releases of UCSC annotations.
+
+All those families of annotations derive from the `AnnotationDb` base class
+defined in the `r BiocStyle::Biocpkg("AnnotationDbi")` package.
+As a result, any of those annotation packages can be accessed using the same set
+of R functions, as demonstrated in the following sections.
+
+### Using an OrgDb package
+
+In this example, we will use the `r BiocStyle::Biocannopkg("org.Hs.eg.db")`
+package to demonstrate the use of gene annotations for the human species.
+
+Let us first load the package:
+
+```{r, message=FALSE, warning=FALSE}
+library(org.Hs.eg.db)
+```
+
+Each `OrgDb` package contains an object named identically to the package itself.
+That object contains the annotations that the package is meant to disseminate.
+
+Aside from querying information, the whole object can be called to print
+information about the annotations it contains, including the date at which
+the snapshots of annotations that it contains were made.
+
+```{r}
+org.Hs.eg.db
+```
+
+That same object is the one that needs to be supplied to
+`r BiocStyle::Biocpkg("AnnotationDbi")` functions for running queries and
+retrieving annotations.
+
+### Listing information available in a data set
+
+The function `columns()` can be used to display information available in the
+annotations.
+The word 'column' refers to columns of tables used to store information in
+database, the very same concept as 'attributes' in BioMart.
+
+This is convenient as users do not need to memorise the names of the columns of
+annotations available in the package.
+
+```{r}
+columns(org.Hs.eg.db)
+```
 
 
 
