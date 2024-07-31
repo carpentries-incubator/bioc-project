@@ -334,7 +334,7 @@ function.
 Given a set of filters and corresponding values, it retrieves the attributes
 requested by the user from the BioMart data set it is connected to.
 
-In the example below, we manually create a vector or arbitrary gene identifiers
+In the example below, we manually create a vector of arbitrary gene identifiers
 for our query.
 In practice, the query will often originate from an earlier analysis
 (e.g., differential gene expression).
@@ -418,7 +418,7 @@ That same object is the one that needs to be supplied to
 `r BiocStyle::Biocpkg("AnnotationDbi")` functions for running queries and
 retrieving annotations.
 
-### Listing information available in a data set
+### Listing information available in an annotation package
 
 The function `columns()` can be used to display the annotations available
 in the object.
@@ -470,6 +470,40 @@ values.
 ```{r}
 head(keys(org.Hs.eg.db, keytype = "SYMBOL"))
 ```
+
+### Querying information from an annotation package
+
+The function `select()` is the main `r BiocStyle::Biocpkg("AnnotationDbi")`
+query function.
+Given an `AnnotationDb` object, key values, and columns
+(and optionally the type of key supplied if not the primary key),
+it retrieves the columns requested by the user from the annotation object.
+
+In the example below, we re-use the vector of arbitrary gene identifiers
+used in the BioMart example a few sections above.
+
+As you can see from the output of the `columns()` function, the annotation
+object does not contain some of the attributes that we queried in the Biomart
+example.
+In this case, let us query:
+
+* the gene symbol
+* the gene name
+* the gene type
+
+```{r}
+select(
+  x = org.Hs.eg.db,
+  keys = query_gene_ids,
+  columns = c(
+    "SYMBOL",
+    "GENENAME",
+    "GENETYPE"
+  ),
+  keytype = "ENSEMBL"
+)
+```
+
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
