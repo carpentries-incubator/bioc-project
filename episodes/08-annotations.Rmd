@@ -504,6 +504,45 @@ select(
 )
 ```
 
+One small but notable difference with `r BiocStyle::Biocpkg("biomaRt")` is that
+the output of `select()` automatically contains the column that correspond to
+the key type used in the query.
+In other words, there is no need to specify the key type(s) again in the
+column(s) to retrieve.
+
+### Vectorized 1:1 mapping
+
+It is sometimes possible for annotations to display 1-to-many relationships.
+For instance, individual genes typically have a unique Ensembl gene identifier,
+while they may be known under multiple gene name aliases.
+
+The `select()` function demonstrated in the previous section automatically
+returns *all* values in the columns requested, for the key specified.
+This is possible thanks to the tabular format in which annotations are returned;
+rows are added, repeating values as necessary to display them on the same row
+as every other values they are associated with.
+
+In some cases, that behaviour is not desirable.
+Instead, users may wish to retrieve a single value for each key that they input.
+One common scenario arises during differential gene expression (DGE),
+where gene identifiers are used to uniquely identify genes throughout the
+analysis, while gene symbols are added to the final table of DGE statistics,
+to provide more readable human-friendly gene identifiers.
+However, it is not desirable to duplicate rows of DGE statistics, and thus
+only a single gene symbol is required for each gene.
+
+The function `mapIds()` ... TODO
+
+```{r}
+mapIds(
+  x = org.Hs.eg.db,
+  keys = query_gene_ids,
+  column = "SYMBOL",
+  keytype = "ENSEMBL"
+)
+```
+
+
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
