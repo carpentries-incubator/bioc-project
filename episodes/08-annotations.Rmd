@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: Working with gene annotations
+title: Working with annotations
 teaching: XX
 exercises: XX
 ---
