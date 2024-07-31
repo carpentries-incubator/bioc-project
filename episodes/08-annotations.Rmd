@@ -165,7 +165,7 @@ The function `useMart()` can then be used to create a connection.
 The connection is traditionally stored in an object called `mart`.
 
 ```{r}
-mart <- useMart(biomart = , host = "https://may2024.archive.ensembl.org")
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", host = "https://may2024.archive.ensembl.org")
 ```
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
