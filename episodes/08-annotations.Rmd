@@ -193,7 +193,8 @@ In the output above, the key piece of information is the `dataset` column, which
 provides the identifier that `r BiocStyle::Biocpkg("biomaRt")` functions will
 need to access data from the corresponding biomart table.
 
-In this demonstration, we will use the Ensembl gene set for Homo sapiens.
+In this demonstration, we will use the Ensembl gene set for Homo sapiens,
+which is not visible in the output above.
 
 Given the number of data sets available,
 let us programmatically filter the table of information using pattern matching
