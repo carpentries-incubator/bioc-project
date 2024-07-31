@@ -116,7 +116,7 @@ library(biomaRt)
 ### Available marts
 
 Ensembl BioMart organises its diverse biological information into four databases
-also known as *marts* or *biomarts*.
+also known as 'marts' or 'biomarts'.
 Each mart focuses on a different type of data.
 
 Users must select the mart corresponds to the type of data they are interested
@@ -182,8 +182,11 @@ This is convenient as users do not need to memorise the name of the data sets,
 and the information returned by the function includes a short description of
 each data set, as well as its version.
 
+In the example below, we restrict the output table to the first few rows,
+as the full table comprises `r nrow(listDatasets(mart))` rows.
+
 ```{r}
-listDatasets(mart)
+head(listDatasets(mart))
 ```
 
 In the output above, the key piece of information is the `dataset` column, which
@@ -192,14 +195,15 @@ need to access data from the corresponding biomart table.
 
 In this demonstration, we will use the Ensembl gene set for Homo sapiens.
 
-Given the number of data sets available (`r nrow(listDatasets(mart))`),
+Given the number of data sets available,
 let us programmatically filter the table of information using pattern matching: 
 
 ```{r}
 subset(listDatasets(mart), grepl("sapiens", dataset))
 ```
 
-We identify the desired data set identifier as `hsapiens_gene_ensembl`.
+From the output above, we identify the desired data set identifier as
+`hsapiens_gene_ensembl`.
 
 ### Connecting to a data set
 
@@ -216,6 +220,26 @@ mart <- useMart(
   dataset = "hsapiens_gene_ensembl",
   host = "https://may2024.archive.ensembl.org")
 ```
+
+### Listing information available in a data set
+
+BioMart tables contain many pieces of information also known as 'attributes'.
+So many, in fact, that they have been grouped into categories also known as
+'pages'.
+
+The function `listAttributes()` can be used to display the information about
+those attributes.
+This is convenient as users do not need to memorise the name of the attributes,
+and the information returned by the function includes a short description of
+each attribute, as well as its page categorisation.
+
+In the example below, we restrict the output table to the first few rows,
+as the full table comprises `r nrow(listAttributes(mart))` rows.
+
+```{r}
+listAttributes(mart)
+```
+
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
