@@ -8,7 +8,6 @@ exercises: XX
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
-source("download_data.R")
 ```
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -155,6 +154,10 @@ In the output above, the key piece of information is the `url` column, which
 provides the URL that `r BiocStyle::Biocpkg("biomaRt")` functions will need to
 access data from the corresponding snapshot of the Ensembl BioMart.
 
+At the time of writing, the current release is Ensembl 112, so let us use
+the corresponding url `https://may2024.archive.ensembl.org` to ensure
+reproducible results no matter when this lesson is delivered.
+
 ### Connecting to a biomart
 
 The two pieces of information collected above -- the name of a biomart
@@ -162,10 +165,56 @@ and the URL of a snapshot -- is all that is needed to connect to a BioMart
 database reproducibly.
 
 The function `useMart()` can then be used to create a connection.
-The connection is traditionally stored in an object called `mart`.
+The connection is traditionally stored in an object called `mart`,
+to be reused in subsequent steps for querying information from the online mart.
 
 ```{r}
 mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", host = "https://may2024.archive.ensembl.org")
+```
+
+### Listing available data sets
+
+Each biomart contains a number of data sets.
+
+The function `listDatasets()` can be used to display the information about those
+data sets.
+This is convenient as users do not need to memorise the name of the data sets,
+and the information returned by the function includes a short description of
+each data set, as well as its version.
+
+```{r}
+listDatasets(mart)
+```
+
+In the output above, the key piece of information is the `dataset` column, which
+provides the identifier that `r BiocStyle::Biocpkg("biomaRt")` functions will
+need to access data from the corresponding biomart table.
+
+In this demonstration, we will use the Ensembl gene set for Homo sapiens.
+
+Given the number of data sets available (`r nrow(listDatasets(mart))`),
+let us programmatically filter the table of information using pattern matching: 
+
+```{r}
+subset(listDatasets(mart), grepl("sapiens", dataset))
+```
+
+We identify the desired data set identifier as `hsapiens_gene_ensembl`.
+
+### Connecting to a data set
+
+Having chosen the data set that we want to use, we need to call the function
+`useMart()` again, this time specifying the selected data set.
+
+Typically, one would copy paste the previous call to `useMart()` and edit as
+needed.
+It is also common practice to replace the `mart` object with the new connection.
+
+```{r}
+mart <- useMart(
+  biomart = "ENSEMBL_MART_ENSEMBL",
+  dataset = "hsapiens_gene_ensembl",
+  host = "https://may2024.archive.ensembl.org")
 ```
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
