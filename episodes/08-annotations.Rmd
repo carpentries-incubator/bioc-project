@@ -529,9 +529,22 @@ where gene identifiers are used to uniquely identify genes throughout the
 analysis, while gene symbols are added to the final table of DGE statistics,
 to provide more readable human-friendly gene identifiers.
 However, it is not desirable to duplicate rows of DGE statistics, and thus
-only a single gene symbol is required for each gene.
+only a single gene symbol is required to annotate each gene.
 
-The function `mapIds()` ... TODO
+The function `mapIds()` can be used for this purpose.
+A major difference between the functions `mapIds()` and `select()`
+are their arguments `column` (singular) and `columns` (plural), respectively.
+The function `mapIds()` accepts a single column name and returns a named
+character vector where names are the input query values, and values are the
+corresponding values in the requested column.
+
+To deal with 1-to-many relationships, the function `mapIds()` has an argument
+`multiVals` which can be used to specify how the function should handle multiple
+values.
+The default is to take the first value and ignore any other value.
+
+In the example below, we query the gene symbol for a set of Ensembl gene
+identifiers.
 
 ```{r}
 mapIds(
@@ -542,7 +555,31 @@ mapIds(
 )
 ```
 
+:::::::::::::::::::::::::::::::::::::::  challenge
 
+### Challenge
+
+Load the packages `r BiocStyle::Biocannopkg("EnsDb.Hsapiens.v86")` and
+`r BiocStyle::Biocannopkg("TxDb.Hsapiens.UCSC.hg38.knownGene")`.
+Then, display the columns of annotations available in those packages.
+
+:::::::::::::::  solution
+
+### Solution
+
+```{r, message=FALSE, warning=FALSE}
+library(EnsDb.Hsapiens.v86)
+columns(EnsDb.Hsapiens.v86)
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(TxDb.Hsapiens.UCSC.hg38.knownGene)
+columns(TxDb.Hsapiens.UCSC.hg38.knownGene)
+```
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
