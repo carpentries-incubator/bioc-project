@@ -72,22 +72,79 @@ In this episode, we will demonstrate the two approaches:
 * Querying annotations from the Ensembl Biomart API using the `r BiocStyle::Biocpkg("biomaRt")` package.
 * Querying annotations from the `r BiocStyle::Biocpkg("org.Hs.eg.db")` annotation package.
 
+## Online resources or Bioconductor annotation packages?
+
+### Accessing the latest information
+
+Bioconductor's 6-month release cycle implies that packages available from the
+latest stable release branch will not be updated for six months
+(only bugfixes are allowed, not functional updates).
+As a result, annotation packages may contain information that is out-of-date
+by up to six months.
+
+Instead, independent online resources often have different policies driving
+the release of updated information.
+Some databases are frequently updated, while others may not have been updated
+in years.
+
+Accessing up-to-date information must also be balanced with reproducibility.
+Having downloaded the 'latest' information at one point is time is no good if
+one hasn't recorded at least *when* that information was downloaded.
+
+### Storage requirements
+
+By nature, Bioconductor annotation packages are larger than software packages.
+Just like any other R package, annotation packages must be installed on the
+user's computer before they can be used.
+This can rapidly use add up to using an amount of disk space that is not
+negligible.
+
+Conversely, online resources are generally accessed programmatically, and
+generally only require users to record code to replicate analyses reproducibly.
+
+### Internet connectivity
+
+When using online resources, it is often a good idea to write annotations
+ownloaded from online resources to a local file,
+and refer to that local file during analyses.
+
+If online resources were to become unavailable for any reason
+(e.g., downtime, loss of internet connection), analyses that use local files
+can carry on while those that rely on those online resources cannot.
+
+In contrast, Bioconductor annotation packages only require internet connectivity
+at the time of installation.
+Once installed, they do not require internet connectivity, as they rely on
+information stored locally.
+
+### Reproducibility
+
+Bioconductor annotation packages are naturally versioned, meaning that users
+can confidently report the version of the package used in their analysis.
+Just like software packages, users control if and when annotation packages
+should be updated on their computer.
+
+Online resources have different policies to facilitate reproducible analyses.
+Some online resources keep archived versions of their annotations, allowing
+users to consistently access the same information over time.
+When this is not the case, it may be necessary to download a copy of the
+annotation at one point in time, and preciously keep that copy throughout
+the lifetime of the project to ensure the use of a consistent set of
+annotations.
+
+### Consistency
+
+As we will see in the practical examples of this episode,
+Bioconductor annotation packages generally re-use a consistent set of data
+structures.
+This allows users familiar with one annotation package to rapidly get started
+with others.
+
+Independent online resources often organise their data in different ways,
+which requires users to write custom code to access, retrieve, and process
+their respective data.
+
 ## Querying annotations from Ensembl BioMart
-
-### Pros and cons
-
-Pros:
-
-* Automatically access the latest information
-* Minimal storage footprint on the user's computer
-
-Cons:
-
-* Requires a live and stable internet connection throughout the analysis.
-* Reproducibility may not be possible if the resource is updated without access
-  to archives.
-* Data may be organised differently in each resource.
-* Custom code may be needed to access and retrieve data from each resource.
 
 ### The Ensembl BioMart
 
@@ -313,6 +370,12 @@ Note that we also included the filtering attribute `ensembl_gene_id` to the
 attributes retrieved from the data set.
 This is key to reliably match the newly retrieved attributes to those used
 in the query.
+
+## Querying annotations from annotation packages
+
+### Pros and cons
+
+
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
