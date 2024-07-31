@@ -196,7 +196,8 @@ need to access data from the corresponding biomart table.
 In this demonstration, we will use the Ensembl gene set for Homo sapiens.
 
 Given the number of data sets available,
-let us programmatically filter the table of information using pattern matching: 
+let us programmatically filter the table of information using pattern matching
+rather than searching the table manually: 
 
 ```{r}
 subset(listDatasets(mart), grepl("sapiens", dataset))
@@ -237,9 +238,80 @@ In the example below, we restrict the output table to the first few rows,
 as the full table comprises `r nrow(listAttributes(mart))` rows.
 
 ```{r}
-listAttributes(mart)
+head(listAttributes(mart))
 ```
 
+In the output above, the key piece of information is the `name` column, which
+provides the identifier that `r BiocStyle::Biocpkg("biomaRt")` functions will
+need to query that information from the corresponding biomart data set.
+
+The choice of attributes to query now depends on what it is we wish to achieve.
+
+For instance, let us imagine that we have a set of gene identifiers,
+for which we wish to query:
+
+* The gene symbol
+* The name of the chromosome where the gene is located
+* The start and end position of the gene on that chromosome
+* The strand on which the gene is encoded
+
+Users would often manually explore the full table of attributes to identify
+the ones they wish to include in their query.
+It is also possible to programmatically filter the table of attribute,
+based on experience and intuition, to narrow down the search:
+
+```{r}
+subset(listAttributes(mart), grepl("position", name) & grepl("feature", page))
+```
+
+### Querying information from a BioMart table
+
+We have now all the information that we need to perform the actual query:
+
+* A connection to a BioMart data set
+* The list of attributes available in that data set
+
+The function `getBM()` is the main `r BiocStyle::Biocpkg("biomaRt")` query
+function.
+Given a set of filters and corresponding values, it retrieves the attributes
+requested by the user from the BioMart data set it is connected to.
+
+In the example below, we manually create a vector or arbitrary gene identifiers
+for our query.
+In practice, the query will often originate from an earlier analysis
+(e.g., differential gene expression).
+
+The example below also queries attributes that we have not introduced yet.
+In the previous section, we described how one may search the table of attributes
+returned by `listAttributes()` to identify attributes to include in their query.
+
+```{r}
+query_gene_ids <- c(
+  "ENSG00000133101",
+  "ENSG00000145386",
+  "ENSG00000134057",
+  "ENSG00000157456",
+  "ENSG00000147082"
+)
+getBM(
+  attributes = c(
+    "ensembl_gene_id",
+    "hgnc_symbol",
+    "chromosome_name",
+    "start_position",
+    "end_position",
+    "strand"
+  ),
+  filters = "ensembl_gene_id",
+  values = query_gene_ids,
+  mart = mart
+)
+```
+
+Note that we also included the filtering attribute `ensembl_gene_id` to the
+attributes retrieved from the data set.
+This is key to reliably match the newly retrieved attributes to those used
+in the query.
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
