@@ -1,0 +1,318 @@
+---
+source: Rmd
+title: Working with gene annotations
+teaching: XX
+exercises: XX
+---
+
+---
+
+```{r, echo=FALSE, purl=FALSE, message=FALSE}
+```
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain how gene annotations are managed in the Bioconductor project.
+- Identify Bioconductor packages and methods available to fetch and use gene annotations.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- What Bioconductor packages provides methods to efficiently fetch and use gene annotations?
+- How can I use gene annotation packages to convert between different gene identifiers?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+```{r, include=FALSE}
+```
+
+```{r, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(RefManageR)
+library(bibtex)
+bib <- ReadBib("files/bibliography.bib")
+```
+
+## Install packages
+
+Before we can proceed into the following sections, we install some Bioconductor
+packages that we will need.
+First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is
+installed before trying to use it; otherwise we install it.
+Then we use the `BiocManager::install()` function to install the necessary
+packages.
+
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install(c("biomaRt", "org.Hs.eg.db"))
+```
+
+## Overview
+
+Packages dedicated to query gene annotations exist in the 'Software' and
+'Annotation' categories of the Bioconductor [biocViews][biocviews], according to
+their nature.
+
+In the 'Software' section, we find packages that do not actually contain gene
+annotations, but rather dynamically _query_ them from online resources
+(e.g.,[Ensembl BioMart][biomart-ensembl]).
+One such Bioconductor package is `r BiocStyle::Biocpkg("biomaRt")`.
+
+Instead, in the 'Annotation' section, we find packages that do contain
+annotations.
+Examples include `r BiocStyle::Biocpkg("org.Hs.eg.db")`,
+`r BiocStyle::Biocpkg("EnsDb.Hsapiens.v86")`,
+and `r BiocStyle::Biocpkg("TxDb.Hsapiens.UCSC.hg38.knownGene")`.
+
+In this episode, we will demonstrate the two approaches:
+
+* Querying annotations from the Ensembl Biomart API using the `r BiocStyle::Biocpkg("biomaRt")` package.
+* Querying annotations from the `r BiocStyle::Biocpkg("org.Hs.eg.db")` annotation package.
+
+## Querying annotations from Ensembl BioMart
+
+### Pros and cons
+
+Pros:
+
+* Automatically access the latest information
+* Minimal storage footprint on the user's computer
+
+Cons:
+
+* Requires a live and stable internet connection throughout the analysis.
+* Reproducibility may not be possible if the resource is updated without access
+  to archives.
+* Data may be organised differently in each resource.
+* Custom code may be needed to access and retrieve data from each resource.
+
+### The Ensembl BioMart
+
+[Ensembl BioMart][biomart-ensembl] is a robust data mining tool designed to
+facilitate access to the vast array of biological data available through the
+Ensembl project.
+
+The [BioMart web interface][biomart-ensembl] enables researchers to efficiently
+query and retrieve data on genes, proteins, and other genomic features
+across multiple species.
+It allows users to filter, sort, and export data based on various attributes
+such as gene IDs, chromosomal locations, and functional annotations.
+
+### The Bioconductor `biomaRt` package
+
+`r BiocStyle::Biocpkg("biomaRt")` is a Bioconductor software package that
+enables retrieval of large amounts of data from Ensembl BioMart tables
+directly from an R session where those annotations can be used.
+
+Let us first load the package:
+
+```{r, message=FALSE, warning=FALSE}
+library(biomaRt)
+```
+
+### Available marts
+
+Ensembl BioMart organises its diverse biological information into four databases
+also known as 'marts' or 'biomarts'.
+Each mart focuses on a different type of data.
+
+Users must select the mart corresponds to the type of data they are interested
+in before they can query any information from it.
+
+The function `listMarts()` can be used to display the names of those marts.
+This is convenient as users do not need to memorise the name of the marts,
+and the function will also return an updated list of names if any mart is
+renamed, added, or removed.
+
+```{r}
+listMarts()
+```
+
+In this demonstration, we will use the biomart called `ENSEMBL_MART_ENSEMBL`,
+which contains the Ensembl gene set.
+
+Notably, the `version` columns also indicates the version of the biomart.
+The Ensembl BioMart is updated regularly (multiple times per year).
+By default, `r BiocStyle::Biocpkg("biomaRt")` functions access the latest
+version of each biomart.
+This is not ideal for reproducibility.
+
+Thankfully, Ensembl BioMart archives past versions of its mars in a way that
+is accessible both programmatically, and on its website.
+
+The function `listEnsemblArchives()` can be used to display all the versions of
+Ensembl Biomart accessible.
+
+```{r}
+listEnsemblArchives()
+```
+
+In the output above, the key piece of information is the `url` column, which
+provides the URL that `r BiocStyle::Biocpkg("biomaRt")` functions will need to
+access data from the corresponding snapshot of the Ensembl BioMart.
+
+At the time of writing, the current release is Ensembl 112, so let us use
+the corresponding url `https://may2024.archive.ensembl.org` to ensure
+reproducible results no matter when this lesson is delivered.
+
+### Connecting to a biomart
+
+The two pieces of information collected above -- the name of a biomart
+and the URL of a snapshot -- is all that is needed to connect to a BioMart
+database reproducibly.
+
+The function `useMart()` can then be used to create a connection.
+The connection is traditionally stored in an object called `mart`,
+to be reused in subsequent steps for querying information from the online mart.
+
+```{r}
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", host = "https://may2024.archive.ensembl.org")
+```
+
+### Listing available data sets
+
+Each biomart contains a number of data sets.
+
+The function `listDatasets()` can be used to display the information about those
+data sets.
+This is convenient as users do not need to memorise the name of the data sets,
+and the information returned by the function includes a short description of
+each data set, as well as its version.
+
+In the example below, we restrict the output table to the first few rows,
+as the full table comprises `r nrow(listDatasets(mart))` rows.
+
+```{r}
+head(listDatasets(mart))
+```
+
+In the output above, the key piece of information is the `dataset` column, which
+provides the identifier that `r BiocStyle::Biocpkg("biomaRt")` functions will
+need to access data from the corresponding biomart table.
+
+In this demonstration, we will use the Ensembl gene set for Homo sapiens,
+which is not visible in the output above.
+
+Given the number of data sets available,
+let us programmatically filter the table of information using pattern matching
+rather than searching the table manually: 
+
+```{r}
+subset(listDatasets(mart), grepl("sapiens", dataset))
+```
+
+From the output above, we identify the desired data set identifier as
+`hsapiens_gene_ensembl`.
+
+### Connecting to a data set
+
+Having chosen the data set that we want to use, we need to call the function
+`useMart()` again, this time specifying the selected data set.
+
+Typically, one would copy paste the previous call to `useMart()` and edit as
+needed.
+It is also common practice to replace the `mart` object with the new connection.
+
+```{r}
+mart <- useMart(
+  biomart = "ENSEMBL_MART_ENSEMBL",
+  dataset = "hsapiens_gene_ensembl",
+  host = "https://may2024.archive.ensembl.org")
+```
+
+### Listing information available in a data set
+
+BioMart tables contain many pieces of information also known as 'attributes'.
+So many, in fact, that they have been grouped into categories also known as
+'pages'.
+
+The function `listAttributes()` can be used to display the information about
+those attributes.
+This is convenient as users do not need to memorise the name of the attributes,
+and the information returned by the function includes a short description of
+each attribute, as well as its page categorisation.
+
+In the example below, we restrict the output table to the first few rows,
+as the full table comprises `r nrow(listAttributes(mart))` rows.
+
+```{r}
+head(listAttributes(mart))
+```
+
+In the output above, the key piece of information is the `name` column, which
+provides the identifier that `r BiocStyle::Biocpkg("biomaRt")` functions will
+need to query that information from the corresponding biomart data set.
+
+The choice of attributes to query now depends on what it is we wish to achieve.
+
+For instance, let us imagine that we have a set of gene identifiers,
+for which we wish to query:
+
+* The gene symbol
+* The name of the chromosome where the gene is located
+* The start and end position of the gene on that chromosome
+* The strand on which the gene is encoded
+
+Users would often manually explore the full table of attributes to identify
+the ones they wish to include in their query.
+It is also possible to programmatically filter the table of attribute,
+based on experience and intuition, to narrow down the search:
+
+```{r}
+subset(listAttributes(mart), grepl("position", name) & grepl("feature", page))
+```
+
+### Querying information from a BioMart table
+
+We have now all the information that we need to perform the actual query:
+
+* A connection to a BioMart data set
+* The list of attributes available in that data set
+
+The function `getBM()` is the main `r BiocStyle::Biocpkg("biomaRt")` query
+function.
+Given a set of filters and corresponding values, it retrieves the attributes
+requested by the user from the BioMart data set it is connected to.
+
+In the example below, we manually create a vector or arbitrary gene identifiers
+for our query.
+In practice, the query will often originate from an earlier analysis
+(e.g., differential gene expression).
+
+The example below also queries attributes that we have not introduced yet.
+In the previous section, we described how one may search the table of attributes
+returned by `listAttributes()` to identify attributes to include in their query.
+
+```{r}
+query_gene_ids <- c(
+  "ENSG00000133101",
+  "ENSG00000145386",
+  "ENSG00000134057",
+  "ENSG00000157456",
+  "ENSG00000147082"
+)
+getBM(
+  attributes = c(
+    "ensembl_gene_id",
+    "hgnc_symbol",
+    "chromosome_name",
+    "start_position",
+    "end_position",
+    "strand"
+  ),
+  filters = "ensembl_gene_id",
+  values = query_gene_ids,
+  mart = mart
+)
+```
+
+Note that we also included the filtering attribute `ensembl_gene_id` to the
+attributes retrieved from the data set.
+This is key to reliably match the newly retrieved attributes to those used
+in the query.
+
+[biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
+[biomart-ensembl]: https://www.ensembl.org/biomart/martview

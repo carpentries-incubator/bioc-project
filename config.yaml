@@ -58,7 +58,7 @@ contact: 'team@carpentries.org'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
+episodes:
 - 01-setup.Rmd
 - 02-introduction-to-bioconductor.Rmd
 - 03-installing-bioconductor.Rmd
@@ -66,15 +66,16 @@ episodes:
 - 05-s4.Rmd
 - 06-biological-sequences.Rmd
 - 07-genomic-ranges.Rmd
+- 08-annotations.Rmd
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #

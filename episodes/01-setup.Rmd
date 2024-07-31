@@ -6,6 +6,7 @@ exercises: XX
 ---
 
 ```{r, include=FALSE}
+source("01-helpers.R")
 ```
 
 ::::::::::::::::::::::::::::::::::::::: objectives
@@ -27,7 +28,7 @@ exercises: XX
 
 This lesson was developed and tested with `r R.version.string`.
 
-Take a moment to launch RStudio and verify that you are using R version `4.1.x`, with `x` being any patch version, e.g. `4.1.2`.
+Take a moment to launch RStudio and verify that you are using R version `r r_version_string.patch_x()`, with `x` being any patch version, e.g. `r r_version_string()`.
 
 ```{r}
 R.version.string
