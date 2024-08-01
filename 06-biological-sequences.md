@@ -527,11 +527,6 @@ To get started, we load the package.
 library(BSgenome)
 ```
 
-``` warning
-Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
-'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'
-```
-
 With the package loaded and attached to the session, we have access to the
 package functions.
 
