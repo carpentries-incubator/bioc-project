@@ -1,0 +1,91 @@
+---
+source: Rmd
+title: The SummarizedExperiment class
+teaching: XX
+exercises: XX
+---
+
+---
+
+```{r, echo=FALSE, purl=FALSE, message=FALSE}
+```
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Describe how both experimental data and metadata can be stored in a single object.
+- Explain why this is crucial to keep data and metadata synchronised throughout analyses.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How is information organized in SummarizedExperiment objects?
+- How can that information be added, edited, and accessed?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+```{r, include=FALSE}
+```
+
+```{r, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(RefManageR)
+library(bibtex)
+bib <- ReadBib("files/bibliography.bib")
+```
+
+## Install packages
+
+Before we can proceed into the following sections, we install some Bioconductor
+packages that we will need.
+First, we check that the `r BiocStyle::Biocpkg("BiocManager")` package is
+installed before trying to use it; otherwise we install it.
+Then we use the `BiocManager::install()` function to install the necessary
+packages.
+
+```{r, message=FALSE, warning=FALSE, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install(c("SummarizedExperiment"))
+```
+
+## Motivation
+
+Experiments are multifaceted data sets typically composed of at least two key
+pieces of information necessary for any analysis:
+
+- Assay data, typically a matrix representing measurements of a set of features
+  in a set of samples
+  (e.g., RNA-sequencing).
+- Sample metadata, typically a `data.frame` of metadata representing information
+  about samples
+  (e.g., treatment group).
+
+All those pieces of information must be kept synchronised -- same samples,
+same order -- for downstream analyses to accurately process the information
+and produce reliable results.
+
+It is also very common for analytical workflows to analyse subsets of samples or
+identify outliers that need to be removed to allow for more accurate downstream
+analyses.
+In such cases, all aspects of the experiments must be subsetted to the same set
+of samples -- in the same order -- to preserve consistency in the data set
+and correct results.
+
+The `SummarizedExperiment` -- implemented in the
+`r BiocStyle::Biocpkg("SummarizedExperiment")` package -- provides a container
+that accommodates those essential aspects of individual experiments into a
+single object coordinates data and metadata during subsetting and reordering
+operations.
+
+## Class structure
+
+![](fig/summarizedexperiment.svg){alt='Schematic representation of the SummarizedExperiment class.'}
+
+
+
+## Section
+
+[biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
+[biomart-ensembl]: https://www.ensembl.org/biomart/martview

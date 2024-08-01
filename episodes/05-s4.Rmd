@@ -121,7 +121,7 @@ Instead, a few low-level concrete subclasses of general interest (e.g. `DataFram
 
 Attach the package to the current R session as follows.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 library(S4Vectors)
 ```
 
