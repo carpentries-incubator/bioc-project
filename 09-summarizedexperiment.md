@@ -27,18 +27,6 @@ exercises: XX
 
 
 
-## Debug
-
-
-``` r
-list.files("data")
-```
-
-``` output
-[1] "actb_orfs.fasta"     "actb.gtf"            "counts.csv"         
-[4] "gene_metadata.csv"   "sample_metadata.csv" "TruSeq3-PE-2.fa"    
-```
-
 ## Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor
