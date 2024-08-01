@@ -202,7 +202,7 @@ Comparing the output above with the previous 'assay-only' version of the
 `SummarizedExperiment` object, we can see that the `rowData` and `colData`
 components now contain 1 and 4 metadata, respectively.
 
-## Accessing information in SummarizedExperiment objects
+## Accessing information
 
 A number of functions give access to the various components of
 `SummarizedExperiment` objects.
@@ -242,16 +242,74 @@ colData(se)
 ```
 
 ```{r}
-head(rowData(se))
+rowData(se)
 ```
 
-Notably, the `$` operator can be used to access a single column of sample
+Separately, the `$` operator can be used to access a single column of sample
 metadata.
 A useful feature of this operator is the autocompletion that is triggered
 automatically in RStudio or using the tabulation key in terminal applications.
 
 ```{r}
 se$batch
+```
+
+Notably, there is no operator for accessing a single column of feature metadata.
+For this, users need to first access the full `DataFrame` returned by
+`rowData()` before accessing a column using the standard `$` or `[[` operators,
+e.g.
+
+```{r}
+rowData(se)[["chromosome"]]
+```
+
+### Adding and editing information
+
+Information can be added to `SummarizedExperiment` after their creation.
+In fact, this is the basis for workflows that compute normalised assay values --
+adding those to the list of assays --, and
+quality control metrics for either features or samples -- adding those to the
+`rowData` and `colData` components, as appropriate -- progressively growing
+the amount of information stored within the overall object.
+
+Most of the functions for accessing information, described in the previous
+section, have a counterpart function for adding new values or editing existing
+ones.
+Note that editing is merely the result of adding values under a name already in
+use, which has the effect of replacing existing values.
+
+In the example below, we add an assay named 'logcounts' which is the result
+of applying a log-transformation to the 'counts' assay after adding a
+pseucocount of one:
+
+```{r}
+assay(se, "logcounts") <- log1p(assay(se, "counts"))
+se
+```
+
+In the output above, we see that the object now contains two assays:
+the 'counts' assay included in the object when it was first created,
+and the 'logcounts' assay added just now.
+
+Similarly, the `colData()` and `rowData()` functions -- as well as the `$`
+operator -- can be used to add and edit values in the corresponding components.
+
+In the example below, we compute the sum of counts for each sample,
+and store the result in the sample metadata table under the new name
+'sum_counts'.
+
+```{r}
+colData(se)[["sum_counts"]] <- colSums(assay(se, "counts"))
+colData(se)
+```
+
+In this next example, we compute the average count for each feature,
+and store the result in the feature metadata table under the new name
+'mean_counts'.
+
+```{r}
+rowData(se)[["mean_counts"]] <- rowSums(assay(se, "counts"))
+rowData(se)
 ```
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
