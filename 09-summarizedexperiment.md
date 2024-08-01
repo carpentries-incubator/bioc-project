@@ -27,6 +27,18 @@ exercises: XX
 
 
 
+## Debug
+
+
+``` r
+list.files("data")
+```
+
+``` output
+[1] "actb_orfs.fasta"     "actb.gtf"            "counts.csv"         
+[4] "gene_metadata.csv"   "sample_metadata.csv" "TruSeq3-PE-2.fa"    
+```
+
 ## Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor
@@ -136,23 +148,36 @@ and left the row names to the default integer indexing.
 
 ``` r
 count_data <- read.csv("data/counts.csv", row.names = 1)
-```
-
-``` warning
-Warning in file(file, "rt"): cannot open file 'data/counts.csv': No such file
-or directory
-```
-
-``` error
-Error in file(file, "rt"): cannot open the connection
-```
-
-``` r
 count_data
 ```
 
-``` error
-Error in eval(expr, envir, enclos): object 'count_data' not found
+``` output
+        sample_1 sample_2 sample_3 sample_4
+gene_1       109       84       91      105
+gene_2       111       97       98      108
+gene_3        89      121      105       99
+gene_4       105      109      122      101
+gene_5        82       97      112       83
+gene_6        89       96       90      116
+gene_7       121       95       88      106
+gene_8       101      101       86      103
+gene_9        91      119       89       87
+gene_10       81      111       81      118
+gene_11       93      118       93       99
+gene_12      103      111      116      103
+gene_13       89      126      103      100
+gene_14      101      107      111       79
+gene_15       96       91      103      108
+gene_16      110      102      128      103
+gene_17       95      106      118      100
+gene_18       99      115      114      102
+gene_19      114      105       94      118
+gene_20      110       88       99      102
+gene_21      116       95       94      105
+gene_22      114       96      107       91
+gene_23       97      120       93       90
+gene_24       91       84      118       97
+gene_25       99      106       97      110
 ```
 
 One assay data matrix is enough to create a `SummarizedExperiment` object,
@@ -173,18 +198,18 @@ in order to identify and retrieve individual assays unambiguously.
 se <- SummarizedExperiment(
   assays = list(counts = count_data)
 )
-```
-
-``` error
-Error in eval(expr, envir, enclos): object 'count_data' not found
-```
-
-``` r
 se
 ```
 
-``` error
-Error in eval(expr, envir, enclos): object 'se' not found
+``` output
+class: SummarizedExperiment 
+dim: 25 4 
+metadata(0):
+assays(1): counts
+rownames(25): gene_1 gene_2 ... gene_24 gene_25
+rowData names(0):
+colnames(4): sample_1 sample_2 sample_3 sample_4
+colData names(0):
 ```
 
 In the output above, the summary view of the object reminds us that the assay
@@ -207,45 +232,50 @@ objects.
 
 ``` r
 sample_metadata <- read.csv("data/sample_metadata.csv", row.names = 1)
-```
-
-``` warning
-Warning in file(file, "rt"): cannot open file 'data/sample_metadata.csv': No
-such file or directory
-```
-
-``` error
-Error in file(file, "rt"): cannot open the connection
-```
-
-``` r
 sample_metadata
 ```
 
-``` error
-Error in eval(expr, envir, enclos): object 'sample_metadata' not found
+``` output
+         condition batch
+sample_1         A     1
+sample_2         A     2
+sample_3         B     1
+sample_4         B     2
 ```
 
 
 ``` r
 gene_metadata <- read.csv("data/gene_metadata.csv", row.names = 1)
-```
-
-``` warning
-Warning in file(file, "rt"): cannot open file 'data/gene_metadata.csv': No such
-file or directory
-```
-
-``` error
-Error in file(file, "rt"): cannot open the connection
-```
-
-``` r
 gene_metadata
 ```
 
-``` error
-Error in eval(expr, envir, enclos): object 'gene_metadata' not found
+``` output
+        chromosome
+gene_1           4
+gene_2           4
+gene_3           5
+gene_4           4
+gene_5           5
+gene_6           1
+gene_7           2
+gene_8           1
+gene_9           3
+gene_10          1
+gene_11          1
+gene_12          5
+gene_13          5
+gene_14          1
+gene_15          3
+gene_16          4
+gene_17          2
+gene_18          5
+gene_19          1
+gene_20          3
+gene_21          5
+gene_22          5
+gene_23          1
+gene_24          4
+gene_25          5
 ```
 
 We can re-create the `SummarizedExperiment` object, this time including
@@ -258,18 +288,18 @@ se <- SummarizedExperiment(
   colData = sample_metadata,
   rowData = gene_metadata
 )
-```
-
-``` error
-Error in eval(expr, envir, enclos): object 'count_data' not found
-```
-
-``` r
 se
 ```
 
-``` error
-Error in eval(expr, envir, enclos): object 'se' not found
+``` output
+class: SummarizedExperiment 
+dim: 25 4 
+metadata(0):
+assays(1): counts
+rownames(25): gene_1 gene_2 ... gene_24 gene_25
+rowData names(1): chromosome
+colnames(4): sample_1 sample_2 sample_3 sample_4
+colData names(2): condition batch
 ```
 
 Comparing the output above with the previous 'assay-only' version of the
@@ -289,8 +319,9 @@ The output is always a `List`, event if the object contains a single assay.
 assays(se)
 ```
 
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'assays': object 'se' not found
+``` output
+List of length 1
+names(1): counts
 ```
 
 The `assayNames()` function returns a character vector of the assay names.
@@ -304,8 +335,8 @@ assay.
 assayNames(se)
 ```
 
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'assayNames': object 'se' not found
+``` output
+[1] "counts"
 ```
 
 The `assay()` function can be used to retrieve a single assay from the object.
@@ -319,8 +350,14 @@ object.
 head(assay(se, "counts"))
 ```
 
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'head': error in evaluating the argument 'x' in selecting a method for function 'assay': object 'se' not found
+``` output
+       sample_1 sample_2 sample_3 sample_4
+gene_1      109       84       91      105
+gene_2      111       97       98      108
+gene_3       89      121      105       99
+gene_4      105      109      122      101
+gene_5       82       97      112       83
+gene_6       89       96       90      116
 ```
 
 The `colData()` and `rowData()` functions can be used to retrieve 
@@ -331,8 +368,14 @@ sample metadata and row metadata, respectively.
 colData(se)
 ```
 
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'colData': object 'se' not found
+``` output
+DataFrame with 4 rows and 2 columns
+           condition     batch
+         <character> <integer>
+sample_1           A         1
+sample_2           A         2
+sample_3           B         1
+sample_4           B         2
 ```
 
 
@@ -340,8 +383,21 @@ Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in sele
 rowData(se)
 ```
 
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'rowData': object 'se' not found
+``` output
+DataFrame with 25 rows and 1 column
+        chromosome
+         <integer>
+gene_1           4
+gene_2           4
+gene_3           5
+gene_4           4
+gene_5           5
+...            ...
+gene_21          5
+gene_22          5
+gene_23          1
+gene_24          4
+gene_25          5
 ```
 
 Separately, the `$` operator can be used to access a single column of sample
@@ -354,8 +410,8 @@ automatically in RStudio or using the tabulation key in terminal applications.
 se$batch
 ```
 
-``` error
-Error in eval(expr, envir, enclos): object 'se' not found
+``` output
+[1] 1 2 1 2
 ```
 
 Notably, there is no operator for accessing a single column of feature metadata.
@@ -368,8 +424,8 @@ e.g.
 rowData(se)[["chromosome"]]
 ```
 
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'rowData': object 'se' not found
+``` output
+ [1] 4 4 5 4 5 1 2 1 3 1 1 5 5 1 3 4 2 5 1 3 5 5 1 4 5
 ```
 
 ### Adding and editing information
@@ -394,18 +450,18 @@ pseucocount of one:
 
 ``` r
 assay(se, "logcounts") <- log1p(assay(se, "counts"))
-```
-
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'assay': object 'se' not found
-```
-
-``` r
 se
 ```
 
-``` error
-Error in eval(expr, envir, enclos): object 'se' not found
+``` output
+class: SummarizedExperiment 
+dim: 25 4 
+metadata(0):
+assays(2): counts logcounts
+rownames(25): gene_1 gene_2 ... gene_24 gene_25
+rowData names(1): chromosome
+colnames(4): sample_1 sample_2 sample_3 sample_4
+colData names(2): condition batch
 ```
 
 In the output above, we see that the object now contains two assays:
@@ -422,18 +478,17 @@ and store the result in the sample metadata table under the new name
 
 ``` r
 colData(se)[["sum_counts"]] <- colSums(assay(se, "counts"))
-```
-
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'colSums': error in evaluating the argument 'x' in selecting a method for function 'assay': object 'se' not found
-```
-
-``` r
 colData(se)
 ```
 
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'colData': object 'se' not found
+``` output
+DataFrame with 4 rows and 3 columns
+           condition     batch sum_counts
+         <character> <integer>  <numeric>
+sample_1           A         1       2506
+sample_2           A         2       2600
+sample_3           B         1       2550
+sample_4           B         2       2533
 ```
 
 In this next example, we compute the average count for each feature,
@@ -443,18 +498,24 @@ and store the result in the feature metadata table under the new name
 
 ``` r
 rowData(se)[["mean_counts"]] <- rowSums(assay(se, "counts"))
-```
-
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'rowSums': error in evaluating the argument 'x' in selecting a method for function 'assay': object 'se' not found
-```
-
-``` r
 rowData(se)
 ```
 
-``` error
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'rowData': object 'se' not found
+``` output
+DataFrame with 25 rows and 2 columns
+        chromosome mean_counts
+         <integer>   <numeric>
+gene_1           4         389
+gene_2           4         414
+gene_3           5         414
+gene_4           4         437
+gene_5           5         374
+...            ...         ...
+gene_21          5         410
+gene_22          5         408
+gene_23          1         400
+gene_24          4         390
+gene_25          5         412
 ```
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
