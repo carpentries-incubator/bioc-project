@@ -8,6 +8,7 @@ exercises: XX
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
+source("download_data.R")
 ```
 
 ::::::::::::::::::::::::::::::::::::::: objectives
