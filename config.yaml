@@ -67,6 +67,7 @@ episodes:
 - 06-biological-sequences.Rmd
 - 07-genomic-ranges.Rmd
 - 08-annotations.Rmd
+- 09-summarizedexperiment.Rmd
 
 # Information for Learners
 learners:
