@@ -234,6 +234,25 @@ object.
 head(assay(se, "counts"))
 ```
 
+The `colData()` and `rowData()` functions can be used to retrieve 
+sample metadata and row metadata, respectively.
+
+```{r}
+colData(se)
+```
+
+```{r}
+head(rowData(se))
+```
+
+Notably, the `$` operator can be used to access a single column of sample
+metadata.
+A useful feature of this operator is the autocompletion that is triggered
+automatically in RStudio or using the tabulation key in terminal applications.
+
+```{r}
+se$batch
+```
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
