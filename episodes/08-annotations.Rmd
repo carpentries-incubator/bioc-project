@@ -581,5 +581,13 @@ columns(TxDb.Hsapiens.UCSC.hg38.knownGene)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Bioconductor provides a wide range annotation packages.
+- Some Bioconductor software packages can be used to programmatically access online resources.
+- Users should carefully choose their source of annotations based on their needs and expectations.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
