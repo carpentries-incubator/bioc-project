@@ -35,12 +35,6 @@ library(bibtex)
 bib <- ReadBib("files/bibliography.bib")
 ```
 
-## Debug
-
-```{r}
-list.files("data")
-```
-
 ## Install packages
 
 Before we can proceed into the following sections, we install some Bioconductor
