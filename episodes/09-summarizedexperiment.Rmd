@@ -81,9 +81,31 @@ operations.
 
 ## Class structure
 
+`SummarizedExperiment` is a matrix-like container where rows represent features of
+interest (e.g. genes, transcripts, exons, etc.) and columns represent samples.
+
+The objects can contain one or more assays, each represented by a matrix-like
+object, as long as they be of the same dimensions.
+
+Information about the features is stored in a `DataFrame` object,
+nested within the `SummarizedExperiment` object,
+and accessible using the function `rowData()`.
+Each row of the `DataFrame` provides information on the feature in the
+corresponding row of the SummarizedExperiment object.
+That information may include annotations independent of the experiment
+(e.g., gene identifier) as well as quality control metrics computed from
+assay data during workflows.
+
+Similarly, information about the samples is stored in another `DataFrame` object,
+also nested within the `SummarizedExperiment` object,
+and accessible using the function `colData()`.
+
+The following graphic displays the class geometry and highlights the
+vertical (column) and horizontal (row) relationships.
+It was obtained from the vignette of the
+`r BiocStyle::Biocpkg("SummarizedExperiment")` package.
+
 ![](fig/summarizedexperiment.svg){alt='Schematic representation of the SummarizedExperiment class.'}
-
-
 
 ## Section
 
