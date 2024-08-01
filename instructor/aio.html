@@ -778,7 +778,7 @@ project include?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The following solution includes numbers that were valid at the time
 of writing (Bioconductor release 3.13); numbers will inevitably be
@@ -856,7 +856,7 @@ rank)?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -2392,7 +2392,7 @@ return? Why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>&gt; DF2["name1", ]
 DataFrame with 1 row and 3 columns
@@ -2447,7 +2447,7 @@ different?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre><code>&gt; DF3["a", ]
 DataFrame with 1 row and 3 columns
@@ -4370,7 +4370,7 @@ constructor function.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5147,7 +5147,7 @@ what does this number represent biologically?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb61">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -6201,23 +6201,7 @@ throughout analyses.</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="debug">Debug<a class="anchor" aria-label="anchor" href="#debug"></a>
-<a class="anchor" aria-label="anchor" href="#debug"></a>
-</h2>
-<hr class="half-width">
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">list.files</span><span class="op">(</span><span class="st">"data"</span><span class="op">)</span></span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "actb_orfs.fasta"     "actb.gtf"            "counts.csv"
-[4] "gene_metadata.csv"   "sample_metadata.csv" "TruSeq3-PE-2.fa"    </code></pre>
-</div>
-</section><section><h2 class="section-heading" id="install-packages">Install packages<a class="anchor" aria-label="anchor" href="#install-packages"></a>
+<section><h2 class="section-heading" id="install-packages">Install packages<a class="anchor" aria-label="anchor" href="#install-packages"></a>
 <a class="anchor" aria-label="anchor" href="#install-packages"></a>
 </h2>
 <hr class="half-width">
@@ -6226,7 +6210,7 @@ Bioconductor packages that we will need. First, we check that the <em><a href="h
 package is installed before trying to use it; otherwise we install it.
 Then we use the <code>BiocManager::install()</code> function to install
 the necessary packages.</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6296,7 +6280,7 @@ package.</p>
 </h2>
 <hr class="half-width">
 <p>Let us first load the package:</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6314,7 +6298,7 @@ the first column, so that the function immediately sets the row names
 accordingly in the output object. Hadn’t we specified it, the function
 would have parsed it as a regular column and left the row names to the
 default integer indexing.</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6363,7 +6347,7 @@ assay matrix in a named <code>list</code> that also gives us the
 opportunity to assign a name to the assay. Naming assays becomes crucial
 during workflows that contain multiple assays, in order to identify and
 retrieve individual assays unambiguously.</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6397,7 +6381,7 @@ files that we downloaded during the lesson setup.</p>
 <p>The files are formatted similarly to the count data, so we use again
 the base R function <code>read.csv()</code> to parse them into
 <code>data.frame</code> objects.</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6413,7 +6397,7 @@ sample_2         A     2
 sample_3         B     1
 sample_4         B     2</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6452,7 +6436,7 @@ gene_25          5</code></pre>
 </div>
 <p>We can re-create the <code>SummarizedExperiment</code> object, this
 time including the gene and sample metadata:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6488,7 +6472,7 @@ and 4 metadata, respectively.</p>
 <p>The <code>assays()</code> function returns the list of assays stored
 in the object. The output is always a <code>List</code>, event if the
 object contains a single assay.</p>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6505,7 +6489,7 @@ the assay names. This is most useful when the object contains larger
 numbers of assays, as the <code>assays()</code> function (see above) may
 not display all of them. Knowing the names of the various assays is key
 to accessing any individual assay.</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6520,7 +6504,7 @@ to accessing any individual assay.</p>
 assay from the object. For this, the function should be given the name
 or the integer position of the desired assay. If unspecified, the
 function automatically returns the first assay in the object.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6539,7 +6523,7 @@ gene_6       89       96       90      116</code></pre>
 </div>
 <p>The <code>colData()</code> and <code>rowData()</code> functions can
 be used to retrieve sample metadata and row metadata, respectively.</p>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6556,7 +6540,7 @@ sample_2           A         2
 sample_3           B         1
 sample_4           B         2</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6584,7 +6568,7 @@ gene_25          5</code></pre>
 single column of sample metadata. A useful feature of this operator is
 the autocompletion that is triggered automatically in RStudio or using
 the tabulation key in terminal applications.</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6600,7 +6584,7 @@ feature metadata. For this, users need to first access the full
 <code>DataFrame</code> returned by <code>rowData()</code> before
 accessing a column using the standard <code>$</code> or <code>[[</code>
 operators, e.g.</p>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6629,7 +6613,7 @@ existing values.</p>
 <p>In the example below, we add an assay named ‘logcounts’ which is the
 result of applying a log-transformation to the ‘counts’ assay after
 adding a pseucocount of one:</p>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6657,7 +6641,7 @@ and edit values in the corresponding components.</p>
 <p>In the example below, we compute the sum of counts for each sample,
 and store the result in the sample metadata table under the new name
 ‘sum_counts’.</p>
-<div class="codewrapper sourceCode" id="cb31">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -6678,7 +6662,7 @@ sample_4           B         2       2533</code></pre>
 <p>In this next example, we compute the average count for each feature,
 and store the result in the feature metadata table under the new name
 ‘mean_counts’.</p>
-<div class="codewrapper sourceCode" id="cb33">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
