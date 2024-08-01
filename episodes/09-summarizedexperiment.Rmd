@@ -107,7 +107,33 @@ It was obtained from the vignette of the
 
 ![](fig/summarizedexperiment.svg){alt='Schematic representation of the SummarizedExperiment class.'}
 
-## Section
+## Creating a SummarizedExperiment object
+
+Let us first load the package:
+
+```{r, message=FALSE, warning=FALSE}
+library(SummarizedExperiment)
+```
+
+Then, let us import assay data from a file that we downloaded during the lesson
+setup.
+
+The file is a simple text file in which
+the first column contains made-up feature identifiers
+and all other columns contain simulated data for made-up samples.
+As such, we can use the base R function `read.csv` to parse the file
+into a `data.frame` object.
+
+In the example below, we indicate that the row names can be found in the first
+column, so that the function immediately sets the row names accordingly
+in the output object.
+Hadn't we specified it, the function would have parsed it as a regular column
+and left the row names to the default integer indexing.
+
+```{r}
+count_data <- read.csv("data/counts.csv", row.names = 1)
+count_data
+```
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
