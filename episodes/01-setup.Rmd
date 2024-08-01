@@ -57,6 +57,18 @@ download.file(
     url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/master/data/ActbOrf/actb_orfs.fasta", 
     destfile = "data/actb_orfs.fasta"
 )
+download.file(
+  url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/devel/data/SummarizedExperiment/counts.csv",
+  destfile = "data/actb_orfs.fasta"
+)
+download.file(
+  url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/devel/data/SummarizedExperiment/gene_metadata.csv",
+  destfile = "data/actb_orfs.fasta"
+)
+download.file(
+  url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/devel/data/SummarizedExperiment/sample_metadata.csv",
+  destfile = "data/actb_orfs.fasta"
+)
 ```
 
 :::::::::::::::::::::::::::::::::::::::::  callout
