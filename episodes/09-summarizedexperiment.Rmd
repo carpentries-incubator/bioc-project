@@ -135,5 +135,52 @@ count_data <- read.csv("data/counts.csv", row.names = 1)
 count_data
 ```
 
+One assay data matrix is enough to create a `SummarizedExperiment` object,
+although without sample metadata only unsupervised analyses -- that do not
+require information about the samples -- are possible.
+
+In the example below, we create a `SummarizedExperiment` object in which we
+store the matrix of count data under the name 'counts'.
+Note that the argument 'assays=' (plural) can accept more than one assay
+-- as discussed above -- which is why we encapsulate our only assay matrix
+in a named `list` that also gives us the opportunity to assign a name to the
+assay.
+Naming assays becomes crucial during workflows that contain multiple assays,
+in order to identify and retrieve individual assays unambiguously.
+
+```{r}
+se <- SummarizedExperiment(
+  assays = list(counts = count_data)
+)
+se
+```
+
+In the output above, the summary view of the object reminds us that the assay
+-- and thus the overall `SummarizedExperiment` object -- contains information
+for 25 features in 4 samples,
+it contains a single assay named 'counts',
+the features seem to be named from 'gene_1' to 'gene_25'
+(only the first and last ones are shown),
+and the samples are named from `sample_1` to `sample_4`.
+The object does not contain any row metadata nor column metadata.
+
+To create a more comprehensive `SummarizedExperiment` object,
+let us import gene metadata and sample metadata for another two files 
+that we downloaded during the lesson setup.
+
+The files are formatted similarly to the count data,
+so we use again the base R function `read.csv()` to parse them into `data.frame`
+objects.
+
+```{r}
+sample_metadata <- read.csv("data/sample_metadata.csv", row.names = 1)
+sample_metadata
+```
+
+```{r}
+gene_metadata <- read.csv("data/gene_metadata.csv", row.names = 1)
+gene_metadata
+```
+
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
