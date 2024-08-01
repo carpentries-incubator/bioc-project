@@ -202,5 +202,38 @@ Comparing the output above with the previous 'assay-only' version of the
 `SummarizedExperiment` object, we can see that the `rowData` and `colData`
 components now contain 1 and 4 metadata, respectively.
 
+## Accessing information in SummarizedExperiment objects
+
+A number of functions give access to the various components of
+`SummarizedExperiment` objects.
+
+The `assays()` function returns the list of assays stored in the object.
+The output is always a `List`, event if the object contains a single assay.
+
+```{r}
+assays(se)
+```
+
+The `assayNames()` function returns a character vector of the assay names.
+This is most useful when the object contains larger numbers of assays,
+as the `assays()` function (see above) may not display all of them.
+Knowing the names of the various assays is key to accessing any individual
+assay.
+
+```{r}
+assayNames(se)
+```
+
+The `assay()` function can be used to retrieve a single assay from the object.
+For this, the function should be given the name or the integer position of the
+desired assay.
+If unspecified, the function automatically returns the first assay in the
+object.
+
+```{r}
+head(assay(se, "counts"))
+```
+
+
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
