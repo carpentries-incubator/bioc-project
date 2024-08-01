@@ -356,7 +356,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Working with biological sequences</h1>
-        <p>Last updated on 2024-07-31 |
+        <p>Last updated on 2024-08-01 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/06-biological-sequences.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -466,7 +466,7 @@ sequence?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Yes, this is a valid DNA sequence using ambiguity codes defined in
 the <a href="https://en.wikipedia.org/wiki/Nucleic_acid_notation#IUPAC_notation" class="external-link">IUPAC</a>
@@ -655,7 +655,7 @@ respect ambiguity codes, or match them exactly.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The method <code>countPattern()</code> reports 3 hits, because the
 option <code>fixed = FALSE</code> allows the pattern <code>GM</code> to
@@ -792,7 +792,7 @@ represent?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <pre><code>&gt; setdiff(AA_PROTEINOGENIC, AA_STANDARD)
 [1] "U" "O"</code></pre>
@@ -935,7 +935,7 @@ for ACTB (<a href="https://www.uniprot.org/uniprot/P60709#sequences" class="exte
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <pre><code><span><span class="fu">width</span><span class="op">(</span><span class="va">actb_aa</span><span class="op">)</span></span>
 <span><span class="co"># or</span></span>
@@ -972,18 +972,12 @@ packages, as we demonstrate in the next section.</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">BSgenome</span><span class="op">)</span></span></code></pre>
 </div>
-<div class="codewrapper">
-<h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="warning" tabindex="0"><code>Warning: replacing previous import 'S4Arrays::makeNindexFromArrayViewport' by
-'DelayedArray::makeNindexFromArrayViewport' when loading 'SummarizedExperiment'</code></pre>
-</div>
 <p>With the package loaded and attached to the session, we have access
 to the package functions.</p>
 <p>In particular, the function
 <code>BSgenome::available.genomes()</code> can be used to display the
 names of Bioconductor packages that contain genome sequences.</p>
-<div class="codewrapper sourceCode" id="cb34">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1127,7 +1121,7 @@ be installed first. For instance, the example below demonstrates how the
 data package <em><a href="https://bioconductor.org/packages/3.19/BSgenome.Hsapiens.UCSC.hg38.masked" class="external-link">BSgenome.Hsapiens.UCSC.hg38.masked</a></em>
 can be installed using the function <code>BiocManager::install()</code>
 that we have seen before.</p>
-<div class="codewrapper sourceCode" id="cb37">
+<div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1138,7 +1132,7 @@ that we have seen before.</p>
 <h3 id="using-bsgenome-packages">Using BSgenome packages<a class="anchor" aria-label="anchor" href="#using-bsgenome-packages"></a></h3>
 <p>Once installed, BSgenome packages can be loaded like any other R
 package, using the <code>library()</code> function.</p>
-<div class="codewrapper sourceCode" id="cb38">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1148,7 +1142,7 @@ package, using the <code>library()</code> function.</p>
 the package and contains the genome sequence.</p>
 <p>Having loaded the package <em><a href="https://bioconductor.org/packages/3.19/BSgenome.Hsapiens.UCSC.hg38.masked" class="external-link">BSgenome.Hsapiens.UCSC.hg38.masked</a></em>
 above, we can display the BSgenome object as follows.</p>
-<div class="codewrapper sourceCode" id="cb39">
+<div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1182,7 +1176,7 @@ above, we can display the BSgenome object as follows.</p>
 <p>Given the length and the complexity of the object name, it is common
 practice to assign a copy of BSgenome objects to a new object simply
 called <code>genome</code>.</p>
-<div class="codewrapper sourceCode" id="cb41">
+<div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1197,7 +1191,7 @@ commonly used to access information in the object.</p>
 <p>For instance, the function <code>seqnames()</code> can be used get
 the list of sequence names (i.e., chromosomes and contigs) present in
 the object.</p>
-<div class="codewrapper sourceCode" id="cb42">
+<div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1565,7 +1559,7 @@ the object.</p>
 </div>
 <p>Similarly, the function <code>seqinfo()</code> can be used to get the
 full sequence information stored in the object.</p>
-<div class="codewrapper sourceCode" id="cb44">
+<div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1591,7 +1585,7 @@ full sequence information stored in the object.</p>
 <p>Finally, the nature of BSgenome objects being akin to a list of
 sequences, the operators <code>$</code> and <code>[[]]</code> can both
 be used to extract individual sequences from the BSgenome object.</p>
-<div class="codewrapper sourceCode" id="cb46">
+<div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1617,7 +1611,7 @@ all active masks together:
 </div>
 <p>For instance, we can extract the sequence of the Y chromosome and
 assign it to a new object <code>chrY</code>.</p>
-<div class="codewrapper sourceCode" id="cb48">
+<div class="codewrapper sourceCode" id="cb47">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1633,7 +1627,7 @@ package.</p>
 <p>For instance, the function <code>countPattern()</code> can be used to
 count the number of occurences of a given pattern in a given genome
 sequence.</p>
-<div class="codewrapper sourceCode" id="cb49">
+<div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1735,7 +1729,7 @@ objects.</li>
   "url": "https://carpentries-incubator.github.io/bioc-project/06-biological-sequences.html",
   "identifier": "https://carpentries-incubator.github.io/bioc-project/06-biological-sequences.html",
   "dateCreated": "2020-09-14",
-  "dateModified": "2024-07-31",
+  "dateModified": "2024-08-01",
   "datePublished": "2024-08-01"
 }
 
