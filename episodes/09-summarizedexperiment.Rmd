@@ -78,6 +78,10 @@ The `SummarizedExperiment` -- implemented in the
 that accommodates those essential aspects of individual experiments into a
 single object coordinates data and metadata during subsetting and reordering
 operations.
+Its flexibility accommodating many biological data types
+and comprehensive set of features make it a popular data
+structure re-used throughout the Bioconductor and a key part of the Bioconductor
+ecosystem to become familiar with for effective and robusts analyses.
 
 ## Class structure
 
@@ -136,7 +140,7 @@ count_data
 ```
 
 One assay data matrix is enough to create a `SummarizedExperiment` object,
-although without sample metadata only unsupervised analyses -- that do not
+although without sample metadata, only unsupervised analyses -- that do not
 require information about the samples -- are possible.
 
 In the example below, we create a `SummarizedExperiment` object in which we
@@ -181,6 +185,22 @@ sample_metadata
 gene_metadata <- read.csv("data/gene_metadata.csv", row.names = 1)
 gene_metadata
 ```
+
+We can re-create the `SummarizedExperiment` object, this time including
+the gene and sample metadata:
+
+```{r}
+se <- SummarizedExperiment(
+  assays = list(counts = count_data),
+  colData = sample_metadata,
+  rowData = gene_metadata
+)
+se
+```
+
+Comparing the output above with the previous 'assay-only' version of the
+`SummarizedExperiment` object, we can see that the `rowData` and `colData`
+components now contain 1 and 4 metadata, respectively.
 
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
