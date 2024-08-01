@@ -316,5 +316,16 @@ rowData(se)[["mean_counts"]] <- rowSums(assay(se, "counts"))
 rowData(se)
 ```
 
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- The `SummarizedExperiment` class provides a single container for storing both
+  assay data and metadata.
+- Assay data and metadata are kept synchronised through subsetting and
+  reordering operations.
+- A comprehensive set of functions are available to access, add, and edit
+  information stored in the various components of the `SummarizedExperiment`
+  objects.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 [biocviews]: https://www.bioconductor.org/packages/release/BiocViews.html
 [biomart-ensembl]: https://www.ensembl.org/biomart/martview
