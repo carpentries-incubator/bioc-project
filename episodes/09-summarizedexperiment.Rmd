@@ -81,7 +81,11 @@ operations.
 Its flexibility accommodating many biological data types
 and comprehensive set of features make it a popular data
 structure re-used throughout the Bioconductor and a key part of the Bioconductor
-ecosystem to become familiar with for effective and robusts analyses.
+ecosystem.
+For instance, familiarity with the `SummarizedExperiment` is a prerequisite
+for working with the `r BiocStyle::Biocpkg("DESeq2")` package for differential
+expression analysis, and the `r BiocStyle::Biocpkg("SingleCellExperiment")`
+extension class for single-cell analyses.
 
 ## Class structure
 
