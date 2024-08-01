@@ -14,13 +14,13 @@ download.file(
 )
 download.file(
   url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/devel/data/SummarizedExperiment/counts.csv",
-  destfile = "data/actb_orfs.fasta"
+  destfile = "data/counts.csv"
 )
 download.file(
   url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/devel/data/SummarizedExperiment/gene_metadata.csv",
-  destfile = "data/actb_orfs.fasta"
+  destfile = "data/gene_metadata.csv"
 )
 download.file(
   url = "https://raw.githubusercontent.com/Bioconductor/bioconductor-teaching/devel/data/SummarizedExperiment/sample_metadata.csv",
-  destfile = "data/actb_orfs.fasta"
+  destfile = "data/sample_metadata.csv"
 )
