@@ -303,10 +303,10 @@
               </div>
             </div>
 
-            <hr class="half-width"><div class="accordion accordion-flush resources" id="accordionFlush12">
+            <hr class="half-width"><div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwelve">
-                  <button class="accordion-button collapsed" id="resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
                     RESOURCES
                   </button>
                 </h2>
@@ -326,7 +326,7 @@
                 </div>
               </div>
             </div>
-            <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
+            <hr class="half-width lesson-resources"><a href="../instructor/aio.html">See all in one page</a>
 
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
@@ -398,8 +398,7 @@ infrastructure.</li>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="install-packages">Install packages<a class="anchor" aria-label="anchor" href="#install-packages"></a>
-<a class="anchor" aria-label="anchor" href="#install-packages"></a></h2>
+<section><h2 class="section-heading" id="install-packages">Install packages<a class="anchor" aria-label="anchor" href="#install-packages"></a></h2>
 <hr class="half-width"><p>Before we can proceed into the following sections, we install some
 Bioconductor packages that we will need. First, we check that the <em><a href="https://bioconductor.org/packages/3.19/BiocManager" class="external-link">BiocManager</a></em>
 package is installed before trying to use it; otherwise we install it.
@@ -419,8 +418,7 @@ the necessary packages.</p>
 <i class="callout-icon" data-feather="check"></i>
 </div>
 <div id="for-instructors" class="callout-inner">
-<h3 class="callout-title">For Instructors<a class="anchor" aria-label="anchor" href="#for-instructors"></a>
-</h3>
+<h3 class="callout-title">For Instructors</h3>
 <div class="callout-content">
 <p>The first part of this episode may look somewhat heavy on the theory.
 Do not be tempted to go into excessive details about the inner workings
@@ -434,8 +432,7 @@ novice users.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="s4-classes-and-methods">S4 classes and methods<a class="anchor" aria-label="anchor" href="#s4-classes-and-methods"></a>
-<a class="anchor" aria-label="anchor" href="#s4-classes-and-methods"></a></h2>
+</section><section><h2 class="section-heading" id="s4-classes-and-methods">S4 classes and methods<a class="anchor" aria-label="anchor" href="#s4-classes-and-methods"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="the-methods-package">The methods package<a class="anchor" aria-label="anchor" href="#the-methods-package"></a></h3>
 <p>The S4 class system is implemented in the base package <a href="https://stat.ethz.ch/R-manual/R-devel/library/methods/html/00Index.html" class="external-link">methods</a>.
@@ -541,8 +538,7 @@ called <a href="reference.html#s4-method-dispatch">method dispatch</a>
 takes place, whereby the class of the object is used to determine the
 appropriate method to execute.</p>
 </div>
-</section><section><h2 class="section-heading" id="the-s4vectors-package">The S4Vectors package<a class="anchor" aria-label="anchor" href="#the-s4vectors-package"></a>
-<a class="anchor" aria-label="anchor" href="#the-s4vectors-package"></a></h2>
+</section><section><h2 class="section-heading" id="the-s4vectors-package">The S4Vectors package<a class="anchor" aria-label="anchor" href="#the-s4vectors-package"></a></h2>
 <hr class="half-width"><p>The <em><a href="https://bioconductor.org/packages/3.19/S4Vectors" class="external-link">S4Vectors</a></em>
 package defines the <code>Vector</code> and <code>List</code> virtual
 classes and a set of generic functions that extend the semantic of
@@ -570,8 +566,7 @@ throughout the Bioconductor project (e.g., <em><a href="https://bioconductor.org
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="note" class="callout-inner">
-<h3 class="callout-title">Note<a class="anchor" aria-label="anchor" href="#note"></a>
-</h3>
+<h3 class="callout-title">Note</h3>
 <div class="callout-content">
 <p>The package startup messages printed in the console are worth noting
 that the <em><a href="https://bioconductor.org/packages/3.19/S4Vectors" class="external-link">S4Vectors</a></em>
@@ -590,8 +585,7 @@ e.g. <code>base::anyDuplicated()</code>.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="the-dataframe-class">The DataFrame class<a class="anchor" aria-label="anchor" href="#the-dataframe-class"></a>
-<a class="anchor" aria-label="anchor" href="#the-dataframe-class"></a></h2>
+</section><section><h2 class="section-heading" id="the-dataframe-class">The DataFrame class<a class="anchor" aria-label="anchor" href="#the-dataframe-class"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="an-extension-to-the-concept-of-rectangular-data">An extension to the concept of rectangular data<a class="anchor" aria-label="anchor" href="#an-extension-to-the-concept-of-rectangular-data"></a></h3>
 <p>The <code>DataFrame</code> class implemented in the <em><a href="https://bioconductor.org/packages/3.19/S4Vectors" class="external-link">S4Vectors</a></em>
@@ -740,8 +734,7 @@ name2         3           C       3.4</code></pre>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
-</h3>
+<h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Using the example above, what does <code>DF2["name1", ]</code>
 return? Why?</p>
@@ -753,7 +746,7 @@ return? Why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>&gt; DF2["name1", ]
 DataFrame with 1 row and 3 columns
@@ -794,8 +787,7 @@ results faced by unsuspecting users.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
-</h3>
+<h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Using the examples above, what are the outputs of
 <code>DF3["a", ]</code> and <code>df3["a", ]</code>? Why are they
@@ -808,7 +800,7 @@ different?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre><code>&gt; DF3["a", ]
 DataFrame with 1 row and 3 columns
@@ -963,8 +955,7 @@ Floats        double         3</code></pre>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="note-1" class="callout-inner">
-<h3 class="callout-title">Note<a class="anchor" aria-label="anchor" href="#note-1"></a>
-</h3>
+<h3 class="callout-title">Note</h3>
 <div class="callout-content">
 <p>The row names of the metadata columns are automatically set to match
 the column names of the parent <code>DataFrame</code>, clearly
@@ -973,8 +964,7 @@ indicating the pairing between columns and metadata.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="run-length-encoding-rle">Run-length encoding (RLE)<a class="anchor" aria-label="anchor" href="#run-length-encoding-rle"></a>
-<a class="anchor" aria-label="anchor" href="#run-length-encoding-rle"></a></h2>
+</section><section><h2 class="section-heading" id="run-length-encoding-rle">Run-length encoding (RLE)<a class="anchor" aria-label="anchor" href="#run-length-encoding-rle"></a></h2>
 <hr class="half-width"><div class="section level3">
 <h3 id="an-extension-to-the-concept-of-vector">An extension to the concept of vector<a class="anchor" aria-label="anchor" href="#an-extension-to-the-concept-of-vector"></a></h3>
 <p>Similarly to the <code>DataFrame</code> class implemented in the
@@ -1073,8 +1063,7 @@ vector-like objects.</p>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="going-further" class="callout-inner">
-<h3 class="callout-title">Going further<a class="anchor" aria-label="anchor" href="#going-further"></a>
-</h3>
+<h3 class="callout-title">Going further</h3>
 <div class="callout-content">
 <p>A number of standard operations with <code>Rle</code> objects are
 documented in the help page of the <code>Rle</code> class, accessible as
@@ -1088,8 +1077,7 @@ package, accessible using <code>browseVignettes("S4Vectors")</code>.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul><li>S4 classes store information in slots, and check the validity of the
 information every an object is updated.</li>
@@ -1143,7 +1131,7 @@ vectors in a memory-efficient format.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.6" class="external-link">sandpaper (0.16.6)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1166,7 +1154,7 @@ vectors in a memory-efficient format.</li>
   "identifier": "https://carpentries-incubator.github.io/bioc-project/instructor/05-s4.html",
   "dateCreated": "2020-09-14",
   "dateModified": "2024-08-06",
-  "datePublished": "2024-08-20"
+  "datePublished": "2024-08-27"
 }
 
   </script><script>
