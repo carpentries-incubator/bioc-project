@@ -186,10 +186,10 @@ listMarts()
 
 ``` output
                biomart                version
-1 ENSEMBL_MART_ENSEMBL      Ensembl Genes 112
-2   ENSEMBL_MART_MOUSE      Mouse strains 112
-3     ENSEMBL_MART_SNP  Ensembl Variation 112
-4 ENSEMBL_MART_FUNCGEN Ensembl Regulation 112
+1 ENSEMBL_MART_ENSEMBL      Ensembl Genes 113
+2   ENSEMBL_MART_MOUSE      Mouse strains 113
+3     ENSEMBL_MART_SNP  Ensembl Variation 113
+4 ENSEMBL_MART_FUNCGEN Ensembl Regulation 113
 ```
 
 In this demonstration, we will use the biomart called `ENSEMBL_MART_ENSEMBL`,
@@ -215,22 +215,22 @@ listEnsemblArchives()
 ``` output
              name     date                                 url version
 1  Ensembl GRCh37 Feb 2014          https://grch37.ensembl.org  GRCh37
-2     Ensembl 112 May 2024 https://may2024.archive.ensembl.org     112
-3     Ensembl 111 Jan 2024 https://jan2024.archive.ensembl.org     111
-4     Ensembl 110 Jul 2023 https://jul2023.archive.ensembl.org     110
-5     Ensembl 109 Feb 2023 https://feb2023.archive.ensembl.org     109
-6     Ensembl 108 Oct 2022 https://oct2022.archive.ensembl.org     108
-7     Ensembl 107 Jul 2022 https://jul2022.archive.ensembl.org     107
-8     Ensembl 106 Apr 2022 https://apr2022.archive.ensembl.org     106
-9     Ensembl 105 Dec 2021 https://dec2021.archive.ensembl.org     105
-10    Ensembl 104 May 2021 https://may2021.archive.ensembl.org     104
-11    Ensembl 103 Feb 2021 https://feb2021.archive.ensembl.org     103
-12    Ensembl 102 Nov 2020 https://nov2020.archive.ensembl.org     102
-13    Ensembl 101 Aug 2020 https://aug2020.archive.ensembl.org     101
-14    Ensembl 100 Apr 2020 https://apr2020.archive.ensembl.org     100
-15     Ensembl 99 Jan 2020 https://jan2020.archive.ensembl.org      99
-16     Ensembl 98 Sep 2019 https://sep2019.archive.ensembl.org      98
-17     Ensembl 97 Jul 2019 https://jul2019.archive.ensembl.org      97
+2     Ensembl 113 Oct 2024 https://oct2024.archive.ensembl.org     113
+3     Ensembl 112 May 2024 https://may2024.archive.ensembl.org     112
+4     Ensembl 111 Jan 2024 https://jan2024.archive.ensembl.org     111
+5     Ensembl 110 Jul 2023 https://jul2023.archive.ensembl.org     110
+6     Ensembl 109 Feb 2023 https://feb2023.archive.ensembl.org     109
+7     Ensembl 108 Oct 2022 https://oct2022.archive.ensembl.org     108
+8     Ensembl 107 Jul 2022 https://jul2022.archive.ensembl.org     107
+9     Ensembl 106 Apr 2022 https://apr2022.archive.ensembl.org     106
+10    Ensembl 105 Dec 2021 https://dec2021.archive.ensembl.org     105
+11    Ensembl 104 May 2021 https://may2021.archive.ensembl.org     104
+12    Ensembl 103 Feb 2021 https://feb2021.archive.ensembl.org     103
+13    Ensembl 102 Nov 2020 https://nov2020.archive.ensembl.org     102
+14    Ensembl 101 Aug 2020 https://aug2020.archive.ensembl.org     101
+15    Ensembl 100 Apr 2020 https://apr2020.archive.ensembl.org     100
+16     Ensembl 99 Jan 2020 https://jan2020.archive.ensembl.org      99
+17     Ensembl 98 Sep 2019 https://sep2019.archive.ensembl.org      98
 18     Ensembl 80 May 2015 https://may2015.archive.ensembl.org      80
 19     Ensembl 77 Oct 2014 https://oct2014.archive.ensembl.org      77
 20     Ensembl 75 Feb 2014 https://feb2014.archive.ensembl.org      75
@@ -463,19 +463,8 @@ getBM(
 )
 ```
 
-``` output
-  ensembl_gene_id hgnc_symbol chromosome_name start_position end_position
-1 ENSG00000133101       CCNA1              13       36431520     36442870
-2 ENSG00000134057       CCNB1               5       69167135     69178245
-3 ENSG00000145386       CCNA2               4      121816444    121823883
-4 ENSG00000147082       CCNB3               X       50202713     50351914
-5 ENSG00000157456       CCNB2              15       59105126     59125045
-  strand
-1      1
-2      1
-3     -1
-4      1
-5      1
+``` error
+Error in .processResults(postRes, mart = mart, hostURLsep = sep, fullXmlQuery = fullXmlQuery, : Query ERROR: caught BioMart::Exception::Database: Error during query execution: Table 'ensembl_mart_112.hsapiens_gene_ensembl__ox_hgnc__dm' doesn't exist
 ```
 
 Note that we also included the filtering attribute `ensembl_gene_id` to the
