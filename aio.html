@@ -406,7 +406,7 @@
         
 <section id="aio-01-setup"><p>Content from <a href="01-setup.html">Introduction and setup</a></p>
 <hr>
-<p>Last updated on 2024-11-05 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/01-setup.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -444,11 +444,11 @@ reproduce exactly the contents of this lesson.</li>
 <section><h2 class="section-heading" id="version-of-r">Version of R<a class="anchor" aria-label="anchor" href="#version-of-r"></a>
 </h2>
 <hr class="half-width">
-<p>This lesson was developed and tested with R version 4.4.1
-(2024-06-14).</p>
+<p>This lesson was developed and tested with R version 4.4.2
+(2024-10-31).</p>
 <p>Take a moment to launch RStudio and verify that you are using R
 version 4.4.x, with <code>x</code> being any patch version,
-e.g. 4.4.1.</p>
+e.g. 4.4.2.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -458,7 +458,7 @@ e.g. 4.4.1.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] "R version 4.4.1 (2024-06-14)"</code></pre>
+<pre class="output" tabindex="0"><code>[1] "R version 4.4.2 (2024-10-31)"</code></pre>
 </div>
 <p>This is important because Bioconductor uses the version of R running
 in the current session to determine the version of Bioconductor packages
@@ -539,7 +539,7 @@ that is easily accessible from an R session.</li>
 </div>
 </section></section><section id="aio-02-introduction-to-bioconductor"><p>Content from <a href="02-introduction-to-bioconductor.html">Introduction to Bioconductor</a></p>
 <hr>
-<p>Last updated on 2024-11-05 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/02-introduction-to-bioconductor.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1087,7 +1087,7 @@ advisory boards, as well as a Code of Conduct committee.</li>
 </div>
 </section></section><section id="aio-03-installing-bioconductor"><p>Content from <a href="03-installing-bioconductor.html">Installing Bioconductor packages</a></p>
 <hr>
-<p>Last updated on 2024-11-05 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/03-installing-bioconductor.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1291,9 +1291,58 @@ repository.</p>
 <code class="sourceCode R"><span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu">valid</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
+<h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="warning" tabindex="0"><code>Warning: 4 packages out-of-date; 0 packages too new</code></pre>
+</div>
+<div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] TRUE</code></pre>
+<pre class="output" tabindex="0"><code>
+* sessionInfo()
+
+R version 4.4.2 (2024-10-31)
+Platform: x86_64-pc-linux-gnu
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base
+
+other attached packages:
+[1] BiocStyle_2.32.1
+
+loaded via a namespace (and not attached):
+ [1] BiocManager_1.30.25 compiler_4.4.2      fastmap_1.2.0
+ [4] cli_3.6.3           htmltools_0.5.8.1   tools_4.4.2
+ [7] yaml_2.3.10         rmarkdown_2.29      knitr_1.48
+[10] digest_0.6.37       xfun_0.49           rlang_1.1.4
+[13] renv_1.0.11         evaluate_1.0.1
+
+Bioconductor version '3.19'
+
+  * 4 packages out-of-date
+  * 0 packages too new
+
+create a valid installation with
+
+  BiocManager::install(c(
+    "curl", "fontawesome", "knitr", "RSQLite"
+  ), update = TRUE, ask = FALSE, force = TRUE)
+
+more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date</code></pre>
 </div>
 <p>Conveniently, if any package can be updated, the function generates
 and displays the command needed to update those packages. Users simply
@@ -1368,7 +1417,7 @@ packages.</p>
 returns the complete list of package names that are can be installed
 from the Bioconductor and CRAN repositories. For instance the total
 number of numbers that could be installed using <em><a href="https://bioconductor.org/packages/3.19/BiocManager" class="external-link">BiocManager</a></em></p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1377,11 +1426,11 @@ number of numbers that could be installed using <em><a href="https://bioconducto
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] 25228</code></pre>
+<pre class="output" tabindex="0"><code>[1] 25295</code></pre>
 </div>
 <p>Specifically, the union of current Bioconductor repositories and
 other repositories on the search path can be displayed as follows.</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1437,7 +1486,7 @@ annotation resources (the original use case motivating it). For
 instance, a range of <a href="reference.html#annotationdata-package">Annotation data
 packages</a> available for the mouse model organism can be listed as
 follows.</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1462,7 +1511,7 @@ follows.</p>
 or update packages.</p>
 <p>The function takes a character vector of package names, and attempts
 to install them from the Bioconductor repository.</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1493,7 +1542,7 @@ other R package, using the base R function
 installed packages and updates index information as necessary. As a
 result, it will not be possible to attach the package to a session or
 browse the documentation of that package anymore.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1526,7 +1575,7 @@ entire R library to a specific version of Bioconductor.</li>
 </div>
 </section></section><section id="aio-04-getting-help"><p>Content from <a href="04-getting-help.html">Getting help</a></p>
 <hr>
-<p>Last updated on 2024-11-05 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/04-getting-help.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1893,7 +1942,7 @@ developers and ask questions.</li>
 </div>
 </section></section><section id="aio-05-s4"><p>Content from <a href="05-s4.html">S4 classes in Bioconductor</a></p>
 <hr>
-<p>Last updated on 2024-11-05 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/05-s4.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2292,7 +2341,7 @@ return? Why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <pre><code>&gt; DF2["name1", ]
 DataFrame with 1 row and 3 columns
@@ -2346,7 +2395,7 @@ different?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre><code>&gt; DF3["a", ]
 DataFrame with 1 row and 3 columns
@@ -2654,7 +2703,7 @@ vectors in a memory-efficient format.</li>
 </div>
 </section></section><section id="aio-06-biological-sequences"><p>Content from <a href="06-biological-sequences.html">Working with biological sequences</a></p>
 <hr>
-<p>Last updated on 2024-11-05 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/06-biological-sequences.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2764,7 +2813,7 @@ sequence?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Yes, this is a valid DNA sequence using ambiguity codes defined in
 the <a href="https://en.wikipedia.org/wiki/Nucleic_acid_notation#IUPAC_notation" class="external-link">IUPAC</a>
@@ -2955,7 +3004,7 @@ respect ambiguity codes, or match them exactly.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The method <code>countPattern()</code> reports 3 hits, because the
 option <code>fixed = FALSE</code> allows the pattern <code>GM</code> to
@@ -3094,7 +3143,7 @@ represent?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code>&gt; setdiff(AA_PROTEINOGENIC, AA_STANDARD)
 [1] "U" "O"</code></pre>
@@ -3237,7 +3286,7 @@ for ACTB (<a href="https://www.uniprot.org/uniprot/P60709#sequences" class="exte
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <pre><code><span><span class="fu">width</span><span class="op">(</span><span class="va">actb_aa</span><span class="op">)</span></span>
 <span><span class="co"># or</span></span>
@@ -3982,7 +4031,7 @@ objects.</li>
 </div>
 </section></section><section id="aio-07-genomic-ranges"><p>Content from <a href="07-genomic-ranges.html">Working with genomics ranges</a></p>
 <hr>
-<p>Last updated on 2024-11-05 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/07-genomic-ranges.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -4248,7 +4297,7 @@ constructor function.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5022,7 +5071,7 @@ what does this number represent biologically?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb61">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5161,7 +5210,7 @@ and export genomic ranges from and to common genomic file formats.</li>
 </div>
 </section></section><section id="aio-08-annotations"><p>Content from <a href="08-annotations.html">Working with annotations</a></p>
 <hr>
-<p>Last updated on 2024-11-05 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/08-annotations.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -6018,7 +6067,7 @@ their needs and expectations.</li>
 </div>
 </section></section><section id="aio-09-summarizedexperiment"><p>Content from <a href="09-summarizedexperiment.html">The SummarizedExperiment class</a></p>
 <hr>
-<p>Last updated on 2024-11-05 |
+<p>Last updated on 2024-11-19 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/09-summarizedexperiment.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -6603,8 +6652,8 @@ edit information stored in the various components of the
   "url": "https://carpentries-incubator.github.io/bioc-project/aio.html",
   "identifier": "https://carpentries-incubator.github.io/bioc-project/aio.html",
   "dateCreated": "2020-09-14",
-  "dateModified": "2024-11-12",
-  "datePublished": "2024-11-12"
+  "dateModified": "2024-11-19",
+  "datePublished": "2024-11-19"
 }
 
   </script><script>
