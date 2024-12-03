@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 652 198.4" style="enable-background:new 0 0 652 198.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'ArialMT';}
+	.st1{font-size:10px;}
+	.st2{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+	.st3{fill:#FFFFFF;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st4{fill:#E30613;}
+	.st5{font-family:'FiraCode-Regular';}
+	.st6{fill:#009640;}
+	.st7{fill:#312783;}
+	.st8{fill:#F39200;}
+	.st9{fill:#706F6F;}
+</style>
+<text transform="matrix(1 0 0 1 357.894 95.7888)" class="st0 st1">Run-length encoding</text>
+<g>
+	<g>
+		<line class="st2" x1="336.5" y1="75.7" x2="336.5" y2="105.5"/>
+		<g>
+			<polygon points="332.7,104.4 336.5,110.9 340.2,104.4 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<rect x="136.4" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 140.2273 44.702)" class="st4 st5 st1">A</text>
+	<rect x="150.2" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 153.9954 44.702)" class="st6 st5 st1">T</text>
+	<rect x="164" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 167.7636 44.702)" class="st7 st5 st1">G</text>
+	<rect x="177.7" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 181.5317 44.702)" class="st8 st5 st1">C</text>
+	<rect x="191.5" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 195.2998 44.702)" class="st9 st5 st1">N</text>
+	<rect x="205.3" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 209.0679 44.702)" class="st9 st5 st1">N</text>
+	<rect x="219.2" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 223.0004 44.702)" class="st9 st5 st1">N</text>
+	<rect x="233" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 236.7685 44.702)" class="st9 st5 st1">N</text>
+	<rect x="246.9" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 250.7011 44.702)" class="st9 st5 st1">N</text>
+	<rect x="260.7" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 264.4692 44.702)" class="st9 st5 st1">N</text>
+	<rect x="274.6" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 278.4017 44.702)" class="st9 st5 st1">N</text>
+	<rect x="288.4" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 292.1698 44.702)" class="st9 st5 st1">N</text>
+	<rect x="302.1" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 305.9379 44.702)" class="st4 st5 st1">A</text>
+	<rect x="315.9" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 319.7061 44.702)" class="st4 st5 st1">A</text>
+	<rect x="329.7" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 333.4742 44.702)" class="st7 st5 st1">G</text>
+	<rect x="343.4" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 347.2423 44.702)" class="st8 st5 st1">C</text>
+	<rect x="357.2" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 361.0104 44.702)" class="st9 st5 st1">N</text>
+	<rect x="371" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 374.7785 44.702)" class="st9 st5 st1">N</text>
+	<rect x="384.9" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 388.711 44.702)" class="st9 st5 st1">N</text>
+	<rect x="398.7" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 402.4792 44.702)" class="st9 st5 st1">N</text>
+	<rect x="412.6" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 416.4117 44.702)" class="st9 st5 st1">N</text>
+	<rect x="426.4" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 430.1798 44.702)" class="st9 st5 st1">N</text>
+	<rect x="440.3" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 444.1124 44.702)" class="st9 st5 st1">N</text>
+	<rect x="454.1" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 457.8805 44.702)" class="st9 st5 st1">N</text>
+	<rect x="495.2" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 499.02 44.702)" class="st6 st5 st1">T</text>
+	<rect x="509" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 512.7881 44.702)" class="st7 st5 st1">G</text>
+	<rect x="522.7" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 526.5562 44.702)" class="st8 st5 st1">C</text>
+	<rect x="467.7" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 471.4838 44.702)" class="st9 st5 st1">N</text>
+	<rect x="481.4" y="34.3" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 485.2519 44.702)" class="st9 st5 st1">N</text>
+</g>
+<g>
+	<rect x="253.7" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 257.5027 142.0193)" class="st4 st5 st1">A</text>
+	<rect x="267.5" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 271.2708 142.0193)" class="st6 st5 st1">T</text>
+	<rect x="281.2" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 285.0389 142.0193)" class="st7 st5 st1">G</text>
+	<rect x="295" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 298.8071 142.0193)" class="st8 st5 st1">C</text>
+	<rect x="308.8" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 312.5752 142.0193)" class="st9 st5 st1">N</text>
+	<rect x="322.7" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 326.5077 142.0193)" class="st4 st5 st1">A</text>
+	<rect x="336.5" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 340.2754 142.0193)" class="st7 st5 st1">G</text>
+	<rect x="350.2" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 354.0435 142.0193)" class="st8 st5 st1">C</text>
+	<rect x="364" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 367.8116 142.0193)" class="st9 st5 st1">N</text>
+	<rect x="253.7" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 257.5027 155.7875)" class="st4 st5 st1">1</text>
+	<rect x="267.5" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 271.2708 155.7875)" class="st6 st5 st1">1</text>
+	<rect x="281.2" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 285.0389 155.7875)" class="st7 st5 st1">1</text>
+	<rect x="295" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 298.807 155.7875)" class="st8 st5 st1">1</text>
+	<rect x="308.8" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 312.5752 155.7875)" class="st9 st5 st1">8</text>
+	<rect x="322.7" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 326.5077 155.7875)" class="st4 st5 st1">2</text>
+	<rect x="336.5" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 340.2754 155.7875)" class="st7 st5 st1">1</text>
+	<rect x="350.2" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 354.0435 155.7875)" class="st8 st5 st1">1</text>
+	<rect x="364" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 364.7345 155.7875)" class="st9 st5 st1">10</text>
+	<rect x="377.9" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 381.7446 142.0193)" class="st6 st5 st1">T</text>
+	<rect x="391.7" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 395.5127 142.0193)" class="st7 st5 st1">G</text>
+	<rect x="405.5" y="131.6" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 409.2808 142.0193)" class="st8 st5 st1">C</text>
+	<rect x="377.9" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 381.7446 155.7875)" class="st6 st5 st1">1</text>
+	<rect x="391.7" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 395.5127 155.7875)" class="st7 st5 st1">1</text>
+	<rect x="405.5" y="145.4" class="st3" width="13.8" height="13.8"/>
+	<text transform="matrix(1 0 0 1 409.2808 155.7875)" class="st8 st5 st1">1</text>
+</g>
+</svg>

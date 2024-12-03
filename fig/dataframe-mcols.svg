@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 652 198.4" style="enable-background:new 0 0 652 198.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EDEDED;stroke:#706F6F;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+	.st2{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st3{font-family:'ArialMT';}
+	.st4{font-size:12px;}
+	.st5{font-family:'FiraCode-Regular';}
+	.st6{font-size:10px;}
+	.st7{fill:none;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}
+</style>
+<rect x="452" y="15.5" class="st0" width="187.1" height="71.1"/>
+<rect x="7.3" y="107" class="st0" width="187.1" height="85.2"/>
+<rect x="218" y="128.8" class="st1" width="32.6" height="13.8"/>
+<rect x="250.7" y="128.8" class="st1" width="32.6" height="13.8"/>
+<rect x="218" y="142.6" class="st1" width="32.6" height="13.8"/>
+<rect x="250.7" y="142.6" class="st1" width="32.6" height="13.8"/>
+<rect x="218" y="156.3" class="st1" width="32.6" height="13.8"/>
+<rect x="250.7" y="156.3" class="st1" width="32.6" height="13.8"/>
+<rect x="344.5" y="42.1" class="st1" width="44.7" height="13.8"/>
+<rect x="344.5" y="55.9" class="st1" width="44.7" height="13.8"/>
+<rect x="218" y="115" class="st2" width="32.6" height="13.8"/>
+<text transform="matrix(1 0 0 1 230.3486 125.4315)" class="st3 st4">A</text>
+<rect x="250.7" y="115" class="st2" width="32.6" height="13.8"/>
+<text transform="matrix(1 0 0 1 262.9573 125.4315)" class="st3 st4">B</text>
+<rect x="311.9" y="42.1" class="st2" width="32.6" height="13.8"/>
+<text transform="matrix(1 0 0 1 324.1729 52.5013)" class="st3 st4">A</text>
+<rect x="311.9" y="55.9" class="st2" width="32.6" height="13.8"/>
+<text transform="matrix(1 0 0 1 324.1729 66.2695)" class="st3 st4">B</text>
+<rect x="344.5" y="28.3" class="st2" width="44.7" height="13.8"/>
+<text transform="matrix(1 0 0 1 350.1714 38.7334)" class="st3 st4">meta1</text>
+<polyline class="st1" points="389.2,42.1 434,42.1 434,55.9 389.2,55.9 "/>
+<polyline class="st1" points="389.2,55.9 434,55.9 434,69.6 389.2,69.6 "/>
+<polyline class="st2" points="389.2,28.3 434,28.3 434,42.1 389.2,42.1 "/>
+<text transform="matrix(1 0 0 1 394.9074 38.7334)" class="st3 st4">meta2</text>
+<text transform="matrix(1 0 0 1 16.3249 128.9512)"><tspan x="0" y="0" class="st5 st6">&gt; DF = DataFrame(</tspan><tspan x="0" y="12" class="st5 st6">  A = ...,</tspan><tspan x="0" y="24" class="st5 st6">  B =...,</tspan><tspan x="0" y="36" class="st5 st6">  row.names = c(&quot;A&quot;, &quot;B&quot;)</tspan><tspan x="0" y="48" class="st5 st6">)</tspan></text>
+<text transform="matrix(1 0 0 1 464.2264 35.211)"><tspan x="0" y="0" class="st5 st6">&gt; mcols(DF) = DataFrame(</tspan><tspan x="0" y="12" class="st5 st6">  meta1 = ...,</tspan><tspan x="0" y="24" class="st5 st6">  meta2 =...</tspan><tspan x="0" y="36" class="st5 st6">)</tspan></text>
+<path class="st7" d="M218,115c0-40.3,42-72.9,93.8-72.9"/>
+<path class="st7" d="M283.3,115c0-25.1,12.8-45.4,28.6-45.4"/>
+</svg>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 887.7 253.7" style="enable-background:new 0 0 887.7 253.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-linecap:square;stroke-miterlimit:10;}
+	.st1{font-family:'FiraCode-Regular';}
+	.st2{font-size:11px;}
+	.st3{fill:#98D6F2;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+	.st5{fill:#FBDDEA;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+	.st6{font-family:'ArialMT';}
+	.st7{font-size:12px;}
+	.st8{font-size:8px;}
+	.st9{fill:none;stroke:#98D6F2;stroke-miterlimit:10;}
+	.st10{fill:none;stroke:#FBDDEA;stroke-miterlimit:10;}
+</style>
+<g>
+	<g>
+		<line class="st0" x1="208.9" y1="139.5" x2="672" y2="139.5"/>
+		<g>
+			<polygon points="670.6,144.5 679.2,139.5 670.6,134.5 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 207.2933 131.3103)" class="st1 st2">...ATCGCTCGCTCGCTCGCTGCGGCTCTCTATAAATAATCTCTATATAGATATATAAAAGTAG...</text>
+<rect x="228.4" y="75" class="st3" width="84.2" height="10.8"/>
+<g>
+	<g>
+		<line class="st4" x1="312.7" y1="80.4" x2="359" y2="80.4"/>
+		<g>
+			<polygon points="358.2,83.2 363.1,80.4 358.2,77.6 			"/>
+		</g>
+	</g>
+</g>
+<rect x="363.1" y="75" class="st3" width="84.2" height="10.8"/>
+<g>
+	<g>
+		<line class="st4" x1="312.2" y1="100.1" x2="358.7" y2="100.1"/>
+		<g>
+			<polygon points="357.9,102.9 362.8,100.1 357.9,97.3 			"/>
+		</g>
+	</g>
+</g>
+<rect x="250.5" y="94.7" class="st3" width="61.7" height="10.8"/>
+<rect x="362.8" y="94.7" class="st3" width="84.5" height="10.8"/>
+<rect x="487.7" y="153.7" class="st5" width="24.5" height="10.8"/>
+<g>
+	<g>
+		<line class="st4" x1="516.3" y1="159.1" x2="609" y2="159.1"/>
+		<g>
+			<polygon points="517.1,161.9 512.2,159.1 517.1,156.3 			"/>
+		</g>
+	</g>
+</g>
+<rect x="609" y="153.7" class="st5" width="36.9" height="10.8"/>
+<g>
+	<g>
+		<line class="st4" x1="515.8" y1="178.9" x2="562.3" y2="178.9"/>
+		<g>
+			<polygon points="516.6,181.7 511.8,178.9 516.6,176.1 			"/>
+		</g>
+	</g>
+</g>
+<rect x="500.9" y="173.5" class="st5" width="10.8" height="10.8"/>
+<rect x="562.3" y="173.5" class="st5" width="25.2" height="10.8"/>
+<g>
+	<g>
+		<line class="st4" x1="591.6" y1="178.9" x2="609" y2="178.9"/>
+		<g>
+			<polygon points="592.4,181.7 587.5,178.9 592.4,176.1 			"/>
+		</g>
+	</g>
+</g>
+<rect x="609" y="173.5" class="st5" width="36.9" height="10.8"/>
+<text transform="matrix(1 0 0 1 722.097 139.623)" class="st6 st7">chr1</text>
+<text transform="matrix(1 0 0 1 259.6622 82.7515)" class="st6 st8">exon1</text>
+<text transform="matrix(1 0 0 1 394.2903 82.7518)" class="st6 st8">exon2</text>
+<text transform="matrix(1 0 0 1 270.4619 102.4843)" class="st6 st8">exon3</text>
+<text transform="matrix(1 0 0 1 394.1415 102.4843)" class="st6 st8">exon4</text>
+<text transform="matrix(1 0 0 1 489.0323 161.9028)" class="st6 st8">exon6</text>
+<text transform="matrix(1 0 0 1 616.5749 161.9029)" class="st6 st8">exon5</text>
+<text transform="matrix(1 0 0 1 501.8944 181.7408)" class="st6 st8">e9</text>
+<text transform="matrix(1 0 0 1 564.043 181.7404)" class="st6 st8">exon8</text>
+<text transform="matrix(1 0 0 1 616.5748 181.7405)" class="st6 st8">exon7</text>
+<text transform="matrix(1 0 0 1 187.462 82.8398)" class="st6 st8">transcript1</text>
+<text transform="matrix(1 0 0 1 209.7738 102.4843)" class="st6 st8">transcript2</text>
+<text transform="matrix(1 0 0 1 445.1668 161.9911)" class="st6 st8">transcript3</text>
+<text transform="matrix(1 0 0 1 457.9441 181.8284)" class="st6 st8">transcript4</text>
+<text transform="matrix(1 0 0 1 142.3045 92.7699)" class="st6 st8">gene1</text>
+<text transform="matrix(1 0 0 1 391.5492 172.9483)" class="st6 st8">gene2</text>
+<rect x="176.2" y="65.8" class="st9" width="282.5" height="48.4"/>
+<rect x="435.4" y="145.9" class="st10" width="220.8" height="48.4"/>
+</svg>
