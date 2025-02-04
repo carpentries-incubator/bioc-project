@@ -149,7 +149,7 @@ BiocManager::valid()
 ```
 
 ``` warning
-Warning: 4 packages out-of-date; 0 packages too new
+Warning: 21 packages out-of-date; 0 packages too new
 ```
 
 ``` output
@@ -184,17 +184,19 @@ loaded via a namespace (and not attached):
  [4] cli_3.6.3           htmltools_0.5.8.1   tools_4.4.2        
  [7] yaml_2.3.10         rmarkdown_2.29      knitr_1.48         
 [10] digest_0.6.37       xfun_0.49           rlang_1.1.4        
-[13] renv_1.0.11         evaluate_1.0.1     
+[13] renv_1.1.0          evaluate_1.0.1     
 
 Bioconductor version '3.19'
 
-  * 4 packages out-of-date
+  * 21 packages out-of-date
   * 0 packages too new
 
 create a valid installation with
 
   BiocManager::install(c(
-    "curl", "fontawesome", "knitr", "RSQLite"
+    "BH", "bit", "bit64", "bookdown", "bslib", "cpp11", "curl", "evaluate",
+    "fontawesome", "httr2", "knitr", "lubridate", "matrixStats", "openssl",
+    "pillar", "Rcpp", "renv", "rlang", "RSQLite", "xfun", "XML"
   ), update = TRUE, ask = FALSE, force = TRUE)
 
 more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
@@ -273,7 +275,7 @@ length(BiocManager::available())
 ```
 
 ``` output
-[1] 25295
+[1] 25603
 ```
 
 Specifically, the union of current Bioconductor repositories and other repositories on the search path can be displayed as follows.
