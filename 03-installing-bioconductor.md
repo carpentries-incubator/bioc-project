@@ -149,14 +149,14 @@ BiocManager::valid()
 ```
 
 ``` warning
-Warning: 27 packages out-of-date; 0 packages too new
+Warning: 28 packages out-of-date; 0 packages too new
 ```
 
 ``` output
 
 * sessionInfo()
 
-R version 4.4.2 (2024-10-31)
+R version 4.4.3 (2025-02-28)
 Platform: x86_64-pc-linux-gnu
 Running under: Ubuntu 22.04.5 LTS
 
@@ -180,15 +180,15 @@ other attached packages:
 [1] BiocStyle_2.32.1
 
 loaded via a namespace (and not attached):
- [1] BiocManager_1.30.25 compiler_4.4.2      fastmap_1.2.0      
- [4] cli_3.6.3           htmltools_0.5.8.1   tools_4.4.2        
+ [1] BiocManager_1.30.25 compiler_4.4.3      fastmap_1.2.0      
+ [4] cli_3.6.3           htmltools_0.5.8.1   tools_4.4.3        
  [7] yaml_2.3.10         rmarkdown_2.29      knitr_1.48         
 [10] digest_0.6.37       xfun_0.49           rlang_1.1.4        
 [13] renv_1.1.2          evaluate_1.0.1     
 
 Bioconductor version '3.19'
 
-  * 27 packages out-of-date
+  * 28 packages out-of-date
   * 0 packages too new
 
 create a valid installation with
@@ -196,8 +196,8 @@ create a valid installation with
   BiocManager::install(c(
     "BH", "bit", "bit64", "bookdown", "bslib", "cli", "cpp11", "curl",
     "evaluate", "fontawesome", "httr2", "jsonlite", "knitr", "lubridate",
-    "matrixStats", "openssl", "pillar", "purrr", "R6", "Rcpp", "renv", "rlang",
-    "RSQLite", "tinytex", "xfun", "XML", "xml2"
+    "matrixStats", "mime", "openssl", "pillar", "purrr", "R6", "Rcpp", "renv",
+    "rlang", "RSQLite", "tinytex", "xfun", "XML", "xml2"
   ), update = TRUE, ask = FALSE, force = TRUE)
 
 more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
@@ -276,7 +276,7 @@ length(BiocManager::available())
 ```
 
 ``` output
-[1] 25754
+[1] 25836
 ```
 
 Specifically, the union of current Bioconductor repositories and other repositories on the search path can be displayed as follows.
