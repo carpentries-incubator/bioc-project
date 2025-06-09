@@ -32,6 +32,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       RENV_PATHS_ROOT: ~/.local/share/renv/
+      RENV_DOWNLOAD_METHOD: "curl"
     steps:
 
       - name: "Checkout Lesson"
@@ -46,15 +47,20 @@ jobs:
       - name: "Set up Pandoc"
         uses: r-lib/actions/setup-pandoc@v2
 
+      - name: "Install system dependencies"
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+
       - name: "Setup Lesson Engine"
         uses: carpentries/actions/setup-sandpaper@main
         with:
-          cache-version: ${{ secrets.CACHE_VERSION }}
+          cache-version: ${{ secrets.CACHE_VERSION || 'default' }}
 
       - name: "Setup Package Cache"
         uses: carpentries/actions/setup-lesson-deps@main
         with:
-          cache-version: ${{ secrets.CACHE_VERSION }}
+          cache-version: ${{ secrets.CACHE_VERSION || 'default' }}
 
       - name: "Deploy Site"
         run: |
