@@ -87,7 +87,7 @@ jobs:
           ))
           options(timeout = 300)
           Sys.setenv(RENV_DOWNLOAD_METHOD = "curl")
-          Sys.setenv(RENV_DOWNLOAD_FILE_METHOD = getOption("download.file.method"))
+          Sys.setenv(RENV_DOWNLOAD_FILE_METHOD = getOption("download.file.method", "auto"))
         shell: Rscript {0}
 
       - name: "Setup Package Cache"
