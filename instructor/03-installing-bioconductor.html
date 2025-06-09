@@ -20,7 +20,7 @@
       <div class="large-logo">
         <img id="incubator-logo" alt="Carpentries Incubator" src="../assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
           <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
-            <a href="https://cdh.carpentries.org/the-lesson-life-cycle.html#early-development-pre-alpha-through-alpha" class="external-link alert-link">
+            <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
               <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
               Pre-Alpha
             </a>
@@ -358,7 +358,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Installing Bioconductor packages</h1>
-        <p>Last updated on 2025-04-01 |
+        <p>Last updated on 2025-06-09 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/03-installing-bioconductor.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -558,9 +558,59 @@ repository.</p>
 <code class="sourceCode R"><span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu">valid</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
+<h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="warning" tabindex="0"><code>Warning: 15 packages out-of-date; 0 packages too new</code></pre>
+</div>
+<div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] TRUE</code></pre>
+<pre class="output" tabindex="0"><code>
+* sessionInfo()
+
+R version 4.4.3 (2025-02-28)
+Platform: x86_64-pc-linux-gnu
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3
+LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C
+
+time zone: UTC
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base
+
+other attached packages:
+[1] BiocStyle_2.32.1
+
+loaded via a namespace (and not attached):
+ [1] BiocManager_1.30.25 compiler_4.4.3      fastmap_1.2.0
+ [4] cli_3.6.4           htmltools_0.5.8.1   tools_4.4.3
+ [7] yaml_2.3.10         rmarkdown_2.29      knitr_1.50
+[10] digest_0.6.37       xfun_0.51           rlang_1.1.5
+[13] renv_1.1.4          evaluate_1.0.3
+
+Bioconductor version '3.19'
+
+  * 15 packages out-of-date
+  * 0 packages too new
+
+create a valid installation with
+
+  BiocManager::install(c(
+    "BiocManager", "bookdown", "cli", "curl", "fs", "generics", "openssl",
+    "pillar", "rlang", "RSQLite", "sass", "tibble", "tinytex", "utf8", "xfun"
+  ), update = TRUE, ask = FALSE, force = TRUE)
+
+more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date</code></pre>
 </div>
 <p>Conveniently, if any package can be updated, the function generates
 and displays the command needed to update those packages. Users simply
@@ -633,7 +683,7 @@ packages.</p>
 returns the complete list of package names that are can be installed
 from the Bioconductor and CRAN repositories. For instance the total
 number of numbers that could be installed using <em><a href="https://bioconductor.org/packages/3.19/BiocManager" class="external-link">BiocManager</a></em></p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -642,11 +692,11 @@ number of numbers that could be installed using <em><a href="https://bioconducto
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] 25873</code></pre>
+<pre class="output" tabindex="0"><code>[1] 26105</code></pre>
 </div>
 <p>Specifically, the union of current Bioconductor repositories and
 other repositories on the search path can be displayed as follows.</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -670,7 +720,7 @@ other repositories on the search path can be displayed as follows.</p>
 <span>                                     <span class="va">carpentries_archive</span></span>
 <span>                    <span class="st">"https://carpentries.github.io/drat"</span></span>
 <span>                                                    <span class="va">CRAN</span></span>
-<span>                              <span class="st">"https://cran.rstudio.com"</span> </span></code></pre>
+<span>                           <span class="st">"https://cloud.r-project.org"</span> </span></code></pre>
 </div>
 <p>Each repository URL can be accessed in a web browser, displaying the
 full list of packages available from that repository. For instance,
@@ -702,7 +752,7 @@ annotation resources (the original use case motivating it). For
 instance, a range of <a href="reference.html#annotationdata-package">Annotation data
 packages</a> available for the mouse model organism can be listed as
 follows.</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -725,7 +775,7 @@ follows.</p>
 or update packages.</p>
 <p>The function takes a character vector of package names, and attempts
 to install them from the Bioconductor repository.</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -754,7 +804,7 @@ other R package, using the base R function
 installed packages and updates index information as necessary. As a
 result, it will not be possible to attach the package to a session or
 browse the documentation of that package anymore.</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -819,7 +869,7 @@ entire R library to a specific version of Bioconductor.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.11" class="external-link">sandpaper (0.16.11)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.5" class="external-link">varnish (1.0.5)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.12" class="external-link">sandpaper (0.16.12)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.6" class="external-link">varnish (1.0.6)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -830,10 +880,10 @@ entire R library to a specific version of Bioconductor.</li>
   <script type="application/ld+json">
     {
   "@context": "https://schema.org",
-  "@type": "TrainingMaterial",
+  "@type": "LearningResource",
   "@id": "https://carpentries-incubator.github.io/bioc-project/instructor/03-installing-bioconductor.html",
   "inLanguage": "en",
-  "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+  "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Installing Bioconductor packages",
@@ -841,8 +891,8 @@ entire R library to a specific version of Bioconductor.</li>
   "url": "https://carpentries-incubator.github.io/bioc-project/instructor/03-installing-bioconductor.html",
   "identifier": "https://carpentries-incubator.github.io/bioc-project/instructor/03-installing-bioconductor.html",
   "dateCreated": "2020-09-14",
-  "dateModified": "2025-04-01",
-  "datePublished": "2025-04-15"
+  "dateModified": "2025-06-09",
+  "datePublished": "2025-06-09"
 }
 
   </script><script>
