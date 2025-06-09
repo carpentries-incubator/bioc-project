@@ -547,7 +547,7 @@ Replacement repositories:
     BioCexp: https://bioconductor.org/packages/3.19/data/experiment
     BioCworkflows: https://bioconductor.org/packages/3.19/workflows
     BioCbooks: https://bioconductor.org/packages/3.19/books
-    CRAN: https://cran.rstudio.com
+    CRAN: https://cloud.r-project.org
 ```
 
 ``` output
