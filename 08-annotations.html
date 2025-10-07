@@ -357,7 +357,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Working with annotations</h1>
-        <p>Last updated on 2025-07-01 |
+        <p>Last updated on 2025-10-07 |
 
         <a href="https://github.com/carpentries-incubator/bioc-project/edit/main/episodes/08-annotations.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -541,10 +541,10 @@ updated list of names if any mart is renamed, added, or removed.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>               biomart                version
-1 ENSEMBL_MART_ENSEMBL      Ensembl Genes 114
-2   ENSEMBL_MART_MOUSE      Mouse strains 114
-3     ENSEMBL_MART_SNP  Ensembl Variation 114
-4 ENSEMBL_MART_FUNCGEN Ensembl Regulation 114</code></pre>
+1 ENSEMBL_MART_ENSEMBL      Ensembl Genes 115
+2   ENSEMBL_MART_MOUSE      Mouse strains 115
+3     ENSEMBL_MART_SNP  Ensembl Variation 115
+4 ENSEMBL_MART_FUNCGEN Ensembl Regulation 115</code></pre>
 </div>
 <p>In this demonstration, we will use the biomart called
 <code>ENSEMBL_MART_ENSEMBL</code>, which contains the Ensembl gene
@@ -569,22 +569,22 @@ display all the versions of Ensembl Biomart accessible.</p>
 </h3>
 <pre class="output" tabindex="0"><code>             name     date                                 url version
 1  Ensembl GRCh37 Feb 2014          https://grch37.ensembl.org  GRCh37
-2     Ensembl 114 May 2025 https://may2025.archive.ensembl.org     114
-3     Ensembl 113 Oct 2024 https://oct2024.archive.ensembl.org     113
-4     Ensembl 112 May 2024 https://may2024.archive.ensembl.org     112
-5     Ensembl 111 Jan 2024 https://jan2024.archive.ensembl.org     111
-6     Ensembl 110 Jul 2023 https://jul2023.archive.ensembl.org     110
-7     Ensembl 109 Feb 2023 https://feb2023.archive.ensembl.org     109
-8     Ensembl 108 Oct 2022 https://oct2022.archive.ensembl.org     108
-9     Ensembl 107 Jul 2022 https://jul2022.archive.ensembl.org     107
-10    Ensembl 106 Apr 2022 https://apr2022.archive.ensembl.org     106
-11    Ensembl 105 Dec 2021 https://dec2021.archive.ensembl.org     105
-12    Ensembl 104 May 2021 https://may2021.archive.ensembl.org     104
-13    Ensembl 103 Feb 2021 https://feb2021.archive.ensembl.org     103
-14    Ensembl 102 Nov 2020 https://nov2020.archive.ensembl.org     102
-15    Ensembl 101 Aug 2020 https://aug2020.archive.ensembl.org     101
-16    Ensembl 100 Apr 2020 https://apr2020.archive.ensembl.org     100
-17     Ensembl 99 Jan 2020 https://jan2020.archive.ensembl.org      99
+2     Ensembl 115 Sep 2025 https://sep2025.archive.ensembl.org     115
+3     Ensembl 114 May 2025 https://may2025.archive.ensembl.org     114
+4     Ensembl 113 Oct 2024 https://oct2024.archive.ensembl.org     113
+5     Ensembl 112 May 2024 https://may2024.archive.ensembl.org     112
+6     Ensembl 111 Jan 2024 https://jan2024.archive.ensembl.org     111
+7     Ensembl 110 Jul 2023 https://jul2023.archive.ensembl.org     110
+8     Ensembl 109 Feb 2023 https://feb2023.archive.ensembl.org     109
+9     Ensembl 108 Oct 2022 https://oct2022.archive.ensembl.org     108
+10    Ensembl 107 Jul 2022 https://jul2022.archive.ensembl.org     107
+11    Ensembl 106 Apr 2022 https://apr2022.archive.ensembl.org     106
+12    Ensembl 105 Dec 2021 https://dec2021.archive.ensembl.org     105
+13    Ensembl 104 May 2021 https://may2021.archive.ensembl.org     104
+14    Ensembl 103 Feb 2021 https://feb2021.archive.ensembl.org     103
+15    Ensembl 102 Nov 2020 https://nov2020.archive.ensembl.org     102
+16    Ensembl 101 Aug 2020 https://aug2020.archive.ensembl.org     101
+17    Ensembl 100 Apr 2020 https://apr2020.archive.ensembl.org     100
 18     Ensembl 80 May 2015 https://may2015.archive.ensembl.org      80
 19     Ensembl 77 Oct 2014 https://oct2014.archive.ensembl.org      77
 20     Ensembl 75 Feb 2014 https://feb2014.archive.ensembl.org      75
@@ -815,9 +815,20 @@ attributes to include in their query.</p>
 <span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in .processResults(postRes, mart = mart, hostURLsep = sep, fullXmlQuery = fullXmlQuery, : Query ERROR: caught BioMart::Exception::Database: Error during query execution: Table 'ensembl_mart_112.hsapiens_gene_ensembl__ox_hgnc__dm' doesn't exist</code></pre>
+<pre class="output" tabindex="0"><code>  ensembl_gene_id hgnc_symbol chromosome_name start_position end_position
+1 ENSG00000133101       CCNA1              13       36431520     36442870
+2 ENSG00000134057       CCNB1               5       69167135     69178245
+3 ENSG00000145386       CCNA2               4      121816444    121823883
+4 ENSG00000147082       CCNB3               X       50202713     50351914
+5 ENSG00000157456       CCNB2              15       59105126     59125045
+  strand
+1      1
+2      1
+3     -1
+4      1
+5      1</code></pre>
 </div>
 <p>Note that we also included the filtering attribute
 <code>ensembl_gene_id</code> to the attributes retrieved from the data
@@ -1114,7 +1125,7 @@ packages.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1232,7 +1243,7 @@ their needs and expectations.</li>
   "url": "https://carpentries-incubator.github.io/bioc-project/08-annotations.html",
   "identifier": "https://carpentries-incubator.github.io/bioc-project/08-annotations.html",
   "dateCreated": "2020-09-14",
-  "dateModified": "2025-07-01",
+  "dateModified": "2025-10-07",
   "datePublished": "2025-10-07"
 }
 
