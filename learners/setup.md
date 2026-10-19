@@ -4,7 +4,7 @@ title: Setup
 
 Install the version of R supported by the current Bioconductor release, as listed in the [official Bioconductor installation instructions](https://bioconductor.org/install/), and install RStudio.
 If you are attending a workshop, use the R and Bioconductor versions specified by your instructor.
-The [Introduction and setup](../episodes/01-setup.html) episode reports the R version used to build this lesson; outputs may differ with other versions.
+The Introduction and setup episode reports the R version used to build this lesson; outputs may differ with other versions.
 For detailed instructions on how to do this, you can refer to the section "If you already have R and RStudio installed" 
 in the [Introduction to R](https://carpentries-incubator.github.io/bioc-intro/#r-and-rstudio)
 episode of the [Introduction to data analysis with R and Bioconductor](https://carpentries-incubator.github.io/bioc-intro) lesson.
