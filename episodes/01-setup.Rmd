@@ -28,6 +28,9 @@ source("01-helpers.R")
 
 This lesson was developed and tested with `r R.version.string`.
 
+For the R version supported by the current Bioconductor release and installation instructions, consult the [official Bioconductor installation page](https://bioconductor.org/install/).
+If you are attending a workshop, follow your instructor's version requirements.
+
 Take a moment to launch RStudio and verify that you are using R version `r r_version_string.patch_x()`, with `x` being any patch version, e.g. `r r_version_string()`.
 
 ```{r}
