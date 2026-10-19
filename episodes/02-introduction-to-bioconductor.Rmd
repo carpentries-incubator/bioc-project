@@ -290,8 +290,8 @@ The [bioc-devel@r-project.org](mailto:bioc-devel@r-project.org) mailing list is 
 ### A scientific and technical community
 
 - [Scientific Advisory Board (SAB)][bioc-scientific-advisory-board] Meet Annually, External and Internal leader in the field who act as project advisors. No Term limits.
-- [Technical Advisory Board (TAB)][bioc-technical-advisory-board]. Meet monthly to consider technical aspects of core infastructure and scientific direction of the project. 15 members, 3 year term. Annual open-to-all elections to rotate members. Current officers are Vince Carey (chair), Levi Waldron (vice Chair) Charlotte Soneson (Secretary).
-- [Community Advisory Board (CAB)][bioc-community-advisory-board] Meet monthly to consider community outreach, events, education and training. 15 members, 3 year term. Annual open-to-all elections to rotate members. Current officers are Aedin Culhane (chair), Matt Ritchie (co Chair), Lori Kern (Secretary).
+- [Technical Advisory Board (TAB)][bioc-technical-advisory-board]. Meet monthly to consider technical aspects of core infrastructure and scientific direction of the project. 15 members, 3 year term. Annual open-to-all elections to rotate members. See the [TAB website][bioc-technical-advisory-board] for current officers.
+- [Community Advisory Board (CAB)][bioc-community-advisory-board] Meet monthly to consider community outreach, events, education and training. Members serve a 3 year term. Annual open-to-all elections to rotate members. See the [CAB website][bioc-community-advisory-board] for current officers.
 - [Code of Conduct committee][bioc-code-of-conduct]
 
 :::::::::::::::::::::::::::::::::::::::::  callout
