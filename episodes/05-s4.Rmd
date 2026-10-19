@@ -51,6 +51,22 @@ Instead, the caption of the first figure demonstrates how to progressively talk 
 
 ## S4 classes and methods
 
+### Why learn about S4 objects?
+
+Imagine that you are analysing a sequencing experiment. You need to work with measurements, sample descriptions, and information about the genomic features measured. Keeping these pieces in unrelated variables makes it easier to lose track of what belongs together. Bioconductor provides specialised data containers for different kinds of biological data, with functions designed to work with those containers.
+
+An **object** is a particular container holding your data; its **class** describes the structure and behaviour that it supports. You do not need to design a new class to use one. As a learner, your first goal is to recognise the objects returned by packages and use their documented functions to inspect and manipulate them.
+
+Later in this episode, you will create a `DataFrame` (a table-like container) and an `Rle` (a compact representation of repeated values). Both use S4, but they serve different purposes. Familiar operations such as `[` can work with these objects because packages provide implementations appropriate to their classes.
+
+Three terms will help you follow the explanation below:
+
+- A **class** describes a kind of object, such as a table-like `DataFrame`.
+- A **generic** provides a common function interface for an operation.
+- A **method** implements that operation for particular classes of input.
+
+You will encounter the internal components called *slots* below. For everyday analysis, use documented constructors and accessors rather than editing slots directly. We introduce the terminology here so that you can understand package documentation and error messages, not because you need to implement the S4 system yourself.
+
 ### The methods package
 
 The S4 class system is implemented in the base package [methods][r-package-methods].
